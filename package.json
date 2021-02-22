@@ -1,0 +1,19 @@
+{
+  "name": "davestewart-site",
+  "version": "0.0.1",
+  "description": "Personal website",
+  "main": "index.js",
+  "authors": {
+    "name": "Dave Stewart",
+    "email": "dave@davestewart.co.uk"
+  },
+  "repository": "https://github.com/davestewart/davestewart-site/davestewart-site",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
