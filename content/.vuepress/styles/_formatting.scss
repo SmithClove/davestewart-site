@@ -1,0 +1,167 @@
+@import "variables";
+
+:root {
+  --theme: #{$accentColor};
+}
+
+body {
+  font-family: $bodyFont;
+  //font-size: 16px; // Palanquin
+  font-size: 15px; // Open Sans
+  font-weight: 400;
+  font-smoothing: antialiased;
+  color: $textColor;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// HEADINGS
+// ---------------------------------------------------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5 {
+  margin: 2rem 0 1rem;
+  font-family: $titleFont;
+  font-weight: normal;
+}
+
+h1 {
+  margin-top: 2rem;
+  font-size: 2.2rem;
+}
+
+p.description {
+  margin-top: -.5em;
+  margin-bottom: 2rem;
+  font-size: 1.2em;
+  opacity: .5;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// TEXT
+// ---------------------------------------------------------------------------------------------------------------------
+
+.content__default {
+
+  margin-bottom: 2rem;
+  //line-height: 1.6; // Palanquin
+  line-height: 1.7; // Open Sans
+
+  h2 {
+    border-bottom: 1px solid $borderColor;
+    margin-left: -.5em;
+    margin-right: -.5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    font-size: 1.9rem;
+  }
+
+  h1 + h2 {
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h1, h2 {
+    margin-bottom: .3em;
+  }
+
+  h4 {
+    font-size: 1.3em;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  ol,
+  ul {
+    margin-left: 2rem;
+    margin-bottom: .5em;
+    padding-left: 0;
+  }
+
+  li {
+    list-style: disc;
+    margin-bottom: .25em;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  img {
+    width: auto;
+    margin: auto;
+  }
+
+  pre[class^="language"],
+  code {
+    padding: 1rem;
+    border-radius: 4px;
+    background: #F5F5F8;
+    font-family: $codeFont;
+    font-size: 12px;
+
+    .token {
+      color: $accentColor;
+    }
+
+    .token.comment {
+      color: #AAAAAA;
+    }
+
+    .token.keyword {
+      color: $codeBgColor;
+    }
+  }
+
+  code {
+    padding: 1px 4px 2px 4px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  hr {
+    margin: 3rem -1rem;
+    border: none;
+    background: $borderColor;
+    height: 1px;
+  }
+
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// LINKS
+// ---------------------------------------------------------------------------------------------------------------------
+
+a, a:link, a:visited {
+  color: var(--theme);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a span {
+  margin-left: 2px;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// UTILITIES
+// ---------------------------------------------------------------------------------------------------------------------
+
+.debug,
+.debug * {
+  outline: 1px dashed rgba(255, 0, 0, .1);
+}

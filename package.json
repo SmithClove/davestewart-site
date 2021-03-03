@@ -9,11 +9,26 @@
   },
   "repository": "https://github.com/davestewart/davestewart-site/davestewart-site",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "dev": "vuepress dev content",
+    "debug": "vuepress dev content --debug",
+    "build": "vuepress build content --dest dist",
+    "serve": "npx serve dist"
   },
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.5.3"
+    "alias-hq": "^5.1.6",
+    "traverse": "^0.6.6",
+    "vue-router": "^3.5.1",
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-typescript": "^0.3.1"
+  },
+  "dependencies": {
+    "date-fns": "^2.17.0",
+    "fast-sort": "^2.2.0",
+    "image-size": "^0.9.4",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
+    "vue-masonry-css": "^1.0.3",
+    "yaml": "^1.10.0"
   }
 }

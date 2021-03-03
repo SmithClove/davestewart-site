@@ -1,0 +1,51 @@
+@import "variables";
+
+body {
+  overflow-y: scroll;
+  margin: 0;
+}
+
+.siteMain {
+  margin: 50px auto 100px;
+  min-height: calc(100vh - 250px);
+}
+
+.siteHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid $borderColor;
+  background: white;
+  transition: 1s box-shadow;
+
+  body.is-scrolled & {
+    transition: .3s box-shadow;
+    box-shadow: 0 0 20px rgba(black, 0.07);
+  }
+}
+
+.siteFooter {
+  min-height: 200px;
+  background: lighten($borderColor, 5%);
+}
+
+.siteHeader,
+.siteFooter {
+  font-size: 14px;
+  .layout__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.layout__inner {
+  max-width: $widthPage;
+  margin: 0 auto;
+  padding: 1rem;
+
+  > h1:first-child {
+    margin-top: .5rem;
+  }
+}
