@@ -1,0 +1,21 @@
+frame-01a-wire: Gold picture frame (wireframe)
+frame-01b-viewport: Gold picture frame (viewport)
+frame-01c: Gold picture frame (texture map)
+frame-02: Gold picture frame (rendered)
+frame-03: Wooden picture frame
+frame-04: Metal picture frame
+item-1: Trumpet lights
+item-2: Fern
+ivy-1: Ivy (wireframe)
+ivy-2: Ivy (rendered)
+loader-1: Loader 1
+loader-2: Loader 2
+loader-3: Loader 3
+loader-4: Loader 4
+table-1: Table (transparent)
+table-2: Table (composited)
+telephone-1: Telephone box (lighting test)
+telephone-2: Telephone box (rendered, 1)
+telephone-3: Telephone box (rendered, 2)
+bar-table-viewport: Bar table (viewport)
+bar-table-wire: Bar table (wireframe)
