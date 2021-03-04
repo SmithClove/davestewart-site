@@ -11,8 +11,8 @@
   "scripts": {
     "dev": "vuepress dev content",
     "debug": "vuepress dev content --debug",
-    "build": "vuepress build content --dest dist",
-    "serve": "npx serve dist"
+    "build": "vuepress build content --dest output",
+    "serve": "npx serve output"
   },
   "license": "MIT",
   "devDependencies": {
