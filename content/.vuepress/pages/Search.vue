@@ -1,6 +1,6 @@
 <template>
   <SiteWrapper layout="search" class="search">
-    <h1>Search: <span class="accent">{{ query.text ? query.text + ' + ' : '' }}{{ (query.tags || []).join(' + ') }}</span></h1>
+    <h1>Search<span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span></h1>
     <p class="description">{{ itemsAsList.length }} results</p>
 
     <GlobalEvents
@@ -40,7 +40,7 @@
           <a href="/search/"
                   class="btn"
                   :disabled="!canReset"
-                  @click.prevent="clear">Reset
+                  @click.prevent="reset">Reset
           </a>
         </div>
 
@@ -189,6 +189,18 @@ export default {
   },
 
   computed: {
+    searchTitle () {
+      const { text, tags } = this.query
+      const parts = []
+      if (text) {
+        parts.push(text)
+      }
+      if (tags.length) {
+        parts.push(tags.join(' + '))
+      }
+      return parts.join(' + ')
+    },
+
     prepared () {
       // properties
       let items = this.$store.pages
@@ -301,6 +313,9 @@ export default {
 
     // title
     document.title = 'Search | Dave Stewart'
+    this.$watch('searchTitle', function (value) {
+      document.title = `Search${value ? ' ' + value : ''} | Dave Stewart`
+    })
 
     // focus search
     this.focus()
@@ -348,7 +363,7 @@ export default {
       })
     },
 
-    clear () {
+    reset () {
       this.query = makeQuery()
     },
 
@@ -401,6 +416,10 @@ export default {
     onEscape (event) {
       if (isInput(event) && this.query.text) {
         this.query.text = ''
+        return
+      }
+      if (this.canReset) {
+        this.reset()
         return
       }
       history.back()
