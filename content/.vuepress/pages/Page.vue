@@ -3,7 +3,7 @@
     <PageHero />
     <h1>{{ $page.title }}</h1>
     <PageInfo/>
-    <Content />
+    <Content class="pageContent" />
   </div>
 </template>
 

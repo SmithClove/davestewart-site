@@ -3,21 +3,17 @@
     <h1>{{ $page.title }}</h1>
     <p class="description">{{ $page.frontmatter.description }}</p>
 
-    <section>
-      <Content/>
-    </section>
+    <Content class="pageContent"/>
 
-    <section>
-      <template v-if="options.format === 'thumbnail'">
-        <ThumbnailWall :pages="pages"/>
-      </template>
-      <template v-else>
-        <PageTree v-if="depth"
-                  :items="tree"/>
-        <PageList v-else
-                  :pages="pages"/>
-      </template>
-    </section>
+    <template v-if="options.format === 'thumbnail'">
+      <ThumbnailWall :pages="pages"/>
+    </template>
+    <template v-else>
+      <PageTree v-if="depth"
+                :items="tree"/>
+      <PageList v-else
+                :pages="pages"/>
+    </template>
   </div>
 </template>
 
