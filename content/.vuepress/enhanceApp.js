@@ -17,11 +17,14 @@ import { pages } from './pages'
  * @param {object}      options   the options for the root Vue instance
  * @param {VueRouter}   router    the router instance for the app
  * @param {object}      siteData  site metadata
+ * @param {boolean}     isServer  is this enhancement applied in server-rendering or client
  */
-export default ({ Vue, options, router, siteData }) => {
+export default ({ Vue, options, router, siteData, isServer }) => {
   // plugins
-  Vue.use(VueMasonry)
-  smoothscroll.polyfill()
+  if (!isServer) {
+    Vue.use(VueMasonry)
+    smoothscroll.polyfill()
+  }
 
   // mixins
   Vue.prototype.$fm = $fm
