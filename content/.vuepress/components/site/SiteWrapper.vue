@@ -10,6 +10,9 @@
       </div>
     </main>
 
+    <!-- back to top -->
+    <SiteToTop/>
+
     <!-- footer -->
     <SiteFooter/>
   </div>
@@ -34,6 +37,7 @@ export default {
   mounted () {
     window.addEventListener('scroll', this.onScroll)
     window.addEventListener('resize', this.onResize)
+    this.onResize()
   },
 
   computed: {
@@ -54,7 +58,9 @@ export default {
     onResize () {
       const header = document.querySelector('.siteHeader')
       if (header) {
-        document.body.style.marginTop = header.offsetHeight + 'px'
+        const offset = header.offsetHeight + 'px'
+        document.body.style.marginTop = offset
+        document.body.style.scrollPaddingTop = offset
       }
     }
   }

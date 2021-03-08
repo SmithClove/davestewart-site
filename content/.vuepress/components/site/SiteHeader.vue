@@ -5,8 +5,7 @@
         <SiteBreadcrumbs/>
       </div>
       <div class="siteHeader__right">
-        <router-link to="/tags" title="Search by tag">Tags</router-link>
-        <router-link to="/all" title="Site map">Site</router-link>
+        <SiteSearch/>
       </div>
     </div>
   </header>
@@ -18,13 +17,26 @@ export default {}
 
 <style lang="scss">
 .siteHeader {
+  .layout__inner {
+    //padding: .5rem 1rem;
+  }
+
+  // used to give all items reasonable outline padding
+  a, .breadcrumb__text {
+    padding: 2px 6px;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
   &__left {
+    flex-grow: 1;
   }
 
   &__right {
-    > * {
-      margin-left: 1.5em;
-    }
   }
 }
 </style>

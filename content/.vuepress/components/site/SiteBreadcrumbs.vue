@@ -16,6 +16,7 @@
 
 <script>
 import { getValue } from '../../utils/object.js'
+import { pages } from '../../pages'
 
 export default {
   data () {
@@ -72,13 +73,11 @@ export default {
 
       // add extra global links
       const pathname = this.location.pathname || ''
-      if (pathname.startsWith('/tags')) {
-        addLink('/tags/', 'Tags', 'Search projects by tag')
-      }
-
-      if (pathname.startsWith('/all')) {
-        addLink('/all/', 'Site Map', 'Everything on the site')
-      }
+      pages.forEach(page => {
+        if (pathname.startsWith(page.path)) {
+          addLink(page.path, page.title, page.description)
+        }
+      })
 
       // done now!
       return links
@@ -91,7 +90,7 @@ export default {
 .breadcrumbs {
   width: 100%;
   display: flex;
-  margin: -.3rem 0;
+  margin: 0 0 0 -6px;
   flex-wrap: wrap;
   font-size: 14px;
 }
@@ -102,28 +101,18 @@ export default {
     white-space: nowrap;
     margin: .3rem 0;
 
+    // arrow
     &:not(:last-child):after {
       display: inline-block;
       width: 10px;
       height: 14px;
       line-height: 1;
-      margin: 0 8px;
+      margin: 0 2px;
       background: url('../../assets/breadcrumb-arrow.svg') no-repeat;
       background-position-y: 80%;
       vertical-align: bottom;
       content: ' ';
     }
-
-    //&:not(:last-child):after {
-    //  display: inline-block;
-    //  width: 12px;
-    //  height: 14px;
-    //  line-height: 1;
-    //  margin: 0 8px;
-    //  background-position-y: 80%;
-    //  vertical-align: bottom;
-    //  content: ' ';
-    //}
   }
 
   &__text {
