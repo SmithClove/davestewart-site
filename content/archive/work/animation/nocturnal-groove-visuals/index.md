@@ -7,6 +7,7 @@ tags:
   - after-effects
   - concept
 media:
+  thumbnail: ./images/nocturnal-groove.png
   video:
     src: https://player.vimeo.com/video/68292853
     width: 580

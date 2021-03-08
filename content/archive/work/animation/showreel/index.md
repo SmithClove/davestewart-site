@@ -9,6 +9,7 @@ tags:
   - 3dsmax
   - concept
 media:
+  thumbnail: ./images/showreel.png
   video:
     src: https://player.vimeo.com/video/68948501
     width: 580

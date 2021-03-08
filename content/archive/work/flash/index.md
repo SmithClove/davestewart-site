@@ -1,6 +1,7 @@
 ---
 title: Flash
 description: Flash websites
-layout: Folder
+layout: folder
+format: thumbnails
 order: 1
 ---

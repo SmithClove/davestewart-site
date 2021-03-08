@@ -1,7 +1,7 @@
 ---
 title: Archive
 description: The best non-current stuff
-layout: Folder
+layout: folder
 order: 5
 ---
 

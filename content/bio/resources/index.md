@@ -1,6 +1,6 @@
 ---
 title: Resources
 description: More info
-layout: Folder
+layout: folder
 order: 2
 ---

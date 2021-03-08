@@ -1,7 +1,7 @@
 ---
 title: Work
 description: Commercial work
-layout: Folder
+layout: folder
 order: 1
 depth: 2
 ---

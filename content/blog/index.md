@@ -1,7 +1,7 @@
 ---
 title: Blog
 description: Thoughts, opinions, musings...
-layout: Folder
+layout: folder
 order: 6
 ---
 

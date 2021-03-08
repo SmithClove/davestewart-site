@@ -1,9 +1,7 @@
 ---
 title: HTML
 description: HTML websites
-layout: Folder
-options:
-  format: thumbnail
-  sort: date
+layout: folder
+format: thumbnails
 order: 2
 ---

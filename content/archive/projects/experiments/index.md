@@ -1,6 +1,7 @@
 ---
 title: Experiments
 description: Smaller, fun projects or investigations
-layout: Folder
+layout: folder
+format: thumbnails
 order: 2
 ---

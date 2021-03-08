@@ -1,6 +1,6 @@
 ---
 title: Projects
 description: Personal projects
-layout: Folder
+layout: folder
 order: 2
 ---

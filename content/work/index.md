@@ -1,6 +1,7 @@
 ---
 title: Work
 description: Current commercial and client work
-layout: Folder
+layout: folder
+format: thumbnails
 order: 3
 ---

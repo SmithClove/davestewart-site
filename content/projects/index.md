@@ -1,6 +1,6 @@
 ---
 title: Projects
 description: Current Open Source, side and creative projects
-layout: Folder
+layout: folder
 order: 3
 ---

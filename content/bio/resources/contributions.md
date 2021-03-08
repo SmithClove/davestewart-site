@@ -21,3 +21,8 @@ Vee Validate
 ## Posts
 
 ## Tweets
+
+# Bugs
+
+- Weird issue with source maps · Issue #2978 · vuejs/vue-cli
+  https://github.com/vuejs/vue-cli/issues/2978

@@ -1,9 +1,7 @@
 ---
 title: Libraries
 description: Open Source libraries for JavaScript developers
-layout: Folder
-options:
-  format: thumbnail
+layout: folder
+format: thumbnails
 order: 1
 ---
-

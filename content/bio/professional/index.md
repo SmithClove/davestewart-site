@@ -1,5 +1,5 @@
 ---
 title: Professional
-layout: Folder
+layout: folder
 order: 1
 ---

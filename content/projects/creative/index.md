@@ -1,9 +1,8 @@
 ---
 title: Creative
 description: Creative projects, design, animation
-layout: Folder
-options:
-  format: thumbnail
+layout: folder
+format: thumbnails
 order: 4
 ---
 

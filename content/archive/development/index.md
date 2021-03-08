@@ -1,7 +1,7 @@
 ---
 title: Development
 description: Open Source programming
-layout: Folder
+layout: folder
 order: 3
 ---
 

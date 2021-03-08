@@ -1,7 +1,7 @@
 ---
 title: Bio
 description: A little bit about me
-layout: Folder
+layout: folder
 order: 1
 ---
 

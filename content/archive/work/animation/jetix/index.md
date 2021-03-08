@@ -11,6 +11,7 @@ tags:
   - 3dsmax
   - concept
 media:
+  thumbnail: ./images/jetix-02.jpg
   gallery:
     - ./images/jetix-02.jpg
     - ./images/jetix-03.jpg

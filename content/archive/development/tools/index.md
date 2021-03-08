@@ -1,6 +1,7 @@
 ---
 title: Tools
 description: Larger, self-contained tools, mainly for developers
-layout: Folder
+layout: folder
+format: thumbnails
 order: 2
 ---
