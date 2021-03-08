@@ -1,6 +1,9 @@
 <template>
   <div class="uiRadio">
-    <label class="uiRadio__label">{{ label }}:</label>
+    <label class="uiRadio__label"
+           :data-count="count"
+           :data-count-state="countState"
+    >{{ label }}:</label>
     <span v-for="option in options"
        class="uiRadio__option"
     ><a :href="`/search/?${name}=${option}`"
@@ -29,6 +32,13 @@ export default {
       type: String,
     },
 
+    count: {
+      type: [Number, String]
+    },
+
+    countState: {
+      type: [Number, String]
+    },
   },
 
   methods: {
@@ -52,8 +62,26 @@ export default {
   line-height: 1;
 
   &__label {
+    position: relative;
     padding: .5em;
     font-weight: 600;
+
+    &[data-count]:after {
+      position: absolute;
+      content: attr(data-count);
+      font-size: .8em;
+      color: $accentColor;
+      top: 1px;
+      right: -1px;
+    }
+
+    &[data-count][data-count-state="0"]:after {
+      color: $grey-light;
+    }
+
+    &[data-count=""]:after {
+      color: white !important;
+    }
   }
 
   &__option {

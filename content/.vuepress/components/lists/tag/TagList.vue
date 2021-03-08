@@ -47,6 +47,6 @@ export default {
 <style lang="scss">
 .tagList {
   word-break: keep-all;
-  font-size: 0;
+  display: flex;
 }
 </style>

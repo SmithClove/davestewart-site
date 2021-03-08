@@ -1,6 +1,6 @@
 <template>
   <SiteWrapper layout="search" class="search">
-    <h1>Search</h1>
+    <h1>Search: <span class="accent">{{ query.text ? query.text + ' + ' : '' }}{{ (query.tags || []).join(' + ') }}</span></h1>
     <p class="description">{{ itemsAsList.length }} results</p>
 
     <GlobalEvents
@@ -29,16 +29,19 @@
         <div class="searchControls__tags">
           <UiRadio name="tagsMode"
                    label="Tags"
+                   :count="query.tags.length ? query.tags.length : ''"
+                   :countState="options.showTags ? 0 : 1"
                    :options="options.tagsMode"
                    v-model="query.tagsMode"
           />
         </div>
 
         <div class="searchControls__reset">
-          <button class="btn btn-text btn-clear"
+          <a href="/search/"
+                  class="btn"
                   :disabled="!canReset"
-                  @click.prevent="clear">&times;
-          </button>
+                  @click.prevent="clear">Reset
+          </a>
         </div>
 
       </UiControls>
@@ -171,7 +174,7 @@ export default {
 
     // always show tags if we have tags
     if (query.tags.length > 0 && query.tagsMode === 'off') {
-      query.tagsMode = 'list'
+      // query.tagsMode = 'list'
     }
 
     // return all settings
@@ -179,7 +182,7 @@ export default {
       options: {
         viewMode: ['date', 'tree', 'thumbs'],
         tagsMode: ['off', 'list', 'groups'],
-        showTags: tags.length > 0 || query.tagsMode !== 'off',
+        showTags: query.tagsMode !== 'off',
       },
       query,
     }
@@ -391,6 +394,10 @@ export default {
       }, 600)
     },
 
+    // ---------------------------------------------------------------------------------------------------------------------
+    // keyboard
+    // ---------------------------------------------------------------------------------------------------------------------
+
     onEscape (event) {
       if (isInput(event) && this.query.text) {
         this.query.text = ''
@@ -490,7 +497,6 @@ export default {
     box-shadow: 0 0 0 2px $grey-lightest;
     border-radius: 2px;
   }
-
 }
 
 .searchControls {

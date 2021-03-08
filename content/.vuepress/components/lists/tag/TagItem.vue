@@ -45,7 +45,6 @@ export default {
   flex-wrap: wrap;
 
   &__tag {
-    font-size: 14px;
     display: inline-block;
     padding: .3em .5em .4em;
     vertical-align: middle;
