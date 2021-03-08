@@ -1,17 +1,21 @@
 <template>
-  <div v-if="tags.length" class="tagList">
-    <router-link v-for="tag in tags"
-                 class="tagList__tag"
-                 :class="{ selected: tag === selected }"
-                 :key="tag"
-                 :to="`/tags/${tag}`"
-    >{{ tag.replace(/-/, ' ') }}
-    </router-link>
+  <div v-if="tags.length" class="tagList" :class="{ showValid }">
+    <TagItem v-for="tag in tags"
+       :key="tag"
+       :tag="tag"
+       :selected="selected.includes(tag)"
+       :valid="(valid || []).includes(tag)"
+    >{{ tag.replace(/-/, ' ') }}</TagItem>
   </div>
 </template>
 
 <script>
+import TagItem from './TagItem.vue'
 export default {
+  components: {
+    TagItem
+  },
+
   props: {
     tags: {
       type: Array,
@@ -21,9 +25,22 @@ export default {
     },
 
     selected: {
-      type: String,
+      type: Array,
+      default () {
+        return []
+      },
+    },
+
+    valid: {
+      type: Array,
     },
   },
+
+  computed: {
+    showValid () {
+      return Array.isArray(this.valid)
+    }
+  }
 }
 </script>
 
@@ -31,20 +48,5 @@ export default {
 .tagList {
   word-break: keep-all;
   font-size: 0;
-
-  &__tag {
-    font-size: 14px;
-    display: inline-block;
-    padding: .3em .5em;
-    vertical-align: middle;
-
-    &.selected {
-      background: var(--theme);
-      color: white !important;
-      border-radius: 4px;
-      text-decoration: none !important;
-    }
-  }
-
 }
 </style>
