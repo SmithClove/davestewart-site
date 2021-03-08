@@ -1,22 +1,4 @@
-/**
- * Tests whether a passed value is an Object or Array
- *
- * @param   {*}       value   The value to be assessed
- * @returns {boolean}         Whether the value is an Object or Array
- */
-export function isObject (value) {
-  return !!value && typeof value === 'object'
-}
-
-/**
- * Tests whether a passed value is an Object
- *
- * @param   {*}       value   The value to be assessed
- * @returns {boolean}         Whether the value is a true Object
- */
-export function isPlainObject (value) {
-  return isObject(value) && !Array.isArray(value)
-}
+import { isEmpty } from './assert.js'
 
 export function getValue (target, path) {
   const props = path.split('.')
@@ -27,4 +9,18 @@ export function getValue (target, path) {
 
 export function merge (...values) {
   return Object.assign({}, ...values)
+}
+
+export function clean (source) {
+  return Object.keys(source).reduce((output, key) => {
+    const value = source[key]
+    if (!isEmpty(value)) {
+      output[key] = value
+    }
+    return output
+  }, {})
+}
+
+export function clone (value) {
+  return JSON.parse(JSON.stringify(value))
 }

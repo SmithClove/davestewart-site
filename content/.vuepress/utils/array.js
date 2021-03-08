@@ -37,6 +37,26 @@ export function sortBy (prop, order = 'asc', numeric = false) {
   }
 }
 
+export function groupBy (items, property, transformer = value => value) {
+  const groups = {}
+  return items
+    .reduce((output, item) => {
+      const prop = transformer(getValue(item, property))
+      if (prop) {
+        let group = groups[prop]
+        if (!group) {
+          group = {
+            title: prop,
+            items: []
+          }
+          groups[prop] = group
+          output.push(group)
+        }
+        group.items.push(item)
+      }
+      return output
+    }, [])
+}
 
 export function offset (value, dir, max, loop = false) {
   const min = 0

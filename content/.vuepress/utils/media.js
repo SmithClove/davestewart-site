@@ -1,8 +1,10 @@
 import Fs from 'fs'
 import Path from 'path'
 
-import { isPlainObject } from './object.js'
+import { isImage, isRemote } from '../plugins/utils.js'
+import { isPlainObject } from './assert.js'
 
+// 16:9
 export const placeholder = {
   width: 1024,
   height: 576,
@@ -52,7 +54,7 @@ export function getFile (pagePath, imagePath = '') {
 }
 
 export function isLocal (source) {
-  return !Path.isAbsolute(source) || !source.startsWith('http')
+  return !source.startsWith('http') || !Path.isAbsolute(source)
 }
 
 /**
@@ -73,7 +75,7 @@ export function getSource (input) {
       : {}
 
   // source type
-  if (/\.(png|jpe?g|gif)$/.test(source.src)) {
+  if (isImage(source.path)) {
     source.type = 'image'
   }
 
@@ -94,9 +96,12 @@ export function getSource (input) {
  * Get the style of an image
  *
  * @param   {object}  source
- * @returns {{width: string, aspectRatio: (string|boolean)}}
+ * @returns {object}
  */
 export function getStyle (source) {
+  if (isRemote(source.path)) {
+    return {}
+  }
   const { width, height } = source
   return {
     width: '100%',

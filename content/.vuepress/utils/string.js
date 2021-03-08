@@ -7,6 +7,6 @@ export function plural (num, word, includeNumber = true) {
     : word
 }
 
-export function capitalize (value) {
-  return value.replace(/\w/, c => c.toUpperCase())
+export function capitalize (value = '') {
+  return String(value).replace(/\w/, c => c.toUpperCase())
 }
