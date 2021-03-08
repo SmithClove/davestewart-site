@@ -5,7 +5,7 @@
 
     <Content class="pageContent"/>
 
-    <template v-if="options.format === 'thumbnail'">
+    <template v-if="options.format === 'thumbnails'">
       <ThumbnailWall :pages="pages"/>
     </template>
     <template v-else>
@@ -28,17 +28,21 @@ export default {
     },
 
     options () {
-      const defaults = {
+      const options = {
         sort: 'date',
         order: 'desc',
         format: 'list',
       }
-      const options = this.$fm('options') || {}
-      return { ...defaults, ...options }
+      const format = this.$fm('format')
+      if (format) {
+        options.format = format
+      }
+      return options
     },
 
-    tree () {
-      return makeTree(this.filtered)
+    filtered () {
+      const path = this.$page.path
+      return this.$site.pages.filter(page => page.path.startsWith(path))
     },
 
     pages () {
@@ -48,10 +52,9 @@ export default {
           .sort(sortBy(this.options.sort, this.options.order))
     },
 
-    filtered () {
-      const path = this.$page.path
-      return this.$site.pages.filter(page => page.path.startsWith(path))
-    }
+    tree () {
+      return makeTree(this.filtered)
+    },
   }
 }
 </script>

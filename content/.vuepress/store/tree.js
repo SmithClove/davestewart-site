@@ -1,4 +1,3 @@
-import sort from 'fast-sort'
 import { sortBy } from '../utils/array.js'
 import { slicePath } from '../utils/path.js'
 
@@ -48,7 +47,8 @@ class TreeNode {
     const { date, description, order } = frontmatter
 
     // properties
-    const type = frontmatter.layout === 'Folder'
+    const layout = frontmatter.layout || ''
+    const type = layout.toLowerCase() === 'folder'
       ? 'folder'
       : (relativePath || '').endsWith('/index.md')
         ? 'pageFolder'
@@ -81,26 +81,6 @@ class TreeNode {
 
   constructor (data) {
     Object.assign(this, data)
-  }
-}
-
-class Tree {
-
-  /**
-   *
-   * @param {object[]}    pages
-   * @param {TreeOptions} options
-   */
-  constructor (pages = [], options) {
-    this.nodes = pages.map(TreeNode.fromPage)
-  }
-
-  sortOn () {
-
-  }
-
-  getTree () {
-    return this.nodes
   }
 }
 
@@ -143,42 +123,6 @@ function nest (items, path) {
  */
 export function makeTree (pages) {
   let nodes = makeTreeNodes(pages)
-
-  function xnest (nodes, path) {
-    // get parent
-    const folders = nodes.filter(node => node.parent === path)
-
-    // filter all nodes
-    nodes.forEach(node => {
-      // attach all nodes
-      if (node.parent.startsWith(root.path)) {
-        if (!root.pages) {
-          root.pages = []
-        }
-        root.pages.push(node)
-      }
-    })
-
-    // process pages
-    console.log(root.pages)
-    if (root.pages) {
-      nest(root.pages)
-    }
-
-    // return
-    return root
-  }
-
   const root = nodes.shift()
   return nest(nodes, root.path)
-
-  // .map(node => ({ path: node.path, order: node.order })
-  return nest(nodes)
-  return nodes
-    .sort(sortBy('order'))
-    .sort(sortBy('path'))
-  return sort(nodes).by([{ asc: 'path' }, { asc: 'order' }])
-  return nodes
-  // .sort(sortBy('order', 'asc', true))
-  // .filter(page => page.path.startsWith('/archive'))
 }
