@@ -3,8 +3,8 @@
 
     <!-- image -->
     <div class="thumbnailItem__image">
-      <router-link :to="page.path">
-        <MediaImage :source="source" />
+      <router-link :to="page.path" draggable="false">
+        <MediaImage :source="source"/>
       </router-link>
     </div>
 
@@ -45,11 +45,18 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   padding: 1rem;
-  border: 1px dashed $borderColor;
   border-radius: 2px;
   margin-bottom: 20px;
-  // transition: .6s border-color, .6s box-shadow, .6s transform;
-  // box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+  box-shadow:
+      0 0px 4px rgba(0, 0, 30, .04),
+      0 5px 8px rgba(0, 0, 60, 0.02),
+      0 15px 12px rgba(20, 60, 120, .02);
+
+  // box-shadow: 0 8px 8px 3px rgba($grey-lightest, .4);
+
+  @include md {
+    box-shadow: 0 5px 6px rgba(59, 92, 143, 0.05);
+  }
 
   &__content {
     padding: 0 .1rem;
@@ -58,14 +65,23 @@ export default {
   a {
     display: block;
     font-size: 0;
+    overflow: hidden;
+
+    &:hover {
+      img {
+        transform: scale(1.07);
+        transition-duration: .3s;
+      }
+    }
   }
 
   img {
     width: 100%;
+    transition: all .6s cubic-bezier(0.180, 0.300, 0.125, 0.985);
   }
 
   &__title {
-    margin: .75rem 0 .5rem;
+    margin: 1rem 0 .5rem;
     font-size: 1.2em;
   }
 
@@ -76,10 +92,12 @@ export default {
     opacity: .6;
   }
 
-  @media screen and (max-width: 400px) {
+  @include sm {
     padding: 0 0 20px;
     margin-bottom: 20px;
     border: none;
+    box-shadow: none;
+
     &:not(:last-child) {
       border-bottom: 1px dashed $borderColor;
     }
@@ -90,4 +108,32 @@ export default {
   }
 
 }
+
+.thumbnailItem.boxy {
+  padding: 0;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .thumbnailItem__content {
+    padding: 1rem;
+  }
+
+  .thumbnailItem__title {
+    margin: 0 0 .5rem;
+  }
+}
+
+.thumbnailItem.border {
+  border: 1px dashed $borderColor;
+  box-shadow: none;
+}
+
+.thumbnailItem.shadow {
+  box-shadow:
+      0 0px 4px rgba(0, 0, 30, .04),
+      0 5px 8px rgba(0, 0, 60, 0.02),
+      0 10px 16px -10px rgba(30, 0, 50, 0.02),
+      0 25px 18px -15px rgba(20, 20, 80, .04);
+}
+
 </style>

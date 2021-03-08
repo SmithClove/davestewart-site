@@ -44,6 +44,6 @@ export default {
 @import "../../../styles/variables";
 
 .thumbnailWall {
-
+  margin-top: 1rem;
 }
 </style>

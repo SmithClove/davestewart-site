@@ -2,6 +2,7 @@
   <div class="pageTree" :data-depth="depth">
     <div v-if="title" class="pageTree__header">
       <Heading :level="depth + 1" class="pageTree__title">
+        <a :name="id"></a>
         <router-link :to="path">{{ title }}</router-link>
       </Heading>
       <span v-if="desc" class="pageTree__desc">{{ desc }}</span>
@@ -64,6 +65,10 @@ export default {
   },
 
   computed: {
+    id () {
+      return this.path.replace(/\W+/g, '-').replace(/^-|-$/g, '')
+    },
+
     xdesc () {
       return this.page.desc || getValue(this.page, 'frontmatter.description')
     },
@@ -88,16 +93,18 @@ export default {
   // HEADER
 
   &__header {
-    margin: 1rem -1rem .5rem;
-    padding: .5rem 1rem;
-    border-bottom: 1px dashed $borderColor;
+    //margin: 1rem -1rem .5rem;
+    //padding: .5rem 1rem;
+    //border-bottom: 1px dashed $borderColor;
+    margin: .5rem 0;
+    padding: .5rem 0;
   }
 
   &__title {
     margin: 0;
     font-size: 1.3rem;
     a {
-      color: black;
+      color: $textColor !important;
     }
   }
 
@@ -107,9 +114,6 @@ export default {
 
   h2 {
     font-size: 1.8rem;
-    a {
-      color: $textColor;
-    }
   }
 
   &__desc {
