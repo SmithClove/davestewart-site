@@ -1,0 +1,52 @@
+@import "variables";
+
+.btn {
+  display: flex;
+  border: none;
+  outline: none;
+  vertical-align: middle;
+
+  &-text {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: $textColor;
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
+
+  &-clear {
+    font-size: 1.5rem;
+    position: relative;
+    top: 1px;
+  }
+}
+
+button[disabled] {
+  color: $grey-lighter;
+  pointer-events: none;
+}
+
+
+input[type="text"], textarea {
+  padding: 4px 8px;
+  border: 1px solid $borderColor;
+  border-radius: 2px;
+
+  line-height: 20px;
+  font-size: 14px;
+  text-indent: 1px;
+
+  outline: none;
+  caret-color: $accentColor;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $grey-lightest;
+  }
+
+  &::placeholder {
+    color: $grey-lighter;
+  }
+}

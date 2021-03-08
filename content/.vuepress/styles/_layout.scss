@@ -2,12 +2,13 @@
 
 body {
   overflow-y: scroll;
+  overflow-x: hidden;
   margin: 0;
 }
 
 .siteMain {
   margin: 50px auto 100px;
-  min-height: calc(100vh - 250px);
+  min-height: calc(100vh - 270px);
 }
 
 .siteHeader {
@@ -41,10 +42,13 @@ body {
 }
 
 .layout__inner {
+  position: relative;
   max-width: $widthPage;
   margin: 0 auto;
   padding: 1rem;
+}
 
+[class^="layout__"] {
   > h1:first-child {
     margin-top: .5rem;
   }

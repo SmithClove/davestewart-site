@@ -20,7 +20,7 @@ body {
 h1, h2, h3, h4, h5 {
   margin: 2rem 0 1rem;
   font-family: $titleFont;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h1 {
@@ -39,7 +39,7 @@ p.description {
 // TEXT
 // ---------------------------------------------------------------------------------------------------------------------
 
-.content__default {
+.pageContent {
 
   margin-bottom: 2rem;
   //line-height: 1.6; // Palanquin
@@ -95,30 +95,7 @@ p.description {
     margin: auto;
   }
 
-  pre[class^="language"],
-  code {
-    padding: 1rem;
-    border-radius: 4px;
-    background: #F5F5F8;
-    font-family: $codeFont;
-    font-size: 12px;
 
-    .token {
-      color: $accentColor;
-    }
-
-    .token.comment {
-      color: #AAAAAA;
-    }
-
-    .token.keyword {
-      color: $codeBgColor;
-    }
-  }
-
-  code {
-    padding: 1px 4px 2px 4px;
-  }
 
   strong {
     font-weight: 700;
@@ -138,6 +115,41 @@ p.description {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
+// CODE
+// ---------------------------------------------------------------------------------------------------------------------
+
+pre[class^="language"],
+code {
+  padding: 1rem;
+  border-radius: 4px;
+  background: #F5F5F8;
+  font-family: $codeFont;
+  font-size: 12px;
+
+  .token {
+    color: $accentColor;
+  }
+
+  .token.comment {
+    color: #AAAAAA;
+  }
+
+  .token.keyword {
+    color: $codeBgColor;
+  }
+}
+
+code {
+  padding: 1px 4px 2px 4px;
+}
+
+iframe {
+  @include striped(#EEE, #FFF);
+  width: 100%;
+  border: 0;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
 // LINKS
 // ---------------------------------------------------------------------------------------------------------------------
 
@@ -153,8 +165,19 @@ a:hover {
   text-decoration: underline;
 }
 
+//a:focus {
+//  outline: none;
+//  box-shadow: 0 0 0 3px $grey-lightest;
+//  border-radius: 4px;
+//}
+
 a span {
   margin-left: 2px;
+}
+
+// hide external link indicators for images
+a img + span {
+  display: none;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
