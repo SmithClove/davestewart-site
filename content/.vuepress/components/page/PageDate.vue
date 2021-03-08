@@ -1,11 +1,15 @@
 <template>
   <div v-if="date" class="pageDate">
-    <span class="pageDate__text" :title="relative">{{ formatted }}</span>
+    <a class="pageDate__text"
+       :href="href"
+       :title="relative"
+       @click.exact.prevent="onClick"
+    >{{ formatted }}</a>
   </div>
 </template>
 
 <script>
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+import { format, formatDistance } from 'date-fns'
 
 export default {
   props: {
@@ -21,13 +25,26 @@ export default {
 
     relative () {
       return formatDistance(this.dateObject, new Date())
-
     },
 
     formatted () {
       return format(this.dateObject, 'MMMM yyyy')
+    },
+
+    year () {
+      return this.date.substr(0, 4)
+    },
+
+    href () {
+      return `/search/?year=${this.year}`
     }
   },
+
+  methods: {
+    onClick () {
+      this.$emit('click', this.href, this.date)
+    }
+  }
 }
 </script>
 
@@ -36,6 +53,7 @@ export default {
   display: inline-block;
   padding: .3em .5em;
   white-space: nowrap;
+  color: black !important;
 }
 </style>
 
