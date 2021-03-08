@@ -21,6 +21,7 @@ module.exports = {
     meta('theme-color', '#ea4848'),
     meta('apple-mobile-web-app-capable', 'yes'),
     meta('apple-mobile-web-app-status-bar-style', 'black'),
+    meta('viewport', 'initial-scale=1.0'),
     link('shortcut icon', '/favicon.svg'),
   ],
 
@@ -34,7 +35,7 @@ module.exports = {
   },
 
   plugins: [
-    require('./plugins/media.js'),
+    require('./plugins/media.js').plugin,
   ],
 
   markdown: {
@@ -45,7 +46,7 @@ module.exports = {
     },
 
     extendMarkdown: md => {
-      md.use(require('./plugins/strip-h1.js'))
+      md.use(require('./plugins/strip-h1.js').plugin)
     },
   },
 }

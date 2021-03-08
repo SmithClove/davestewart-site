@@ -4,35 +4,47 @@ const traverse = require('traverse')
 const getSize = require('image-size')
 const YAML = require('yaml')
 
+const { isRemote, isLocal, isImage } = require('./utils')
+
 class Media {
-  constructor (path, size = {}, caption = '', exists = true) {
+  constructor (path, size = {}, caption = '', missing = false) {
     this.path = path
-    this.src = path.replace(/^\.\//, '')
-    this.width = size.width
-    this.height = size.height
-    this.caption = caption
-    this.exists = exists
+    if (size.width && size.height) {
+      this.width = size.width
+      this.height = size.height
+    }
+    if (caption) {
+      this.caption = caption
+    }
+    if (missing) {
+      this.missing = true
+    }
   }
 }
-
-const isLocalImage = /\..+\.(png|jpe?g)$/
 
 function processFrontmatter (sourceDir, $page) {
   const captions = {}
 
   traverse($page.frontmatter).forEach(function (value) {
     // process only strings
-    if (typeof value === 'string' && isLocalImage.test(value)) {
+    if (typeof value === 'string' && isLocal(value) && isImage(value)) {
 
       // don't reprocess converted nodes
       if (this.parent && this.parent.node instanceof Media) {
         return
       }
 
-      // get image path
+      // path
       const relPath = value
       const absPath = Path.join(sourceDir, $page.regularPath, value)
       const absFolder = Path.dirname(absPath)
+
+      // flags
+      const remote = isRemote(relPath)
+      const exists = Fs.existsSync(absPath)
+      const missing = remote
+        ? false
+        : !exists
 
       // captions
       if (!captions[absFolder]) {
@@ -45,17 +57,20 @@ function processFrontmatter (sourceDir, $page) {
         }
       }
 
-      // add image
-      const exists = Fs.existsSync(absPath)
-      const size = exists ? getSize(absPath) : {}
+      // image properties
+      const size = exists && !remote
+        ? getSize(absPath)
+        : {}
       const name = Path.basename(absPath, Path.extname(absPath))
       const caption = captions[absFolder][name]
-      this.update(new Media(relPath, size, caption, exists))
+
+      // add image
+      this.update(new Media(relPath, size, caption, missing))
     }
   })
 }
 
-module.exports = function (options, ctx) {
+function plugin (options, ctx) {
   return {
     chainWebpack (config) {
       config.node.global = true
@@ -65,4 +80,8 @@ module.exports = function (options, ctx) {
       processFrontmatter(ctx.sourceDir, $page)
     },
   }
+}
+
+module.exports = {
+  plugin,
 }

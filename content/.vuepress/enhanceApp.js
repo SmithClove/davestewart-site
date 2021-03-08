@@ -2,18 +2,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMasonry from 'vue-masonry-css'
+import smoothscroll from 'smoothscroll-polyfill'
 
 // theme
 import './styles/index.scss'
 
 // helpers
 import { $fm } from './utils/app.js'
-import { page } from './utils/config.js'
 import { makeStore } from './store'
-
-// pages
-import Tags from './pages/Tags.vue'
-import Site from './pages/Site.vue'
+import { pages } from './pages'
 
 /**
  * @param {Vue}         Vue       the version of Vue being used in the VuePress app
@@ -24,6 +21,7 @@ import Site from './pages/Site.vue'
 export default ({ Vue, options, router, siteData }) => {
   // plugins
   Vue.use(VueMasonry)
+  smoothscroll.polyfill()
 
   // mixins
   Vue.prototype.$fm = $fm
@@ -33,9 +31,5 @@ export default ({ Vue, options, router, siteData }) => {
   require('./components')
 
   // add routes
-  const pages = [
-    page('/tags/:name?', Tags, 'Tags'),
-    page('/all', Site, 'Site Map'),
-  ]
   pages.forEach(page => router.addRoute(page))
 }

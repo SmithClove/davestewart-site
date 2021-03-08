@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "content",
+    "baseUrl": "",
     "paths": {
-      "@/*": ["/*"]
+      "@/*": ["/content/*"]
     }
   }
 }
