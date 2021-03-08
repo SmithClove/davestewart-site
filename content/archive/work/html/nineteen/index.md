@@ -2,14 +2,14 @@
 description: Single-page HTML and JavaScript site for Simon Fuller's 19 Entertainment stable
 date: 2009-02-05
 tags:
-  - front-end
+  - frontend
   - html
-  - featured
+  - ui
   - responsive
   - javascript
   - technical
   - concept
-  - spa
+  - webapp
 media:
   thumbnail: ./images/nineteen-feature.jpg
   gallery:
@@ -31,7 +31,7 @@ media:
 
 Based in Los Angeles, 19 Entertainment is CORE Media Group's creative production, recording, touring, and artist management arm, responsible for the development and production of both American Idol and So You Think You Can Dance.
 
-The client wished for an extrenmely minimal web presence, from the perspective of both design and content, and to apply only the bare minimum of cohesive branding around an already glittering stable of talent.
+The client wished for an extremely minimal web presence, from the perspective of both design and content, and to apply only the bare minimum of cohesive branding around an already glittering stable of talent.
 
 ## Implementation
 

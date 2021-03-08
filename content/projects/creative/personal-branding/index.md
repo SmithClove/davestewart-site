@@ -2,7 +2,8 @@
 description: Various experiements at personal branding
 date: 2020-08-01
 tags:
-  - library
+  - website
+  - creative
 media:
   thumbnail: ./images/personal-branding.png
   gallery:

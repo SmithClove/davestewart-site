@@ -1,8 +1,14 @@
 ---
 description: Peer to peer securities lending platform
-date: 2021-02-01
+date: 2019-02-01
 tags:
-  - library
+  - enterprise
+  - webapp
+  - frontend
+  - api
+  - ui
+  - vue
+  - typescript
 media:
   thumbnail: ./images/asterisk.png
   gallery:

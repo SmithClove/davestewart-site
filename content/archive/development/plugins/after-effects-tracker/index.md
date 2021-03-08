@@ -3,9 +3,10 @@ description: Export 3dsmax objects' tracking data (4-corner pin, 2 point track, 
 date: 2006-10-10
 tags:
   - after-effects
-  - creative
-  - 3d
   - 3dsmax
+  - plugin
+  - 3d
+  - ui
 media:
   thumbnail: ./images/3dsmax-plugins-feature-01.png
   featured: ./images/3dsmax-plugins_afx-tracker.png

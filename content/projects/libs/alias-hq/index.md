@@ -2,10 +2,10 @@
 description: The end-to-end solution for configuring, refactoring, maintaining and using path aliases
 date: 2020-08-01
 tags:
-  - build-tools
   - library
+  - tools
   - node
-  - cli
+  - creative
 media:
   thumbnail: ./images/logo-3d-stripes.png
   featured: ./images/alias-gradient.gif

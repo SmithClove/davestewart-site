@@ -2,10 +2,10 @@
 description: Cross-device HTML5 story-style animation
 date: 2014-08-01
 tags:
-  - featured
+  - frontend
   - javascript
   - animation
-  - html5
+  - html
 media:
   thumbnail: ./images/g4s-feature.png
   gallery:

@@ -2,15 +2,14 @@
 description: Animation and interaction-rich Flash micro-site for one of London's leading destination bars.
 date: 2009-08-05
 tags:
-  - creative
   - flash
-  - front-end
-  - featured
+  - frontend
   - animation
-  - 3d
-  - after-effects
+  - creative
   - technical
-  - actionscript
+  - 3d
+  - as3
+  - after-effects
   - 3dsmax
 media:
   thumbnail: ./images/lost-angel-feature.png
@@ -55,7 +54,6 @@ media:
   bar_table:
     - ./making/bar-table-viewport.jpg
     - ./making/bar-table-wire.jpg
-      
 ---
 
 # Lost Angel: Flash microsite

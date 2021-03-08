@@ -1,12 +1,14 @@
 ---
 description: Kiosk and online system for live event multi-camera photo studio
-date: 2016-07-17
+date: 2015-04-01
 tags:
-  - php
-  - featured
+  - webapp
+  - ui
+  - vue
   - database
-  - vuejs
   - laravel
+  - php
+  - ipad
 media:
   thumbnail: ./images/timeslice-feature-01.png
   gallery:

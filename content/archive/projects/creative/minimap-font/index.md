@@ -2,7 +2,7 @@
 description: An editor font to give you a 10,000ft view of the code
 date: 2016-12-01
 tags:
-  - library
+  - creative
 media:
   thumbnail: ./images/minimap-font.png
   gallery:

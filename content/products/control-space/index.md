@@ -1,10 +1,13 @@
 ---
 description: Browser tab / workflow manager
-date: 2021-03-01
+date: 2021-04-05
 tags:
-  - featured
   - productivity
   - chrome-extension
+  - typescript
+  - vue
+  - api
+  - ui
 hero: featured
 media:
   thumbnail: ./images/cs-splash.png

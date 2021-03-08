@@ -2,13 +2,15 @@
 description: Twitter mash-up, winning 3rd place at the Digital Sizzle Art Hack 2013
 date: 2013-08-12
 tags:
-  - api
+  - webapp
+  - frontend
   - html
   - javascript
   - data
+  - api
   - technical
   - mashup
-  - hackathon
+  - rapid-build
   - award
 media:
   gallery:

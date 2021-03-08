@@ -2,7 +2,14 @@
 description: Browser-based development playground for your existing Laravel site
 date: 2017-04-01
 tags:
-  - library
+  - frontend
+  - backend
+  - framework
+  - tools
+  - ui
+  - php
+  - laravel
+  - plugin
 media:
   thumbnail: ./images/laravel-sketchpad.png
   gallery:

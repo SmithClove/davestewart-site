@@ -2,11 +2,10 @@
 description: Front end development for Budweiser's Rise as One World Cup campaign
 date: 2014-06-12
 tags:
+  - webapp
   - html
-  - featured
   - responsive
   - javascript
-  - spa
 media:
   thumbnail: ./images/budweiser-feature.png
   gallery:

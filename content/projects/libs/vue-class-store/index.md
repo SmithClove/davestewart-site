@@ -5,15 +5,14 @@ hero: featured
 tags:
   - library
   - javascript
-  - vue-js
-  - state-management
+  - typescript
+  - vue
+  - state
+  - creative
 media:
-  thumbnail: ./images/vue-class-store.png
-  featured: ./images/logo-large.png
-  gallery:
-    - ./images/vue-class-store-01.jpg
-    - ./images/vue-class-store-02.jpg
-    - ./images/vue-class-store-03.jpg
+  thumbnail: ./images/vue-class-store.svg
+  featured: ./images/vue-class-store.svg
+  video: https://www.youtube.com/embed/uBrh_2BIIAM&t=2425s
 ---
 
 # Vue Class Store
@@ -26,9 +25,13 @@ Like [Vuex Pathify](../vuex-pathify) before it, it's an attempt to simplify Vue
 
 ## Implementation
 
-Lorem Ipsum
+## Video
+
+In October 2020 I did a short presentation for World Vue:
+
+<MediaVideo media="video" />
 
 ## Links
 
 - [GitHub](https://github.com/davestewart/vue-class-store)
-
+- [YouTube](https://www.youtube.com/watch?v=uBrh_2BIIAM&t=2425s)

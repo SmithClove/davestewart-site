@@ -1,12 +1,13 @@
 ---
 description: Outlook add-on to bulk-manage adding and removing parameters to Outlook Rules sets
-author: Dave Stewart
 date: 2010-10-21
+tags:
+  - ui
+  - plugin
+  - vba
 images:
   thumbnail: ./images/outlook-rules-manager.png
   featured: ./images/outlook-rules-manager-post.png
-tags:
-  - vba
 media:
   thumbnail: ./images/outlook-rules-manager.png
   gallery:

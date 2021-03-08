@@ -2,15 +2,13 @@
 description: Multilingual Flash micro-site for Sony PSP translation game / software
 date: 2006-02-05
 tags:
-  - back-end
   - flash
-  - featured
   - game
   - data
-  - animation
   - 3d
+  - animation
   - technical
-  - actionscript
+  - as3
   - video
 media:
   thumbnail: ./images/sony-talkman-10-featured.png

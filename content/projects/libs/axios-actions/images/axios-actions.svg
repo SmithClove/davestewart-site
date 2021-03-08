@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>axios-actions</title>
+    <g id="axios-actions" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(70.000000, 155.000000)">
+            <text id="axios" font-family="Baloo-Regular, Baloo" font-size="146" font-weight="600" fill="#85BF43">
+                <tspan x="10.829" y="115">axios</tspan>
+            </text>
+            <text id="actions" font-family="Baloo-Regular, Baloo" font-size="310" font-weight="600" letter-spacing="7.75">
+                <tspan x="38.595" y="306" fill="#2C3E50">acti</tspan>
+                <tspan x="601.245" y="306" fill="#FFFFFF">o</tspan>
+                <tspan x="790.655" y="306" fill="#2C3E50">ns</tspan>
+            </text>
+            <g id="button-flat" transform="translate(598.000000, 134.000000)">
+                <path d="M188,98 C188,152.12388 145.914742,196 94,196 C42.0852578,196 0,152.12388 0,98 C0,43.8761198 42.0852578,0 94,0 C145.914742,0 188,43.8761198 188,98 Z" id="circle-outer" fill-opacity="0.15" fill="#0A8A44"></path>
+                <path d="M170.033402,97.454433 C170.033402,141.534707 135.75778,177.268866 93.476701,177.268866 C51.195622,177.268866 16.92,141.534707 16.92,97.454433 C16.92,53.3741591 51.195622,17.64 93.476701,17.64 C135.75778,17.64 170.033402,53.3741591 170.033402,97.454433 Z" id="circle-inner" fill="#85BF43"></path>
+                <path d="M68.6584406,48.3851282 C64.5879548,50.4225766 62.04,54.4484553 62.04,58.8387729 C62.04,80.884135 62.04,114.263337 62.04,136.270337 C62.04,140.652129 64.579038,144.673746 68.6361488,146.715457 C72.6910305,148.752905 77.5974595,148.477977 81.3736934,145.995103 C98.8348742,134.516341 124.158379,117.871496 140.030153,107.441294 C143.371697,105.244004 145.371273,101.616664 145.380206,97.7421024 C145.386877,93.863278 143.402905,90.2295442 140.070278,88.0215981 C124.214109,77.5104104 98.8883745,60.7249046 81.4138187,49.1417121 C77.639814,46.6417885 72.7244682,46.3498111 68.6584406,48.3851282 Z" id="triangle-inner" fill="#FFFFFE"></path>
+            </g>
+        </g>
+    </g>
+</svg>

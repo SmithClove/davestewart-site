@@ -3,8 +3,7 @@ description: London Tube map inspired exploration of all my open source and pers
 date: 2013-09-24
 tags:
   - creative
-  - featured
-  - mapping
+  - maps
 media:
   thumbnail: ./images/dave-stewart-open-source-projects-2013-tn.png
   featured: ./images/dave-stewart-open-source-projects-2013-featured.png

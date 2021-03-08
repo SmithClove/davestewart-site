@@ -2,13 +2,13 @@
 description: Various plugins for 3dsmax
 date: 2001-08-12
 tags:
-  - php
+  - 3dsmax
   - plugin
-  - software
-  - technical
-  - back-end
+  - framework
+  - ui
 media:
-  thumbnail: ./images/double-o_featured.png
+  thumbnail: ./images/3dsmax.png
+  featured: ./images/3dsmax.png
 ---
 
 # 3dsmax plugins

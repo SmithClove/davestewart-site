@@ -3,15 +3,15 @@ description: Bill management application for flat sharers
 date: 2012-02-05
 order: 1
 tags:
-  - back-end
+  - frontend
+  - backend
   - creative
-  - front-end
   - html
   - php
-  - featured
   - technical
   - social
   - concept
+  - ui
 media:
   thumbnail: ./images/bill-bunny.png
   video:

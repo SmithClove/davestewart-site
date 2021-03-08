@@ -3,12 +3,11 @@ description: Flash racing game for official film site
 date: 2006-05-08
 tags:
   - flash
-  - front-end
-  - featured
+  - frontend
   - game
   - physics
   - technical
-  - actionscript
+  - as3
 media:
   gallery:
     - ./images/tokyo-drift-level-2a.png

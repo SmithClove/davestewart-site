@@ -2,7 +2,13 @@
 description: In-house work on banking systems and internal tooling
 date: 2018-03-01
 tags:
-  - library
+  - enterprise
+  - webapp
+  - frontend
+  - api
+  - ui
+  - vue
+  - typescript
 media:
   thumbnail: ./images/clearbank.png
   gallery:
@@ -23,5 +29,5 @@ Lorem Ipsum
 
 ## Links
 
-- [www.clear.bank/](https://www.clear.bank/)
+- [Clear Bank](https://www.clear.bank)
 

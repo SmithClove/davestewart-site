@@ -3,12 +3,11 @@ description: Bundle endpoints as callable, reusable services
 date: 2018-07-01
 tags:
   - library
+  - javascript
+  - state
 media:
-  thumbnail: ./images/axios-actions.png
-  gallery:
-    - ./images/axios-actions-01.jpg
-    - ./images/axios-actions-02.jpg
-    - ./images/axios-actions-03.jpg
+  thumbnail: ./images/axios-actions.svg
+  featured: ./images/axios-actions.svg
 ---
 
 # Axios Actions

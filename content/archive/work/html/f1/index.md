@@ -2,17 +2,16 @@
 description: HTML/CSS/JS development for data-driven end-of-year report for Formula One
 date: 2013-01-05
 tags:
-  - api
-  - front-end
+  - concept
+  - website
+  - frontend
   - html
-  - featured
   - javascript
+  - api
   - data
   - technical
   - ipad
   - svg
-  - concept
-  - spa
 media:
   thumbnail: ./images/f1-feature-02.jpg
   gallery:

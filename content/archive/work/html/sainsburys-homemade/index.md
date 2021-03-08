@@ -1,12 +1,13 @@
 ---
-description: Coming in as a front end developer, I developed new features including a major overhaul of the search / find / filter / render lifecycle for this major food portal.
+description: Overhaul of the user searching and filtering for major food portal
 date: 2015-02-28
 tags:
-  - front-end
+  - website
+  - frontend
+  - ui
   - html
   - responsive
   - javascript
-  - html5
 media:
   featured: ./images/homemade-02.jpg
   gallery:

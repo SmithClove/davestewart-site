@@ -2,14 +2,12 @@
 description: MVC theme framework for Wordpress
 date: 2013-08-12
 tags:
-  - php
+  - backend
   - framework
-  - wordpress
-  - api
   - plugin
-  - software
+  - php
+  - api
   - technical
-  - back-end
 media:
   thumbnail: ./images/double-o_featured.png
   gallery:

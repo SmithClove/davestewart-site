@@ -1,23 +1,22 @@
 ---
 description: An open source JSFL framework for creating tools for the Adobe Flash authoring environment
+date: 2011-01-01
 images:
   thumbnail: ./images/xjsfl-logo.png
 tags:
+  - frontend
+  - framework
+  - plugin
   - javascript
-  - html
   - flash
-  - featured
-  - wordpress
   - api
+  - data
+  - jsfl
   - concept
   - creative
-  - data
-  - front-end
-  - jsfl
   - parsing
-  - plugin
-  - software
   - technical
+  - ui
 media:
   gallery:
     - ./images/xjsfl-screen-01.jpg

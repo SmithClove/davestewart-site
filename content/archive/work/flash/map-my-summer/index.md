@@ -2,18 +2,18 @@
 description: Flash micro-site for Google & YouTube, utilising mapping and video APIs
 date: 2011-02-05
 tags:
-  - api
   - flash
-  - front-end
-  - featured
+  - frontend
   - data
+  - api
+  - ui
+  - as3
   - animation
   - technical
   - mashup
   - award
-  - actionscript
   - social
-  - mapping
+  - maps
 hero: gallery
 media:
   thumbnail: ./images/map-my-summer-fwa.jpg

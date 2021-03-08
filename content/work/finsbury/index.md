@@ -2,7 +2,14 @@
 description: In-house press release application
 date: 2020-10-01
 tags:
-  - library
+  - webapp
+  - frontend
+  - backend
+  - nuxt
+  - vue
+  - node
+  - api
+  - ui
 media:
   thumbnail: ./images/finsbury.png
   gallery:

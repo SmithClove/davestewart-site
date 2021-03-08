@@ -1,7 +1,9 @@
 ---
 title: Creative
-description: Creative projects, mainly around personal branding
+description: Creative projects, design, animation
 layout: Folder
-order: 3
+options:
+  format: thumbnail
+order: 4
 ---
 

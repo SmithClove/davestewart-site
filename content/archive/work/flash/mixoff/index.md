@@ -2,11 +2,11 @@
 description: Ground-breaking video application that allows everyday users to sing along to and star in their own pop music videos
 date: 2014-10-21
 tags:
-  - api
   - flash
-  - front-end
-  - featured
-  - actionscript
+  - frontend
+  - as3
+  - ui
+  - api
   - video
   - ugc
 media:

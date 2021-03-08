@@ -2,7 +2,6 @@
 description: Visual exploration of the structure and ideas of Mozart and Beethoven's music
 date: 2005-06-08
 tags:
-  - featured
   - javascript
   - data
   - after-effects

@@ -3,8 +3,7 @@ description: Flash micro-site for HRH Prince Charles
 date: 2009-03-05
 tags:
   - flash
-  - front-end
-  - featured
+  - frontend
   - technical
   - social
   - video

@@ -3,7 +3,6 @@ description: 2D and 3D animation mixed to create a spooky Halloween ident
 date: 2007-09-08
 tags:
   - creative
-  - featured
   - data
   - animation
   - 3d

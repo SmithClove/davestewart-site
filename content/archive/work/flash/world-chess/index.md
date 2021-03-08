@@ -2,13 +2,12 @@
 description: Interactive prototype for broadcast chess
 date: 2012-08-05
 tags:
-  - api
   - flash
-  - front-end
-  - featured
+  - frontend
   - data
+  - api
+  - as3
   - technical
-  - actionscript
   - concept
 media:
   thumbnail: ./images/world-chess-logo.png

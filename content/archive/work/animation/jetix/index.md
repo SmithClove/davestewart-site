@@ -3,7 +3,6 @@ description: Highly-scripted 3D animation sequence
 date: 2006-10-08
 tags:
   - creative
-  - featured
   - animation
   - 3d
   - after-effects

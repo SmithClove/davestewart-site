@@ -2,13 +2,11 @@
 description: Holding page for my product development moniker
 date: 2021-01-01
 tags:
-  - library
+  - website
+  - creative
 media:
-  thumbnail: ./images/likely-logic.png
-  gallery:
-    - ./images/likely-logic-01.jpg
-    - ./images/likely-logic-02.jpg
-    - ./images/likely-logic-03.jpg
+  thumbnail: ./images/likely-logic.svg
+  featured: ./images/likely-logic.svg
 ---
 
 # Likely Logic

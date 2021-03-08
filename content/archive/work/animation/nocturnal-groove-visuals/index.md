@@ -3,7 +3,6 @@ description: Club and festival visuals for chart-toppers Shapeshifter
 date: 2005-05-08
 tags:
   - creative
-  - featured
   - animation
   - after-effects
   - concept

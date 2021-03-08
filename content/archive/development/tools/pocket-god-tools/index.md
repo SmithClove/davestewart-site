@@ -2,9 +2,10 @@
 description: Extensive level editing tools for iOS, written in ActionScript and JSFL and running in the Flash IDE
 date: 2012-07-09
 tags:
+  - frontend
   - javascript
   - flash
-  - actionscript
+  - as3
   - jsfl
   - ui
 ---

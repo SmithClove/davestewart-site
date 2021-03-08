@@ -3,11 +3,15 @@ title: Got Paper?
 description: A cheeky app to calculate your actual toilet paper needs
 date: 2020-02-01
 tags:
-  - web-app
+  - webapp
   - mobile
-  - rapid-prototype
   - javascript
   - nuxt
+  - vue
+  - jamstack
+  - rapid-build
+  - creative
+  - ui
 media:
   thumbnail: ./images/ph-splash.png
   gallery:
@@ -116,7 +120,7 @@ Got Paper is available on Product Hunt:
 
 ## Links
 
-- [Got Paper](https://got-paper.app)
+- [Got Paper](https://got-paper.com)
 - [Git Hub](https://github.com/davestewart/got-paper)
 - [Product Hunt](https://www.producthunt.com/posts/got-paper)
 - [Indie Hackers](https://www.indiehackers.com/product/got-paper)

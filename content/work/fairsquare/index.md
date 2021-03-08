@@ -2,7 +2,14 @@
 description: Customer facing site for car finance and sales 
 date: 2017-05-01
 tags:
-  - library
+  - enterprise
+  - webapp
+  - frontend
+  - backend
+  - vue
+  - api
+  - ui
+  - laravel
 media:
   thumbnail: ./images/fairsquare.png
   gallery:

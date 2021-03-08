@@ -3,11 +3,10 @@ description: Experiment in time and visual numerical/temporal-patterns
 date: 2011-11-11
 tags:
   - creative
+  - frontend
   - flash
-  - front-end
-  - featured
   - technical
-  - actionscript
+  - as3
   - concept
 media:
   thumbnail: ./images/clock-featured.png

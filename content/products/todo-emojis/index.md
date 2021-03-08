@@ -2,9 +2,9 @@
 description: Track todos in Slack using custom checkbox emojis
 date: 2020-09-25
 tags:
-  - productivity
   - creative
-  - rapid-prototype
+  - productivity
+  - rapid-build
 media:
   thumbnail: ./images/ph-icon.png
   gallery:
@@ -19,15 +19,30 @@ media:
 
 ## Overview
 
-I created ToDo emojis for use in the [Weekend Club](https://twitter.com/weekendclubldn) [Slack](https://slack.com) channel; an [Indie Hackers](https://indiehackers.com) in-person and virtual network based in London.
+ToDo Emojis are real emojis you can use to create simple text-based to-do lists, **without plugins**:
 
-You can use them in applications to create simple text-based to-do lists, **without plugins**:
+![emojis](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/emojis.png)
 
-### Make a channel
+I created them for use in the [Weekend Club](https://twitter.com/weekendclubldn) [Slack](https://slack.com) channel; an [Indie Hackers](https://indiehackers.com) network based in London:
 
-Because you and your team will only be creating and updating a single message per day (or week) you may find it useful to create a dedicated channel, such as `#todos`, `#tasks`, `#today` or maybe `#shipped`.
+![example](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/example.png)
 
-Having a dedicated area for todo's means tasks won't get lost in a sea of other messages, and also provides a nice log of what got done and when.
+
+### Using the emojis
+
+You can use the `todo_doing` emoji to indicate you've started a task:
+
+![todo](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/edit-doing.png)
+
+When you've completed your task, edit the message and change the emoji to `todo_done`:
+
+![todo](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/edit-done.png)
+
+If you want to let folks know you can't complete a task, use the `todo_pause` or `todo_cancel` emoji:
+
+![todo](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/edit-cancel.png)
+
+It's the simplest way to share updates in Slack!
 
 ## Are you using Todo Emojis?
 

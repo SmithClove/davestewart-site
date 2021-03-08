@@ -4,9 +4,8 @@ date: 2013-08-12
 tags:
   - php
   - plugin
-  - software
   - technical
-  - back-end
+  - backend
 media:
   thumbnail: ./images/double-o_featured.png
 ---

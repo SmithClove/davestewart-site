@@ -4,10 +4,8 @@ date: 2007-12-01
 tags:
   - creative
   - flash
-  - featured
   - 3d
   - after-effects
-  - actionscript
   - 3dsmax
   - concept
 media:

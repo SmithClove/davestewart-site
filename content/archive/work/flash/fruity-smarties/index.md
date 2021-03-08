@@ -3,10 +3,9 @@ description: 3D tile / maze game for Nestle
 date: 2004-06-08
 tags:
   - flash
-  - featured
   - game
   - physics
-  - actionscript
+  - as3
 media:
   thumbnail: ./images/fruity-smarties-01.png
   gallery:

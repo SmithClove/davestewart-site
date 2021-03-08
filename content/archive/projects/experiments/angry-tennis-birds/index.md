@@ -2,11 +2,10 @@
 description: Online application allowing you to play along on the BBC website with grunting tennis players to the sounds of Angry Birds
 date: 2011-06-05
 tags:
-  - api
   - creative
-  - featured
   - javascript
   - game
+  - api
   - technical
   - mashup
   - concept

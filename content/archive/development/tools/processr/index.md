@@ -2,13 +2,13 @@
 description: Text & data manipulation, generation and editing for programmers & visualisers
 date: 2013-04-05
 tags:
+  - frontend
   - javascript
-  - html
-  - featured
-  - front-end
+  - ui
+  - framework
   - parsing
   - technical
-  - back-end
+  - backend
 media:
   thumbnail: ./images/processr-feature-blue-code.png
   gallery:

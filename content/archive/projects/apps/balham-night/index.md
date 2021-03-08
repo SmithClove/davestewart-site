@@ -3,20 +3,19 @@ description: Social networking & mapping experiment
 date: 2007-04-05
 order: 2
 tags:
-  - api
-  - back-end
+  - frontend
+  - backend
   - creative
-  - front-end
   - html
   - php
-  - featured
   - javascript
   - data
+  - api
   - technical
   - mashup
   - social
   - concept
-  - mapping
+  - maps
 media:
   thumbnail: ./images/balham-night.png
   gallery:

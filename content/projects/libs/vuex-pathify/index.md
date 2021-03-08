@@ -5,11 +5,12 @@ hero: featured
 tags:
   - library
   - javascript
-  - vue-js
-  - state-management
+  - vue
+  - state
+  - creative
 media:
-  featured: ./images/vuex-pathify.png
-  thumbnail: ./images/vuex-pathify.png
+  thumbnail: ./images/vuex-pathify.svg
+  featured: ./images/vuex-pathify.svg
   gallery:
     - ./images/vuex-pathify-01.jpg
     - ./images/vuex-pathify-02.jpg

@@ -2,9 +2,8 @@
 description: Creative and technical development for 12-14 year old e-learning project
 date: 2012-09-05
 tags:
-  - front-end
+  - frontend
   - html
-  - featured
   - javascript
   - game
   - technical

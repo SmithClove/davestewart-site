@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard Copy</title>
+    <g id="Artboard-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(318.000000, 38.000000)">
+            <g id="Outline" opacity="0.13" transform="translate(51.800000, 42.000000)" fill="#000000" stroke="#000000" stroke-width="58.8">
+                <g id="Group" transform="translate(-61.600000, 225.400000)">
+                    <g id="pins" transform="translate(125.300000, 63.700000) rotate(-90.000000) translate(-125.300000, -63.700000) ">
+                        <line x1="124.343511" y1="27.7789474" x2="124.343511" y2="141.849045" id="line"></line>
+                        <ellipse id="node" cx="123.865267" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" points="248.687023 27.7789474 248.687023 76.7625411 210.427481 141.849045"></polyline>
+                        <ellipse id="node" cx="248.208779" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" transform="translate(20.086260, 84.813996) scale(-1, 1) translate(-20.086260, -84.813996) " points="39.2160305 27.7789474 39.2160305 76.7625411 0.95648855 141.849045"></polyline>
+                        <ellipse id="node" transform="translate(1.434733, 21.552632) scale(-1, 1) translate(-1.434733, -21.552632) " cx="1.43473282" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(148.400000, 434.000000)">
+                    <g id="pins" transform="translate(125.300000, 63.700000) rotate(-180.000000) translate(-125.300000, -63.700000) ">
+                        <line x1="124.343511" y1="27.7789474" x2="124.343511" y2="141.849045" id="line"></line>
+                        <ellipse id="node" cx="123.865267" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" points="248.687023 27.7789474 248.687023 76.7625411 210.427481 141.849045"></polyline>
+                        <ellipse id="node" cx="248.208779" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" transform="translate(20.086260, 84.813996) scale(-1, 1) translate(-20.086260, -84.813996) " points="39.2160305 27.7789474 39.2160305 76.7625411 0.95648855 141.849045"></polyline>
+                        <ellipse id="node" transform="translate(1.434733, 21.552632) scale(-1, 1) translate(-1.434733, -21.552632) " cx="1.43473282" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(351.400000, 225.400000)">
+                    <g id="pins" transform="translate(125.300000, 63.700000) rotate(-270.000000) translate(-125.300000, -63.700000) ">
+                        <line x1="124.343511" y1="27.7789474" x2="124.343511" y2="141.849045" id="line"></line>
+                        <ellipse id="node" cx="123.865267" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" points="248.687023 27.7789474 248.687023 76.7625411 210.427481 141.849045"></polyline>
+                        <ellipse id="node" cx="248.208779" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" transform="translate(20.086260, 84.813996) scale(-1, 1) translate(-20.086260, -84.813996) " points="39.2160305 27.7789474 39.2160305 76.7625411 0.95648855 141.849045"></polyline>
+                        <ellipse id="node" transform="translate(1.434733, 21.552632) scale(-1, 1) translate(-1.434733, -21.552632) " cx="1.43473282" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(148.400000, 0.000000)">
+                    <g id="pins" transform="translate(125.300000, 63.700000) rotate(-360.000000) translate(-125.300000, -63.700000) ">
+                        <line x1="124.343511" y1="27.7789474" x2="124.343511" y2="141.849045" id="line"></line>
+                        <ellipse id="node" cx="123.865267" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" points="248.687023 27.7789474 248.687023 76.7625411 210.427481 141.849045"></polyline>
+                        <ellipse id="node" cx="248.208779" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" transform="translate(20.086260, 84.813996) scale(-1, 1) translate(-20.086260, -84.813996) " points="39.2160305 27.7789474 39.2160305 76.7625411 0.95648855 141.849045"></polyline>
+                        <ellipse id="node" transform="translate(1.434733, 21.552632) scale(-1, 1) translate(-1.434733, -21.552632) " cx="1.43473282" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                    </g>
+                </g>
+                <path d="M131.6,406 C131.6,429.1966 193.34,448 269.5,448 C345.66,448 407.4,429.1966 407.4,409.7128 C407.4,244.2748 407.4,154.5558 407.4,154.5558 C407.4,131.4306 345.66,112 269.5,112 C193.34,112 131.6,131.4306 131.6,155.4 L131.6,406 Z" id="drum"></path>
+            </g>
+            <g transform="translate(51.800000, 42.000000)" id="Group" stroke="#2C3E50">
+                <g transform="translate(-61.600000, 225.400000)" stroke-width="22.4">
+                    <g id="pins" transform="translate(125.300000, 63.700000) rotate(-90.000000) translate(-125.300000, -63.700000) ">
+                        <line x1="124.343511" y1="27.7789474" x2="124.343511" y2="141.849045" id="line" fill="#EB2972"></line>
+                        <ellipse id="node" fill="#EB2972" cx="123.865267" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" points="248.687023 27.7789474 248.687023 76.7625411 210.427481 141.849045"></polyline>
+                        <ellipse id="node" fill="#EB2972" cx="248.208779" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" transform="translate(20.086260, 84.813996) scale(-1, 1) translate(-20.086260, -84.813996) " points="39.2160305 27.7789474 39.2160305 76.7625411 0.95648855 141.849045"></polyline>
+                        <ellipse id="node" fill="#EB2972" transform="translate(1.434733, 21.552632) scale(-1, 1) translate(-1.434733, -21.552632) " cx="1.43473282" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                    </g>
+                </g>
+                <g transform="translate(148.400000, 434.000000)" stroke-width="22.4">
+                    <g id="pins" transform="translate(125.300000, 63.700000) rotate(-180.000000) translate(-125.300000, -63.700000) ">
+                        <line x1="124.343511" y1="27.7789474" x2="124.343511" y2="141.849045" id="line" fill="#EB2972"></line>
+                        <ellipse id="node" fill="#EB2972" cx="123.865267" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" points="248.687023 27.7789474 248.687023 76.7625411 210.427481 141.849045"></polyline>
+                        <ellipse id="node" fill="#EB2972" cx="248.208779" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" transform="translate(20.086260, 84.813996) scale(-1, 1) translate(-20.086260, -84.813996) " points="39.2160305 27.7789474 39.2160305 76.7625411 0.95648855 141.849045"></polyline>
+                        <ellipse id="node" fill="#EB2972" transform="translate(1.434733, 21.552632) scale(-1, 1) translate(-1.434733, -21.552632) " cx="1.43473282" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                    </g>
+                </g>
+                <g transform="translate(351.400000, 225.400000)" stroke-width="22.4">
+                    <g id="pins" transform="translate(125.300000, 63.700000) rotate(-270.000000) translate(-125.300000, -63.700000) ">
+                        <line x1="124.343511" y1="27.7789474" x2="124.343511" y2="141.849045" id="line" fill="#EB2972"></line>
+                        <ellipse id="node" fill="#EB2972" cx="123.865267" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" points="248.687023 27.7789474 248.687023 76.7625411 210.427481 141.849045"></polyline>
+                        <ellipse id="node" fill="#EB2972" cx="248.208779" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" transform="translate(20.086260, 84.813996) scale(-1, 1) translate(-20.086260, -84.813996) " points="39.2160305 27.7789474 39.2160305 76.7625411 0.95648855 141.849045"></polyline>
+                        <ellipse id="node" fill="#EB2972" transform="translate(1.434733, 21.552632) scale(-1, 1) translate(-1.434733, -21.552632) " cx="1.43473282" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                    </g>
+                </g>
+                <g transform="translate(148.400000, 0.000000)" stroke-width="22.4">
+                    <g id="pins" transform="translate(125.300000, 63.700000) rotate(-360.000000) translate(-125.300000, -63.700000) ">
+                        <line x1="124.343511" y1="27.7789474" x2="124.343511" y2="141.849045" id="line" fill="#EB2972"></line>
+                        <ellipse id="node" fill="#EB2972" cx="123.865267" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" points="248.687023 27.7789474 248.687023 76.7625411 210.427481 141.849045"></polyline>
+                        <ellipse id="node" fill="#EB2972" cx="248.208779" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                        <polyline id="line" transform="translate(20.086260, 84.813996) scale(-1, 1) translate(-20.086260, -84.813996) " points="39.2160305 27.7789474 39.2160305 76.7625411 0.95648855 141.849045"></polyline>
+                        <ellipse id="node" fill="#EB2972" transform="translate(1.434733, 21.552632) scale(-1, 1) translate(-1.434733, -21.552632) " cx="1.43473282" cy="21.5526316" rx="27.2599237" ry="27.3"></ellipse>
+                    </g>
+                </g>
+                <g transform="translate(131.600000, 113.400000)" stroke-width="28">
+                    <g id="database">
+                        <path d="M-2.48689958e-15,294 C-2.48689958e-15,317.195959 61.739933,336 137.9,336 C214.060067,336 275.8,317.195959 275.8,297.713011 C275.8,132.275051 275.8,42.5560716 275.8,42.5560716 C275.8,19.4308419 214.060067,0 137.9,0 C61.739933,0 -2.48689958e-15,19.4308419 -2.48689958e-15,43.4 L-2.48689958e-15,294 Z" id="drum" fill="#05AFAF"></path>
+                        <path d="M0,211.4 C0,234.595959 61.739933,253.4 137.9,253.4 C214.060067,253.4 275.8,234.595959 275.8,211.4" id="curve" stroke-linecap="round" stroke-linejoin="bevel"></path>
+                        <path d="M0,127.4 C0,150.595959 61.739933,169.4 137.9,169.4 C214.060067,169.4 275.8,150.595959 275.8,127.4" id="curve" stroke-linecap="round" stroke-linejoin="bevel"></path>
+                        <path d="M0,43.4 C0,66.5959595 61.739933,85.4 137.9,85.4 C214.060067,85.4 275.8,66.5959595 275.8,43.4" id="curve" stroke-linecap="round" stroke-linejoin="bevel"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,10 +2,11 @@
 description: Recover your lost Great Suspender Tabs!
 date: 2021-02-01
 tags:
-  - featured
   - javascript
   - chrome-extension
-  - rapid-prototype
+  - rapid-build
+  - vue
+  - ui
 media:
   thumbnail: ./images/small-promo.png
   gallery:
