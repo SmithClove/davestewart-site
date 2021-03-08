@@ -29,5 +29,5 @@ Lorem Ipsum
 
 ## Links
 
-- [Clear Bank](https://www.clear.bank)
+- [Clear Bank](https://clear.bank)
 

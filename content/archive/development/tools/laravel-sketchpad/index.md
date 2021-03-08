@@ -32,5 +32,5 @@ Lorem Ipsum
 
 - [sketchpad.davestewart.io/sketchpad](http://sketchpad.davestewart.io/sketchpad)
 - [GitHub](https://github.com/davestewart/laravel-sketchpad)
-- [YouTube](https://www.youtube.com/watch?v=dQ-OL8d5uak)
+- [YouTube](https://youtube.com/watch?v=dQ-OL8d5uak)
 

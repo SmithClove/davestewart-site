@@ -30,6 +30,6 @@ Lorem Ipsum
 
 ## Links
 
-- [www.sentiance.com/demo](https://www.sentiance.com/demo)
-- [www.sentiance.com](https://www.sentiance.com)
+- [sentiance.com/demo](https://sentiance.com/demo)
+- [sentiance.com](https://sentiance.com)
 

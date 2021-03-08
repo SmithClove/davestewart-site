@@ -116,7 +116,7 @@ If you know any of the "unknown" characters above, or can provide more detail on
 ## Links
 
 - [Timeslice Films](http://timeslicefilms.com/)
-- [Syfy Fan Cam](http://www.syfy.co.uk/welcome-fancam)
+- [Syfy Fan Cam](http://syfy.co.uk/welcome-fancam)
 - [Nikon / I am Your Story](https://iamyourstory.fr/experience-360)
 
  

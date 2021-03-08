@@ -19,6 +19,6 @@ So it's time to turn to PhotoShop to see how The Shard could have looked if they
 
 Personally, I think The Shard with a point on top looks absolutely bad-ass.
 
-But strangely, comparing the "finished-looking" shard to the "finished" version, makes me appreciate the shard-i-ness of the original a little more. Especially when it's [lit up at night](http://schietree.wordpress.com/tag/ancient-greece/#attachment_2335).
+But strangely, comparing the "finished-looking" shard to the "finished" version, makes me appreciate the shard-i-ness of the original a little more. Especially when it's [lit up at night](https://schietree.wordpress.com/tag/ancient-greece/#attachment_2335).
 
 Hi-res image [here](http://davestewart.co.uk/wp-content/uploads/blog/personal/the-shard-finished/shard-finished.jpg#). Idea inpsired by a [Joel Brittain](https://soundcloud.com/joelbrittain) Facebook post, with image courtesy of [Wikipedia](http://commons.wikimedia.org/wiki/File:Shard_London_Bridge_May_2012.JPG#).

@@ -12,7 +12,7 @@ tags:
 media:
   thumbnail: ./images/vue-class-store.svg
   featured: ./images/vue-class-store.svg
-  video: https://www.youtube.com/embed/uBrh_2BIIAM&t=2425s
+  video: https://youtube.com/embed/uBrh_2BIIAM&t=2425s
 ---
 
 # Vue Class Store
@@ -34,4 +34,4 @@ In October 2020 I did a short presentation for World Vue:
 ## Links
 
 - [GitHub](https://github.com/davestewart/vue-class-store)
-- [YouTube](https://www.youtube.com/watch?v=uBrh_2BIIAM&t=2425s)
+- [YouTube](https://youtube.com/watch?v=uBrh_2BIIAM&t=2425s)

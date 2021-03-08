@@ -27,7 +27,7 @@ media:
     - ./images/map-my-summer-screen-videos.jpg
     - ./images/map-my-summer-screen-video.jpg
   video:
-    src: http://www.youtube.com/embed/dp0Lj-7fBpQ?rel=0
+    src: http://youtube.com/embed/dp0Lj-7fBpQ?rel=0
     width: 1280
     height: 720
 ---
@@ -64,24 +64,24 @@ The job itself was fantastic fun for a developer to work on, and although the de
 ## Videos
 
 <MediaVideo
-  src="http://www.youtube.com/embed/dp0Lj-7fBpQ?rel=0"
+  src="http://youtube.com/embed/dp0Lj-7fBpQ?rel=0"
   height="326"
   width="580"
 />
 
 <MediaVideo
-  src="http://www.youtube.com/embed/lLU7g92DF7I?rel=0"
+  src="http://youtube.com/embed/lLU7g92DF7I?rel=0"
   height="326"
   width="580"
 />
 
 ## Awards
 
-- FWA: [Site of the Day 21st April 2011](http://www.thefwa.com/site/youtube-map-my-summer)
+- FWA: [Site of the Day 21st April 2011](http://thefwa.com/site/youtube-map-my-summer)
 - One Show: Interactive Merit
 - The Work: 2011 Annual
 
 ## Links
 
-- [The Monkeys](http://www.themonkeys.com.au/#!/work/work-google-map-my-summer/)
-- [Chris Halaska](http://www.behance.net/gallery/Map-My-Summer/6126631)
+- [The Monkeys](http://themonkeys.com.au/#!/work/work-google-map-my-summer/)
+- [Chris Halaska](http://behance.net/gallery/Map-My-Summer/6126631)

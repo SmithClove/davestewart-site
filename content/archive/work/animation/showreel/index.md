@@ -10,7 +10,7 @@ tags:
   - concept
 media:
   video:
-    src: http://player.vimeo.com/video/68948501
+    src: https://player.vimeo.com/video/68948501
     width: 580
     height: 372
   downloads:

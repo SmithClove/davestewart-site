@@ -37,20 +37,20 @@ media:
 TalkTalk’s Mix Off is a ground-breaking new app in association with X Factor, that lets anyone create amazing music videos, with the best ones shown on TV:
 
 <MediaVideo
-  src="https://www.youtube.com/embed/eydJ_ZYGLvY?list=PLMxe_u2iNeIkwp945hbOYrivGJYxUiu0j"
+  src="https://youtube.com/embed/eydJ_ZYGLvY?list=PLMxe_u2iNeIkwp945hbOYrivGJYxUiu0j"
   width="560"
   height="315"
 />
 
 The user picks from a selection of chart-topping audio tracks and professionally-created video styles, and can even customize the appearance of the video with additional options. After recording themselves via their web cam or phone, they can sing, dance and get creative, then preview their work, and even add friends to the same mix.
 
-Once complete, their recordings can be shared on social media via a special [Mix-Off URL](http://www.mixoff.tv/pMmT2QW) and are shown on the [Mix Off  gallery page](http://www.mixoff.tv/?page=gallery).
+Once complete, their recordings can be shared on social media via a special [Mix-Off URL](https://mixoff.tv/pMmT2QW) and are shown on the [Mix Off  gallery page](https://mixoff.tv/?page=gallery).
 
 ## Implementation
 
-Working in-house at [MPC ](http://www.moving-picture.com/), I was tasked with building the desktop app (the Android and iOS apps having already been built) in Flash, being the only logical choice as it required use of a webcam and needed to work on an average home computer.
+Working in-house at [MPC ](https://moving-picture.com/), I was tasked with building the desktop app (the Android and iOS apps having already been built) in Flash, being the only logical choice as it required use of a webcam and needed to work on an average home computer.
 
-We used the [Wowza](http://www.wowza.com/) streaming video service to record the videos. These were then processed by a custom back end, logged in the CMS, then sent to a dedicated render farm to be composited into the final videos the user sees.
+We used the [Wowza](https://wowza.com/) streaming video service to record the videos. These were then processed by a custom back end, logged in the CMS, then sent to a dedicated render farm to be composited into the final videos the user sees.
 
 Being an ambitious turnaround of 4 weeks, the time was broken down as follows:
 
@@ -83,26 +83,26 @@ Update: I also worked on the following year's Bop Heads app.
 
 Mix Off app
 
-- [Flash app](http://www.mixoff.tv/webapp)
-- [Main Site](http://www.mixoff.tv/)
-- [Gallery](http://www.mixoff.tv/?page=gallery)
-- [On-air spot](https://www.youtube.com/watch?v=eydJ_ZYGLvY)
+- [Flash app](http://mixoff.tv/webapp)
+- [Main Site](http://mixoff.tv/)
+- [Gallery](http://mixoff.tv/?page=gallery)
+- [On-air spot](http://youtube.com/watch?v=eydJ_ZYGLvY)
 
 Bop Heads app
 
-- [MPC](http://www.moving-picture.com/work/talktalk-x-factor-bopheads)
-- [AOL](http://www.aol.co.uk/entertainment/2015/09/01/talktalk-tv-s-new-x-factor-app-will-give-fans-a-taste-of-super-s/)
+- [MPC](http://moving-picture.com/work/talktalk-x-factor-bopheads)
+- [AOL](http://aol.co.uk/entertainment/2015/09/01/talktalk-tv-s-new-x-factor-app-will-give-fans-a-taste-of-super-s/)
 
 Press
 
-- [TalkTalk X Factor channel](https://www.youtube.com/user/TalkTalkXFactor)
-- [Digital Arts Online](http://www.digitalartsonline.co.uk/news/mobile-creativity/mpc-creatives-mix-off-app-puts-x-factor-viewers-in-frame/)
-- [The Drum](http://www.thedrum.com/news/2014/08/30/x-factor-fans-will-be-able-star-shows-sponsorship-idents-thanks-talktalk)
+- [TalkTalk X Factor channel](http://youtube.com/user/TalkTalkXFactor)
+- [Digital Arts Online](http://digitalartsonline.co.uk/news/mobile-creativity/mpc-creatives-mix-off-app-puts-x-factor-viewers-in-frame/)
+- [The Drum](http://thedrum.com/news/2014/08/30/x-factor-fans-will-be-able-star-shows-sponsorship-idents-thanks-talktalk)
 - [Mobile Marketing](http://mobilemarketingmagazine.com/talktalk-xfactor)
 
 Related
 
-- [MPC](http://www.moving-picture.com/work/talktalk-x-factor-bopheads)
-- [X Factor](http://www.itv.com/xfactor)
-- [TalkTalk](http://www.talktalk.co.uk/)
-- [CHI](http://www.chiandpartners.com/our-work)
+- [MPC](http://moving-picture.com/work/talktalk-x-factor-bopheads)
+- [X Factor](http://itv.com/xfactor)
+- [TalkTalk](http://talktalk.co.uk/)
+- [CHI](http://chiandpartners.com/our-work)

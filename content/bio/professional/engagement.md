@@ -9,7 +9,7 @@ order: 1
 
 I work mainly with [HTML](/tags/html) / [JavaScript](/tags/javascript), [PHP](/tags/php) and [ActionScript](/tags/actionscript), though I work with a pretty healthy amount of languages, frameworks and markups. Whilst learning new technologies does take some commitment when you're busy, I'm pretty proactive in this area.
 
-When it comes to client work I prefer short to medium-term contracts and campaigns, erring towards the more experimental interaction and data-heavy jobs. Recursive structures, [frameworks](http://davestewart.co.uk/category/frameworks/), [Regular Expressions](/tags/regexp "Double-O") and [text-processing](http://www.xjsfl.com/support/api/elements/selectors) play towards my strengths.
+When it comes to client work I prefer short to medium-term contracts and campaigns, erring towards the more experimental interaction and data-heavy jobs. Recursive structures, [frameworks](http://davestewart.co.uk/category/frameworks/), [Regular Expressions](/tags/regexp "Double-O") and [text-processing](http://xjsfl.com/support/api/elements/selectors) play towards my strengths.
 
 I thrive on joining the creative and technical dots, and especially the cross-pollination of techniques or technologies. I'm also a stickler for detail - I simply don't see the point in making something "good" when a little extra inspiration, research and effort will push something over into "great".
 

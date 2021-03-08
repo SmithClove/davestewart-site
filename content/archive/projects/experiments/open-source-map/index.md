@@ -45,6 +45,6 @@ The analogy might be overland stations interfacing with underground stations:
 
 ![london-connections](http://davestewart.co.uk/wp-content/uploads/blog/professional/open-source-map/london-connections.png)
 
-Most likely I'd enter all the jobs into Excel, export to JSON, and use that data to draw the stub elements straight into Illustrator using [Illustrator scripting](http://www.adobe.com/devnet/illustrator/scripting.html), then flesh it out manually using human judgement.
+Most likely I'd enter all the jobs into Excel, export to JSON, and use that data to draw the stub elements straight into Illustrator using [Illustrator scripting](http://adobe.com/devnet/illustrator/scripting.html), then flesh it out manually using human judgement.
 
 Maybe next year!

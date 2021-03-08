@@ -9,13 +9,13 @@ Social:
 
 - [Twitter](http://twitter.com/dave_stewart)
 - [LinkedIn](http://linkedin.com/in/davestewartuk)
-- [Reddit](https://www.reddit.com/user/dave__stewart)
-- [Meetup](http://www.meetup.com/members/5200599/)
+- [Reddit](http://reddit.com/user/dave__stewart)
+- [Meetup](http://meetup.com/members/5200599/)
 
 Product:
 
-- [Product Hunt](https://www.producthunt.com/@dave_stewart)
-- [Indie Hackers](https://www.indiehackers.com/likelylogic)
+- [Product Hunt](http://producthunt.com/@dave_stewart)
+- [Indie Hackers](http://indiehackers.com/likelylogic)
 - [Likely Logic](http://likelylogic.com/)
 
 Code:
@@ -27,7 +27,7 @@ Code:
 
 Music:
 
-- [Mixcloud](http://www.mixcloud.com/davestewart/)
+- [Mixcloud](http://mixcloud.com/davestewart/)
 - [SoundCloud](https://soundcloud.com/davestewart/likes)
 
 Creative:

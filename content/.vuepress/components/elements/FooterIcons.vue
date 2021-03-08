@@ -16,7 +16,7 @@ export default {
       return [
         link('twitter', '#1DA1F2', 'https://twitter.com/dave_stewart'),
         link('github', '#181717', 'https://github.com/davestewart'),
-        link('linkedin', '#0A66C2', 'https://www.linkedin.com/in/davestewartuk/'),
+        link('linkedin', '#0A66C2', 'http://linkedin.com/in/davestewartuk/'),
       ]
     }
   },

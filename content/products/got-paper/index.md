@@ -25,15 +25,15 @@ media:
   press:
     - source: Evening Standard
       title: New app tells you how much loo roll you actually need
-      link: 'https://www.standard.co.uk/tech/got-paper-app-loo-roll-stockpile-covid19-shutdown-a4392831.html'
+      link: 'http://standard.co.uk/tech/got-paper-app-loo-roll-stockpile-covid19-shutdown-a4392831.html'
       icon: 'https://wpieconomics.com/site/wp-content/uploads/2019/03/unnamed.jpg'
     - source: Business Insider
       title: This online calculator tells you exactly how much toilet roll you actually need to buy
-      link: 'https://www.insider.com/online-calculator-how-much-toilet-roll-you-need-2020-3'
-      icon: 'https://www.insider.com/public/assets/INSIDER/US/favicons/android-chrome-192x192.png'
+      link: 'http://insider.com/online-calculator-how-much-toilet-roll-you-need-2020-3'
+      icon: 'http://insider.com/public/assets/INSIDER/US/favicons/android-chrome-192x192.png'
     - source: Mail Online
       title: Web developer creates an online calculator to help people work out the right amount of toilet roll to last them through any length of quarantine during coronavirus crisis
-      link: 'https://www.dailymail.co.uk/sciencetech/article-8131533/Got-Paper-aims-help-people-buy-right-bog-roll.html'
+      link: 'http://dailymail.co.uk/sciencetech/article-8131533/Got-Paper-aims-help-people-buy-right-bog-roll.html'
       icon: 'https://i.dailymail.co.uk/i/social/img_mol-logo_50x50.png'
     - source: TNW
       title: This coronavirus toilet paper calculator knows if you’ll survive the quarantine
@@ -107,7 +107,7 @@ See the live site for the [full back story](https://got-paper.com/about).
 ## Translations
 
 <MediaVideo
-  src="https://www.youtube.com/embed/z1726EC9H_Q"
+  src="http://youtube.com/embed/z1726EC9H_Q"
   width="560"
   height="315"
 />
@@ -116,13 +116,13 @@ See the live site for the [full back story](https://got-paper.com/about).
 
 Got Paper is available on Product Hunt:
 
-<a href="https://www.producthunt.com/posts/the-great-suspender-recovery-tool?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-the-great-suspender-recovery-tool" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=283498" alt="The Great Suspender Recovery Tool - Recover your lost Great Suspender tabs | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="http://producthunt.com/posts/the-great-suspender-recovery-tool?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-the-great-suspender-recovery-tool" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=283498" alt="The Great Suspender Recovery Tool - Recover your lost Great Suspender tabs | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 ## Links
 
 - [Got Paper](https://got-paper.com)
 - [Git Hub](https://github.com/davestewart/got-paper)
-- [Product Hunt](https://www.producthunt.com/posts/got-paper)
-- [Indie Hackers](https://www.indiehackers.com/product/got-paper)
+- [Product Hunt](http://producthunt.com/posts/got-paper)
+- [Indie Hackers](http://indiehackers.com/product/got-paper)
 
 

@@ -18,7 +18,7 @@ media:
 
 # After Effects Tracker
 
-As part of a [series of promos](/archive/work/animation/jetix/) commissioned by Jetix, we ([Huge Designs](http://www.hugedesigns.co.uk) and I) needed to incorporate up to 15 different characters into a reusable promo "base" that could be changed each month to provide variety. Our storyboard demanded 3D, yet the characters were 2D, and rendering the same complex sequences, re-comping and outputting would have been an impossible task from both time, budget and sanity perspectives!
+As part of a [series of promos](/archive/work/animation/jetix/) commissioned by Jetix, we ([Huge Designs](https://hugedesigns.co.uk) and I) needed to incorporate up to 15 different characters into a reusable promo "base" that could be changed each month to provide variety. Our storyboard demanded 3D, yet the characters were 2D, and rendering the same complex sequences, re-comping and outputting would have been an impossible task from both time, budget and sanity perspectives!
 
 So, the plan was to render out one complex 3D sequence, do all the sexy post-production in After Effects, then comp-in the characters, as quick post-process, so the whole thing appeared seamless.
 

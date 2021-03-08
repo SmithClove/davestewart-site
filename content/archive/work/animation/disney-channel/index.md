@@ -14,7 +14,7 @@ tags:
 media:
   thumbnail: ./images/disney-channel.jpg
   video:
-    src: http://player.vimeo.com/video/69044677
+    src: https://player.vimeo.com/video/69044677
     width: 580
     height: 326
 ---
@@ -43,4 +43,4 @@ Huge was responsible for design and live action.
 
 ## Links
 
-- [Huge Designs](www.hugedesigns.co.uk)
+- [Huge Designs](hugedesigns.co.uk)

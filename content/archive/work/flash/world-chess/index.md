@@ -30,7 +30,7 @@ media:
 
 ## Overview
 
-World Chess is American entrepreneur [Andrew Paulson](http://en.wikipedia.org/wiki/Andrew_Paulson)'s foray into the world of commercial chess, having bought the rights to develop and market the [World Chess Championship](https://www.google.co.uk/search?q=World+Chess+Championship&tbm=nws) for the next 11 years
+World Chess is American entrepreneur [Andrew Paulson](https://en.wikipedia.org/wiki/Andrew_Paulson)'s foray into the world of commercial chess, having bought the rights to develop and market the [World Chess Championship](https://google.co.uk/search?q=World+Chess+Championship&tbm=nws) for the next 11 years
 
 The project's ultimate aim is to broadcast the performance of chess, combining it with web technology to reach a wider audience, and expert opinion to demystify the game for the wider public.
 
@@ -38,7 +38,7 @@ As part of the development process, I was brought in by Vibeke Hanson (ex BBC) t
 
 ## Development
 
-Initially we focussed on the playback of previously-recorded games using existing chess notation, working with [Matt Biddulph](http://www.hackdiary.com/) of Dopplr who developed up a Ruby/Heroku application to do just this. This allowed us to study the ebb and flow of games, as well as get to intimately know the main events and constructs which make up games.
+Initially we focussed on the playback of previously-recorded games using existing chess notation, working with [Matt Biddulph](https://hackdiary.com/) of Dopplr who developed up a Ruby/Heroku application to do just this. This allowed us to study the ebb and flow of games, as well as get to intimately know the main events and constructs which make up games.
 
 From here, we worked as a team to break down all aspects of the game and work out interesting areas to concentrate on and potentially explain, for example:
 
@@ -76,14 +76,14 @@ The final project prototype took about 3 weeks start to finish, with some additi
 
 Press
 
-- [Adweek: American Entrepreneur Andrew Paulson Plans on Putting the World Chess Federation Back on the Map](http://www.adweek.com/news/advertising-branding/media-moguls-daring-move-make-chess-big-141168)
-- [Guardian Online: Chess impresario hopes to bring back the Fischer v Spassky glory days](http://www.theguardian.com/sport/2012/jul/12/chess-impresario-fischer-spassky)
-- [Daily Mail: Can this man do for chess what Bernie Ecclestone did for Formula 1?](http://www.dailymail.co.uk/home/moslive/article-2229987/Can-Andrew-Paulson-chess-Bernie-Ecclestone-did-Formula-1.html)
-- [Chess Magazine: An interview with... Andrew Paulson](http://en.chessbase.com/home/TabId/211/PostId/4008589)
-- [Design Week: Pentagram brings chess into a new era](http://www.designweek.co.uk/news/pentagram-brings-chess-into-a-new-era/3035344.article)
+- [Adweek: American Entrepreneur Andrew Paulson Plans on Putting the World Chess Federation Back on the Map](https://adweek.com/news/advertising-branding/media-moguls-daring-move-make-chess-big-141168)
+- [Guardian Online: Chess impresario hopes to bring back the Fischer v Spassky glory days](https://theguardian.com/sport/2012/jul/12/chess-impresario-fischer-spassky)
+- [Daily Mail: Can this man do for chess what Bernie Ecclestone did for Formula 1?](https://dailymail.co.uk/home/moslive/article-2229987/Can-Andrew-Paulson-chess-Bernie-Ecclestone-did-Formula-1.html)
+- [Chess Magazine: An interview with... Andrew Paulson](https://en.chessbase.com/home/TabId/211/PostId/4008589)
+- [Design Week: Pentagram brings chess into a new era](https://designweek.co.uk/news/pentagram-brings-chess-into-a-new-era/3035344.article)
 
 Implementation
 
-- [Pentagram - World Chess](http://new.pentagram.com/2012/10/new-work-world-chess/)
-- [Chess Casting](http://www.chessbase.com/Home/TabId/211/PostId/4009254/chesscasting--making-the-invisible-visible-240313.aspx)
-- [Matt Biddulph](http://www.hackdiary.com/)
+- [Pentagram - World Chess](https://new.pentagram.com/2012/10/new-work-world-chess/)
+- [Chess Casting](https://chessbase.com/Home/TabId/211/PostId/4009254/chesscasting--making-the-invisible-visible-240313.aspx)
+- [Matt Biddulph](https://hackdiary.com/)

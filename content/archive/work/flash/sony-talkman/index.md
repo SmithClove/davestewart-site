@@ -36,13 +36,13 @@ media:
 
 The TalkMan product is voice-activated translation software designed for the Sony PSP games console, that operates in eight languages. It was launched in the US and UK markets in 2008 as one of the first truly novel uses for the new console technology.
 
-Working in-house at [Feref](http://www.feref.com/), our job was to take the various source assets available to us, create content, games, activities and an overall narrative in 10 languages, to market the product to the Western markets.
+Working in-house at [Feref](https://feref.com/), our job was to take the various source assets available to us, create content, games, activities and an overall narrative in 10 languages, to market the product to the Western markets.
 
 Once completed, the original Japanese of creator of TalkMan described the final website as "better than perfect".
 
 ## Implementation
 
-My role was the complete site build, animating and coding (in ActionScript 2) everything that you see and interact with. Design, illustration and assets were created by the super-talented [James Eade](http://enjoyrelax.co.uk/).
+My role was the complete site build, animating and coding (in ActionScript 2) everything that you see and interact with. Design, illustration and assets were created by the super-talented [James Eade](https://enjoyrelax.co.uk/).
 
 The site has it all: 21 locales across 10 languages, almost every single thing you see on screen is animated, there were multiple interface widgets, a 3D talking avatar, games, downloads, audio, multi-level menus, narrative sequences... the list goes on and on.
 
@@ -51,5 +51,5 @@ Being a multilingual site, all site text is sourced from external XML files. One
 ## Links
 
 - [TalkMan microsite](http://projects.davestewart.co.uk/talkman/)
-- [EnjoyRelax](http://enjoyrelax.co.uk/)
-- [Feref](http://www.feref.com/)
+- [EnjoyRelax](https://enjoyrelax.co.uk/)
+- [Feref](https://feref.com/)

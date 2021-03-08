@@ -12,9 +12,9 @@ media:
 
 Anyone who knows me, knows I'm into numbers, and I'll not get into a discussion in depth without some kind of analysis of the figures.
 
-There's been a lot of talk over the past few days about votes, PR, and how the current system seems unfair. Just how unfair is subjective depending on how useful you think [each system](http://www.idea.int/esd/glossary.cfm) of voting actually is.
+There's been a lot of talk over the past few days about votes, PR, and how the current system seems unfair. Just how unfair is subjective depending on how useful you think [each system](http://idea.int/esd/glossary.cfm) of voting actually is.
 
-Apparently First Past the Post (FPTP) is designed to ensure a stable government, that is, not too many views so the majority party can "get on with it" without too many dissenting voices. Although in the UK a coalition is seen as a blip, in Germany, it's seen as the [norm](http://www.theguardian.com/politics/2015/may/05/britain-weird-electoral-system-uk-general-election-europe) (perhaps we should give the Germans more credit than we do).
+Apparently First Past the Post (FPTP) is designed to ensure a stable government, that is, not too many views so the majority party can "get on with it" without too many dissenting voices. Although in the UK a coalition is seen as a blip, in Germany, it's seen as the [norm](http://theguardian.com/politics/2015/may/05/britain-weird-electoral-system-uk-general-election-europe) (perhaps we should give the Germans more credit than we do).
 
 ## Aims
 
@@ -28,7 +28,7 @@ And also to answer other questions, like:
 - Why did Labour supposedly do so badly in Scotland?
 - Which countries had the best turnout?
 
-To do this, I simply put the figures from the [BBC Election 2015](http://www.bbc.co.uk/news/election/2015/results) site into a spreadsheet, and did some simple maths.
+To do this, I simply put the figures from the [BBC Election 2015](http://bbc.co.uk/news/election/2015/results) site into a spreadsheet, and did some simple maths.
 
 - **[You can find, and play with the spreadsheet here.](https://onedrive.live.com/redir?page=view&resid=65A55583927C4A01!1087&authkey=!ADPjYchPRCGXdK4)**
 

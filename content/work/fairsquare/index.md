@@ -30,5 +30,5 @@ Lorem Ipsum
 
 ## Links
 
-- [www.fairsquare.com](https://www.fairsquare.com)
+- [fairsquare.com](https://fairsquare.com)
 

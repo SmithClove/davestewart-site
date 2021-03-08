@@ -28,8 +28,8 @@ Working for Grand Union in a small team, I was the Flash coder responsible for d
 
 Coding concepts included movement, AI, collision detection, path-finding, depth-swapping, walk cycles, level editor, and tracking.
 
-Character animation was by [Olly Montague](http://www.ollym.com).
+Character animation was by [Olly Montague](http://ollym.com).
 
 Links
 
-- [Grand Union](http://www.thegrandunion.com/)
+- [Grand Union](http://thegrandunion.com/)

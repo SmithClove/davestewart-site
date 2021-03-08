@@ -50,17 +50,17 @@ Let me know!
 
 - [Tweet me](https://twitter.com/dave_stewart)
 - [Comment on GitHub](https://github.com/davestewart/todo-emojis/issues/1)
-- [Comment on Product Hunt](https://www.producthunt.com/posts/todo-emojis)
+- [Comment on Product Hunt](http://producthunt.com/posts/todo-emojis)
 
 ## Product Hunt
 
 ToDo Emojis is available on Product Hunt:
 
-<a href="https://www.producthunt.com/posts/todo-emojis?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-todo-emojis" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=268429&theme=light" alt="Todo Emojis - Slack emojis to create text-based to-do lists | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="http://producthunt.com/posts/todo-emojis?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-todo-emojis" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=268429&theme=light" alt="Todo Emojis - Slack emojis to create text-based to-do lists | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 
 ## Links
 
-- [Product Hunt](https://www.producthunt.com/posts/todo-emojis)
-- [Indie Hackers](https://www.indiehackers.com/product/todo-emojis)
+- [Product Hunt](http://producthunt.com/posts/todo-emojis)
+- [Indie Hackers](http://indiehackers.com/product/todo-emojis)
 - [GitHub](https://github.com/davestewart/todo-emojis)

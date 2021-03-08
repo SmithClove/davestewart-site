@@ -8,7 +8,7 @@ tags:
   - concept
 media:
   video:
-    src: http://player.vimeo.com/video/68292853
+    src: https://player.vimeo.com/video/68292853
     width: 580
     height: 227
 ---
@@ -17,7 +17,7 @@ media:
 
 ## Overview
 
-Nocturnal, the record label behind Shapeshifter and [Lola's Theme](http://www.youtube.com/watch?v=kIC0aQ56ASE), asked me to do some visuals for their tent at the 2005 [Global Gathering](http://www.globalgathering.com/) festival, but unfortunately I was too busy. However I did manage to put together something funky for their monthly night at AKA / [The End](http://www.endclub.com/) here in London.
+Nocturnal, the record label behind Shapeshifter and [Lola's Theme](https://youtube.com/watch?v=kIC0aQ56ASE), asked me to do some visuals for their tent at the 2005 [Global Gathering](http://globalgathering.com/) festival, but unfortunately I was too busy. However I did manage to put together something funky for their monthly night at AKA / [The End](http://endclub.com/) here in London.
 
 ## Implementation
 

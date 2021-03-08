@@ -54,4 +54,4 @@ The Beta release of Processr will feature user accounts and a functional back-en
 
 ## Links
 
-- [www.processr.com](http://processr.com/)
+- [processr.com](http://processr.com/)

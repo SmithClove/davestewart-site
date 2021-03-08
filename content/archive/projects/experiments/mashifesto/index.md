@@ -30,7 +30,7 @@ media:
 
 ## Overview
 
-Mashifesto was the 3rd-place winner of this year's [Digital Sizzle Art Hack](http://techcitynews.com/2013/07/29/3beards-art-hackathon-review-and-winners/) by the [3 Beards](http://www.3-beards.com/about.html). It was also exhibited with other winning entries for 2 weeks in [The Barbican](http://www.barbican.org.uk/), London, as part of the [Hack the Barbican](http://hackthebarbican.org/) festival.
+Mashifesto was the 3rd-place winner of this year's [Digital Sizzle Art Hack](http://techcitynews.com/2013/07/29/3beards-art-hackathon-review-and-winners/) by the [3 Beards](http://3-beards.com/about.html). It was also exhibited with other winning entries for 2 weeks in [The Barbican](http://barbican.org.uk/), London, as part of the [Hack the Barbican](http://hackthebarbican.org/) festival.
 
 The overall context for the weekend was "art meets tech" with an emphasis on data, and access to a whole host of APIs and datasets.
 
@@ -48,7 +48,7 @@ I built the front-end of the app, which was a simple home-rolled MVC JavaScript 
 
 For the Private View, I also ported the existing JavaScript app to an Adobe AIR (ActionScript) app so we could browse available Mashifestos, and successfully print Mashifesto stickers to be given away on the evening and subsequent exhibition (as good as HTML5 is, print-perfect printing is not yet viable).
 
-Al and Romaine handled the animation side of things, with Al laying out the statements using CSS and animating using [Greensock](http://www.greensock.com/v12/), and Romaine building the intro animation in After Effects and having input on design.
+Al and Romaine handled the animation side of things, with Al laying out the statements using CSS and animating using [Greensock](http://greensock.com/v12/), and Romaine building the intro animation in After Effects and having input on design.
 
 Joanna took charge of the over creative direction of the project, designing the look and feel, with Annem and Sabrina working on the planning, natural-language processing, and generated output, and generally working hard to pull any loose strings together.
 
@@ -69,10 +69,10 @@ Having attended 3 hackathons this year, I can say that this was by far the most 
 2. We were all normal, friendly people, up for sharing ideas, planning, and doing
 3. All members of the team fitted into clearly-defined roles, with skills-enough to deliver
 
-With regards to the Hackathon itself, hats off to the Beards; they did an amazing job pulling so many interesting people into a single wonderful, space. And also thanks to the sponsors and [South Place Hotel](http://www.southplacehotel.com/) who helped make it all happen.
+With regards to the Hackathon itself, hats off to the Beards; they did an amazing job pulling so many interesting people into a single wonderful, space. And also thanks to the sponsors and [South Place Hotel](http://southplacehotel.com/) who helped make it all happen.
 
 ## Links
 
 - [3 Beards Art Hackathon: Review and Winners](http://techcitynews.com/2013/07/29/3beards-art-hackathon-review-and-winners/)
-- [mashifesto.org](http://www.mashifesto.org/)
+- [mashifesto.org](http://mashifesto.org/)
 - [@mashifesto](https://twitter.com/mashifesto)

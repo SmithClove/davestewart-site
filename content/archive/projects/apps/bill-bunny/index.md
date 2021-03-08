@@ -54,7 +54,7 @@ The bats, although vampires, are vegetarian, hungry for the **carrots** (it’s 
 
 Couch-Surfing Bird represents new flatmates, or long-staying **antipodean** visitors.
 
-These birds are even less organised than the bunnies, use all the utilities, leave the lights on, and always drink the last of the milk, never replacing it! (Don’t you know [about the bird](https://www.youtube.com/watch?v=ho17gqToEWA) ?)
+These birds are even less organised than the bunnies, use all the utilities, leave the lights on, and always drink the last of the milk, never replacing it! (Don’t you know [about the bird](http://youtube.com/watch?v=ho17gqToEWA) ?)
 
 ### Bill Bunny
 
@@ -78,5 +78,5 @@ The app is one of several I have in development at the moment, though has been o
 
 ## Links
 
-- [Bill Bunny](http://www.billbunny.com/)
+- [Bill Bunny](http://billbunny.com/)
 - [Bill Bunny blog](http://blog.billbunny.com/)

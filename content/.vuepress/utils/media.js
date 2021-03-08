@@ -12,7 +12,7 @@ export const placeholder = {
 
 export function makePlaceholder (path = '') {
   const text = Path.basename(path, Path.extname(path)).replace(/\W+/g, ' ') || ''
-  return `http://placehold.it/${placeholder.width}x${placeholder.height}?text=` + text
+  return `https://placehold.it/${placeholder.width}x${placeholder.height}?text=` + text
 }
 
 export function getFile (pagePath, imagePath = '') {

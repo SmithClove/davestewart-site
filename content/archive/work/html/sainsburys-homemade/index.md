@@ -29,9 +29,9 @@ media:
 
 ## Overview
 
-Sainsburys [Homemade](http://homemadebyyou.co.uk) is a new food portal in association with Huffington Post, leveraging a variety of food networks to bring tens (if not hundreds) of thousands of recipes under the Sainsburys banner, competing with the likes of [BBC Good Food](http://www.bbcgoodfood.com/).
+Sainsburys [Homemade](http://homemadebyyou.co.uk) is a new food portal in association with Huffington Post, leveraging a variety of food networks to bring tens (if not hundreds) of thousands of recipes under the Sainsburys banner, competing with the likes of [BBC Good Food](http://bbcgoodfood.com/).
 
-The site was launched in late 2014 by [Full Six](http://www.fullsixuk.com/project/homemade/), and I was brought in this year to provide some post-launch muscle, as well as develop new features and refactor some existing ones.
+The site was launched in late 2014 by [Full Six](http://fullsixuk.com/project/homemade/), and I was brought in this year to provide some post-launch muscle, as well as develop new features and refactor some existing ones.
 
 ## Development
 
@@ -90,4 +90,4 @@ The Homemade site now has a really nice lifecycle for searching, loading, filter
 ## Links
 
 - [Sainsbury's Homemade](http://homemadebyyou.co.uk)
-- [Full Six](http://www.fullsixuk.com/project/homemade/)
+- [Full Six](http://fullsixuk.com/project/homemade/)

@@ -12,7 +12,7 @@ tags:
 media:
   thumbnail: ./images/angry-tennis-birds.png
   video:
-    src: http://www.youtube.com/embed/4zaDB_1PFrA
+    src: http://youtube.com/embed/4zaDB_1PFrA
     width: 526
     height: 360
   images:
@@ -48,4 +48,4 @@ I emailed the paper subsequent times... but as soon as the topic came up, commun
 ## Links
 
 - [Angry Tennis Birds](http://angrytennisbirds.com/)
-- [The Sun: Angry Birds - Grunting girls noisier than creatures on app](http://www.thesun.co.uk/sol/homepage/news/3671271/Grunting-girls-make-racket-at-Wimbledon.html)
+- [The Sun: Angry Birds - Grunting girls noisier than creatures on app](http://thesun.co.uk/sol/homepage/news/3671271/Grunting-girls-make-racket-at-Wimbledon.html)

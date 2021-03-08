@@ -25,7 +25,7 @@ media:
 
 ## Overview
 
-I worked with [Skylark Creative](http://www.skylarkcreative.co.uk) to build a cross-device story-style animation in HTML5, to show how G4S's cash collection service represents good value for money for the small business.
+I worked with [Skylark Creative](http://skylarkcreative.co.uk) to build a cross-device story-style animation in HTML5, to show how G4S's cash collection service represents good value for money for the small business.
 
 The story illustrates the journey of a cash bundle, from the customer's till, then safe-and-secure to the G4S depot, and finally the digital step to their bank account.
 

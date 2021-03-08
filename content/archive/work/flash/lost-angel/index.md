@@ -60,9 +60,9 @@ media:
 
 ## Overview
 
-In the summer of 2008 I was fortunate-enough to meet the very talented [James Piper](http://www.mrpiper.co.uk), whose work I had admired for some time.
+In the summer of 2008 I was fortunate-enough to meet the very talented [James Piper](https://mrpiper.co.uk), whose work I had admired for some time.
 
-James and I knew pretty quickly that we wanted to work on a site together, and it wasn't long before a new bar venture, [The Lost Angel](http://www.lostangel.co.uk) in Battersea approached James to produce a website that would be as magical as the new destination boozer they intended to create.
+James and I knew pretty quickly that we wanted to work on a site together, and it wasn't long before a new bar venture, [The Lost Angel](https://lostbattersea.co.uk/) in Battersea approached James to produce a website that would be as magical as the new destination boozer they intended to create.
 
 ## Creative
 
@@ -79,7 +79,7 @@ Our approach was iterative, working with a clear design ethos mind, across layou
 
 After building all the animated assets, the site was built as separate SWF modules that loaded into a single container that contained the logic, graphics, and common assets.
 
-About a year after the project I found out about the [Gaia Framework](http://www.gaiaflashframework.com/) which in hindsight I wish I'd used as it would have shaved a big chunk of time and a lot of bug finding off the project (as it happens I used Gaia for various other projects in the following years).
+About a year after the project I found out about the [Gaia Framework](#) which in hindsight I wish I'd used as it would have shaved a big chunk of time and a lot of bug finding off the project (as it happens I used Gaia for various other projects in the following years).
 
 The site itself contained audio, video, Away 3D, 3dsmax and After Effects animation, a small amount of back end, but mainly a lot of attention to detail within the Flash and the animation to make the user feel as if they were part of a magical experience even before getting to the bar.
 
@@ -140,4 +140,4 @@ We needed to model a variety of items which were found in the bar to give the si
 ## Links
 
 - [Lost Angel microsite](http://projects.davestewart.co.uk/lostangel/)
-- [Piper Design Studio](http://www.piperdesign.co.uk/)
+- [Piper Design Studio](http://piperdesign.co.uk/)

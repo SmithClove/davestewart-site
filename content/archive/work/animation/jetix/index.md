@@ -65,4 +65,4 @@ This was a really enjoyable project, and it was extremely satisfying to take res
 
 ## Links
 
-- [Huge Designs](http://www.hugedesigns.co.uk/news)
+- [Huge Designs](http://hugedesigns.co.uk/news)

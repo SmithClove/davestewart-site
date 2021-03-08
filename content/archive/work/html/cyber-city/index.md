@@ -34,7 +34,7 @@ The Cyber City project is a new interactive resource that enable students to pro
 
 ## Creative
 
-I worked closely with [Skylark Creative](http://www.skylarkcreative.co.uk/blog/2012/02/10/e-skills-uk/) from the very beginning of the project to brainstorm a suitable vehicle to take students through 7 "Cyber Challenges".
+I worked closely with [Skylark Creative](https://skylarkcreative.co.uk/blog/2012/02/10/e-skills-uk/) from the very beginning of the project to brainstorm a suitable vehicle to take students through 7 "Cyber Challenges".
 
 We wove a story around a classic "good vs evil" narrative, fleshing-out scenario and character designs for a futuristic "Cyber City", its residents, the student's character and main Good and Evil protagonists.
 
@@ -46,14 +46,14 @@ The site build was primarily using HTML, CSS and JavaScript, based on single-pag
 
 The homepage provided the main interactive showcase to the site with a faux-3D cityscape which scrolled in parallax to your mouse movement, had flying space traffic, and revealed the different challenges.
 
-The remainder of the interactive content was fairly basic Q&A-type games and flat infographics produced in-house by [Skylark](http://www.skylarkcreative.co.uk/). [Foresite](http://www.fsite.com/home) were reposnsible for the final CMS build.
+The remainder of the interactive content was fairly basic Q&A-type games and flat infographics produced in-house by [Skylark](https://skylarkcreative.co.uk/). [Foresite](https://fsite.com/home) were reposnsible for the final CMS build.
 
 The project was shortlisted for the 2013 Bett Awards, in the Secondary Digital Content category.
 
 ## Links
 
-- [http://www.behindthescreen.org.uk](http://www.behindthescreen.org.uk/)
-- [http://www.bettawards.com/522212](http://www.bettawards.com/522212)
-- [http://www.r3events.co.uk/bettawards/Bett\_Finalists.pdf](http://www.r3events.co.uk/bettawards/Bett_Finalists.pdf)
+- [behindthescreen.org.uk](https://behindthescreen.org.uk/)
+- [bettawards.com/522212](https://bettawards.com/522212)
+- [r3events.co.uk/bettawards/Bett_Finalists.pdf](https://r3events.co.uk/bettawards/Bett_Finalists.pdf)
 
 ## Bett Awards video

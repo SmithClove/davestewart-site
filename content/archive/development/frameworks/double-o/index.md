@@ -40,5 +40,5 @@ It's currently in Beta, and will be launching sometime before the end of 2013. T
 
 ## Links
 
-- [www.double-o.io](http://www.double-o.io)
+- [double-o.io](https://double-o.io)
 - ["It's not Me, it's You" - WordPress London talk slides](https://skydrive.live.com/view.aspx?resid=65A55583927C4A01!159&app=PowerPoint&authkey=!AOAMS33qqpBJHc4)

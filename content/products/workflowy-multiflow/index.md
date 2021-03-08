@@ -29,7 +29,7 @@ When you first click the icon your previous session will be loaded so you can st
 ## Video
 
 <MediaVideo
-  src="https://www.youtube.com/embed/Iy1DuGjUhR4"
+  src="http://youtube.com/embed/Iy1DuGjUhR4"
   width="560"
   height="315"
 />
@@ -39,12 +39,12 @@ When you first click the icon your previous session will be loaded so you can st
 
 WorkFlowy MultiFlow is available on Product Hunt:
 
-<a href="https://www.producthunt.com/posts/todo-emojis?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-todo-emojis" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=268429&theme=light" alt="Todo Emojis - Slack emojis to create text-based to-do lists | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="http://producthunt.com/posts/todo-emojis?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-todo-emojis" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=268429&theme=light" alt="Todo Emojis - Slack emojis to create text-based to-do lists | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 ## Links
 
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/workflowy-multiflow/khjdmjcmpolknpccmaaipmidphjokhdf)
-- [Indie Hackers](https://www.indiehackers.com/product/workflowy-multiflow)
-- [Product Hunt](https://www.producthunt.com/posts/workflowy-multiflow)
-- [Reddit](https://www.reddit.com/r/Workflowy/comments/l9eoqz/workflowy_multiflow_navigate_organise_maintain/)
+- [Indie Hackers](http://indiehackers.com/product/workflowy-multiflow)
+- [Product Hunt](http://producthunt.com/posts/workflowy-multiflow)
+- [Reddit](http://reddit.com/r/Workflowy/comments/l9eoqz/workflowy_multiflow_navigate_organise_maintain/)
 

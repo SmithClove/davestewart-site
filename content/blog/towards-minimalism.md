@@ -58,12 +58,12 @@ In the ideal world, I would get rid of everything, and just have what I need to 
 
 On lifestyle
 
-- [Start Here:](http://www.theminimalists.com/start/) [The Minimalists](http://www.theminimalists.com/start/)
+- [Start Here:](http://theminimalists.com/start/) [The Minimalists](http://theminimalists.com/start/)
 - [Colin Wright: Act Accordingly](http://colin.io/portfolio/act-accordingly/)
-- [What Do You Pack When You Are Leaving Forever?](http://www.neverendingvoyage.com/what-do-you-pack-when-you-are-leaving-forever-our-packing-list/)
+- [What Do You Pack When You Are Leaving Forever?](http://neverendingvoyage.com/what-do-you-pack-when-you-are-leaving-forever-our-packing-list/)
 
 On things
 
 - [The Story of Stuff](http://storyofstuff.org/)
-- [How Bad are Bananas?](http://www.amazon.co.uk/How-Bad-Are-Bananas-everything/dp/1846688914)
-- [Westminster Council A- Z of recycling](http://www.westminster.gov.uk/services/environment/rubbishwasteandrecycling/recyclingfacilities/atoz/)
+- [How Bad are Bananas?](http://amazon.co.uk/How-Bad-Are-Bananas-everything/dp/1846688914)
+- [Westminster Council A- Z of recycling](http://westminster.gov.uk/services/environment/rubbishwasteandrecycling/recyclingfacilities/atoz/)

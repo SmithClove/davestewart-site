@@ -28,7 +28,7 @@ As the piece progresses the audience is treated to an interactive visual represe
 
 ## Implementation
 
-Working at [Huge Designs](http://www.hugedesigns.co.uk) for [BBC4 Music](http://www.bbc.co.uk/tv/categories/music), focused and precise communication between myself, the series producer and director allowed us to produce 300 minutes of animation in around 10 weeks.
+Working at [Huge Designs](https://hugedesigns.co.uk) for [BBC4 Music](https://bbc.co.uk/tv/categories/music), focused and precise communication between myself, the series producer and director allowed us to produce 300 minutes of animation in around 10 weeks.
 
 The tight deadline hinged on logging, organising and revising massive amounts of external data in Excel, then using it to automate After Effects using JavaScript. After an initial development period, I was able to produce an entire programme within 2 or 3 days, whilst retaining the flexibility to change our minds at any point.
 
@@ -38,5 +38,5 @@ I also produced an interactive Flash version for the web, as well as a the follo
 
 ## Links
 
-- [Huge Designs](http://www.hugedesigns.co.uk)
-- [BBC4 Music](http://www.bbc.co.uk/tv/categories/music)
+- [Huge Designs](http://hugedesigns.co.uk)
+- [BBC4 Music](http://bbc.co.uk/tv/categories/music)

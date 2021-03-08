@@ -13,7 +13,7 @@ media:
   thumbnail: ./images/cs-splash.png
   featured: ./images/cs-splash.png
   video:
-    src: https://www.youtube.com/embed/l-_uy-t3tTI
+    src: http://youtube.com/embed/l-_uy-t3tTI
     width: 560
     height: 315
   gallery:
@@ -77,4 +77,4 @@ Control Space is currently invite only, but you can sign-up using the website li
 
 - [Home page](https://controlspace.app)
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/control-space/cnhhkgejafpmpbfodmebbmbhgkemleca)
-- [Indie Hackers](https://www.indiehackers.com/product/control-space)
+- [Indie Hackers](http://indiehackers.com/product/control-space)
