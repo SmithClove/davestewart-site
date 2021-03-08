@@ -86,7 +86,7 @@ Mix Off app
 - [Flash app](http://mixoff.tv/webapp)
 - [Main Site](http://mixoff.tv/)
 - [Gallery](http://mixoff.tv/?page=gallery)
-- [On-air spot](http://youtube.com/watch?v=eydJ_ZYGLvY)
+- [On-air spot](https://youtube.com/watch?v=eydJ_ZYGLvY)
 
 Bop Heads app
 
@@ -95,7 +95,7 @@ Bop Heads app
 
 Press
 
-- [TalkTalk X Factor channel](http://youtube.com/user/TalkTalkXFactor)
+- [TalkTalk X Factor channel](https://youtube.com/user/TalkTalkXFactor)
 - [Digital Arts Online](http://digitalartsonline.co.uk/news/mobile-creativity/mpc-creatives-mix-off-app-puts-x-factor-viewers-in-frame/)
 - [The Drum](http://thedrum.com/news/2014/08/30/x-factor-fans-will-be-able-star-shows-sponsorship-idents-thanks-talktalk)
 - [Mobile Marketing](http://mobilemarketingmagazine.com/talktalk-xfactor)

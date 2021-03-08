@@ -27,7 +27,7 @@ media:
     - ./images/map-my-summer-screen-videos.jpg
     - ./images/map-my-summer-screen-video.jpg
   video:
-    src: http://youtube.com/embed/dp0Lj-7fBpQ?rel=0
+    src: https://youtube.com/embed/dp0Lj-7fBpQ?rel=0
     width: 1280
     height: 720
 ---
@@ -64,13 +64,13 @@ The job itself was fantastic fun for a developer to work on, and although the de
 ## Videos
 
 <MediaVideo
-  src="http://youtube.com/embed/dp0Lj-7fBpQ?rel=0"
+  src="https://youtube.com/embed/dp0Lj-7fBpQ?rel=0"
   height="326"
   width="580"
 />
 
 <MediaVideo
-  src="http://youtube.com/embed/lLU7g92DF7I?rel=0"
+  src="https://youtube.com/embed/lLU7g92DF7I?rel=0"
   height="326"
   width="580"
 />

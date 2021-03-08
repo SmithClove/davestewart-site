@@ -107,7 +107,7 @@ See the live site for the [full back story](https://got-paper.com/about).
 ## Translations
 
 <MediaVideo
-  src="http://youtube.com/embed/z1726EC9H_Q"
+  src="https://youtube.com/embed/z1726EC9H_Q"
   width="560"
   height="315"
 />

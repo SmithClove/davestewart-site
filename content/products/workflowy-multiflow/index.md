@@ -29,7 +29,7 @@ When you first click the icon your previous session will be loaded so you can st
 ## Video
 
 <MediaVideo
-  src="http://youtube.com/embed/Iy1DuGjUhR4"
+  src="https://youtube.com/embed/Iy1DuGjUhR4"
   width="560"
   height="315"
 />

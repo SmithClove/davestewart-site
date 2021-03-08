@@ -44,13 +44,13 @@ The campaign has been a huge success. More than one million visitors from 209 co
 ## Videos
 
 <MediaVideo
-  src="http://youtube.com/embed/boEDMVNAPk4"
+  src="https://youtube.com/embed/boEDMVNAPk4"
   height="326"
   width="580"
 />
 
 <MediaVideo
-  src="http://youtube.com/embed/dIvhsp_mPOY"
+  src="https://youtube.com/embed/dIvhsp_mPOY"
   height="435"
   width="580"
 />

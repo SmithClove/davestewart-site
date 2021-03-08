@@ -12,7 +12,7 @@ tags:
 media:
   thumbnail: ./images/angry-tennis-birds.png
   video:
-    src: http://youtube.com/embed/4zaDB_1PFrA
+    src: https://youtube.com/embed/4zaDB_1PFrA
     width: 526
     height: 360
   images:
