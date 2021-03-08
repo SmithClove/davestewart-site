@@ -1,0 +1,503 @@
+<template>
+  <SiteWrapper layout="search" class="search">
+    <h1>Search</h1>
+    <p class="description">{{ itemsAsList.length }} results</p>
+
+    <div class="searchControls" @mouseup="focus">
+
+      <UiControls>
+        <div class="searchControls__text">
+          <UiInput v-model="query.text"
+                   placeholder="Type to filter...."
+                   @keydown.capture.native="onSearchKey"
+          />
+        </div>
+
+        <div class="searchControls__mode">
+          <UiRadio
+              name="viewMode"
+              label="View"
+              :options="options.viewMode"
+              v-model="query.viewMode"
+          />
+        </div>
+
+        <div class="searchControls__tags">
+          <UiRadio name="tagsMode"
+                   label="Tags"
+                   :options="options.tagsMode"
+                   v-model="query.tagsMode"
+          />
+        </div>
+
+        <div class="searchControls__reset">
+          <button class="btn btn-text btn-clear"
+                  :disabled="!canReset"
+                  @click.prevent="clear">&times;
+          </button>
+        </div>
+
+      </UiControls>
+
+      <!-- tags -->
+      <SlideUpDown ref="tagsContainer"
+                   :active="options.showTags"
+                   :duration="400"
+
+      >
+        <TagMatrix class="search__tags"
+                   :mode="query.tagsMode"
+                   :selected="query.tags"
+                   :pages="filtered"
+                   @toggle="toggleTag"
+                   @click="setTag"/>
+      </SlideUpDown>
+    </div>
+
+    <div class="layout__folder">
+
+      <div v-if="itemsAsList.length" class="search__results" @keydown.capture="onResultsKey">
+
+        <!-- by date -->
+        <div v-if="query.viewMode === 'date'" class="search__date">
+          <div v-for="group in itemsByYear" class="pageTree">
+            <div class="pageTree__header">
+              <a :name="group.title"></a>
+              <h2 class="pageTree__title">{{ group.title }}</h2>
+            </div>
+            <div class="pageTree__pages">
+              <PageList :pages="group.items"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- by folder -->
+        <div v-else-if="query.viewMode === 'tree'" class="search__tree">
+          <PageTree :items="itemsAsTree"/>
+        </div>
+
+        <!-- thumbnails -->
+        <div v-else-if="query.viewMode === 'thumbs'" class="search__list">
+          <ThumbnailWall :pages="itemsAsList"/>
+        </div>
+
+      </div>
+
+      <div v-else class="search__noResults">
+        <p>No results for those search parameters!</p>
+      </div>
+
+    </div>
+  </SiteWrapper>
+</template>
+
+<script>
+import SlideUpDown from 'vue-slide-up-down'
+import { groupBy, sortBy } from '../utils/array.js'
+import { clone } from '../utils/object.js'
+import { stopEvent } from '../utils/dom.js'
+import { fm } from '../utils/app.js'
+import { makeTree } from '../store/tree.js'
+import { storage } from '../utils/storage.js'
+
+function makeTextFilter (text, useOr = true) {
+  text = text.trim()
+  if (text === '') {
+    return () => true
+  }
+  const predicates = text.toLowerCase()
+      .match(/[\/\w]+/g)
+      .map(text => {
+        return text.startsWith('/')
+            ? page => page.regularPath && page.regularPath.includes(text)
+            : page => ((page.title || '') + (page.frontmatter && page.frontmatter.description || '')).toLowerCase().includes(text)
+      })
+  return useOr
+      ? page => predicates.some(fn => fn(page))
+      : page => predicates.every(fn => fn(page))
+}
+
+function makeTagsFilter (tags, useOr = false) {
+  const orQuery = page => fm(page, 'tags', []).some(tag => tags.includes(tag))
+  const andQuery = page => {
+    const pageTags = fm(page, 'tags', [])
+    return tags.every(tag => pageTags.includes(tag))
+  }
+  return useOr
+      ? orQuery
+      : andQuery
+}
+
+function makeQuery () {
+  return {
+    viewMode: 'date',
+    tagsMode: 'off',
+
+    tags: [],
+    tagsOp: 'and',
+
+    text: '',
+    textOp: 'and',
+
+    path: '',
+    year: '',
+  }
+}
+
+export default {
+
+  components: {
+    SlideUpDown,
+  },
+
+  data () {
+    // variables
+    const route = this.$route
+    const tags = route.query.tags || []
+    const saved = storage.get('search', {})
+
+    // build query from current route
+    const query = {
+      ...makeQuery(),
+      ...route.query,
+      ...saved,
+      tags: Array.isArray(tags)
+          ? tags
+          : [tags],
+    }
+
+    // always show tags if we have tags
+    if (query.tags.length > 0 && query.tagsMode === 'off') {
+      query.tagsMode = 'list'
+    }
+
+    // return all settings
+    return {
+      options: {
+        viewMode: ['date', 'tree', 'thumbs'],
+        tagsMode: ['off', 'list', 'groups'],
+        showTags: tags.length > 0 || query.tagsMode !== 'off',
+      },
+      query,
+    }
+  },
+
+  computed: {
+    prepared () {
+      // properties
+      let items = this.$store.pages
+
+      // skip bio and blog
+      const rxFilter = new RegExp('^/(blog|bio)/')
+      items = items.filter(item => !rxFilter.test(item.regularPath))
+
+      // sort by date
+      items = items.sort(sortBy('frontmatter.date', 'desc'))
+
+      // return
+      return items
+    },
+
+    filtered () {
+      // properties
+      let items = this.prepared
+      let { text, tags } = this.query
+
+      // filter tags
+      if (tags.length) {
+        items = items.filter(makeTagsFilter(tags))
+      }
+
+      // text
+      if (text) {
+        items = items.filter(makeTextFilter(text))
+      }
+
+      // return
+      return items
+    },
+
+    itemsByYear () {
+      return groupBy(this.filtered, 'frontmatter.date', date => date && date.substr(0, 4))
+    },
+
+    itemsAsList () {
+      return this.filtered.filter(item => !!item.headers)
+    },
+
+    itemsAsTree () {
+
+      function walk (page, callback, parent) {
+        const pages = page.pages
+        if (Array.isArray(pages)) {
+          for (let i = pages.length - 1; i >= 0; i--) {
+            const child = pages[i]
+            walk(child, callback, page)
+            callback(child, page, i)
+          }
+        }
+      }
+
+      // variables
+      const pages = makeTree(this.prepared)
+      const root = { pages: clone(pages) }
+
+      // filtering callbacks
+      const { text, tags } = this.query
+      const filterText = makeTextFilter(text)
+      const filterTags = makeTagsFilter(tags)
+
+      // filter tree
+      walk(root, function (page, parent, index) {
+        // does this page contain the text
+        const result = filterText(page) && filterTags(page)
+
+        // if not, delete it
+        if (!result) {
+          if (!page.pages || page.pages.length === 0) {
+            parent.pages.splice(index, 1)
+          }
+        }
+      })
+
+      // finally, return
+      return root.pages
+    },
+
+    canReset () {
+      const defaults = makeQuery()
+      const query = this.query
+      return query.text !== defaults.text
+          || query.tags.length > 0
+          || query.viewMode !== defaults.viewMode
+          || query.tagsMode !== defaults.tagsMode
+    },
+  },
+
+  watch: {
+    query: {
+      handler: 'onQueryChange',
+      deep: true,
+    },
+
+    'query.tagsMode' (value) {
+      const showTags = value !== 'off'
+      this.options.showTags = showTags
+      if (!showTags) {
+        // this.query.tags = []
+      }
+    },
+  },
+
+  mounted () {
+    // grab data from query
+    const query = this.query
+
+    // focus search
+    this.focus()
+
+    // scroll
+    if (query.year) {
+      this.query.viewMode = 'date'
+      this.scrollTo(query.year)
+    }
+
+    if (query.path) {
+      this.query.viewMode = 'tree'
+      this.scrollTo(query.path)
+    }
+  },
+
+  methods: {
+    // ---------------------------------------------------------------------------------------------------------------------
+    // query
+    // ---------------------------------------------------------------------------------------------------------------------
+
+    onQueryChange (value) {
+      // get original query
+      const defaults = makeQuery()
+
+      // build a new query that is only the changed properties
+      const query = Object.keys(value).reduce((query, key) => {
+        const d = defaults[key]
+        const v = value[key]
+        if (String(v) !== String(d)) {
+          query[key] = v
+        }
+        return query
+      }, {})
+
+      // update router
+      this.$router
+          .replace({ path: '/search/', query })
+          .catch(() => {})
+
+      // save preferences
+      storage.set('search', {
+        viewMode: this.query.viewMode,
+        tagsMode: this.query.tagsMode,
+      })
+    },
+
+    clear () {
+      this.query = makeQuery()
+    },
+
+    // ---------------------------------------------------------------------------------------------------------------------
+    // tags
+    // ---------------------------------------------------------------------------------------------------------------------
+
+    toggleTag (href, tag) {
+      const index = this.query.tags.indexOf(tag)
+      if (index === -1) {
+        this.query.tags = [...this.query.tags, tag]
+      }
+      else {
+        this.query.tags.splice(index, 1)
+      }
+    },
+
+    setTag (href, tag) {
+      this.query.tags = tag !== this.query.tags[0]
+          ? [tag]
+          : []
+    },
+
+    // ---------------------------------------------------------------------------------------------------------------------
+    // navigation
+    // ---------------------------------------------------------------------------------------------------------------------
+
+    focus () {
+      const input = document.querySelector('input')
+      if (input) {
+        input.focus()
+      }
+    },
+
+    scrollTo (anchor) {
+      setTimeout(() => {
+        const element = document.querySelector(`a[name="${anchor}"]`)
+        if (element) {
+          const offset = document.querySelector('.siteHeader').offsetHeight
+          const top = element.offsetTop - offset + 20
+          window.scroll({ top, behavior: 'smooth' })
+        }
+      }, 600)
+    },
+
+    getLinks () {
+      return Array.from(document.querySelectorAll('.search__results .pageItem a[href]'))
+    },
+
+    onSearchKey (event) {
+      let target
+      const isEnter = event.key === 'Enter'
+      const isDown = event.key === 'ArrowDown'
+      if (isEnter || isDown) {
+        const links = this.getLinks()
+        target = links[0]
+        if (target) {
+          stopEvent(event)
+          target.focus()
+          if (isEnter) {
+            target.click()
+          }
+        }
+      }
+    },
+
+    onResultsKey (event) {
+      // keys
+      const isEnter = event.key === 'Enter'
+      const dir = event.key === 'ArrowDown'
+          ? 1
+          : event.key === 'ArrowUp'
+              ? -1
+              : 0
+
+      // enter
+      if (isEnter) {
+        // stopEvent(event)
+        event.stopImmediatePropagation()
+      }
+
+      // up / down
+      else if (dir !== 0) {
+        stopEvent(event)
+        const links = this.getLinks()
+        const index = links.indexOf(event.target)
+        if (index > -1) {
+          const target = links[index + dir]
+          if (target) {
+            target.focus()
+          }
+          else {
+            this.focus()
+          }
+        }
+      }
+
+      // typing
+      else {
+        this.focus()
+      }
+    },
+  },
+}
+</script>
+
+<style lang="scss">
+@import "../styles/variables";
+
+.search {
+
+  .layout__folder {
+    margin-top: 1rem;
+  }
+
+  &__tags {
+    padding: 1rem 0 .5rem;
+  }
+
+  &__tree {
+    .pageTree__desc {
+      display: none;
+    }
+  }
+
+  &__noResults {
+    padding: 3rem;
+    line-height: 1.6;
+    text-align: center;
+    font-family: $titleFont;
+    font-size: 1.25rem;
+    color: $grey-light;
+  }
+}
+
+.searchControls {
+
+  &__reset {
+    padding-left: 0.5rem !important;
+  }
+
+  @include md {
+    &__text {
+      input {
+        width: 100px;
+      }
+    }
+  }
+
+  @include sm {
+    &__tags {
+      display: none !important;
+    }
+
+    .uiRadio__label {
+      display: none !important;
+    }
+  }
+}
+
+</style>

@@ -1,75 +1,80 @@
-const groups = []
+export const tagGroups = []
 
-function addGroup (name, tags) {
-  groups.push({ name, tags })
+function addGroup (title, tags) {
+  tagGroups.push({ title, tags })
 }
 
-addGroup('special', [
-  'award',
-  'featured',
-])
-
-addGroup('domain', [
+addGroup('Domain', [
+  'concept',
   'creative',
   'technical',
-  'hackathon',
+  'frontend',
+  'backend',
+  'enterprise',
+  'jamstack',
+  'rapid-build',
+  'mashup',
 ])
 
-addGroup('technology', [
-  'front end',
-  'back end'
+addGroup('Format', [
+  'webapp',
+  'website',
+  'plugin',
+  'library',
+  'framework',
+  'chrome-extension',
+  'game',
 ])
 
-addGroup('input', [
+addGroup('Attributes', [
+  'ui',
   'api',
-  '3d',
-  'animation',
-  'concept',
   'data',
   'database',
-  'mapping',
+  'animation',
   'physics',
   'social',
-  'ugc',
   'video',
+  'state',
+  'maps',
+  '3d',
+  'ugc',
 ])
 
-addGroup('output', [
-  'chrome extension',
-  'game',
-  'mashup',
-  'plugin',
-  'rapid prototype',
-  'spa',
-  'web app',
-])
-
-addGroup('software', [
-  '3dsmax',
-  'after effects',
-  'laravel',
-  'nuxt',
-  'vuejs',
-])
-
-addGroup('language', [
-  'actionscript',
-  'flash',
-  'html',
-  'html5',
+addGroup('Language', [
   'javascript',
+  'typescript',
+  'html',
+  'node',
   'php',
+  'as3',
+  'sql',
+  'graphql',
   'svg',
+  'jsfl',
   'vba',
 ])
 
-addGroup('device', [
+addGroup('Software', [
+  'vue',
+  'nuxt',
+  'laravel',
+  'flash',
+  '3dsmax',
+  'after-effects',
+])
+
+addGroup('Device', [
   'ipad',
   'mobile',
   'responsive',
 ])
 
-addGroup('category', [
+addGroup('Category', [
   'productivity',
   'tools',
+])
+
+addGroup('Other', [
+  'award',
 ])
