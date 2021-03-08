@@ -7,7 +7,9 @@
         <div v-for="(image, i) in source"
              :key="image.src"
              class="mediaGallery__slide">
-          <MediaImage :source="image" v-show="index === i"/>
+          <MediaImage :source="image"
+                      v-if="renderImage(i)"
+                      v-show="index === i"/>
         </div>
       </div>
       <div class="mediaGallery__slidesNav">
@@ -61,6 +63,7 @@ export default {
   data () {
     return {
       index: 0,
+      loaded: [],
     }
   },
 
@@ -88,6 +91,17 @@ export default {
   },
 
   methods: {
+    renderImage (index) {
+      if (this.loaded.includes(index)) {
+        return true
+      }
+      const load = Math.abs(this.index - index) < 2
+      if (load) {
+        this.loaded.push(index)
+      }
+      return load
+    },
+
     next () {
       this.index = offset(this.index, 1, this.source, true)
     },
