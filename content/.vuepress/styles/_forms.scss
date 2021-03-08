@@ -24,6 +24,7 @@
   }
 }
 
+a[disabled],
 button[disabled] {
   color: $grey-lighter;
   pointer-events: none;

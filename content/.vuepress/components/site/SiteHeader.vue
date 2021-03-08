@@ -16,10 +16,10 @@ export default {}
 </script>
 
 <style lang="scss">
+@import "../../styles/variables";
+
 .siteHeader {
-  .layout__inner {
-    //padding: .5rem 1rem;
-  }
+  font-family: $titleFont;
 
   // used to give all items reasonable outline padding
   a, .breadcrumb__text {

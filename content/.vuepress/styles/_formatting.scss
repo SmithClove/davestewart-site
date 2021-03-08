@@ -29,6 +29,7 @@ h1 {
 }
 
 p.description {
+  font-family: $titleFont;
   margin-top: -.5em;
   margin-bottom: 2rem;
   font-size: 1.2em;
@@ -184,6 +185,10 @@ a.dimmed {
 }
 
 a.dimmed:hover {
+  color: $accentColor;
+}
+
+.accent {
   color: $accentColor;
 }
 
