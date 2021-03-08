@@ -30,6 +30,12 @@ export default {
     margin: 0;
     position: relative;
     line-height: 1.6em;
+
+    // for focus outline
+    &:focus {
+      padding: 2px 6px;
+      margin: -2px -6px;
+    }
   }
 
   &__desc {

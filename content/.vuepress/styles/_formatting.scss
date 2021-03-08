@@ -165,12 +165,6 @@ a:hover {
   text-decoration: underline;
 }
 
-//a:focus {
-//  outline: none;
-//  box-shadow: 0 0 0 3px $grey-lightest;
-//  border-radius: 4px;
-//}
-
 a span {
   margin-left: 2px;
 }
@@ -183,6 +177,15 @@ a img + span {
 // ---------------------------------------------------------------------------------------------------------------------
 // UTILITIES
 // ---------------------------------------------------------------------------------------------------------------------
+
+.dimmed,
+a.dimmed {
+  color: $grey-light;
+}
+
+a.dimmed:hover {
+  color: $accentColor;
+}
 
 .debug,
 .debug * {

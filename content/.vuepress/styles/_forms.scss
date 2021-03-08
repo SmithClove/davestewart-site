@@ -3,8 +3,8 @@
 .btn {
   display: flex;
   border: none;
-  outline: none;
   vertical-align: middle;
+  text-decoration: none;
 
   &-text {
     border: none;
@@ -29,6 +29,9 @@ button[disabled] {
   pointer-events: none;
 }
 
+a, input, button {
+  outline-color: $grey-lightest;
+}
 
 input[type="text"], textarea {
   padding: 4px 8px;
