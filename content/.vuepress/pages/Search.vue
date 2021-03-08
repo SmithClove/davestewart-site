@@ -3,13 +3,17 @@
     <h1>Search</h1>
     <p class="description">{{ itemsAsList.length }} results</p>
 
-    <div class="searchControls" @mouseup="focus">
+    <GlobalEvents
+        @keydown.capture="onKeyDown"
+        @keyup.esc="onEscape"
+    />
 
-      <UiControls>
+    <div @mouseup="focus">
+
+      <UiControls class="searchControls">
         <div class="searchControls__text">
           <UiInput v-model="query.text"
                    placeholder="Type to filter...."
-                   @keydown.capture.native="onSearchKey"
           />
         </div>
 
@@ -56,7 +60,7 @@
 
     <div class="layout__folder">
 
-      <div v-if="itemsAsList.length" class="search__results" @keydown.capture="onResultsKey">
+      <div v-if="itemsAsList.length" class="search__results">
 
         <!-- by date -->
         <div v-if="query.viewMode === 'date'" class="search__date">
@@ -95,7 +99,7 @@
 import SlideUpDown from 'vue-slide-up-down'
 import { groupBy, sortBy } from '../utils/array.js'
 import { clone } from '../utils/object.js'
-import { stopEvent } from '../utils/dom.js'
+import { getElements, getNavigation, isInput, isChar, navigateLinks, stopEvent } from '../utils/dom.js'
 import { fm } from '../utils/app.js'
 import { makeTree } from '../store/tree.js'
 import { storage } from '../utils/storage.js'
@@ -105,13 +109,12 @@ function makeTextFilter (text, useOr = true) {
   if (text === '') {
     return () => true
   }
-  const predicates = text.toLowerCase()
-      .match(/[\/\w]+/g)
-      .map(text => {
-        return text.startsWith('/')
-            ? page => page.regularPath && page.regularPath.includes(text)
-            : page => ((page.title || '') + (page.frontmatter && page.frontmatter.description || '')).toLowerCase().includes(text)
-      })
+  const matches = text.toLowerCase().match(/\S+/g) || []
+  const predicates = matches.map(text => {
+    return text.startsWith('/')
+        ? page => page.regularPath && page.regularPath.includes(text)
+        : page => ((page.title || '') + (page.frontmatter && page.frontmatter.description || '')).toLowerCase().includes(text)
+  })
   return useOr
       ? page => predicates.some(fn => fn(page))
       : page => predicates.every(fn => fn(page))
@@ -293,6 +296,9 @@ export default {
     // grab data from query
     const query = this.query
 
+    // title
+    document.title = 'Search | Dave Stewart'
+
     // focus search
     this.focus()
 
@@ -385,60 +391,65 @@ export default {
       }, 600)
     },
 
-    getLinks () {
-      return Array.from(document.querySelectorAll('.search__results .pageItem a[href]'))
+    onEscape (event) {
+      if (isInput(event) && this.query.text) {
+        this.query.text = ''
+        return
+      }
+      history.back()
     },
 
-    onSearchKey (event) {
-      let target
-      const isEnter = event.key === 'Enter'
-      const isDown = event.key === 'ArrowDown'
-      if (isEnter || isDown) {
-        const links = this.getLinks()
-        target = links[0]
-        if (target) {
+    onKeyDown (event) {
+      // variables
+      const isLink = event.target.tagName === 'A'
+      const { enter, down } = getNavigation(event)
+
+      // elements
+      const target = event.target
+      const controls = getElements('.searchControls a[href]')
+      const pages = getElements('.search__results .pageItem a[href]')
+      const tags = getElements('.search__tags a[href]')
+
+      // helper functions
+      const focusPage = (navigate) => {
+        const page = pages[0]
+        if (page) {
+          page.focus()
+          if (navigate) {
+            setTimeout(() => page.click(), 150)
+          }
+        }
+      }
+
+      // text field
+      if (isInput(event)) {
+        // enter or down
+        if (enter || down) {
           stopEvent(event)
-          target.focus()
-          if (isEnter) {
-            target.click()
-          }
-        }
-      }
-    },
-
-    onResultsKey (event) {
-      // keys
-      const isEnter = event.key === 'Enter'
-      const dir = event.key === 'ArrowDown'
-          ? 1
-          : event.key === 'ArrowUp'
-              ? -1
-              : 0
-
-      // enter
-      if (isEnter) {
-        // stopEvent(event)
-        event.stopImmediatePropagation()
-      }
-
-      // up / down
-      else if (dir !== 0) {
-        stopEvent(event)
-        const links = this.getLinks()
-        const index = links.indexOf(event.target)
-        if (index > -1) {
-          const target = links[index + dir]
-          if (target) {
-            target.focus()
-          }
-          else {
-            this.focus()
-          }
+          return focusPage(enter)
         }
       }
 
-      // typing
-      else {
+      // ignore enter on links
+      if (isLink && enter) {
+        return
+      }
+
+      // is a focused link
+      else if (isLink) {
+        if (pages.includes(target)) {
+          return navigateLinks(event, pages, this, this, 'y')
+        }
+        else if (controls.includes(target)) {
+          return navigateLinks(event, controls, this, this.options.showTags ? tags[0] : pages[0], 'x')
+        }
+        else if (tags.includes(target)) {
+          return navigateLinks(event, tags, controls[0], pages[0], 'x')
+        }
+      }
+
+      // any other typing
+      if (isChar(event)) {
         this.focus()
       }
     },
@@ -473,6 +484,13 @@ export default {
     font-size: 1.25rem;
     color: $grey-light;
   }
+
+  .pageItem a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $grey-lightest;
+    border-radius: 2px;
+  }
+
 }
 
 .searchControls {

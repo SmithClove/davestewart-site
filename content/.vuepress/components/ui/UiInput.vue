@@ -5,7 +5,6 @@
            autocomplete="off"
            placeholder="Type to filter..."
            v-model="input"
-           @keydown.esc="onEscape"
     >
     <span v-if="input"
           class="uiInput__clear"
@@ -15,8 +14,6 @@
 </template>
 
 <script>
-import { stopEvent } from '../../utils/dom.js'
-
 export default {
   props: {
     value: {
@@ -39,15 +36,6 @@ export default {
       }
     }
   },
-
-  methods: {
-    onEscape (event) {
-      if (this.input) {
-        stopEvent(event)
-        this.input = ''
-      }
-    }
-  }
 }
 </script>
 

@@ -3,6 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMasonry from 'vue-masonry-css'
 import smoothscroll from 'smoothscroll-polyfill'
+import GlobalEvents from 'vue-global-events'
 
 // theme
 import './styles/index.scss'
@@ -24,6 +25,7 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   if (!isServer) {
     Vue.use(VueMasonry)
     smoothscroll.polyfill()
+    Vue.component('GlobalEvents', GlobalEvents)
   }
 
   // mixins
