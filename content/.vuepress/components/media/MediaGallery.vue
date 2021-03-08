@@ -95,7 +95,7 @@ export default {
       if (this.loaded.includes(index)) {
         return true
       }
-      const load = Math.abs(this.index - index) < 2
+      const load = Math.abs(this.index - index) < 3
       if (load) {
         this.loaded.push(index)
       }
