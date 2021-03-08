@@ -12,6 +12,7 @@
       </div>
       <div class="mediaGallery__slidesNav">
         <div class="mediaGallery__slidesPrev" @click="prev"></div>
+        <div class="mediaGallery__slidesView" @click="view"></div>
         <div class="mediaGallery__slidesNext" @click="next"></div>
       </div>
     </div>
@@ -95,6 +96,10 @@ export default {
       this.index = offset(this.index, -1, this.source, true)
     },
 
+    view () {
+
+    },
+
     onKeyDown (event) {
       const only = !(event.metaKey || event.altKey || event.ctrlKey)
       const key = event.key
@@ -122,7 +127,7 @@ $colorHover: #888;
   margin: 0 auto 3rem;
   position: relative;
 
-  .content__default & {
+  .pageContent & {
     margin-top: 2rem;
   }
 
@@ -176,6 +181,10 @@ $colorHover: #888;
 
   &__slidesPrev {
     cursor: w-resize;
+  }
+
+  &__slidesView {
+    cursor: zoom-in;
   }
 
   &__slidesNext {

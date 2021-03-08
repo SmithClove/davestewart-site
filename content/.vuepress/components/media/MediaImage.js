@@ -12,6 +12,7 @@ export default {
       attrs: {
         src: source.file,
         alt: source.caption || source.alt,
+        draggable: false,
       },
     })
   }

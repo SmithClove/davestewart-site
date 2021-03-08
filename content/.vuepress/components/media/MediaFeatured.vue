@@ -1,8 +1,6 @@
 <template>
   <div class="mediaFeatured">
-    <MediaImage :source="source"
-                class="mediaFeatured__image"
-    />
+    <MediaImage :source="source" class="mediaFeatured__image"/>
     <div v-if="source.text" class="mediaFeatured__text">
       {{ source.text }}
     </div>

@@ -1,6 +1,7 @@
-import { isLocal, getFile, getSource, placeholder } from '../../utils/media.js'
+import { isLocal, getFile, getSource, placeholder, getStyle } from '../../utils/media.js'
 import { getValue, merge } from '../../utils/object.js'
 import { capitalize } from '../../utils/string.js'
+import { isRemote } from '../../plugins/utils.js'
 
 /**
  * Factory function to create a base media object
@@ -62,16 +63,10 @@ export default function (key) {
       },
 
       mediaStyle () {
-        const options = this.source
-        const { width, height } = Array.isArray(options)
-          ? options[0]
-          : options
-        return {
-          width: '100%',
-          aspectRatio: width && height
-            ? `${width} / ${height}`
-            : false
-        }
+        const source = Array.isArray(this.source)
+          ? this.source[0]
+          : this.source
+        return getStyle(source)
       },
 
       containerStyle () {
@@ -117,7 +112,9 @@ export default function (key) {
 
       getFile (source) {
         const page = this.page || this.$page
-        return getFile(page.regularPath, source.path)
+        return isRemote(source.path)
+          ? source.path
+          : getFile(page.regularPath, source.path)
       }
     }
   }

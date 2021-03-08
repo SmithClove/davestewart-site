@@ -37,11 +37,5 @@ export default {
 .mediaVideo {
   margin-bottom: 1rem;
   font-size: 0;
-
-  iframe {
-    @include striped(#EEE, #FFF);
-    width: 100%;
-    border: 0;
-  }
 }
 </style>
