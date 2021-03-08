@@ -1,7 +1,7 @@
 <template>
   <SiteWrapper layout="search" class="search">
     <h1>Search<span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span></h1>
-    <p class="description">{{ itemsAsList.length }} results</p>
+    <p class="description">{{ pageDescription }}</p>
 
     <GlobalEvents
         @keydown.capture="onKeyDown"
@@ -100,12 +100,13 @@
 
 <script>
 import SlideUpDown from 'vue-slide-up-down'
+import { getElements, getNavigation, isInput, isChar, navigateLinks, stopEvent } from '../utils/dom.js'
 import { groupBy, sortBy } from '../utils/array.js'
 import { clone } from '../utils/object.js'
-import { getElements, getNavigation, isInput, isChar, navigateLinks, stopEvent } from '../utils/dom.js'
 import { fm } from '../utils/app.js'
 import { makeTree } from '../store/tree.js'
 import { storage } from '../utils/storage.js'
+import { plural } from '../utils/string.js'
 
 function makeTextFilter (text, useOr = true) {
   text = text.trim()
@@ -199,6 +200,10 @@ export default {
         parts.push(tags.join(' + '))
       }
       return parts.join(' + ')
+    },
+
+    pageDescription () {
+      return plural(this.itemsAsList.length, 'result')
     },
 
     prepared () {

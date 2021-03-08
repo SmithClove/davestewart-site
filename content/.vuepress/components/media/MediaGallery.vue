@@ -211,6 +211,8 @@ $colorHover: #888;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: $titleFont;
+    font-size: 16px;
   }
 
   &__navButton {

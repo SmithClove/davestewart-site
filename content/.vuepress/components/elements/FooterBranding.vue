@@ -37,7 +37,7 @@ export default {
   &__text {
     height: 32px;
     margin-left: .5rem;
-    margin-top: -1px;
+    margin-top: -3px;
     line-height: 1.15;
     color: $grey-light;
 

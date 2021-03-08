@@ -1,5 +1,5 @@
 <template>
-  <UiControls>
+  <UiControls class="pageInfo">
     <PageDate v-if="date" :date="date" @click="search"/>
     <TagList v-if="tags" :tags="tags" @click="search"/>
   </UiControls>
@@ -20,11 +20,16 @@ export default {
   methods: {
     search (href) {
       this.$router.push(href)
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
+@import '../../styles/variables';
 
+.pageInfo {
+  font-family: $titleFont;
+  font-size: 16px;
+}
 </style>

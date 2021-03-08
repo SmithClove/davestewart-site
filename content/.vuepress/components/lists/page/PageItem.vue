@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../../styles/variables";
+
 .pageItem {
   margin-bottom: .75em;
   list-style-type: disc;

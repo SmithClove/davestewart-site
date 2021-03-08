@@ -92,7 +92,6 @@ export default {
   display: flex;
   margin: 0 0 0 -6px;
   flex-wrap: wrap;
-  font-size: 14px;
 }
 
 .breadcrumb {
