@@ -1,6 +1,7 @@
 <template>
   <div class="uiRadio">
-    <label class="uiRadio__label"
+    <label v-if="label"
+           class="uiRadio__label"
            :data-count="count"
            :data-count-state="countState"
     >{{ label }}:</label>

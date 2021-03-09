@@ -21,6 +21,8 @@ export default {
 
 .iconLink {
   display: inline-block;
+  border-radius: 3px;
+  overflow: hidden;
   font-size: 0;
 
   span {

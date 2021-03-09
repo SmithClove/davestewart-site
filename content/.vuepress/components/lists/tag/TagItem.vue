@@ -46,7 +46,7 @@ export default {
 
   &__tag {
     display: inline-block;
-    padding: .3em .5em .4em;
+    padding: .3em .5em;
     vertical-align: middle;
     white-space: nowrap;
     transition: .2s all;

@@ -30,10 +30,10 @@ h1 {
 
 p.description {
   font-family: $titleFont;
-  margin-top: -.5em;
+  margin-top: -.25em;
   margin-bottom: 2rem;
   font-size: 1.2em;
-  opacity: .5;
+  color: $grey;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -43,8 +43,11 @@ p.description {
 .pageContent {
 
   margin-bottom: 2rem;
-  //line-height: 1.6; // Palanquin
   line-height: 1.7; // Open Sans
+
+  &--bottom {
+    margin-top: 3rem;
+  }
 
   h2 {
     border-bottom: 1px solid $borderColor;
@@ -96,8 +99,6 @@ p.description {
     margin: auto;
   }
 
-
-
   strong {
     font-weight: 700;
   }
@@ -113,6 +114,11 @@ p.description {
     height: 1px;
   }
 
+}
+
+iframe,
+img {
+  border-radius: 4px;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------

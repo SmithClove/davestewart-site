@@ -1,5 +1,5 @@
 <template>
-  <article class="thumbnailItem">
+  <article class="thumbnailItem boxy">
 
     <!-- image -->
     <div class="thumbnailItem__image">
@@ -44,8 +44,6 @@ export default {
   width: 100%;
   box-sizing: border-box;
   display: inline-block;
-  padding: 1rem;
-  border-radius: 2px;
   margin-bottom: 20px;
   background: white;
   box-shadow:
@@ -57,10 +55,6 @@ export default {
 
   @include md {
     box-shadow: 0 5px 6px rgba(59, 92, 143, 0.05);
-  }
-
-  &__content {
-    padding: 0 .1rem;
   }
 
   a {
@@ -79,11 +73,13 @@ export default {
   img {
     width: 100%;
     transition: all .6s cubic-bezier(0.180, 0.300, 0.125, 0.985);
+    border-radius: 0;
   }
 
-  &__title {
-    margin: 1rem 0 .5rem;
-    font-size: 1.2em;
+  &__content h3 {
+    font-size: 1.3em;
+    margin: .75rem 0 .5rem;
+    line-height: 1.3;
   }
 
   p {
@@ -110,13 +106,25 @@ export default {
 
 }
 
+.thumbnailItem.padded {
+  padding: 1rem;
+  border-radius: 2px;
+
+  .thumbnailItem__content {
+    padding: 0 .1rem;
+
+    h3 {
+    }
+  }
+}
+
 .thumbnailItem.boxy {
   padding: 0;
   border-radius: 4px;
   overflow: hidden;
 
   .thumbnailItem__content {
-    padding: 1rem;
+    padding: .85rem 1rem 1rem;
   }
 
   .thumbnailItem__title {
