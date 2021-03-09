@@ -7,7 +7,7 @@ tags:
   - technical
   - backend
 media:
-  thumbnail: ./images/double-o_featured.png
+  thumbnail: ./konference-logo.png
 ---
 
 # Kohana modules

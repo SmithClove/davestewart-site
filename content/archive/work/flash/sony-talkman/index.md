@@ -1,6 +1,6 @@
 ---
 description: Multilingual Flash micro-site for Sony PSP translation game / software
-date: 2006-02-05
+date: 2006-05-05
 tags:
   - flash
   - game

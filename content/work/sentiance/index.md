@@ -5,6 +5,7 @@ tags:
   - webapp
   - frontend
   - api
+  - data
   - vue
   - graphql
   - enterprise

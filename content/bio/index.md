@@ -2,6 +2,7 @@
 title: Bio
 description: A little bit about me
 layout: folder
+format: links
 order: 1
 ---
 

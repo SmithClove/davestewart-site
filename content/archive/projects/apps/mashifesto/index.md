@@ -13,6 +13,7 @@ tags:
   - rapid-build
   - award
 media:
+  thumbnail: ./images/mashifesto_sizzle.jpg
   gallery:
     - ./images/mashifesto_sizzle.jpg
     - ./images/mashifesto_beards.jpg

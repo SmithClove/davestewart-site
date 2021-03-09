@@ -1,6 +1,6 @@
 ---
 description: Ongoing development diary of building a Trello clone
-date: 2018-07-01
+date: 2018-06-01
 hero: featured
 tags:
   - website
@@ -9,8 +9,8 @@ tags:
   - library
   - rapid-build
 media:
+  thumbnail: ./images/app-diary-thumbnail-02.png
   featured: ./images/app-diary-featured.png
-  thumbnail: ./images/app-diary-thumbnail.png
 ---
 
 # App Diary

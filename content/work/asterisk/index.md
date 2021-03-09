@@ -6,6 +6,7 @@ tags:
   - webapp
   - frontend
   - api
+  - data
   - ui
   - vue
   - typescript

@@ -7,7 +7,7 @@ tags:
   - framework
   - ui
 media:
-  thumbnail: ./images/3dsmax.png
+  thumbnail: ./images/particle-visualiser.png
   featured: ./images/3dsmax.png
 ---
 

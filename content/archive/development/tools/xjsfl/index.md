@@ -18,6 +18,7 @@ tags:
   - technical
   - ui
 media:
+  thumbnail: ./images/xjsfl-logo.png
   gallery:
     - ./images/xjsfl-screen-01.jpg
     - ./images/xjsfl-screen-02.jpg

@@ -12,7 +12,7 @@ media:
     - ./images/personal-branding-03.jpg
 ---
 
-# Personal Branding
+# Branding Experiments
 
 ## Overview
 

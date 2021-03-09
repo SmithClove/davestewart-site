@@ -1,5 +1,5 @@
 ---
-description: In-house press release application
+description: In-house application to browse and curate financial newsletters
 date: 2020-10-01
 tags:
   - webapp

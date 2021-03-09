@@ -6,7 +6,9 @@ tags:
   - webapp
   - frontend
   - backend
+  - database
   - vue
+  - data
   - api
   - ui
   - laravel
@@ -32,3 +34,12 @@ Lorem Ipsum
 
 - [fairsquare.com](https://fairsquare.com)
 
+tagsMode = filter
+viewMode = view
+sortMode = sort
+
+filter: off, tags, categories
+sort: date, folder
+view: text,image
+
+animate color
