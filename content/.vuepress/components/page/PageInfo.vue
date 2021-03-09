@@ -31,5 +31,6 @@ export default {
 .pageInfo {
   font-family: $titleFont;
   font-size: 16px;
+  flex-wrap: nowrap !important;
 }
 </style>
