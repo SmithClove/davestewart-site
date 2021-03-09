@@ -1,14 +1,26 @@
 <template>
   <SiteWrapper layout="search" class="search">
-    <h1>Search<span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span></h1>
-    <p class="description">{{ pageDescription }}</p>
+    <h1 class="search__title">
+      <div>
+        <span>Search</span>
+        <span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span>
+      </div>
+      <a href="/search/"
+         class="search__clear"
+         :class="{ active: canReset }"
+         @click.prevent="reset">&times;</a>
+    </h1>
+
+    <p class="description" style="display: flex">
+      <span>{{ pageDescription }}</span>
+    </p>
 
     <GlobalEvents
         @keydown.capture="onKeyDown"
         @keyup.esc="onEscape"
     />
 
-    <div @mouseup="focus">
+    <div>
 
       <UiControls class="searchControls">
         <div class="searchControls__text">
@@ -17,32 +29,40 @@
           />
         </div>
 
-        <div class="searchControls__mode">
-          <UiRadio
-              name="viewMode"
-              label="View"
-              :options="options.viewMode"
-              v-model="query.viewMode"
-          />
-        </div>
-
         <div class="searchControls__tags">
-          <UiRadio name="tagsMode"
+          <UiRadio name="filter"
                    label="Tags"
                    :count="query.tags.length ? query.tags.length : ''"
                    :countState="options.showTags ? 0 : 1"
-                   :options="options.tagsMode"
-                   v-model="query.tagsMode"
+                   :options="options.filter"
+                   v-model="query.filter"
           />
         </div>
 
-        <div class="searchControls__reset">
+        <div class="searchControls__sort">
+          <UiRadio
+              name="sort"
+              :options="options.sort"
+              v-model="query.sort"
+          />
+        </div>
+
+        <div class="searchControls__view">
+          <UiRadio
+              name="view"
+              :options="options.view"
+              v-model="query.view"
+          />
+        </div>
+
+        <!--
+        <div class="searchControls__reset" v-if="canReset">
           <a href="/search/"
-                  class="btn"
-                  :disabled="!canReset"
-                  @click.prevent="reset">Reset
+                  class="btn btn-clear"
+                  @click.prevent="reset">Clear
           </a>
         </div>
+        -->
 
       </UiControls>
 
@@ -53,7 +73,7 @@
 
       >
         <TagMatrix class="search__tags"
-                   :mode="query.tagsMode"
+                   :mode="query.filter"
                    :selected="query.tags"
                    :pages="filtered"
                    @toggle="toggleTag"
@@ -66,25 +86,26 @@
       <div v-if="itemsAsList.length" class="search__results">
 
         <!-- by date -->
-        <div v-if="query.viewMode === 'date'" class="search__date">
+        <div v-if="query.sort === 'date'" class="search__date">
           <div v-for="group in itemsByYear" class="pageTree">
             <div class="pageTree__header">
               <a :name="group.title"></a>
               <h2 class="pageTree__title">{{ group.title }}</h2>
             </div>
             <div class="pageTree__pages">
-              <PageList :pages="group.items"/>
+              <ThumbnailWall v-if="query.view === 'image'" :pages="group.items"/>
+              <PageList v-else :pages="group.items"/>
             </div>
           </div>
         </div>
 
         <!-- by folder -->
-        <div v-else-if="query.viewMode === 'tree'" class="search__tree">
-          <PageTree :items="itemsAsTree"/>
+        <div v-else-if="query.sort === 'path'" class="search__tree">
+          <PageTree :mode="query.view" :items="itemsAsTree"/>
         </div>
 
         <!-- thumbnails -->
-        <div v-else-if="query.viewMode === 'thumbs'" class="search__list">
+        <div v-else-if="query.sort === 'thumbs'" class="search__list">
           <ThumbnailWall :pages="itemsAsList"/>
         </div>
 
@@ -100,7 +121,7 @@
 
 <script>
 import SlideUpDown from 'vue-slide-up-down'
-import { getElements, getNavigation, isInput, isChar, navigateLinks, stopEvent } from '../utils/dom.js'
+import { getElements, getNavigation, isInput, isChar, navigateLinks, stopEvent, getKeyChar } from '../utils/dom.js';
 import { groupBy, sortBy } from '../utils/array.js'
 import { clone } from '../utils/object.js'
 import { fm } from '../utils/app.js'
@@ -137,14 +158,15 @@ function makeTagsFilter (tags, useOr = false) {
 
 function makeQuery () {
   return {
-    viewMode: 'date',
-    tagsMode: 'off',
+    text: '',
+    textOp: 'and',
 
     tags: [],
     tagsOp: 'and',
 
-    text: '',
-    textOp: 'and',
+    filter: 'hide',
+    sort: 'date',
+    view: 'text',
 
     path: '',
     year: '',
@@ -174,38 +196,23 @@ export default {
     }
 
     // always show tags if we have tags
-    if (query.tags.length > 0 && query.tagsMode === 'off') {
-      // query.tagsMode = 'list'
+    if (query.tags.length > 0 && query.filter === 'hide') {
+      // query.filter = 'list'
     }
 
     // return all settings
     return {
       options: {
-        viewMode: ['date', 'tree', 'thumbs'],
-        tagsMode: ['off', 'list', 'groups'],
-        showTags: query.tagsMode !== 'off',
+        filter: ['hide', 'list', 'groups'],
+        sort: ['date', 'path'],
+        view: ['text', 'image'],
+        showTags: query.filter !== 'hide',
       },
       query,
     }
   },
 
   computed: {
-    searchTitle () {
-      const { text, tags } = this.query
-      const parts = []
-      if (text) {
-        parts.push(text)
-      }
-      if (tags.length) {
-        parts.push(tags.join(' + '))
-      }
-      return parts.join(' + ')
-    },
-
-    pageDescription () {
-      return plural(this.itemsAsList.length, 'result')
-    },
-
     prepared () {
       // properties
       let items = this.$store.pages
@@ -287,13 +294,33 @@ export default {
       return root.pages
     },
 
+    isFiltered () {
+      return this.prepared.length === this.filtered.length
+    },
+
     canReset () {
-      const defaults = makeQuery()
-      const query = this.query
-      return query.text !== defaults.text
-          || query.tags.length > 0
-          || query.viewMode !== defaults.viewMode
-          || query.tagsMode !== defaults.tagsMode
+      const query = makeQuery()
+      return this.query.text !== query.text
+          || this.query.tags.length > 0
+          // || this.query.filter !== query.filter
+    },
+
+    searchTitle () {
+      const { text, tags } = this.query
+      const parts = []
+      if (text) {
+        parts.push(text)
+      }
+      if (tags.length) {
+        parts.push(tags.join(' + '))
+      }
+      return parts.join(' & ')
+    },
+
+    pageDescription () {
+      return this.isFiltered
+          ? 'All items'
+          : plural(this.itemsAsList.length, 'item')
     },
   },
 
@@ -303,8 +330,8 @@ export default {
       deep: true,
     },
 
-    'query.tagsMode' (value) {
-      const showTags = value !== 'off'
+    'query.filter' (value) {
+      const showTags = value !== 'hide'
       this.options.showTags = showTags
       if (!showTags) {
         // this.query.tags = []
@@ -327,12 +354,12 @@ export default {
 
     // scroll
     if (query.year) {
-      this.query.viewMode = 'date'
+      this.query.sort = 'date'
       this.scrollTo(query.year)
     }
 
     if (query.path) {
-      this.query.viewMode = 'tree'
+      this.query.sort = 'path'
       this.scrollTo(query.path)
     }
   },
@@ -363,13 +390,17 @@ export default {
 
       // save preferences
       storage.set('search', {
-        viewMode: this.query.viewMode,
-        tagsMode: this.query.tagsMode,
+        filter: this.query.filter,
+        sort: this.query.sort,
+        view: this.query.view,
       })
     },
 
     reset () {
-      this.query = makeQuery()
+      const query = makeQuery()
+      this.query.text = query.text
+      this.query.tags = query.tags
+      this.query.filter = query.filter
     },
 
     // ---------------------------------------------------------------------------------------------------------------------
@@ -424,6 +455,7 @@ export default {
         return
       }
       if (this.canReset) {
+        this.focus()
         this.reset()
         return
       }
@@ -433,7 +465,7 @@ export default {
     onKeyDown (event) {
       // variables
       const isLink = event.target.tagName === 'A'
-      const { enter, down } = getNavigation(event)
+      const { enter, down, x, y } = getNavigation(event)
 
       // elements
       const target = event.target
@@ -467,7 +499,7 @@ export default {
       }
 
       // is a focused link
-      else if (isLink) {
+      else if (isLink && (x || y)) {
         if (pages.includes(target)) {
           return navigateLinks(event, pages, this, this, 'y')
         }
@@ -497,12 +529,18 @@ export default {
     margin-top: 1rem;
   }
 
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__tags {
     padding: 1rem 0 .5rem;
   }
 
   &__tree {
-    .pageTree__desc {
+    // hide descriptions for empty thumbnail folders
+    .pageTree[data-pages="0"] > .pageTree__header > .pageTree__desc {
       display: none;
     }
   }
@@ -523,11 +561,22 @@ export default {
   }
 }
 
-.searchControls {
-
-  &__reset {
-    padding-left: 0.5rem !important;
+a.search__clear {
+  color: $grey-lightest;
+  text-decoration: none;
+  cursor: default;
+  &.active {
+    color: black;
+    cursor: pointer;
+    &:hover {
+      color: $accentColor;
+    }
   }
+}
+
+
+
+.searchControls {
 
   @include md {
     &__text {
