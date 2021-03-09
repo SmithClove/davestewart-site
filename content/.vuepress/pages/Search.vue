@@ -565,6 +565,7 @@ a.search__clear {
   color: $grey-lightest;
   text-decoration: none;
   cursor: default;
+  padding: 0 .8rem;
   &.active {
     color: black;
     cursor: pointer;

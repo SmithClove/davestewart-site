@@ -3,17 +3,16 @@
     <h1>{{ $page.title }}</h1>
     <p class="description">{{ $page.frontmatter.description }}</p>
 
+    <!-- text -->
     <Content class="pageContent"/>
 
-    <template v-if="options.format === 'thumbnails'">
-      <ThumbnailWall :pages="pages"/>
-    </template>
-    <template v-else>
-      <PageTree v-if="depth"
-                :items="tree"/>
-      <PageList v-else
-                :pages="pages"/>
-    </template>
+    <!-- folders -->
+    <ThumbnailWall v-if="options.format === 'thumbnails'" :pages="pages"/>
+    <PageTree v-else-if="depth" :items="tree"/>
+    <PageList v-else :pages="pages"/>
+
+    <!-- after -->
+    <Content slot-key="after" class="pageContent pageContent--bottom"/>
   </div>
 </template>
 
@@ -29,9 +28,9 @@ export default {
 
     options () {
       const options = {
-        sort: 'date',
-        order: 'desc',
         format: 'list',
+        sort: 'frontmatter.date',
+        order: 'desc',
       }
       const format = this.$fm('format')
       if (format) {

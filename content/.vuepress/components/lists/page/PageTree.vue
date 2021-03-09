@@ -1,5 +1,10 @@
 <template>
-  <div class="pageTree" :data-depth="depth">
+  <div class="pageTree"
+       :data-mode="mode"
+       :data-depth="depth"
+       :data-pages="pages.length"
+       :data-folders="folders.length"
+  >
     <div v-if="title" class="pageTree__header">
       <Heading :level="depth + 1" class="pageTree__title">
         <a :name="id"></a>
@@ -14,12 +19,14 @@
                 :path="page.path"
                 :desc="page.desc"
                 :items="page.pages"
+                :mode="mode"
                 :depth="depth + 1"
         />
     </div>
 
     <div v-if="pages.length" class="pageTree__pages">
-      <PageList :pages="pages"/>
+      <ThumbnailWall v-if="mode === 'image'" :pages="pages"/>
+      <PageList v-else :pages="pages"/>
     </div>
   </div>
 </template>
@@ -33,8 +40,10 @@ const Heading = Vue.component('Heading', {
   functional: true,
 
   props: {
-    level: Number,
-    required: true,
+    level: {
+      type: Number,
+      required: true,
+    },
   },
 
   render (h, ctx) {
@@ -58,10 +67,14 @@ export default {
       type: Array,
       default: () => []
     },
+    mode: {
+      type: String,
+      default: 'image',
+    },
     depth: {
       type: Number,
       default: 0,
-    }
+    },
   },
 
   computed: {
@@ -133,7 +146,20 @@ export default {
   }
 
   &__pages {
-    margin: .5rem 2rem;
+    margin: .5rem 0 0 2rem;
+  }
+
+  &[data-mode="image"] &__pages,
+  &[data-mode="image"] &__folders {
+    margin-left: 0;
+  }
+
+  // for thumbnails, only indent the first level
+  &[data-mode="image"][data-depth="1"] {
+    > .pageTree__folders,
+    > .pageTree__pages {
+      margin-left: 2rem;
+    }
   }
 
   .pageList {
