@@ -46,7 +46,7 @@ export function isChar (event) {
 
 export function getKeyChar (event) {
   return event.key.length === 1
-    ? event.key
+    ? event.key.trim()
     : ''
 }
 
