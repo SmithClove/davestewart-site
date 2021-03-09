@@ -53,10 +53,3 @@ body {
   margin: 0 auto;
   padding: 1rem;
 }
-
-// fix title h1 top margins
-[class^="layout__"] {
-  > h1:first-child {
-    margin-top: .5rem;
-  }
-}
