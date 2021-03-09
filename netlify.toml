@@ -1,0 +1,7 @@
+[build]
+  publish = "output"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/help/"
+  to = "/"
