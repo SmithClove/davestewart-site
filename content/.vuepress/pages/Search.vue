@@ -127,6 +127,7 @@ import { fm } from '../utils/app.js'
 import { makeTree } from '../store/tree.js'
 import { storage } from '../utils/storage.js'
 import { plural } from '../utils/string.js'
+import { isDesktop } from '../utils/env.js'
 
 function makeTextFilter (text, useOr = true) {
   text = text.trim()
@@ -346,7 +347,9 @@ export default {
     })
 
     // focus search
-    this.focus()
+    if (!this.canReset || isDesktop()) {
+      this.focus()
+    }
 
     // scroll
     if (query.year) {
