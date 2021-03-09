@@ -1,5 +1,5 @@
 <template>
-  <a class="footerBranding" href="/" @click.prevent="onClick">
+  <a class="footerBranding" href="/bio" @click.prevent="onClick">
     <SiteIcon class="footerBranding__icon"/>
     <div class="footerBranding__text">
       <span>Dave Stewart</span>
@@ -14,7 +14,8 @@ export default {
     onClick (event) {
       event.currentTarget.blur()
       window.scrollTo({ top: 0, behavior: 'smooth' })
-      setTimeout(() => this.$router.push('/'), 750)
+      this.$router.push('/bio').catch(() => {})
+      // setTimeout(() => , 750)
     }
   }
 }
@@ -27,6 +28,8 @@ export default {
   display: flex;
   color: unset;
   text-decoration: none !important;
+  padding: 5px;
+  margin: -5px;
 
   &__icon {
     height: 32px;
@@ -37,8 +40,7 @@ export default {
   &__text {
     height: 32px;
     margin-left: .5rem;
-    margin-top: -3px;
-    line-height: 1.15;
+    line-height: 1;
     color: $grey-light;
 
     :first-child {

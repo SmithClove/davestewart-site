@@ -1,26 +1,33 @@
 <template>
   <div class="layout__search">
-    <h1 class="search__title">
-      <div>
-        <span>Search</span>
-        <span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span>
-      </div>
-      <span class="search__clear"
-         :class="{ active: canReset }"
-         @click.prevent="reset">&times;</span>
-    </h1>
-
-    <p class="description" style="display: flex">
-      <span>{{ pageDescription }}</span>
-    </p>
 
     <GlobalEvents
         @keydown.capture="onKeyDown"
         @keyup.esc="onEscape"
     />
 
+    <!-- header -->
+    <h1 class="search__title">
+      <span>Search</span>
+      <span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span>
+    </h1>
+
+    <!-- description -->
+    <p class="description" style="display: flex">
+      <span>{{ pageDescription }}</span>
+    </p>
+
+    <!-- parameters -->
     <div class="search__parameters">
 
+      <!-- clear -->
+      <button class="search__clear"
+         :class="{ active: canReset }"
+         @click.prevent="reset">
+        <span>&times;</span>
+      </button>
+
+      <!-- controls -->
       <UiControls class="searchControls">
 
         <!-- search input -->
@@ -529,16 +536,33 @@ export default {
   }
 
   &__title {
-    display: flex;
-    justify-content: space-between;
+    padding-right: 3rem;
   }
 
   &__clear {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    padding: .6rem;
+    font-size: 35px;
+    line-height: 1rem;
+
+    border: none;
+    background: none;
+    outline: none;
+    font-family: $titleFont;
+
     color: $grey-lightest;
     text-decoration: none;
     cursor: default;
-    padding: 0 .8rem;
     font-weight: 400;
+    user-select: none;
+
+    span {
+      height: 0;
+      width: 0;
+    }
+
     &.active {
       color: black;
       cursor: pointer;
