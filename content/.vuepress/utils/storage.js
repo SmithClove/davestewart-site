@@ -1,6 +1,8 @@
+// provide proxy for server
 const noop = () => ({})
 const s = globalThis.localStorage || { setItem: noop, getItem: noop }
 
+// actual storage
 export const storage = {
   set (key, value) {
     s.setItem(key, JSON.stringify(value))

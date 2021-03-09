@@ -72,12 +72,14 @@ export default {
       }
 
       // add extra global links
+      /*
       const pathname = this.location.pathname || ''
       pages.forEach(page => {
         if (pathname.startsWith(page.path)) {
           addLink(page.path, page.title, page.description)
         }
       })
+      */
 
       // done now!
       return links
@@ -98,7 +100,7 @@ export default {
   &__item {
     display: inline-block;
     white-space: nowrap;
-    margin: .3rem 0;
+    margin: 0 0 0.5rem 0;
 
     // arrow
     &:not(:last-child):after {

@@ -1,14 +1,13 @@
 <template>
-  <SiteWrapper layout="search" class="search">
+  <div class="layout__search">
     <h1 class="search__title">
       <div>
         <span>Search</span>
         <span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span>
       </div>
-      <a href="/search/"
-         class="search__clear"
+      <span class="search__clear"
          :class="{ active: canReset }"
-         @click.prevent="reset">&times;</a>
+         @click.prevent="reset">&times;</span>
     </h1>
 
     <p class="description" style="display: flex">
@@ -87,7 +86,7 @@
 
         <!-- by date -->
         <div v-if="query.sort === 'date'" class="search__date">
-          <div v-for="group in itemsByYear" class="pageTree">
+          <div v-for="group in itemsByYear" class="pageTree" :data-mode="query.view">
             <div class="pageTree__header">
               <a :name="group.title"></a>
               <h2 class="pageTree__title">{{ group.title }}</h2>
@@ -116,7 +115,7 @@
       </div>
 
     </div>
-  </SiteWrapper>
+  </div>
 </template>
 
 <script>
@@ -183,32 +182,25 @@ export default {
     // variables
     const route = this.$route
     const tags = route.query.tags || []
-    const saved = storage.get('search', {})
 
     // build query from current route
     const query = {
       ...makeQuery(),
       ...route.query,
-      ...saved,
       tags: Array.isArray(tags)
           ? tags
           : [tags],
     }
 
-    // always show tags if we have tags
-    if (query.tags.length > 0 && query.filter === 'hide') {
-      // query.filter = 'list'
-    }
-
     // return all settings
     return {
+      query,
       options: {
         filter: ['hide', 'list', 'groups'],
         sort: ['date', 'path'],
         view: ['text', 'image'],
         showTags: query.filter !== 'hide',
       },
-      query,
     }
   },
 
@@ -340,6 +332,10 @@ export default {
   },
 
   mounted () {
+    // assign saved data
+    const saved = storage.get('search', {})
+    Object.assign(this.query, saved)
+
     // grab data from query
     const query = this.query
 
@@ -529,6 +525,21 @@ export default {
     margin-top: 1rem;
   }
 
+  &__clear {
+    color: $grey-lightest;
+    text-decoration: none;
+    cursor: default;
+    padding: 0 .8rem;
+    font-weight: 400;
+    &.active {
+      color: black;
+      cursor: pointer;
+      &:hover {
+        color: $accentColor;
+      }
+    }
+  }
+
   &__title {
     display: flex;
     justify-content: space-between;
@@ -560,23 +571,6 @@ export default {
     border-radius: 2px;
   }
 }
-
-a.search__clear {
-  color: $grey-lightest;
-  text-decoration: none;
-  cursor: default;
-  padding: 0 .8rem;
-  font-weight: 400;
-  &.active {
-    color: black;
-    cursor: pointer;
-    &:hover {
-      color: $accentColor;
-    }
-  }
-}
-
-
 
 .searchControls {
 

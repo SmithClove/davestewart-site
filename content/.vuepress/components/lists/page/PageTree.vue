@@ -21,7 +21,7 @@
                 :items="page.pages"
                 :mode="mode"
                 :depth="depth + 1"
-        />
+      />
     </div>
 
     <div v-if="pages.length" class="pageTree__pages">
@@ -48,7 +48,7 @@ const Heading = Vue.component('Heading', {
 
   render (h, ctx) {
     return h(`h${ctx.props.level}`, ctx.data, ctx.slots().default)
-  }
+  },
 })
 
 export default {
@@ -65,7 +65,7 @@ export default {
     desc: String,
     items: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     mode: {
       type: String,
@@ -93,7 +93,7 @@ export default {
     pages () {
       return this.items.filter(item => item.type === 'page')
     },
-  }
+  },
 }
 </script>
 
@@ -116,6 +116,7 @@ export default {
   &__title {
     margin: 0;
     font-size: 1.3rem;
+
     a {
       color: $textColor !important;
     }
@@ -169,5 +170,15 @@ export default {
   .pageItem {
     margin-bottom: .25em;
   }
+
+  @include sm {
+    &[data-mode="image"] {
+      .pageTree__folders,
+      .pageTree__pages {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
 }
 </style>

@@ -49,6 +49,11 @@ export default {
   line-height: 1;
   margin: 0 7px;
 
+  &__text {
+    width: 100%;
+    min-width: 50px;
+  }
+
   &__clear {
     position: absolute;
     display: block;

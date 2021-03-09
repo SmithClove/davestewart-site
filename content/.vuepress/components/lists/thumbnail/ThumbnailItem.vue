@@ -125,6 +125,10 @@ export default {
 
   .thumbnailItem__content {
     padding: .85rem 1rem 1rem;
+    @include sm {
+      padding-left: .25rem;
+      padding-right: .25rem;
+    }
   }
 
   .thumbnailItem__title {

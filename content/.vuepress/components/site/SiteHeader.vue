@@ -26,10 +26,15 @@ export default {}
     padding: 2px 6px;
   }
 
+  .layout__inner {
+    // pull in padding because breadcrumbs already contain bottom margin
+    padding-bottom: .5rem;
+  }
+
   &__left,
   &__right {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
 
   &__left {

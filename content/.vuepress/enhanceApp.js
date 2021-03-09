@@ -11,7 +11,6 @@ import './styles/index.scss'
 // helpers
 import { $fm } from './utils/app.js'
 import { makeStore } from './store'
-import { pages } from './pages'
 
 /**
  * @param {Vue}         Vue       the version of Vue being used in the VuePress app
@@ -34,7 +33,4 @@ export default ({ Vue, options, router, siteData, isServer }) => {
 
   // components
   require('./components')
-
-  // add routes
-  pages.forEach(page => router.addRoute(page))
 }

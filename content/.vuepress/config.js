@@ -25,6 +25,16 @@ module.exports = {
     link('shortcut icon', '/favicon.svg'),
   ],
 
+  additionalPages: [
+    {
+      path: '/search/',
+      title: 'Search',
+      frontmatter: {
+        layout: 'search'
+      }
+    }
+  ],
+
   configureWebpack: {
     devtool: isDev
       ? 'source-map'
