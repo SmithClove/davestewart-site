@@ -49,7 +49,6 @@ export default {
     padding: .3em .5em;
     vertical-align: middle;
     white-space: nowrap;
-    transition: .2s all;
 
     &.selected {
       background: var(--theme);

@@ -19,15 +19,19 @@
         @keyup.esc="onEscape"
     />
 
-    <div>
+    <div class="search__parameters">
 
       <UiControls class="searchControls">
+
+        <!-- search input -->
         <div class="searchControls__text">
           <UiInput v-model="query.text"
                    placeholder="Type to filter...."
           />
         </div>
 
+        <!-- tags -->
+        <!-- tags -->
         <div class="searchControls__tags">
           <UiRadio name="filter"
                    label="Tags"
@@ -38,6 +42,7 @@
           />
         </div>
 
+        <!-- sorting -->
         <div class="searchControls__sort">
           <UiRadio
               name="sort"
@@ -46,6 +51,7 @@
           />
         </div>
 
+        <!-- view -->
         <div class="searchControls__view">
           <UiRadio
               name="view"
@@ -53,15 +59,6 @@
               v-model="query.view"
           />
         </div>
-
-        <!--
-        <div class="searchControls__reset" v-if="canReset">
-          <a href="/search/"
-                  class="btn btn-clear"
-                  @click.prevent="reset">Clear
-          </a>
-        </div>
-        -->
 
       </UiControls>
 
@@ -127,7 +124,7 @@ import { fm } from '../utils/app.js'
 import { makeTree } from '../store/tree.js'
 import { storage } from '../utils/storage.js'
 import { plural } from '../utils/string.js'
-import { isDesktop } from '../utils/env.js'
+import { isClient, isDesktop } from '../utils/env.js'
 
 function makeTextFilter (text, useOr = true) {
   text = text.trim()
@@ -191,6 +188,13 @@ export default {
       tags: Array.isArray(tags)
           ? tags
           : [tags],
+    }
+
+    // load only if on client
+    if (isClient()) {
+      const storage = require('../utils/storage.js').storage
+      const saved = storage.get('search', {})
+      Object.assign(query, saved)
     }
 
     // return all settings
@@ -333,10 +337,6 @@ export default {
   },
 
   mounted () {
-    // assign saved data
-    const saved = storage.get('search', {})
-    Object.assign(this.query, saved)
-
     // grab data from query
     const query = this.query
 
@@ -528,6 +528,11 @@ export default {
     margin-top: 1rem;
   }
 
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__clear {
     color: $grey-lightest;
     text-decoration: none;
@@ -543,9 +548,9 @@ export default {
     }
   }
 
-  &__title {
-    display: flex;
-    justify-content: space-between;
+  &__clear,
+  &__parameters a {
+    transition: .2s all;
   }
 
   &__tags {
