@@ -1,16 +1,14 @@
 @import "variables";
 
+// body
 body {
   overflow-y: scroll;
   overflow-x: hidden;
+  min-height: 100vh;
   margin: 0;
 }
 
-.siteMain {
-  margin: 50px auto 100px;
-  min-height: calc(100vh - 270px);
-}
-
+// header and footer
 .siteHeader {
   position: fixed;
   top: 0;
@@ -21,6 +19,7 @@ body {
   background: white;
   transition: 1s box-shadow;
 
+  // sticky header
   body.is-scrolled & {
     transition: .3s box-shadow;
     box-shadow: 0 0 20px rgba(black, 0.07);
@@ -28,10 +27,17 @@ body {
 }
 
 .siteFooter {
-  min-height: 200px;
+  min-height: 80px;
   background: lighten($borderColor, 5%);
 }
 
+// calculate main content height
+.siteMain {
+  padding-bottom: 150px;
+  min-height: calc(100vh - 45px - 80px - 150px);
+}
+
+// horizontal layout - header
 .siteHeader,
 .siteFooter {
   .layout__inner {
@@ -40,6 +46,7 @@ body {
   }
 }
 
+// horizontal layout - content
 .layout__inner {
   position: relative;
   max-width: $widthPage;
@@ -47,6 +54,7 @@ body {
   padding: 1rem;
 }
 
+// fix title h1 top margins
 [class^="layout__"] {
   > h1:first-child {
     margin-top: .5rem;

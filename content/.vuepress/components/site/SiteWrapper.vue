@@ -52,15 +52,18 @@ export default {
 
   methods: {
     onScroll () {
-      document.body.classList.toggle('is-scrolled', window.scrollY > 0)
+      const scrollBottom = document.body.offsetHeight - window.scrollY - window.innerHeight
+      document.body.classList.toggle('is-scrolled', window.scrollY > 60)
+      document.body.classList.toggle('is-at-end', scrollBottom < 100)
     },
 
     onResize () {
+      const app = document.querySelector('#app')
       const header = document.querySelector('.siteHeader')
       if (header) {
         const offset = header.offsetHeight + 'px'
-        document.body.style.marginTop = offset
         document.body.style.scrollPaddingTop = offset
+        app.style.paddingTop = offset
       }
     }
   }

@@ -21,6 +21,7 @@ export default {
   methods: {
     onClick () {
       this.clicked = true
+      this.$el.blur()
       window.scrollTo({ top: 0, behavior: 'smooth' })
       setTimeout(() => this.clicked = false, 1000)
     }
@@ -35,10 +36,10 @@ export default {
   position: fixed;
   bottom: 0;
   right: 0;
-  transition: .6s opacity;
+  transition: .6s all;
   cursor: default;
-  opacity: 0;
   font-size: 12px;
+  opacity: 0;
 
   svg {
     fill: $textColor;
@@ -62,8 +63,12 @@ export default {
 
   body.is-scrolled &:not(.clicked) {
     cursor: pointer;
-    transition: .3s opacity;
+    transition: .3s all;
     opacity: 1;
+  }
+
+  body.is-at-end & {
+    bottom: 70px;
   }
 }
 </style>
