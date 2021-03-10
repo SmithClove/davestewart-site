@@ -4,6 +4,14 @@ export function getElements (selector, element = undefined) {
   return Array.from((element || document).querySelectorAll(selector))
 }
 
+export function copyLayout (source, target) {
+  const style = document.defaultView.getComputedStyle(source, "")
+  const props = ['width', 'height', 'margin', 'padding']
+  props.forEach(key => {
+    target.style[key] = style[key]
+  })
+}
+
 export function monitorScroll (sourceSelector, targetSelector, top = 0, className = 'is-scrolled') {
   if (
     'IntersectionObserver' in window &&

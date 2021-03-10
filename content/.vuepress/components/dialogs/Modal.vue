@@ -1,0 +1,58 @@
+<template>
+  <div class="modal" :class="classes">
+    <div class="modal__background"></div>
+    <div ref="container" class="modal__container">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    visible: Boolean
+  },
+
+  computed: {
+    classes () {
+      return {
+        visible: this.visible,
+      }
+    }
+  },
+}
+</script>
+
+<style lang="scss">
+@import "../../styles/variables";
+
+.modal {
+  position: fixed;
+  display: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+
+  &.visible {
+    display: flex;
+  }
+
+  &__background {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(white, .95);
+    transition: .5s all linear;
+  }
+
+  &__container {
+    z-index: 2;
+  }
+}
+</style>
