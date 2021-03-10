@@ -13,8 +13,14 @@
     <!-- back to top -->
     <SiteToTop/>
 
+    <!-- prev / next -->
+    <SiteSiblingNavigation/>
+
     <!-- footer -->
     <SiteFooter/>
+
+    <!-- preview -->
+    <Modal />
   </div>
 </template>
 

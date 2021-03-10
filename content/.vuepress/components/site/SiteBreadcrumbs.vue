@@ -1,5 +1,5 @@
 <template>
-  <div class="breadcrumbs">
+  <nav class="breadcrumbs">
     <span v-for="(link, index) in links"
           :key="link.href"
           class="breadcrumb__item"
@@ -11,12 +11,11 @@
       >{{ link.title }}</router-link>
       <span v-else class="breadcrumb__text">{{ link.title }}</span>
     </span>
-  </div>
+  </nav>
 </template>
 
 <script>
 import { getValue } from '../../utils/object.js'
-import { pages } from '../../pages'
 
 export default {
   data () {
