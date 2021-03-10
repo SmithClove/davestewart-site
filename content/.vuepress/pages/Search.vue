@@ -168,7 +168,7 @@ function makeQuery () {
     tags: [],
     tagsOp: 'and',
 
-    filter: 'hide',
+    filter: 'off',
     sort: 'date',
     view: 'text',
 
@@ -208,10 +208,10 @@ export default {
     return {
       query,
       options: {
-        filter: ['hide', 'list', 'groups'],
+        filter: ['off', 'list', 'groups'],
         sort: ['date', 'path'],
         view: ['text', 'image'],
-        showTags: query.filter !== 'hide',
+        showTags: query.filter !== 'off',
       },
     }
   },
@@ -335,7 +335,7 @@ export default {
     },
 
     'query.filter' (value) {
-      const showTags = value !== 'hide'
+      const showTags = value !== 'off'
       this.options.showTags = showTags
       if (!showTags) {
         // this.query.tags = []

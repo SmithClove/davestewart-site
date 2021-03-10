@@ -43,7 +43,7 @@ export default {
       type: String,
       default: 'list',
       validator (value) {
-        return ['hide', ...components].includes(value)
+        return ['off', ...components].includes(value)
       },
     },
 

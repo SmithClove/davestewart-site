@@ -1,5 +1,5 @@
 <template>
-  <nav class="pageSiblings">
+  <nav class="pageSiblings" v-if="index > -1">
     <div class="layout__inner">
       <!-- prev -->
       <div v-if="prev" class="pageSiblings__prev">
@@ -17,11 +17,12 @@
 
 <script>
 export default {
-  name: 'SiteSiblingNavigation',
-
   computed: {
     index () {
-      return this.$store.sorted.findIndex(page => page.regularPath === this.$page.regularPath)
+      const sorted = this.$store.sorted
+      return Array.isArray(sorted)
+        ? sorted.findIndex(page => page.regularPath === this.$page.regularPath)
+        : -1
     },
 
     prev () {
@@ -55,7 +56,8 @@ export default {
 }
 
 .pageSiblings {
-  padding-bottom: 1rem;
+  //padding-bottom: 1rem;
+  //border-top: 1px solid $grey-lightest;
 
   .layout__inner {
     display: flex;
