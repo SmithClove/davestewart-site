@@ -24,7 +24,6 @@ export default {
 .mediaFeatured {
   width: 100%;
   font-size: 0;
-  margin-bottom: 3rem;
 
   &__image {
     width: 100% !important;

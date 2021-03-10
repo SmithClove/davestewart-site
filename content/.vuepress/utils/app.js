@@ -22,5 +22,5 @@ export function fm (page, path, defaultValue) {
  * @returns {*}
  */
 export function $fm (path, defaultValue) {
-  return fm(this.$page, path, defaultValue)
+  return fm(this.$page || {}, path, defaultValue)
 }

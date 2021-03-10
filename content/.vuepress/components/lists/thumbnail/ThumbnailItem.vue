@@ -46,10 +46,7 @@ export default {
   display: inline-block;
   margin-bottom: 20px;
   background: white;
-  box-shadow:
-      0 0px 4px rgba(0, 0, 30, .04),
-      0 5px 8px rgba(0, 0, 60, 0.02),
-      0 15px 12px rgba(20, 60, 120, .02);
+  @include shadow-md;
 
   // box-shadow: 0 8px 8px 3px rgba($grey-lightest, .4);
 

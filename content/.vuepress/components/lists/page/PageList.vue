@@ -1,6 +1,6 @@
 <template>
   <ul class="pageList">
-    <PageItem v-for="page in pages" :page="page"/>
+    <PageItem v-for="page in pages" :page="page" />
   </ul>
 </template>
 

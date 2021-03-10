@@ -54,3 +54,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.pageHero {
+  margin-bottom: 3rem;
+}
+</style>

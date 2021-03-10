@@ -25,7 +25,6 @@ export default {
   display: flex;
   width: 100%;
   border: none;
-  margin-bottom: 3rem;
 
   @include striped(#EEE, #FFF);
 

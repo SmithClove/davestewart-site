@@ -6,7 +6,7 @@
     <!-- main -->
     <main class="siteMain">
       <div class="layout__inner">
-        <component :is="layout"/>
+        <component :is="component" :key="path"/>
       </div>
     </main>
 
@@ -18,6 +18,9 @@
 
     <!-- footer -->
     <SiteFooter/>
+
+    <!-- preview modal -->
+    <Preview />
   </div>
 </template>
 
@@ -41,19 +44,26 @@ export default {
   },
 
   computed: {
+    path () {
+      return this.$page.path
+    },
+
     layout () {
-      if (this.$page.path) {
-        const page = capitalize(this.$frontmatter.layout) || 'Page'
-        return require(`../pages/${page}.vue`).default
-      }
-      return NotFound
+      return this.$fm('layout') || 'page'
     },
 
     classes () {
-      const layout = this.layout || this.$fm('layout') || 'page'
       return {
-        ['layout__' + layout]: true
+        ['layout__' + this.layout]: true
       }
+    },
+
+    component () {
+      if (this.$page.path) {
+        const page = capitalize(this.layout)
+        return require(`../pages/${page}.vue`).default
+      }
+      return NotFound
     },
   },
 

@@ -111,7 +111,8 @@ export default {
     },
 
     view () {
-
+      const { width, height } = this.source[0]
+      this.$preview.show(this.$el, width, height)
     },
 
     onKeyDown (event) {
@@ -138,7 +139,7 @@ export default {
 $colorHover: #888;
 
 .mediaGallery {
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   position: relative;
 
   .pageContent & {
@@ -160,6 +161,11 @@ $colorHover: #888;
       width: 100%;
       height: 100%;
     }
+  }
+
+  .preview__container &__slidesView {
+    cursor: zoom-out;
+    // @include shadow-lg;
   }
 
   &__slide {
@@ -232,10 +238,13 @@ $colorHover: #888;
   &__pagination {
     margin: 0;
     padding: 0 1rem;
+    //padding: .6rem .5rem;
+    //border-radius: 32px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    //background: white;
   }
 
   &__page {
