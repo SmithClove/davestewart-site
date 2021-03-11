@@ -18,18 +18,16 @@
 import { getValue } from '../../utils/object.js'
 
 export default {
-  data () {
-    return {
-      location: {}
-    }
-  },
-
-  beforeMount () {
-    this.location = window.location
-  },
-
   computed: {
     links () {
+      // special case for not found
+      if (this.notFound) {
+        return [
+          { path: '/', title: 'Home' },
+          { title: '404' }
+        ]
+      }
+
       // variables
       const site = this.$site
       const links = []
@@ -83,6 +81,10 @@ export default {
       // done now!
       return links
     },
+
+    notFound () {
+      return this.$page.path === ''
+    }
   },
 }
 </script>
