@@ -37,6 +37,11 @@ export default {
         return
       }
 
+      // skip if modal is showing
+      if (document.body.classList.contains('modal-active')) {
+        return
+      }
+
       // open search if keyboard combo hit
       if (event.key === '/' || isEscape(event)) {
         event.preventDefault()

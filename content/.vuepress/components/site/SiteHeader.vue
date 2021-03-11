@@ -1,11 +1,13 @@
 <template>
   <header class="siteHeader">
-    <div class="layout__inner">
-      <div class="siteHeader__left">
-        <SiteBreadcrumbs/>
-      </div>
-      <div class="siteHeader__right">
-        <SiteSearch/>
+    <div class="siteHeader__background">
+      <div class="layout__inner">
+        <div class="siteHeader__left">
+          <SiteBreadcrumbs/>
+        </div>
+        <div class="siteHeader__right">
+          <SiteSearch/>
+        </div>
       </div>
     </div>
   </header>
@@ -44,4 +46,28 @@ export default {}
   &__right {
   }
 }
+
+// animation
+.siteHeader {
+  opacity: 1;
+  transition: .6s opacity; // slow-out
+  transition-delay: .2s;
+
+  // opacity
+  body.modal-raised & {
+    opacity: 0;
+    transition: .2s opacity; // fast-in
+  }
+
+  // shadow
+  &__background {
+    transition: 1s box-shadow; // slow-out
+  }
+
+  body.is-scrolled & .siteHeader__background{
+    box-shadow: 0 0 20px rgba(black, 0.07);
+    transition: .3s box-shadow; // fast-in
+  }
+}
+
 </style>

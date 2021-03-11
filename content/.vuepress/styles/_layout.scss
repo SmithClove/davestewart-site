@@ -17,13 +17,7 @@ body {
   z-index: 100;
   border-bottom: 1px solid $borderColor;
   background: white;
-  transition: 1s box-shadow;
-
-  // sticky header
-  body.is-scrolled & {
-    transition: .3s box-shadow;
-    box-shadow: 0 0 20px rgba(black, 0.07);
-  }
+  // see component for animation regarding box shadow + opacity
 }
 
 .siteFooter {

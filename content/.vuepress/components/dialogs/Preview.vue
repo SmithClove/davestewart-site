@@ -1,19 +1,27 @@
 <template>
-  <div class="preview">
-    <Modal :visible="visible" @mousedown.native.self="hide">
+  <div v-show="visible" class="preview" :class="{ active, raised }">
+    <transition name="preview__fade">
+      <div v-if="active"
+           class="preview__background"
+           @mousedown.self="hide"></div>
+    </transition>
+    <div ref="offset" class="preview__offset">
       <div ref="container" class="preview__container"></div>
-    </Modal>
+    </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import { getRect, fitRect } from '../../utils/geom.js'
-import { copyLayout } from '../../utils/dom.js'
+import { getKeys, isEscape, onTransitionEnd, stopEvent } from '../../utils/events.js'
+import { fitRect, getRect } from '../../utils/geom.js'
+import { setElementBounds} from '../../utils/dom.js'
 
 const noop = () => {}
 
 const els = {
+  offset: null,
+  container: null,
   placeholder: null,
   source: null,
 }
@@ -21,9 +29,32 @@ const els = {
 export default {
   data () {
     return {
+      // is the "actual" state
+      active: false,
+
+      // is the "animation" state
       visible: false,
-      sourceBounds: null,
+
+      // added when the overlay is raised
+      raised: false,
+
+      // is transitioning (don't allow additional clicks)
+      isTransitioning: false,
+
+      // values to remember for when we hide
+      size: null,
+      scrollY: 0,
     }
+  },
+
+  watch: {
+    visible (value) {
+      document.body.classList.toggle('modal-active', value)
+    },
+
+    active (value) {
+      document.body.classList.toggle('modal-raised', value)
+    },
   },
 
   created () {
@@ -34,89 +65,182 @@ export default {
     /**
      * Show an element full screen
      * @param {HTMLElement} source
-     * @param {Number}      width
-     * @param {Number}      height
      */
     show (source) {
-      // do nothing if already visible
+      // bail if already transitioning
+      if (this.isTransitioning) {
+        return
+      }
+
+      // hide if shown
       if (this.visible) {
         return this.hide()
       }
 
-      // get size
-      const size = source.getBoundingClientRect()
-
       // create placeholder
       const placeholder = document.createElement('div')
-      copyLayout(source, placeholder)
+      placeholder.id = 'placeholder'
 
       // cache elements so we can return them
+      els.offset = this.$refs.offset
+      els.container = this.$refs.container
       els.placeholder = placeholder
       els.source = source
 
+      // get source size
+      const size = this.size = source.getBoundingClientRect()
+
+      // set placeholder size (use % and padding to attempt to keep aspect ratio)
+      // this won't be perfect, because the gallery component doesn't keep its aspect
+      // ratio when it scales, due to the pagination controls on the bottom
+      const bounds = source.getBoundingClientRect()
+      placeholder.style.width = '100%'
+      placeholder.style.paddingBottom = (bounds.height / bounds.width * 100) + '%'
+
       // replace source with placeholder
       source.parentElement.insertBefore(placeholder, source)
-      const container = this.$refs.container
-      container.appendChild(source)
+      els.container.appendChild(source)
 
       // set container bounds
-      this.setBounds(source, size)
+      setElementBounds(els.container, size)
+      requestAnimationFrame(() => {
+        this.updateContainerBounds()
+      })
 
       // show and add listeners
       this.visible = true
+      this.active = true
       this.addListeners()
 
-      // animate size
-      setTimeout(() => {
-        // container.style.width = 'calc(100vw - 100px)'
-      }, 0)
+      // set up movement data
+      els.offset.style.transform = ''
+      this.scrollY = window.scrollY
+
+      // begin the transition
+      this.isTransitioning = true
+      onTransitionEnd(els.container, () => {
+        this.isTransitioning = false
+        this.raised = true
+      })
     },
 
-    hide () {
+    hide (immediate) {
       // replace placeholder with source
-      const { placeholder, source } = els
-      placeholder.parentElement.insertBefore(source, placeholder)
-      placeholder.parentElement.removeChild(placeholder)
+      const { container, placeholder, source } = els
+      const parentElement = placeholder.parentElement
 
-      // hide and remove listeners
-      this.visible = false
-      this.removeListeners()
+      // set bounds
+      setElementBounds(container, placeholder.getBoundingClientRect())
+
+      // change state
+      this.active = false
+      this.raised = false
+
+      // route change
+      if (immediate) {
+        window.removeEventListener('scroll', this.onPageScroll)
+        container.innerHTML = ''
+        this.visible = false
+      }
+
+      // scroll
+      else {
+        this.isTransitioning = true
+        onTransitionEnd(els.container, () => {
+          // remove final listener
+          window.removeEventListener('scroll', this.onPageScroll)
+
+          // update element
+          if (parentElement) {
+            parentElement.insertBefore(source, placeholder)
+            parentElement.removeChild(placeholder)
+          }
+
+          // update
+          this.isTransitioning = false
+          this.visible = false
+        })
+      }
     },
 
-    setBounds (source, size) {
+    updateContainerBounds () {
       // variables
-      const container = this.$refs.container
+      const container = els.container
+      const el = this.$el
 
       // determine window bounds
-      const outer = getRect(window.innerWidth * .9, window.innerHeight * .9)
-      const inner = fitRect(size, outer)
+      const hd = getRect(1920, 1080)
+      const viewport = getRect(el.offsetWidth, el.offsetHeight)
+      const safe = getRect(viewport.width * .9, viewport.height * .9)
+      const content = fitRect(this.size, safe)
 
-      // add source here
-      container.style.maxWidth = inner.width + 'px'
-      container.style.maxHeight = inner.height + 'px'
-      container.style.width = container.style.maxWidth
-      container.style.height = container.style.maxheight
+      // set container bounds
+      content.x = (viewport.width - content.width) / 2
+      content.y = (viewport.height - content.height) / 2
+      setElementBounds(container, content)
     },
 
     addListeners () {
-      // watch for scroll and route navigation
-      console.log('Added listeners')
-      window.addEventListener('scroll', this.hide)
-      const unwatch = this.$watch('$route.path', this.hide)
+      // main listeners
+      window.addEventListener('resize', this.onResize)
+      window.addEventListener('orientationchange', this.onResize)
+      window.addEventListener('keyup', this.onKeyUp)
+      window.addEventListener('keydown', this.onKeyDown)
+      window.addEventListener('scroll', this.onInitialScroll)
+      const unwatch = this.$watch('$route.path', this.onRoute)
+
+      // additional listener to keep track of scrolling when the user has cancelled
+      window.addEventListener('scroll', this.onPageScroll)
 
       // set up remove
       this.removeListeners = function () {
-        console.log('removed listeners')
-        window.removeEventListener('scroll', this.hide)
+        window.removeEventListener('resize', this.onResize)
+        window.removeEventListener('orientationchange', this.onResize)
+        window.removeEventListener('keyup', this.onKeyUp)
+        window.removeEventListener('keydown', this.onKeyDown)
+        window.removeEventListener('scroll', this.onInitialScroll)
         unwatch()
-
-        // replace remove listeners
-        this.removeListeners = noop
       }
     },
 
     removeListeners: noop,
-  }
+
+    onResize () {
+      this.updateContainerBounds()
+    },
+
+    onRoute () {
+      this.removeListeners()
+      this.hide(true)
+    },
+
+    onKeyUp (event) {
+      if (isEscape(event)) {
+        this.removeListeners()
+        this.hide()
+      }
+    },
+
+    onKeyDown (event) {
+      stopEvent(event)
+      const keys = getKeys(event)
+      if (!keys.shift && !keys.left && !keys.right) {
+        this.removeListeners()
+        this.hide()
+      }
+    },
+
+    onInitialScroll () {
+      this.removeListeners()
+      this.hide()
+    },
+
+    onPageScroll () {
+      // keep track of page scrolling so we can fake the position of the container if the user scrolls
+      els.offset.style.transform = `translateY(${this.scrollY - window.scrollY}px)`
+    },
+
+  },
 }
 </script>
 
@@ -124,8 +248,39 @@ export default {
 @import "../../styles/variables";
 
 .preview {
-  .modal__background {
-    background: white;
+  z-index: 90;
+  position: fixed;
+  overflow-y: visible;
+  @include fit;
+
+  &__background {
+    @include fit;
+    position: absolute;
+    background: rgba(white, 1); // .95
   }
+
+  &__container {
+    position: absolute;
+    transition: .35s all;
+  }
+
+  // don't animate when raised; otherwise weird things happen when resizing
+  &.raised .preview__container {
+    transition: none;
+  }
+
+  &__fade-enter-active,
+  &__fade-leave-active {
+    transition: opacity .4s;
+  }
+
+  &__fade-enter,
+  &__fade-leave-to {
+    opacity: 0;
+  }
+}
+
+#placeholder {
+  // outline: 5px dashed red;
 }
 </style>

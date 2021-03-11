@@ -141,6 +141,7 @@ $colorHover: #888;
 .mediaGallery {
   margin: 0 auto;
   position: relative;
+  line-height: 1;
 
   .pageContent & {
     margin-top: 2rem;
@@ -213,7 +214,7 @@ $colorHover: #888;
 
   // button navigation
   &__nav {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -227,10 +228,11 @@ $colorHover: #888;
     background: transparent;
     user-select: none;
     cursor: pointer;
+    padding: .5rem;
     transition-duration: 0.3s;
 
     &:hover {
-      color: $colorHover;
+      color: $accentColor;
     }
   }
 
