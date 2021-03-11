@@ -1,7 +1,7 @@
 ---
 title: Bio
 description: A little bit about me
-layout: folder
+layout: page
 format: links
 order: 1
 ---
@@ -16,8 +16,8 @@ These days I work full time on my own [products](/products/) and [side projects]
 
 To keep things current, I've moved older projects to the [archive](/archive/) section of the site.
 
-You can find out a bit more about me in the links below.
+To find out more about me, here are some [links](profiles.md).
 
 Enjoy the site!
 
-<img src="/favicon.svg" alt="Dave" style="height: 24px;">
+<img src="/favicon.svg" alt="Dave" style="height: 24px;" rel="prefetch">
