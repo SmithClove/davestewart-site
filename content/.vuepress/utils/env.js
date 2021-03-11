@@ -2,8 +2,9 @@ export function isMac () {
   return navigator.platform.toLowerCase().includes('mac')
 }
 
+// this really means "is small screen"
 export function isMobile () {
-  return window.innerWidth < 450
+  return window.innerWidth < 450 || window.innerHeight < 450
 }
 
 export function isDesktop () {

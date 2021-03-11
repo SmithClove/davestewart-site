@@ -125,14 +125,14 @@
 <script>
 import SlideUpDown from 'vue-slide-up-down'
 import { getNavigation, isChar, isInput, navigateLinks, stopEvent } from '../utils/events.js'
-import { getElements} from '../utils/dom.js';
+import { isClient, isDesktop, isMobile } from '../utils/env.js'
 import { groupBy, sortBy } from '../utils/array.js'
-import { clone } from '../utils/object.js'
-import { fm } from '../utils/app.js'
+import { getElements} from '../utils/dom.js';
 import { makeTree } from '../store/tree.js'
 import { storage } from '../utils/storage.js'
 import { plural } from '../utils/string.js'
-import { isClient, isDesktop } from '../utils/env.js'
+import { clone } from '../utils/object.js'
+import { fm } from '../utils/app.js'
 
 function makeTextFilter (text, useOr = true) {
   text = text.trim()
@@ -355,7 +355,7 @@ export default {
     })
 
     // focus search
-    if (!this.canReset || isDesktop()) {
+    if (!isMobile() && !this.canReset) {
       this.focus()
     }
 
@@ -470,6 +470,12 @@ export default {
     },
 
     onKeyDown (event) {
+      // don't detect keystrokes on mobile because on a small screen,
+      // it's weird when things start scrolling
+      if (isMobile()) {
+        return
+      }
+
       // variables
       const isLink = event.target.tagName === 'A'
       const { enter, down, x, y } = getNavigation(event)
