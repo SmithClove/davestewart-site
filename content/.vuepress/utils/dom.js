@@ -10,7 +10,7 @@ export function setElementBounds (element, bounds) {
 }
 
 export function copyLayout (source, target) {
-  const style = document.defaultView.getComputedStyle(source, "")
+  const style = document.defaultView.getComputedStyle(source, '')
   const props = ['width', 'height', 'margin', 'padding']
   props.forEach(key => {
     target.style[key] = style[key]

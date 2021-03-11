@@ -15,7 +15,7 @@
 import Vue from 'vue'
 import { getKeys, isEscape, onTransitionEnd, stopEvent } from '../../utils/events.js'
 import { fitRect, getRect } from '../../utils/geom.js'
-import { setElementBounds} from '../../utils/dom.js'
+import { copyLayout, setElementBounds } from '../../utils/dom.js'
 
 const noop = () => {}
 
@@ -94,8 +94,12 @@ export default {
       // this won't be perfect, because the gallery component doesn't keep its aspect
       // ratio when it scales, due to the pagination controls on the bottom
       const bounds = source.getBoundingClientRect()
-      placeholder.style.width = '100%'
-      placeholder.style.paddingBottom = (bounds.height / bounds.width * 100) + '%'
+      copyLayout(source, placeholder)
+      // placeholder.style.width = '100%'
+      // placeholder.style.height = '0'
+      // placeholder.style.paddingBottom = (bounds.height / bounds.width * 100) + '%'
+      // placeholder.style.lineHeight = '0'
+      // placeholder.style.fontSize = '0'
 
       // replace source with placeholder
       source.parentElement.insertBefore(placeholder, source)
@@ -110,7 +114,6 @@ export default {
       // show and add listeners
       this.visible = true
       this.active = true
-      this.addListeners()
 
       // set up movement data
       els.offset.style.transform = ''
@@ -119,6 +122,7 @@ export default {
       // begin the transition
       this.isTransitioning = true
       onTransitionEnd(els.container, () => {
+        this.addListeners()
         this.isTransitioning = false
         this.raised = true
       })
@@ -181,6 +185,15 @@ export default {
       const viewport = getRect(el.offsetWidth, el.offsetHeight)
       const safe = getRect(viewport.width * .9, viewport.height * .9)
       const content = fitRect(this.size, safe)
+
+      // adjust for small images
+      const { width, height } = this.size
+      if (width < content.width) {
+        content.width = width + 10
+      }
+      if (height < content.height) {
+        content.height = height + 10
+      }
 
       // set container bounds
       content.x = (viewport.width - content.width) / 2
@@ -289,6 +302,7 @@ export default {
 }
 
 #placeholder {
-  // outline: 5px dashed red;
+  //outline: 1px dashed $grey-lightest;
+  //outline: 5px dashed red;
 }
 </style>
