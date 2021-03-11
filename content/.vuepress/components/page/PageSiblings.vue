@@ -69,13 +69,15 @@ export default {
   content: ' ';
   display: block;
   width: 10px;
-  height: 14px;
-  line-height: 1;
+  height: 18px;
   margin: 0 2px;
   background: url('../../assets/breadcrumb-arrow.svg') no-repeat;
 }
 
 .pageSiblings {
+
+  line-height: 1.4em;
+  vertical-align: top;
 
   .layout__inner {
     display: flex;
@@ -84,24 +86,26 @@ export default {
     border-top: 1px solid $grey-lightest;
   }
 
-  a {
+  a, span {
     display: block;
   }
 
   &__prev {
     display: flex;
+    padding-right: .5rem;
     span:before {
       @include arrow;
-      transform: scale(-1.4, 1.4) translate(5px, 0);
+      transform: scale(-1.4, 1.4) translate(5px, 3px);
     }
   }
 
   &__next {
     display: flex;
+    padding-left: .5rem;
     text-align: right;
     span:after {
       @include arrow;
-      transform: scale(1.4, 1.4) translate(5px, 0);
+      transform: scale(1.4, 1.4) translate(5px, 3px);
     }
   }
 }
