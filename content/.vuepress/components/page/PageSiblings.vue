@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { getKeys } from '../../utils/events.js'
+
 export default {
   computed: {
     index () {
@@ -35,6 +37,24 @@ export default {
       return this.index > -1
         ? this.$store.sorted[this.index + 1]
         : null
+    }
+  },
+
+  mounted () {
+    document.addEventListener('keydown', this.onKeyDown)
+  },
+
+  methods: {
+    onKeyDown (event) {
+      const keys = getKeys(event)
+      if (keys.shift && !keys.meta && !keys.alt && !keys.ctrl) {
+        if (keys.left) {
+          this.$router.push(this.prev.path)
+        }
+        else if (keys.right) {
+          this.$router.push(this.next.path)
+        }
+      }
     }
   }
 }
