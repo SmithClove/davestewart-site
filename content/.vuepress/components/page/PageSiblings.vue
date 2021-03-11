@@ -1,8 +1,9 @@
 <template>
-  <nav class="pageSiblings" v-if="index > -1">
-    <div class="layout__inner">
+  <nav class="pageSiblings">
+    <div class="layout__inner" v-if="index > -1">
       <!-- prev -->
       <div v-if="prev" class="pageSiblings__prev">
+        <span class="arrow"></span>
         <router-link :to="prev.path">{{ prev.title }}</router-link>
       </div>
       <span v-else></span>
@@ -10,6 +11,7 @@
       <!-- next -->
       <div v-if="next" class="pageSiblings__next">
         <router-link :to="next.path">{{ next.title }}</router-link>
+        <span class="arrow"></span>
       </div>
     </div>
   </nav>
@@ -64,35 +66,43 @@ export default {
 @import "../../styles/variables";
 
 @mixin arrow {
-  display: inline-block;
+  content: ' ';
+  display: block;
   width: 10px;
   height: 14px;
   line-height: 1;
   margin: 0 2px;
   background: url('../../assets/breadcrumb-arrow.svg') no-repeat;
-  background-position-y: 80%;
-  vertical-align: bottom;
-  content: ' ';
 }
 
 .pageSiblings {
-  //padding-bottom: 1rem;
-  //border-top: 1px solid $grey-lightest;
 
   .layout__inner {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
+    border-top: 1px solid $grey-lightest;
   }
 
-  &__prev a:before {
-    @include arrow;
-    transform: scale(-1.4, 1.4) translate(5px, 0);
+  a {
+    display: block;
   }
 
-  &__next a:after {
-    @include arrow;
-    transform: scale(1.4, 1.4) translate(5px, 0);
+  &__prev {
+    display: flex;
+    span:before {
+      @include arrow;
+      transform: scale(-1.4, 1.4) translate(5px, 0);
+    }
+  }
+
+  &__next {
+    display: flex;
+    text-align: right;
+    span:after {
+      @include arrow;
+      transform: scale(1.4, 1.4) translate(5px, 0);
+    }
   }
 }
 </style>

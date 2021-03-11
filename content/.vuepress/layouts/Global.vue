@@ -10,14 +10,19 @@
       </div>
     </main>
 
-    <!-- back to top -->
-    <SiteToTop/>
+    <!-- scroll to top -->
+    <ClientOnly>
+      <SiteScrollTop/>
+    </ClientOnly>
 
-    <!-- prev / next -->
-    <PageSiblings/>
+    <!-- lower area -->
+    <div class="layout__bottom">
+      <!-- prev / next -->
+      <PageSiblings/>
 
-    <!-- footer -->
-    <SiteFooter/>
+      <!-- footer -->
+      <SiteFooter/>
+    </div>
 
     <!-- preview modal -->
     <Preview />
