@@ -3,7 +3,7 @@
     <transition name="preview__fade">
       <div v-if="active"
            class="preview__background"
-           @mousedown.self="hide"></div>
+           @mousedown.self="onMouseDown"></div>
     </transition>
     <div ref="offset" class="preview__offset">
       <div ref="container" class="preview__container"></div>
@@ -125,6 +125,14 @@ export default {
     },
 
     hide (immediate) {
+      // sanity check
+      if (immediate instanceof Event) {
+        console.warn('Invalid Parameter "immediate"; Boolean expected but received:', immediate)
+      }
+
+      // remove listeners
+      this.removeListeners()
+
       // replace placeholder with source
       const { container, placeholder, source } = els
       const parentElement = placeholder.parentElement
@@ -205,33 +213,33 @@ export default {
 
     removeListeners: noop,
 
+    onMouseDown () {
+      this.hide()
+    },
+
     onResize () {
       this.updateContainerBounds()
     },
 
     onRoute () {
-      this.removeListeners()
       this.hide(true)
     },
 
     onKeyUp (event) {
       if (isEscape(event)) {
-        this.removeListeners()
         this.hide()
       }
     },
 
     onKeyDown (event) {
       stopEvent(event)
-      const keys = getKeys(event)
-      if (!keys.shift && !keys.left && !keys.right) {
-        this.removeListeners()
+      const { shift, left, right } = getKeys(event)
+      if (!shift && !left && !right) {
         this.hide()
       }
     },
 
     onInitialScroll () {
-      this.removeListeners()
       this.hide()
     },
 
