@@ -1,6 +1,6 @@
 ---
 description: Where to find me online
-order: 1
+order: 2
 ---
 
 # Profiles

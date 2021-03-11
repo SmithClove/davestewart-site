@@ -129,11 +129,11 @@ export function makeTree (pages) {
 
 export function flattenTree (items, output = []) {
   items.forEach(item => {
-    if (item.pages) {
-      flattenTree(item.pages, output)
-    }
     if (item.type === 'page') {
       output.push(item)
+    }
+    if (item.pages) {
+      flattenTree(item.pages, output)
     }
   })
   return output
