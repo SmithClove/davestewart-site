@@ -117,13 +117,13 @@ export default {
 
     onKeyDown (event) {
       const only = isNotModifier(event)
-      const keys = getKeys(event)
+      const { left, right } = getKeys(event)
       if (only) {
-        if (keys.left) {
+        if (left) {
           stopEvent(event)
           this.prev()
         }
-        if (keys.right) {
+        if (right) {
           stopEvent(event)
           this.next()
         }
