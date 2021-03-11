@@ -6,6 +6,11 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   margin: 0;
+  scroll-padding-top: 48px;
+}
+
+#app {
+  padding-top: 48px;
 }
 
 // header and footer
