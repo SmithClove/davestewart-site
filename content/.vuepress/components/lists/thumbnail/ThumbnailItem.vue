@@ -76,7 +76,7 @@ export default {
   &__content h3 {
     font-size: 1.3em;
     margin: .75rem 0 .5rem;
-    line-height: 1.3;
+    line-height: 1.1; // 1.3 is more comfortable, but this allows cards to tile better
   }
 
   p {
@@ -103,6 +103,27 @@ export default {
 
 }
 
+.thumbnailItem.boxy {
+  padding: 0;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .thumbnailItem__content {
+    padding: .85rem 1rem 1rem;
+    min-height: 4.4rem;
+
+    @include sm {
+      min-height: unset;
+      padding-left: .25rem;
+      padding-right: .25rem;
+    }
+  }
+
+  .thumbnailItem__title {
+    margin: 0 0 .5rem;
+  }
+}
+
 .thumbnailItem.padded {
   padding: 1rem;
   border-radius: 2px;
@@ -112,24 +133,6 @@ export default {
 
     h3 {
     }
-  }
-}
-
-.thumbnailItem.boxy {
-  padding: 0;
-  border-radius: 4px;
-  overflow: hidden;
-
-  .thumbnailItem__content {
-    padding: .85rem 1rem 1rem;
-    @include sm {
-      padding-left: .25rem;
-      padding-right: .25rem;
-    }
-  }
-
-  .thumbnailItem__title {
-    margin: 0 0 .5rem;
   }
 }
 

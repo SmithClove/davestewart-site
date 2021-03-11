@@ -45,6 +45,7 @@ export default {
     window.app = this
     window.addEventListener('scroll', this.onScroll)
     window.addEventListener('resize', this.onResize)
+    window.addEventListener('orientationchange', this.onResize)
     this.onResize()
   },
 
