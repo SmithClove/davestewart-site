@@ -189,10 +189,10 @@ export default {
       // adjust for small images
       const { width, height } = this.size
       if (width < content.width) {
-        content.width = width + 10
+        // content.width = width + 10
       }
       if (height < content.height) {
-        content.height = height + 10
+        // content.height = height + 10
       }
 
       // set container bounds
