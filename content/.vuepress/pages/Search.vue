@@ -124,7 +124,8 @@
 
 <script>
 import SlideUpDown from 'vue-slide-up-down'
-import { getElements, getNavigation, isInput, isChar, navigateLinks, stopEvent, getKeyChar } from '../utils/dom.js';
+import { getNavigation, isChar, isInput, navigateLinks, stopEvent } from '../utils/events.js'
+import { getElements} from '../utils/dom.js';
 import { groupBy, sortBy } from '../utils/array.js'
 import { clone } from '../utils/object.js'
 import { fm } from '../utils/app.js'

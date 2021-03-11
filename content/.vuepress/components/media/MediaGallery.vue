@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { stopEvent } from '../../utils/dom'
+import { getKeys, isNotModifier, stopEvent } from '../../utils/events.js'
 import { offset } from '../../utils/array'
 import media from './index.js'
 
@@ -116,14 +116,14 @@ export default {
     },
 
     onKeyDown (event) {
-      const only = !(event.metaKey || event.altKey || event.ctrlKey)
-      const key = event.key
+      const only = isNotModifier(event)
+      const keys = getKeys(event)
       if (only) {
-        if (key === 'ArrowLeft') {
+        if (keys.left) {
           stopEvent(event)
           this.prev()
         }
-        if (key === 'ArrowRight') {
+        if (keys.right) {
           stopEvent(event)
           this.next()
         }

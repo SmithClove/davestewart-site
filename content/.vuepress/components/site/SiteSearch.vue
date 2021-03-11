@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { isEscape, isInput, isChar } from '../../utils/dom.js'
+import { isChar, isEscape, isInput } from '../../utils/events.js'
 
 export default {
   computed: {

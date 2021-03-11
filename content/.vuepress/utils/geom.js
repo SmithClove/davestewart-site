@@ -23,12 +23,14 @@ export function fitRect (input, bounds) {
 
   // rect is more landscape than bounds - fit to width
   if (rectRatio > boundsRatio) {
+    output.scale = bounds.width / input.width
     output.width = bounds.width
-    output.height = input.height * (bounds.width / input.width)
+    output.height = input.height * output.scale
   }
   // rect is more portrait than bounds - fit to height
   else {
-    output.width = input.width * (bounds.height / input.height)
+    output.scale = bounds.height / input.height
+    output.width = input.width * output.scale
     output.height = bounds.height
   }
 

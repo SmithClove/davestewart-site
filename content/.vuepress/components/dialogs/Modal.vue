@@ -29,10 +29,7 @@ export default {
 .modal {
   position: fixed;
   display: none;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  @include fit;
   z-index: 1000;
   align-items: center;
   justify-content: center;
@@ -43,9 +40,8 @@ export default {
 
   &__background {
     position: absolute;
+    @include fit;
     z-index: 1;
-    width: 100%;
-    height: 100%;
     pointer-events: none;
     background: rgba(white, .95);
     transition: .5s all linear;
