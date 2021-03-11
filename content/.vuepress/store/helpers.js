@@ -46,3 +46,13 @@ export function makePages (pages) {
   return sort(pages).asc('path')
 }
 
+export function isPublished (page) {
+  const { draft, date } = page.frontmatter
+  if (draft) {
+    return false
+  }
+  if (date) {
+    return date < new Date().toISOString()
+  }
+  return true
+}

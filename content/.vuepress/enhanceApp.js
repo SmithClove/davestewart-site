@@ -12,6 +12,7 @@ import './styles/index.scss'
 // helpers
 import { $fm } from './utils/app.js'
 import { makeStore } from './store'
+import { isPublished } from './store/helpers.js'
 
 /**
  * @param {Vue}         Vue       the version of Vue being used in the VuePress app
@@ -28,10 +29,17 @@ export default ({ Vue, options, router, siteData, isServer }) => {
     Vue.component('GlobalEvents', GlobalEvents)
   }
 
+  // components
+  require('./components')
+
+  // filter drafts
+  siteData.pages
+    .map((page, index) => isPublished(page) ? -1 : index)
+    .reverse()
+    .filter(index => index > -1)
+    .forEach(index => siteData.pages.splice(index, 1))
+
   // mixins
   Vue.prototype.$fm = $fm
   Vue.prototype.$store = makeStore(siteData)
-
-  // components
-  require('./components')
 }
