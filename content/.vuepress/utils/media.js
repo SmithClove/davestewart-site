@@ -1,21 +1,21 @@
-import Fs from 'fs'
-import Path from 'path'
+const Fs = require ('fs')
+const Path = require ('path')
 
-import { isImage, isRemote } from '../plugins/utils.js'
-import { isPlainObject } from './assert.js'
+const { isImage, isRemote } = require ('../plugins/utils.js')
+const { isPlainObject } = require ('./assert.js')
 
 // 16:9
-export const placeholder = {
+const placeholder = {
   width: 1024,
   height: 576,
 }
 
-export function makePlaceholder (path = '') {
+function makePlaceholder (path = '') {
   const text = Path.basename(path, Path.extname(path)).replace(/\W+/g, ' ') || ''
   return `https://placehold.it/${placeholder.width}x${placeholder.height}?text=` + text
 }
 
-export function getFile (pagePath, imagePath = '') {
+function getFile (pagePath, imagePath = '') {
   // variables
   const relPath = Path.join(pagePath, imagePath).replace(/^\//, '')
   const fallback = makePlaceholder(imagePath)
@@ -53,7 +53,7 @@ export function getFile (pagePath, imagePath = '') {
   return fallback
 }
 
-export function isLocal (source) {
+function isLocal (source) {
   return !source.startsWith('http') || !Path.isAbsolute(source)
 }
 
@@ -61,7 +61,7 @@ export function isLocal (source) {
  * Ensures any requested source is an object
  * @param input
  */
-export function getSource (input) {
+function getSource (input) {
   // arrays
   if (Array.isArray(input)) {
     return input.map(getSource)
@@ -98,7 +98,7 @@ export function getSource (input) {
  * @param   {object}  source
  * @returns {object}
  */
-export function getStyle (source) {
+function getStyle (source) {
   if (isRemote(source.path)) {
     return {}
   }
@@ -109,4 +109,13 @@ export function getStyle (source) {
       ? `${width} / ${height}`
       : false
   }
+}
+
+module.exports = {
+  placeholder,
+  makePlaceholder,
+  getFile,
+  isLocal,
+  getSource,
+  getStyle,
 }

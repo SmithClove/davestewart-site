@@ -4,7 +4,7 @@
  * @param   {*}       value   The value to be assessed
  * @returns {boolean}         Whether the value is an Object or Array
  */
-export function isObject (value) {
+function isObject (value) {
   return !!value && typeof value === 'object'
 }
 
@@ -14,11 +14,11 @@ export function isObject (value) {
  * @param   {*}       value   The value to be assessed
  * @returns {boolean}         Whether the value is a true Object
  */
-export function isPlainObject (value) {
+function isPlainObject (value) {
   return isObject(value) && !Array.isArray(value)
 }
 
-export function isEmpty (value) {
+function isEmpty (value) {
   if (typeof value === 'number' && value === 0) {
     return false
   }
@@ -29,4 +29,10 @@ export function isEmpty (value) {
     return true
   }
   return false
+}
+
+module.exports = {
+  isObject,
+  isPlainObject,
+  isEmpty,
 }

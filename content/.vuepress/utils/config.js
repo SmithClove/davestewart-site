@@ -6,8 +6,15 @@ function link (rel, href) {
   return ['link', { rel, href }]
 }
 
+function plugin (name, options) {
+  return arguments.length > 1
+    ? [name, options]
+    : name
+}
+
 module.exports = {
   isDev: process.env.NODE_ENV !== 'production',
   meta,
   link,
+  plugin,
 }
