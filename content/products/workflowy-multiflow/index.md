@@ -35,7 +35,7 @@ You can open new columns by Cmd/Ctrl+Clicking on:
 
 - Bullets
 - Internal links to other WorkFlowy pages
-- The breadcrumbs' page title
+- The last breadcrumb item (the page title)
 
 The first time you open a new column, it will reload the current column and the new column into frames:
 
@@ -44,6 +44,8 @@ The first time you open a new column, it will reload the current column and the 
 Once loaded, you should see both your previous and new column:
 
 ![](./screens/2-columns.png)
+
+### Updating content
 
 To change the content of the right column, Cmd+Click any link on the left to change the content (this time it should be instant):
 
@@ -69,11 +71,11 @@ Note that MultiFlow will save all frames (unless you Cmd/Ctrl click the &times; 
 
 Unfortunately, the limitation of HTML frames means you can't drag and drop bullets. That would be amazing, but you'll have to wait for the WorkFlowy team to build this functionality.
 
-However, you can **Cut and Paste**!
+However, you can **cut and paste**!
 
 Simply select one or more bullets in one panel, cut them, and paste them in another panel.
 
-The paste should be instant, but any cut may take a second or so to update as the data is synced in the background.
+Depending on where you cut and paste to-and-from, the paste should be instant, but you may notice a short delay for related frames to update as the data is synced in the background.
 
 ## Options panel
 
@@ -105,6 +107,14 @@ There are a few limitations that I am working to fix:
 - working with WFx *(think I can make it work; may cause issues with history though)*
 
 I'm crazy-busy at the moment but will get to them in time.
+
+## Todos
+
+Software is never really finished. Here's a few things I'd like to get to in time:
+
+- Make it work on Firefix, Brave, etc
+- Allow saving of a single frame (right now you can only save 2+ frames)
+- Resizable frames (not 100% sure I want to go down this rabbit hole)
 
 ## Video
 

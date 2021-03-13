@@ -2,11 +2,10 @@
 title: Towards minimalism
 description: My thoughts on living a minimal lifestyle
 date: 2017-01-01
+draft: true
 ---
 
 For the last few years I've become increasingly uncomfortable with the concept of "things". You know, the stuff you have in your life which you almost need to define you.
-
- 
 
 Don't get me wrong, I like nice things, I'm just at a point in my life where I've realised that most of them are completely unnecessary.
 
@@ -58,7 +57,8 @@ In the ideal world, I would get rid of everything, and just have what I need to 
 
 On lifestyle
 
-- [Start Here:](http://theminimalists.com/start/) [The Minimalists](http://theminimalists.com/start/)
+- [Start Here:](http://theminimalists.com/start/)
+- [The Minimalists](http://theminimalists.com/start/)
 - [Colin Wright: Act Accordingly](http://colin.io/portfolio/act-accordingly/)
 - [What Do You Pack When You Are Leaving Forever?](http://neverendingvoyage.com/what-do-you-pack-when-you-are-leaving-forever-our-packing-list/)
 

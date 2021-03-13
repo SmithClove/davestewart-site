@@ -2,6 +2,7 @@
 description: Ever thought The Shard looks like they forgot to finish it off? See how it could have looked if they had...
 date: 2013-11-08
 media:
+  thumbnail: ./images/shard-thumbnail.jpg
   images:
     - ./images/shard-original.jpg
     - ./images/shard-finished.jpg

@@ -21,35 +21,68 @@ media:
 
 ## Overview
 
-Many languages have the concept of path "aliases" which is way to shorten paths relative paths using simple identifiers, traditionally starting with `@`, for example:
+Alias HQ is a Node CLI application that aims to be the end-to-end solution for managing, maintaining and using path aliases in JavaScript and TypeScript projects.
 
+It allows the user to:
 
+- generate path aliases for existing projects
+- convert existing relative paths in source code to aliased paths
+- consume the aliased paths in dependencies, such as WebPack, Jest, etc 
+
+Configuration piggybacks `js/tsconfig.json` files which are now standard in JavaScript projects.
+
+## Usage
+
+Once you have configured Alias, and run the migrations, using aliases is essentially a one-liner.
+
+Here's WebPack:
+
+```js
+import hq from 'alias-hq'
+
+module.exports = {
+  resolve: {
+    alias: hq.get('webpack'),
+  },
+}
 ```
-'@services/foo' <= '../../../core/services/foo' 
+
+Here's Jest:
+
+```js
+import hq from 'alias-hq'
+
+module.exports = {
+  moduleNameMapper: hq.get('jest'),
+}
 ```
 
-They are widely supported in the JavaScript ecosystem, *however*:
+You get the idea.
 
-- libraries have incompatible formats so require separate configurations
-- maintaining duplicate configurations is fiddly and error-prone
-- migrating source code is laborious and long-winded
+## Configuration
 
-Lorem ipsum
+Alias HQ is installed as a normal project dependency, then runs as an interactive command line prompt.
 
-## Implementation
-
+It asks you sets of questions, a bit like a call waiting menu, which lead to tasks:
 
 ![cli-preview.png](./screens/cli-preview.png)
 
-![cli-debug.png](./screens/cli-debug.png)
-
-![cli-integrations.png](./screens/cli-integrations.png)
+Steps are presented and confirmed in an easy to follow manner; for example, configuring paths:
 
 ![cli-paths.png](./screens/cli-paths.png)
 
-![cli-source.png](./screens/cli-source.png)
+## Integrations
+
+Alias [integrates](https://github.com/davestewart/alias-hq/blob/master/docs/integrations.md) with a variety of frameworks and packages, and makes it simple to convert existing projects: 
+
+![cli-debug.png](./screens/cli-integrations.png)
+
+Projects can be configured and converted in under a minute.
+
+It's pretty close to magic.
 
 ## Links
 
 - [GitHub](https://github.com/davestewart/alias-hq)
+- [Documentation](https://github.com/davestewart/alias-hq/tree/master/docs)
 

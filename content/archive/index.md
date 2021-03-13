@@ -5,6 +5,10 @@ layout: folder
 order: 5
 ---
 
-A selection of my best <router-link to="/archive/work">commercial work</router-link>,
-<router-link to="/archive/projects">personal projects</router-link> and
-<router-link to="/archive/development">open source development</router-link> from the last ** years.
+A selection of my best work from the last \*cough\*-\*cough\* years.
+
+Jump to:
+
+- <router-link to="/archive/work">Commercial work</router-link>
+- <router-link to="/archive/projects">Personal projects</router-link>
+- <router-link to="/archive/development">Open source</router-link>

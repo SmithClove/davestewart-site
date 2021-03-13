@@ -1,5 +1,5 @@
 ---
-description: Recover your lost Great Suspender Tabs!
+description: Recover your Great Suspender Tabs!
 date: 2021-02-01
 tags:
   - javascript

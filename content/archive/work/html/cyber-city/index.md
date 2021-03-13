@@ -55,5 +55,3 @@ The project was shortlisted for the 2013 Bett Awards, in the Secondary Digital C
 - [behindthescreen.org.uk](https://behindthescreen.org.uk/)
 - [bettawards.com/522212](https://bettawards.com/522212)
 - [r3events.co.uk/bettawards/Bett_Finalists.pdf](https://r3events.co.uk/bettawards/Bett_Finalists.pdf)
-
-## Bett Awards video
