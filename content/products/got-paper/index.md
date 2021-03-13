@@ -91,7 +91,9 @@ media:
 
 ## Overview
 
-[Got Paper](https://got-paper.com) is a Vue / Nuxt application to calculate personal toilet roll usage, in response to the panic-buying situation that characterised the spread of the Coronavirus pandemic in early 2020.
+[Got Paper](https://got-paper.com) is a mobile and desktop app to calculate personal toilet roll usage.
+
+It was created in response to the panic-buying situation that characterised the spread of the Coronavirus pandemic in early 2020.
 
 The application was initially developed in 9 hours, then released within 24 hours on social media. It spread rapidly in round the world with 150K users in the first week, was [featured](https://got-paper.com/press) in national and international press, and [translated](https://got-paper.com/translations)  into 12 languages.
 

@@ -18,6 +18,8 @@ media:
 
 ## Intro
 
+This project documents the un-learning I had to do to get good at building [rapid prototypes](/search/?tags=rapid-build).
+
 As an experienced developer, I'm used to building large, complex sites, with scalable architecture, clean code and best practices. Imagine how surprised I was when all this experience fell flat when [tasked](https://davestewart.github.io/app-diary/#/intro/background) with a 4-hour coding challenge to build a basic [Trello](https://trello.com/) clone:
 
 [![screenshot](https://github.com/davestewart/vue-trello-clone/raw/master/docs/screenshot.png)](http://trello.davestewart.io/)

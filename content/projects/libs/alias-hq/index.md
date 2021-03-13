@@ -21,15 +21,15 @@ media:
 
 ## Overview
 
-Alias HQ is a Node CLI application that aims to be the end-to-end solution for managing, maintaining and using path aliases in JavaScript and TypeScript projects.
+Alias HQ makes setting up and using path aliases in JS/TS projects simple.
 
-It allows the user to:
+It takes the form of a Node CLI app and allows the user to:
 
 - generate path aliases for existing projects
 - convert existing relative paths in source code to aliased paths
 - consume the aliased paths in dependencies, such as WebPack, Jest, etc 
 
-Configuration piggybacks `js/tsconfig.json` files which are now standard in JavaScript projects.
+Alias configuration piggybacks your project's existing `js/tsconfig.json` file and transparently converts the paths therein to whatever format is required by the consuming plugin / library or application.
 
 ## Usage
 

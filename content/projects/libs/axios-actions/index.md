@@ -14,15 +14,17 @@ media:
 
 ## Overview
 
-Axios Actions simplifies the architecture of API-heavy Vue applications by moving calls away from Vuex an into small, configurable, instantiatable services.
+Axios Actions simplifies the architecture of API-heavy Vue applications.
+
+It moves API calls away from Vuex to small, configurable, instantiatable and transferable services.
 
 ## Background
 
 Working at [Clear Bank](https://clear.bank) we had a large internal Vue-based system with probably 100s of global stores.
 
-As all data was driven by API interactions this resulted in any (local) component requiring a tight-coupling to a (global) Vuex store with associated wiring, boilerplate and naming system.
+With application state being entirely driven by the API, nearly all components requiring some kind of coupling to a Vuex store... with associated wiring, boilerplate, naming, etc.
 
-Turning the idea of "all actions must go through the store" on its head component-relative API calls could be configured to run as self-contained units, with data delivered locally or globally as required.
+Turning the idea of "all actions must go through the store" on its head, Axios Actions allows groups of related API calls to be repackaged from global store actions, to locally configured, self-contained units, with data delivered locally or globally as required.
 
 ## Implementation
 
@@ -38,7 +40,7 @@ const actions = {
 }
 ```
 
-Then, they are encapsulated as built-in [services](https://github.com/davestewart/axios-actions/blob/master/docs/classes/README.md):
+Then, they are encapsulated as a choice of built-in [services](https://github.com/davestewart/axios-actions/blob/master/docs/classes/README.md):
 
 ```js
 const service = new <ApiClass>(axios, actions)

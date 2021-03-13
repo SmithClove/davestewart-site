@@ -18,9 +18,7 @@ media:
 
 ## Overview
 
-State Machine is a library for managing a finite set of states, and moving between them via actions and transitions.
-
-The difference to existing state machines is that this one is can be configured *just by writing*: 
+State Machine is an easy yet powerful state machine, configurable via plain text: 
 
 ```js
 transitions: [
@@ -31,7 +29,7 @@ transitions: [
 ]
 ```
 
-Its [simple](https://statemachine.davestewart.io/html/api/transitions/advanced.html) [yet](https://statemachine.davestewart.io/html/api/transitions/wildcards.html) [powerful](https://statemachine.davestewart.io/html/api/transitions/separators.html) text-based DSL can describe states and transitions succinctly, and its [JavaScript API](https://statemachine.davestewart.io/html/api/index.html) can augment this with a rich [event syntax](https://statemachine.davestewart.io/html/api/events/interactive.html) and handler functionality to build complex [application flows](https://statemachine.davestewart.io/html/examples/index.html).
+Its [simple](https://statemachine.davestewart.io/html/api/transitions/advanced.html) [yet](https://statemachine.davestewart.io/html/api/transitions/wildcards.html) [powerful](https://statemachine.davestewart.io/html/api/transitions/separators.html) DSL can describe states and transitions succinctly whilst its [JavaScript API](https://statemachine.davestewart.io/html/api/index.html) hooks into transitions with a rich [event syntax](https://statemachine.davestewart.io/html/api/events/interactive.html) to build complex [application flows](https://statemachine.davestewart.io/html/examples/index.html).
 
 The **interactive** demo above shows-off many of StateMachine's features. Visit the [site itself](http://statemachine.davestewart.io) and view the source code directly in the page, or open the console here to see the application update as it transitions between states and fires events.
 
