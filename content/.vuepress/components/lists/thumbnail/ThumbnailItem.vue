@@ -11,7 +11,7 @@
     <!-- content -->
     <div class="thumbnailItem__content">
       <h3 class="thumbnailItem__title">
-        {{ page.title }}
+        {{ title }}
       </h3>
       <p v-if="description">{{ description }}</p>
     </div>
@@ -30,6 +30,10 @@ export default {
   },
 
   computed: {
+    title () {
+      return this.page.frontmatter.shortTitle || this.page.title
+    },
+
     description () {
       return this.page.frontmatter.description
     },

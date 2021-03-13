@@ -4,13 +4,13 @@
       <!-- prev -->
       <div v-if="prev" class="pageSiblings__prev">
         <span class="arrow"></span>
-        <router-link :to="prev.path">{{ prev.title }}</router-link>
+        <router-link :to="prev.path">{{ getTitle(prev) }}</router-link>
       </div>
       <span v-else></span>
 
       <!-- next -->
       <div v-if="next" class="pageSiblings__next">
-        <router-link :to="next.path">{{ next.title }}</router-link>
+        <router-link :to="next.path">{{ getTitle(next) }}</router-link>
         <span class="arrow"></span>
       </div>
     </div>
@@ -47,6 +47,10 @@ export default {
   },
 
   methods: {
+    getTitle (page) {
+      return page.frontmatter.shortTitle || page.title
+    },
+
     onKeyDown (event) {
       const { shift, meta, alt, ctrl, left, right } = getKeys(event)
       if (shift && !meta && !alt && !ctrl) {

@@ -48,7 +48,7 @@ export default {
         }
         return links.push({
           path: page.regularPath,
-          title: getValue(page, 'frontmatter.breadcrumb') || page.title,
+          title: getValue(page, 'frontmatter.breadcrumb') || getValue(page, 'frontmatter.shortTitle') || page.title,
           desc: getValue(page, 'frontmatter.description'),
         })
       }
