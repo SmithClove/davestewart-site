@@ -18,7 +18,7 @@ media:
 
 ## Overview
 
-State Machine is an easy yet powerful state machine, configurable via plain text: 
+State Machine is a powerful yet easily-configurable state machine: 
 
 ```js
 transitions: [
