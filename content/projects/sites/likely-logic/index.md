@@ -13,11 +13,11 @@ media:
 
 ## Overview
 
-Lorem ipsum
+Likely Logic is the moniker for my commercial product work.
 
-## Implementation
+Maybe one day there will be various projects and and a proper website, but for now, it's just a holding page. If you're reading this on a mobile, [go to the site](https://likelylogic.com), scroll down, then rotate the phone. Cool, huh!?
 
-Lorem Ipsum
+The pretty type style is courtesy of [Trendy CSS Shadows](https://www.producthunt.com/posts/trendy-css-text-shadows). At some point I'll either expand on it or come up with something new, but for now, it will do!
 
 ## Links
 

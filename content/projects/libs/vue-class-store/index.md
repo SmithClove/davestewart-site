@@ -73,7 +73,7 @@ Vue Class Store was born out of the frustration of writing, using and migrating 
 
 Additionally, many have verbose boilerplate, and most are not TypeScript-friendly. 
 
-Like [Vuex Pathify](../vuex-pathify) before it, it's the result of several years of thinking, and an attempt to simplify the drudgery of abstraction when working with state in Vue.
+Like [Vuex Pathify](../vuex-pathify) before it, it's the result of several years of [thinking about state](/search/?tags=state) and another attempt to simplify the drudgery of abstraction when working with state in JavaScript / Vue.
 
 ## How it works
 
