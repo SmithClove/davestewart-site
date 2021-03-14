@@ -41,6 +41,12 @@ export default {
     SiteFooter,
   },
 
+  watch: {
+    '$route.path' () {
+      this.$nextTick(() => this.updateHeader())
+    }
+  },
+
   mounted () {
     window.app = this
     window.addEventListener('scroll', this.onScroll)
@@ -74,13 +80,7 @@ export default {
   },
 
   methods: {
-    onScroll () {
-      const scrollBottom = document.body.offsetHeight - window.scrollY - window.innerHeight
-      document.body.classList.toggle('is-scrolled', window.scrollY > 60)
-      document.body.classList.toggle('is-at-end', scrollBottom < 100)
-    },
-
-    onResize () {
+    updateHeader () {
       const app = document.querySelector('#app')
       const header = document.querySelector('.siteHeader')
       if (header) {
@@ -88,6 +88,16 @@ export default {
         document.body.style.scrollPaddingTop = offset
         app.style.paddingTop = offset
       }
+    },
+
+    onScroll () {
+      const scrollBottom = document.body.offsetHeight - window.scrollY - window.innerHeight
+      document.body.classList.toggle('is-scrolled', window.scrollY > 60)
+      document.body.classList.toggle('is-at-end', scrollBottom < 100)
+    },
+
+    onResize () {
+      this.updateHeader()
     }
   }
 }

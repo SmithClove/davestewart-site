@@ -55,8 +55,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "../../styles/_variables.scss";
+
 .pageHero {
   margin-bottom: 3rem;
+  @include sm {
+    margin-bottom: 2rem;
+  }
 }
 </style>

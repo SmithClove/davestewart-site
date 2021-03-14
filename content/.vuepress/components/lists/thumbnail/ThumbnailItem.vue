@@ -50,6 +50,11 @@ export default {
   display: inline-block;
   margin-bottom: 20px;
   background: white;
+
+  padding: 0;
+  border-radius: 4px;
+  overflow: hidden;
+
   @include shadow-md;
 
   // box-shadow: 0 8px 8px 3px rgba($grey-lightest, .4);
@@ -77,10 +82,15 @@ export default {
     border-radius: 0;
   }
 
-  &__content h3 {
-    font-size: 1.2em;
-    margin: .75rem 0 .5rem;
-    line-height: 1.1; // 1.3 is more comfortable, but this allows cards to tile better
+  &__content {
+    padding: .85rem 1rem 1rem;
+    min-height: 4.4rem;
+
+    h3 {
+      font-size: 1.2em;
+      margin: .75rem 0 .5rem;
+      line-height: 1.1; // 1.3 is more comfortable, but this allows cards to tile better
+    }
   }
 
   p {
@@ -100,49 +110,22 @@ export default {
       border-bottom: 1px dashed $borderColor;
     }
 
-    &__title {
-      font-size: 1.6em;
+    img {
+      border-radius: 4px;
     }
-  }
 
-}
-
-.thumbnailItem.boxy {
-  padding: 0;
-  border-radius: 4px;
-  overflow: hidden;
-
-  .thumbnailItem__content {
-    padding: .85rem 1rem 1rem;
-    min-height: 4.4rem;
-
-    @include sm {
+    &__content {
       min-height: unset;
       padding-left: .25rem;
       padding-right: .25rem;
+
+      h3 {
+        font-size: 1.5em;
+        margin: 0 -.5rem .5rem 0
+      }
     }
   }
 
-  .thumbnailItem__title {
-    margin: 0 -.5rem .5rem 0
-  }
-}
-
-.thumbnailItem.padded {
-  padding: 1rem;
-  border-radius: 2px;
-
-  .thumbnailItem__content {
-    padding: 0 .1rem;
-
-    h3 {
-    }
-  }
-}
-
-.thumbnailItem.border {
-  border: 1px dashed $borderColor;
-  box-shadow: none;
 }
 
 .thumbnailItem.shadow {

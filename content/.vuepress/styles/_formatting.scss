@@ -25,6 +25,10 @@ h1, h2, h3, h4, h5 {
   margin: 2rem 0 1rem;
   font-family: $titleFont;
   font-weight: 600;
+
+  @include sm {
+    margin: 1.5rem 0 1rem;
+  }
 }
 
 h1 {
@@ -96,6 +100,8 @@ p.description {
     margin-bottom: .25em;
   }
 
+  video,
+  iframe,
   img {
     max-width: 100%;
     width: auto;
@@ -107,6 +113,10 @@ p.description {
   p > video,
   p > img {
     margin: 1.5rem auto;
+
+    @include sm {
+      margin: .5rem auto;
+    }
   }
 
   strong {

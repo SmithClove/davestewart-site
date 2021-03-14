@@ -145,6 +145,9 @@ $colorHover: #888;
 
   .pageContent & {
     margin-top: 2rem;
+    @include sm {
+      margin-top: 1rem;
+    }
   }
 
   // slides

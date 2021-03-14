@@ -28,6 +28,10 @@ export default {
   margin-bottom: .75em;
   list-style-type: disc;
 
+  @include sm {
+    font-size: 1rem;
+  }
+
   &__title {
     margin: 0;
     position: relative;

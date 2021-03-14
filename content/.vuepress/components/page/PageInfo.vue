@@ -28,9 +28,10 @@ export default {
 <style lang="scss">
 @import '../../styles/variables';
 
-.pageInfo {
+.uiControls.pageInfo {
   font-family: $titleFont;
   font-size: 16px;
   flex-wrap: nowrap !important;
+  margin-top: 1.25rem;
 }
 </style>
