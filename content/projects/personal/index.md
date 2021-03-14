@@ -1,6 +1,6 @@
 ---
 title: Personal
-description: Mainly personal web sites
+description: Personal development and creative endeavours
 layout: folder
 format: thumbnails
 order: 3
