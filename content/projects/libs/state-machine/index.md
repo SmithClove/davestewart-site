@@ -8,7 +8,7 @@ tags:
 media:
   thumbnail: ./images/state-machine-thumbnail.png
   featured:
-    src: http://statemachine.davestewart.io/
+    src: https://statemachine.davestewart.io/
     width: 960
     height: 500
     type: embed
