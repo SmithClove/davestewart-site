@@ -1,5 +1,5 @@
 ---
-description: Front end development for Budweiser's Rise as One World Cup campaign
+description: Front end development for Rise as One World Cup campaign
 date: 2014-06-12
 tags:
   - webapp

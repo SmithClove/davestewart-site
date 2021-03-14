@@ -1,25 +1,25 @@
 ---
-description: Track todos in Slack using custom checkbox emojis
+description: Custom checkbox emojis which let you track todos in apps like Slack
 date: 2020-09-25
 tags:
   - creative
   - productivity
   - rapid-build
 media:
-  thumbnail: ./images/ph-icon.png
+  thumbnail: ./images/todo-emojis-logo.svg
   gallery:
-    - ./images/ph-splash.png
-    - ./images/ph-slack.png
-    - ./images/ph-work.png
-    - ./images/ph-fun.png
-    - ./images/ph-slack-edit.png
+    - ./emojis/emoji-todo.svg
+    - ./emojis/emoji-doing.svg
+    - ./emojis/emoji-done.svg
+    - ./emojis/emoji-paused.svg
+    - ./emojis/emoji-cancelled.svg
 ---
 
 # Todo Emojis
 
 ## Overview
 
-ToDo Emojis are real emojis you can use to create simple text-based to-do lists, **without plugins**:
+ToDo Emojis are checkbox-style emojis you can use to create to-do lists:
 
 ![emojis](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/emojis.png)
 
@@ -29,6 +29,14 @@ I created them for use in the [Weekend Club](https://twitter.com/weekendclubldn)
 
 
 ### Using the emojis
+
+Just start typing `:todo` then choose the emoji from the list:
+
+![emojis](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/edit-choose.png)
+
+Then, add the text of the todo (and any other todo's, of course):
+
+![todo](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/edit-todo.png)
 
 You can use the `todo_doing` emoji to indicate you've started a task:
 
@@ -44,6 +52,7 @@ If you want to let folks know you can't complete a task, use the `todo_pause` or
 
 It's the simplest way to share updates in Slack!
 
+
 ## Are you using Todo Emojis?
 
 Let me know!
@@ -51,6 +60,7 @@ Let me know!
 - [Tweet me](https://twitter.com/dave_stewart)
 - [Comment on GitHub](https://github.com/davestewart/todo-emojis/issues/1)
 - [Comment on Product Hunt](http://producthunt.com/posts/todo-emojis)
+
 
 ## Product Hunt
 

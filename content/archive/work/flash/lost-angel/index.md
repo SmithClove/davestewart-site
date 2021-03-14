@@ -1,5 +1,5 @@
 ---
-description: Animation and interaction-rich Flash micro-site for one of London's leading destination bars.
+description: Immersive Flash micro-site for one of London's leading destination bars
 date: 2009-08-05
 tags:
   - flash

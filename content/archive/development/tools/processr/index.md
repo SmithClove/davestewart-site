@@ -1,5 +1,5 @@
 ---
-description: Text & data manipulation, generation and editing for programmers & visualisers
+description: Online editor to manipulate and generate text, code and data
 date: 2013-04-05
 tags:
   - frontend

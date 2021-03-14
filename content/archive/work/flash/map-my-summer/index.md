@@ -1,5 +1,5 @@
 ---
-description: Flash micro-site for Google & YouTube, utilising mapping and video APIs
+description: Flash micro-site with heavy use of mapping and video APIs
 date: 2011-02-05
 tags:
   - flash
@@ -14,6 +14,7 @@ tags:
   - award
   - social
   - maps
+  - ugc
 hero: gallery
 media:
   thumbnail: ./images/map-my-summer-fwa.jpg

@@ -1,5 +1,5 @@
 ---
-description: London Tube map inspired exploration of all my open source and personal projects to date
+description: Tube map inspired exploration of my personal and open source projects
 date: 2013-09-24
 tags:
   - creative

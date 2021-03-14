@@ -1,12 +1,12 @@
 ---
-description: An expressive, feature-rich, event-driven JavaScript finite-state machine
+description: A powerful yet simply configured JavaScript finite-state machine
 date: 2016-10-01
 tags:
   - library
   - javascript
   - state
 media:
-  thumbnail: ./images/state-machine-thumbnail.png
+  thumbnail: ./images/state-machine-thumb.svg
   featured:
     src: https://statemachine.davestewart.io/
     width: 960
@@ -18,18 +18,18 @@ media:
 
 ## Overview
 
-State Machine is a powerful yet easily-configurable state machine: 
+State Machine is a powerful yet simply-configurable state machine.
+
+Its [simple](https://statemachine.davestewart.io/html/api/transitions/advanced.html) [yet](https://statemachine.davestewart.io/html/api/transitions/wildcards.html) [powerful](https://statemachine.davestewart.io/html/api/transitions/separators.html) DSL can describe states and transitions succinctly whilst its [JavaScript API](https://statemachine.davestewart.io/html/api/index.html) hooks into transitions with a rich [event syntax](https://statemachine.davestewart.io/html/api/events/interactive.html) to build complex [application flows](https://statemachine.davestewart.io/html/examples/index.html):
 
 ```js
-transitions: [
+const transitions: [
     "warn  : green > yellow",
     "panic : green   yellow > red",
     "calm  :         yellow < red",
     "clear : green < yellow   red"
 ]
 ```
-
-Its [simple](https://statemachine.davestewart.io/html/api/transitions/advanced.html) [yet](https://statemachine.davestewart.io/html/api/transitions/wildcards.html) [powerful](https://statemachine.davestewart.io/html/api/transitions/separators.html) DSL can describe states and transitions succinctly whilst its [JavaScript API](https://statemachine.davestewart.io/html/api/index.html) hooks into transitions with a rich [event syntax](https://statemachine.davestewart.io/html/api/events/interactive.html) to build complex [application flows](https://statemachine.davestewart.io/html/examples/index.html).
 
 The **interactive** demo above shows-off many of StateMachine's features. Visit the [site itself](http://statemachine.davestewart.io) and view the source code directly in the page, or open the console here to see the application update as it transitions between states and fires events.
 
@@ -43,7 +43,7 @@ The library itself is built as a stand-alone library with two component parts:
 The syntax of the library consists of the transition setup (text or object format) and *optional* handlers:
 
 ```js
-var config = {
+const config = {
 
   transitions: [
     'warn  : green > yellow',
@@ -67,7 +67,7 @@ var config = {
 
 }
 
-var fsm = setup(new StateMachine(config)).fsm
+const fsm = new StateMachine(config)
 ```
 
 The above is the classic [traffic light](https://statemachine.davestewart.io/html/examples/flows/branching.html) example, with some additional handlers to show off the API.
@@ -85,7 +85,7 @@ If I had the time and inclination to continue this project, the main aims would 
 - decouple the notation DSL from the core library
 - add support for nested state machines
 
- I would imagine these days if you wanted to use state machines, you would look at [X State](https://xstate.js.org/).
+ I would imagine these days if you wanted to use state machines, you would look at [X State](https://xstate.js.org/). A fun next step  for this library would be enabling the DSL to build state machines for that library. 
 
 ## Links
 

@@ -1,5 +1,5 @@
 ---
-description: The end-to-end solution for configuring, refactoring, maintaining and using path aliases
+description: The end-to-end solution for migrating to and using path aliases
 date: 2020-08-01
 tags:
   - library
@@ -7,7 +7,7 @@ tags:
   - node
   - creative
 media:
-  thumbnail: ./images/logo-3d-stripes.png
+  thumbnail: ./images/alias-thumbnail.png
   featured: ./images/alias-gradient.gif
   gallery:
     - ./images/logo-gradient.png
@@ -26,14 +26,14 @@ Alias HQ makes setting up and using path aliases in JS/TS projects simple.
 It takes the form of a Node CLI app and allows the user to:
 
 - generate path aliases for existing projects
-- convert existing relative paths in source code to aliased paths
 - consume the aliased paths in dependencies, such as WebPack, Jest, etc 
+- convert projects from using relative paths to aliased paths
 
-Alias configuration piggybacks your project's existing `js/tsconfig.json` file and transparently converts the paths therein to whatever format is required by the consuming plugin / library or application.
+Alias works by piggybacking your project's existing `js/tsconfig.json` file and transparently converting the `compilerOptions.paths` to whatever format is required by the consuming plugin, library or application.
 
 ## Usage
 
-Once you have configured Alias, and run the migrations, using aliases is essentially a one-liner.
+Once you have configured Alias using aliases is essentially a one-liner.
 
 Here's WebPack:
 
@@ -73,13 +73,17 @@ Steps are presented and confirmed in an easy to follow manner; for example, conf
 
 ## Integrations
 
-Alias [integrates](https://github.com/davestewart/alias-hq/blob/master/docs/integrations.md) with a variety of frameworks and packages, and makes it simple to convert existing projects: 
+Alias [integrates](https://github.com/davestewart/alias-hq/blob/master/docs/integrations.md) with a variety of frameworks and packages, and makes configuration a snap: 
 
-![cli-debug.png](./screens/cli-integrations.png)
+![cli-debug.png](./screens/cli-debug.png)
 
-Projects can be configured and converted in under a minute.
+## Source code conversion
 
-It's pretty close to magic.
+With the "Update files" option, entire codebases can be configured and converted in *literally* seconds:
+
+![cli-debug.png](./screens/cli-source.png)
+
+It's pretty close to magic!
 
 ## Links
 

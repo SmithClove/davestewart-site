@@ -1,5 +1,5 @@
 ---
-description: Online application allowing you to play along on the BBC website with grunting tennis players to the sounds of Angry Birds
+description: Creative hack to spice up broadcast tennis to the squawks of Angry Birds
 date: 2011-06-05
 tags:
   - creative

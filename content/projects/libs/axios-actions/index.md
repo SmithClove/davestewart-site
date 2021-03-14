@@ -14,45 +14,58 @@ media:
 
 ## Overview
 
-Axios Actions simplifies the architecture of API-heavy Vue applications.
+Axios Actions simplifies the architecture of API-heavy applications.
 
-It moves API calls away from Vuex to small, configurable, instantiatable and transferable services.
+Ina Vue application for example, it moves API calls away from Vuex to small, configurable, instantiatable and transferable services.
 
 ## Background
 
 Working at [Clear Bank](https://clear.bank) we had a large internal Vue-based system with probably 100s of global stores.
 
-With application state being entirely driven by the API, nearly all components requiring some kind of coupling to a Vuex store... with associated wiring, boilerplate, naming, etc.
+With application state being entirely driven by the API, all major components required tight coupling to a Vuex store, with associated folders, boilerplate, setup, naming, wiring, etc.
 
-Turning the idea of "all actions must go through the store" on its head, Axios Actions allows groups of related API calls to be repackaged from global store actions, to locally configured, self-contained units, with data delivered locally or globally as required.
+Turning the idea of "all actions must go through the store" on its head, Axios Actions allows groups of related API calls to be repackaged from *global* store actions, to *locally* configured, self-contained units, with data delivered locally or globally as required.
 
 ## Implementation
 
 The library comprises a small set of classes which collate URLs or URL request configs as callable actions.
 
-First, endpoints are [defined](https://github.com/davestewart/axios-actions/blob/master/docs/config.md):
+First, [define](https://github.com/davestewart/axios-actions/blob/master/docs/config.md) actions and endpoints:
 
 ```js
 const actions = {
-  <action>: '<url>',
-  <action>: '<config>',
-  ...
+  search: 'products/widgets?category=:category',
+  update: 'POST products/widgets/:id',
+  delete: 'DELETE products/widgets/:id',
 }
 ```
 
-Then, they are encapsulated as a choice of built-in [services](https://github.com/davestewart/axios-actions/blob/master/docs/classes/README.md):
+Then, encapsulate as a choice of built-in [services](https://github.com/davestewart/axios-actions/blob/master/docs/classes/README.md):
 
 ```js
-const service = new <ApiClass>(axios, actions)
+const widgets = new ApiGroup(axios, actions)
 ```
 
-Finally, they can be [called](https://github.com/davestewart/axios-actions/blob/master/docs/classes/ApiGroup.md#usage):
+Optionally add [plugins](https://github.com/davestewart/axios-actions/blob/master/docs/extension/plugins.md) or [event handlers](https://github.com/davestewart/axios-actions/blob/master/docs/classes/ApiGroup.md#handling-events):
 
 ```js
-service
-  .<action>(<data>)
-  .then(<handler>)
+widgets
+  .use('data')
+  .when('update delete', event => console.log('something changed', event))
+  .fail(error => console.log('the request failed', error))
 ```
+
+Finally, [call](https://github.com/davestewart/axios-actions/blob/master/docs/classes/ApiGroup.md#usage) actions using object methods:
+
+```js
+widgets
+  .search('blue')
+  .then(data => {
+    console.log(data)
+  })
+```
+
+
 
 This service-based approach:
 

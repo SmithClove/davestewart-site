@@ -1,5 +1,5 @@
 ---
-description: Extensive level editing tools for iOS, written in ActionScript and JSFL and running in the Flash IDE
+description: Level editing toolkit for iOS game Pocket God, created with xJSFL
 date: 2012-07-09
 tags:
   - frontend

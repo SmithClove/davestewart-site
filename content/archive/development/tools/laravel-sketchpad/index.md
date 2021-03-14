@@ -1,5 +1,5 @@
 ---
-description: Browser-based development playground for your existing Laravel site
+description: Browser-based development playground for your Laravel site
 date: 2017-04-01
 tags:
   - frontend

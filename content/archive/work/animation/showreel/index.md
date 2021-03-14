@@ -1,5 +1,5 @@
 ---
-description: My showreel from my animation days
+description: My final showreel from my animation days
 date: 2007-12-01
 tags:
   - creative

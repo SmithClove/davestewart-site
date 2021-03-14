@@ -1,5 +1,5 @@
 ---
-description: Outlook add-on to bulk-manage adding and removing parameters to Outlook Rules sets
+description: Outlook add-on to bulk-manage Outlook Rules sets
 date: 2010-10-21
 tags:
   - ui

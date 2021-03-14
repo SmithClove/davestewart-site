@@ -1,5 +1,5 @@
 ---
-description: Export 3dsmax objects' tracking data (4-corner pin, 2 point track, position) directly to After Effects
+description: Export 3dsmax 3D > 2D tracking data directly to After Effects
 date: 2006-10-10
 tags:
   - after-effects

@@ -1,5 +1,6 @@
 ---
-description: Recover your Great Suspender Tabs!
+description: Recover your deleted Great Suspender Tabs!
+shortTitle: Great Suspender Recovery
 date: 2021-02-01
 tags:
   - javascript
@@ -8,14 +9,14 @@ tags:
   - vue
   - ui
 media:
-  thumbnail: ./images/small-promo.png
+  thumbnail: ./images/tgsrt-thumb.png
   gallery:
     - ./images/screenshot-list.png
     - ./images/screenshot-table.png
     - ./images/screenshot-bookmarks.png
 ---
 
-# Great Suspender Recovery Tool
+# The Great Suspender Recovery Tool
 
 ## Overview
 

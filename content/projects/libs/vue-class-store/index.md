@@ -21,9 +21,17 @@ media:
 
 View Class Store is universal store format for Vue.
 
-It lets you write Vue-compatible stores as JavaScript or TypeScript classes, which are instantiated with fully reactive data, computed properties and watches.
+It has some key advantages over Vuex and other libraries:
 
-There's no setup or boilerplate, and you can use VCS stores globally, locally, in componets, anywhere. Additionally because they're classes, you can even inherit from other classes:
+- single JavaScript-native syntax (no library-specific API)
+- at authoring time, stores are just classes (so full autocompletion, etc)
+- at runtime, stores are fully-reactive Vue objects (with computed properties, watches, etc)
+- class [inheritance](https://github.com/davestewart/vue-class-store#inheritance) and full debugging comes for free
+- stores are local by default, you can use them [*anywhere*](https://github.com/davestewart/vue-class-store#global--shared-state)
+
+## Setup
+
+There's no setup or boilerplate, and stores and models are written the same way:
 
 ```js
 import VueStore from 'vue-class-store'
@@ -59,11 +67,17 @@ export class Store {
 }
 ```
 
-However, the main difference between VCS and other store APIs is that *abstraction is delayed until run time*; so your IDE treats the store as a class (so, full autocompletion, etc) but at runtime, it becomes a fully reactive Vue object!
+You can even upgrade or extend existing models to stores in one line:
+
+```typescript
+import Square from './Square'
+
+const model: Square = VueStore.create(new Square(10))
+```
 
 ## Background
 
-Vue Class Store was born out of the frustration of writing, using and migrating multiple state formats in Vue applications:
+Vue Class Store was born out of the frustration of writing, using and *migrating* multiple state formats in Vue applications:
 
 - Components: Options API *(data, computed, methods)*
 - Vuex: Store API *(state, getters, mutations, actions)*
@@ -98,3 +112,4 @@ In October 2020 I did a short presentation for World Vue:
 - [GitHub](https://github.com/davestewart/vue-class-store)
 - [YouTube](https://youtube.com/watch?v=uBrh_2BIIAM&t=2425s)
 - [Demos](https://github.com/davestewart/vue-class-store-demos)
+

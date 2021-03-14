@@ -1,5 +1,6 @@
 ---
 description: Cross-device HTML5 story-style animation
+shortTitle: 'G4S: "How it Works"'
 date: 2014-08-01
 tags:
   - frontend

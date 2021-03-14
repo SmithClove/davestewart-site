@@ -1,5 +1,5 @@
 ---
-description: An open source JSFL framework for creating tools for the Adobe Flash authoring environment
+description: JSFL framework to create tools for the Flash authoring environment
 date: 2011-01-01
 images:
   thumbnail: ./images/xjsfl-logo.png

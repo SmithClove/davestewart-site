@@ -5,7 +5,7 @@ layout: folder
 order: 5
 ---
 
-A selection of my best work from the last \*cough\*-\*cough\* years.
+A selection of my best work, which I don't want to consign to the portfolio dustbin just yet!
 
 Jump to:
 

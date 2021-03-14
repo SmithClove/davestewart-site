@@ -1,5 +1,5 @@
 ---
-description: Visual exploration of the structure and ideas of Mozart and Beethoven's music
+description: Visual exploration of the structure and ideas of Mozart's symphonies
 date: 2005-06-08
 tags:
   - javascript
@@ -9,7 +9,7 @@ tags:
   - mashup
   - vba
 media:
-  thumbnail: ./images/mozart.jpg
+  thumbnail: ./images/mozart-02.jpg
   gallery:
     - ./images/mozart-02.jpg
     - ./images/mozart-03.jpg

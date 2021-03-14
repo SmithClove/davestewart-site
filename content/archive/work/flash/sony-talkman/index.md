@@ -10,6 +10,7 @@ tags:
   - technical
   - as3
   - video
+  - ugc
 media:
   thumbnail: ./images/sony-talkman-10-featured.png
   gallery:

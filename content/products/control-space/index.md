@@ -1,6 +1,6 @@
 ---
 description: Browser tab / workflow manager
-date: 2021-04-05
+date: 2021-03-05
 tags:
   - productivity
   - chrome-extension
@@ -10,7 +10,7 @@ tags:
   - ui
 hero: featured
 media:
-  thumbnail: ./images/cs-splash.png
+  thumbnail: ./images/cs-thumb.png
   featured: ./images/cs-splash.png
   video:
     src: https://youtube.com/embed/l-_uy-t3tTI

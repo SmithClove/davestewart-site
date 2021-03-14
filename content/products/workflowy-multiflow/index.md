@@ -1,20 +1,22 @@
 ---
-description: Columns view for WorkFlowy
+description: Multi-column view for WorkFlowy
 date: 2021-03-01
 tags:
   - productivity
   - chrome-extension
   - tools
 media:
-  thumbnail: ./images/icon-512.png
-  featured: ./images/splash-large.png
+  thumbnail: ./images/multiflow-thumb-01.svg
+  featured: ./images/multiflow-featured.svg
 ---
 
 # WorkFlowy MultiFlow
 
 ## Overview
 
-WorkFlowy MultiFlow adds a multi-column view to WorkFlowy, which enables you to maintain an overview and manage relationships between several trees at once.
+WorkFlowy MultiFlow adds a multi-column view to WorkFlowy.
+
+This lets you to maintain an overview and manage relationships between several trees at once.
 
 ## Installation
 
