@@ -1,5 +1,5 @@
 ---
-description: Custom checkbox emojis which let you track todos in apps like Slack
+description: Checkbox emojis for todo lists in Slack
 date: 2020-09-25
 tags:
   - creative

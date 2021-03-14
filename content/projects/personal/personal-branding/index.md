@@ -48,7 +48,7 @@ Here's one with text:
 </video>
 
 
-## Final thoughts
+## Thoughts
 
 As you can see from this site and the [Control Space](https://controlspace.app) site, the idea didn't go further than a few experiments, but certainly something I enjoyed, and worth sharing!
 

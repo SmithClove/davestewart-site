@@ -1,5 +1,5 @@
 ---
-description: Recover your deleted Great Suspender Tabs!
+description: Recover your deleted Great Suspender tabs!
 shortTitle: Great Suspender Recovery
 date: 2021-02-01
 tags:

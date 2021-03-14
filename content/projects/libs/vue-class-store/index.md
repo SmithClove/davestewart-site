@@ -23,10 +23,10 @@ View Class Store is universal store format for Vue.
 
 It has some key advantages over Vuex and other libraries:
 
-- single JavaScript-native syntax (no library-specific API)
+- native JavaScript syntax (no library-specific API)
 - at authoring time, stores are just classes (so full autocompletion, etc)
 - at runtime, stores are fully-reactive Vue objects (with computed properties, watches, etc)
-- class [inheritance](https://github.com/davestewart/vue-class-store#inheritance) and full debugging comes for free
+- TypeScript support, class [inheritance](https://github.com/davestewart/vue-class-store#inheritance) and full debugging comes for free
 - stores are local by default, you can use them [*anywhere*](https://github.com/davestewart/vue-class-store#global--shared-state)
 
 ## Setup

@@ -1,6 +1,6 @@
 ---
 title: Got Paper?
-description: A cheeky app to calculate your actual toilet paper needs
+description: A cheeky app to calculate your toilet paper requirements
 date: 2020-02-01
 tags:
   - webapp

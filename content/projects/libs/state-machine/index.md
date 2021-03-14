@@ -1,5 +1,5 @@
 ---
-description: A powerful yet simply configured JavaScript finite-state machine
+description: A powerful yet simply-configured JavaScript finite-state machine
 date: 2016-10-01
 tags:
   - library
@@ -18,9 +18,9 @@ media:
 
 ## Overview
 
-State Machine is a powerful yet simply-configurable state machine.
+State Machine is a powerful yet simply-configured state machine.
 
-Its [simple](https://statemachine.davestewart.io/html/api/transitions/advanced.html) [yet](https://statemachine.davestewart.io/html/api/transitions/wildcards.html) [powerful](https://statemachine.davestewart.io/html/api/transitions/separators.html) DSL can describe states and transitions succinctly whilst its [JavaScript API](https://statemachine.davestewart.io/html/api/index.html) hooks into transitions with a rich [event syntax](https://statemachine.davestewart.io/html/api/events/interactive.html) to build complex [application flows](https://statemachine.davestewart.io/html/examples/index.html):
+Its [intuitive](https://statemachine.davestewart.io/html/api/transitions/advanced.html) [yet](https://statemachine.davestewart.io/html/api/transitions/wildcards.html) [powerful](https://statemachine.davestewart.io/html/api/transitions/separators.html) DSL can describe states and transitions succinctly whilst its [JavaScript API](https://statemachine.davestewart.io/html/api/index.html) hooks into transitions with a rich [event syntax](https://statemachine.davestewart.io/html/api/events/interactive.html) to build complex [application flows](https://statemachine.davestewart.io/html/examples/index.html):
 
 ```js
 const transitions: [
