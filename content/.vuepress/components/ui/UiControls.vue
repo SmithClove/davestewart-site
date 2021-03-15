@@ -12,7 +12,6 @@ export default {}
 .uiControls {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 0 -17.5px;
   padding: 0;
 
   * {
@@ -25,8 +24,8 @@ export default {}
     display: flex;
     align-items: center;
 
-    &:not(:first-child) {
-      border-left: 1px solid #DDD;
+    &:not(:last-child) {
+      border-right: 1px solid #DDD;
     }
 
     &:last-child {

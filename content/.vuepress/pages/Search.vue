@@ -27,47 +27,58 @@
         <span>&times;</span>
       </button>
 
-      <!-- controls -->
-      <UiControls class="searchControls">
+      <div class="searchControls">
+        <UiControls class="only-sm">
+          <!-- search input -->
+          <div class="searchControls__text">
+            <UiInput v-model="query.text"
+                     placeholder="Type to filter...."
+            />
+          </div>
+        </UiControls>
 
-        <!-- search input -->
-        <div class="searchControls__text">
-          <UiInput v-model="query.text"
-                   placeholder="Type to filter...."
-          />
-        </div>
+        <!-- controls -->
+        <UiControls>
 
-        <!-- tags -->
-        <!-- tags -->
-        <div class="searchControls__tags">
-          <UiRadio name="filter"
-                   label="Tags"
-                   :count="query.tags.length ? query.tags.length : ''"
-                   :countState="options.showTags ? 0 : 1"
-                   :options="options.filter"
-                   v-model="query.filter"
-          />
-        </div>
+          <!-- search input -->
+          <div class="searchControls__text only-md-up">
+            <UiInput v-model="query.text"
+                     placeholder="Type to filter...."
+            />
+          </div>
 
-        <!-- sorting -->
-        <div class="searchControls__sort">
-          <UiRadio
-              name="sort"
-              :options="options.sort"
-              v-model="query.sort"
-          />
-        </div>
+          <!-- tags -->
+          <div class="searchControls__tags">
+            <UiRadio name="filter"
+                     label="Tags"
+                     :count="query.tags.length ? query.tags.length : ''"
+                     :countState="options.showTags ? 0 : 1"
+                     :options="options.filter"
+                     v-model="query.filter"
+            />
+          </div>
 
-        <!-- view -->
-        <div class="searchControls__view">
-          <UiRadio
-              name="view"
-              :options="options.view"
-              v-model="query.view"
-          />
-        </div>
+          <!-- sorting -->
+          <div class="searchControls__sort">
+            <UiRadio
+                name="sort"
+                :options="options.sort"
+                v-model="query.sort"
+            />
+          </div>
 
-      </UiControls>
+          <!-- view -->
+          <div class="searchControls__view">
+            <UiRadio
+                name="view"
+                :options="options.view"
+                v-model="query.view"
+            />
+          </div>
+
+        </UiControls>
+      </div>
+
 
       <!-- tags -->
       <SlideUpDown ref="tagsContainer"
@@ -315,6 +326,7 @@ export default {
       const parts = []
       if (text) {
         parts.push(text)
+        // parts.push(text.match(/\w+/g).join(', '))
       }
       if (tags.length) {
         parts.push(tags.join(' + '))
@@ -612,22 +624,31 @@ export default {
 }
 
 .searchControls {
+  @include md-up {
+    margin-left: -1rem;
+  }
 
-  @include md {
-    &__text {
-      input {
-        width: 100px;
+  &__text {
+
+    @include sm {
+      &,
+      .uiInput {
+          width: 100%;
       }
+    }
+
+    @include md-up {
+      width: 150px;
     }
   }
 
   @include sm {
-    &__tags {
-      display: none !important;
+    .uiControls {
+      flex-wrap: nowrap;
+      margin: 0 -1rem .5rem;
     }
-
-    .uiRadio__label {
-      display: none !important;
+    .uiControls > * {
+      padding: 5px;
     }
   }
 }
