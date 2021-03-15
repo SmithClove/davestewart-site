@@ -3,10 +3,10 @@
     <div class="siteHeader__background">
       <div class="layout__inner">
         <div class="siteHeader__left">
-          <SiteBreadcrumbs/>
+          <NavBreadcrumbs/>
         </div>
         <div class="siteHeader__right">
-          <SiteSearch/>
+          <NavSearch/>
         </div>
       </div>
     </div>

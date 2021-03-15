@@ -12,13 +12,13 @@
 
     <!-- scroll to top -->
     <ClientOnly>
-      <SiteScrollTop/>
+      <NavScrollTop/>
     </ClientOnly>
 
     <!-- lower area -->
     <div class="layout__bottom">
       <!-- prev / next -->
-      <PageSiblings/>
+      <NavSiblings/>
 
       <!-- footer -->
       <SiteFooter/>

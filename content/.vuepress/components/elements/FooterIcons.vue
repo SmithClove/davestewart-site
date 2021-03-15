@@ -1,6 +1,6 @@
 <template>
   <div class="footerIcons">
-    <IconLink v-for="item in items" v-bind="item"/>
+    <LinkIcon v-for="item in items" v-bind="item"/>
   </div>
 </template>
 
