@@ -1,5 +1,5 @@
 <template>
-  <article class="thumbnailItem boxy">
+  <article class="thumbnailItem">
 
     <!-- image -->
     <div class="thumbnailItem__image">
@@ -101,17 +101,30 @@ export default {
   }
 
   @include sm {
-    padding: 0 0 20px;
     margin-bottom: 20px;
-    border: none;
     box-shadow: none;
 
-    &:not(:last-child) {
-      border-bottom: 1px dashed $borderColor;
-    }
-
-    img {
+    &__image {
       border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+
+      // add a border for all images
+      &:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        border: 1px dashed $borderColor;
+        border-radius: 4px;
+        @include fit;
+        z-index: 0;
+      }
+
+      // hide border if not transparent
+      img {
+        position: relative;
+      }
     }
 
     &__content {
