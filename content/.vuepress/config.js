@@ -21,7 +21,7 @@ module.exports = {
     meta('theme-color', '#ea4848'),
     meta('apple-mobile-web-app-capable', 'yes'),
     meta('apple-mobile-web-app-status-bar-style', 'black'),
-    meta('viewport', 'initial-scale=1.0'),
+    meta('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'),
     link('shortcut icon', '/favicon.svg'),
   ],
 
