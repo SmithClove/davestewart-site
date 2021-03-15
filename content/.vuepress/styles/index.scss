@@ -1,6 +1,12 @@
+// setup
 @import 'setup/reset';
 @import 'setup/fonts';
-@import 'setup/code';
-@import 'layout';
-@import 'formatting';
-@import 'forms';
+
+// layout
+@import 'layout/layout';
+@import 'layout/responsive';
+
+// formatting
+@import 'formatting/code';
+@import 'formatting/page';
+@import 'formatting/forms';
