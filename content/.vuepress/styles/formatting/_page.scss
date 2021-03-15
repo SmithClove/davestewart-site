@@ -80,6 +80,7 @@ p.description {
 
   h1 + h2,
   h2 + h3,
+  h2 + h4,
   h3 + h4 {
     margin-top: 0;
   }
@@ -98,6 +99,10 @@ p.description {
   li {
     list-style: disc;
     margin-bottom: .25em;
+
+    p {
+      margin: 0;
+    }
   }
 
   strong {

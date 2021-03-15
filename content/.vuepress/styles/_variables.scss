@@ -66,22 +66,4 @@ $codeFont: 'Roboto Mono', monospaced;
 // BREAKPOINTS
 // ---------------------------------------------------------------------------------------------------------------------
 
-@mixin sm {
-  @media screen and (max-width: 420px) { @content }
-}
-
-@mixin md-down {
-  @media screen and (max-width: 700px) { @content }
-}
-
-@mixin md {
-  @media screen and (min-width: 421px) and (max-width: 700px) { @content }
-}
-
-@mixin md-up {
-  @media screen and (min-width: 421px) { @content }
-}
-
-@mixin lg {
-  @media screen and (min-width: 701px) { @content }
-}
+@import "layout/mixins";

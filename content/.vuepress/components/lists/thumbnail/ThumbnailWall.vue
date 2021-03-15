@@ -29,10 +29,10 @@ export default {
   computed: {
     columns () {
       if (this.cols > 2) {
-        return {default: 3, 700: 2, 450: 1}
+        return {default: 3, 740: 2, 430: 1}
       }
       if (this.cols === 2) {
-        return {default: 2, 450: 1}
+        return {default: 2, 430: 1}
       }
       return 1
     }
