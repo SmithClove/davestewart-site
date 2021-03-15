@@ -100,25 +100,6 @@ p.description {
     margin-bottom: .25em;
   }
 
-  video,
-  iframe,
-  img {
-    max-width: 100%;
-    width: auto;
-    margin: auto;
-  }
-
-
-  video,
-  p > video,
-  p > img {
-    margin: 1.5rem auto;
-
-    @include sm {
-      margin: .5rem auto;
-    }
-  }
-
   strong {
     font-weight: 700;
   }
@@ -132,6 +113,31 @@ p.description {
     border: none;
     background: $borderColor;
     height: 1px;
+  }
+
+  video,
+  iframe,
+  img {
+    max-width: 100%;
+    width: auto;
+    margin: auto;
+  }
+
+  video,
+  p > video,
+  p > img {
+    margin: 1rem auto;
+
+    @include sm {
+      margin: .5rem auto;
+    }
+  }
+
+  .medium {
+    max-width: 70%;
+    @include sm {
+      max-width: 100%;
+    }
   }
 
 }
