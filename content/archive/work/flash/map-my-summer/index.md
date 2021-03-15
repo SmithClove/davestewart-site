@@ -13,6 +13,7 @@ tags:
   - mashup
   - award
   - social
+  - video
   - maps
   - ugc
 hero: gallery

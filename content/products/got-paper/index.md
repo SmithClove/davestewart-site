@@ -13,7 +13,7 @@ tags:
   - creative
   - ui
 media:
-  thumbnail: ./images/ph-splash.png
+  thumbnail: ./images/thumb.png
   gallery:
     - ./images/ph-splash.png
     - ./images/ph-mobile.png

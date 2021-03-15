@@ -1,6 +1,6 @@
 ---
 title: Projects
-description: Current Open Source, side and creative projects
+description: Recent Open Source, side + creative projects
 layout: folder
 order: 3
 ---

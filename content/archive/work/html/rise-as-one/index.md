@@ -6,6 +6,7 @@ tags:
   - html
   - responsive
   - javascript
+  - video
 media:
   thumbnail: ./images/budweiser-feature.png
   gallery:
