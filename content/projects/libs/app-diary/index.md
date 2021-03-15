@@ -30,8 +30,8 @@ It turns out that the architectural skills I've spent years building up simply j
 
 "App Diary" (to use its short name!) ended up as a project of two complimentary halves:
 
+- a blog-style [diary](https://davestewart.github.io/app-diary/) of what I learned at each step of building the application
 - a tagged [repository](https://github.com/davestewart/app-diary/releases) of the above clone
-- a blog-style [diary](https://davestewart.github.io/app-diary/#/diary/index) of what I learned at each step of building the application
 
 The project was designed to remind my future self what not to do in these situations in future, and also as a contribution to the community and anyone learning programming and also tasked with a job interview project.
 

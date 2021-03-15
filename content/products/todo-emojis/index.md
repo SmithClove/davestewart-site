@@ -10,8 +10,8 @@ media:
   gallery:
     - ./emojis/emoji-todo.svg
     - ./emojis/emoji-doing.svg
-    - ./emojis/emoji-done.svg
     - ./emojis/emoji-paused.svg
+    - ./emojis/emoji-done.svg
     - ./emojis/emoji-cancelled.svg
 ---
 

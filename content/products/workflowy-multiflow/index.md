@@ -85,17 +85,19 @@ Click the MultiFlow icon in the browser toolbar to see options:
 
 ![](./screens/options-panel.png)
 
-You can change the settings to customise the current session.
+The panel has been simplified in v1.6 to just Layout and Sessions.
 
-Hopefully they are self-explanatory. If not, just click them :)
+The layout options provide various layouts, including "Left-hand navigation" which can be useful for things like boards:
+
+![](./screens/left-layout.png)
 
 ## Sessions
 
 You can also save and load sessions, by clicking the "Save Session" button in the panel:
 
-![](./screens/saved-session.png)
+![](./screens/sessions.png)
 
-Once you have more than one session, you can click sessions to reload them, update changed sessions, or save new ones.
+Once you have more than one session, load, update, or save new ones, as well as reorder with drag and drop.
 
 Note that sessions are saved with the extension. Uninstalling the session will delete any saved sessions.
 

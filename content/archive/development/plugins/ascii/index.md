@@ -5,7 +5,7 @@ tags:
   - library
   - javascript
 media:
-  thumbnail: ./images/ascii.png
+  thumbnail: ./images/ascii-color.png
   featured: https://cloud.githubusercontent.com/assets/132681/19949075/b3214c36-a147-11e6-9535-72971a1580b0.gif
 ---
 

@@ -11,9 +11,9 @@ tags:
 media:
   thumbnail: ./images/tgsrt-thumb.png
   gallery:
-    - ./images/screenshot-list.png
-    - ./images/screenshot-table.png
-    - ./images/screenshot-bookmarks.png
+    - ./screens/screenshot-list.png
+    - ./screens/screenshot-table.png
+    - ./screens/screenshot-bookmarks.png
 ---
 
 # The Great Suspender Recovery Tool

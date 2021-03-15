@@ -72,7 +72,7 @@ const fsm = new StateMachine(config)
 
 The above is the classic [traffic light](https://statemachine.davestewart.io/html/examples/flows/branching.html) example, with some additional handlers to show off the API.
 
-The library can be on its own (as per most of the examples) or with helpers to power [jQuery](https://statemachine.davestewart.io/html/setup/helpers/jquery.html), [Angular](https://statemachine.davestewart.io/html/setup/helpers/object.html) or [Vue](https://statemachine.davestewart.io/html/examples/vue/vue-router.html).
+The library can be used on its own (as per most of the examples) or with helpers to power [jQuery](https://statemachine.davestewart.io/html/setup/helpers/jquery.html), [Angular](https://statemachine.davestewart.io/html/setup/helpers/object.html) or [Vue](https://statemachine.davestewart.io/html/examples/vue/vue-router.html).
 
 ## Thoughts
 

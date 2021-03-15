@@ -39,13 +39,13 @@ This transforms lightness values to specific colours to give the final effect:
 
 I really didn't spend any time on the animation – as I haven't used After Effects in a long time – this was just to check that the colour mapping setup worked:
 
-<video class="centered" controls>
+<video class="medium" controls>
   <source src="./animation/simple.mp4" type="video/mp4">
 </video>
 
 Here's one with text:
 
-<video class="centered" controls>
+<video class="medium" controls>
   <source src="./animation/text.mp4" type="video/mp4">
 </video>
 
