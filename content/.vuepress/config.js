@@ -25,6 +25,10 @@ module.exports = {
     link('shortcut icon', '/favicon.svg'),
   ],
 
+  shouldPrefetch (file, type) {
+    return type === 'script' || type === 'style' || type === 'font'
+  },
+
   additionalPages: [
     {
       path: '/search/',
