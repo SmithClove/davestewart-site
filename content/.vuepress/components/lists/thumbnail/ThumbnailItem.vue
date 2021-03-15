@@ -88,7 +88,7 @@ export default {
 
     h3 {
       font-size: 1.2em;
-      margin: .75rem 0 .5rem;
+      margin: 0 0 .5rem;
       line-height: 1.1; // 1.3 is more comfortable, but this allows cards to tile better
     }
   }
