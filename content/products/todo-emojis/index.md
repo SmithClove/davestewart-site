@@ -30,7 +30,7 @@ I created them for use in the [Weekend Club](https://twitter.com/weekendclubldn)
 
 ### Using the emojis
 
-Just start typing `:todo` then choose the emoji from the list:
+Once [installed](https://github.com/davestewart/todo-emojis#installation), just start typing `:todo` then choose the emoji from the list:
 
 ![emojis](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/edit-choose.png)
 

@@ -32,7 +32,7 @@ I joined Asterisk to lead the front end design and build, architecting a robust 
 
 The site is a [Vue JS](https://vuejs.org/) SPA, served by a .Net REST API, and hosted on the [Azure](https://azure.microsoft.com/en-us/) Cloud. Authorisation is handled by [Auth0](https://auth0.com/) and live updates are handled by [Signal R](https://dotnet.microsoft.com/apps/aspnet/signalr). 
 
-The application is written in [TypeScript](https://www.typescriptlang.org/) and is built using [WebPack](https://webpack.js.org/), compiling to 4 environments with programatic [CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)s for each. We use a variety of components and libraries including [Element UI](https://element.eleme.io/), [Vee Validate](https://vee-validate.logaretm.com/v3/), [Vuex](https://vuex.vuejs.org/), [Vuex Pathify](/projects/libs/vuex-pathify), [Alias HQ](/projects/libs/alias-hq) and [Handsontable](https://handsontable.com/).
+The application is written in [TypeScript](https://www.typescriptlang.org/) and is built using [WebPack](https://webpack.js.org/), compiling to 4 environments with programatic [CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)s for each. We use a variety of components and libraries including [Element UI](https://element.eleme.io/), [Vee Validate](https://vee-validate.logaretm.com/v3/), [Vuex](https://vuex.vuejs.org/), [Vuex Pathify](/projects/open-source/vuex-pathify), [Alias HQ](/projects/open-source/alias-hq) and [Handsontable](https://handsontable.com/).
 
 ### Core UX / UI
 
@@ -131,6 +131,6 @@ This made working on any particular unit simple:
 ## Links
 
 - [Asterisk Networks](https://asterisknetworks.com)
-- [Vuex Pathify](/projects/libs/vuex-pathify)
-- [Alias HQ](/projects/libs/alias-hq)
+- [Vuex Pathify](/projects/open-source/vuex-pathify)
+- [Alias HQ](/projects/open-source/alias-hq)
 
