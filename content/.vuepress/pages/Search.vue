@@ -268,6 +268,7 @@ export default {
     },
 
     itemsAsList () {
+      // FIXME find a better way to determine page
       return this.filtered.filter(item => !!item.headers)
     },
 

@@ -36,7 +36,7 @@ code[class*="language-"] {
 
 pre[class*="language-"],
 code[class*="language-"],
-p > code {
+code {
   border-radius: 4px;
   font-size: 12px;
   font-family: $codeFont, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -44,6 +44,7 @@ p > code {
   color: #5c6e74;
 }
 
+li > code,
 p > code {
   padding: 2px 6px 4px 6px;
   color: $accentColor;

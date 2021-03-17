@@ -32,6 +32,14 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // components
   require('./components')
 
+  // remove headers
+  siteData.pages
+    .forEach((page, index) => {
+      if (page.headers && page.headers.length) {
+        page.headers = []
+      }
+    })
+
   // filter drafts
   siteData.pages
     .map((page, index) => isPublished(page) ? -1 : index)

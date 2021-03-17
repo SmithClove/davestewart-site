@@ -33,5 +33,6 @@ export default {
   font-size: 16px;
   flex-wrap: nowrap !important;
   margin-top: 1.25rem;
+  margin-left: -17.5px
 }
 </style>
