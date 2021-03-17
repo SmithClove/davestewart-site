@@ -11,7 +11,7 @@ tags:
   - vue
   - typescript
 media:
-  thumbnail: ./images/asterisk-logo.svg
+  thumbnail: ./images/asterisk-logo-trans.svg
   gallery:
     - ./images/asterisk-01.jpg
     - ./images/asterisk-02.jpg

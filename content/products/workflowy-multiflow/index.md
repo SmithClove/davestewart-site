@@ -5,6 +5,7 @@ tags:
   - productivity
   - chrome-extension
   - tools
+  - creative
 media:
   thumbnail: ./images/multiflow-thumb-01.svg
   featured: ./images/multiflow-featured.svg

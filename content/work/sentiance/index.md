@@ -1,5 +1,6 @@
 ---
 description: Development of data visualisation dashboard for data science firm 
+shortTitle: Sentiance
 date: 2019-02-01
 tags:
   - webapp
