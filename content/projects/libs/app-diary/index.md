@@ -1,7 +1,7 @@
 ---
 description: Development diary of rapidly-building a Trello clone
 shortTitle: App Diary
-date: 2018-06-01
+date: 2018-02-01
 hero: featured
 tags:
   - website

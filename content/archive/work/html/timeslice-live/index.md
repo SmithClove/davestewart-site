@@ -54,7 +54,7 @@ The overall system has 4 parts:
 
 We are currently mid-way through the 3rd phase, with client administration and 3rd party integration planned:
 
-\[caption id="attachment\_1033" align="alignnone" width="580"\][![Timeslice system diagram (Phase 3c)](http://davestewart.co.uk/wp-content/uploads/work/html/timeslice-live/timeslice-system-diagram-phase-03c-580x366.png)](./images/timeslice-system-diagram-phase-03c.png) Timeslice system diagram (Phase 3c)\[/caption\]
+![Timeslice system diagram (Phase 3c)](./images/timeslice-system-diagram-phase-03c.png)
 
 ## Process
 
@@ -77,7 +77,9 @@ Once live, customers discover the rig, queue to get in, are guided through havin
 
 The local system is built using Laravel 5 and Vue JS, with a MySQL database and a Beanstalkd queue.
 
-The whole process is _extremely_ image-heavy, with a 3-day live event generating around 100GB of images, both raw and processed. The kiosk system might ingest up to 700 sequences of 100 - 200 images and video a day from the render farm, uploading around 4/5 of shots, and sending over 1000 emails.
+The whole process is _extremely_ image-heavy, with a 3-day live event generating around 100GB of images, both raw and processed. The kiosk system might ingest up to 700 sequences of 100 - 200 images and video a day from the render farm, uploading around 4/5 of shots, and sending over 1000 emails:
+
+![images](./images/image-folders-small.png)
 
 Much of the logic and structure is built around processing, logging and moving these images around, both locally and remotely, across various different protocols and applications.
 
@@ -89,29 +91,6 @@ The kiosk client machines connect to the kiosk server over a local network, and 
 
 The kiosk system now supports visual effects and 3d scanning shoots, so for commercial shoots we're able to show clients early visualisations of the shooting process, and we continue to add tools and features as we think of them.
 
-## Animations
-
-Here are some of the end results, and simply amazing costumes from some of the SyFy events, for your viewing pleasure :)
-
-<iframe id="player" src="http://timeslicelive.com/media/player.html?shotId=9rf2O" width="580" height="387" frameborder="0"></iframe>
-
-- [Halo](http://timeslicelive.com/media/player.html?shotId=9rf2O)
-- [WOW Female Night Elves](http://timeslicelive.com/media/player.html?shotId=ERfn4)
-- [Deathstroke](http://timeslicelive.com/media/player.html?shotId=4xfmK)
-- [Miss America](http://timeslicelive.com/media/player.html?shotId=L9fmE)
-- [Penguin](http://timeslicelive.com/media/player.html?shotId=1wfk2)
-- [Top Japanese Cosplayers\*](http://timeslicelive.com/media/player.html?shotId=68fX3)
-- [Top Japanese Cosplayer\*](http://timeslicelive.com/media/player.html?shotId=ERfo0)
-- [Groot](http://timeslicelive.com/media/player.html?shotId=DkfJw)
-- [WOW Elf\*](http://timeslicelive.com/media/player.html?shotId=G6fy0)
-- [Batman\*](http://timeslicelive.com/media/player.html?shotId=R6fy1)
-- [Unknown 1 - game characters](http://timeslicelive.com/media/player.html?shotId=68fGE)
-- [Unknown 2 - game characters](http://timeslicelive.com/media/player.html?shotId=BBfZl)
-- [Unknown 3 - game character](http://timeslicelive.com/media/player.html?shotId=W6f6M)
-- [Unknown 4 - zombie attack](http://timeslicelive.com/media/player.html?shotId=PNfDD)
-- [Unknown 5 - red-haired barbarian](http://timeslicelive.com/media/player.html?shotId=4xfY7)
-
-If you know any of the "unknown" characters above, or can provide more detail on the others, please comment!
 
 ## Links
 
@@ -121,4 +100,3 @@ If you know any of the "unknown" characters above, or can provide more detail on
 
  
 
-<script>// <![CDATA[ var $player = $('#player'); $(window).on('resize', function() { $player.height($player.width() * (387 / 580)); $player.get(0).src = $player.get(0).src; }).trigger('resize'); $('#shots a').on('click', function(event) { event.preventDefault(); $player.attr('src', event.currentTarget.href); }); // ]]></script>

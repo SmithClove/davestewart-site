@@ -1,5 +1,5 @@
 ---
-description: Customer facing site for car finance and sales 
+description: Greenfield build of car finance and sales platform 
 date: 2017-05-01
 tags:
   - enterprise
@@ -13,7 +13,7 @@ tags:
   - ui
   - laravel
 media:
-  thumbnail: ./images/fairsquare.png
+  thumbnail: ./images/fairsquare-logo.svg
   gallery:
     - ./images/fairsquare-01.jpg
     - ./images/fairsquare-02.jpg
@@ -24,22 +24,24 @@ media:
 
 ## Overview
 
-Lorem ipsum
+FairSquare is a car financing and sales platform.
+
+I lead a small team to work directly with the stakeholders and build out a greenfield platform on Vue JS.
+
+The project lasted about 9 months, and we covered everything from UX to database optimisation and everything inbeween. My role was front end lead
+
+
 
 ## Implementation
 
 Lorem Ipsum
 
+Open Source
+
+- Vuex Pathify
+
 ## Links
 
 - [fairsquare.com](https://fairsquare.com)
 
-tagsMode = filter
-viewMode = view
-sortMode = sort
 
-filter: off, tags, categories
-sort: date, folder
-view: text,image
-
-animate color
