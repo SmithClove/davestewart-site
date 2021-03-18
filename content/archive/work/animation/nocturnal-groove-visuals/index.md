@@ -1,5 +1,6 @@
 ---
 description: Club and festival visuals for chart-toppers Shapeshifter
+shortTitle: Nocturnal Groove Visuals
 date: 2005-05-08
 tags:
   - creative

@@ -1,5 +1,5 @@
 ---
-description: Greefield build of peer to peer securities lending platform
+description: Greenfield build of peer to peer securities lending platform
 date: 2019-02-01
 tags:
   - enterprise
@@ -60,7 +60,7 @@ We use a system of column factories to generate the column definitions, in conju
 
 ![securities-dropdown](./ui/securities-dropdown.gif)
 
-The data that goes into through the table is managed by a bespoke Handsontable wrapper that ensures one-way data flow, keeps track of changes, and marshalls validation and errors.
+The data that goes into through the table is managed by a bespoke Handsontable wrapper that ensures one-way data flow, keeps track of changes, and marshals validation and errors.
 
 All these states, editors and renderers have sophisticated formatting and styling constraints that need to work with one another, and clearly indicate to the user what state any negotiation item is in:
 

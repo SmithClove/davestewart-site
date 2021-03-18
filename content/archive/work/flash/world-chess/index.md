@@ -1,5 +1,6 @@
 ---
 description: Interactive prototype for broadcast chess
+shortTitle: World Chess
 date: 2012-08-05
 tags:
   - flash

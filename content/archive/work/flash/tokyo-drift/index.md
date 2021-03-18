@@ -1,5 +1,6 @@
 ---
 description: Flash racing game for Tokyo Drift official film site
+shortTitle: Fast & Furious
 date: 2006-02-08
 tags:
   - flash
@@ -19,7 +20,7 @@ media:
     - ./images/tokyo-drift-level-1b.png
 ---
 
-# Universal: Fast & Furious
+# Universal: Fast & Furious Game
 
 ## Overview
 

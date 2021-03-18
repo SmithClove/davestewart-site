@@ -11,10 +11,7 @@ tags:
   - typescript
 media:
   thumbnail: ./images/clearbank-logo-light.svg
-  gallery:
-    - ./images/clearbank-01.jpg
-    - ./images/clearbank-02.jpg
-    - ./images/clearbank-03.jpg
+  featured: ./images/clearbank-logo-dark.svg
 ---
 
 # Clear Bank

@@ -1,5 +1,6 @@
 ---
 description: Flash application allowing users to star in their own pop music videos
+shortTitle: X Factor Mix Off
 date: 2014-10-21
 tags:
   - flash

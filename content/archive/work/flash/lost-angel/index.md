@@ -1,5 +1,6 @@
 ---
 description: Immersive Flash micro-site for one of London's leading destination bars
+shortTitle: Lost Angel
 date: 2009-08-05
 tags:
   - flash

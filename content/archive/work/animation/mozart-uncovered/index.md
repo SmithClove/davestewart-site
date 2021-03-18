@@ -1,5 +1,6 @@
 ---
 description: Visual exploration of the structure and ideas of Mozart's symphonies
+shortTitle: BBC4 Mozart Uncovered
 date: 2005-06-08
 tags:
   - javascript

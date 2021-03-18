@@ -1,6 +1,6 @@
 ---
 description: SPA for data-driven end-of-year report for Formula One
-shortTitle: "F1: Broadcast Report"
+shortTitle: "F1 Broadcast Report"
 date: 2013-01-05
 tags:
   - concept

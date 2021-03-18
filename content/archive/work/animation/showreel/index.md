@@ -20,7 +20,7 @@ media:
     video_poster_url: /wp-content/uploads/work/animation/showreel/animation-showreel.png
 ---
 
-# Showreel
+# Animation Showreel
 
 My final animation showreel from when animation was still my thing, circa 2007.
 

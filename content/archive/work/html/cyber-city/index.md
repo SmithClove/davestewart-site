@@ -22,7 +22,7 @@ media:
     - ./images/cyber-city-15.jpg
 ---
 
-# e-skills UK: Cyber City
+# e-skills Cyber City
 
 ## Overview
 

@@ -1,6 +1,6 @@
 ---
 description: Landing page for Simon Fuller's 19 Entertainment stable
-shortTitle: "19: Microsite"
+shortTitle: "19 Microsite"
 date: 2009-02-05
 tags:
   - frontend

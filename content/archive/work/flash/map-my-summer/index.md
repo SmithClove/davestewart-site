@@ -1,5 +1,6 @@
 ---
 description: Flash micro-site with heavy use of mapping and video APIs
+shortTitle: Map My Summer
 date: 2011-02-05
 tags:
   - flash

@@ -1,5 +1,6 @@
 ---
 description: 2D and 3D animation mixed to create a spooky Halloween ident
+shortTitle: Disney Channel Halloween
 date: 2007-09-08
 tags:
   - creative

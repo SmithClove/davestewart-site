@@ -28,7 +28,7 @@ FairSquare is a car financing and sales platform.
 
 I lead a small team to work directly with the stakeholders and build out a greenfield platform on Vue JS.
 
-The project lasted about 9 months, and we covered everything from UX to database optimisation and everything inbeween. My role was front end lead
+The project lasted about 9 months, and we covered everything from UX to database optimisation and everything inbetween. My role was front end lead
 
 
 
