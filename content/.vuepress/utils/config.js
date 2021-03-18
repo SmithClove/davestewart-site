@@ -1,3 +1,7 @@
+function script (src, options) {
+  return ['script', { src, ...options }]
+}
+
 function meta (name, content) {
   return ['meta', { name, content }]
 }
@@ -14,6 +18,7 @@ function plugin (name, options) {
 
 module.exports = {
   isDev: process.env.NODE_ENV !== 'production',
+  script,
   meta,
   link,
   plugin,

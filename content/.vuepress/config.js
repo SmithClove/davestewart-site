@@ -1,6 +1,6 @@
 const hq = require('alias-hq')
 const { description } = require('../../package')
-const { link, meta, isDev } = require('./utils/config.js')
+const { link, meta, script, isDev } = require('./utils/config.js')
 
 /**
  * @see https://v1.vuepress.vuejs.org/config/#title
@@ -23,6 +23,11 @@ module.exports = {
     meta('apple-mobile-web-app-status-bar-style', 'black'),
     meta('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'),
     link('shortcut icon', '/favicon.svg'),
+    script('https://plausible.io/js/plausible.js', {
+      'data-domain': 'davestewart.co.uk',
+      async: 1,
+      defer: 1,
+    })
   ],
 
   shouldPrefetch (file, type) {
