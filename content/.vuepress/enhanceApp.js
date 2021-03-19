@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import VueMasonry from 'vue-masonry-css'
 import smoothscroll from 'smoothscroll-polyfill'
 import GlobalEvents from 'vue-global-events'
-import './plugins/vuepress.js'
+import './plugins/vuepress/components.js'
 
 // theme
 import './styles/index.scss'

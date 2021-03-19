@@ -54,7 +54,7 @@ module.exports = {
   },
 
   plugins: [
-    require('./plugins/media.js').plugin,
+    require('./plugins/vuepress/media.js').plugin,
   ],
 
   markdown: {
@@ -65,7 +65,7 @@ module.exports = {
     },
 
     extendMarkdown: md => {
-      md.use(require('./plugins/strip-h1.js').plugin)
+      md.use(require('./plugins/markdown/titles.js').plugin)
     },
   },
 }

@@ -4,7 +4,7 @@ function findIndex (state, tag, type) {
   })
 }
 
-function stripH1 (state) {
+function titles (state) {
   const start = findIndex(state, 'h1', 'heading_open')
   if (start > -1) {
     const end = findIndex(state, 'h1', 'heading_close')
@@ -13,7 +13,7 @@ function stripH1 (state) {
 }
 
 function plugin (md) {
-  md.core.ruler.push('strip_h1', stripH1)
+  md.core.ruler.push('titles', titles)
 }
 
 module.exports = {
