@@ -13,7 +13,7 @@ github: davestewart/vue-class-store
 media:
   thumbnail: ./images/vue-class-store.svg
   featured: ./images/vue-class-store.svg
-  video: https://youtube.com/embed/uBrh_2BIIAM&t=2425s
+  video: https://youtube.com/embed/uBrh_2BIIAM?start=2425s
 ---
 
 # Vue Class Store
