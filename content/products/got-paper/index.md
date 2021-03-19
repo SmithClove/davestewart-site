@@ -12,6 +12,7 @@ tags:
   - rapid-build
   - creative
   - ui
+github: davestewart/got-paper
 media:
   thumbnail: ./images/thumb.png
   gallery:

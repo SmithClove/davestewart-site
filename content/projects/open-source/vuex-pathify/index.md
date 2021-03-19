@@ -8,6 +8,7 @@ tags:
   - vue
   - state
   - creative
+github: davestewart/vuex-pathify
 media:
   thumbnail: ./images/vuex-pathify.svg
   featured: ./images/vuex-pathify.svg

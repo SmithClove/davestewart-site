@@ -9,6 +9,7 @@ tags:
   - creative
   - library
   - rapid-build
+github: davestewart/app-diary
 media:
   thumbnail: ./images/app-diary-thumbnail-02.png
   featured: ./images/app-diary-featured.png

@@ -5,6 +5,7 @@ tags:
   - library
   - javascript
   - state
+github: davestewart/javascript-state-machine
 media:
   thumbnail: ./images/state-machine-thumb.svg
   featured:
@@ -89,6 +90,6 @@ If I had the time and inclination to continue this project, the main aims would 
 
 ## Links
 
-- [statemachine.davestewart.io/](http://statemachine.davestewart.io/)
+- [statemachine.davestewart.io](http://statemachine.davestewart.io/)
 - [GitHub](https://github.com/davestewart/javascript-state-machine)
 

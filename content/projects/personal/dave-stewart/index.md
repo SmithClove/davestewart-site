@@ -15,11 +15,13 @@ media:
   thumbnail: ./images/thumbnail.jpg
   gallery:
   - ./images/home.png
-  - ./images/folder.png
-  - ./images/folder-preview.png
-  - ./images/page.png
+  - ./images/projects.png
+  - ./images/project.png
+  - ./images/preview.png
+  - ./images/text.png
   - ./images/search.png
-  - ./images/search-tags.png
+  - ./images/search-thumbnails.png
+  - ./images/search-filter.png
 ---
 
 # Dave Stewart

@@ -8,6 +8,7 @@ tags:
   - rapid-build
   - vue
   - ui
+github: davestewart/great-suspender-recovery-tool
 media:
   thumbnail: ./images/tgsrt-thumb.png
   gallery:

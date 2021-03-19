@@ -6,6 +6,7 @@ tags:
   - tools
   - node
   - creative
+github: davestewart/alias-hq
 media:
   thumbnail: ./images/alias-thumbnail.png
   featured: ./images/alias-gradient.gif

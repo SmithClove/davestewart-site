@@ -9,6 +9,7 @@ tags:
   - vue
   - state
   - creative
+github: davestewart/vue-class-store
 media:
   thumbnail: ./images/vue-class-store.svg
   featured: ./images/vue-class-store.svg

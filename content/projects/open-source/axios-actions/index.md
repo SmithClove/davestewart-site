@@ -5,6 +5,7 @@ tags:
   - library
   - javascript
   - state
+github: davestewart/axios-actions
 media:
   thumbnail: ./images/axios-actions.svg
   featured: ./images/axios-actions.svg
