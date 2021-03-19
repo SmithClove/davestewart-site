@@ -15,7 +15,7 @@ export default {}
   padding: 0;
 
   * {
-    line-height: 1.1;
+    line-height: 1;
   }
 
   > * {
