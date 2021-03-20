@@ -1,3 +1,9 @@
 [build]
   publish = "output"
   command = "npm run build"
+
+## image kit redirects
+[[redirects]]
+  from = "/assets/img/*"
+  to = "https://ik.imagekit.io/davestewart/:splat"
+  status = 200

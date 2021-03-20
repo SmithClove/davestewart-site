@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vuepress dev content",
     "debug": "vuepress dev content --debug",
-    "build": "vuepress build content --dest output",
+    "build": "vuepress build content --dest output && mkdir output/cdn && cp -R output/assets/img output/cdn/img",
     "serve": "npx serve output"
   },
   "license": "MIT",
