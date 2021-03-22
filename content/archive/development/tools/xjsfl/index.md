@@ -1,8 +1,6 @@
 ---
 description: JSFL framework to create tools for the Flash authoring environment
 date: 2011-01-01
-images:
-  thumbnail: ./images/xjsfl-logo.png
 tags:
   - frontend
   - framework
@@ -18,7 +16,7 @@ tags:
   - technical
   - ui
 media:
-  thumbnail: ./images/xjsfl-logo.png
+  thumbnail: ./images/xjsfl-logo-wide.png
   gallery:
     - ./images/xjsfl-screen-01.jpg
     - ./images/xjsfl-screen-02.jpg
