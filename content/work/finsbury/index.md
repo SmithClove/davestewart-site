@@ -52,7 +52,9 @@ The main units of work were:
 
 #### Front end
 
-The front end was reasonably straightforward. We worked closely with both the end users and Finsbury's Principle Data Scientists to engineer the correct search criteria, delivering a simple but effective search end-user search experience.
+This ended up being one of those classic project which had hidden layers of complexity.
+
+We worked closely with both the end users and Finsbury's Principle Data Scientists to engineer the correct search criteria, ultimetely delivering a simple but effective end-user search experience.
 
 ## Links
 

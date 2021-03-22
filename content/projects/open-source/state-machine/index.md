@@ -32,7 +32,7 @@ const transitions: [
 ]
 ```
 
-The **interactive** demo above shows-off many of StateMachine's features. Visit the [site itself](http://statemachine.davestewart.io) and view the source code directly in the page, or open the console here to see the application update as it transitions between states and fires events.
+The **interactive** demo above shows-off many of StateMachine's features. Visit the [site itself](http://statemachine.davestewart.io) and view the source code directly in the page, or open the console here to see the application log updates as it transitions between states and fires events.
 
 ## Implementation
 

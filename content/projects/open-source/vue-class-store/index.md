@@ -13,7 +13,7 @@ github: davestewart/vue-class-store
 media:
   thumbnail: ./images/vue-class-store.svg
   featured: ./images/vue-class-store.svg
-  video: https://youtube.com/embed/uBrh_2BIIAM?start=2425s
+  video: https://www.youtube.com/embed/uBrh_2BIIAM?start=2425
 ---
 
 # Vue Class Store
@@ -28,7 +28,7 @@ It has some key advantages over Vuex and other libraries:
 - at authoring time, stores are just classes (so full autocompletion, etc)
 - at runtime, stores are fully-reactive Vue objects (with computed properties, watches, etc)
 - TypeScript support, class [inheritance](https://github.com/davestewart/vue-class-store#inheritance) and full debugging comes for free
-- stores are local by default, you can use them [*anywhere*](https://github.com/davestewart/vue-class-store#global--shared-state)
+- stores are local by default; but you can use them locally *or* [globally](https://github.com/davestewart/vue-class-store#global--shared-state)
 
 ## Setup
 
@@ -58,7 +58,7 @@ export class Store {
     console.log('value changed to:', this.value)
   }
 
-  // you can even drill into sub properties!
+  // you can even watch nested properties!
   'on:some.other.value' = 'log'
 
   // class methods are added as methods
@@ -76,6 +76,8 @@ import Square from './Square'
 const model: Square = VueStore.create(new Square(10))
 ```
 
+See the [repository](https://github.com/davestewart/vue-class-store) for proper documentation.
+
 ## Background
 
 Vue Class Store was born out of the frustration of writing, using and *migrating* multiple state formats in Vue applications:
@@ -88,15 +90,17 @@ Vue Class Store was born out of the frustration of writing, using and *migrating
 
 Additionally, many have verbose boilerplate, and most are not TypeScript-friendly. 
 
-Like [Vuex Pathify](../vuex-pathify) before it, it's the result of several years of [thinking about state](/search/?tags=state) and another attempt to simplify the drudgery of abstraction when working with state in JavaScript / Vue.
+Like [Vuex Pathify](../vuex-pathify) before it, it's the result of several years of [thinking about state](/search/?tags=state) and another attempt to simplify the tyranny of abstraction when working with state in JavaScript / Vue.
 
 ## How it works
 
 You probably noticed the `@VueStore` decorator at the top of the file, and this is where the magic happens.
 
-When the project is compiled, the class is converted into a Vue Model (Vue 2) or a Proxy object (Vue 3).
+When the project is compiled, the decorator iterates over class properties and rebuilds them as either a new Vue (Vue 2) or a Proxy object (Vue 3).
 
-The compiled target then runs in the application as the platform-specific target, but thanks to source maps and is fully useable as simple classes in both the IDE and the debugger!
+*It's not even that magical*; you can check the source code for [Vue 2](https://github.com/davestewart/vue-class-store/blob/master/src/index.ts#L28) and [Vue 3](https://github.com/davestewart/vue-class-store/blob/feature/vue-3/src/index.ts#L36). Simple, right?
+
+The resulting object then runs happily in the compiled application but thanks to source maps is also fully debuggable as the *original* class code!
 
 ![](https://github.com/davestewart/vue-class-store/raw/master/docs/devtools.png)
 

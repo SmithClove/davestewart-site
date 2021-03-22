@@ -50,7 +50,7 @@ methods: {
 }
 ```
 
-Additional functionality includes [wildcards](https://davestewart.github.io/vuex-pathify/#/api/paths?id=wildcard-expansion) and [variable expansion](https://davestewart.github.io/vuex-pathify/#/api/paths?id=variable-expansion):
+Additional functionality includes [wildcard](https://davestewart.github.io/vuex-pathify/#/api/paths?id=wildcard-expansion) and [variable](https://davestewart.github.io/vuex-pathify/#/api/paths?id=variable-expansion) expansion:
 
 ```js
 computed: {

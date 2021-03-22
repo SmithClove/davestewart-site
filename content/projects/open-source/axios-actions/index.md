@@ -17,7 +17,7 @@ media:
 
 Axios Actions simplifies the architecture of API-heavy applications.
 
-Ina Vue application for example, it moves API calls away from Vuex to small, configurable, instantiatable and transferable services.
+In a Vue application for example, it moves API calls away from Vuex to small, configurable, instantiatable and transferable services.
 
 ## Background
 

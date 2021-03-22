@@ -21,7 +21,7 @@ media:
 
 ## Overview
 
-In early February 2021, Chrome tab manager The Great Suspender was [pulled](http://theverge.com/2021/2/4/22266798/chrome-blocks-the-great-suspender-disabled-malware-tab-recovery) from the Chrome Web Store for containing [malware](https://github.com/greatsuspender/thegreatsuspender/issues/1263).
+In early February 2021, the Chrome tab manager extension The Great Suspender was [pulled](http://theverge.com/2021/2/4/22266798/chrome-blocks-the-great-suspender-disabled-malware-tab-recovery) from the Chrome Web Store for containing [malware](https://github.com/greatsuspender/thegreatsuspender/issues/1263).
 
 I responded by writing The Great Suspender Recovery Tool, another Chrome extension, in under 12 hours to attempt to recover users' suspended tabs by searching their browser history and displaying any recovered tabs.
 

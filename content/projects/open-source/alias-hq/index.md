@@ -34,7 +34,7 @@ Alias works by piggybacking your project's existing `js/tsconfig.json` file and 
 
 ## Usage
 
-Once you have configured Alias using aliases is essentially a one-liner.
+Once you have configured the plugin, using aliases is essentially a one-liner.
 
 Here's WebPack:
 
