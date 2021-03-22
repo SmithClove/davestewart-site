@@ -36,8 +36,12 @@ $codeFont: 'Roboto Mono', monospaced;
   bottom: 0;
 }
 
+@function stripes ($fg, $bg) {
+  @return linear-gradient(135deg, $fg 16.67%, $bg 16.67%, $bg 50%, $fg 50%, $fg 66.67%, $bg 66.67%, $bg 100%);
+}
+
 @mixin striped ($fg, $bg, $size: 8.49px) {
-  background-image: linear-gradient(135deg, $fg 16.67%, $bg 16.67%, $bg 50%, $fg 50%, $fg 66.67%, $bg 66.67%, $bg 100%);
+  background-image: stripes($fg, $bg);
   background-size: $size $size;
 }
 

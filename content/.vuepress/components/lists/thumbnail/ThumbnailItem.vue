@@ -63,6 +63,17 @@ export default {
     box-shadow: 0 5px 6px rgba(59, 92, 143, 0.05);
   }
 
+
+  // stripes for transparent thumbnails
+  &__image {
+    @include md-up {
+      background-image: linear-gradient(0deg, #f2f6f8 0%, #FFF 35%);
+      a {
+        @include striped(transparent, white);
+      }
+    }
+  }
+
   a {
     display: block;
     font-size: 0;
