@@ -51,7 +51,7 @@ We were tasked with both understanding the current business and larger vision, a
 
 There would ultimately be various ways for a customer to browse and purchase a vehicle; either brand new or previously-owned, requiring the team to wrap their understand the mechanics behind various car finance credit models such as PCP and HP so we could clearly guide customers to well-informed purchase decisions.
 
-### Working practice
+### Working practices
 
 We worked as a small in-house design and development team at [Gravity Global](https://gravityglobal.com/) with weekly meetings with stakeholders where we presented progress, received feedback, and ideated on subsequent work.
 

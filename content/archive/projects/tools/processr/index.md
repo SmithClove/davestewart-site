@@ -10,7 +10,7 @@ tags:
   - technical
   - backend
 media:
-  thumbnail: ./images/processr-feature-blue-code.png
+  thumbnail: ./thumbs/processr-thumb.jpg
   gallery:
     - ./images/processr-00.png
     - ./images/processr-01.jpg

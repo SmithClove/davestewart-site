@@ -1,5 +1,5 @@
 ---
-description: Fun animated sequence about the hidden dangers of everyday situations
+description: Fun title animation about the hidden dangers of everyday situations
 shortTitle: So You Think You're Safe?
 date: 2004-10-01
 tags:

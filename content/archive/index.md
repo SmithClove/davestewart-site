@@ -5,6 +5,5 @@ layout: folder
 order: 5
 ---
 
-A selection of my best work, which I don't want to consign to the portfolio dustbin just yet!
+A selection of my best [commercial work](./work/) and [side projects](./projects/) projects.
 
-Jump to: <router-link to="/archive/work">work</router-link>, <router-link to="/archive/projects">projects</router-link> or <router-link to="/archive/development">development</router-link>.

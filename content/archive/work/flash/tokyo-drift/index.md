@@ -10,7 +10,7 @@ tags:
   - technical
   - as3
 media:
-  thumbnail: ./images/tokyo-drift-level-2a.png
+  thumbnail: ./images/tokyo-drift-thumb-square.jpg
   gallery:
     - ./images/tokyo-drift-level-2a.png
     - ./images/tokyo-drift-level-2b.png

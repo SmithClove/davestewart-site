@@ -1,7 +1,7 @@
 ---
-title: Apps + Experiments
-description: Larger apps, and smaller fun projects or investigations
-breadcrumb: Apps
+title: Personal projects
+description: Apps, experiments and investigations
+breadcrumb: Personal
 layout: folder
 format: thumbnails
 order: 2

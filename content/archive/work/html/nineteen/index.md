@@ -12,7 +12,7 @@ tags:
   - concept
   - webapp
 media:
-  thumbnail: ./images/nineteen-feature.jpg
+  thumbnail: ./images/nineteen-thumb.jpg
   gallery:
     - ./images/nineteen-07.jpg
     - ./images/nineteen-08.jpg

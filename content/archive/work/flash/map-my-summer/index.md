@@ -19,7 +19,7 @@ tags:
   - ugc
 hero: gallery
 media:
-  thumbnail: ./images/map-my-summer-fwa.jpg
+  thumbnail: ./images/map-my-summer-fwa-square.jpg
   featured: ./images/map-my-summer-post-01.jpg
   gallery:
     - ./images/map-my-summer-screen-splash.jpg

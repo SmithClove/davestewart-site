@@ -7,4 +7,4 @@ format: thumbnails
 order: 4
 ---
 
-If you could make it better by writing code for it, that's what I did; building on projects created by others.
+From 2000-2015 I released over 100 Open Source libraries, extensions, plugins and frameworks. Here's just a few!

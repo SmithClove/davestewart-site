@@ -43,7 +43,7 @@ Below you can see how it's a simple case of selecting the appropriate objects an
 
 Where needed, the vertex positions can be visualized and compared to the After Effects scene to make sure any corner pinning is achieved the right way round, and not mirrored or rotated.
 
-![](./images/afx_tracker_ui.gif)
+![](images/afx_tracker_ui.gif)
 
 ## From 3dsmax to After Effects
 

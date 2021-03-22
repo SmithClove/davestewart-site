@@ -13,7 +13,7 @@ tags:
   - video
   - ugc
 media:
-  thumbnail: ./images/sony-talkman-10-featured.png
+  thumbnail: ./thumbs/wallpaper-square.jpg
   gallery:
     - ./images/sony-talkman-01.jpg
     - ./images/sony-talkman-02.jpg
