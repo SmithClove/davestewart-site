@@ -11,7 +11,7 @@ tags:
   - laravel
   - plugin
 media:
-  thumbnail: ./images/laravel-sketchpad.png
+  thumbnail: ./images/sketchpad-thumb.png
   video: 
     src: https://www.youtube.com/embed/dQ-OL8d5uak
     

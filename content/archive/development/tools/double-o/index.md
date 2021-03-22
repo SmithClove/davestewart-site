@@ -9,7 +9,7 @@ tags:
   - api
   - technical
 media:
-  thumbnail: ./images/double-o_featured.png
+  thumbnail: ./images/double-o_thumb.png
   gallery:
     - ./images/double-o_title.jpg
     - ./images/double-o_theme-folder.jpg

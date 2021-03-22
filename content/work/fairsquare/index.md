@@ -19,9 +19,9 @@ media:
     - ./images/fairsquare-02.jpg
     - ./images/fairsquare-03.jpg
   ux:
-    - ./high-level/site-map.png
     - ./high-level/purchase-funnel.png
     - ./high-level/credit-check.png
+    - ./high-level/site-map.png
   wireframes:
     - ./wireframes/dave-on-wall.jpg
     - ./wireframes/mockup-scribbles.jpg
@@ -36,7 +36,7 @@ media:
 
 FairSquare is an online-only car financing and sales platform.
 
-It allows people of any credit rating to buy a car on credit, using live credit rating algorithms to tailor the best price for the individual, provide a range of lenders to service the loan, and provide the cars to be sold from a catalogue of nationwide UK dealerships.  
+It allows people of any credit rating to buy a car on credit, using live credit rating algorithms to tailor the best offer for the individual, from a range of lenders, and provide the cars to be sold from a catalogue of nationwide UK dealerships.  
 
 I lead a small team to work directly with the stakeholders and build-out a greenfield platform. The project lasted about 9 months, and we covered every aspect of a large site build, from front end to backend, from UX flows to database optimisation, from component libraries to Worldpay integration, from SEO to regulatory requirements.
 
@@ -65,19 +65,19 @@ This project was lead by core user journeys, and we began by planning and protot
 
 <MediaGallery media="ux" />
 
-Having understood the brief, we worked on various fidelities of wireframes to mock out the user journeys on paper, before building any significant parts of the site:
+Having understood the brief, we iterated on increasingly accurate fidelities of wireframes to realise user journeys on paper, before building any significant parts of the site:
 
 <MediaGallery media="wireframes" />
 
-There were multiple, complex sections and user jourenys to be researched, planned, designed and iterated on; from the browsing and financial journeys (integrating with multiple 3rd parties) to the credit checking, user account, purchase, and delivery journeys. 
+There were multiple, complex sections and flows to be researched, planned, designed and built; from the browsing and financial journeys (integrating with multiple 3rd parties) to the credit checking, user account, purchase, and delivery journeys. 
 
-Because the client was effectively a start-up, this collaborative process had the added advantage of helping them to understand their own ideas as we presented new mockups and designs to them.
+Because the client was effectively a start-up, this collaborative process helped them to understand their own ideas as we reviewed new mockups and designs together.
 
 ### Technical
 
 The technical side of the project ran in tandem with the UX and design, almost from the start.
 
-Being a nine-month project, there were myriad technical challenges to surmount:
+Being a nine-month project, there were myriad technical challenges to surmount, including but not limited to:
 
 - understanding and refactoring the original POC supplied by the client
 - architecting the overall frontend build
@@ -85,7 +85,7 @@ Being a nine-month project, there were myriad technical challenges to surmount:
 - a huge amount of forms and form validation
 - building and maintaining an ever-expanding component library
 - integration with the backend and 3rd-party financial services
-- Ccustomer account, checkout, delivery and Worldpay payment flow
+- customer account, checkout, delivery and Worldpay payment flow
 - specific backend refactoring and database optimisation tasks
 - additional regulatory requirements around handling sensitive credit data
 - and the list goes on, and on, and on...
@@ -94,7 +94,9 @@ The application itself is a [Vue 2](https://vuejs.org/) and [Vuex](https://vuex.
 
 Interestingly the project's heavy use of Vuex lead to the development of a [state management solution](https://github.com/vuejs/vuex/issues/866#issuecomment-344892845) which would ultimately become [Vuex Pathify](/projects/open-source/vuex-pathify/):
 
-![pathify pre-alpha](./other/pathify-pre-alpha.jpg)
+![/](./other/pathify-pre-alpha.jpg)
+
+We also used [Laravel Sketchpad](/archive/development/tools/laravel-sketchpad/) to set up and run local database tools and queries.
 
 ## Links
 
