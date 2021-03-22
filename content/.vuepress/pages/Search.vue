@@ -448,7 +448,7 @@ export default {
     // ---------------------------------------------------------------------------------------------------------------------
 
     focus () {
-      const input = document.querySelector('input')
+      const input = document.querySelector('.searchControls__text.only-md-up input')
       if (input) {
         input.focus()
       }
