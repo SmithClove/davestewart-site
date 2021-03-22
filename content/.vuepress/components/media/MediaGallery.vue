@@ -144,9 +144,9 @@ $colorHover: #888;
   line-height: 1;
 
   .pageContent & {
-    margin-top: 2rem;
+    margin: 2rem 0 3rem;
     @include sm {
-      margin-top: 1rem;
+      margin: 1rem 0;
     }
   }
 
