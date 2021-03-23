@@ -14,12 +14,17 @@ media:
   gallery:
     - ./images/cyber-city-00.jpg
     - ./images/cyber-city-01.jpg
-    - ./images/cyber-city-03.jpg
     - ./images/cyber-city-06.jpg
     - ./images/cyber-city-09.jpg
     - ./images/cyber-city-10.jpg
     - ./images/cyber-city-14.jpg
     - ./images/cyber-city-15.jpg
+  characters:
+    - ./artwork/guru.png
+    - ./artwork/nemesis.png
+    - ./artwork/henchman.png
+    - ./artwork/female.png
+    - ./artwork/male.png
 ---
 
 # e-skills Cyber City
@@ -36,7 +41,11 @@ The Cyber City project is a new interactive resource that enable students to pro
 
 I worked closely with [Skylark Creative](https://skylarkcreative.co.uk/blog/2012/02/10/e-skills-uk/) from the very beginning of the project to brainstorm a suitable vehicle to take students through 7 "Cyber Challenges".
 
+![city](./artwork/cyber-city.jpg)
+
 We wove a story around a classic "good vs evil" narrative, fleshing-out scenario and character designs for a futuristic "Cyber City", its residents, the student's character and main Good and Evil protagonists.
+
+<MediaGallery media="characters" />
 
 We broke down the learning objectives into games and interactive ideas, pushing back where needed to fully grasp what the client needed. This culminated with a client Discovery Day where we put our ideas through their paces and worked out how to deliver the learning content, with games, infographics, stories, and lessons.
 

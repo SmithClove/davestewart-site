@@ -5,5 +5,5 @@ layout: folder
 order: 5
 ---
 
-A selection of my best [commercial work](./work/) and [side projects](./projects/) projects.
+Some of my previous [commercial work](./work/) and [side projects](./projects/) that are still fun to look at.
 

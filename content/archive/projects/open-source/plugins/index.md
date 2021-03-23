@@ -18,7 +18,7 @@ Before specialising in Vue JS, I wrote a wide variety of plugins and extensions 
 
 Most of this code is no longer relevant as older frameworks have been superseded by newer ones, and as I don't want to clog up this site unnecessary detail, here's just a summary of what once was. 
 
-## Frameworks
+## Frontend
 
 ### jQuery
 
@@ -46,6 +46,34 @@ I wrote a wide variety of jQuery plugins in my everyday work from mid to late 20
   Populate a form or an element's child elements using a JSON object.
 
 
+### Vanilla
+
+[Vanailla Forum](https://vanillaforums.com/) is a simple but effective forum platform.
+
+I wrote various plugins whilst developing xJSFL to make my own use of the forum easier:
+
+- **Vanilla SimpleMCE**<br>
+  A version of TinyMCE that requires minimal configuration but provides ample options
+- **Vanilla Category Buttons**<br>
+  A more visual alternative to the default Categories dropdown that ships with Vanilla
+- **Vanilla Restore Draft**<br>
+  A more user-friendly implementation of Vanilla's default "draft" functionality
+
+
+### GSAP
+
+[Greensock](https://greensock.com/) animation platform is still one of the most developer-friendly and best performing animation options out there.
+
+I wrote a couple of frameworks to get even more out of the platform:
+
+- **GSAP Scene Manager**<br>
+  JavaScript framework to enable easy set-up and management of "story-style" animations
+- **GSAP Controller**<br>
+  Animation controller for the GreenSock Animation Platform
+
+
+## Backend
+
 ### Kohana
 
 [Kohana](https://kohanaframework.org/) was a PHP framework that found popularity after CodeIgniter waned and before Laravel stole the show:
@@ -72,18 +100,6 @@ I wrote a variety of Kohana 2.2 modules between 2006 and 2008:
   A robust helper to handle everything file and folder-related within Kohana
 
 
-### GSAP
-
-[Greensock](https://greensock.com/) animation platform is still one of the most developer-friendly and best performing animation options out there.
-
-I wrote a couple of frameworks to get even more out of the platform:
-
-- **GSAP Scene Manager**<br>
-  JavaScript framework to enable easy set-up and management of "story-style" animations
-- **GSAP Controller**<br>
-  Animation controller for the GreenSock Animation Platform
-
-
 ### WordPress
 
 [WordPress](https://wordpress.com). Say no more.
@@ -92,17 +108,3 @@ I wrote a couple of frameworks to get even more out of the platform:
   Flexible array-based configuration for WordPress sites that need to run on a variety of hosts simultaneously
 - **WordPress Page Redirect template**<br>
   Have any page in the Wordpress "Pages" list invisibly redirect to a static page or other url
-
-
-### Vanilla
-
-[Vanailla Forum](https://vanillaforums.com/) is a simple but effective forum platform.
-
-I wrote various plugins whilst developing xJSFL to make my own use of the forum easier:
-
-- **Vanilla SimpleMCE**<br>
-  A version of TinyMCE that requires minimal configuration but provides ample options
-- **Vanilla Category Buttons**<br>
-  A more visual alternative to the default Categories dropdown that ships with Vanilla
-- **Vanilla Restore Draft**<br>
-  A more user-friendly implementation of Vanilla's default "draft" functionality

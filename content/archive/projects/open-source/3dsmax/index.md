@@ -19,11 +19,7 @@ A collection of MaxScripts written over an 8 year period for Autodesk's [3dsmax]
 
 All code can be viewed online at [github.com/davestewart/maxscript](https://github.com/davestewart/maxscript).
 
-## Highlights
-
-
-
-## Scripts
+## Plugins
 
 ### Animation
 
