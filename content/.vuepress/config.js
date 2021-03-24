@@ -23,7 +23,7 @@ module.exports = {
     meta('apple-mobile-web-app-status-bar-style', 'black'),
     meta('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'),
     link('shortcut icon', '/favicon.svg'),
-    script('https://plausible.io/js/plausible.js', {
+    script('https://stats.davestewart.co.uk/js/index.js', {
       'data-domain': 'davestewart.co.uk',
       async: 1,
       defer: 1,
