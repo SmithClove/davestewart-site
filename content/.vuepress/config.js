@@ -55,6 +55,22 @@ module.exports = {
 
   plugins: [
     require('./plugins/vuepress/media.js').plugin,
+    [require('./plugins/vuepress/metatags.js'), {
+      site: {
+        name   : 'Dave Stewart',
+        twitter: 'dave_stewart',
+      },
+      canonical_base: 'https://davestewart.co.uk',
+      image_sources: [
+        (page) => {
+          const media = page.frontmatter.media
+          const thumb = media && media.thumbnail && media.thumbnail.path
+          return thumb
+            ? '~' + page.regularPath + thumb.replace(/\.\//, '')
+            : ''
+        }
+      ]
+    }],
   ],
 
   markdown: {

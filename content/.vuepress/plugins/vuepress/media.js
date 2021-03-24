@@ -60,7 +60,7 @@ class Media {
 }
 
 function processFrontmatter (sourceDir, $page) {
-  traverse($page.frontmatter).forEach(function (value) {
+  traverse($page.frontmatter.media).forEach(function (value) {
     // process only strings
     if (typeof value === 'string' && isLocal(value) && isImage(value)) {
       // don't reprocess converted nodes

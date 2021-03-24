@@ -111,6 +111,53 @@ function getStyle (source) {
   }
 }
 
+/**
+ * Post-process page meta to convert image file references to Webpack file references
+ * @param ctx
+ */
+function processPageMeta (ctx) {
+  if (ctx.$ssrContext) {
+    // variables
+    const rx = /"(.+?)\/~\/(.+?)"/g
+    const SOURCE_DIR = './content/'
+    const cache = {}
+
+    // replace
+    ctx.$ssrContext.pageMeta = ctx.$ssrContext.pageMeta.replace(rx, function (match, domain, relPath) {
+
+      // previously replaced
+      const replace = cache[match]
+      if (replace) {
+        return replace
+      }
+
+      // absolute path
+      const absPath = Path.resolve(SOURCE_DIR, relPath)
+
+      // check exists
+      if (Fs.existsSync(absPath)) {
+        try {
+          const asset = require('../../' + relPath)
+          const replace = asset.startsWith('data:')
+            ? `"${asset}"`
+            : `"${domain}${asset}"`
+          cache[match] = replace
+          return replace
+        }
+        catch (err) {
+          console.warn(`Could not require() "${relPath}"`, err)
+        }
+      }
+      else {
+        console.log(`The asset "${relPath}" does not exist`)
+      }
+
+      // no replace
+      return match
+    })
+  }
+}
+
 module.exports = {
   placeholder,
   makePlaceholder,
@@ -118,4 +165,5 @@ module.exports = {
   isLocal,
   getSource,
   getStyle,
+  processPageMeta,
 }

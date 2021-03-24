@@ -25,7 +25,7 @@
     </div>
 
     <!-- preview modal -->
-    <Preview />
+    <Preview/>
   </div>
 </template>
 
@@ -34,26 +34,12 @@ import { capitalize } from '../utils/string.js'
 import SiteHeader from '../components/site/SiteHeader.vue'
 import SiteFooter from '../components/site/SiteFooter.vue'
 import NotFound from '../pages/404.vue'
+import { processPageMeta } from '../utils/media.js'
 
 export default {
   components: {
     SiteHeader,
     SiteFooter,
-  },
-
-  watch: {
-    '$route.path' () {
-      this.$nextTick(() => this.updateHeader())
-    }
-  },
-
-  mounted () {
-    window.app = this
-    window.addEventListener('scroll', this.onScroll)
-    window.addEventListener('resize', this.onResize)
-    window.addEventListener('orientationchange', this.onResize)
-    this.$nextTick(() => this.updateHeader())
-    this.updateHeader()
   },
 
   computed: {
@@ -67,7 +53,7 @@ export default {
 
     classes () {
       return {
-        ['layout__' + this.layout]: true
+        ['layout__' + this.layout]: true,
       }
     },
 
@@ -78,6 +64,25 @@ export default {
       }
       return NotFound
     },
+  },
+
+  watch: {
+    '$route.path' () {
+      this.$nextTick(() => this.updateHeader())
+    },
+  },
+
+  created () {
+    processPageMeta(this)
+  },
+
+  mounted () {
+    window.app = this
+    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.onResize)
+    window.addEventListener('orientationchange', this.onResize)
+    this.$nextTick(() => this.updateHeader())
+    this.updateHeader()
   },
 
   methods: {
@@ -99,7 +104,7 @@ export default {
 
     onResize () {
       this.updateHeader()
-    }
-  }
+    },
+  },
 }
 </script>

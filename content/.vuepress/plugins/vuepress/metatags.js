@@ -1,5 +1,7 @@
 'use strict'
 
+// https://github.com/webmasterish/vuepress-plugin-autometa
+
 const _ = {
   defaultsDeep: require('lodash.defaultsdeep'),
   findIndex: require('lodash.findindex'),
@@ -293,10 +295,15 @@ PLUGIN.get_default_image_url = ($page, options) => {
 
   let out = ''
   for (const source of options['image_sources']) {
-    if ('frontmatter' === source) {
+    if (typeof source === 'function') {
+      out = source($page) || ''
+      if (out) {
+        break
+      }
+    }
+    else if (source === 'frontmatter') {
       if ($page.frontmatter.image) {
         out = $page.frontmatter.image
-
         break
       }
     }
