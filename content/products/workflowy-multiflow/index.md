@@ -8,6 +8,7 @@ tags:
   - creative
 media:
   thumbnail: ./images/multiflow-thumb-01.svg
+  opengraph: ./images/multiflow-featured.png
   featured: ./images/multiflow-featured.svg
 ---
 

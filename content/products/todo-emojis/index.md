@@ -8,6 +8,7 @@ tags:
 github: davestewart/todo-emojis
 media:
   thumbnail: ./images/todo-emojis-logo.svg
+  opengraph: ./images/todo-emojis-logo.png
   gallery:
     - ./emojis/emoji-todo.svg
     - ./emojis/emoji-doing.svg

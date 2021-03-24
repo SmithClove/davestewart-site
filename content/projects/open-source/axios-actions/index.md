@@ -7,6 +7,7 @@ tags:
   - state
 github: davestewart/axios-actions
 media:
+  opengraph: ./images/axios-actions.png
   thumbnail: ./images/axios-actions.svg
   featured: ./images/axios-actions.svg
 ---

@@ -7,7 +7,7 @@ tags:
   - state
 github: davestewart/javascript-state-machine
 media:
-  thumbnail: ./images/state-machine-thumb.svg
+  thumbnail: ./images/state-machine-thumb.png
   featured:
     src: https://statemachine.davestewart.io/
     width: 960

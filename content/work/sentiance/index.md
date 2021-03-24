@@ -12,12 +12,13 @@ tags:
   - enterprise
   - ui
 media:
+  opengraph: ./images/sentiance-logo-red.png
   thumbnail: ./images/sentiance-logo-red.svg
   gallery:
-    - ./images/1 - overview.png
-    - ./images/2 - insight.png
-    - ./images/3 - user journey.png
-    - ./images/4 - user insight.png
+    - ./screens/1 - overview.png
+    - ./screens/2 - insight.png
+    - ./screens/3 - user journey.png
+    - ./screens/4 - user insight.png
 ---
 
 # Sentiance Journeys

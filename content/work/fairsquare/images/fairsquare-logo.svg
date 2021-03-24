@@ -2,7 +2,6 @@
 <svg width="640px" height="360px" viewBox="0 0 640 360" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>fairsquare-logo</title>
     <g id="fairsquare-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect fill="#FFFFFF" x="0" y="0" width="640" height="360"></rect>
         <g id="Group" transform="translate(433.940442, 91.000000)" fill-rule="nonzero">
             <rect id="Rectangle" fill="#4E7CF9" x="26.7765568" y="0" width="40.1648352" height="40.1648352" rx="5"></rect>
             <rect id="Rectangle-Copy" fill="#FC23B7" x="-1.84741111e-13" y="26.0327635" width="40.1648352" height="40.1648352" rx="5"></rect>

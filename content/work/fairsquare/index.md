@@ -13,7 +13,8 @@ tags:
   - ui
   - laravel
 media:
-  thumbnail: ./images/fairsquare-logo-trans.svg
+  opengraph: ./images/fairsquare-logo.png
+  thumbnail: ./images/fairsquare-logo.svg
   gallery:
     - ./images/fairsquare-01.jpg
     - ./images/fairsquare-02.jpg

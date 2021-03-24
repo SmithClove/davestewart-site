@@ -5,6 +5,7 @@ tags:
   - website
   - creative
 media:
+  opengraph: ./images/likely-logic.png
   thumbnail: ./images/likely-logic.svg
   featured: ./images/likely-logic.svg
 ---

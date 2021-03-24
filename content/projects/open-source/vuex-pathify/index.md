@@ -11,11 +11,8 @@ tags:
 github: davestewart/vuex-pathify
 media:
   thumbnail: ./images/vuex-pathify.svg
+  opengraph: ./images/vuex-pathify.png
   featured: ./images/vuex-pathify.svg
-  gallery:
-    - ./images/vuex-pathify-01.jpg
-    - ./images/vuex-pathify-02.jpg
-    - ./images/vuex-pathify-03.jpg
 ---
 
 # Vuex Pathify

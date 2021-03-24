@@ -10,6 +10,7 @@ tags:
   - vue
   - typescript
 media:
+  opengraph: ./images/clearbank-logo-light.png
   thumbnail: ./images/clearbank-logo-light.svg
   featured: ./images/clearbank-logo-dark.svg
 ---

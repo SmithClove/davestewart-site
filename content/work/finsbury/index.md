@@ -11,6 +11,7 @@ tags:
   - api
   - ui
 media:
+  opengraph: ./images/finsbury-logo-dark.png
   thumbnail: ./images/finsbury-logo-dark.svg
   gallery:
     - ./images/finsbury-01.jpg

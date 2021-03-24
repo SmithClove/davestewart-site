@@ -11,6 +11,7 @@ tags:
   - creative
 github: davestewart/vue-class-store
 media:
+  opengraph: ./images/vue-class-store.png
   thumbnail: ./images/vue-class-store.svg
   featured: ./images/vue-class-store.svg
   video: https://www.youtube.com/embed/uBrh_2BIIAM?start=2425
