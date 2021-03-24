@@ -1,4 +1,5 @@
 const hq = require('alias-hq')
+const { getValue } = require('./utils/object.js')
 const { description } = require('../../package')
 const { link, meta, script, isDev } = require('./utils/config.js')
 
@@ -18,10 +19,13 @@ module.exports = {
   globalLayout: require('path').resolve(__dirname, './layouts/Global.vue'),
 
   head: [
+    // mobile
     meta('theme-color', '#ea4848'),
     meta('apple-mobile-web-app-capable', 'yes'),
     meta('apple-mobile-web-app-status-bar-style', 'black'),
     meta('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'),
+
+    // site
     link('shortcut icon', '/favicon.svg'),
     script('https://stats.davestewart.co.uk/js/index.js', {
       'data-domain': 'davestewart.co.uk',
@@ -64,10 +68,10 @@ module.exports = {
       image_sources: [
         (page) => {
           const media = page.frontmatter.media
-          const thumb = media && media.thumbnail && media.thumbnail.path
-          return thumb
-            ? '~' + page.regularPath + thumb.replace(/\.\//, '')
-            : ''
+          const path = getValue(media, 'opengraph.path') || getValue(media, 'thumbnail.path')
+          return path
+            ? '~' + page.regularPath + path.replace(/\.\//, '')
+            : '/assets/img/site-preview.png'
         }
       ]
     }],
