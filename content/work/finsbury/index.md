@@ -14,11 +14,11 @@ media:
   opengraph: ./images/finsbury-logo-dark.png
   thumbnail: ./images/finsbury-logo-dark.svg
   gallery:
-    - ./screens/search - dropdown.png
-    - ./screens/search - covid + sources.png
-    - ./screens/search - complex.png
-    - ./screens/executives - results.png
-    - ./screens/companies - selection.png
+    - ./screens/search-dropdown.png
+    - ./screens/search-covid-sources.png
+    - ./screens/search-complex.png
+    - ./screens/executives-results.png
+    - ./screens/companies-selection.png
     - ./screens/report.png
   select:
     - ./select/closed.png
