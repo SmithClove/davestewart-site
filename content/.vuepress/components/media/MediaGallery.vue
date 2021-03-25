@@ -167,6 +167,11 @@ $colorHover: #888;
     }
   }
 
+  &.bordered &__slidesNav {
+    outline: 1px solid $borderColor;
+    outline-offset: -1px;
+  }
+
   .preview__container &__slidesView {
     cursor: zoom-out;
     // @include shadow-lg;

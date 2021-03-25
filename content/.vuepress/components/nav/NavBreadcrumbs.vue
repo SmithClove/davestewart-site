@@ -102,6 +102,7 @@ export default {
     display: inline-block;
     white-space: nowrap;
     margin: 0 0 0.5rem 0;
+    cursor: default;
 
     // arrow
     &:not(:last-child):after {
