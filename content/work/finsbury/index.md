@@ -14,9 +14,19 @@ media:
   opengraph: ./images/finsbury-logo-dark.png
   thumbnail: ./images/finsbury-logo-dark.svg
   gallery:
-    - ./images/finsbury-01.jpg
-    - ./images/finsbury-02.jpg
-    - ./images/finsbury-03.jpg
+    - ./screens/search - dropdown.png
+    - ./screens/search - covid + sources.png
+    - ./screens/search - complex.png
+    - ./screens/executives - results.png
+    - ./screens/companies - selection.png
+    - ./screens/report.png
+  select:
+    - ./select/closed.png
+    - ./select/focused.png
+    - ./select/typing.png
+    - ./select/single-select.png
+    - ./select/multi-select.png
+
 ---
 
 # Finsbury
@@ -35,7 +45,7 @@ Working [Studio Overberg](https://www.studio-overberg.com/) we created a lightwe
 
 The application is a [Nuxt JS](https://nuxtjs.org/) build with a custom [Express JS](https://expressjs.com/) back end, hosted on Microsoft Azure.
 
-#### Back end
+### Back end
 
 There are three main search functions, all routed via the local API:
 
@@ -51,11 +61,15 @@ The main units of work were:
 - learning and working with the legacy Factiva SOAP API and refactoring initial prototype code
 - learning the elastic syntax and querying the datastore
 
-#### Front end
+### Front end
 
 This ended up being one of those classic project which had hidden layers of complexity.
 
 We worked closely with both the end users and Finsbury's Principle Data Scientists to engineer the correct search criteria, ultimetely delivering a simple but effective end-user search experience.
+
+One of the most enjoyable bits of the project was creating a minimal UI to match the company's site. Here's our version of [Vue MultiSelect](https://vue-multiselect.js.org/) with some tight styling and boolean search options:
+
+<MediaGallery media="select" class="bordered" />
 
 ## Links
 
