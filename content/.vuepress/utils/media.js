@@ -1,8 +1,7 @@
-const Fs = require ('fs')
-const Path = require ('path')
-
-const { isImage, isRemote } = require ('../plugins/utils.js')
-const { isPlainObject } = require ('./assert.js')
+const Fs = require('fs')
+const Path = require('path')
+const { isImage, isRemote } = require('../plugins/utils.js')
+const { isPlainObject } = require('./assert.js')
 
 // 16:9
 const placeholder = {
@@ -15,6 +14,37 @@ function makePlaceholder (path = '') {
   return `https://placehold.it/${placeholder.width}x${placeholder.height}?text=` + text
 }
 
+function findFile (relPath) {
+  // source folder
+  const SOURCE_DIR = './content/'
+
+  // remove leading slashes
+  relPath = relPath.replace(/^\//, '')
+
+  // client
+  if (globalThis.window) {
+    try {
+      return require('@/' + relPath)
+    }
+    catch (err) {
+      console.warn(`[client] Could not find file "${relPath}"`, err)
+    }
+  }
+
+  // server
+  else {
+    const absPath = Path.resolve(SOURCE_DIR, relPath)
+    if (Fs.existsSync(absPath)) {
+      try {
+        return require('../../' + relPath)
+      }
+      catch (err) {
+        console.warn(`[server] Could not find file "${relPath}"`, err)
+      }
+    }
+  }
+}
+
 function getFile (pagePath, imagePath = '') {
   // variables
   const relPath = Path.join(pagePath, imagePath).replace(/^\//, '')
@@ -25,32 +55,8 @@ function getFile (pagePath, imagePath = '') {
     return fallback
   }
 
-  // client
-  if (globalThis.window) {
-    try {
-      return require('@/' + relPath)
-    }
-    catch (err) {
-      console.warn(`[client] Could not getFile() "${relPath}"`, err)
-    }
-  }
-
-  // server
-  else {
-    const SOURCE_DIR = './content/'
-    const absPath = Path.resolve(SOURCE_DIR, relPath)
-    if (Fs.existsSync(absPath)) {
-      try {
-        return require('../../' + relPath)
-      }
-      catch (err) {
-        console.warn(`[server] Could not getFile() "${relPath}"`, err)
-      }
-    }
-  }
-
-  // bail
-  return fallback
+  // file
+  return findFile(relPath) || fallback
 }
 
 function isLocal (source) {
@@ -107,55 +113,55 @@ function getStyle (source) {
     width: '100%',
     aspectRatio: width && height
       ? `${width} / ${height}`
-      : false
+      : false,
   }
 }
 
 /**
- * Post-process page meta to convert image file references to Webpack file references
- * @param ctx
+ * Post-process page meta to compile Webpack file references
+ * @param page
+ * @param assets
  */
-function processPageMeta (ctx) {
-  if (ctx.$ssrContext) {
-    // variables
-    const rx = /"(.+?)\/~\/(.+?)"/g
-    const SOURCE_DIR = './content/'
-    const cache = {}
+function resolveMeta (page, assets = {}) {
+  // variables
+  const rx = /(https?:\/\/[^/]+)?(.+)/
+  const meta = page.frontmatter.meta
 
-    // replace
-    ctx.$ssrContext.pageMeta = ctx.$ssrContext.pageMeta.replace(rx, function (match, domain, relPath) {
-
-      // previously replaced
-      const replace = cache[match]
-      if (replace) {
-        return replace
-      }
-
-      // absolute path
-      const absPath = Path.resolve(SOURCE_DIR, relPath)
-
-      // check exists
-      if (Fs.existsSync(absPath)) {
-        try {
-          const asset = require('../../' + relPath)
-          const replace = asset.startsWith('data:')
-            ? `"${asset}"`
-            : `"${domain}${asset}"`
-          cache[match] = replace
-          return replace
-        }
-        catch (err) {
-          console.warn(`Could not require() "${relPath}"`, err)
-        }
-      }
-      else {
-        console.log(`The asset "${relPath}" does not exist`)
-      }
-
-      // no replace
-      return match
+  // process meta
+  meta
+    .filter(meta => {
+      const key = meta.name || meta.itemprop || meta.property
+      return key && key.includes('image')
     })
-  }
+    .forEach(item => {
+      const { content } = item
+      item.content = content.replace(rx, function (match, domain, path) {
+        // get asset from cache
+        let asset = assets[path]
+        if (asset) {
+          return asset
+        }
+
+        // if already in assets, return
+        if (path.startsWith('/assets/')) {
+          return match
+        }
+
+        // if not found, search for asset
+        const file = findFile(path)
+
+        // build final asset path
+        asset = file
+          ? domain + file
+          : match + '?missing=1'
+
+        // cache
+        assets[path] = asset
+
+        // return
+        return asset
+      })
+    })
 }
 
 module.exports = {
@@ -165,5 +171,5 @@ module.exports = {
   isLocal,
   getSource,
   getStyle,
-  processPageMeta,
+  resolveMeta,
 }

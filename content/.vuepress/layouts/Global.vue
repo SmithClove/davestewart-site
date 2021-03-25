@@ -34,7 +34,6 @@ import { capitalize } from '../utils/string.js'
 import SiteHeader from '../components/site/SiteHeader.vue'
 import SiteFooter from '../components/site/SiteFooter.vue'
 import NotFound from '../pages/404.vue'
-import { processPageMeta } from '../utils/media.js'
 
 export default {
   components: {
@@ -70,10 +69,6 @@ export default {
     '$route.path' () {
       this.$nextTick(() => this.updateHeader())
     },
-  },
-
-  created () {
-    processPageMeta(this)
   },
 
   mounted () {

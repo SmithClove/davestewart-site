@@ -13,6 +13,7 @@ import './styles/index.scss'
 import { $fm } from './utils/app.js'
 import { makeStore } from './store'
 import { isPublished } from './store/helpers.js'
+import { resolveMeta } from './utils/media.js'
 
 /**
  * @param {Vue}         Vue       the version of Vue being used in the VuePress app
@@ -32,6 +33,13 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // components
   require('./components')
 
+  // filter drafts
+  siteData.pages
+    .map((page, index) => isPublished(page) ? -1 : index)
+    .reverse()
+    .filter(index => index > -1)
+    .forEach(index => siteData.pages.splice(index, 1))
+
   // remove headers
   siteData.pages
     .forEach((page, index) => {
@@ -40,12 +48,9 @@ export default ({ Vue, options, router, siteData, isServer }) => {
       }
     })
 
-  // filter drafts
-  siteData.pages
-    .map((page, index) => isPublished(page) ? -1 : index)
-    .reverse()
-    .filter(index => index > -1)
-    .forEach(index => siteData.pages.splice(index, 1))
+  // update meta tags with compiled images
+  const assets = {}
+  siteData.pages.forEach(page => resolveMeta(page, assets))
 
   // mixins
   Vue.prototype.$fm = $fm
