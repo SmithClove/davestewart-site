@@ -22,7 +22,6 @@ media:
     - ./images/ph-desktop.png
     - ./images/ph-features.png
     - ./images/ph-modes.png
-    - ./images/ph-quotes.png
   press:
     - source: Evening Standard
       title: New app tells you how much loo roll you actually need
@@ -100,20 +99,51 @@ The application was initially developed in 9 hours, then released within 24 hour
 
 After having mainly accomplished its goal of both raising awareness and providing a useful tool, it has now been [Open Sourced](https://github.com/davestewart/got-paper) so others may either use the codebase as a foundation to develop additional applications quickly, or simply as a learning resource.
 
-
-## Press
-
-Of course, everyone had an opinion!
-
 See the live site for the [full back story](https://got-paper.com/about).
 
+## Feedback
+
+It was particularly pleasing to see Daily Mail readers so [engaged](https://got-paper.com/press) (or should be <em>enraged</em>?):
+
+<Quote
+  text="How stupid"
+  name="Turnip King, Brisbane, Australia"
+  size="3"
+  hero
+/> 
+
+<Quote
+  text="Does it have a diarrhea mode?"
+  name="Jhphoto1, Cheshire, United Kingdom"
+  size="2.5"
+  hero
+/> 
+
+<Quote
+  text="Unbelievable waste of time"
+  name="Turnip King, Brisbane, Australia"
+  size="2.9"
+  hero
+/> 
+
+<Quote
+  text="Who only uses 3 sheets to wipe your backside? I use more than that for sure."
+  name="Wobbly jelly tits, Birmingham, United Kingdom"
+  size="2"
+  hero
+/> 
+
 ## Translations
+
+It was amazing to get so many translations for the app.
 
 <MediaVideo
   src="https://youtube.com/embed/z1726EC9H_Q"
   width="560"
   height="315"
 />
+
+Thank you to all the volunteer translators from around the world!
 
 ## Product Hunt
 
