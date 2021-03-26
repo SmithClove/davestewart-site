@@ -28,9 +28,9 @@ export default {
   computed: {
     pages () {
       return this.$store.pages
-          .filter(page => page.frontmatter.media)
-          .sort(() => Math.random() > .5 ? 1 : -2)
-          .slice(0, 3)
+        .filter(page => page.frontmatter.media)
+        .sort(() => Math.random() > .5 ? 1 : -2)
+        .slice(0, 3)
     },
 
     path () {
