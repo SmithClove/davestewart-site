@@ -9,7 +9,7 @@ I'm a lead developer and indie maker from London, UK.
 
 I'm highly technical with a creative background, and I value good ideas, clean design and tight execution.
 
-A bit of detail:
+So what do I do?
 
 - I'm well-known for my [open source](/projects/)
 
@@ -19,10 +19,16 @@ A bit of detail:
 
 - The best older stuff is [archived](/archive/)
  
-You can also:
+Feel free to:
 
 - [Contact](/bio/profiles.md) me
 
 - [Search](/search/) the site
 
 - [Read](/blog/) my blog
+
+Cheers!
+
+<keep-alive>
+<img src="/favicon.svg" alt="Dave" style="height: 30px;" rel="prefetch">
+</keep-alive>
