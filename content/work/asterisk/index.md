@@ -37,7 +37,9 @@ The application is written in [TypeScript](https://www.typescriptlang.org/) and 
 
 ### Core UX / UI
 
-The essence of the platform is to connect lenders and borrowers to negotiate securities using an innovative interface built around Handsontable.
+The essence of the platform is to connect lenders and borrowers to negotiate securities:
+
+![negotiation flow](./images/negotiation-flow.png)
 
 Borrowers generally begin negotiations by requesting lists of securities from lenders, to which lenders respond with what they have on their books. Both parties can edit the same spreadsheet (with slightly different columns and rules) with sophisticated formatting and controls to ensure each is kept updated (live!) with any changes from the other.
 
