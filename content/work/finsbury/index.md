@@ -14,19 +14,17 @@ media:
   opengraph: ./images/finsbury-logo-dark.png
   thumbnail: ./images/finsbury-logo-dark.svg
   gallery:
-    - ./screens/search-dropdown.png
-    - ./screens/search-covid-sources.png
-    - ./screens/search-complex.png
-    - ./screens/executives-results.png
-    - ./screens/companies-selection.png
+    - ./screens/home.png
+    - ./screens/search-empty.png
+    - ./screens/search-simple.png
+    - ./screens/search-simple-options.png
+    - ./screens/search-result.png
+    - ./screens/search-result-selection.png
     - ./screens/report.png
   select:
     - ./select/closed.png
-    - ./select/focused.png
     - ./select/typing.png
-    - ./select/single-select.png
-    - ./select/multi-select.png
-
+    - ./select/selected.png
 ---
 
 # Finsbury
@@ -69,10 +67,9 @@ We worked closely with both the end users and Finsbury's Principle Data Scientis
 
 One of the most enjoyable bits of the project was creating a minimal UI to match the company's site. Here's our version of [Vue MultiSelect](https://vue-multiselect.js.org/) with some tight styling and boolean search options:
 
-<MediaGallery media="select" class="bordered" />
+<MediaGallery media="select" />
 
 ## Links
 
 - [Finsbury PR](https://finsbury.com)
-
 - [Studio Overberg](https://www.studio-overberg.com/)
