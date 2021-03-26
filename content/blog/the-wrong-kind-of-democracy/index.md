@@ -40,11 +40,11 @@ _Note: the chart colours are only to help illustrate column types, and nothing t
 
 Let's start with the UK. Here's all votes, by party _(table ordered by FPTP Total)_:
 
-[![All UK votes, by party](http://davestewart.co.uk/wp-content/uploads/uk-votes-crop.png)](./images/uk-votes.png)
+![All UK votes, by party](./images/uk-votes-crop.png)]
 
 Now, let's look at how that translated into seats _(table ordered by FPTP Seats)_:
 
-[![All UK seats, by party](http://davestewart.co.uk/wp-content/uploads/uk-seats-fptp-crop.png)](./images/uk-seats-fptp.png)
+![All UK seats, by party](./images/uk-seats-fptp-crop.png)]
 
  
 
@@ -52,7 +52,7 @@ Hmm... seats don't correlate to votes, do they?
 
 Let's see how would that have looked under a PR system _(table ordered by PR Seats):_
 
-[![All UK seats, by party, if we had PR](http://davestewart.co.uk/wp-content/uploads/uk-seats-pr-crop.png)](./images/uk-seats-pr.png)
+![All UK seats, by party, if we had PR](./images/uk-seats-pr-crop.png)]
 
 A huge difference! UKIP have 82, where before they had 1, and the Greens get 25, whereas before they too also had 1.
 
@@ -62,7 +62,7 @@ A huge difference! UKIP have 82, where before they had 1, and the Greens get 25,
 
 So let's see just how unfair this is _(table ordered by PR Better / Worse off)_:
 
-[![How unfair seat allocation is under the FPTP system, compared to PR](http://davestewart.co.uk/wp-content/uploads/uk-unfairness-crop.png)](./images/uk-unfairness.png)
+![How unfair seat allocation is under the FPTP system, compared to PR](./images/uk-unfairness-crop.png)]
 
 A few highlights:
 
