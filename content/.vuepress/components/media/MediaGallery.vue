@@ -60,6 +60,10 @@ import media from './index.js'
 export default {
   extends: media('gallery'),
 
+  props: {
+    captions: [Number, Boolean]
+  },
+
   data () {
     return {
       index: 0,
@@ -69,7 +73,9 @@ export default {
 
   computed: {
     hasCaption () {
-      return this.source.some(image => image.caption)
+      return this.captions === false || this.captions === 0
+        ? false
+        : this.source.some(image => image.caption)
     },
 
     captionText () {
