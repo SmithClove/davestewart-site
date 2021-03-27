@@ -3,13 +3,27 @@ title: Web Developer + Indie Maker
 breadcrumb: Home
 description: Online portfolio of Dave Stewart; Open Source, commercial + personal projects
 layout: home
+media:
+  highlights:
+    - ./products/todo-emojis/images/todo-emojis-logo.png
+    - ./products/got-paper/images/ph-splash.png
+    - ./products/control-space/images/cs-splash.png
+    - ./products/workflowy-multiflow/images/multiflow-featured.png
+    - ./projects/open-source/alias-hq/images/alias-featured.png
+    - ./projects/open-source/vue-class-store/images/vue-class-store.png
+    - ./projects/open-source/vuex-pathify/images/vuex-pathify.png
+    - ./projects/personal/likely-logic/images/likely-logic.png
+    - ./projects/personal/branding/images/featured.png
+    - ./work/clearbank/images/clearbank-logo-light.png
+    - ./work/fairsquare/images/fairsquare-logo.png
+    - ./work/finsbury/images/finsbury-logo.svg
 ---
 
-I'm a lead developer and indie maker from London, UK.
+I'm a lead developer and indie maker from London, UK, building a variety of digital products.
 
-I'm highly technical with a creative background, and I value good ideas, clean design and tight execution.
+<MediaGallery media="highlights" :captions="false" />
 
-So what do I do?
+I'm highly technical with a creative background, and I value good ideas, clean design and tight execution:
 
 - I'm well-known for my [open source](/projects/)
 

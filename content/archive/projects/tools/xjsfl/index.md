@@ -18,24 +18,24 @@ tags:
 media:
   thumbnail: ./images/xjsfl-logo-wide.png
   gallery:
-    - ./images/xjsfl-screen-01.jpg
-    - ./images/xjsfl-screen-02.jpg
-    - ./images/xjsfl-screen-03.jpg
-    - ./images/xjsfl-screen-04.jpg
-    - ./images/xjsfl-screen-05.jpg
-    - ./images/xjsfl-screen-06.jpg
-    - ./images/xjsfl-screen-07.jpg
-    - ./images/xjsfl-screen-08.jpg
-    - ./images/xjsfl-screen-09.jpg
-    - ./images/xjsfl-screen-10.jpg
-    - ./images/xjsfl-screen-11.jpg
-    - ./images/xjsfl-screen-12.jpg
-    - ./images/xjsfl-screen-13.jpg
-    - ./images/xjsfl-screen-14.jpg
-    - ./images/xjsfl-screen-15.jpg
-    - ./images/xjsfl-screen-16.jpg
-    - ./images/xjsfl-screen-17.jpg
-    - ./images/xjsfl-screen-18.jpg
+    - ./screens/xjsfl-screen-01.jpg
+    - ./screens/xjsfl-screen-02.jpg
+    - ./screens/xjsfl-screen-03.jpg
+    - ./screens/xjsfl-screen-04.jpg
+    - ./screens/xjsfl-screen-05.jpg
+    - ./screens/xjsfl-screen-06.jpg
+    - ./screens/xjsfl-screen-07.jpg
+    - ./screens/xjsfl-screen-08.jpg
+    - ./screens/xjsfl-screen-09.jpg
+    - ./screens/xjsfl-screen-10.jpg
+    - ./screens/xjsfl-screen-11.jpg
+    - ./screens/xjsfl-screen-12.jpg
+    - ./screens/xjsfl-screen-13.jpg
+    - ./screens/xjsfl-screen-14.jpg
+    - ./screens/xjsfl-screen-15.jpg
+    - ./screens/xjsfl-screen-16.jpg
+    - ./screens/xjsfl-screen-17.jpg
+    - ./screens/xjsfl-screen-18.jpg
 ---
 
 # xJSFL
