@@ -29,4 +29,4 @@ Feel free to:
 
 Cheers!
 
-<SiteIcon fill="#ea4848" style="width: 34px; height: 34px;"/>
+<SiteIcon fill="#ea4848" style="width: 37px; height: 37px;"/>
