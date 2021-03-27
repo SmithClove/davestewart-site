@@ -13,10 +13,10 @@ media:
     - ./projects/open-source/vue-class-store/images/vue-class-store.png
     - ./projects/open-source/vuex-pathify/images/vuex-pathify.png
     - ./projects/personal/likely-logic/images/likely-logic.png
-    - ./projects/personal/branding/images/featured.png
+    - ./projects/personal/branding/images/featured-hi-res.svg
     - ./work/clearbank/images/clearbank-logo-light.png
     - ./work/fairsquare/images/fairsquare-logo.png
-    - ./work/finsbury/images/finsbury-logo.svg
+    - ./work/finsbury/images/finsbury-logo-dark.png
 ---
 
 I'm a lead developer and indie maker from London, UK, building a variety of digital products.
