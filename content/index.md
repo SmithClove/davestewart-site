@@ -29,6 +29,4 @@ Feel free to:
 
 Cheers!
 
-<keep-alive>
-<img src="/favicon.svg" alt="Dave" style="height: 30px;" rel="prefetch">
-</keep-alive>
+<SiteIcon fill="#ea4848" style="width: 34px; height: 34px;"/>
