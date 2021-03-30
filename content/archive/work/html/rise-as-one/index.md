@@ -11,20 +11,20 @@ tags:
 media:
   thumbnail: ./images/budweiser-feature.png
   gallery:
-    - ./images/rise-as-one-01.jpg
-    - ./images/rise-as-one-02.jpg
-    - ./images/rise-as-one-03.jpg
-    - ./images/rise-as-one-04.jpg
-    - ./images/rise-as-one-05.jpg
-    - ./images/rise-as-one-06.jpg
-    - ./images/rise-as-one-07.jpg
-    - ./images/rise-as-one-08.jpg
-    - ./images/rise-as-one-09.jpg
-    - ./images/rise-as-one-10.jpg
-    - ./images/rise-as-one-11.jpg
-    - ./images/rise-as-one-12.jpg
-    - ./images/rise-as-one-13.jpg
-    - ./images/rise-as-one-14.jpg
+    - ./screens/rise-as-one-01.jpg
+    - ./screens/rise-as-one-02.jpg
+    - ./screens/rise-as-one-03.jpg
+    - ./screens/rise-as-one-04.jpg
+    - ./screens/rise-as-one-05.jpg
+    - ./screens/rise-as-one-06.jpg
+    - ./screens/rise-as-one-07.jpg
+    - ./screens/rise-as-one-08.jpg
+    - ./screens/rise-as-one-09.jpg
+    - ./screens/rise-as-one-10.jpg
+    - ./screens/rise-as-one-11.jpg
+    - ./screens/rise-as-one-12.jpg
+    - ./screens/rise-as-one-13.jpg
+    - ./screens/rise-as-one-14.jpg
 ---
 
 # Budweiser: Rise As One

@@ -15,21 +15,21 @@ tags:
 media:
   thumbnail: ./thumbs/wallpaper-square.jpg
   gallery:
-    - ./images/sony-talkman-01.jpg
-    - ./images/sony-talkman-02.jpg
-    - ./images/sony-talkman-03.jpg
-    - ./images/sony-talkman-04.jpg
-    - ./images/sony-talkman-05.jpg
-    - ./images/sony-talkman-06.jpg
-    - ./images/sony-talkman-07.jpg
-    - ./images/sony-talkman-09.jpg
-    - ./images/sony-talkman-10.jpg
-    - ./images/sony-talkman-11.jpg
-    - ./images/sony-talkman-12.jpg
-    - ./images/sony-talkman-13.jpg
-    - ./images/sony-talkman-14.jpg
-    - ./images/sony-talkman-15.jpg
-    - ./images/sony-talkman-16.jpg
+    - ./screens/language-select.jpg
+    - ./screens/promo.jpg
+    - ./screens/home.jpg
+    - ./screens/setup.jpg
+    - ./screens/guide.jpg
+    - ./screens/world-tour.jpg
+    - ./screens/arcade-game.jpg
+    - ./screens/flags-game.jpg
+    - ./screens/quiz-game.jpg
+    - ./screens/souvenirs.jpg
+    - ./screens/printables.jpg
+    - ./screens/wallpapers.jpg
+    - ./screens/talkmaniacs.jpg
+    - ./screens/album-01.jpg
+    - ./screens/album-02.jpg
 ---
 
 # Sony: Talkman PSP Microsite

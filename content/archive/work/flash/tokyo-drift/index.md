@@ -12,12 +12,12 @@ tags:
 media:
   thumbnail: ./images/tokyo-drift-thumb-square.jpg
   gallery:
-    - ./images/tokyo-drift-level-2a.png
-    - ./images/tokyo-drift-level-2b.png
-    - ./images/tokyo-drift-level-3a.png
-    - ./images/tokyo-drift-level-3b.png
-    - ./images/tokyo-drift-level-1a.png
-    - ./images/tokyo-drift-level-1b.png
+    - ./screens/tokyo-drift-level-2a.jpg
+    - ./screens/tokyo-drift-level-2b.jpg
+    - ./screens/tokyo-drift-level-3a.jpg
+    - ./screens/tokyo-drift-level-3b.jpg
+    - ./screens/tokyo-drift-level-1a.jpg
+    - ./screens/tokyo-drift-level-1b.jpg
 ---
 
 # Universal: Fast & Furious Game

@@ -16,25 +16,23 @@ tags:
 media:
   thumbnail: ./images/f1-feature-02.jpg
   gallery:
-    - ./images/f1-00.jpg
-    - ./images/f1-01.jpg
-    - ./images/f1-02.jpg
-    - ./images/f1-02a.jpg
-    - ./images/f1-03.jpg
-    - ./images/f1-04.jpg
-    - ./images/f1-05.jpg
-    - ./images/f1-06.jpg
-    - ./images/f1-07.jpg
-    - ./images/f1-08.jpg
-    - ./images/f1-09.jpg
-    - ./images/f1-10.jpg
-    - ./images/f1-11.jpg
-    - ./images/f1-12.jpg
-    - ./images/f1-13.jpg
-    - ./images/f1-14.jpg
-    - ./images/f1-15.jpg
-    - ./images/f1-16.jpg
-    - ./images/f1-17.jpg
+    - ./screens/01.jpg
+    - ./screens/02.jpg
+    - ./screens/03d.jpg
+    - ./screens/04a.png
+    - ./screens/04b.png
+    - ./screens/04c.png
+    - ./screens/05-jpn.jpg
+    - ./screens/05-kor.jpg
+    - ./screens/06a.png
+    - ./screens/06b.png
+    - ./screens/07b.png
+    - ./screens/09b.png
+    - ./screens/09c.png
+    - ./screens/09d.png
+    - ./screens/10a.jpg
+    - ./screens/12b.jpg
+    - ./screens/12d.jpg
 ---
 
 # F1: Global Broadcast Report

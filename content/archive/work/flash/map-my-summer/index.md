@@ -22,13 +22,12 @@ media:
   thumbnail: ./images/map-my-summer-fwa-square.jpg
   featured: ./images/map-my-summer-post-01.jpg
   gallery:
-    - ./images/map-my-summer-screen-splash.jpg
-    - ./images/map-my-summer-screen-map-videos.jpg
-    - ./images/map-my-summer-screen-map-videos-close-up.jpg
-    - ./images/map-my-summer-screen-map-clusters.jpg
-    - ./images/map-my-summer-screen-cluster.jpg
-    - ./images/map-my-summer-screen-videos.jpg
-    - ./images/map-my-summer-screen-video.jpg
+    - ./screens/mms-splash.jpg
+    - ./screens/mms-map-clusters.jpg
+    - ./screens/mms-map-video.jpg
+    - ./screens/mms-zoom-clusters.jpg
+    - ./screens/mms-zoom-video.jpg
+    - ./screens/mms-zoom-category.jpg
   video:
     src: https://youtube.com/embed/dp0Lj-7fBpQ?rel=0
     width: 1280
@@ -66,11 +65,15 @@ The job itself was fantastic fun for a developer to work on, and although the de
 
 ## Videos
 
+App promo:
+
 <MediaVideo
   src="https://youtube.com/embed/dp0Lj-7fBpQ?rel=0"
   height="326"
   width="580"
 />
+
+Campaign promo:
 
 <MediaVideo
   src="https://youtube.com/embed/lLU7g92DF7I?rel=0"

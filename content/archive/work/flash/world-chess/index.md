@@ -13,18 +13,14 @@ tags:
 media:
   thumbnail: ./images/world-chess-logo.png
   gallery:
-    - ./images/world-chess-game-1a.png
-    - ./images/world-chess-game-1b.png
-    - ./images/world-chess-game-1c.png
-    - ./images/world-chess-game-1d.png
-    - ./images/world-chess-game-1e.png
-    - ./images/world-chess-moves-1a.png
-    - ./images/world-chess-moves-1b.png
-    - ./images/world-chess-moves-1c.png
-    - ./images/world-chess-baord-1b.png
-    - ./images/world-chess-board-1a.png
-    - ./images/world-chess-timeline-1a.png
-    - ./images/world-chess-timeline-1b.png
+    - ./screens/game 1a.png
+    - ./screens/game 1b.png
+    - ./screens/game 1c.png
+    - ./screens/game 1d.png
+    - ./screens/game 1e.png
+    - ./screens/game 2a.png
+    - ./screens/game 2b.png
+    - ./screens/game 2c.png
 ---
 
 # World Chess: ChessCasting

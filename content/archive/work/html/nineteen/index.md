@@ -14,16 +14,14 @@ tags:
 media:
   thumbnail: ./images/nineteen-thumb.jpg
   gallery:
-    - ./images/nineteen-07.jpg
-    - ./images/nineteen-08.jpg
-    - ./images/nineteen-01.jpg
-    - ./images/nineteen-02.jpg
-    - ./images/nineteen-03.jpg
-    - ./images/nineteen-04.jpg
-    - ./images/nineteen-05.jpg
-    - ./images/nineteen-06.jpg
-    - ./images/nineteen-09.jpg
-    - ./images/nineteen-10.jpg
+    - ./screens/nineteen-07.jpg
+    - ./screens/nineteen-08.jpg
+    - ./screens/nineteen-01.jpg
+    - ./screens/nineteen-02.jpg
+    - ./screens/nineteen-03.jpg
+    - ./screens/nineteen-04.jpg
+    - ./screens/nineteen-05.jpg
+    - ./screens/nineteen-09.jpg
 ---
 
 # 19: Microsite

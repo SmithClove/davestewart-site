@@ -13,20 +13,20 @@ tags:
   - after-effects
   - 3dsmax
 media:
-  thumbnail: ./images/lost-angel-feature.png
-  featured: ./images/lost-angel-main.png
+  thumbnail: ./images/lost-angel-thumb.png
+  featured: ./images/lost-angel-featured.png
   gallery:
-    - ./images/lost-angel-00.jpg
-    - ./images/lost-angel-01.jpg
-    - ./images/lost-angel-02.jpg
-    - ./images/lost-angel-03.jpg
-    - ./images/lost-angel-04.jpg
-    - ./images/lost-angel-05.jpg
-    - ./images/lost-angel-06.jpg
-    - ./images/lost-angel-07.jpg
-    - ./images/lost-angel-08.jpg
-    - ./images/lost-angel-09.jpg
-    - ./images/lost-angel-10.jpg
+    - ./screens/lost-angel-intro-1.jpg
+    - ./screens/lost-angel-intro-2.jpg
+    - ./screens/lost-angel-intro-3.jpg
+    - ./screens/lost-angel-home.jpg
+    - ./screens/lost-angel-music.jpg
+    - ./screens/lost-angel-gallery.jpg
+    - ./screens/lost-angel-gallery-1.jpg
+    - ./screens/lost-angel-gallery-2.jpg
+    - ./screens/lost-angel-gallery-3.jpg
+    - ./screens/lost-angel-bookings.jpg
+    - ./screens/lost-angel-venue.jpg
   frame:
     - ./making/frame-01a-wire.jpg
     - ./making/frame-01b-viewport.jpg
