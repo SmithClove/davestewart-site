@@ -11,7 +11,7 @@ const placeholder = {
 
 function makePlaceholder (path = '') {
   const text = Path.basename(path, Path.extname(path)).replace(/\W+/g, ' ') || ''
-  return `https://placehold.it/${placeholder.width}x${placeholder.height}?text=` + text
+  return `http://placehold.it/${placeholder.width}x${placeholder.height}?text=` + text
 }
 
 function findFile (relPath) {
