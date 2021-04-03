@@ -1,12 +1,10 @@
 <template>
-  <div class="layout__home">
+  <div class="layout__home home">
     <!--
     <PageHero />
     -->
 
-    <img :src="require('../assets/home-splash-small.svg')"
-         style="width: 100%; aspect-ratio: 840/400; pointer-events:none; user-select: none"
-    >
+    <img class="home__splash" :src="require('../assets/home-splash-small.svg')">
 
     <h1>I'm Dave</h1>
     <p class="description">An experienced web developer + full time indie maker</p>
@@ -38,3 +36,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.home {
+  &__splash {
+    width: 100%;
+    aspect-ratio: 840/400;
+    pointer-events:none;
+    user-select: none;
+  }
+}
+</style>
