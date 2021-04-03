@@ -30,18 +30,16 @@ Right now I'm full time on [consumer products](/products/).
 
 Jump quickly to:
 
-<PageList :pages="$parent.$parent.tree.slice(0, 4)"/>
+<PageList :pages="$parent.$parent.tree"/>
 
 
 ## Also
 
 Feel free to:
 
+- [Search](/search/) the site
+
 - [Contact](/bio/profiles.md) me
-
-- [Search](/search/) my work
-
-- [Read](/blog/) my thoughts
 
 Cheers!
 
