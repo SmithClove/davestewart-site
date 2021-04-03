@@ -1,7 +1,9 @@
 const Fs = require('fs')
 const Path = require('path')
+const simpleSvgPlaceholder = require('@cloudfour/simple-svg-placeholder');
 const { isImage, isRemote } = require('../plugins/utils.js')
 const { isPlainObject } = require('./assert.js')
+const theme = require('../styles/theme.js')
 
 // 16:9
 const placeholder = {
@@ -11,7 +13,17 @@ const placeholder = {
 
 function makePlaceholder (path = '') {
   const text = Path.basename(path, Path.extname(path)).replace(/\W+/g, ' ') || ''
-  return `http://placehold.it/${placeholder.width}x${placeholder.height}?text=` + text
+  const options = {
+    text,
+    width: placeholder.width,
+    height: placeholder.height,
+    bgColor: theme.greyLightest,
+    textColor: theme.accentColor,
+    fontFamily: `${theme.titleFont}, ${theme.bodyFont}`,
+    fontWeight: 'normal',
+    fontSize: '75px',
+  }
+  return simpleSvgPlaceholder(options)
 }
 
 function findFile (relPath) {
