@@ -4,11 +4,12 @@ breadcrumb: Home
 description: Online portfolio of Dave Stewart; Open Source, commercial + personal projects
 layout: home
 media:
-  highlights:
+  gallery:
+    - ./home-splash.svg
     - ./products/todo-emojis/images/todo-emojis-logo.png
     - ./products/got-paper/images/ph-splash.png
     - ./products/control-space/images/cs-splash.png
-    - ./products/workflowy-multiflow/images/multiflow-featured.png
+    - ./products/workflowy-multiflow/images/multiflow-featured.svg
     - ./projects/open-source/alias-hq/images/alias-featured.png
     - ./projects/open-source/vue-class-store/images/vue-class-store.png
     - ./projects/open-source/vuex-pathify/images/vuex-pathify.png
@@ -19,27 +20,28 @@ media:
     - ./work/finsbury/images/finsbury-logo-dark.png
 ---
 
-I'm a lead developer and indie maker from London, UK, building a variety of digital products.
+I work mainly in [fintech](/work/) building Vue JS applications, built on years of [commercial agency](/archive/work/) work.
 
-<MediaGallery media="highlights" :captions="false" />
+I'm most well known for my [open](/projects/open-source/) [source](/archive/projects/tools/) [libraries](/archive/projects/open-source/) and I keep myself fresh with experimental [personal](/archive/projects/personal/) [projects](/projects/personal/).
 
-I'm highly technical with a creative background, and I value good ideas, clean design and tight execution:
+Right now I'm a full time maker on various  [consumer products](/products/).
 
-- I'm well-known for my [open source](/projects/)
+## Site map
 
-- I'm currently full time on [product development](/products/)
+Jump quickly to:
 
-- Here's my most recent [commercial work](/work/)
+<PageList :pages="$parent.$parent.tree.slice(0, 4)"/>
 
-- The best older stuff is [archived](/archive/)
- 
+
+## Also
+
 Feel free to:
 
 - [Contact](/bio/profiles.md) me
 
-- [Search](/search/) the site
+- [Search](/search/) my work
 
-- [Read](/blog/) my blog
+- [Read](/blog/) my thoughts
 
 Cheers!
 

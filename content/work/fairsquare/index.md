@@ -97,7 +97,7 @@ Interestingly the project's heavy use of Vuex lead to the development of a [stat
 
 ![/](./other/pathify-pre-alpha.jpg)
 
-We also used [Laravel Sketchpad](/archive/development/tools/laravel-sketchpad/) to set up and run local database tools and queries.
+We also used [Laravel Sketchpad](/archive/projects/tools/laravel-sketchpad/) to set up and run local database tools and queries.
 
 ## Links
 
