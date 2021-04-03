@@ -1,8 +1,17 @@
 <template>
   <div class="layout__home">
-    <h1>Dave Stewart</h1>
-    <p class="description">Web Developer + Indie Maker</p>
-    <Content class="pageContent" />
+    <!--
+    <PageHero />
+    -->
+
+    <img :src="require('../assets/home-splash-small.svg')"
+         style="width: 100%; aspect-ratio: 840/400; pointer-events:none; user-select: none"
+    >
+
+    <h1>I'm Dave</h1>
+    <p class="description">An experienced web developer + full time indie maker</p>
+
+    <Content class="pageContent" :props="{ tree }" id="content" />
     <!--
     <keep-alive>
       <PageList :pages="tree"/>
