@@ -7,7 +7,7 @@
     <img class="home__splash" :src="require('../assets/home-splash-small.svg')">
 
     <h1>I'm Dave</h1>
-    <p class="description">An experienced web developer + full time indie maker</p>
+    <p class="description">An experienced web developer + indie maker</p>
 
     <Content class="pageContent" :props="{ tree }" id="content" />
     <!--
