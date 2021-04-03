@@ -20,11 +20,11 @@ media:
     - ./work/finsbury/images/finsbury-logo-dark.png
 ---
 
-I work mainly in [fintech](/work/) building Vue JS applications, built on years of [commercial agency](/archive/work/) work.
+I work mainly in [fintech](/work/) building Vue JS applications, following years of commercial [agency](/archive/work/) work.
 
-I'm most well known for my [open](/projects/open-source/) [source](/archive/projects/tools/) [libraries](/archive/projects/open-source/) and I keep myself fresh with experimental [personal](/archive/projects/personal/) [projects](/projects/personal/).
+I'm most well known for my [open](/projects/open-source/) [source](/archive/projects/tools/) [libraries](/archive/projects/open-source/) and I keep myself fresh with [personal](/archive/projects/personal/) [projects](/projects/personal/).
 
-Right now I'm a full time maker on various  [consumer products](/products/).
+Right now I'm full time on [consumer products](/products/).
 
 ## Site map
 
