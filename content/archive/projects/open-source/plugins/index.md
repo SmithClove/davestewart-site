@@ -6,8 +6,9 @@ tags:
   - framework
   - ui
 media:
-  thumbnail: ./images/plugins.png
-  featured: ./images/plugins.png
+  opengraph: ./plugins.png
+  thumbnail: ./plugins.svg
+  featured: ./plugins.svg
 ---
 
 # Web framework plugins

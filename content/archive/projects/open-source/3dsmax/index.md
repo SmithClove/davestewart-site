@@ -7,8 +7,9 @@ tags:
   - framework
   - ui
 media:
-  thumbnail: ./images/3dsmax.png
-  featured: ./images/3dsmax.png
+  opengraph: ./3dsmax.png
+  thumbnail: ./3dsmax.svg
+  featured: ./3dsmax.svg
 ---
 
 # 3dsmax plugins

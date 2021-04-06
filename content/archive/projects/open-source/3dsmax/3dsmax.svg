@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="640px" height="360px" viewBox="0 0 640 360" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>3dsmax</title>
+    <defs>
+        <polygon id="path-1" points="41.3733753 0 81.8600629 23.375 81.8600629 70.125 41.3733753 93.5 0.886687627 70.125 0.886687627 23.375"></polygon>
+    </defs>
+    <g id="3dsmax" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="640" height="360"></rect>
+        <text font-family="Europa-Bold" font-size="54.730875" font-weight="bold" fill="#000000">
+            <tspan x="295.928557" y="175.2928">3dsmax</tspan>
+        </text>
+        <text id="2002---2008" font-family="Europa-Bold" font-size="25.6608" font-weight="bold" fill="#BCBCBC">
+            <tspan x="297.304557" y="208.4616">2002 - 2008</tspan>
+        </text>
+        <rect id="Rectangle-Copy" fill="#D8D8D8" x="258" y="111" width="3" height="120"></rect>
+        <g id="Group-Copy" transform="translate(150.071443, 124.400000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Polygon" fill="#EA4848" xlink:href="#path-1"></use>
+            <polygon id="Polygon-Copy" fill-opacity="0.102436626" fill="#000000" opacity="0.314771076" mask="url(#mask-2)" points="0.886687627 23.375 41.3733753 46.75 41.3733753 93.5 0.886687627 116.875 -39.6 93.5 -39.6 46.75"></polygon>
+            <polygon id="Polygon-Copy-2" fill-opacity="0.283326049" fill="#000000" opacity="0.314771076" mask="url(#mask-2)" points="81.8600629 23.375 122.346751 46.75 122.346751 93.5 81.8600629 116.875 41.3733753 93.5 41.3733753 46.75"></polygon>
+        </g>
+    </g>
+</svg>

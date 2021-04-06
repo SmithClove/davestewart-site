@@ -6,8 +6,9 @@ tags:
   - framework
   - ui
 media:
-  thumbnail: ./images/applications.png
-  featured: ./images/applications.png
+  opengraph: ./applications.png
+  thumbnail: ./applications.svg
+  featured: ./applications.svg
 ---
 
 # Application Extensions
