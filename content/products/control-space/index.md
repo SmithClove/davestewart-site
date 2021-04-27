@@ -71,7 +71,7 @@ Everything about Control Space has been tuned to make it easy to manage your tab
 
 There are even more exciting new features in the pipeline and we can't wait to share them with you!
 
-Control Space is currently invite only, but you can sign-up using the website link on the right.
+Control Space is currently invite only, but you can sign-up [here](https://controlspace.app).
 
 ## Links
 
