@@ -103,25 +103,6 @@ Once you have more than one session, load, update, or save new ones, as well as 
 
 Note that sessions are saved with the extension. Uninstalling the session will delete any saved sessions.
 
-## Limitations
-
-There are a few limitations that I am working to fix:
-
-- doesn’t work as well on Beta *(fix is currently in review)*
-- doesn’t work on www.workflowy (vs just [https://workflowy](https://workflowy/)) *(fix is currently in review)*
-- doesn’t work in chrome app *(I think it does, so happy to shown if it’s not)*
-- working with WFx *(think I can make it work; may cause issues with history though)*
-
-I'm crazy-busy at the moment but will get to them in time.
-
-## Todos
-
-Software is never really finished. Here's a few things I'd like to get to in time:
-
-- Make it work on Firefix, Brave, etc
-- Allow saving of a single frame (right now you can only save 2+ frames)
-- Resizable frames (not 100% sure I want to go down this rabbit hole)
-
 ## Video
 
 Here's a video of the 1.0 version of WorkFlowy, which should give you some idea of how to use it.
@@ -132,10 +113,41 @@ Here's a video of the 1.0 version of WorkFlowy, which should give you some idea 
   height="315"
 />
 
+## Appendix
+
+### Troubleshooting
+
+There are a couple of issues which have come up, which are easily solved:
+
+- **you can only open two panes**: disable the WorkFlowy setting "Open links in app"
+- **you can't see sessions**: reinstall the plugin
+
+### Limitations
+
+There are a few limitations which I may look to fix:
+
+- **working with [WFx](https://www.youtube.com/watch?v=udiIXMW6IVE&list=PLgi2Y4JImXPhCPhtAILbNRzci-X4w1MKT) keyboard shortcuts**: think I can make it work; may cause issues with history though
+- **working with other plugins**: I can't make any guarantees, but I am looking into a way to forward commands from the main window to the active frame
+- **make it work on Firefix, Brave, etc**
+
+### Planned features
+
+There are some nice-to-haves which I hope to find the time to work on:
+
+- **resizing frames**: there is a [Vue package](https://antoniandre.github.io/splitpanes/) which should make this possible
+- **save single panel sessions**: so you just use one list to access favourites
+- **documentation site**: it might be easier than this page
+
+<!--
+- doesn’t work as well on Beta *(fix is currently in review)*
+- doesn’t work on www.workflowy (vs just [https://workflowy](https://workflowy/)) *(fix is currently in review)*
+- doesn’t work in chrome app *(I think it does, so happy to shown if it’s not)*
+-->
+
 
 ## Support
 
-If you need help, [tweet](https://twitter.com/compose/tweet?text=@davestewart) me and I'll see if I can help!
+If you need help, catch me on the WorkFlowy User Group, or just [tweet](https://twitter.com/compose/tweet?text=@davestewart) me, and I'll see what I can do!
 
 If you install WorkFlowy, and like it, please rate it and leave a nice review on the [Chrome Web Store](https://chrome.google.com/webstore/detail/workflowy-multiflow/khjdmjcmpolknpccmaaipmidphjokhdf?hl=en-GB).
 
