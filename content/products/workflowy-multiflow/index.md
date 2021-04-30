@@ -121,6 +121,18 @@ There are a couple of issues which have come up, which are easily solved:
 
 - **you can only open two panes**: disable the WorkFlowy setting "Open links in app"
 - **you can't see sessions**: reinstall the plugin
+- **clicking bullets doesn't duplicate them at all**: check the DevTools console (`Opt+Cmd+I` or `F12`) for MultiFlow logs:
+
+```
+MultiFlow: running!
+MultiFlow: updating page structure
+MultiFlow: loading settings
+MultiFlow: checking for session...
+MultiFlow: waiting for load...
+MultiFlow: page ready!
+```
+
+If you don't see these logs, it means Multiflow didn't run. I'm not sure why this is, but I've tricked Chrome out of this state by by first visiting [beta.workflowy.com](https://beta.workflowy.com) then [workflowy.com](https://beta.workflowy.com).
 
 ### Limitations
 
