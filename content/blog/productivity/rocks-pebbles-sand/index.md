@@ -1,8 +1,9 @@
 ---
 title: Why “rock, pebbles, sand” doesn't work as a productivity strategy
+description: The life-analogy of rocks, pebbles and sand is a lovely one; it's just that it doesn't translate 1:1 when you need to get things done
 shortTitle: Rocks, Pebbles, Sand
 description: 
-date: 2021-08-12
+date: 2021-08-11
 media:
   featured: ./images/rock-pebbles-sand.png
   thumbnail: ./images/rock-pebbles-sand.png
@@ -10,7 +11,7 @@ media:
 
 ## Intro
 
-There's a well-known story (which can be viewed on [YouTube](https://www.youtube.com/watch?v=SqGRnlXplx0)) about a professor who teaches his class a life lesson by putting rocks, pebbles and sand into a jar in a particular order.
+There's a well-known story (which can be seen on [YouTube](https://www.youtube.com/watch?v=SqGRnlXplx0)) about a professor who teaches his class a life lesson by putting rocks, pebbles and sand into a jar in a particular order.
 
 The idea is that by considering the things in your life as rocks, pebbles and sand, you can formulate a way to fit everything in to bring you fulfilment and happiness.
 
