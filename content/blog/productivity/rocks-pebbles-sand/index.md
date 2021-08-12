@@ -8,8 +8,6 @@ media:
   thumbnail: ./images/rock-pebbles-sand.png
 ---
 
-## Intro
-
 There's a well-known story (which can be seen on [YouTube](https://www.youtube.com/watch?v=SqGRnlXplx0)) about a professor who teaches his class a life lesson by putting rocks, pebbles and sand into a jar in a particular order.
 
 The idea is that by considering the things in your life as rocks, pebbles and sand, you can formulate a way to fit everything in to bring you fulfilment and happiness.
@@ -18,7 +16,7 @@ It's a lovely analogy; the problem is that rocks, pebbles and sand don't transla
 
 However, if you *turn the theory on its head*, you can get some value out of it.
 
-### How the story explains it
+## How the story explains it
 
 <img src="./images/jar-1.png" style="width: 200px; margin-right: 20px; float: left" />
 
@@ -30,7 +28,7 @@ The sand is the small stuff, like possessions or social media, and should only b
 
 <div class="clear" />
 
-### What happens in real life
+## What happens in real life
 
 <img src="./images/jar-2.png" style="width: 200px; margin-right: 20px; float: left" />
 
@@ -42,7 +40,7 @@ At the end of the week or month, you look back and realise you never got to the 
 
 <div class="clear" />
 
-### Turning the idea on its head
+## Turning the idea on its head
 
 <img src="./images/jar-3.png" style="width: 200px; margin-right: 20px; float: left" />
 
@@ -55,3 +53,13 @@ Spend the next 60 - 90 minutes on medium tasks you know you know you can get don
 Once these are done, not only will you get a huge boost of satisfaction, but you are free to disappear down the rabbit hole of chunky work tasks for the rest of the day!
 
 When you look back at your week you’ll have accomplished tasks in all areas of your life, and be happier and more organised for it :)
+
+## Afterword
+
+Do you like to be productive? 
+
+You may be interested in my new project, [Control Space](/products/control-space/)!
+
+It's a feature-packed tab manager for Chrome, built for speed and organisation, that ends the stress of too many tabs *plus* the fear of losing them. It's full of exciting, productivity-boosting features, which I will be revealing very soon.
+
+The release is slated for September; I can let you know directly if you just click [here](https://controlspace.app).
