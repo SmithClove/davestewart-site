@@ -5,6 +5,7 @@ description:
 date: 2021-08-12
 media:
   featured: ./images/rock-pebbles-sand.png
+  thumbnail: ./images/rock-pebbles-sand.png
 ---
 
 ## Intro
