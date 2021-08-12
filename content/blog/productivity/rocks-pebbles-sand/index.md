@@ -1,8 +1,7 @@
 ---
 title: Why “rock, pebbles, sand” doesn't work as a productivity strategy
-description: The life-analogy of rocks, pebbles and sand is a lovely one; it's just that it doesn't translate 1:1 when you need to get things done
 shortTitle: Rocks, Pebbles, Sand
-description: 
+description: The life-analogy of rocks, pebbles and sand is a lovely one; it's just that it doesn't translate 1:1 when you need to get things done
 date: 2021-08-11
 media:
   featured: ./images/rock-pebbles-sand.png
