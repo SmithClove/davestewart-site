@@ -1,5 +1,5 @@
 ---
-description: A "pick and mix" library that simplifies writing Elasticsearch code
+description: A 'pick and mix' library that simplifies writing Elasticsearch code
 date: 2021-12-01
 tags:
   - library
