@@ -7,7 +7,7 @@ tags:
   - elasticsearch
 github: davestewart/es-kit
 media:
-  thumbnail: ./images/es-kit.svg
+  thumbnail: ./images/es-kit.png
   featured: ./images/es-kit.svg
 ---
 # ES Kit
