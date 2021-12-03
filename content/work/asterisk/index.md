@@ -134,6 +134,7 @@ This made working on any particular unit simple:
 ## Links
 
 - [Asterisk Networks](https://asterisknetworks.com)
+- [Handsontable - Asterisk Networks Case Study](https://handsontable.com/customers/asterisknetworks/)
 - [Vuex Pathify](/projects/open-source/vuex-pathify)
 - [Alias HQ](/projects/open-source/alias-hq)
 

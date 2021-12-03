@@ -5,6 +5,7 @@ tags:
   - library
   - javascript
   - state
+  - architecture
 github: davestewart/axios-actions
 media:
   opengraph: ./images/axios-actions.png

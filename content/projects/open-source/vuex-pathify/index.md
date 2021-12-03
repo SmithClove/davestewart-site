@@ -7,6 +7,7 @@ tags:
   - javascript
   - vue
   - state
+  - architecture
   - creative
 github: davestewart/vuex-pathify
 media:

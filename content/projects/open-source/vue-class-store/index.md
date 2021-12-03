@@ -8,6 +8,7 @@ tags:
   - typescript
   - vue
   - state
+  - architecture
   - creative
 github: davestewart/vue-class-store
 media:

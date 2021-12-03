@@ -22,7 +22,7 @@ media:
 
 I work mainly in [fintech](/work/) building Vue JS applications, following years of commercial [agency](/archive/work/) work.
 
-I'm most well known for my [open](/projects/open-source/) [source](/archive/projects/tools/) [libraries](/archive/projects/open-source/) and I keep myself fresh with [personal](/archive/projects/personal/) [projects](/projects/personal/).
+I'm most well known for my [open](/projects/open-source/) [source](/archive/projects/tools/) [libraries](/archive/projects/open-source/) and I keep myself fresh with [personal projects](/search/?text=%2Fpersonal&sort=path&view=image).
 
 Right now I'm full time on [consumer products](/products/).
 
