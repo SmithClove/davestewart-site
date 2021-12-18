@@ -83,7 +83,9 @@ Moving forwards, I wanted to:
 - use them as building blocks to break down any future work, maybe even adding timings 
 - shine a light on the overall structure and nature of projects, and their estimation 
 
-Building on my notes so far, I shared the observations on [Twitter](https://twitter.com/dave_stewart/status/1471451034593771523) and began to think about a structure which represented a typical small-to-medium project's lifecycle.
+Building on my notes so far, I shared the observations on [Twitter](https://twitter.com/dave_stewart/status/1471451034593771523) and began to think about a structure which represented a typical small-to-medium project's lifecycle:
+
+[![gist screenshot](./images/gist-screenshot.png)](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443)
 
 Running with the analogy of the "work to do the work" I ended up with the following structure:
 
