@@ -1,17 +1,18 @@
 ---
 description: An article on understanding why projects invariably take longer and how to get better at estimating
 date: 2021-12-16
+preview: true
 permalink: /blog/the-work-is-never-just-the-work
 media:
   featured: ./images/estimation-featured.png
   thumbnail: ./images/estimation-thumbnail.png
 ---
 
-# The work is never just 'the work'
+# The work is never just “the work”
 
 ## Intro
 
-If you're like me, you're maybe a jobbing dev taking on contracts and occasionally your own gigs (and by-and-large this works out OK) but you _probably_ secretly hate yourself for being **terrible** at estimation, and wish you were better at it. 
+If you're like me, you're maybe a jobbing dev taking on contracts and occasionally your own gigs (and by-and-large this works out OK) but _maybe_ you secretly hate yourself for being **terrible** at estimation, and wish you were better at it. 
 
 If that sounds like you, read on!
 
@@ -19,13 +20,13 @@ If that sounds like you, read on!
 
 Last year I took on what seemed like a short, easy-to-deliver project, which over the course of a year turned into the kind of "night of the living dead" slog and because of a variety of factors has _never_ been easy to estimate.
 
-With the latest phase finally delivered, I wanted to conduct a detailed postmortem to understand why my perception of the _actual_ work was so off, and in the process reevaluate everything I know about estimation and expectations.
+With the latest phase finally delivered, I wanted to conduct a detailed postmortem to understand why my perception of the _actual_ work was so off, and in the process reevaluate everything I know about assumptions and estimation.
 
-In the rest of the article I'll deep dive into my own issues around estimation, as well as present a framework to plan and visualise estimates, and hopefully help you and I banish some of that lurking confusion and guilt.
+In the rest of the article I'll deep dive my own shortcomings around estimation, as well as present a framework to plan and visualise estimates, hopefully helping both of us clear those lurking feelings of confusion and guilt.
 
 ## Why is estimating hard?
 
-Estimating is hard because it's based on assumptions and guesswork.
+Estimating is hard because you can't predict the future.
 
 Some of the things I've heard or have tried:
 
