@@ -7,7 +7,7 @@ media:
   thumbnail: ./images/estimation-thumbnail.png
 ---
 
-# The work is never just "the work"
+# The work is never just 'the work'
 
 ## Intro
 
@@ -17,17 +17,17 @@ If that sounds like you, read on!
 
 ## Background
 
-Last year I took on what seemed like a short, easy-to-estimate project, which over the course of a year turned into the kind of "night of the living dead" slog that has been almost impossible properly estimate and get caught-up on.
+Last year I took on what seemed like a short, easy-to-deliver project, which over the course of a year turned into the kind of "night of the living dead" slog and because of a variety of factors has _never_ been easy to estimate.
 
 With the latest phase finally delivered, I wanted to conduct a detailed postmortem to understand why my perception of the _actual_ work was so off, and in the process reevaluate everything I know about estimation and expectations.
 
-In the rest of the article I'll deep dive into my own issues around estimation, as well as present a framework to plan and visualise estimates, and in the process help you banish some of that lurking confusion and guilt.
+In the rest of the article I'll deep dive into my own issues around estimation, as well as present a framework to plan and visualise estimates, and hopefully help you and I banish some of that lurking confusion and guilt.
 
 ## Why is estimating hard?
 
 Estimating is hard because it's based on assumptions and guesswork.
 
-Some of the things I've tried or have heard:
+Some of the things I've heard or have tried:
 
 - ***Add on 30% for project management.***
   <br>I don't get this at all; firstly, there's no way I do that amount of project management, and secondly, it doesn't cover or tackle the real causes of a bad estimate.
@@ -36,20 +36,20 @@ Some of the things I've tried or have heard:
   <br>This is actually one of mine, and based on at least a couple of projects I've quoted for, is approaching something accurate – though again – no real insight as to _why_ the original estimate was not fit for purpose.
 
 - ***Double it, then double it again***
-  <br>Sounds crazy at first but the initial estimate is the **work**, the first double is the **details and changes**, and the second double is **problems and bugs**. This begins to stack up in my mind, as long as everything _does_ take twice as long; if not do we _triple_?  
+  <br>Sounds crazy at first but the initial estimate is the **work**, the first double is the **details and changes**, and the second double is **problems and bugs**. This begins to stack up in my mind, as long as everything _does_ take twice as long; if not do we _triple_? (thanks to [@panphora](https://twitter.com/panphora) for this one)
 
-Note that I was careful to _avoid_ using the word "overrun".
+Note that in the above points I was careful to avoid using the word "overrun".
 
-Overrun implies that the estimate was **sound** and it was the _implementation_ that was not.
+Overrun implies that the estimate was **sound** and it was the _execution_ that was not.
 
-But we know this is generally not the case; you don't take on work just to do more, so the **real** problem is being unable to predict what you will need to do, or how long it will take you to do it.
+However, we know this is generally not the case; you don't take on work just to do more, so the **real** problem is being unable to predict what you will need to do, or how long it will take you to do it.
 
 ## Breaking it down
 
-Writing the postmortem I wanted to be honest about my failings, so I looked at various areas:
+Writing the project postmortem I wanted to be honest about my failings, so I looked at various areas:
 
-- the physical tasks I had to do, no matter if part of the original plan or not
-- how long it took to do things, whether it was more than planned, and the reasons why that was so
+- the physical tasks I had to do, no matter if planned or not
+- how long it took to do things, whether it was more than estimated, and the reasons why that was so
 - the times when skill or knowledge couldn't save the day, perhaps it was more about people or process or time
 
 It wasn't long before I noticed a couple of common threads:
@@ -61,20 +61,20 @@ It wasn't long before I noticed a couple of common threads:
 
 I couldn't believe I had been so blind to this, up until now:
 
-- maybe I had considered this unplanned work just something you have to do
+- maybe I had considered this unplanned work as just something you have to do
 - maybe I thought my attention-to-detail style was somehow my cross to bear
 
 Reflecting on this, I think most likely it's a mix of misplaced professional pride and a level of cognitive dissonance around how quickly I think professional work _should_ be completed, rather than how long it takes to actually complete; I was effectively _ignoring_ the additional time because "it didn't feel correct".
 
 An analogy that sprang to mind was that of [dark matter](https://www.google.com/search?q=dark+matter); it's invisible (like much of a project's work) but by its gravitational influence, scientists know it makes up the majority of the mass of the universe.
 
-But dark matter aside, the upshot is that most of this effort – my effort – was not considered, estimated or paid for!
+But dark matter aside, the upshot is that this effort – my effort – was not being considered, estimated or paid for!
 
 ## Building it back up
 
-It was clear that this "happy path" thinking was not only costly in financial terms, but explained the various issues I've had with over-running or over-working over the years – at either mine or sometimes my client's expense.
+It was clear that this "happy path" thinking was not only costly in financial terms, but probably explained the various issues I've had with over-running or over-working over the years – at either mine or sometimes my client's expense.
 
-And the observations themselves felt extremely valuable, but they needed fleshing out and pulling together.
+And though the observations themselves felt extremely valuable, they needed fleshing out and pulling together.
 
 Moving forwards, I wanted to:
 
@@ -82,9 +82,9 @@ Moving forwards, I wanted to:
 - use them as building blocks to break down any future work, maybe even adding timings 
 - shine a light on the overall structure and nature of projects, and their estimation 
 
-Building on the existing structure, I shared the observations on [Twitter](https://twitter.com/dave_stewart/status/1471451034593771523) and began to think about a structure which represented a typical small-to-medium project's lifecycle.
+Building on my notes so far, I shared the observations on [Twitter](https://twitter.com/dave_stewart/status/1471451034593771523) and began to think about a structure which represented a typical small-to-medium project's lifecycle.
 
-Running with the analogy of the "work to do the work" I ended up with the following grouping:
+Running with the analogy of the "work to do the work" I ended up with the following structure:
 
 
 | Phase                     | Tasks                                                        |
@@ -101,7 +101,7 @@ Running with the analogy of the "work to do the work" I ended up with the follow
 
 The links above jump directly to the document, which you can read – and if you like – comment on.
 
-Consider it a "work in progress" which I will adapt, improve and use going forward.
+Consider it a "work in progress" which I will use, adapt and improve going forward.
 
 ## Visualisation
 
