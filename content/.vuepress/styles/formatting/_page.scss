@@ -45,12 +45,21 @@ p.description {
 }
 
 strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 em {
   font-style: italic;
 }
+
+em strong {
+  color: $accentColor;
+  font-style: normal;
+  a {
+    text-decoration: underline !important;
+  }
+}
+
 
 // ---------------------------------------------------------------------------------------------------------------------
 // TEXT
@@ -173,8 +182,24 @@ video {
   width:100%;
 }
 
-.centered {
-  max-width: 500px;
+table {
+  margin: 2rem 1rem;
+  width: 100%;
+
+  thead {
+    border-bottom: 1px solid $grey-lightest;
+  }
+
+  th, td {
+    text-align: left;
+    padding: .25em 1em;
+  }
+
+  th {
+    font-weight: 700;
+    font-family: $titleFont;
+    color: $accentColor
+  }
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -214,6 +239,13 @@ a.dimmed:hover {
 // ---------------------------------------------------------------------------------------------------------------------
 // SPECIAL
 // ---------------------------------------------------------------------------------------------------------------------
+
+@include lg {
+  .centered {
+    max-width: 80%;
+    margin: 2rem auto;
+  }
+}
 
 .accent {
   color: $accentColor;
