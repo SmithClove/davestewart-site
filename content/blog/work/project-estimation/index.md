@@ -120,7 +120,9 @@ Of course the next project (or your project) may have very different proportions
 
 Breaking this (again, inaccurate) diagram down by area (again, units do not represent effort 1:1) provides a little numerical perspective:
 
-![inforgraphic showing how a development project's phases can be broken down and estimated](./images/estimation-breakdown.png)
+<div class="centered">
+  <img alt="project breakdown by numbers" src="./images/estimation-breakdown.png">
+</div>
 
 Reviewing both the numbers and the graphic, one could postulate:
 
