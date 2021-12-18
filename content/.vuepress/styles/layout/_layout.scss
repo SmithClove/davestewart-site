@@ -27,7 +27,7 @@ body {
 
 .siteFooter {
   min-height: 80px;
-  background: lighten($borderColor, 5%);
+  background: $footerBg;
 }
 
 // calculate main content height

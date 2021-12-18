@@ -1,6 +1,6 @@
 <template>
   <ul class="pageList">
-    <PageItem v-for="page in pages" :page="page" />
+    <PageItem v-for="page in filtered" :page="page" />
   </ul>
 </template>
 
@@ -15,6 +15,14 @@ export default {
   props: {
     pages: Array
   },
+
+  computed: {
+    filtered () {
+      return this.pages
+        .filter(page => !page.frontmatter.preview)
+        .filter(page => !page.frontmatter.draft)
+    }
+  }
 }
 </script>
 
