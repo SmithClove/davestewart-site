@@ -1,20 +1,41 @@
 <template>
-  <header class="siteHeader">
-    <div class="siteHeader__background">
-      <div class="layout__inner">
-        <div class="siteHeader__left">
-          <NavBreadcrumbs/>
-        </div>
-        <div class="siteHeader__right">
-          <NavSearch/>
+  <transition name="fade">
+    <header v-if="delta <= 0" class="siteHeader">
+      <div class="siteHeader__background">
+        <div class="layout__inner">
+          <div class="siteHeader__left">
+            <NavBreadcrumbs/>
+          </div>
+          <div class="siteHeader__right">
+            <NavSearch/>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </transition>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      scroll: 0,
+      delta: 0,
+    }
+  },
+
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  },
+
+  methods: {
+    onScroll () {
+      const scroll = document.documentElement.scrollTop
+      this.delta = scroll - this.scroll
+      this.scroll = scroll
+    }
+  }
+}
 </script>
 
 <style lang="scss">

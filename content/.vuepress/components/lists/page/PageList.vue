@@ -6,6 +6,7 @@
 
 <script>
 import PageItem from './PageItem.vue'
+import { isDev } from '../../../utils/config.js'
 
 export default {
   components: {
@@ -17,10 +18,14 @@ export default {
   },
 
   computed: {
+    isDev () {
+      return isDev
+    },
+
     filtered () {
       return this.pages
-        .filter(page => !page.frontmatter.preview)
         .filter(page => !page.frontmatter.draft)
+        .filter(page => page.frontmatter.preview ? isDev : true)
     }
   }
 }

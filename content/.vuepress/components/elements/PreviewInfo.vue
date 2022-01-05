@@ -1,17 +1,19 @@
 <template>
-  <blockquote v-if="show" class="previewInfo">
-    <h2>This is a preview post!</h2>
-    <p>That means I'm still working on it, and I'd love your feedback:</p>
-    <ul>
-      <li>does it read well?</li>
-      <li>does the content make sense?</li>
-      <li>could I have made any points better, or quicker?</li>
-      <li>what would you change?</li>
-    </ul>
-    <p>Message me on <a href="https://twitter.com/messages/compose?recipient_id=16294165">Twitter</a> or ping me an <a href="mailto:dave@davestewart.co.uk">email</a>.</p>
-    <p>Thanks!</p>
-    <p>:D</p>
-  </blockquote>
+  <div v-if="show" class="previewInfo">
+    <blockquote>
+      <h2>This is a preview post!</h2>
+      <p>That means I'm still working on it, and I'd love your feedback:</p>
+      <ul>
+        <li>does it read well?</li>
+        <li>does the content make sense?</li>
+        <li>could I have made any points better, or quicker?</li>
+        <li>what would you change?</li>
+      </ul>
+      <p>Message me on <a href="https://twitter.com/messages/compose?recipient_id=16294165">Twitter</a> or ping me an <a href="mailto:dave@davestewart.co.uk">email</a>.</p>
+      <p>Thanks!</p>
+      <p>:D</p>
+    </blockquote>
+  </div>
 </template>
 
 <script>
@@ -23,7 +25,7 @@ export default {
   },
 
   mounted () {
-    if (this.$page.frontmatter.preview) {
+    if (this.$page.frontmatter.preview && window.location.host.includes('davestewart')) {
       this.show = true
     }
   }

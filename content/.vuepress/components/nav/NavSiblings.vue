@@ -54,10 +54,10 @@ export default {
     onKeyDown (event) {
       const { shift, meta, alt, ctrl, left, right } = getKeys(event)
       if (shift && !meta && !alt && !ctrl) {
-        if (left) {
+        if (left && this.prev) {
           this.$router.push(this.prev.path)
         }
-        else if (right) {
+        else if (right && this.next) {
           this.$router.push(this.next.path)
         }
       }
