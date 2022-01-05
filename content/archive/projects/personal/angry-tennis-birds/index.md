@@ -45,7 +45,13 @@ Interestingly, after releasing Angry Tennis Birds at the start of the 2011 Wimbl
 
 I emailed the paper subsequent times... but as soon as the topic came up, communication stopped. Read into that what you will!
 
+## 2020 update
+
+Interestingly, an [Angry Birds Tennis](https://www.pocketgamer.com/angry-birds-tennis/angry-birds-tennis-launches-into-early-access-for-ios-for-a-limited-time-only/) game launched on iOS in February 2020, but the title was [cancelled](https://www.pocketgamer.com/angry-birds-tennis/angry-birds-tennis-is-no-more-after-rovio-cancels-the-game-following-an-unsucces/) in October of the same year. Hardly surprising with the amount of exposure and how long it's been in the public consciousness, but it looks like the Angry Birds franchise has probably [had it's day](https://www.pocketgamer.com/angry-birds-2/opinion-the-rise-and-fall-of-angry-birds/).
+
 ## Links
 
 - [Angry Tennis Birds](http://angrytennisbirds.com/)
 - [The Sun: Angry Birds - Grunting girls noisier than creatures on app](http://thesun.co.uk/sol/homepage/news/3671271/Grunting-girls-make-racket-at-Wimbledon.html)
+- [Angry Birds Tennis](https://www.pocketgamer.com/angry-birds-tennis/angry-birds-tennis-launches-into-early-access-for-ios-for-a-limited-time-only/)
+
