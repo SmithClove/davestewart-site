@@ -97,7 +97,7 @@ We developed a robust system of UI controls that are defined using XML, stored i
         ... etc
 ```
 
-The panel itself is updated automatically as we change timelines or reselect objects, which is managed in turn by xJSFL's [AS3 module framework](http://www.xjsfl.com/support/guides/extensibility/as3-module-framework).
+The panel itself is updated automatically as we change timelines or reselect objects, which is managed in turn by xJSFL's [AS3 module framework](https://xjsfl.vercel.app/support/guides/extensibility/as3-module-framework).
 
 With (generally) one item per layer, the parameters defined by the controls are stored directly in layer names in JSON format (this also means we can also quickly read the properties).
 
@@ -128,16 +128,16 @@ The module system in xJSFL is responsible for:
 - Automatic instantiation and initialisation by way of a JSFL module bootstrap
 - Managing the core assets Flash needs, such as Panels, Commands, Tools, etc
 
-More information can be found in the [Extensibility](http://www.xjsfl.com/category/support/guides/extensibility) section [Combining multiple scripts into stand-alone Modules](http://www.xjsfl.com/support/guides/extensibility/modules).
+More information can be found in the [Extensibility](https://xjsfl.vercel.app/category/support/guides/extensibility) section [Combining multiple scripts into stand-alone Modules](https://xjsfl.vercel.app/support/guides/extensibility/modules).
 
-On top of the core [Module](http://www.xjsfl.com/support/api/framework/module) class, Bolt's tool uses the following xJSFL classes to achieve its aims:
+On top of the core [Module](https://xjsfl.vercel.app/support/api/framework/module) class, Bolt's tool uses the following xJSFL classes to achieve its aims:
 
-- The [AS3 module framework](http://www.xjsfl.com/support/guides/extensibility/as3-module-framework) to create the gateway between the panel and the JSFL environment
-- [xjsfl.file.load](http://www.xjsfl.com/support/api/core/xjsfl#file-load), [xjsfl.classes.load](http://www.xjsfl.com/support/api/core/xjsfl#classes-load), [Folder](http://www.xjsfl.com/support/api/file/filesystem#folder) and [File](http://www.xjsfl.com/support/api/file/filesystem#file) classes to load content
-- [URI](http://www.xjsfl.com/support/api/file/uri) class to manipulate URIs
-- [Utils](http://www.xjsfl.com/support/api/utils/utils) to do general everyday tasks
-- [Output](http://www.xjsfl.com/support/api/text/output) and [Table](http://www.xjsfl.com/support/api/text/table) to print debugging information to the output panel
-- [XML](http://www.xjsfl.com/support/api/objects/XML) class to interrogate XML properties
+- The [AS3 module framework](https://xjsfl.vercel.app/support/guides/extensibility/as3-module-framework) to create the gateway between the panel and the JSFL environment
+- [xjsfl.file.load](https://xjsfl.vercel.app/support/api/core/xjsfl#file-load), [xjsfl.classes.load](https://xjsfl.vercel.app/support/api/core/xjsfl#classes-load), [Folder](https://xjsfl.vercel.app/support/api/file/filesystem#folder) and [File](https://xjsfl.vercel.app/support/api/file/filesystem#file) classes to load content
+- [URI](https://xjsfl.vercel.app/support/api/file/uri) class to manipulate URIs
+- [Utils](https://xjsfl.vercel.app/support/api/utils/utils) to do general everyday tasks
+- [Output](https://xjsfl.vercel.app/support/api/text/output) and [Table](https://xjsfl.vercel.app/support/api/text/table) to print debugging information to the output panel
+- [XML](https://xjsfl.vercel.app/support/api/objects/XML) class to interrogate XML properties
 
 In addition to these classes, we also created a whole host of custom wrapper classes for JSFL elements, such as:
 
@@ -148,7 +148,7 @@ In addition to these classes, we also created a whole host of custom wrapper cla
 
 Finally, we have a set of JSFL Commands and native JSFL Tools that are copied to the main Flash folder when Flash starts, along with the main panel instance.
 
-**Note:** if you're interested in the editor above, it's [Komodo IDE](http://www.activestate.com/komodo-ide), the big brother of [Komodo Edit](http://www.xjsfl.com/feature/komodo-edit), the free and open-source IDE from ActiveState, both with full JSFL and xJSFL auto-completion, and publishing functionality, via the [xJSFL extension](http://www.xjsfl.com/support/setup/komodo/xjsfl-extension).
+**Note:** if you're interested in the editor above, it's [Komodo IDE](http://www.activestate.com/komodo-ide), the big brother of [Komodo Edit](https://xjsfl.vercel.app/feature/komodo-edit), the free and open-source IDE from ActiveState, both with full JSFL and xJSFL auto-completion, and publishing functionality, via the [xJSFL extension](https://xjsfl.vercel.app/support/setup/komodo/xjsfl-extension).
 
 ## Development before and after xJSFL
 

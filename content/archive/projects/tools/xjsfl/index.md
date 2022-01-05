@@ -18,24 +18,24 @@ tags:
 media:
   thumbnail: ./images/xjsfl-logo-wide.png
   gallery:
-    - ./screens/xjsfl-screen-01.jpg
-    - ./screens/xjsfl-screen-02.jpg
-    - ./screens/xjsfl-screen-03.jpg
-    - ./screens/xjsfl-screen-04.jpg
-    - ./screens/xjsfl-screen-05.jpg
-    - ./screens/xjsfl-screen-06.jpg
-    - ./screens/xjsfl-screen-07.jpg
-    - ./screens/xjsfl-screen-08.jpg
-    - ./screens/xjsfl-screen-09.jpg
-    - ./screens/xjsfl-screen-10.jpg
-    - ./screens/xjsfl-screen-11.jpg
-    - ./screens/xjsfl-screen-12.jpg
-    - ./screens/xjsfl-screen-13.jpg
-    - ./screens/xjsfl-screen-14.jpg
-    - ./screens/xjsfl-screen-15.jpg
-    - ./screens/xjsfl-screen-16.jpg
-    - ./screens/xjsfl-screen-17.jpg
-    - ./screens/xjsfl-screen-18.jpg
+    - ./screens/index.png
+    - ./screens/features.png
+    - ./screens/case-studies.png
+    - ./screens/snippets-panel.png
+    - ./screens/support.png
+    - ./screens/road-map.png
+    - ./screens/blog.png
+    - ./screens/contact.png
+    - ./screens/download.png
+    - ./screens/ui-builder.png
+    - ./screens/modules.png
+    - ./screens/selectors.png
+    - ./screens/architecture.png
+    - ./screens/extension.png
+    - ./screens/komodo.png
+    - ./screens/debugging.png
+    - ./screens/working-with-elements.png
+    - ./screens/working-with-items.png
 ---
 
 # xJSFL
@@ -46,7 +46,7 @@ xJSFL is an open source JSFL framework for creating tools for the Adobe Flash au
 
 It combines the expressive nature and extensibility of a JavaScript framework like jQuery with the structure and file management features of PHP frameworks such as Kohana, to make working with JSFL easy. Not only that but it comes with the brilliant open source IDE Komodo Edit supporting full JSFL auto-completion, templates, macros, publishing shortcuts and more.
 
-[Click here to get the full framework overview...](http://xjsfl.com/support/guides/framework/xjsfl-overview)
+[Click here to get the full framework overview...](https://xjsfl.vercel.app/support/guides/framework/xjsfl-overview)
 
 ## Who uses xJSFL?
 
@@ -54,11 +54,11 @@ From enterprise-sized companies such as [Zynga](https://zynga.com/), [Disney](ht
 
 ## Features
 
-xJSFL comes [packed with classes, tools, features and best practices](http://xjsfl.com/features) that make using it a no-brainer if you are involved in any kind of Flash content production work. Examples include:
+xJSFL comes [packed with classes, tools, features and best practices](https://xjsfl.vercel.app/features) that make using it a no-brainer if you are involved in any kind of Flash content production work. Examples include:
 
-- [The Snippets panel](http://xjsfl.com/feature/snippets-panel), which makes it easy to manage and launch your day-to-day scripts. Categorise by folder, and customise with icons and tooltips.
-- [Komodo Edit integration](http://xjsfl.com/feature/komodo-edit), with full JSFL auto-complete and many other features to turbo-charge your JSFL development
-- [Selectors and Collections](http://xjsfl.com/feature/selectors-collections), which allow you to specify and manipulate elements in the Flash IDE in so few lines of code, you could swear it was done by magic
+- [The Snippets panel](https://xjsfl.vercel.app/feature/snippets-panel), which makes it easy to manage and launch your day-to-day scripts. Categorise by folder, and customise with icons and tooltips.
+- [Komodo Edit integration](https://xjsfl.vercel.app/feature/komodo-edit), with full JSFL auto-complete and many other features to turbo-charge your JSFL development
+- [Selectors and Collections](https://xjsfl.vercel.app/feature/selectors-collections), which allow you to specify and manipulate elements in the Flash IDE in so few lines of code, you could swear it was done by magic
 
 ## What does xJSFL do?
 
@@ -74,4 +74,5 @@ Designers can use the front-end features of xJSFL, such as the Snippets Panel, t
 
 ## Links
 
-- [xjsfl.com](http://xjsfl.com)
+- [xJSFL](https://xjsfl.vercel.app)
+- [Pocket God Tools](../pocket-god-tools)

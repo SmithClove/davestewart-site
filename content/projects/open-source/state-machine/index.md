@@ -9,7 +9,7 @@ github: davestewart/javascript-state-machine
 media:
   thumbnail: ./images/state-machine-thumb.png
   featured:
-    src: https://statemachine.davestewart.io/
+    src: https://statemachine.netlify.app/
     width: 960
     height: 500
     type: embed
@@ -21,7 +21,7 @@ media:
 
 State Machine is a powerful yet simply-configured state machine.
 
-Its [intuitive](https://statemachine.davestewart.io/html/api/transitions/advanced.html) [yet](https://statemachine.davestewart.io/html/api/transitions/wildcards.html) [powerful](https://statemachine.davestewart.io/html/api/transitions/separators.html) DSL can describe states and transitions succinctly whilst its [JavaScript API](https://statemachine.davestewart.io/html/api/index.html) hooks into transitions with a rich [event syntax](https://statemachine.davestewart.io/html/api/events/interactive.html) to build complex [application flows](https://statemachine.davestewart.io/html/examples/index.html):
+Its [intuitive](https://statemachine.netlify.app/html/api/transitions/advanced.html) [yet](https://statemachine.netlify.app/html/api/transitions/wildcards.html) [powerful](https://statemachine.netlify.app/html/api/transitions/separators.html) DSL can describe states and transitions succinctly whilst its [JavaScript API](https://statemachine.netlify.app/html/api/index.html) hooks into transitions with a rich [event syntax](https://statemachine.netlify.app/html/api/events/interactive.html) to build complex [application flows](https://statemachine.netlify.app/html/examples/index.html):
 
 ```js
 const transitions: [
@@ -32,7 +32,7 @@ const transitions: [
 ]
 ```
 
-The **interactive** demo above shows-off many of StateMachine's features. Visit the [site itself](http://statemachine.davestewart.io) and view the source code directly in the page, or open the console here to see the application log updates as it transitions between states and fires events.
+The **interactive** demo above shows-off many of StateMachine's features. Visit the [site itself](https://statemachine.netlify.app) and view the source code directly in the page, or open the console here to see the application log updates as it transitions between states and fires events.
 
 ## Implementation
 
@@ -71,9 +71,9 @@ const config = {
 const fsm = new StateMachine(config)
 ```
 
-The above is the classic [traffic light](https://statemachine.davestewart.io/html/examples/flows/branching.html) example, with some additional handlers to show off the API.
+The above is the classic [traffic light](https://statemachine.netlify.app/html/examples/flows/branching.html) example, with some additional handlers to show off the API.
 
-The library can be used on its own (as per most of the examples) or with helpers to power [jQuery](https://statemachine.davestewart.io/html/setup/helpers/jquery.html), [Angular](https://statemachine.davestewart.io/html/setup/helpers/object.html) or [Vue](https://statemachine.davestewart.io/html/examples/vue/vue-router.html).
+The library can be used on its own (as per most of the examples) or with helpers to power [jQuery](https://statemachine.netlify.app/html/setup/helpers/jquery.html), [Angular](https://statemachine.netlify.app/html/setup/helpers/object.html) or [Vue](https://statemachine.netlify.app/html/examples/vue/vue-router.html).
 
 ## Thoughts
 
@@ -90,6 +90,6 @@ If I had the time and inclination to continue this project, the main aims would 
 
 ## Links
 
-- [statemachine.davestewart.io](http://statemachine.davestewart.io/)
+- [statemachine.netlify.app](https://statemachine.netlify.app/)
 - [GitHub](https://github.com/davestewart/javascript-state-machine)
 
