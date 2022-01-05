@@ -15,6 +15,7 @@ tags:
   - parsing
   - technical
   - ui
+github: davestewart/xjsfl
 media:
   thumbnail: ./images/xjsfl-logo-wide.png
   gallery:
@@ -74,5 +75,6 @@ Designers can use the front-end features of xJSFL, such as the Snippets Panel, t
 
 ## Links
 
-- [xJSFL](https://xjsfl.vercel.app)
+- [xJSFL](https://github.com/davestewart/xjsfl)
+- [xJSFL Docs](https://xjsfl.vercel.app)
 - [Pocket God Tools](../pocket-god-tools)
