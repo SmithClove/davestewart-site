@@ -27,8 +27,11 @@ module.exports = {
 
     // site
     link('shortcut icon', '/favicon.svg'),
-    script('https://stats.davestewart.co.uk/js/index.js', {
+
+    // analytics
+    script('/stats/js', {
       'data-domain': 'davestewart.co.uk',
+      'data-api': '/stats/api/event',
       async: 1,
       defer: 1,
     })
