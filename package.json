@@ -16,27 +16,29 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "alias-hq": "^5.1.6",
+    "alias-hq": "^5.3.0",
     "node-sass": "^5.0.0",
     "raw-loader": "^4.0.2",
-    "sass-loader": "^10.1.1",
+    "sass-loader": "^10.2.0",
     "traverse": "^0.6.6",
-    "vue-router": "^3.5.1",
+    "vue-router": "^3.5.3",
     "vuepress": "^1.8.2",
     "vuepress-plugin-autometa": "^0.1.13",
     "vuepress-plugin-typescript": "^0.3.1"
   },
   "dependencies": {
     "@cloudfour/simple-svg-placeholder": "^1.0.2",
-    "date-fns": "^2.17.0",
+    "@renovamen/vuepress-plugin-reading-time": "^0.2.1",
+    "date-fns": "^2.27.0",
     "fast-sort": "^2.2.0",
-    "image-size": "^0.9.4",
+    "iframe-resizer": "^4.3.2",
+    "image-size": "^0.9.7",
     "smoothscroll-polyfill": "^0.4.4",
     "throttle-debounce": "^3.0.1",
     "vue-global-events": "^1.2.1",
     "vue-masonry-css": "^1.0.3",
     "vue-slide-up-down": "^2.0.1",
-    "yaml": "^1.10.0"
+    "yaml": "^1.10.2"
   },
   "overrides": {
     "vuepress@1.8.2": {

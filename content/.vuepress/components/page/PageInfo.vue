@@ -1,6 +1,7 @@
 <template>
   <UiControls class="pageInfo">
     <PageDate v-if="date" :date="date" @click="search"/>
+    <PageStats v-if="duration" v-bind="duration"/>
     <Shield v-if="repo" :repo="repo" class="only-lg"/>
     <TagList v-if="tags" :tags="tags" @click="search"/>
   </UiControls>
@@ -20,6 +21,10 @@ export default {
     tags () {
       return this.$fm('tags')
     },
+
+    duration () {
+      return this.$page.readingTime || ''
+    }
   },
 
   methods: {

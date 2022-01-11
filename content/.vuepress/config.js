@@ -89,6 +89,10 @@ module.exports = {
         }
       ]
     }],
+    ['@renovamen/vuepress-plugin-reading-time', {
+      wordsPerMinuteEN: 200,
+      includes: ['/blog/*']
+    }]
   ],
 
   markdown: {

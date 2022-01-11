@@ -18,7 +18,7 @@ media:
 
 A collection of MaxScripts written over an 8 year period for Autodesk's [3dsmax](https://www.autodesk.co.uk/products/3ds-max/overview) which I used both in my own work and sharing with the amazing 3dsmax community:
 
-- check the original posts and comments [here](https://davestewart-io.vercel.app/category/3dsmax) or browse below.
+- check the original posts and comments [here](https://davestewart-io.vercel.app/category/3dsmax) or browse below
 - view the code at [github.com/davestewart/maxscript](https://github.com/davestewart/maxscript)
 
 ## Plugins
