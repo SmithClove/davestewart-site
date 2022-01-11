@@ -17,6 +17,7 @@ media:
 
 Extending applications took a bit more work than web frameworks but was extremely rewarding.
 
+You can see them in my old site [here](https://davestewart-io.vercel.app/all/extensions/) or browse below...
 
 
 ## Extensions

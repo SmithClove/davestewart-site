@@ -36,8 +36,6 @@ Not only that but it's been designed from scratch following best practices and m
 
 If you're a seasoned developer working with real MVC frameworks, this is what you've been waiting for. If you're a WordPress stalwart, or more of a hobby programmer, welcome to a wonderful new world.
 
-It's currently in Beta, and will be launching sometime before the end of 2013. To take part in the Beta test, sign up [here](http://davestewart.polldaddy.com/s/double-o-beta-sign-up).
-
 ## Links
 
 - [double-o.io](https://double-o.io)

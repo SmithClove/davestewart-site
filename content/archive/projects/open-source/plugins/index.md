@@ -19,6 +19,8 @@ Before specialising in Vue JS, I wrote a wide variety of plugins and extensions 
 
 Most of this code is no longer relevant as older frameworks have been superseded by newer ones, and as I don't want to clog up this site unnecessary detail, here's just a summary of what once was. 
 
+You can see them in my old site [here](https://davestewart-io.vercel.app/all/plugins/) or browse below...
+
 ## Frontend
 
 ### jQuery
