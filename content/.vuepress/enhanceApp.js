@@ -25,7 +25,7 @@ import { resolveMeta } from './utils/media.js'
 export default ({ Vue, options, router, siteData, isServer }) => {
   // plugins
   if (!isServer) {
-    Vue.use(VueMasonry)
+    Vue.use(VueMasonry, { name: 'VueMasonry' })
     smoothscroll.polyfill()
     Vue.component('GlobalEvents', GlobalEvents)
   }
