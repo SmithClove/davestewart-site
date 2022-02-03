@@ -24,3 +24,6 @@ Preview
 
 Add folder actions
 
+Drag finder items to Finder dialogs
+
+Workflow Apps, Hacks 'n' Resources: https://workflowy.com/#/96cd13e2278b

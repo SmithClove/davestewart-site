@@ -48,6 +48,13 @@ strong {
   font-weight: 600;
 }
 
+small {
+  font-size: .85em;
+  br + & {
+    vertical-align: top;
+  }
+}
+
 em {
   font-style: italic;
 }
@@ -186,6 +193,10 @@ table {
   margin: 2rem 1rem;
   width: 100%;
 
+  @include sm {
+    margin: 2rem 0;
+  }
+
   thead {
     border-bottom: 1px solid $grey-lightest;
   }
@@ -200,13 +211,22 @@ table {
     font-family: $titleFont;
     color: $accentColor
   }
+
+  td:first-child {
+    white-space: nowrap;
+  }
 }
 
-blockquote {
-  margin: 2rem 0;
+blockquote:not([class]) {
+  margin: 1rem 0;
   padding: 1rem;
   border-radius: 4px;
   background: $codeBg;
+  border-left: 5px solid $grey-lighter;
+
+  p {
+    margin: 0;
+  }
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -256,6 +276,16 @@ a.dimmed:hover {
 
 .accent {
   color: $accentColor;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: .5em;
+  vertical-align: text-bottom;
+  border-radius: 4px;
+  background: #CCCCCC;
 }
 
 .debug,
