@@ -106,11 +106,10 @@ function nest (items, path) {
         pages: nest(items, parent.path),
       }
     })
-    .map(node => {
-      if (node.pages.length === 0) {
-        delete node.pages
-      }
-      return node
+    .filter(node => {
+      return node.type === 'folder'
+        ? node.pages.length > 0
+        : true
     })
     .sort(sortBy('date', 'desc'))
     .sort(sortBy('order'))

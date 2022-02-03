@@ -1,6 +1,4 @@
 // imports
-import Vue from 'vue'
-import VueRouter from 'vue-router'
 import VueMasonry from 'vue-masonry-css'
 import smoothscroll from 'smoothscroll-polyfill'
 import GlobalEvents from 'vue-global-events'
@@ -12,8 +10,10 @@ import './styles/index.scss'
 // helpers
 import { $fm } from './utils/app.js'
 import { makeStore } from './store'
-import { isPublished } from './store/helpers.js'
+import { isPublished, isWithinDays } from './store/helpers.js'
 import { resolveMeta } from './utils/media.js'
+import { isProd } from './utils/config.js'
+import { Status } from './store/status.js'
 
 /**
  * @param {Vue}         Vue       the version of Vue being used in the VuePress app
@@ -33,16 +33,38 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // components
   require('./components')
 
-  // filter drafts
-  siteData.pages
-    .map((page, index) => isPublished(page) ? -1 : index)
-    .reverse()
-    .filter(index => index > -1)
-    .forEach(index => siteData.pages.splice(index, 1))
+  // ensure all pages have a status property
+  siteData.pages.forEach(page => {
+    const fm = page.frontmatter
+    if (!fm.layout && !fm.status) {
+      if (isPublished(page)) {
+        fm.status = isWithinDays(page)
+          ? Status.NEW
+          : Status.PUBLISHED
+      }
+      else {
+        fm.status = Status.DRAFT
+      }
+    }
+  })
+
+  // remove hidden, draft, or unpublished pages dep. on env.
+  const pages = [...siteData.pages]
+  for (const page of pages) {
+    const { status } = page.frontmatter
+    const hidden = status === Status.HIDDEN
+    const hiddenInProd = (status === Status.DRAFT || status === Status.UNPUBLISHED) && isProd
+    if (hidden || hiddenInProd) {
+      console.log(`Removing: [${status}] ${page.title}`)
+      // modify array directly as siteData.pages is read-only
+      const index = siteData.pages.findIndex(p => p === page)
+      siteData.pages.splice(index, 1)
+    }
+  }
 
   // remove headers
   siteData.pages
-    .forEach((page, index) => {
+    .forEach(page => {
       if (page.headers && page.headers.length) {
         page.headers = []
       }

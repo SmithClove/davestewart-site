@@ -1,0 +1,19 @@
+export const Status = {
+  // has a date, is published, and within 30 days of being published
+  NEW: 'new',
+
+  // has a date, is published
+  PUBLISHED: 'published',
+
+  // has a date, but not yet published, so hidden on production
+  UNPUBLISHED: 'unpublished',
+
+  // no date, but visible on production
+  PREVIEW: 'preview',
+
+  // hidden on production, visible in development
+  DRAFT: 'draft',
+
+  // hidden everywhere
+  HIDDEN: 'hidden',
+}

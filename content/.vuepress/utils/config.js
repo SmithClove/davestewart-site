@@ -18,6 +18,7 @@ function plugin (name, options) {
 
 module.exports = {
   isDev: process.env.NODE_ENV !== 'production',
+  isProd: process.env.NODE_ENV === 'production',
   script,
   meta,
   link,

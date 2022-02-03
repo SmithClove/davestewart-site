@@ -1,6 +1,5 @@
 <template>
-  <article class="thumbnailItem">
-
+  <article class="thumbnailItem" :data-status="status">
     <!-- image -->
     <div class="thumbnailItem__image">
       <router-link :to="page.path" draggable="false">
@@ -10,6 +9,10 @@
 
     <!-- content -->
     <div class="thumbnailItem__content">
+      <!-- status -->
+      <span v-if="status" class="thumbnailItem__status">{{ status }}</span>
+
+      <!-- text -->
       <h3 class="thumbnailItem__title">{{ title }}</h3>
       <p v-if="description">{{ description }}</p>
     </div>
@@ -19,6 +22,7 @@
 
 <script>
 import media from '../../media'
+import { Status } from '../../../store/status.js'
 
 export default {
   extends: media('thumbnail'),
@@ -35,6 +39,13 @@ export default {
     description () {
       return this.page.frontmatter.description
     },
+
+    status () {
+      const status = this.page.frontmatter.status
+      return status !== Status.PUBLISHED
+        ? status
+        : ''
+    }
   },
 }
 </script>
@@ -43,6 +54,7 @@ export default {
 @import '../../../styles/variables';
 
 .thumbnailItem {
+  position: relative;
   width: 100%;
   box-sizing: border-box;
   display: inline-block;
@@ -51,7 +63,6 @@ export default {
 
   padding: 0;
   border-radius: 4px;
-  overflow: hidden;
 
   @include shadow-md;
 
@@ -64,6 +75,10 @@ export default {
 
   // stripes for transparent thumbnails
   &__image {
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
     @include md-up {
       background-image: linear-gradient(0deg, #f2f6f8 0%, #FFF 35%);
       a {
@@ -92,6 +107,7 @@ export default {
   }
 
   &__content {
+    position: relative;
     padding: .85rem 1rem 1rem;
     min-height: 4.4rem;
 
@@ -110,7 +126,6 @@ export default {
   }
 
   @include sm {
-    margin-bottom: 20px;
     box-shadow: none;
 
     &__image {
@@ -148,6 +163,45 @@ export default {
     }
   }
 
+}
+
+// status
+.thumbnailItem {
+
+  &__status {
+    position: absolute;
+    right: .4rem;
+    top: .4rem;
+    padding: 0.25rem 0.3rem;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    border-radius: .25rem;
+    background: #CCC;
+    z-index: 1;
+    color: white;
+    box-shadow: 0 .2rem .5rem rgba(0, 0, 30, .2)
+  }
+
+  &__content &__status {
+    top: -9px;
+    right: 9px;
+  }
+
+  &[data-status="draft"] &__status {
+    background: $grey-light;
+  }
+
+  &[data-status="preview"] &__status {
+    background: #abd725;
+  }
+
+  &[data-status="unpublished"] &__status {
+    background: #25a8d7;
+  }
+
+  &[data-status="new"] &__status {
+    background: #f52424;
+  }
 }
 
 .thumbnailItem.shadow {
