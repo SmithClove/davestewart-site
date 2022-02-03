@@ -1,7 +1,6 @@
 ---
-description: An article on understanding why projects invariably take longer and how to get better at estimating
-date: 2021-12-16
-preview: true
+description: A deep dive on why projects always overrun and a framework to improve future estimation
+status: preview
 permalink: /blog/the-work-is-never-just-the-work
 media:
   featured: ./images/estimation-featured.png
