@@ -1,6 +1,6 @@
 <template>
   <div class="pageTree"
-       :data-mode="mode"
+       :data-format="format"
        :data-depth="depth"
        :data-pages="pages.length"
        :data-folders="folders.length"
@@ -19,13 +19,13 @@
                 :path="page.path"
                 :desc="page.desc"
                 :items="page.pages"
-                :mode="mode"
+                :format="format"
                 :depth="depth + 1"
       />
     </div>
 
     <div v-if="pages.length" class="pageTree__pages">
-      <ThumbnailWall v-if="mode === 'image'" :pages="pages"/>
+      <ThumbnailWall v-if="format === 'image'" :pages="pages"/>
       <PageList v-else :pages="pages"/>
     </div>
   </div>
@@ -67,9 +67,10 @@ export default {
       type: Array,
       default: () => [],
     },
-    mode: {
+    format: {
       type: String,
       default: 'image',
+      validator: value => ['image', 'text'].includes(value)
     },
     depth: {
       type: Number,
@@ -150,13 +151,13 @@ export default {
     margin: .5rem 0 0 2rem;
   }
 
-  &[data-mode="image"] &__pages,
-  &[data-mode="image"] &__folders {
+  &[data-format="image"] &__pages,
+  &[data-format="image"] &__folders {
     margin-left: 0;
   }
 
   // for thumbnails, only indent the first level
-  &[data-mode="image"][data-depth="1"] {
+  &[data-format="image"][data-depth="1"] {
     > .pageTree__folders,
     > .pageTree__pages {
       margin-left: 2rem;
@@ -172,7 +173,7 @@ export default {
   }
 
   @include sm {
-    &[data-mode="image"] {
+    &[data-format="image"] {
       .pageTree__folders,
       .pageTree__pages {
         margin-left: 0 !important;

@@ -3,7 +3,6 @@ title: Personal projects
 description: Apps, experiments and investigations
 breadcrumb: Personal
 layout: folder
-format: thumbnails
 order: 2
 ---
 

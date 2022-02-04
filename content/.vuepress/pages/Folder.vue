@@ -7,9 +7,11 @@
     <Content class="pageContent"/>
 
     <!-- folders -->
-    <ThumbnailWall v-if="options.format === 'thumbnails'" :pages="pages"/>
-    <PageTree v-else-if="depth" :items="tree"/>
-    <PageList v-else :pages="pages"/>
+    <PageTree v-if="options.structure === 'tree'" :items="tree" :format="options.format"/>
+    <template v-else>
+      <ThumbnailWall v-if="options.format === 'image'" :pages="pages"/>
+      <PageList v-else :pages="pages"/>
+    </template>
 
     <!-- after -->
     <Content slot-key="after" class="pageContent pageContent--bottom"/>
@@ -22,17 +24,17 @@ import { sortBy } from '../utils/array.js'
 
 export default {
   computed: {
-    depth () {
-      return this.tree.some(item => item.pages)
-    },
-
     options () {
       const options = {
-        format: 'list',
+        structure: 'tree',
+        format: 'image',
         sort: 'frontmatter.date',
         order: 'desc',
       }
-      const format = this.$fm('format')
+      const { structure, format } = this.$page.frontmatter
+      if (structure) {
+        options.structure = structure
+      }
       if (format) {
         options.format = format
       }
