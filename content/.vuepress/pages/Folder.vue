@@ -13,7 +13,7 @@
     </div>
 
     <!-- folders -->
-    <PageTree v-if="options.structure === 'tree'" :items="tree" :format="options.format"/>
+    <PageTree v-if="options.mode === 'tree'" :items="tree" :format="options.format"/>
     <template v-else>
       <ThumbnailWall v-if="options.format === 'image'" :pages="pages"/>
       <PageList v-else :pages="pages"/>
@@ -25,21 +25,21 @@
 </template>
 
 <script>
-import { makeTree } from '../store/tree.js'
+import { makeTree } from '../store/services/tree.js'
 import { sortBy } from '../utils/array.js'
 
 export default {
   computed: {
     options () {
       const options = {
-        structure: 'tree',
+        mode: 'tree',
         format: 'image',
         sort: 'frontmatter.date',
         order: 'desc',
       }
-      const { structure, format } = this.$page.frontmatter
-      if (structure) {
-        options.structure = structure
+      const { mode, format } = this.$page.frontmatter
+      if (mode) {
+        options.mode = mode
       }
       if (format) {
         options.format = format

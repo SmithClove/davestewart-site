@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { Status } from '../../store/status.js'
+import { Status } from '../../store/config/status.js'
 import { isProd } from '../../utils/config.js'
 import SiteIcon from '../site/SiteIcon.vue'
 

@@ -20,7 +20,7 @@
 
 <script>
 import { getValue } from '../utils/object.js'
-import { makeTree } from '../store/tree.js'
+import { makeTree } from '../store/services/tree.js'
 
 export default {
   computed: {

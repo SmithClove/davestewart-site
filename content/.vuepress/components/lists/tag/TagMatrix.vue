@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { tagGroups } from '../../../store/tag-groups.js'
+import { tagGroups } from '../../../store/config/tags.js'
 import TagItem from './TagItem.vue'
 
 const components = ['list', 'groups']

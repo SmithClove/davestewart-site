@@ -1,5 +1,5 @@
-import { makePages, makeTags } from './helpers.js'
-import { makeTree, flattenTree } from './tree.js'
+import { makePages, makeTags } from './services/helpers.js'
+import { makeTree, flattenTree } from './services/tree.js'
 
 export function makeStore (data) {
   const tags = makeTags(data.pages)

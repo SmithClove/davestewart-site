@@ -10,10 +10,14 @@ import './styles/index.scss'
 // helpers
 import { $fm } from './utils/app.js'
 import { makeStore } from './store'
-import { Status } from './store/status.js'
+import { Status } from './store/config/status.js'
 import { resolveMeta } from './utils/media.js'
-import { isWithinDays } from './utils/time.js'
 import { isProd } from './utils/config.js'
+import { Page } from './store/classes/Page.js'
+
+// ---------------------------------------------------------------------------------------------------------------------
+// main function
+// ---------------------------------------------------------------------------------------------------------------------
 
 /**
  * @param {Vue}         Vue       the version of Vue being used in the VuePress app
@@ -33,40 +37,12 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // components
   require('./components')
 
-  // ensure all pages have status and date
-  const today = new Date().toISOString().replace(/T.+?Z/, 'T00:00:00.000Z')
-  siteData.pages.forEach(page => {
-    const { layout, date, hidden, preview } = page.frontmatter
-    // default status
-    page.status = ''
+  // TODO upgrade page data here, rather than on tree nodes
+  //      review all .layout === 'folder'
 
-    // add status to posts (pages without layout)
-    if (!layout) {
-      if (hidden) {
-        page.status = Status.HIDDEN
-      }
-      else if (preview) {
-        page.status = Status.PREVIEW
-      }
-      else if (date) {
-        if (date > today) {
-          page.status = Status.SCHEDULED
-        }
-        else if (isWithinDays(page)) {
-          page.status = Status.NEW
-        }
-      }
-      else {
-        page.status = Status.DRAFT
-      }
-
-      // ensure all pages have date for sorting
-      if (!page.frontmatter.date) {
-        page.frontmatter.date = page.status === Status.PREVIEW
-          ? today.replace('T00', 'T01')
-          : today
-      }
-    }
+  // upgrade pages
+  siteData.pages.forEach((page, index, array) => {
+    array[index] = new Page(page)
   })
 
   // remove hidden, draft, or unpublished pages dep. on env.
@@ -82,23 +58,6 @@ export default ({ Vue, options, router, siteData, isServer }) => {
       siteData.pages.splice(index, 1)
     }
   }
-
-  // set permalink of all blog posts
-  siteData.pages
-    .forEach(page => {
-      if (!page.frontmatter.layout && page.regularPath.startsWith('/blog/') && !page.frontmatter.permalink) {
-        const slug = page.regularPath.replace(/\/$/, '').split('/').pop()
-        page.path = `/blog/${slug}/`
-      }
-    })
-
-  // remove headers
-  siteData.pages
-    .forEach(page => {
-      if (page.headers && page.headers.length) {
-        page.headers = []
-      }
-    })
 
   // update meta tags with compiled images
   const assets = {}

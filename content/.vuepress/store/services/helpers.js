@@ -1,6 +1,6 @@
 import sort from 'fast-sort'
-import { getValue } from '../utils/object.js'
-import { tagGroups } from './tag-groups.js'
+import { getValue } from '../../utils/object.js'
+import { tagGroups } from '../config/tags.js'
 
 export function makeTags (pages) {
   // get tag "other" group
