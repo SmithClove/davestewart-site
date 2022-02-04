@@ -34,6 +34,7 @@
 <script>
 import Vue from 'vue'
 import { getValue } from '../../../utils/object.js'
+import { slugify } from '../../../utils/string.js'
 import PageItem from './PageItem.vue'
 
 const Heading = Vue.component('Heading', {
@@ -80,7 +81,7 @@ export default {
 
   computed: {
     id () {
-      return this.path.replace(/\W+/g, '-').replace(/^-|-$/g, '')
+      return slugify(this.path.replace(this.$page.path, ''))
     },
 
     xdesc () {

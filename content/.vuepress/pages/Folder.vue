@@ -3,8 +3,14 @@
     <h1>{{ $page.title }}</h1>
     <p class="description">{{ $page.frontmatter.description }}</p>
 
-    <!-- text -->
-    <Content class="pageContent"/>
+    <!-- content -->
+    <div class="pageContent">
+      <!-- text -->
+      <Content/>
+
+      <!-- navigation -->
+      <NavToc v-if="$page.frontmatter.toc" :pages="tree" />
+    </div>
 
     <!-- folders -->
     <PageTree v-if="options.structure === 'tree'" :items="tree" :format="options.format"/>

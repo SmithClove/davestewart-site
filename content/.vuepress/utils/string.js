@@ -10,3 +10,7 @@ export function plural (num, word, includeNumber = true) {
 export function capitalize (value = '') {
   return String(value).replace(/\w/, c => c.toUpperCase())
 }
+
+export function slugify (value = '') {
+  return value.replace(/\W+/g, '-').replace(/^-|-$/g, '')
+}
