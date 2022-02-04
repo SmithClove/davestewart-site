@@ -47,7 +47,11 @@ export default {
     },
 
     layout () {
-      return this.$fm('layout') || 'page'
+      const layout = this.$fm('layout')
+      if (layout === 'post') {
+        return 'page'
+      }
+      return layout || 'page'
     },
 
     classes () {

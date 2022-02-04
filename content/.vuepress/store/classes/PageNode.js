@@ -2,20 +2,20 @@ import { toObject } from '../../utils/object.js'
 import { Page } from './Page.js'
 
 /**
- * @property  {Page[]}  children    Any children this page has
+ * @property  {Page[]}  pages    Any children this page has
  */
 export class PageNode extends Page {
   /**
    *
    * @param {Page}      parent
-   * @param {page[]}    [children]
    */
-  constructor (parent, children = []) {
-    super()
-    Object.setPrototypeOf(this, parent)
-    this.pages = children
-    if (children.length) {
-      this.children = children
+  constructor (parent) {
+    super(parent)
+  }
+
+  setPages (pages) {
+    if (Array.isArray(pages) && pages.length) {
+      this.pages = pages
     }
   }
 

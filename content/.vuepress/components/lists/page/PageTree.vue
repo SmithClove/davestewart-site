@@ -93,7 +93,7 @@ export default {
     },
 
     pages () {
-      return this.items.filter(item => item.type === 'page')
+      return this.items.filter(item => item.type !== 'folder')
     },
   },
 }

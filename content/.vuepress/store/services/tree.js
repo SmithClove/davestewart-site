@@ -34,15 +34,18 @@ export function makeTreeOptions () {
 // helpers
 // ---------------------------------------------------------------------------------------------------------------------
 
+/**
+ *
+ * @param   {PageNode[]}  items
+ * @param   {string}      regularPath
+ * @returns {PageNode[]}
+ */
 function nest (items, regularPath) {
   return items
     .filter(item => item.parentPath === regularPath)
     .map(function (parent) {
-      const children = nest(items, parent.regularPath)
-      parent.pages = children
-      if (children && children.length) {
-        parent.children = children
-      }
+      const pages = nest(items, parent.regularPath)
+      parent.setPages(pages)
       return parent
     })
     .filter(node => {
@@ -85,7 +88,7 @@ export function makeTree (pages) {
  */
 export function flattenTree (nodes, pages = []) {
   nodes.forEach(item => {
-    if (item.type === 'page') {
+    if (item.type === 'post') {
       pages.push(item)
     }
     if (item.pages) {

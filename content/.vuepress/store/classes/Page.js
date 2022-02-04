@@ -9,38 +9,37 @@ import { Frontmatter } from './Frontmatter.js'
 // ---------------------------------------------------------------------------------------------------------------------
 
 /**
+ * Set the type of the page so it can be filtered in search, etc
+ *
  * @param {Page}  page
  */
 function setType (page) {
-  page.type = page.frontmatter.layout === 'folder'
-    ? 'folder'
-    : 'page'
+  const layout = page.frontmatter.layout
+  if (layout === 'post' || !layout) {
+    page.type = 'post'
+  }
+  else {
+    page.type = layout === 'folder'
+      ? 'folder'
+      : 'page'
+  }
 }
 
-/**
- * @param {Page}  page
- */
-function setParentPath (page) {
-  const hasMedia = (page.relativePath || '').endsWith('/index.md')
-  const regularPath = page.regularPath
-  page.parentPath = page.type === 'folder'
-    ? slicePath(regularPath, 2)
-    : hasMedia
-      ? slicePath(regularPath, 2)
-      : slicePath(regularPath, 1)
-}
+const today = new Date().toISOString().replace(/T.+?Z/, 'T00:00:00.000Z')
 
 /**
- * @param {Page}  page
+ * Set the page date so it can be sorted chronologcally
+ * @param {Page} page
  */
-function setPermalink (page) {
-  if (!page.frontmatter.layout && page.regularPath.startsWith('/blog/') && !page.frontmatter.permalink) {
-    const slug = page.regularPath.replace(/\/$/, '').split('/').pop()
-    page.path = `/blog/${slug}/`
+function setDate (page) {
+  if (!page.frontmatter.date) {
+    page.frontmatter.date = today
   }
 }
 
 /**
+ * Set the visibility status so it can be omitted from production
+ *
  * @param {Page}  page
  */
 function setStatus (page) {
@@ -55,12 +54,13 @@ function setStatus (page) {
     }
     else if (preview) {
       page.status = Status.PREVIEW
+      page.frontmatter.date = today.replace('T00', 'T01')
     }
     else if (date) {
       if (date > today) {
         page.status = Status.SCHEDULED
       }
-      else if (isWithinDays(page)) {
+      else if (isWithinDays(page.frontmatter.date)) {
         page.status = Status.NEW
       }
     }
@@ -70,18 +70,32 @@ function setStatus (page) {
   }
 }
 
-const today = new Date().toISOString().replace(/T.+?Z/, 'T00:00:00.000Z')
+/**
+ * Optionally set permalinks
+ *
+ * @param {Page}  page
+ */
+function setPermalink (page) {
+  // permalink blog articles to a flat hierarchy
+  if (page.regularPath.startsWith('/blog/') && page.type === 'post' && !page.frontmatter.permalink) {
+    const slug = page.regularPath.replace(/\/$/, '').split('/').pop()
+    page.path = `/blog/${slug}/`
+  }
+}
 
 /**
+ * Set parent path so page can be placed in a hierarchy
  *
- * @param {Page} page
+ * @param {Page}  page
  */
-function setDate (page) {
-  if (!page.frontmatter.date) {
-    page.frontmatter.date = page.status === Status.PREVIEW
-      ? today.replace('T00', 'T01')
-      : today
-  }
+function setParentPath (page) {
+  const hasMedia = (page.relativePath || '').endsWith('/index.md')
+  const regularPath = page.regularPath
+  page.parentPath = page.type === 'folder'
+    ? slicePath(regularPath, 2)
+    : hasMedia
+      ? slicePath(regularPath, 2)
+      : slicePath(regularPath, 1)
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -92,7 +106,7 @@ function setDate (page) {
  * @property  {Frontmatter}   frontmatter
  * @property  {string}        title             Title of the page
  * @property  {string}        path              URL of the page
- * @property  {string}        type              The type of page, can be "folder" or "page"
+ * @property  {string}        type              The type of page, can be "folder", "page" or "post
  * @property  {string}        regularPath       File path to the file's folder
  * @property  {string}        parentPath        File path to the file's parent folder
  * @property  {string}        relativePath      File path to the file
@@ -101,9 +115,13 @@ function setDate (page) {
  * @property  {number}       [order]            The order of the page in any list
  */
 export class Page {
+  /**
+   * Constructor
+   * @param   {object}  [props]   Optional props, as PageNode sets prototype, so doesn't want to overwrite
+   */
   constructor (props = undefined) {
     if (props) {
-      // remove headers
+      // remove headers as they create page anchors
       if (props.headers && props.headers.length) {
         props.headers = []
       }
@@ -115,11 +133,12 @@ export class Page {
       })
 
       // set derived properties
+      // note: order is important as some properties (i.e. status) depend on others (i.e. date)
       setType(this)
-      setParentPath(this)
       setStatus(this)
       setDate(this)
       setPermalink(this)
+      setParentPath(this)
     }
   }
 

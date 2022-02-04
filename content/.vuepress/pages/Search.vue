@@ -274,7 +274,7 @@ export default {
     },
 
     itemsAsList () {
-      return this.filtered.filter(item => item.type === 'page')
+      return this.filtered.filter(item => item.type === 'post')
     },
 
     itemsByYear () {

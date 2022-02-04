@@ -7,6 +7,7 @@
 <script>
 import PageItem from './PageItem.vue'
 import { isDev } from '../../../utils/config.js'
+import { Status } from '../../../store/config/status.js'
 
 export default {
   components: {
@@ -24,8 +25,8 @@ export default {
 
     filtered () {
       return this.pages
-        .filter(page => !page.frontmatter.draft)
-        .filter(page => page.frontmatter.preview ? isDev : true)
+        .filter(page => page.status !== Status.DRAFT)
+        .filter(page => page.status === Status.PREVIEW ? isDev : true)
     }
   }
 }
