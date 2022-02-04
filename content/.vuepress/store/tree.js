@@ -43,7 +43,7 @@ export function makeTreeOptions () {
 class TreeNode {
   static fromPage (page) {
     // variables
-    const { title, frontmatter, path, relativePath } = page
+    const { title, frontmatter, regularPath, relativePath, path, status } = page
     const { date, description, order } = frontmatter
 
     // properties
@@ -53,11 +53,11 @@ class TreeNode {
       : (relativePath || '').endsWith('/index.md')
         ? 'pageFolder'
         : 'page'
-    const parent = type === 'folder'
-      ? slicePath(path, 2)
+    const parentPath = type === 'folder'
+      ? slicePath(regularPath, 2)
       : type === 'pageFolder'
-        ? slicePath(path, 2)
-        : slicePath(path, 1)
+        ? slicePath(regularPath, 2)
+        : slicePath(regularPath, 1)
 
     // data
     const data = {
@@ -67,6 +67,8 @@ class TreeNode {
       title,
       desc: description,
       frontmatter,
+      regularPath,
+      parentPath,
       path,
       regularPath: path,
       parent,
@@ -97,13 +99,13 @@ export function makeTreeNodes (pages) {
   return pages.map(TreeNode.fromPage)
 }
 
-function nest (items, path) {
+function nest (items, regularPath) {
   return items
-    .filter(item => item.parent === path)
+    .filter(item => item.parentPath === regularPath)
     .map(function (parent) {
       return {
         ...parent,
-        pages: nest(items, parent.path),
+        pages: nest(items, parent.regularPath),
       }
     })
     .filter(node => {
@@ -121,9 +123,19 @@ function nest (items, path) {
  * @returns {TreeNode[]}
  */
 export function makeTree (pages) {
-  let nodes = makeTreeNodes(pages)
-  const root = nodes.shift()
-  return nest(nodes, root.path)
+  // convert to tree nodes
+  const nodes = makeTreeNodes(pages)
+
+  // get root (will have the shortest path)
+  const root = nodes.reduce(function (output, input) {
+    return output.regularPath.length < input.regularPath.length ? output : input
+  })
+
+  // remove root from array
+  nodes.splice(nodes.indexOf(root), 1)
+
+  // build structure
+  return nest(nodes, root.regularPath)
 }
 
 export function flattenTree (items, output = []) {

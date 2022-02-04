@@ -62,6 +62,15 @@ export default ({ Vue, options, router, siteData, isServer }) => {
     }
   }
 
+  // set permalink of all blog posts
+  siteData.pages
+    .forEach(page => {
+      if (!page.frontmatter.layout && page.regularPath.startsWith('/blog/') && !page.frontmatter.permalink) {
+        const slug = page.regularPath.replace(/\/$/, '').split('/').pop()
+        page.path = `/blog/${slug}/`
+      }
+    })
+
   // remove headers
   siteData.pages
     .forEach(page => {

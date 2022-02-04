@@ -40,15 +40,16 @@ export default {
     },
 
     filtered () {
-      const path = this.$page.path
-      return this.$site.pages.filter(page => page.path.startsWith(path))
+      const regularPath = this.$page.regularPath
+      return this.$site.pages.filter(page => page.regularPath.startsWith(regularPath))
     },
 
     pages () {
-      const path = this.$page.path
+      const regularPath = this.$page.regularPath
       return this.filtered
-          .filter(page => page.path !== path)
-          .sort(sortBy(this.options.sort, this.options.order))
+        .filter(page => page.regularPath !== regularPath)
+        .filter(page => !page.frontmatter.layout)
+        .sort(sortBy(this.options.sort, this.options.order))
     },
 
     tree () {
