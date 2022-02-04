@@ -30,7 +30,7 @@ export default {
   },
 
   mounted () {
-    if (isProd && this.$page.frontmatter.status === Status.PREVIEW) {
+    if (isProd && this.$page.status === Status.PREVIEW) {
       this.show = true
     }
   }

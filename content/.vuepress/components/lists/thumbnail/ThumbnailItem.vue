@@ -22,7 +22,6 @@
 
 <script>
 import media from '../../media'
-import { Status } from '../../../store/status.js'
 
 export default {
   extends: media('thumbnail'),
@@ -41,10 +40,7 @@ export default {
     },
 
     status () {
-      const status = this.page.frontmatter.status
-      return status !== Status.PUBLISHED
-        ? status
-        : ''
+      return this.page.status
     }
   },
 }
@@ -195,7 +191,7 @@ export default {
     background: #abd725;
   }
 
-  &[data-status="unpublished"] &__status {
+  &[data-status="scheduled"] &__status {
     background: #25a8d7;
   }
 

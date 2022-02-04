@@ -1,8 +1,6 @@
 import sort from 'fast-sort'
 import { getValue } from '../utils/object.js'
 import { tagGroups } from './tag-groups.js'
-import { differenceInDays } from 'date-fns'
-import { Status } from './status.js'
 
 export function makeTags (pages) {
   // get tag "other" group
@@ -48,31 +46,3 @@ export function makePages (pages) {
   return sort(pages).asc('path')
 }
 
-export function isPublished (page) {
-  const { layout, status, date } = page.frontmatter
-
-  // layout
-  if (layout) {
-    return true
-  }
-
-  // draft
-  if (status === Status.DRAFT || status === Status.HIDDEN) {
-    return false
-  }
-
-  // before publish date
-  if (date) {
-    return date < new Date().toISOString()
-  }
-
-  // any other page
-  return false
-}
-
-export function isWithinDays (page, days = 30) {
-  const { date } = page.frontmatter
-  return date
-    ? differenceInDays(new Date(), new Date(date)) < days
-    : false
-}

@@ -1,6 +1,6 @@
 ---
 description: Highly-scripted 3D animation sequence
-status: hidden
+hidden: true
 date: 2006-10-08
 tags:
   - creative

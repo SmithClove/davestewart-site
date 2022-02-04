@@ -6,7 +6,7 @@ export const Status = {
   PUBLISHED: 'published',
 
   // has a date, but not yet published, so hidden on production
-  UNPUBLISHED: 'unpublished',
+  SCHEDULED: 'scheduled',
 
   // no date, but visible on production
   PREVIEW: 'preview',

@@ -35,8 +35,8 @@ export function makeTreeOptions () {
  * @property  {string}  type
  * @property  {string}  title
  * @property  {string}  desc
- * @property  {string}  path
- * @property  {string}  parent
+ * @property  {string}  regularPath
+ * @property  {string}  parentPath
  * @property  {string}  date
  * @property  {number}  order
  */
@@ -70,11 +70,9 @@ class TreeNode {
       regularPath,
       parentPath,
       path,
-      regularPath: path,
-      parent,
-      date,
       // hasMedia: type === 'pageFolder',
       order,
+      status,
     }
 
     // return
@@ -113,7 +111,7 @@ function nest (items, regularPath) {
         ? node.pages.length > 0
         : true
     })
-    .sort(sortBy('date', 'desc'))
+    .sort(sortBy('frontmatter.date', 'desc'))
     .sort(sortBy('order'))
 }
 

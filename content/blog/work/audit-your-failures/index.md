@@ -1,6 +1,6 @@
 ---
 description: Deep-dive your disasters to become more effective in your personal and professional life
-status: draft
+date: 2022-03-01
 ---
 
 # Audit your failures to improve almost anything

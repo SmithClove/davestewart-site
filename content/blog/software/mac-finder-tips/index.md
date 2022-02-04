@@ -1,6 +1,5 @@
 ---
 description: The best known and unknown strategies and tips to make working with the Mac Finder less of a pain
-status: draft
 ---
 
 # Mac Finder tips to move fast and make things

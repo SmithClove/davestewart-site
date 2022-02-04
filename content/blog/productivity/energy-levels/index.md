@@ -1,6 +1,5 @@
 ---
 description: Optimise your productivity by tailoring tasks and effort to your natural energy levels
-status: draft
 ---
 
 # Mirror your body's energy levels to get more done

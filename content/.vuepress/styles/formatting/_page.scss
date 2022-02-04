@@ -217,6 +217,7 @@ table {
   }
 }
 
+// the class modifier is to pick up on markdown
 blockquote:not([class]) {
   margin: 1rem 0;
   padding: 1rem;
@@ -224,8 +225,12 @@ blockquote:not([class]) {
   background: $codeBg;
   border-left: 5px solid $grey-lighter;
 
-  p {
-    // margin: 0;
+  > p:first-child {
+    margin-top: 0;
+  }
+
+  > p:last-child {
+    margin-bottom: 0;
   }
 }
 

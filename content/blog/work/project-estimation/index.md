@@ -1,6 +1,6 @@
 ---
 description: A deep dive on why projects always overrun and a framework to improve future estimation
-status: preview
+preview: true
 permalink: /blog/the-work-is-never-just-the-work
 media:
   featured: ./images/estimation-featured.png

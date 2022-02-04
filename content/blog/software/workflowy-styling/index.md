@@ -1,6 +1,5 @@
 ---
 description: Use styling to reformat standard formatting
-status: draft
 ---
 
 # Upgrade your WorkFlowy formatting with Stylish

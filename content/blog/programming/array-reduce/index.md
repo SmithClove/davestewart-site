@@ -1,6 +1,5 @@
 ---
 description: Leverage this versatile, flexible method to write more expressive, chainable and reusable JavaScript
-status: draft
 ---
 
 # Array.reduce() explained so you'll actually get it

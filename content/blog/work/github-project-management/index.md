@@ -1,6 +1,5 @@
 ---
 description: Use the free GitHub projects tools to work more productively on your personal and side projects
-status: draft
 media:
   images:
     - ./images/github-issues.png

@@ -1,6 +1,5 @@
 ---
 description: Authorisation flow seems complex but a simple analogy can explain it
-status: draft
 ---
 
 # Auth flow explained using a bar analogy

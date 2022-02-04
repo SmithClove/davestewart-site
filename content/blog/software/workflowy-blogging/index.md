@@ -1,6 +1,5 @@
 ---
 description: A sample post to showcase WorkFlowy Writer's formatting conversion
-status: draft
 ---
 
 

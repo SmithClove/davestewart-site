@@ -10,10 +10,10 @@ import './styles/index.scss'
 // helpers
 import { $fm } from './utils/app.js'
 import { makeStore } from './store'
-import { isPublished, isWithinDays } from './store/helpers.js'
-import { resolveMeta } from './utils/media.js'
-import { isProd } from './utils/config.js'
 import { Status } from './store/status.js'
+import { resolveMeta } from './utils/media.js'
+import { isWithinDays } from './utils/time.js'
+import { isProd } from './utils/config.js'
 
 /**
  * @param {Vue}         Vue       the version of Vue being used in the VuePress app
@@ -33,17 +33,38 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // components
   require('./components')
 
-  // ensure all pages have a status property
+  // ensure all pages have status and date
+  const today = new Date().toISOString().replace(/T.+?Z/, 'T00:00:00.000Z')
   siteData.pages.forEach(page => {
-    const fm = page.frontmatter
-    if (!fm.layout && !fm.status) {
-      if (isPublished(page)) {
-        fm.status = isWithinDays(page)
-          ? Status.NEW
-          : Status.PUBLISHED
+    const { layout, date, hidden, preview } = page.frontmatter
+    // default status
+    page.status = ''
+
+    // add status to posts (pages without layout)
+    if (!layout) {
+      if (hidden) {
+        page.status = Status.HIDDEN
+      }
+      else if (preview) {
+        page.status = Status.PREVIEW
+      }
+      else if (date) {
+        if (date > today) {
+          page.status = Status.SCHEDULED
+        }
+        else if (isWithinDays(page)) {
+          page.status = Status.NEW
+        }
       }
       else {
-        fm.status = Status.DRAFT
+        page.status = Status.DRAFT
+      }
+
+      // ensure all pages have date for sorting
+      if (!page.frontmatter.date) {
+        page.frontmatter.date = page.status === Status.PREVIEW
+          ? today.replace('T00', 'T01')
+          : today
       }
     }
   })
@@ -51,9 +72,9 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // remove hidden, draft, or unpublished pages dep. on env.
   const pages = [...siteData.pages]
   for (const page of pages) {
-    const { status } = page.frontmatter
+    const status = page.status
     const hidden = status === Status.HIDDEN
-    const hiddenInProd = (status === Status.DRAFT || status === Status.UNPUBLISHED) && isProd
+    const hiddenInProd = (status === Status.DRAFT || status === Status.SCHEDULED) && isProd
     if (hidden || hiddenInProd) {
       console.log(`Removing: [${status}] ${page.title}`)
       // modify array directly as siteData.pages is read-only
