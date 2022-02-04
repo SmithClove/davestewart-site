@@ -1,59 +1,29 @@
 import { sortBy } from '../../utils/array.js'
 import { PageNode } from '../classes/PageNode.js'
 
-// ---------------------------------------------------------------------------------------------------------------------
-// options
-// ---------------------------------------------------------------------------------------------------------------------
-
-/**
- * Tree sorting options
- *
- * @typedef   {Object}  TreeOptions
- * @property  {string}  include
- * @property  {string}  exclude
- * @property  {string}  sortKey
- * @property  {string}  sortOrder
- * @property  {string}  maxDepth
- */
-
-/**
- *
- * @returns {TreeOptions}
- */
-export function makeTreeOptions () {
-  return {
-    include: '',
-    exclude: '',
-    sortKey: '',
-    sortOrder: '',
-    maxDepth: -1,
-  }
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// helpers
-// ---------------------------------------------------------------------------------------------------------------------
-
-/**
- *
- * @param   {PageNode[]}  items
- * @param   {string}      regularPath
- * @returns {PageNode[]}
- */
 function nest (items, regularPath) {
   return items
+    // return only immediate children
     .filter(item => item.parentPath === regularPath)
+
+    // assign child pages
     .map(function (parent) {
       const pages = nest(items, parent.regularPath)
       parent.setPages(pages)
       return parent
     })
+
+    // only add folders with children (some may be drafts, so excluded from the production build
     .filter(node => {
       return node.type === 'folder'
-        ? node.pages.length > 0
+        ? node.pages?.length > 0
         : true
     })
+
+    // sort by date
     .sort(sortBy('frontmatter.date', 'desc'))
+
+    // soft by order
     .sort(sortBy('order'))
 }
 
