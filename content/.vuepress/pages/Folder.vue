@@ -34,7 +34,7 @@ export default {
       const options = {
         mode: 'tree',
         format: 'image',
-        sort: 'frontmatter.date',
+        sort: 'date',
         order: 'desc',
       }
       const { mode, format } = this.$page.frontmatter

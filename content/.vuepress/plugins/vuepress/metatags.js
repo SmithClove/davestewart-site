@@ -196,6 +196,9 @@ PLUGIN.get_canonical_url = ($page, options) => {
  */
 PLUGIN.get_default_date = ($page, options) => {
   const { frontmatter } = $page
+  if ($page.date) {
+    return $page.date
+  }
   if (frontmatter.date) {
     return frontmatter.date
   }

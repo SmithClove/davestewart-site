@@ -28,12 +28,13 @@ function setType (page) {
 const today = new Date().toISOString().replace(/T.+?Z/, 'T00:00:00.000Z')
 
 /**
- * Set the page date so it can be sorted chronologcally
+ * Set the page date so it can be sorted chronologically
+ *
  * @param {Page} page
  */
 function setDate (page) {
-  if (!page.frontmatter.date) {
-    page.frontmatter.date = today
+  if (!page.date) {
+    page.date = page.frontmatter.date || today
   }
 }
 
@@ -54,13 +55,13 @@ function setStatus (page) {
     }
     else if (preview) {
       page.status = Status.PREVIEW
-      page.frontmatter.date = today.replace('T00', 'T01')
+      page.date = today.replace('T00', 'T01')
     }
     else if (date) {
       if (date > today) {
         page.status = Status.SCHEDULED
       }
-      else if (isWithinDays(page.frontmatter.date)) {
+      else if (isWithinDays(page.date)) {
         page.status = Status.NEW
       }
     }
@@ -105,6 +106,7 @@ function setParentPath (page) {
 /**
  * @property  {Frontmatter}   frontmatter
  * @property  {string}        title             Title of the page
+ * @property  {string}        date              The date the page was published, or today if no date
  * @property  {string}        path              URL of the page
  * @property  {string}        type              The type of page, can be "folder", "page" or "post
  * @property  {string}        regularPath       File path to the file's folder
@@ -135,8 +137,8 @@ export class Page {
       // set derived properties
       // note: order is important as some properties (i.e. status) depend on others (i.e. date)
       setType(this)
-      setStatus(this)
       setDate(this)
+      setStatus(this)
       setPermalink(this)
       setParentPath(this)
     }

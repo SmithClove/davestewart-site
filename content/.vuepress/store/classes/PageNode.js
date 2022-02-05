@@ -11,6 +11,7 @@ export class PageNode extends Page {
    */
   constructor (parent) {
     super(parent)
+    // Object.setPrototypeOf(this, parent)
   }
 
   setPages (pages) {

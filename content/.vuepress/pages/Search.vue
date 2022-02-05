@@ -248,7 +248,7 @@ export default {
       })
 
       // sort by date
-      items = items.sort(sortBy('frontmatter.date', 'desc'))
+      items = items.sort(sortBy('date', 'desc'))
 
       // return
       return items
@@ -279,7 +279,7 @@ export default {
 
     itemsByYear () {
       const items = this.itemsAsList.filter(item => item.regularPath !== '/')
-      return groupBy(items, 'frontmatter.date', date => date && date.substr(0, 4))
+      return groupBy(items, 'date', date => date && date.substr(0, 4))
     },
 
     itemsAsTree () {

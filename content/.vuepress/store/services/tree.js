@@ -21,7 +21,7 @@ function nest (items, regularPath) {
     })
 
     // sort by date
-    .sort(sortBy('frontmatter.date', 'desc'))
+    .sort(sortBy('date', 'desc'))
 
     // soft by order
     .sort(sortBy('order'))
