@@ -2,5 +2,5 @@
 description: Various ways to destructure variables to maintain type safety
 ---
 
-# 6 type-safe ways to destructure in TypeScript
+# 6 terminal tips to make you more productive
 

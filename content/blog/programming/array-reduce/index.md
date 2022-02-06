@@ -1,8 +1,38 @@
 ---
-description: Leverage this versatile, flexible method to write more expressive, chainable and reusable JavaScript
+description: One of the most powerful Array methods, but many developers don't understand it or won't use it
 ---
 
 # Array.reduce() explained so you'll actually get it
+
+
+Things we will cover:
+
+- concept: it hangs on to one value
+  - game power-ups - replace it
+  - basket of fruit - add to it (array: append, object: set property, value: increase)
+- two forms:
+  - first one: for values
+  - second one: for objects
+- naming:
+  - rename to (output, input, index)
+  - or (object, value)
+  - or (prev, next)
+  - or (a, b)
+
+Comparisons:
+
+- loops
+- etc
+
+
+```js
+const values = [1, 2, 5, 4, 8, 6]
+const max = values.reduce((a, b) => a > b ? a : b)
+```
+```js
+const values = [1, 2, 5, 4, 8, 6]
+const sorted = values.sort((a, b) => a < b ? -1 : a > b ? 1 : 0)
+```
 
 ## Intro
 

@@ -50,13 +50,11 @@ It runs a fully custom theme, with feature highlights including:
 
 - **Navigation**: breadcrumb and sibling links with additional keyboard shortcuts
 
-More information about the technology choices, build, technical and creative decisions can be found in the accompanying [blog post](/blog/technical/building-on-vuepress/).
+The site's code can be found on GitHub.
 
 ## Links
 
-- [Building on VuePress](/blog/technical/building-on-vuepress/)
-- [Site features](/help)
-
+- [GitHub](https://github.com/davestewart/davestewart-site)
 
 
 

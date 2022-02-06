@@ -1,10 +1,9 @@
 ---
+title: Profiles
 description: Where to find me online
-date: 2021-03-01
+layout: page
 order: 2
 ---
-
-# Profiles
 
 Social:
 
