@@ -1,5 +1,5 @@
 <template>
-  <article class="thumbnailItem" :data-status="status">
+  <article class="thumbnailItem">
     <!-- image -->
     <div class="thumbnailItem__image">
       <router-link :to="page.path" draggable="false">
@@ -8,11 +8,7 @@
     </div>
 
     <!-- content -->
-    <div class="thumbnailItem__content">
-      <!-- status -->
-      <span v-if="status" class="thumbnailItem__status">{{ status }}</span>
-
-      <!-- text -->
+    <div class="thumbnailItem__content" :data-status="status ? status : undefined">
       <h3 class="thumbnailItem__title">{{ title }}</h3>
       <p v-if="description">{{ description }}</p>
     </div>
@@ -41,7 +37,7 @@ export default {
 
     status () {
       return this.page.status
-    }
+    },
   },
 }
 </script>
@@ -114,6 +110,12 @@ export default {
     }
   }
 
+  &__content[data-status]:after {
+    position: absolute;
+    top: -9px;
+    right: 9px;
+  }
+
   p {
     margin: 0;
     line-height: 1.5;
@@ -161,51 +163,11 @@ export default {
 
 }
 
-// status
-.thumbnailItem {
-
-  &__status {
-    position: absolute;
-    right: .4rem;
-    top: .4rem;
-    padding: 0.25rem 0.3rem;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    border-radius: .25rem;
-    background: #CCC;
-    z-index: 1;
-    color: white;
-    box-shadow: 0 .2rem .5rem rgba(0, 0, 30, .2)
-  }
-
-  &__content &__status {
-    top: -9px;
-    right: 9px;
-  }
-
-  &[data-status="draft"] &__status {
-    background: $grey-light;
-  }
-
-  &[data-status="preview"] &__status {
-    background: #abd725;
-  }
-
-  &[data-status="scheduled"] &__status {
-    background: #25a8d7;
-  }
-
-  &[data-status="new"] &__status {
-    background: #f52424;
-  }
-}
-
 .thumbnailItem.shadow {
-  box-shadow:
-      0 0px 4px rgba(0, 0, 30, .04),
-      0 5px 8px rgba(0, 0, 60, 0.02),
-      0 10px 16px -10px rgba(30, 0, 50, 0.02),
-      0 25px 18px -15px rgba(20, 20, 80, .04);
+  box-shadow: 0 0px 4px rgba(0, 0, 30, .04),
+  0 5px 8px rgba(0, 0, 60, 0.02),
+  0 10px 16px -10px rgba(30, 0, 50, 0.02),
+  0 25px 18px -15px rgba(20, 20, 80, .04);
 }
 
 </style>

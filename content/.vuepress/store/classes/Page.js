@@ -61,7 +61,7 @@ function setStatus (page) {
       if (date > today) {
         page.status = Status.SCHEDULED
       }
-      else if (isWithinDays(page.date)) {
+      else if (isWithinDays(page.date, 90)) {
         page.status = Status.NEW
       }
     }

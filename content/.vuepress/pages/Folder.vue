@@ -37,7 +37,8 @@ export default {
         sort: 'date',
         order: 'desc',
       }
-      const { mode, format } = this.$page.frontmatter
+      const mode = this.$route.query.mode || this.$page.frontmatter.mode
+      const format = this.$route.query.format || this.$page.frontmatter.format
       if (mode) {
         options.mode = mode
       }

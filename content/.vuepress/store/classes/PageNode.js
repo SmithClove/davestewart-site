@@ -2,12 +2,13 @@ import { toObject } from '../../utils/object.js'
 import { Page } from './Page.js'
 
 /**
- * @property  {Page[]}  pages    Any children this page has
+ * @property  {Page[]}  children    Any children this page has
  */
 export class PageNode extends Page {
   /**
    *
    * @param {Page}      parent
+   * @param {page[]}    [children]
    */
   constructor (parent) {
     super(parent)
