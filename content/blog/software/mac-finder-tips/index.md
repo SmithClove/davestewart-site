@@ -42,7 +42,7 @@ Here's what works for me:
 
 - ***Split Finder left / Terminal right***
 
-  As a developer, the Terminal is the yang to the Finder's yin. I like to have both open side by side (on a separate desktop) so I can grab paths from the Finder and user them in Terminal (see below for specific [Developer tips](#developer-tips).
+  As a developer, the Terminal is the yang to the Finder's yin. I like to have both open side by side (on a separate desktop) so I can grab paths from the Finder and user them in Terminal (see below for specific [Developer tips](#developer-tips)).
 
 - ***Use window management software***
 
