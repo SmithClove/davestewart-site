@@ -9,7 +9,7 @@
       <Content/>
 
       <!-- navigation -->
-      <NavToc v-if="$page.frontmatter.toc" :pages="tree" />
+      <NavToc v-if="toc" :headers="headers" :level="toc" />
     </div>
 
     <!-- folders -->
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { makeTree } from '../store/services/tree.js'
+import { makeTree, makeHeaders } from '../store/services/tree.js'
 import { sortBy } from '../utils/array.js'
 
 export default {
@@ -64,6 +64,14 @@ export default {
     tree () {
       return makeTree(this.filtered)
     },
+
+    headers () {
+      return makeHeaders(this.tree, this.$page.title)
+    },
+
+    toc () {
+      return this.$page.frontmatter.toc
+    }
   }
 }
 </script>

@@ -12,5 +12,5 @@ export function capitalize (value = '') {
 }
 
 export function slugify (value = '') {
-  return value.replace(/\W+/g, '-').replace(/^-|-$/g, '')
+  return value.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase()
 }

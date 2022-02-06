@@ -52,8 +52,8 @@ export function makeTree (pages) {
 /**
  * Turns a nested list of PageNodes into a flat list of Pages
  *
- * @param   {PageNode[]}  nodes
- * @param   {PageNode[]}      pages
+ * @param   {PageNode[]}    nodes
+ * @param   {PageNode[]}    pages
  * @returns {PageNode[]}
  */
 export function flattenTree (nodes, pages = []) {
@@ -68,3 +68,23 @@ export function flattenTree (nodes, pages = []) {
   return pages
 }
 
+/**
+ * Converts an existing tree into a VuePress' $page.headers format
+ *
+ * @param   {PageNode[]}    pages
+ * @param   {string}        title
+ * @returns {object[]}                An array of header objects
+ */
+export function makeHeaders (pages, title) {
+  function process (item, level = 1) {
+    if (item.type === 'folder') {
+      output.push({ level, title: item.title, slug: item.title.toLowerCase().replace(/\W+/, '-').replace(/^-|-$/g, '') })
+      if (item.pages) {
+        item.pages.forEach(page => process(page, level + 1))
+      }
+    }
+  }
+  const output = []
+  process({ type: 'folder', title, pages })
+  return output
+}

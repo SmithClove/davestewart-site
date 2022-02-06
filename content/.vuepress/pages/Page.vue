@@ -14,3 +14,21 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.pageContent.is-scheduled {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    content: " ";
+    background: linear-gradient(0deg, white, transparent);
+  }
+}
+</style>

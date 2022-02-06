@@ -123,11 +123,6 @@ export class Page {
    */
   constructor (props = undefined) {
     if (props) {
-      // remove headers as they create page anchors
-      if (props.headers && props.headers.length) {
-        props.headers = []
-      }
-
       // set initial properties
       Object.assign(this, {
         ...props,

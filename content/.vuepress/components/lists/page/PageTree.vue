@@ -8,6 +8,7 @@
     <div v-if="title" class="pageTree__header">
       <Heading :level="depth + 1" class="pageTree__title">
         <a :name="id"></a>
+        <a :name="slug"></a>
         <router-link :to="path">{{ title }}</router-link>
       </Heading>
       <span v-if="desc" class="pageTree__desc">{{ desc }}</span>
@@ -81,6 +82,10 @@ export default {
 
   computed: {
     id () {
+      return slugify(this.title)
+    },
+
+    slug () {
       return slugify(this.path.replace(this.$page.path, ''))
     },
 

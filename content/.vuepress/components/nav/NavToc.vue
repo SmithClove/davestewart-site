@@ -1,28 +1,164 @@
 <template>
-  <p v-if="pages.length > 1" v-html="html"/>
+  <div v-if="items.length > 1"
+       class="navToc"
+       :data-depth="depth"
+       v-html="html"
+  ></div>
 </template>
 
 <script>
-import { slugify } from '../../utils/string.js'
+function split (value) {
+  if (Array.isArray(value)) {
+    return value
+  }
+  if (typeof value === 'string') {
+    return value.split(',').map(value => value.trim())
+  }
+  return [value]
+}
 
 export default {
   props: {
-    pages: {
+    headers: {
       type: Array,
-      default: () =>[]
+      default: () => []
+    },
+
+    // takes a number, or a comma-delimited string of levels, i.e. 2,3,4
+    level: {
+      type: [Number, String],
+      default: 2
+    },
+
+    // takes a string or array of strings of slugs to exclude
+    exclude: {
+      type: [String, Array],
+      default: ''
+    },
+
+    // takes a string that
+    type: {
+      type: String,
+      default: ''
+    },
+
+    // takes a string that
+    prompt: {
+      type: String,
+      default: 'Jump to'
+    },
+  },
+
+  data () {
+    return {
+      items: this.headers,
+      depth: 1,
     }
   },
 
   computed: {
+    options () {
+      const levels = split(this.level).map(level => parseInt(level))
+      const excludes = split(this.exclude)
+      const items = this.items
+        .filter(item => levels.includes(item.level))
+        .filter(item => !excludes.includes(item.slug))
+      const tips = Object.keys(this.$attrs).reduce((output, name) => {
+        if (name.startsWith('tip-')) {
+          output[name.substr(4)] = this.$attrs[name]
+        }
+        return output
+      }, {})
+      return {
+        levels,
+        excludes,
+        items,
+        tips,
+      }
+    },
+
     html () {
-      const links = this.pages.map(page => {
-        const text = page.title.toLowerCase()
-        const href = slugify(page.path.replace(this.$page.path, ''))
-        return `<a href="#${href}">${text}</a>`
-      })
-      const last = links.pop()
-      return `Jump to ${links.join(', ')} or ${last}.`
+      // helpers
+      const makeLink = (item, tip) => {
+        let html = `<a href="#${item.slug}">${item.title}</a>`
+        if (tip) {
+          html += `<br><small>${tip}</small>`
+        }
+        return html
+      }
+
+      // variables
+      const prompt = this.prompt
+      const { levels, items, tips } = this.options
+
+      // generate html
+      if (levels.length) {
+        // set depth
+        this.depth = levels[levels.length - 1] - 1
+
+        // list
+        if (levels.length > 1 || this.type === 'list') {
+          let prev = items[0]
+          let html = '<ul>'
+          for (const item of items) {
+            if (item.level > prev.level) {
+              html += '<ul>'
+            }
+            else if (item.level < prev.level) {
+              html += '</ul>'.repeat(prev.level - item.level)
+            }
+            html += `<li>${makeLink(item, tips[item.slug])}</li>`
+            prev = item
+          }
+          return `<p>${prompt}:</p>${html}`
+        }
+
+        // paragraph
+        else {
+          const links = items.map(item => makeLink(item))
+          const last = links.pop()
+          return `<p>${prompt}: ${links.join(', ')} or ${last}.</p>`
+        }
+      }
+    }
+  },
+
+  mounted () {
+    if (!this.items.length) {
+      this.items = this.$parent?.$page?.headers || []
     }
   }
 }
 </script>
+
+<style lang="scss">
+@import "../../styles/variables";
+
+.navToc {
+  li {
+    margin-bottom: 0;
+  }
+
+  &:not([data-depth="1"]) > ul > li {
+    margin-top: .75em;
+
+    small {
+      color: $grey;
+    }
+
+    a {
+      color: $textColor;
+      font-weight: 700;
+    }
+
+    small {
+      display: block;
+      margin-top: -.15em;
+    }
+  }
+
+  > ul > ul > li {
+    font-size: .85rem;
+  }
+}
+</style>
