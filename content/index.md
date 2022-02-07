@@ -38,7 +38,6 @@ Jump quickly to:
 Feel free to:
 
 - [Search](/search/) the site
-
 - [Contact](/bio/profiles.md) me
 
 Cheers!

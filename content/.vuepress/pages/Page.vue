@@ -5,15 +5,11 @@
     <PageInfo/>
     <PreviewInfo />
     <Content class="pageContent" />
+
+    <!-- comments -->
+    <PageComments websiteId="6366" />
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-  }
-}
-</script>
 
 <style lang="scss">
 .pageContent.is-scheduled {
