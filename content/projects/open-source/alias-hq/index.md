@@ -9,7 +9,7 @@ tags:
 github: davestewart/alias-hq
 media:
   thumbnail: ./images/alias-thumbnail.png
-  featured: ./images/alias-gradient.gif
+  featured: ./images/alias-hq
   gallery:
     - ./images/logo-gradient.png
     - ./images/logo-3d-green.png

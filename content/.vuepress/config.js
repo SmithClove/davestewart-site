@@ -89,7 +89,7 @@ module.exports = {
       image_sources: [
         (page) => {
           const media = page.frontmatter.media
-          const path = getValue(media, 'opengraph.path') || getValue(media, 'thumbnail.path')
+          const path = getValue(media, 'opengraph.path') || getValue(media, 'featured.path') || getValue(media, 'thumbnail.path')
           return path
             ? page.regularPath + path.replace(/\.\//, '')
             : '/assets/img/site-preview.png'

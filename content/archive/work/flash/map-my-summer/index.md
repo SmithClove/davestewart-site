@@ -20,7 +20,6 @@ tags:
 hero: gallery
 media:
   thumbnail: ./images/map-my-summer-fwa-square.jpg
-  featured: ./images/map-my-summer-post-01.jpg
   gallery:
     - ./screens/mms-splash.jpg
     - ./screens/mms-map-clusters.jpg
