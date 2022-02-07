@@ -9,15 +9,20 @@
         <li>could I have made any points better, or quicker?</li>
         <li>what would you change?</li>
       </ul>
-      <p>Message me on <a href="https://twitter.com/messages/compose?recipient_id=16294165">Twitter</a> or ping me an <a href="mailto:dave@davestewart.co.uk">email</a>.</p>
+      <p>Let me know via <a href="https://twitter.com/messages/compose?recipient_id=16294165">Twitter</a>.</p>
       <p>Thanks!</p>
-      <p>:D</p>
+      <p><SiteIcon class="accent"/></p>
     </blockquote>
   </div>
 </template>
 
 <script>
+import { Status } from '../../store/config/status.js'
+import { isProd } from '../../utils/config.js'
+import SiteIcon from '../site/SiteIcon.vue'
+
 export default {
+  components: { SiteIcon },
   data () {
     return {
       show: false
@@ -25,7 +30,7 @@ export default {
   },
 
   mounted () {
-    if (this.$page.frontmatter.preview && window.location.host.includes('davestewart')) {
+    if (isProd && this.$page.status === Status.PREVIEW) {
       this.show = true
     }
   }

@@ -1,6 +1,5 @@
 <template>
   <article class="thumbnailItem">
-
     <!-- image -->
     <div class="thumbnailItem__image">
       <router-link :to="page.path" draggable="false">
@@ -9,10 +8,8 @@
     </div>
 
     <!-- content -->
-    <div class="thumbnailItem__content">
-      <h3 class="thumbnailItem__title">
-        {{ title }}
-      </h3>
+    <div class="thumbnailItem__content" :data-status="status ? status : undefined">
+      <h3 class="thumbnailItem__title">{{ title }}</h3>
       <p v-if="description">{{ description }}</p>
     </div>
 
@@ -37,6 +34,10 @@ export default {
     description () {
       return this.page.frontmatter.description
     },
+
+    status () {
+      return this.page.status
+    },
   },
 }
 </script>
@@ -45,6 +46,7 @@ export default {
 @import '../../../styles/variables';
 
 .thumbnailItem {
+  position: relative;
   width: 100%;
   box-sizing: border-box;
   display: inline-block;
@@ -53,7 +55,6 @@ export default {
 
   padding: 0;
   border-radius: 4px;
-  overflow: hidden;
 
   @include shadow-md;
 
@@ -66,6 +67,10 @@ export default {
 
   // stripes for transparent thumbnails
   &__image {
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
     @include md-up {
       background-image: linear-gradient(0deg, #f2f6f8 0%, #FFF 35%);
       a {
@@ -94,6 +99,7 @@ export default {
   }
 
   &__content {
+    position: relative;
     padding: .85rem 1rem 1rem;
     min-height: 4.4rem;
 
@@ -104,6 +110,12 @@ export default {
     }
   }
 
+  &__content[data-status]:after {
+    position: absolute;
+    top: -9px;
+    right: 9px;
+  }
+
   p {
     margin: 0;
     line-height: 1.5;
@@ -112,7 +124,6 @@ export default {
   }
 
   @include sm {
-    margin-bottom: 20px;
     box-shadow: none;
 
     &__image {
@@ -153,11 +164,10 @@ export default {
 }
 
 .thumbnailItem.shadow {
-  box-shadow:
-      0 0px 4px rgba(0, 0, 30, .04),
-      0 5px 8px rgba(0, 0, 60, 0.02),
-      0 10px 16px -10px rgba(30, 0, 50, 0.02),
-      0 25px 18px -15px rgba(20, 20, 80, .04);
+  box-shadow: 0 0px 4px rgba(0, 0, 30, .04),
+  0 5px 8px rgba(0, 0, 60, 0.02),
+  0 10px 16px -10px rgba(30, 0, 50, 0.02),
+  0 25px 18px -15px rgba(20, 20, 80, .04);
 }
 
 </style>

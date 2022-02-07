@@ -1,7 +1,6 @@
 ---
 description: Bill management application for flat sharers
 date: 2012-02-05
-order: 1
 tags:
   - frontend
   - backend

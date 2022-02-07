@@ -1,9 +1,9 @@
 ---
+title: Profiles
 description: Where to find me online
+layout: page
 order: 2
 ---
-
-# Profiles
 
 Social:
 

@@ -1,6 +1,6 @@
 import sort from 'fast-sort'
-import { getValue } from '../utils/object.js'
-import { tagGroups } from './tag-groups.js'
+import { getValue } from '../../utils/object.js'
+import { tagGroups } from '../config/tags.js'
 
 export function makeTags (pages) {
   // get tag "other" group
@@ -46,13 +46,3 @@ export function makePages (pages) {
   return sort(pages).asc('path')
 }
 
-export function isPublished (page) {
-  const { draft, date } = page.frontmatter
-  if (draft) {
-    return false
-  }
-  if (date) {
-    return date < new Date().toISOString()
-  }
-  return true
-}

@@ -1,6 +1,5 @@
 ---
-description: Authorisation flow seems complex and but a simple analogy can explain it
-draft: true
+description: Authorisation flow seems complex but a simple analogy can explain it
 ---
 
 # Auth flow explained using a bar analogy

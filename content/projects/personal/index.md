@@ -2,7 +2,6 @@
 title: Personal
 description: Personal development and creative endeavours
 layout: folder
-format: thumbnails
 order: 3
 ---
 

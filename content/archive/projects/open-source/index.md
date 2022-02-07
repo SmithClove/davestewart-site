@@ -3,7 +3,6 @@ title: Open Source
 description: Ongoing Open Source releases for various software packages
 breadcrumb: Open Source
 layout: folder
-format: thumbnails
 order: 4
 ---
 

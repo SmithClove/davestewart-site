@@ -1,4 +1,4 @@
-const { isEmpty } = require('./assert.js')
+const { isEmpty, isPlainObject } = require('./assert.js')
 
 function getValue (target, path) {
   const props = path.split('.')
@@ -25,9 +25,22 @@ function clone (value) {
   return JSON.parse(JSON.stringify(value))
 }
 
+function toObject (input) {
+  const output = {}
+  for (let key in input) {
+    if (typeof input[key] !== 'function') {
+      output[key] = isPlainObject(input[key])
+        ? toObject(input[key])
+        : input[key]
+    }
+  }
+  return output
+}
+
 module.exports = {
   getValue,
   merge,
   clean,
   clone,
+  toObject,
 }

@@ -1,6 +1,6 @@
 <template>
   <nav class="pageSiblings">
-    <div class="layout__inner" v-if="index > -1">
+    <div class="layout__inner" v-show="index > -1">
       <!-- prev -->
       <div v-if="prev" class="pageSiblings__prev">
         <span class="arrow"></span>
@@ -39,6 +39,13 @@ export default {
       return this.index > -1
         ? this.$store.sorted[this.index + 1]
         : null
+    },
+
+    parent () {
+      const page = this.$store.pages.find(page => page.regularPath === this.$page.parentPath)
+      if (page) {
+        return page
+      }
     }
   },
 
@@ -52,13 +59,16 @@ export default {
     },
 
     onKeyDown (event) {
-      const { shift, meta, alt, ctrl, left, right } = getKeys(event)
+      const { shift, meta, alt, ctrl, left, right, up } = getKeys(event)
       if (shift && !meta && !alt && !ctrl) {
         if (left && this.prev) {
           this.$router.push(this.prev.path)
         }
         else if (right && this.next) {
           this.$router.push(this.next.path)
+        }
+        else if (up && this.parent) {
+          this.$router.push(this.parent.path)
         }
       }
     }

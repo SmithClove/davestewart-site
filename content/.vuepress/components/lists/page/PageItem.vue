@@ -1,6 +1,8 @@
 <template>
   <li class="pageItem">
-    <router-link :to="page.path" class="pageItem__title">{{ page.title }}</router-link>
+    <span class="pageItem__title" :data-status="page.status ? page.status : undefined">
+      <router-link :to="page.path">{{ page.title }}</router-link>
+    </span>
     <span v-if="desc" class="pageItem__desc">{{ desc }}</span>
   </li>
 </template>
@@ -41,6 +43,13 @@ export default {
     &:focus {
       padding: 2px 6px;
       margin: -2px -6px;
+    }
+
+    &[data-status]:after {
+      position: relative;
+      left: .75em;
+      top: -.75em;
+      font-size: .55em;
     }
   }
 

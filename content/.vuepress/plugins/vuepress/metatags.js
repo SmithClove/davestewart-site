@@ -196,6 +196,9 @@ PLUGIN.get_canonical_url = ($page, options) => {
  */
 PLUGIN.get_default_date = ($page, options) => {
   const { frontmatter } = $page
+  if ($page.date) {
+    return $page.date
+  }
   if (frontmatter.date) {
     return frontmatter.date
   }
@@ -248,7 +251,10 @@ PLUGIN.get_default_description = ($page, options) => {
 
     switch (source) {
       case 'frontmatter':
-        if ($page.frontmatter.description) {
+        if ($page.frontmatter.autometa?.description) {
+          found = $page.frontmatter.autometa.description
+        }
+        else if ($page.frontmatter.description) {
           found = $page.frontmatter.description
         }
         break
@@ -575,7 +581,7 @@ module.exports = (plugin_options, context) => ({
     const default_values = {
       title: PLUGIN.get_default_title($page, options),
       date: PLUGIN.get_default_date($page, options),
-      description: frontmatter.description,
+      description: frontmatter?.autometa?.description || frontmatter.description,
       image_url: PLUGIN.get_default_image_url($page, options),
       canonical_url: PLUGIN.get_canonical_url($page, options),
       author: PLUGIN.get_default_author($page, options),

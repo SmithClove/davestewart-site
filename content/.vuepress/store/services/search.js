@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { storage } from '../utils/storage.js'
+import { storage } from '../../utils/storage.js'
 
 function makeQuery () {
   return {

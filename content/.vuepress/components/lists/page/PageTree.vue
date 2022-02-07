@@ -1,6 +1,6 @@
 <template>
   <div class="pageTree"
-       :data-mode="mode"
+       :data-format="format"
        :data-depth="depth"
        :data-pages="pages.length"
        :data-folders="folders.length"
@@ -8,6 +8,7 @@
     <div v-if="title" class="pageTree__header">
       <Heading :level="depth + 1" class="pageTree__title">
         <a :name="id"></a>
+        <a :name="slug"></a>
         <router-link :to="path">{{ title }}</router-link>
       </Heading>
       <span v-if="desc" class="pageTree__desc">{{ desc }}</span>
@@ -19,13 +20,13 @@
                 :path="page.path"
                 :desc="page.desc"
                 :items="page.pages"
-                :mode="mode"
+                :format="format"
                 :depth="depth + 1"
       />
     </div>
 
     <div v-if="pages.length" class="pageTree__pages">
-      <ThumbnailWall v-if="mode === 'image'" :pages="pages"/>
+      <ThumbnailWall v-if="format === 'image'" :pages="pages"/>
       <PageList v-else :pages="pages"/>
     </div>
   </div>
@@ -34,6 +35,7 @@
 <script>
 import Vue from 'vue'
 import { getValue } from '../../../utils/object.js'
+import { slugify } from '../../../utils/string.js'
 import PageItem from './PageItem.vue'
 
 const Heading = Vue.component('Heading', {
@@ -67,9 +69,10 @@ export default {
       type: Array,
       default: () => [],
     },
-    mode: {
+    format: {
       type: String,
       default: 'image',
+      validator: value => ['image', 'text'].includes(value)
     },
     depth: {
       type: Number,
@@ -79,7 +82,11 @@ export default {
 
   computed: {
     id () {
-      return this.path.replace(/\W+/g, '-').replace(/^-|-$/g, '')
+      return slugify(this.title)
+    },
+
+    slug () {
+      return slugify(this.path.replace(this.$page.path, ''))
     },
 
     xdesc () {
@@ -91,7 +98,7 @@ export default {
     },
 
     pages () {
-      return this.items.filter(item => item.type === 'page')
+      return this.items.filter(item => item.type !== 'folder')
     },
   },
 }
@@ -150,13 +157,13 @@ export default {
     margin: .5rem 0 0 2rem;
   }
 
-  &[data-mode="image"] &__pages,
-  &[data-mode="image"] &__folders {
+  &[data-format="image"] &__pages,
+  &[data-format="image"] &__folders {
     margin-left: 0;
   }
 
   // for thumbnails, only indent the first level
-  &[data-mode="image"][data-depth="1"] {
+  &[data-format="image"][data-depth="1"] {
     > .pageTree__folders,
     > .pageTree__pages {
       margin-left: 2rem;
@@ -172,7 +179,7 @@ export default {
   }
 
   @include sm {
-    &[data-mode="image"] {
+    &[data-format="image"] {
       .pageTree__folders,
       .pageTree__pages {
         margin-left: 0 !important;

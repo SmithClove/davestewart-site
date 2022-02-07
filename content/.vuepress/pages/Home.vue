@@ -20,7 +20,7 @@
 
 <script>
 import { getValue } from '../utils/object.js'
-import { makeTree } from '../store/tree.js'
+import { makeTree } from '../store/services/tree.js'
 
 export default {
   computed: {
@@ -29,9 +29,21 @@ export default {
     },
 
     thumbnails () {
-      return this.$site.pages.filter(page => {
-        return !!getValue(page, 'frontmatter.media.thumbnail')
-      })
+      return this.$site.pages
+        .filter(page => getValue(page, 'frontmatter.media.thumbnail'))
+    },
+
+    branches () {
+      const found = []
+      return this.$store.sorted
+        .reduce((output, input) => {
+          const path = input.parentPath
+          if (!found.includes(path)) {
+            output.push(input)
+            found.push(path)
+          }
+          return output
+        }, [])
     }
   }
 }

@@ -1,8 +1,9 @@
 ---
+slug: the-wrong-kind-of-democracy
 description: A comparison of the 2015 election results with FPTP vs PR
 date: 2015-05-10
 media:
-  thumbnail: ./images/election-featured-large.png
+  thumbnail: ./images/election-thumb.png
   featured: ./images/election-featured-large.png
 ---
 

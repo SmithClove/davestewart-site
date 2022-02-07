@@ -67,12 +67,12 @@
             />
           </div>
 
-          <!-- view -->
-          <div class="searchControls__view">
+          <!-- format -->
+          <div class="searchControls__format">
             <UiRadio
-                name="view"
-                :options="options.view"
-                v-model="query.view"
+                name="format"
+                :options="options.format"
+                v-model="query.format"
             />
           </div>
 
@@ -101,13 +101,13 @@
 
         <!-- by date -->
         <div v-if="query.sort === 'date'" class="search__date">
-          <div v-for="group in itemsByYear" class="pageTree" :data-mode="query.view">
+          <div v-for="group in itemsByYear" class="pageTree" :data-mode="query.format">
             <div class="pageTree__header">
               <a :name="group.title"></a>
               <h2 class="pageTree__title">{{ group.title }}</h2>
             </div>
             <div class="pageTree__pages">
-              <ThumbnailWall v-if="query.view === 'image'" :pages="group.items"/>
+              <ThumbnailWall v-if="query.format === 'image'" :pages="group.items"/>
               <PageList v-else :pages="group.items"/>
             </div>
           </div>
@@ -115,7 +115,7 @@
 
         <!-- by folder -->
         <div v-else-if="query.sort === 'path'" class="search__tree">
-          <PageTree :mode="query.view" :items="itemsAsTree"/>
+          <PageTree :format="query.format" :items="itemsAsTree"/>
         </div>
 
         <!-- thumbnails -->
@@ -139,7 +139,7 @@ import { getNavigation, isChar, isInput, navigateLinks, stopEvent } from '../uti
 import { isClient, isDesktop, isMobile } from '../utils/env.js'
 import { groupBy, sortBy } from '../utils/array.js'
 import { getElements} from '../utils/dom.js';
-import { makeTree } from '../store/tree.js'
+import { makeTree } from '../store/services/tree.js'
 import { storage } from '../utils/storage.js'
 import { plural } from '../utils/string.js'
 import { clone } from '../utils/object.js'
@@ -182,15 +182,23 @@ function makeQuery () {
 
     filter: 'off',
     sort: 'date',
-    view: 'text',
+    format: 'text',
 
     path: '',
     year: '',
   }
 }
 
-export default {
+const paths = {
+  searchable: [
+    '/archive/',
+    '/products/',
+    '/projects/',
+    '/work/',
+  ]
+}
 
+export default {
   components: {
     SlideUpDown,
   },
@@ -222,7 +230,7 @@ export default {
       options: {
         filter: ['off', 'list', 'groups'],
         sort: ['date', 'path'],
-        view: ['text', 'image'],
+        format: ['text', 'image'],
         showTags: query.filter !== 'off',
       },
     }
@@ -234,11 +242,13 @@ export default {
       let items = this.$store.pages
 
       // skip bio and blog
-      const rxFilter = new RegExp('^/(blog|bio)/')
-      items = items.filter(item => !rxFilter.test(item.regularPath))
+      items = items.filter(item => {
+        const regularPath = item.regularPath
+        return regularPath === '/' || paths.searchable.some(path => regularPath.startsWith(path))
+      })
 
       // sort by date
-      items = items.sort(sortBy('frontmatter.date', 'desc'))
+      items = items.sort(sortBy('date', 'desc'))
 
       // return
       return items
@@ -263,13 +273,13 @@ export default {
       return items
     },
 
-    itemsByYear () {
-      return groupBy(this.filtered, 'frontmatter.date', date => date && date.substr(0, 4))
+    itemsAsList () {
+      return this.filtered.filter(item => item.type === 'post')
     },
 
-    itemsAsList () {
-      // FIXME find a better way to determine page
-      return this.filtered.filter(item => !!item.headers)
+    itemsByYear () {
+      const items = this.itemsAsList.filter(item => item.regularPath !== '/')
+      return groupBy(items, 'date', date => date && date.substr(0, 4))
     },
 
     itemsAsTree () {
@@ -412,7 +422,7 @@ export default {
       storage.set('search', {
         filter: this.query.filter,
         sort: this.query.sort,
-        view: this.query.view,
+        format: this.query.format,
       })
     },
 

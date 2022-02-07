@@ -1,4 +1,4 @@
-
+import { differenceInDays } from 'date-fns'
 
 export function timeAgo (time) {
   const template = function (t, n) {
@@ -64,4 +64,10 @@ export function getVisitTime (timestamp, relative) {
   return relative
     ? timeAgo(timestamp)
     : new Date(timestamp).toISOString().substr(0, 19).replace(/[TZ]/g, ' ')
+}
+
+export function isWithinDays (date, days = 30) {
+  return date
+    ? differenceInDays(new Date(), new Date(date)) < days
+    : false
 }

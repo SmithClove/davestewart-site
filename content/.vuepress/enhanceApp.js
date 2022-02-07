@@ -1,6 +1,4 @@
 // imports
-import Vue from 'vue'
-import VueRouter from 'vue-router'
 import VueMasonry from 'vue-masonry-css'
 import smoothscroll from 'smoothscroll-polyfill'
 import GlobalEvents from 'vue-global-events'
@@ -12,8 +10,14 @@ import './styles/index.scss'
 // helpers
 import { $fm } from './utils/app.js'
 import { makeStore } from './store'
-import { isPublished } from './store/helpers.js'
+import { Status } from './store/config/status.js'
 import { resolveMeta } from './utils/media.js'
+import { isProd } from './utils/config.js'
+import { Page } from './store/classes/Page.js'
+
+// ---------------------------------------------------------------------------------------------------------------------
+// main function
+// ---------------------------------------------------------------------------------------------------------------------
 
 /**
  * @param {Vue}         Vue       the version of Vue being used in the VuePress app
@@ -25,7 +29,7 @@ import { resolveMeta } from './utils/media.js'
 export default ({ Vue, options, router, siteData, isServer }) => {
   // plugins
   if (!isServer) {
-    Vue.use(VueMasonry)
+    Vue.use(VueMasonry, { name: 'VueMasonry' })
     smoothscroll.polyfill()
     Vue.component('GlobalEvents', GlobalEvents)
   }
@@ -33,20 +37,27 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // components
   require('./components')
 
-  // filter drafts
-  siteData.pages
-    .map((page, index) => isPublished(page) ? -1 : index)
-    .reverse()
-    .filter(index => index > -1)
-    .forEach(index => siteData.pages.splice(index, 1))
+  // TODO upgrade page data here, rather than on tree nodes
+  //      review all .layout === 'folder'
 
-  // remove headers
-  siteData.pages
-    .forEach((page, index) => {
-      if (page.headers && page.headers.length) {
-        page.headers = []
-      }
-    })
+  // upgrade pages
+  siteData.pages.forEach((page, index, array) => {
+    array[index] = new Page(page)
+  })
+
+  // remove hidden, draft, or unpublished pages dep. on env.
+  const pages = [...siteData.pages]
+  for (const page of pages) {
+    const status = page.status
+    const hidden = status === Status.HIDDEN
+    const hiddenInProd = (status === Status.DRAFT || status === Status.SCHEDULED) && isProd
+    if (hidden || hiddenInProd) {
+      console.log(`Removing: [${status}] ${page.title}`)
+      // modify array directly as siteData.pages is read-only
+      const index = siteData.pages.findIndex(p => p === page)
+      siteData.pages.splice(index, 1)
+    }
+  }
 
   // update meta tags with compiled images
   const assets = {}

@@ -13,7 +13,7 @@ media:
   thumbnail: ./images/cs-thumb.png
   featured: ./images/cs-splash.png
   video:
-    src: https://www.youtube.com/embed/HaDJuB5ODnY
+    src: https://youtube.com/embed/HaDJuB5ODnY
     width: 560
     height: 315
   gallery:
