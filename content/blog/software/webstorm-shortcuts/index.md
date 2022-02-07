@@ -16,29 +16,46 @@ WorkFlowy is the most powerful web development IDE there is. If you want to matc
 
 ### Selection
 
-Selection
+Mouse selection
+
+- `Alt` + `drag` vertically - select multiple blocks or starts/ends of lines
+- `Alt` + `double-click` - select multiple words
+
+Keyboard selection
 
 - `Alt` + `Up`/`Down` - expand / reduce selection hierarchy
-- `Alt` + `drag` vertically - select multiple blocks or starts/ends of lines
-- `Alt` + `double-click` - multiple selection
 - `Ctrl` + `G` - select next same word (forward)
 - `Ctrl` + `Shift` + `G` - deselect next same word (backward)
+
+Modifications once selected
+
+- Type `< ( { [  " '` - wrap the word with the corresponding pair, i.e. hit `[` to get `[selection]`
 
 Multi-caret operations (video [here](https://www.youtube.com/watch?v=PIqBf7Ekjgk))
 
 - _Start typing to modify text on all lines_
 - `Arrow` keys to move carets around
 - `Home` / `End` - jump to home / end on all lines
-- `Cmd` + `C` - copy ranges
-- `Cmd` + `V` - paste into / over ranges`
 - `Delete` - pull all lines onto one line
 - `Esc` / `Click` - clear selection
 
-Modifications once selected
+Clipboard functionality
 
-- Type `< ( { [  " '` - wrap the word with the corresponding pair, i.e. hit `[` to get `[selection]`
+- _You can get real creative with multi-caret selection!_
+- `Cmd` + `C` - copy text / ranges
+- `Cmd` + `V` - paste into / over ranges
 
 ### Modification
+
+Move text
+
+- `Alt` + `Shift` + `Up`/`Down` - move line up / down
+- `Cmd` + `Shift` + `Up`/`Down` - move block (statement, element) up / down
+
+Formatting
+
+- `Cmd` + `Alt` + `L` - reformat code
+- `Cmd` + `Shift` + `U` - toggle case
 
 Whole-line modification
 
@@ -47,16 +64,6 @@ Whole-line modification
 - `Cmd` + `X` - cut whole line
 - `Cmd` + `D` - duplicate selection / line
 - `Cmd` + `Backspace` - Delete whole line
-
-Move text
-
-- `Cmd` + `Alt` + `Up`/`Down` - move selection/line up/down
-- `Cmd` + `Shift` + `Up`/`Down` - move statement (function, tag block) up/down
-
-Formatting
-
-- `Cmd` + `Alt` + `L` - reformat code
-- `Cmd` + `Shift` + `U` - toggle case
 
 ## Assistance
 
