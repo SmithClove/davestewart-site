@@ -1,12 +1,12 @@
 ---
-description: How to write expressive, destructured, and type-safe variable declarations  
+description: Destructure raw JSON whilst automatically adding type information
 date: 2021-11-01
 media:
   thumbnail: ./thumbnail.png
   featured: ./featured.png
 ---
 
-# 5 ways to make incoming JSON type-safe
+# 7 code-style variations for strongly-typed JSON
 
 ## Intro
 
@@ -59,7 +59,17 @@ The rest of the article will demonstrate various code-style combinations to safe
 
 ## Code
 
-The most basic way is to explicitly declare new variables:
+The naive way would be to assign types manually:
+
+```ts
+function process (data: any) {
+  const id: number = data.id
+  const name: string = data.name
+  const contact: any = data.contact
+}
+```
+
+But we can do better than that, as we've already have some type information:
 
 ```ts
 function process (data: any) {
@@ -77,7 +87,7 @@ function process (data: any) {
 }
 ```
 
-But we could leverage of our existing `User` type by simplify using that:
+But we're duplicating effort, as we could leverage our existing `User` type:
 
 ```ts
 function process (data: any) {
@@ -85,7 +95,7 @@ function process (data: any) {
 }
 ```
 
-Moving it to the parameter makes for one less step:
+Moving the type to the parameter makes for one less step:
 
 ```ts
 function process (user: User) {
@@ -93,7 +103,15 @@ function process (user: User) {
 }
 ```
 
-If there's some reason you can't type the parameter, you can use the keyword `as` to aid the destructure: 
+We can even destructure within the parameter!
+
+```ts
+function process ({ id, name, contact }: User) {
+  // ...
+}
+```
+
+If there's some reason you can't type the parameter, you can `as` to [assert](https://basarat.gitbook.io/typescript/type-system/type-assertion) before you destructure: 
 
 ```ts
 function process (data: any) {
@@ -101,7 +119,7 @@ function process (data: any) {
 }
 ```
 
-If you're passing directly to a function that expects a `User` type, you can [assert](https://basarat.gitbook.io/typescript/type-system/type-assertion) the value directly in call: 
+If you're passing to a function that expects a `User` type, you can assert inline within the call: 
 
 ```ts
 process(data as User)
@@ -109,6 +127,6 @@ process(data as User)
 
 ## Conclusion
 
-ES6 destructuring and TypeScript types make a great combination, and TypeScript's compiler is flexible enough that there's multiple, flexible ways to skin the destructuring cat.
+ES6 destructuring and TypeScript types make a great combination, and TypeScript's compiler is flexible enough that there's multiple ways to type values with a terse and expressive style.
 
 I hope you learned something!

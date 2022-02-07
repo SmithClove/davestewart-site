@@ -6,16 +6,16 @@ media:
   thumbnail: ./mac-finder.svg
 ---
 
-# 25 Finder tips & tricks to speed up your workflow
+# 25 Finder tactics & tips to speed up your workflow
 
 ## Intro
 
 The Mac Finder is strangely named, as to actually _find_ things Apple invented Spotlight, perhaps acknowledging that as a piece of software, it has its shortcomings (ironically, as too does Spotlight!).
 
-However, there are some hidden gems and tricks which make it suck _a lot_ less, so read on and I'll share this buried treasure with you.
+However, there are some hidden gems which make it bearable, so read on and I'll share this buried treasure with you.
 
 
-## Strategies
+## Tactics
 
 Coming from Windows with its File Explorer, to Mac with its Finder, was especially galling; it took me years to accept Apple's way of doing things and develop strategies to make managing files on the Mac not a total freaking shit show.
 
@@ -49,7 +49,7 @@ Here's what works for me:
 
   Although Mac OS has gained some tiling tools of late, it uses the somewhat clumsy full screen mode. Instead, use an app like [Spectacle](https://www.spectacleapp.com/) or [Moom](https://manytricks.com/moom/) so you can put those windows in their place.
 
-## The tips
+## Tips
 
 A couple of the items below you will find by trawling the Finder menus, but most you will not. I found most of these out through trial and error, or over the years via seasoned Mac users.
 
@@ -79,6 +79,8 @@ You may know some, but I'm guessing there's at least a few you won't!
 
   - `Cmd` + `Up` / `Down` to move up / down a folder level
   - `Cmd` + `Down` on a file to open it
+  
+  This is especially useful in Open / Save dialogs!
 
 - ***View / navigate to ancestor folder***
 
@@ -162,6 +164,12 @@ You may already know some of these.
 - ***Use the Inspector as live "Get info"***
 
   `Right Click` any Finder item, hold `Opt` and choose Show Inspector to get instant information on subsequent selections.
+
+- ***Preview file content***
+
+  - Hit `Space` to pop up a window with the file's content
+  - Hit `Opt` + `Space` to start a slideshow
+  - Use `Left` / `Right` to cycle through files
 
 - ***Paste files to other applications***
 

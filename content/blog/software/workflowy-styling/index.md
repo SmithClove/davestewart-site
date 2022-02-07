@@ -26,7 +26,7 @@ Additionally:
 
 ### End result
 
-As you can see, the end result is quite impressive – for a hack!
+Once installed and set up, WorkFlowy can look like this:
 
 <img src="./workflowy-highlight.gif" style="max-width: 350px">
 
@@ -93,14 +93,38 @@ More advanced effects can (though almost certainly shouldn't!) be added using mo
 }
 ```
 
+## Setting up Stylish
+
+Install from the [Chrome WebStore](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe) then open [WorkFlowy](https://workflowy.com).
+
+On the extension's Action button in the toolbar (or in the extensions dropdown):
+
+- Click the icon to show the popup
+- Click the 3-dots at the top
+- Click "Create New Style"
+
+In the page that appears:
+
+- Paste the CSS code above into the "Code" panel
+- In the "Applies" section, click "Specify"
+- Change "URL" to "URLs on the domain"
+- Type "workflowy.com" (without the quotes) in the next field
+
+To finish:
+
+- Hit `Cmd` + `S` to save
+- Close the tab
+
+Then start underlining!
+
 ## Addendum
 
-#### Edit: September 2021
+#### September 2021
 
-WorkFlowy has released [native highlighting](https://blog.workflowy.com/text-and-tag-colors-are-now-available/) so this hack is no longer needed... though the convenience of using system shortcut keys is not to be underestimated, and some people continue to use it.
+WorkFlowy has released [native highlighting](https://blog.workflowy.com/text-and-tag-colors-are-now-available/) so this hack is no longer needed... though the convenience of using system shortcut keys (you can also use `Shift`+`Cmd`+`H`) is not to be underestimated!
 
 
-#### Edit: January 2022
+#### January 2022
 
 A new project I'm working on takes the idea of hacking WorkFlowy formatting to **a whole new level** by turning WorkFlowy into a [Markdown-compatible word processor](https://twitter.com/dave_stewart/status/1484911995698745347).
 

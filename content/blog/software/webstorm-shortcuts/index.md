@@ -16,48 +16,61 @@ WorkFlowy is the most powerful web development IDE there is. If you want to matc
 
 ### Selection
 
-Mouse selection
+Words
 
-- `Alt` + `drag` vertically - select multiple blocks or starts/ends of lines
 - `Alt` + `double-click` - select multiple words
-
-Keyboard selection
-
-- `Alt` + `Up`/`Down` - expand / reduce selection hierarchy
 - `Ctrl` + `G` - select next same word (forward)
 - `Ctrl` + `Shift` + `G` - deselect next same word (backward)
+- _Note: renaming an opening / closing HTML / JSX / XML tag will rename its corresponding pair_
 
-Modifications once selected
+Regions
 
-- Type `< ( { [  " '` - wrap the word with the corresponding pair, i.e. hit `[` to get `[selection]`
+- `Alt` + `Up`/`Down` - expand / reduce selection bounds
+- `Alt` + `drag` vertically - select multiple blocks or starts/ends of lines
 
 Multi-caret operations (video [here](https://www.youtube.com/watch?v=PIqBf7Ekjgk))
 
 - _Start typing to modify text on all lines_
-- `Arrow` keys to move carets around
+- `Arrow` keys - move carets
+- `Enter` - add carriage returns
+- `Delete` - remove text
 - `Home` / `End` - jump to home / end on all lines
-- `Delete` - pull all lines onto one line
 - `Esc` / `Click` - clear selection
 
-Clipboard functionality
+Modifications once selected
 
-- _You can get real creative with multi-caret selection!_
+- Type `< ( { [  " '` - wrap with the corresponding pair, i.e. hit `[` to get `[selection]`
+
+### Clipboard
+
+Multi-caret / range
+
 - `Cmd` + `C` - copy text / ranges
 - `Cmd` + `V` - paste into / over ranges
+- _You can get real creative in combination with cursor and multi-selection!_
+
+Multi-clipboard
+
+- `Cmd` + `Shift` + `V` - paste recent (shows popup)
 
 ### Modification
-
-Move text
-
-- `Alt` + `Shift` + `Up`/`Down` - move line up / down
-- `Cmd` + `Shift` + `Up`/`Down` - move block (statement, element) up / down
 
 Formatting
 
 - `Cmd` + `Alt` + `L` - reformat code
 - `Cmd` + `Shift` + `U` - toggle case
 
-Whole-line modification
+Commenting
+
+- `Cmd` + `/` - Inline comment / uncomment
+- `Cmd` + `Shift` + `/` - Block comment / uncomment
+
+Move lines
+
+- `Alt` + `Shift` + `Up`/`Down` - move line up / down
+- `Cmd` + `Shift` + `Up`/`Down` - move block (statement, element) up / down
+
+Modify lines
 
 - _Place caret anywhere within line then_
 - `Cmd` + `C` - copy whole line
@@ -72,8 +85,8 @@ Whole-line modification
 Coding assistance
 
 - `Cmd` + `P` - show function parameters
-- `Alt` + `Enter` - Show intentions
 - `Ctrl` + `Space` - show completions
+- `Alt` + `Enter` - Show intentions
 
 Refactoring
 
@@ -81,14 +94,15 @@ Refactoring
 - `Shift` + `F6` - Rename file / namespace / function / variable
 - `Cmd` + `Alt` + `V` (then `Up` / `Down`) - Extract variable
 - `Cmd` + `Alt` + `C` (then `Up` / `Down`) - Extract constant
-- `Ctrl` + `T` - Refactor this... (all these commands and more)
+- `Ctrl` + `T` - Refactor this... _(all these commands and more)_
 
 ### Code generation
 
 Live templates
 
 - `Cmd` + `J` - show available templates, then `Tab` to insert
-- Or simply type template key (i.e. `forin`) + `Tab` - add template with placeholders 
+- Or simply type template key (i.e. `forin`) + `Tab` - add template with placeholders
+  - Use `Tab` to jump between placeholders
 - _See all, enable / disable, or add your own via `Cmd` + `,` + type `live`_
 
 Postfix completion
@@ -97,13 +111,19 @@ Postfix completion
 - Type `.if` + `Tab` - convert expression to `if (<text>) { ... }`
 - _See all, enable / disable, or add your own via `Cmd` + `,` + type `postfix`_
 
+HTML
+
+- Valid Emmet + `Tab` - generate tags using Emmet
+  - Use `Enter` to jump between placeholders
+- `Cmd` + `Alt` + `T` > `T` - surround with tag _(then type tag name to fill in)_
+
 ## Navigation
 
 ### Editor
 
 Code / Markup
 
-- _Works in JavaScript, HTML, CSS, anywhere, and across domains! Pretty-much everything is clickable_ 
+- _Works in JavaScript, HTML, CSS, anywhere, and across domains!_ 
 - `Cmd` + `Click` symbol name - go to declaration
 - `Cmd` + `Click` declaration - see all usages
 
@@ -122,7 +142,7 @@ Files
 Windows
 
 - `Cmd` + `E` - show recently opened files
-- `Alt` + `F1` - go to current file in... (project, explorer, changes, browser, etc)
+- `Alt` + `F1` - go to current file in... _(project, explorer, changes, browser, etc)_
 - `Ctrl` + `Tab` - quick-switch editor panes
 
 ### Text
@@ -135,7 +155,7 @@ Find text in project
 
 Find in project / application
 
-- `Shift` + `Shift` - Find anything (files, classes, shortcuts, preferences, etc)
+- `Shift` + `Shift` - Find anything _(files, classes, shortcuts, preferences, etc)_
 - `Cmd` + `Shift` + `A` - find action
 - `Cmd` + `Alt` + `O` - find symbol
 - `Cmd` + `O` - find class
