@@ -9,6 +9,7 @@
         <p>Try these links:</p>
         <ul>
           <li><router-link :to="`/search?text=${ path }`">Search for: "{{ path }}"</router-link></li>
+          <li><router-link :to="parent">The parent page</router-link></li>
           <li><router-link to="/">Home page</router-link></li>
           <li><router-link to="/bio">Bio</router-link></li>
         </ul>
@@ -31,6 +32,10 @@ export default {
         .filter(page => page.frontmatter.media)
         .sort(() => Math.random() > .5 ? 1 : -2)
         .slice(0, 3)
+    },
+
+    parent () {
+      return this.$route.path.replace(/[^/]+\/?$/, '')
     },
 
     path () {

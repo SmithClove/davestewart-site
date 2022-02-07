@@ -6,7 +6,7 @@ media:
   featured: ./featured.png
 ---
 
-# 5 methods for typing complex raw data
+# 5 ways to make incoming JSON type-safe
 
 ## Intro
 
@@ -14,7 +14,7 @@ I don't know about you, but I like my JSON data to get _typed_ as soon as possib
 
 Whether I wrap it, assign it or destructure it, it's great to be able to see properties pop up as you type.
 
-Whilst exploring ways to do this, I've been consistently surprised how flexible TypeScript's compiler can be – especially in regard to destructuring – so a while ago I started noting what works.
+Whilst exploring ways to do this, I've been consistently surprised how flexible TypeScript's compiler can be – especially in regard to destructuring – so a while ago I started noting the various ways to do it.
 
 
 ## Dataset
