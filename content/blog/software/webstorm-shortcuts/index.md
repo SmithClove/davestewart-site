@@ -1,5 +1,6 @@
 ---
 description: Everyday WebStorm keyboard shortcuts to make you more productive
+date: 2022-02-07
 media:
   thumbnail: webstorm.png
   featured: webstorm.png
@@ -7,21 +8,21 @@ media:
 
 # WebStorm shortcuts for lightning productivity
 
+WorkFlowy is the most powerful web development IDE there is. If you want to match power with speed get your hands on WebStorm's powerful and intuitive keyboard shortcuts.
+
+<NavToc />
+
 ## Editing
 
 ### Selection
 
 Selection
 
+- `Alt` + `Up`/`Down` - expand / reduce selection hierarchy
+- `Alt` + `drag` vertically - select multiple blocks or starts/ends of lines
+- `Alt` + `double-click` - multiple selection
 - `Ctrl` + `G` - select next same word (forward)
 - `Ctrl` + `Shift` + `G` - deselect next same word (backward)
-- `Alt` + `double-click` - multiple selection
-- `Alt` + `drag` vertically - select multiple blocks or starts/ends of lines
-- `Alt` + `Up`/`Down` - expand / reduce selection hierarchy
-
-Modifications once selected
-
-- Type `< ( { [  " '` - wrap the word with the corresponding pair, i.e. hit `[` to get `[selection]`
 
 Multi-caret operations (video [here](https://www.youtube.com/watch?v=PIqBf7Ekjgk))
 
@@ -32,6 +33,10 @@ Multi-caret operations (video [here](https://www.youtube.com/watch?v=PIqBf7Ekjgk
 - `Cmd` + `V` - paste into / over ranges`
 - `Delete` - pull all lines onto one line
 - `Esc` / `Click` - clear selection
+
+Modifications once selected
+
+- Type `< ( { [  " '` - wrap the word with the corresponding pair, i.e. hit `[` to get `[selection]`
 
 ### Modification
 
@@ -47,6 +52,11 @@ Move text
 
 - `Cmd` + `Alt` + `Up`/`Down` - move selection/line up/down
 - `Cmd` + `Shift` + `Up`/`Down` - move statement (function, tag block) up/down
+
+Formatting
+
+- `Cmd` + `Alt` + `L` - reformat code
+- `Cmd` + `Shift` + `U` - toggle case
 
 ## Assistance
 
@@ -79,11 +89,6 @@ Postfix completion
 - Type `.log` + `Tab` - convert expression to `console.log(<expr>)` 
 - Type `.if` + `Tab` - convert expression to `if (<text>) { ... }`
 - _See all, enable / disable, or add your own via `Cmd` + `,` + type `postfix`_
-
-Formatting
-
-- `Cmd` + `Alt` + `L` - reformat code
-- `Cmd` + `Shift` + `U` - toggle case
 
 ## Navigation
 
@@ -143,3 +148,40 @@ Preferences
 
 - `Cmd` + `,` - Show preferences dialog
 - Type anything - find preference
+
+## Touchbar
+
+### Custom touchbar icons
+
+For touchbar Macs, unfortunately it's impossible to use the F-keys mentioned above, so instead you can configure touchbar icons and use the touchbar instead:
+
+<img src="./touchbar.png" style="margin-left: 1rem; max-width: 700px;">
+
+Download the icons here:
+
+- [touchbar-icons.zip](https://github.com/davestewart/davestewart-site/tree/main/content/blog/software/webstorm-shortcuts/touchbar-icons.zip)
+
+Thanks to [Iconscout](https://iconscout.com/unicons/explore/line) for their excellent free icons which let me get started with this.
+
+### Configuration
+
+<img src="./touchbar-config.png" style="margin-left: 1rem; max-width: 270px;">
+
+To add the icons:
+
+- Go to **Preferences** > **Appearance & Behavior** > **Menus and Toolbars**
+- Choose **Touch bar** > **Default**
+- Click the `+` button
+- Choose which actions to add
+
+Once done:
+
+- Select each action individually
+- Click the `Edit` icon in the toolbar
+- Pick the appropriate icon from your hard disk 
+
+### Debugger touchbar bug
+
+Because of a bug in WebStorm, if you use the Node Debugger, the debugger touchbar overrides the default touchbar, hiding the project shortcuts.
+
+To fix this, go to the preferences, and simply delete the touchbar folder. Don't worry! The debugger controls are easily available via the main Debugger UI.

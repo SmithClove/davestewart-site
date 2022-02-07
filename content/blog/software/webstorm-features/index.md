@@ -9,9 +9,15 @@ media:
 
 ## Intro
 
-WebStorm is without doubt the most powerful web development IDE there is. Yes, many people like VSCode, and whilst it has some great features, a comparison between a text editor and an IDE is like comparing `console.log()` to opening the DevTools panel.
+WebStorm is without doubt the most powerful web development IDE there is.
+
+In recent year's MicroSoft's VSCode has taken the limelight for a variety of reasons; it's free, it's customisable, it has an incredible team behind it, as well as a thriving ecosystem and community.
+
+However, whilst VSCode is certainly "good enough" for most straight coding tasks, comparing a text editor to an IDE is like comparing `console.log()` to the DevTools panel. As such, I'm going to take you through WebStorm's standout features which VSCode either can't compete with – or simply doesn't have. 
 
 See my other article on WebStorm's [keyboard shortcuts](/blog/webstorm-shortcuts/) to get the complete lowdown on using WebStorm to transform your experience of writing, running and debugging your code and applications.
+
+<NavToc type="list" />
 
 ## Editing
 

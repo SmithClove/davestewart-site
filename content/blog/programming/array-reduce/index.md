@@ -13,6 +13,9 @@ Things we will cover:
 - two forms:
   - first one: for values
   - second one: for objects
+- function:
+  - named: easier to understand (has a name, can be reused)
+  - inline: more flexible for everyday code (will probably be only used once)
 - naming:
   - rename to (output, input, index)
   - or (object, value)
@@ -32,6 +35,22 @@ const max = values.reduce((a, b) => a > b ? a : b)
 ```js
 const values = [1, 2, 5, 4, 8, 6]
 const sorted = values.sort((a, b) => a < b ? -1 : a > b ? 1 : 0)
+```
+
+```js
+const items = [
+  { value: 1.25 },
+  { value: 2.50 },
+  { value: 3.75 }
+]
+
+const total = items.map(item => item.value).reduce((a, b) => a + b)
+
+const desc = items.map(item => item.value).sort((a, b) => b - a)
+
+const asc = items.map(item => item.value).sort((a, b) => a - b)
+
+console.log({ total, desc, asc })
 ```
 
 ## Intro

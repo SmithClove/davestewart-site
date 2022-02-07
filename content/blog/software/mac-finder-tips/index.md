@@ -1,11 +1,12 @@
 ---
 description: The best lesser-known strategies and tips to make working with the Mac Finder less of a pain
+date: 2022-02-01
 media:
   featured: ./mac-finder.svg
   thumbnail: ./mac-finder.svg
 ---
 
-# Hidden Finder features which make it suck less
+# 25 Finder tips & tricks to make it suck less
 
 ## Intro
 
@@ -69,9 +70,13 @@ You may know some, but I'm guessing there's at least a few you won't!
 
 - ***Navigate using the keyboard***
 
-  Whilst you probably know to use `Arrows` to move the focus, use:
+  In **List** mode, move the focus with:
 
-  - `Cmd` + `Left`/`Right` to toggle open / close folders
+  - `Up`/`Down` to move through the visible folders
+  - `Left`/`Right` to open closed / close open folders
+  
+  In all modes:
+
   - `Cmd` + `Up` / `Down` to move up / down a folder level
   - `Cmd` + `Down` on a file to open it
 
@@ -83,14 +88,6 @@ You may know some, but I'm guessing there's at least a few you won't!
 
   `Cmd` + `[` / `]` to go back / forward. Alternatively, `Long press` the **"Back"** or **"Forward"** buttons to reveal the history of folders you have visited, and `Click` any folder to navigate to it.
 
-- ***Use spring-loaded folders***
-
-  You can `Drag` files or folders onto other folders and pause for a split second to reveal the content of that folder. You can continue to do this to any depth, then:
-
-  - `Drop` the item to move (hold `Opt` to copy)
-  - `Drag` the folder outside of the Finder window to return to the original folder
-  - Hit `Esc` to cancel the operation
-
 ### File operations
 
 - ***Move (vs copy) files***
@@ -100,6 +97,14 @@ You may know some, but I'm guessing there's at least a few you won't!
 - ***View additional menu options***
 
   Wherever a file or context menu is shown, hold `Opt` and optionally `Shift` to display additional menu options.
+
+- ***Use spring-loaded folders***
+
+  You can `Drag` files or folders onto other folders and pause for a split second to reveal the content of that folder. You can continue to do this to any depth, then:
+
+  - `Drop` the item to move (hold `Opt` to copy)
+  - `Drag` the folder outside of the Finder window to return to the original folder
+  - Hit `Esc` to cancel the operation
 
 - ***Batch rename files***
 
@@ -132,6 +137,8 @@ You may know some, but I'm guessing there's at least a few you won't!
 
 ### Managing windows
 
+This should work in _all_ applications.
+
 - ***Cycle through windows***
 
   Hit `Cmd` + `` ` `` / `Cmd` + `Shift` + `` ` `` to cycle to the next / previous application window.
@@ -162,6 +169,9 @@ You may already know some of these.
 
   - in text editors, it will paste the path
   - in Photoshop, it will paste a high resolution image of the icon
-  - in WebStorm, it will copy a PNG file of the icon
+  - in WebStorm:
+    - in the project tree, it will copy the file
+    - in a Markdown document, it will copy a PNG file of the icon and insert the path
   - in Keynote or Word, it will paste the file's content directly into the document
-  - in other apps, who knows!? Experiment to find out
+
+  In other apps, who knows!? It's not as consistent as Windows, so experiment to find out.

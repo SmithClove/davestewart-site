@@ -1,5 +1,5 @@
 ---
-title: Tools + frameworks
+title: Tools & frameworks
 description: Larger, self-contained tools, mainly for developers
 breadcrumb: Tools
 layout: folder

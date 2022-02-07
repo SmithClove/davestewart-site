@@ -1,5 +1,6 @@
 ---
 description: Use styling to reformat standard formatting
+date: 2021-06-01
 media:
   thumbnail: ./workflowy-highlight-thumb.png
 ---

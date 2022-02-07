@@ -13,10 +13,26 @@ This article is not a rehash of existing productivity methodologies you will hav
 
 What this article is, is a list of small changes I've made in the last few years **that** have worked to conquer some of my worst habits and allowed me to get much more out of my day.
 
-## Contents
+## How to read this article
 
-There's about 80 tips in this article, and they are ***coloured red***. You can just read them if you want, and read the notes on the ones that resonate with you. 
+There's over 100 individual tips in this article; here are a few ways to get the most out of it:
 
+- read the whole thing, top to bottom
+- read only the tips (sections are **bold** and titles are ***red***)
+- stop to read the text of a tip only when it resonates with you
+- jump directly to a section via the table of contents (below)
+
+<NavToc level="2,3"
+        exclude="preamble,how-to-read-this-article"
+        _tip-work="Stay on top of your work with actual work productivity tips"
+        _tip-momentum="Techniques to use to get and keep yourself in the game"
+        _tip-effectiveness="Some additional tips to be effective in what you do"
+        _tip-distractions="How to handle the inevitable human nature of wanting to take the easy route"
+        _tip-environment="What I've found works to provide a conducive space to stay focused on the work"
+        _tip-routine="The day is your framework on which every"
+        />
+
+<!--
 Click below to jump in:
 
   - [Work](#work)<br>
@@ -37,6 +53,7 @@ Click below to jump in:
   - [Routine](#routine)<br>
     <small>The day is your framework on which every
     </small>
+-->
 
 ## Context
 
@@ -50,11 +67,11 @@ The other thing to note is that I believe being productive has its foundations i
 
 To provide a little context before we get started, my situation is:
 
-  - I'm a long-term freelance web developer, now Indie Hacker
-  - I work full-time from home on one main project and occasional side / client work
-  - I have my own flat, with enough funds to live comfortably
-  - I'm a single guy, with no kids or major commitments
-  - I'm writing this article for past me, present me and future me.
+- I'm a long-term freelance web developer, now Indie Hacker
+- I work full-time from home on one main project and occasional side / client work
+- I have my own flat, with enough funds to live comfortably
+- I'm a single guy, with no kids or major commitments
+- I'm writing this article for past me, present me and future me.
 
 I hope – even if your situation is different from mine – that most of the tips are useful to you.
 

@@ -1,6 +1,5 @@
 ---
 description: Deep-dive your disasters to become more effective in your personal and professional life
-date: 2022-03-01
 ---
 
 # Audit your failures to improve almost anything
@@ -16,12 +15,20 @@ date: 2022-03-01
 
 ## What to audit
 
+The known knowns:
+
 - project overruns
 - bad timekeeping
 - lack of progress
 - a bad habit
 - lack of skill
 - shyness
+
+But what about the unknown unknowns:
+
+- what makes you angry
+- where do you see others getting ahead where you're not?
+
 
 ## Investigation techniques
 
