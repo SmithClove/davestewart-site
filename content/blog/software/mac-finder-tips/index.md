@@ -1,5 +1,5 @@
 ---
-description: A bunch of lesser-known strategies and tips to make working with the Mac Finder less of a pain
+description: Well-worn strategies and hidden gems to make using the Mac Finder less of a drag
 date: 2022-02-01
 media:
   featured: ./mac-finder.png
@@ -17,7 +17,7 @@ However, there are some hidden gems which make it bearable, so read on and I'll 
 
 ## Tactics
 
-Coming from Windows with its File Explorer, to Mac with its Finder, was especially galling; it took me years to accept Apple's way of doing things and develop strategies to make managing files on the Mac not a total freaking shit show.
+Coming from Windows with its File Explorer, to Mac with its Finder, was especially galling; it took me years to accept Apple's way of doing things and develop strategies to make managing files on the Mac not a bit of a shit show.
 
 Here's what works for me:
 
@@ -37,8 +37,8 @@ Here's what works for me:
 
   The Finder's **"List"** view is the closest thing the Mac has to Windows Explorer, so it's easiest to set it as the default view. To do this:
 
-  - go **View** > **List** (or `Cmd` + `2`)
-  - go **View** > **Show View Options** (or `Cmd` + `J`)
+  - Go **View** > **List** (or `Cmd` + `2`)
+  - Go **View** > **Show View Options** (or `Cmd` + `J`)
   - Click **Use as Defaults**
 
 - ***Split Finder left / Terminal right***
@@ -110,14 +110,11 @@ You may know some, but I'm guessing there's at least a few you won't!
 
 - ***Batch rename files***
 
-  Select multiple files then `Right Click` and choose **"Rename..."**. A dialog will appear with options to rename the selected files by:
+  You can batch rename files by **replacing** text, **adding** text, or using a **custom format**:
 
-  - Replacing text
-  - Adding text
-  - Using a custom format:
-    - Name and index
-    - Name and counter
-    - Name and date
+  - Select _multiple_ files
+  - `Right Click` and choose **"Rename..."** 
+  - In the popup that appears, choose your options then click **"Rename"**
 
 ### Developer tips
 
@@ -143,7 +140,7 @@ This should work in _all_ applications.
 
 - ***Cycle through windows***
 
-  Hit `Cmd` + `` ` `` / `Cmd` + `Shift` + `` ` `` to cycle to the next / previous application window.
+  `Cmd` + `` ` `` / `Cmd` + `Shift` + `` ` `` to cycle to the next / previous application window.
 
 - ***Merge all windows***
 
