@@ -1,5 +1,5 @@
 ---
-description: One of the most powerful Array methods, but many developers don't understand it or won't use it
+description: Write better, more expressive code with JS's most mis-understood method
 ---
 
 # Array.reduce() explained so you'll actually get it

@@ -1,5 +1,5 @@
 ---
-description: Learn how to use
+description: Learn the essential WebStorm features to make web application development easier, faster and funner
 media:
   thumbnail: webstorm.png
   featured: webstorm.png
