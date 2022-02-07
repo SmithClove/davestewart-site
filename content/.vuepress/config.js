@@ -41,6 +41,13 @@ module.exports = {
     return type === 'script' || type === 'style' || type === 'font'
   },
 
+  extendPageData (page) {
+    if (page.regularPath.startsWith('/blog/') && page.frontmatter.layout !== 'folder' && !page.frontmatter.permalink) {
+      const slug = page.regularPath.replace(/\/$/, '').split('/').pop()
+      page.path = `/blog/${slug}/`
+    }
+  },
+
   additionalPages: [
     {
       path: '/search/',

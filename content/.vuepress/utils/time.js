@@ -1,6 +1,6 @@
-import { differenceInDays } from 'date-fns'
+const { differenceInDays } = require('date-fns')
 
-export function timeAgo (time) {
+function timeAgo (time) {
   const template = function (t, n) {
     const templates = {
       seconds: 'Less than a minute',
@@ -60,14 +60,20 @@ export function timeAgo (time) {
   return template('years', years)
 }
 
-export function getVisitTime (timestamp, relative) {
+function getVisitTime (timestamp, relative) {
   return relative
     ? timeAgo(timestamp)
     : new Date(timestamp).toISOString().substr(0, 19).replace(/[TZ]/g, ' ')
 }
 
-export function isWithinDays (date, days = 30) {
+function isWithinDays (date, days = 30) {
   return date
     ? differenceInDays(new Date(), new Date(date)) < days
     : false
+}
+
+module.exports = {
+  timeAgo,
+  getVisitTime,
+  isWithinDays,
 }

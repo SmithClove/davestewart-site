@@ -1,8 +1,8 @@
-import { Status } from '../config/status.js'
-import { toObject } from '../../utils/object.js'
-import { slicePath } from '../../utils/path.js'
-import { isWithinDays } from '../../utils/time.js'
-import { Frontmatter } from './Frontmatter.js'
+const { Status } = require('../config/status.js')
+const { toObject } = require('../../utils/object.js')
+const { slicePath } = require('../../utils/path.js')
+const { isWithinDays } = require('../../utils/time.js')
+const { Frontmatter } = require('./Frontmatter.js')
 
 // ---------------------------------------------------------------------------------------------------------------------
 // helpers
@@ -116,7 +116,7 @@ function setParentPath (page) {
  * @property  {string}        status            The status that determines if the page will be visible
  * @property  {number}       [order]            The order of the page in any list
  */
-export class Page {
+class Page {
   /**
    * Constructor
    * @param   {object}  [props]   Optional props, as PageNode sets prototype, so doesn't want to overwrite
@@ -134,7 +134,7 @@ export class Page {
       setType(this)
       setDate(this)
       setStatus(this)
-      setPermalink(this)
+      // setPermalink(this)
       setParentPath(this)
     }
   }
@@ -150,4 +150,8 @@ export class Page {
   toJSON () {
     return toObject(this)
   }
+}
+
+module.exports = {
+  Page
 }

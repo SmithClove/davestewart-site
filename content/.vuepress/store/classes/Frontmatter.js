@@ -1,4 +1,4 @@
-import { toObject } from '../../utils/object.js'
+const { toObject } = require('../../utils/object.js')
 
 /**
  * @typedef {object}  Record
@@ -18,7 +18,7 @@ import { toObject } from '../../utils/object.js'
  * @property  {boolean}       preview
  * @property  {boolean}       hidden
  */
-export class Frontmatter {
+class Frontmatter {
   constructor (props) {
     Object.assign(this, props)
   }
@@ -26,4 +26,8 @@ export class Frontmatter {
   toJSON () {
     return toObject(this)
   }
+}
+
+module.exports = {
+  Frontmatter
 }

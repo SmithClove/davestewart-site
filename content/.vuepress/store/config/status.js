@@ -1,4 +1,4 @@
-export const Status = {
+const Status = {
   // has a date, is published, and within 30 days of being published
   NEW: 'new',
 
@@ -16,4 +16,8 @@ export const Status = {
 
   // hidden everywhere
   HIDDEN: 'hidden',
+}
+
+module.exports = {
+  Status
 }
