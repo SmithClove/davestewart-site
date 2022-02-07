@@ -129,6 +129,11 @@ em strong {
     }
   }
 
+  // top-level lists with nested content
+  > ul > li > p:first-child {
+    margin-top: 1rem;
+  }
+
   hr {
     margin: 3rem -1rem;
     border: none;
