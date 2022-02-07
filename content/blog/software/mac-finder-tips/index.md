@@ -2,7 +2,7 @@
 description: The best lesser-known strategies and tips to make working with the Mac Finder less of a pain
 date: 2022-02-01
 media:
-  featured: ./mac-finder.svg
+  featured: ./mac-finder.png
   thumbnail: ./mac-finder.svg
 ---
 
