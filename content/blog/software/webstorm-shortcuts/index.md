@@ -232,7 +232,7 @@ Once done:
 - Click the `Edit` icon in the toolbar
 - Pick the appropriate icon from your hard disk 
 
-### Debugger touchbar bug
+#### Debugger touchbar bug
 
 Because of – I'd call it a bug – in WebStorm, if you use the Node Debugger, the debugger touchbar overrides the default touchbar, hiding the project shortcuts.
 
