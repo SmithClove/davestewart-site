@@ -38,9 +38,9 @@ It would be good to get it fully typed, so:
 
 - TypeScript will complain if we try to do something we shouldn't
 - we can dot-into both top level and nested data
-- we can pass some around the app
+- we can pass it around the app
 
-As such, let's define the types:
+Let's begin by defining the types:
 
 ```ts
 type User = {
@@ -55,7 +55,7 @@ type Contact = {
 }
 ```
 
-The rest of the article will demonstrate various code-style combinations to safely map our types to the data.
+The rest of the article will demonstrate variations in code-style to safely map our types to the data.
 
 ## Code
 

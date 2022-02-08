@@ -1,5 +1,5 @@
 ---
-description: Learn the essential WebStorm features to make web application development easier, faster and funner
+description: Big and small-ticket WebStorm features to impress your colleagues and frighten your friends
 media:
   thumbnail: webstorm.png
   featured: webstorm.png

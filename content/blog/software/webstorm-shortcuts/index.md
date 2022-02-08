@@ -1,5 +1,5 @@
 ---
-description: Learn the essential WebStorm keyboard shortcuts to make you the most productive developer in the office
+description: Essential WebStorm keyboard shortcuts to make you the most productive developer in the office
 date: 2022-02-07
 media:
   thumbnail: webstorm.png

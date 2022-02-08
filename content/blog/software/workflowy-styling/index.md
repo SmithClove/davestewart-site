@@ -1,5 +1,5 @@
 ---
-description: Use styling to reformat standard formatting
+description: Use a well-known Chrome extension to add new functionality via custom CSS styles
 date: 2021-06-01
 media:
   thumbnail: ./workflowy-highlight-thumb.png
@@ -35,7 +35,7 @@ Once installed and set up, WorkFlowy can look like this:
 
 ### Basic
 
-The basic highlighting is achieved by adding these basic styles to Stylish:
+Basic highlighting is achieved with the following rules:
 
 ```css
 :root {
