@@ -6,7 +6,7 @@ media:
   thumbnail: ./mac-finder.svg
 ---
 
-# 25 Finder tactics & tips to speed up your workflow
+# 25 Finder tips & tactics to speed up your workflow
 
 ## Intro
 
