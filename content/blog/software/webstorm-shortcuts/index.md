@@ -21,6 +21,7 @@ Words
 - `Alt` + `double-click` - Select multiple words
 - `Ctrl` + `G` - Select next same word (forward)
 - `Ctrl` + `Shift` + `G` - Deselect next same word (backward)
+- `Ctrl` + `Cmd` + `G` - Select all same word
 
 Regions
 
@@ -89,6 +90,22 @@ Modify lines
 
 ## Assistance
 
+### Search
+
+Text
+
+- `Cmd` + `Shift` + `F` - Find text in path
+- `Cmd` + `Shift` + `R` - Replace text in path
+
+Symbols
+
+- `Cmd` + `O` - Find class
+- `Cmd` + `Alt` + `O` - Find symbol
+
+Files
+
+- `Alt` + `F7` - Find usages (whilst a file is selected)
+
 ### Intelligence
 
 Coding assistance
@@ -97,10 +114,13 @@ Coding assistance
 - `Ctrl` + `Space` - Show completions
 - `Alt` + `Enter` - Show intentions
 
-Refactoring
+General refactoring
 
-- `F6` - Move file / namespace / function
+- `F6` - Move file / namespace / function / variable
 - `Shift` + `F6` - Rename file / namespace / function / variable
+
+Code refactoring
+
 - `Cmd` + `Alt` + `V` (then `Up` / `Down`) - Extract variable
 - `Cmd` + `Alt` + `C` (then `Up` / `Down`) - Extract constant
 - `Ctrl` + `T` - Refactor this... _(all these commands and more)_
@@ -154,36 +174,27 @@ Windows
 - `Alt` + `F1` - Go to current file in... _(project, explorer, changes, browser, etc)_
 - `Ctrl` + `Tab` - Quick-switch editor panes
 
-### Text
-
-Find text in project
-
-- `Cmd` + `Shift` + `F` - Find text in path
-- `Cmd` + `Shift` + `R` - Replace text in path
-- `Alt` + `F7` - Find usages (whilst a file is selected)
-
-Find in project / application
-
-- `Shift` + `Shift` - Find anything _(files, classes, shortcuts, preferences, etc)_
-- `Cmd` + `Shift` + `A` - Find action
-- `Cmd` + `Alt` + `O` - Find symbol
-- `Cmd` + `O` - Find class
-
-
 ## Application
 
-Click any list (Project hierarchy, Code Structure, Find Results, etc) then
+### Panels
 
-- Start typing to filter / highlight
-- Use wildcards to filter, like `*.jpg`
-- Use fuzzy matching, i.e. `pn` to find `[P]age[N]ode`
-- Use partial completion, like `su na fe`
-- Use `/` to disambiguate folders, like `s/c/app`
+Search
+
+- `Cmd` + `Shift` + `A` - Find action _(any application command)_
+- `Shift` + `Shift` - Find anything _(files, classes, assets, shortcuts, preferences, etc)_
 
 Preferences
 
 - `Cmd` + `,` - Show preferences dialog
 - Type anything - Find preference
+
+### Tips
+
+Click any list (Project hierarchy, Code Structure, Find Results, etc) then:
+
+- Start typing to filter / highlight
+- Use fuzzy matching, i.e. `pn` to find `[P]age[N]ode`
+- Use `/` to disambiguate folders, like `s/c/app`
 
 Shortcuts
 
@@ -198,7 +209,9 @@ For touchbar Macs, unfortunately it's impossible to use the F-keys mentioned abo
 
 Click below to download:
 
-<a href="https://github.com/davestewart/davestewart-site/tree/main/content/blog/software/webstorm-shortcuts/touchbar-icons.zip"><img src="./touchbar.png" style="margin-left: 1rem; max-width: 700px;"></a>
+<a href="https://github.com/davestewart/davestewart-site/tree/main/content/blog/software/webstorm-shortcuts/touchbar-icons.zip">
+  <img src="./touchbar.png" style="margin-left: 1rem; width: 92%; max-width: 700px;">
+</a>
 
 Thanks to [Iconscout](https://iconscout.com/unicons/explore/line) for their excellent free icons got me started with this.
 

@@ -1,5 +1,5 @@
 ---
-description: Well-worn strategies and hidden gems to make using the Mac Finder less of a drag
+description: A treasure trove of solid strategies and hidden gems to wrangle those windows and fly through folders  
 date: 2022-02-01
 media:
   featured: ./mac-finder.png
@@ -23,7 +23,7 @@ Here's what works for me:
 
 - ***Keep a Finder window open***
 
-  If you need to access files all day, keep a Finder window open and configured and don't close it. The easiest way to get back to it will be to hit `Cmd` + `Tab` (multiple times if you need to) and select the Finder icon from the list. 
+  If you're using the Finder all day, keep a window open and don't close it (use `Cmd` + `Tab` to return to it quickly). 
 
 - ***Add folders to the sidebar***
 
@@ -43,7 +43,7 @@ Here's what works for me:
 
 - ***Split Finder left / Terminal right***
 
-  As a developer, the Terminal is the yang to the Finder's yin. I like to have both open side by side (on a separate desktop) so I can grab paths from the Finder and user them in Terminal (see below for specific [Developer tips](#developer-tips)).
+  As a developer, the Terminal is the yang to the Finder's yin. I like to have both open side by side (on a separate desktop) so I can grab paths from the Finder and use them in Terminal (see below for specific [Developer tips](#developer-tips)).
 
 - ***Use window management software***
 
@@ -51,7 +51,7 @@ Here's what works for me:
 
 ## Tips
 
-A couple of the items below you will find by trawling the Finder menus, but most you will not. I found most of these out through trial and error, or over the years via seasoned Mac users.
+A couple of the items below you will find by trawling the Finder menus, but most you will not. I discovered most through trial and error, or from watching seasoned Mac users over the years.
 
 You may know some, but I'm guessing there's at least a few you won't!
 
@@ -59,37 +59,49 @@ You may know some, but I'm guessing there's at least a few you won't!
 
 - ***Reveal the dialog's location***
 
-  With a dialog open, hit `Cmd` + `R` to "reveal" the currently visible folder in a new Finder window. Make any updates there and see changes reflected instantly in the dialog.
+  With a dialog open, hit `Cmd` + `R` to "reveal" the containing folder in a new Finder window. Make any updates there and see changes reflected instantly in the dialog.
 
 
 - ***Change dialog's the location*** 
 
-  With a dialog open, `drag` a folder or file from the Finder and drop it on the dialog window. The dialog will update its location to that of the dropped item, selecting the item as well.
+  With a dialog open, `drag` a folder or file from the Finder and drop it on the dialog window. The dialog will update its location to that of the dropped item, selecting the item (and taking its name if saving).
 
 ### Moving around
 
 - ***Navigate using the keyboard***
 
-  In **List** mode, move the focus with:
+  In **List** view:
 
   - `Up`/`Down` to move through the visible folders
   - `Left`/`Right` to open closed / close open folders
-  
-  In all modes:
+
+  In all views:
 
   - `Cmd` + `Up` / `Down` to move up / down a folder level
-  - `Cmd` + `Down` on a file to open it
+  - `Cmd` + `Down` on a file to choose / open it
   
   This is especially useful in Open / Save dialogs!
 
 - ***View / navigate to ancestor folder***
 
-  `Cmd` + `Up` to go up one level. Alternatively, `Right Click` on the title of the folder in the Finder's toolbar, it will display a dropdown of the parent folders, and `Click` any folder to navigate to it.
+  `Right Click` the title of the folder in the toolbar to reveal parent folders, then `Click` any folder to navigate to it.
 
 - ***View / navigate to previous folders***
 
-  `Cmd` + `[` / `]` to go back / forward. Alternatively, `Long press` the **"Back"** or **"Forward"** buttons to reveal the history of folders you have visited, and `Click` any folder to navigate to it.
+  Two ways to do this:
 
+  - `Cmd` + `[` / `]` to go back / forward in history
+  - `Long press` the **"Back"** or **"Forward"** buttons to reveal the history of folders, then `Click` any folder to navigate to it
+
+- ***Use spring-loaded folders***
+
+  You can `Drag` files or folders onto other folders (or tabs!) and pause for a split second to reveal their content, then:
+
+  - `Drop` the item to move (hold `Opt` to copy)
+  - `Drag` the folder outside of the Finder window to return to the original folder
+  - Repeat the process for nested folders
+  - Hit `Esc` to cancel
+  
 ### File operations
 
 - ***Move (vs copy) files***
@@ -98,21 +110,13 @@ You may know some, but I'm guessing there's at least a few you won't!
 
 - ***View additional menu options***
 
-  Wherever a file or context menu is shown, hold `Opt` and optionally `Shift` to display additional menu options.
-
-- ***Use spring-loaded folders***
-
-  You can `Drag` files or folders onto other folders and pause for a split second to reveal the content of that folder. You can continue to do this to any depth, then:
-
-  - `Drop` the item to move (hold `Opt` to copy)
-  - `Drag` the folder outside of the Finder window to return to the original folder
-  - Hit `Esc` to cancel the operation
+  Wherever a file or context menu is shown, hold `Opt` and optionally `Shift` to display additional / alternate options.
 
 - ***Batch rename files***
 
-  You can batch rename files by **replacing** text, **adding** text, or using a **custom format**:
+  You can batch rename files by replacing text, adding text, or using a custom format:
 
-  - Select _multiple_ files
+  - Select multiple files
   - `Right Click` and choose **"Rename..."** 
   - In the popup that appears, choose your options then click **"Rename"**
 
@@ -122,16 +126,16 @@ You may know some, but I'm guessing there's at least a few you won't!
 
   `Cmd` + `Shift` + `.` to toggle display of hidden files (works in windows and dialogs). 
 
-- ***Get the path of the any folder***
+- ***Grab the path of any folder***
 
   There are two ways to do this:
 
   - Use `Cmd` + `C` to copy a file or folder, then `Cmd` + `V` to paste the path into a text-based app
   - Or, `Right Click` any file or folder, hold `Opt` and choose **"Copy [name of the file] as Pathname"**
 
-- ***Get the path of the current folder***
+- ***Drag the path of the current folder***
 
-  If you hover over the title of the folder in the Finder's toolbar, it will reveal an icon. `Click` and `Drag` the icon wherever you need it (for example a terminal window) to insert the full path.
+  If you hover over the title of the folder in the Finder's toolbar, it will reveal an icon. `Click` and `Drag` the icon wherever you need it (for example a terminal window) to drop the full path.
 
 
 ### Managing windows
@@ -144,7 +148,7 @@ This should work in _all_ applications.
 
 - ***Merge all windows***
 
-  From the **Window** menu of any application, choose **"Merge All Windows"** to add all open windows to a single window with tabs for each window.
+  From the **Window** menu choose **"Merge All Windows"** to replace all open windows with a single window of tabs.
 
 ## Bonus tips!
 
@@ -158,25 +162,25 @@ You may already know some of these.
 
   `Alt` + `Drag` a window edge to resize it from the center.
 
-- ***Use the Inspector as live "Get info"***
-
-  `Right Click` any Finder item, hold `Opt` and choose Show Inspector to get instant information on subsequent selections.
-
 - ***Preview file content***
 
   - Hit `Space` to pop up a window with the file's content
   - Hit `Opt` + `Space` to start a slideshow
   - Use `Left` / `Right` to cycle through files
 
+- ***Use the Inspector as live "Get info"***
+
+  `Right Click` any item, hold `Opt` and choose **"Show Inspector"** to get live info on files, selections, folder sizes, etc.
+
 - ***Paste files to other applications***
 
-  Depending on the target application, directly copying and pasting a file to another application can do different things:
+  Depending on the target application, copying and pasting a file to another application can do different things:
 
   - in text editors, it will paste the path
+  - in Keynote or Word, it will paste the file's content directly into the document
   - in Photoshop, it will paste a high resolution image of the icon
   - in WebStorm:
     - in the project tree, it will copy the file
     - in a Markdown document, it will copy a PNG file of the icon and insert the path
-  - in Keynote or Word, it will paste the file's content directly into the document
 
   In other apps, who knows!? It's not as consistent as Windows, so experiment to find out.
