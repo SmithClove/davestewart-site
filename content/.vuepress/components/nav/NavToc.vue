@@ -21,31 +21,37 @@ export default {
   props: {
     headers: {
       type: Array,
-      default: () => []
+      default: () => [],
+    },
+
+    // change the text which precedes the links
+    prompt: {
+      type: String,
+      default: 'Jump to',
     },
 
     // takes a number, or a comma-delimited string of levels, i.e. 2,3,4
     level: {
       type: [Number, String],
-      default: 2
+      default: 2,
     },
 
     // takes a string or array of strings of slugs to exclude
     exclude: {
       type: [String, Array],
-      default: ''
+      default: '',
     },
 
-    // takes a string that
+    // the type of structure to render; defaults to auto, which depends on the number of levels
     type: {
       type: String,
-      default: ''
+      validator: value => ['list', 'tree', 'auto'].includes(value),
+      default: 'auto',
     },
 
-    // takes a string that
-    prompt: {
-      type: String,
-      default: 'Jump to'
+    // takes a string or array of strings of slugs to exclude
+    flatten: {
+      type: Boolean,
     },
   },
 
@@ -80,7 +86,7 @@ export default {
     html () {
       // helpers
       const makeLink = (item, tip) => {
-        let html = `<a href="#${item.slug}">${item.title}</a>`
+        let html = `<a href="#${item.slug}">${item.title.replace(/^\W|\W$/g, '')}</a>`
         if (tip) {
           html += `<br><small>${tip}</small>`
         }
@@ -120,14 +126,14 @@ export default {
           return `<p>${prompt}: ${links.join(', ')} or ${last}.</p>`
         }
       }
-    }
+    },
   },
 
   mounted () {
     if (!this.items.length) {
       this.items = this.$parent?.$page?.headers || []
     }
-  }
+  },
 }
 </script>
 

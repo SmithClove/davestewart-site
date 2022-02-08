@@ -7,7 +7,7 @@
     <Content class="pageContent" />
 
     <!-- comments -->
-    <PageComments websiteId="6366" />
+    <PageFeedback websiteId="6366" title="So..." />
   </div>
 </template>
 

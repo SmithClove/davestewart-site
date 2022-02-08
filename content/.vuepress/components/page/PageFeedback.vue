@@ -1,6 +1,6 @@
 <template>
-  <div class="pageComments pageContent">
-    <h2>Comments</h2>
+  <div class="pageFeedback pageContent">
+    <h2>{{ title }}</h2>
     <div id="hyvor-talk-view"></div>
   </div>
 </template>
@@ -10,7 +10,11 @@ const url = 'https://talk.hyvor.com/web-api/embed.js'
 
 export default {
   props: {
-    websiteId: String
+    websiteId: String,
+    title: {
+      type: String,
+      default: 'Feedback'
+    },
   },
 
   mounted () {
@@ -68,7 +72,7 @@ export default {
 <style lang="scss">
 @import "../../styles/_variables.scss";
 
-.pageComments {
+.pageFeedback {
   //margin-top: 5rem;
   //border-top: 1px solid $grey-lightest;
 }
