@@ -6,63 +6,77 @@
 </template>
 
 <script>
-const url = 'https://talk.hyvor.com/web-api/embed.js'
-
 export default {
   props: {
     websiteId: String,
+
     title: {
       type: String,
       default: 'Feedback'
     },
+
+    scrollThreshold: {
+      type: [Number, String],
+      default: 'auto'
+    }
   },
 
   mounted () {
-    this.start()
+    window.IntersectionObserver
+      ? this.addObserver()
+      : this.addScript()
   },
 
   destroyed () {
-    this.remove()
+    this.removeObserver()
+    this.removeScript()
   },
 
   methods: {
-    start () {
+    // see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#creating_an_intersection_observer
+    addObserver () {
+      const bottom = this.scrollThreshold === 'auto'
+        ? window.innerHeight
+        : this.scrollThreshold
       const options = {
-        // relative to document viewport
         root: null,
-
-        // margin around root. Values are similar to css property
-        rootMargin: '500px',
-
-        // visible amount of item shown in relation to root
+        rootMargin: `0px 0px ${bottom}px 0px`,
         threshold: 0,
       }
-      this.observer = new IntersectionObserver(this.onChange, options)
-      this.observer.observe(this.$el)
+      this._observer = new IntersectionObserver(this.onChange, options)
+      this._observer.observe(this.$el)
+    },
+
+    removeObserver () {
+      if (this._observer) {
+        this._observer.unobserve(this.$el)
+        this._observer.disconnect()
+        this._observer = null
+      }
     },
 
     onChange (changes, observer) {
       changes.forEach(change => {
         if (change.intersectionRatio > 0) {
-          this.observer.unobserve(this.$el)
-          this.observer.disconnect()
-          this.add()
+          this.removeObserver()
+          this.addScript()
         }
       })
     },
 
-    add () {
-      window.HYVOR_TALK_WEBSITE = this.websiteId
-      const script = document.createElement('script')
-      script.type = 'text/javascript'
-      script.src = url
-      document.body.appendChild(script)
+    addScript () {
+      if (!this._script) {
+        window.HYVOR_TALK_WEBSITE = this.websiteId
+        this._script = document.createElement('script')
+        this._script.type = 'text/javascript'
+        this._script.src = 'https://talk.hyvor.com/web-api/embed.js'
+        document.body.appendChild(this._script)
+      }
     },
 
-    remove () {
-      const script = document.querySelector(`script[src="${url}"]`)
-      if (script) {
-        document.body.removeChild(script)
+    removeScript () {
+      if (this._script) {
+        document.body.removeChild(this._script)
       }
     },
   },
