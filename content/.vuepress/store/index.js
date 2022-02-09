@@ -8,6 +8,7 @@ export function makeStore (data) {
   const sorted = flattenTree(tree)
 
   return {
+    subscribeAction: () => {},
     sorted,
     tree,
     pages,
