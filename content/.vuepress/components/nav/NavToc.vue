@@ -42,6 +42,16 @@ export default {
       default: '',
     },
 
+    from: {
+      type: String,
+      default: '',
+    },
+
+    to: {
+      type: String,
+      default: '',
+    },
+
     // the type of structure to render; defaults to auto, which depends on the number of levels
     type: {
       type: String,
@@ -64,17 +74,37 @@ export default {
 
   computed: {
     options () {
+      // variables
+      let items = [...this.items]
+
+      // props
       const levels = split(this.level).map(level => parseInt(level))
       const excludes = split(this.exclude)
-      const items = this.items
+      const fromIndex = items.findIndex(item => item.slug === this.from)
+      const toIndex = items.findIndex(item => item.slug === this.to - 1)
+
+      // slice if from or to and included
+      if (toIndex > -1) {
+        items = items.slice(0, toIndex - 1)
+      }
+      if (fromIndex > -1) {
+        items = items.slice(fromIndex)
+      }
+
+      // filter the items
+      items = items
         .filter(item => levels.includes(item.level))
         .filter(item => !excludes.includes(item.slug))
+
+      // add tips to top level items
       const tips = Object.keys(this.$attrs).reduce((output, name) => {
         if (name.startsWith('tip-')) {
           output[name.substr(4)] = this.$attrs[name]
         }
         return output
       }, {})
+
+      // return
       return {
         levels,
         excludes,
