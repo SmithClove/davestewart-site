@@ -12,6 +12,44 @@ WorkFlowy is the most powerful web development IDE there is. If you want to matc
 
 <NavToc />
 
+## Navigation
+
+### Project
+
+Files
+
+- `Cmd` + `E` - Recent files
+- `Cmd` + `Shift` + `O` - Open file
+- `Cmd` + `Shift` + `N` - Create scratch file
+
+Locations
+
+- `Cmd` + `Shift` + `E` - Recent locations
+
+Panels
+
+- `...` - Select file in Project View _(tip: map this to something ASAP!)_
+- `Alt` + `F1` - Go to current file in... _(project, explorer, changes, browser, etc)_
+- `Ctrl` + `Tab` - Quick-switch editor panes
+
+Projects
+
+- `Cmd` + `Shift` + `P` - Recent projects
+- `Cmd` + `Shift` + `W` - Close project _(this is one I added!)_
+
+### Editor
+
+Code / Markup
+
+- _Works in JavaScript, HTML, CSS, anywhere, and across domains!_
+- `Cmd` + `Click` symbol name - Go to declaration
+- `Cmd` + `Click` declaration - See all usages
+
+Cursor
+
+- `Cmd` + `[` - Go to previous edit point
+- `Cmd` + `]` - Go to next edit point
+
 ## Editing
 
 ### Selection
@@ -87,7 +125,7 @@ Modify lines
   - Then `Arrows`, `Home`, `End`, expand selection to move around
   - Then start typing, copy and paste, Toggle case, to modify text
   - _You can get real creative!_
-
+  
 ## Assistance
 
 ### Search
@@ -114,16 +152,17 @@ Coding assistance
 - `Ctrl` + `Space` - Show completions
 - `Alt` + `Enter` - Show intentions
 
+Code refactoring
+
+- `Ctrl` + `T` - Refactor this...
+- `Cmd` + `Alt` + `V` (then `Up` / `Down`) - Extract variable
+- `Cmd` + `Alt` + `C` (then `Up` / `Down`) - Extract constant
+
 General refactoring
 
 - `F6` - Move file / namespace / function / variable
 - `Shift` + `F6` - Rename file / namespace / function / variable
-
-Code refactoring
-
-- `Cmd` + `Alt` + `V` (then `Up` / `Down`) - Extract variable
-- `Cmd` + `Alt` + `C` (then `Up` / `Down`) - Extract constant
-- `Ctrl` + `T` - Refactor this... _(all these commands and more)_
+- `Drag` file - Move / refactor file
 
 ### Code generation
 
@@ -145,34 +184,7 @@ HTML
 - `Cmd` + `Alt` + `T` > `T` - Surround with tag _(then type tag name to fill in)_
 - `<expr>` + `Tab` - Generate tags using Emmet
   - Use `Enter` to jump between placeholders
-
-## Navigation
-
-### Editor
-
-Code / Markup
-
-- _Works in JavaScript, HTML, CSS, anywhere, and across domains!_ 
-- `Cmd` + `Click` symbol name - Go to declaration
-- `Cmd` + `Click` declaration - See all usages
-
-Cursor
-
-- `Cmd` + `[` - Go to previous edit point
-- `Cmd` + `]` - Go to next edit point
-
-### Project
-
-Files
-
-- `Cmd` + `Shift` + `O` - Open file
-- `Cmd` + `Shift` + `N` - Create scratch file
-
-Windows
-
-- `Cmd` + `E` - Show recently opened files
-- `Alt` + `F1` - Go to current file in... _(project, explorer, changes, browser, etc)_
-- `Ctrl` + `Tab` - Quick-switch editor panes
+  
 
 ## Application
 
@@ -180,7 +192,7 @@ Windows
 
 Search
 
-- `Cmd` + `Shift` + `A` - Find action _(any application command)_
+- `Cmd` + `Shift` + `A` - Find action _(any application command; tip: use this any time you can't remember something!)_
 - `Shift` + `Shift` - Find anything _(files, classes, assets, shortcuts, preferences, etc)_
 
 Preferences
