@@ -14,7 +14,7 @@ The Mac Finder is strangely named, as to actually _find_ things Apple invented S
 
 However, there are some hidden gems which make it bearable, so read on and I'll share this buried treasure with you.
 
-<NavToc level="2" exclude="intro" />
+<NavToc level="2" from="tactics" />
 
 ## Tactics
 
@@ -56,37 +56,25 @@ A couple of the items below you will find by trawling the Finder menus, but most
 
 You may know some, but I'm guessing there's at least a few you won't!
 
-### Dialogs
+<NavToc level="3" from="navigation" to="dialogs" />
 
-- ***Change the dialog's location*** 
+### Navigation
 
-  With a dialog open, `drag` a folder or file from the Finder and drop it on the dialog window. The dialog will update its location to that of the dropped item, selecting the item (and taking its name if saving).
+- ***Use the keyboard***
 
-- ***Reveal the dialog's location***
-
-  With a dialog open, hit `Cmd` + `R` to "reveal" the containing folder in a new Finder window.
-
-- ***Interact with files***
-
-  Mac dialogs don't let you interact with the files directly... but you _can_ `Right Click` to rename, duplicate, delete or show in Finder.  
-
-### Moving around
-
-- ***Navigate using the keyboard***
+  _Note: these tips also work in Open / Save dialogs!_
 
   In **List** view:
 
   - `Up`/`Down` to move through the visible folders
   - `Left`/`Right` to open closed / close open folders
 
-  In all views:
+  In **all** views:
 
   - `Cmd` + `Up` / `Down` to move up / down a folder level
   - `Cmd` + `Down` on a file to choose / open it
   
-  This is especially useful in Open / Save dialogs!
-
-- ***View / navigate to ancestor folder***
+- ***View / navigate to ancestor folders***
 
   `Right Click` the title of the folder in the toolbar to reveal parent folders, then `Click` any folder to navigate to it.
 
@@ -105,8 +93,8 @@ You may know some, but I'm guessing there's at least a few you won't!
   - `Drag` the folder outside of the Finder window to return to the original folder
   - Repeat the process for nested folders
   - Hit `Esc` to cancel
-  
-### File operations
+
+### Files
 
 - ***Move (vs copy) files***
 
@@ -124,11 +112,41 @@ You may know some, but I'm guessing there's at least a few you won't!
   - `Right Click` and choose **"Rename..."** 
   - In the popup that appears, choose your options then click **"Rename"**
 
-### Developer tips
+### Windows
+
+These commands should work in _most_ applications:
+
+- ***Cycle through windows***
+
+  `Cmd` + `` ` `` / `Cmd` + `Shift` + `` ` `` to cycle to the next / previous application window.
+
+- ***Merge all windows***
+
+  From the **Window** menu choose **"Merge All Windows"** to replace all open windows with a single window of tabs.
+
+- ***Show all tabs***
+
+  `Right Click` any tab and choose **"Show All Tabs"** to preview all tabs as windows. `Click` a thumbnail to choose it.
+
+### Dialogs
+
+- ***Change the dialog's location***
+
+  With a dialog open, `drag` a folder or file from the Finder and drop it on the dialog window. The dialog will update its location to that of the dropped item, selecting the item (and taking its name if saving).
+
+- ***Reveal the dialog's location***
+
+  With a dialog open, hit `Cmd` + `R` to "reveal" the containing folder in a new Finder window.
+
+- ***Interact with files***
+
+  Mac dialogs don't let you interact with the files directly... but you _can_ `Right Click` to rename, duplicate, delete or show in Finder.
+
+## Developer tips
 
 - ***Toggle hidden files***
 
-  `Cmd` + `Shift` + `.` to toggle display of hidden files (works in windows and dialogs). 
+  `Cmd` + `Shift` + `.` to toggle display of hidden files (works in windows and dialogs).
 
 - ***Grab the path of any folder***
 
@@ -142,21 +160,9 @@ You may know some, but I'm guessing there's at least a few you won't!
   If you hover over the title of the folder in the Finder window's toolbar, it will reveal an icon. `Click` and `Drag` the icon wherever you need it (for example a terminal window) to drop the full path.
 
 
-### Managing windows
-
-This should work in _all_ applications.
-
-- ***Cycle through windows***
-
-  `Cmd` + `` ` `` / `Cmd` + `Shift` + `` ` `` to cycle to the next / previous application window.
-
-- ***Merge all windows***
-
-  From the **Window** menu choose **"Merge All Windows"** to replace all open windows with a single window of tabs.
-
 ## Bonus tips!
 
-You may already know some of these.
+You may already know some of these:
 
 - ***Resize a column automatically***
 
