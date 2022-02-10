@@ -58,18 +58,17 @@ You may know some, but I'm guessing there's at least a few you won't!
 
 ### Dialogs
 
-- ***Reveal the dialog's location***
-
-  With a dialog open, hit `Cmd` + `R` to "reveal" the containing folder in a new Finder window. Make any updates there and see changes reflected instantly in the dialog.
-
-
-- ***Change dialog's the location*** 
+- ***Change the dialog's location*** 
 
   With a dialog open, `drag` a folder or file from the Finder and drop it on the dialog window. The dialog will update its location to that of the dropped item, selecting the item (and taking its name if saving).
 
+- ***Reveal the dialog's location***
+
+  With a dialog open, hit `Cmd` + `R` to "reveal" the containing folder in a new Finder window.
+
 - ***Interact with files***
 
-  Mac dialogs don't let you interact with the files directly... but you _can_ `Right Click` to rename, duplicate or delete.  
+  Mac dialogs don't let you interact with the files directly... but you _can_ `Right Click` to rename, duplicate, delete or show in Finder.  
 
 ### Moving around
 
@@ -138,9 +137,9 @@ You may know some, but I'm guessing there's at least a few you won't!
   - Use `Cmd` + `C` to copy a file or folder, then `Cmd` + `V` to paste the path into a text-based app
   - Or, `Right Click` any file or folder, hold `Opt` and choose **"Copy [name of the file] as Pathname"**
 
-- ***Drag the path of the current folder***
+- ***Grab the path of the current window / tab***
 
-  If you hover over the title of the folder in the Finder's toolbar, it will reveal an icon. `Click` and `Drag` the icon wherever you need it (for example a terminal window) to drop the full path.
+  If you hover over the title of the folder in the Finder window's toolbar, it will reveal an icon. `Click` and `Drag` the icon wherever you need it (for example a terminal window) to drop the full path.
 
 
 ### Managing windows

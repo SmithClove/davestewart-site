@@ -121,12 +121,19 @@ em strong {
   }
 
   li {
-    list-style: square;
     margin-bottom: .25em;
 
     p {
       margin: 0;
     }
+  }
+
+  ul li {
+    list-style: square;
+  }
+
+  ol li {
+    list-style: decimal;
   }
 
   // top-level lists with nested content
@@ -229,6 +236,10 @@ blockquote:not([class]) {
   border-radius: 4px;
   background: $codeBg;
   border-left: 5px solid $grey-lighter;
+
+  h3, h4, h5 {
+    margin-top: 0;
+  }
 
   > p:first-child {
     margin-top: 0;
