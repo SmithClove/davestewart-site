@@ -15,11 +15,26 @@
 <script>
 export default {
   props: {
-    text: String,
-    name: String,
-    source: String,
-    link: String,
-    hero: Boolean,
+    text: {
+      type: String,
+      default: '',
+    },
+    name: {
+      type: String,
+      default: '',
+    },
+    source: {
+      type: String,
+      default: '',
+    },
+    link: {
+      type: String,
+      default: '',
+    },
+    hero: {
+      type: Boolean,
+      default: false,
+    },
     size: {
       type: [String, Number],
       default: '2',
