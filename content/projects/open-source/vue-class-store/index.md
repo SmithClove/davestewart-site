@@ -22,7 +22,7 @@ media:
 
 ## Overview
 
-View Class Store is universal store format for Vue.
+Vue Class Store is universal store format for Vue.
 
 It has some key advantages over Vuex and other libraries:
 
