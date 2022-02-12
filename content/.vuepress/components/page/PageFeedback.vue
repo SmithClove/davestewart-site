@@ -23,7 +23,9 @@ export default {
 
   mounted () {
     window.IntersectionObserver
-      ? this.addObserver()
+      ? this.$route.query['ht-comment-id']
+        ? this.addScript()
+        : this.addObserver()
       : this.addScript()
   },
 
