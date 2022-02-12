@@ -164,10 +164,7 @@ export default {
 }
 
 .thumbnailItem.shadow {
-  box-shadow: 0 0px 4px rgba(0, 0, 30, .04),
-  0 5px 8px rgba(0, 0, 60, 0.02),
-  0 10px 16px -10px rgba(30, 0, 50, 0.02),
-  0 25px 18px -15px rgba(20, 20, 80, .04);
+  @include shadow-thumb;
 }
 
 </style>

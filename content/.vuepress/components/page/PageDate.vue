@@ -4,7 +4,7 @@
        :href="href"
        :title="relative"
        @click.exact.prevent="onClick"
-    >{{ formatted }}</a>
+    ><span class="only-sm">{{ dateShort }}</span><span class="only-md-up">{{ dateLong }}</span></a>
   </div>
 </template>
 
@@ -27,7 +27,11 @@ export default {
       return formatDistance(this.dateObject, new Date())
     },
 
-    formatted () {
+    dateShort () {
+      return format(this.dateObject, 'MMM yyyy')
+    },
+
+    dateLong () {
       return format(this.dateObject, 'MMMM yyyy')
     },
 

@@ -347,7 +347,7 @@ export default {
 
     pageDescription () {
       return this.isFiltered
-          ? 'All items'
+          ? 'All work and project items'
           : plural(this.itemsAsList.length, 'item')
     },
   },
