@@ -9,8 +9,10 @@ body {
   //font-size: 16px; // Palanquin
   font-size: 15px; // Open Sans
   font-weight: 400;
-  font-smoothing: antialiased;
   color: $textColor;
+
+  font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparentize($grey-lightest, .5);
 
   @include sm {
     // font-size: 18px;

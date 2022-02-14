@@ -42,6 +42,12 @@ export default {
       default: '',
     },
 
+    //
+    section: {
+      type: String,
+      default: '',
+    },
+
     from: {
       type: String,
       default: '',
@@ -82,6 +88,32 @@ export default {
       const excludes = split(this.exclude)
       const fromIndex = items.findIndex(item => item.slug === this.from)
       const toIndex = items.findIndex(item => item.slug === this.to - 1)
+
+      // section
+      if (this.section) {
+        let found = false
+        let level = null
+        let done = false
+        items = items.reduce((items, item) => {
+          if (!done) {
+            if (!found) {
+              if (item.slug === this.section) {
+                found = true
+                level = item.level
+              }
+            }
+            else {
+              if (item.level > level) {
+                items.push(item)
+              }
+              else {
+                done = true
+              }
+            }
+          }
+          return items
+        }, [])
+      }
 
       // slice if from or to and included
       if (toIndex > -1) {

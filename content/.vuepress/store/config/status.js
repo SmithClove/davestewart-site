@@ -3,7 +3,7 @@ const Status = {
   NEW: 'new',
 
   // has a date, is published
-  PUBLISHED: 'published',
+  // PUBLISHED: 'published',
 
   // has a date, but not yet published, so hidden on production
   SCHEDULED: 'scheduled',
@@ -19,5 +19,8 @@ const Status = {
 }
 
 module.exports = {
-  Status
+  Status,
+  isPublished (page) {
+    return ![Status.DRAFT, Status.HIDDEN, Status.SCHEDULED].includes(page.status)
+  }
 }

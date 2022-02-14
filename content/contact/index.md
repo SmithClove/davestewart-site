@@ -1,9 +1,11 @@
 ---
-title: Profiles
+title: Bio
 description: Where to find me online
 layout: page
 order: 2
 ---
+
+### Contact me
 
 Social:
 

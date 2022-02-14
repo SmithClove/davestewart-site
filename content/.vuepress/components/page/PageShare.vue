@@ -106,11 +106,6 @@ export default {
   display: inline-block;
   flex-shrink: 0;
 
-  a {
-    user-select: none;
-    -webkit-tap-highlight-color: transparentize($grey-lightest, .5);
-  }
-
   ::selection {
     background: transparent;
   }

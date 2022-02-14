@@ -14,7 +14,7 @@
       </div>
       <div class="mediaGallery__slidesNav">
         <div class="mediaGallery__slidesPrev" @click="prev"></div>
-        <div class="mediaGallery__slidesView" @click="view"></div>
+        <div v-if="scale" class="mediaGallery__slidesView" @click="view"></div>
         <div class="mediaGallery__slidesNext" @click="next"></div>
       </div>
     </div>

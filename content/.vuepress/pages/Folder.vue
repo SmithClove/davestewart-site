@@ -48,13 +48,17 @@ export default {
       return options
     },
 
+    regularPath () {
+      return this.$page.frontmatter.regularPath || this.$page.regularPath
+    },
+
     filtered () {
-      const regularPath = this.$page.regularPath
+      const regularPath = this.regularPath
       return this.$site.pages.filter(page => page.regularPath.startsWith(regularPath))
     },
 
     pages () {
-      const regularPath = this.$page.regularPath
+      const regularPath = this.regularPath
       return this.filtered
         .filter(page => page.regularPath !== regularPath)
         .filter(page => !page.frontmatter.layout)
