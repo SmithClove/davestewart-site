@@ -1,4 +1,5 @@
 // provide proxy for server
+
 const noop = () => ({})
 const s = globalThis.localStorage || { setItem: noop, getItem: noop, removeItem: noop }
 
@@ -10,9 +11,17 @@ export const storage = {
 
   get (key, defaults = undefined) {
     const value = s.getItem(key)
-    return value !== null
-      ? JSON.parse(value)
-      : defaults
+    if (value !== null) {
+      try {
+        return typeof value === 'string'
+          ? JSON.parse(value)
+          : value
+      }
+      catch (err) {
+        console.warn(`Warning: Invalid JSON for storage.get('${key}'): `, JSON.stringify(value))
+      }
+    }
+    return defaults
   },
 
   remove (key) {

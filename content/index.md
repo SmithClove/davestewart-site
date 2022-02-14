@@ -27,7 +27,7 @@ I'm a colourful mix of technical and creative with a passion for [products](/pro
 
 <MediaGallery media="gallery" scale />
 
-If you're here for my _work_-work, these days it's [web apps](/work/) after previously [web sites](/archive/work/) and [animation](/archive/work/animation/).
+If you're here for my  commercial work, these days it's [web apps](/work/) for fintech, after years of creative [web sites](/archive/work/) and titles [animation](/archive/work/animation/).
 
 Also, I've recently restarted [writing](/blog/) which I absolutely love; expect clear, researched and actionable posts.
 
