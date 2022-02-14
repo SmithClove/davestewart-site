@@ -25,20 +25,20 @@ A UK web app developer, currently building [Control Space](/products/control-spa
 
 I'm a colourful mix of technical and creative with a passion for [products](/products/), side [projects](/projects/) and [invention](/archive/projects/).
 
-<MediaGallery media="gallery" scale />
+<MediaGallery media="gallery" scale keep-alive />
 
 If you're here for my  commercial work, these days it's [web apps](/work/) for fintech, after years of creative [web sites](/archive/work/) and titles [animation](/archive/work/animation/).
 
-Also, I've recently restarted [writing](/blog/) which I absolutely love; expect clear, researched and actionable thinking.
+And I've recently restarted [writing](/blog/) which I absolutely love; expect clear, researched and actionable thinking.
 
 ---
 
 <HomeThumbs />
 
-You can also [search](/search/) the site or trawl the [sitemap](/sitemap/).
+If you prefer, you can [search](/search/) the site or trawl the [sitemap](/sitemap/).
 
-And do get in [contact](/contact/) if you fancy a chat.
+And do get in [contact](/contact/) if you fancy a chat!
 
-Bye for now!
+Bye for now,
 
 <SiteIcon fill="#ea4848" style="width: 37px; height: 37px;"/>

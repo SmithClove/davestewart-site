@@ -56,12 +56,14 @@
 import { getKeys, isNotModifier, stopEvent } from '../../utils/events.js'
 import { offset } from '../../utils/array'
 import media from './index.js'
+import { storage } from '../../utils/storage.js'
 
 export default {
   extends: media('gallery'),
 
   props: {
-    captions: [Number, Boolean]
+    captions: [Number, Boolean],
+    keepAlive: Boolean,
   },
 
   data () {
@@ -86,6 +88,27 @@ export default {
       const { width, height } = this.source[0] || {}
       return `padding-bottom: calc(${height} / ${width}* 100%)`
     },
+
+    storageKey () {
+      return `gallery[${(this.page || this.$page).path}]:${this.media}`
+    }
+  },
+
+  watch: {
+    index (value) {
+      if (this.keepAlive && this.storageKey) {
+        storage.set(this.storageKey, value)
+      }
+    }
+  },
+
+  created () {
+    if (this.keepAlive) {
+      const index = storage.get(this.storageKey)
+      if (typeof index === 'number' && index >= 0 && index <= this.source.length) {
+        this.index = index
+      }
+    }
   },
 
   mounted () {
