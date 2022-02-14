@@ -1,6 +1,6 @@
 <template>
   <div class="homeRecent">
-    <p>But let's get you started with some <a href="#recent" @click.prevent="setRecent">recent</a> / <a href="#random" @click.prevent="setRandom">random</a> projects + posts:</p>
+    <p>But let's get you started with some <a href="#recent" @click.prevent="setRecent">recent</a> (or <a href="#random" @click.prevent="setRandom">random</a>) posts:</p>
     <ThumbnailWall :pages="pages"/>
   </div>
 </template>

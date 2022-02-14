@@ -29,7 +29,7 @@ I'm a colourful mix of technical and creative with a passion for [products](/pro
 
 If you're here for my  commercial work, these days it's [web apps](/work/) for fintech, after years of creative [web sites](/archive/work/) and titles [animation](/archive/work/animation/).
 
-Also, I've recently restarted [writing](/blog/) which I absolutely love; expect clear, researched and actionable posts.
+Also, I've recently restarted [writing](/blog/) which I absolutely love; expect clear, researched and actionable thinking.
 
 ---
 
