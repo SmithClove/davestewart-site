@@ -7,8 +7,8 @@ tags:
   - ui
 media:
   opengraph: ./applications.png
-  thumbnail: ./applications.svg
-  featured: ./applications.svg
+  thumbnail: ./applications.png
+  featured: ./applications.png
 ---
 
 # Application Extensions

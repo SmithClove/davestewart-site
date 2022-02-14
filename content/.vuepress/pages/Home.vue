@@ -2,7 +2,7 @@
   <div class="layout__home home">
     <img class="home__splash" :src="require('../assets/home-splash-small.svg')">
     <h1>I'm Dave</h1>
-    <Content id="content" class="pageContent" />
+    <Content id="content" class="pageContent"/>
   </div>
 </template>
 
@@ -11,19 +11,19 @@
 
 .home {
 
-  .homeRecent,
+  hr {
+    border: none;
+    height: 0;
+    background: none;
+    border-top: 3px dotted $grey-lightest;
+  }
+
+  .homeThumbs,
   .pageContent {
 
     > ul,
     > p {
-      font-size: 1.7rem;
-      line-height: 1.2em !important;
-      font-family: $titleFont !important;
-      font-weight: 500;
-
-      @include sm {
-        font-size: 1.4rem;
-      }
+      @include introText;
     }
 
     ul {
@@ -38,7 +38,7 @@
   &__splash {
     width: 100%;
     aspect-ratio: 840/400;
-    pointer-events:none;
+    pointer-events: none;
     user-select: none;
   }
 }

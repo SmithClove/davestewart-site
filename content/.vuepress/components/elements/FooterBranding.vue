@@ -1,5 +1,5 @@
 <template>
-  <router-link class="footerBranding" to="/bio/profiles.html" @click.prevent="onClick">
+  <router-link class="footerBranding" to="/bio/" @click.prevent="onClick">
     <SiteIcon class="footerBranding__icon"/>
     <div class="footerBranding__text">
       <span>Dave Stewart</span>

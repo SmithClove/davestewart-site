@@ -7,8 +7,8 @@ tags:
   - ui
 media:
   opengraph: ./plugins.png
-  thumbnail: ./plugins.svg
-  featured: ./plugins.svg
+  thumbnail: ./plugins.png
+  featured: ./plugins.png
 ---
 
 # Web framework plugins

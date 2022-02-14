@@ -1,5 +1,5 @@
 <template>
-  <div class="layout__page">
+  <div class="page" :data-path="$page.path.substr(1, $page.path.length -2)">
     <PageHero />
     <h1>{{ $page.title }}</h1>
     <PageInfo/>

@@ -1,6 +1,10 @@
 <template>
-  <div class="homeRecent">
-    <p>But let's get you started with some <a href="#recent" @click.prevent="setRecent">recent</a> (or <a href="#random" @click.prevent="setRandom">random</a>) posts:</p>
+  <div class="homeThumbs">
+    <p>
+      Right now, let's start you off with
+      some <a href="#recent" :class="{ active: !options.random }" @click.prevent="setRecent">recent</a>
+      or <a href="#random" :class="{ active: options.random }" @click.prevent="setRandom">random</a>
+      posts:</p>
     <ThumbnailWall :pages="pages"/>
   </div>
 </template>
@@ -80,6 +84,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.homeThumbs {
+  a.active {
+    text-decoration: underline !important;
 
+    &:after {
+      //content: "*";
+    }
+  }
+}
 </style>

@@ -8,8 +8,8 @@ tags:
   - ui
 media:
   opengraph: ./3dsmax.png
-  thumbnail: ./3dsmax.svg
-  featured: ./3dsmax.svg
+  thumbnail: ./3dsmax.png
+  featured: ./3dsmax.png
 ---
 
 # 3dsmax plugins
