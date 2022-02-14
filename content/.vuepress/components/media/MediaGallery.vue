@@ -1,5 +1,5 @@
 <template>
-  <div class="mediaGallery" :style="containerStyle">
+  <div class="mediaGallery" :style="containerStyle" :class="{ loading }">
 
     <!-- slides -->
     <div class="mediaGallery__slidesContainer" :style="slideContainerStyle">
@@ -70,6 +70,7 @@ export default {
     return {
       index: 0,
       loaded: [],
+      loading: this.keepAlive
     }
   },
 
@@ -91,7 +92,7 @@ export default {
 
     storageKey () {
       return `gallery[${(this.page || this.$page).path}]:${this.media}`
-    }
+    },
   },
 
   watch: {
@@ -102,17 +103,18 @@ export default {
     }
   },
 
-  created () {
+  mounted () {
+    // gallery navigation
+    document.addEventListener('keydown', this.onKeyDown)
+
+    // remember last image
     if (this.keepAlive) {
+      this.$nextTick(() => this.loading = false)
       const index = storage.get(this.storageKey)
-      if (typeof index === 'number' && index >= 0 && index <= this.source.length) {
+      if (typeof index === 'number' && index >= 0 && index < this.source.length) {
         this.index = index
       }
     }
-  },
-
-  mounted () {
-    document.addEventListener('keydown', this.onKeyDown)
   },
 
   destroyed () {
@@ -171,6 +173,12 @@ $colorHover: #888;
   margin: 0 auto;
   position: relative;
   line-height: 1;
+
+  // loading for keep-alive
+  transition: .3s opacity;
+  &.loading {
+    opacity: 0;
+  }
 
   .pageContent & {
     margin: 2rem auto 3rem;
