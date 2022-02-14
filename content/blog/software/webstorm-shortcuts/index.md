@@ -8,23 +8,22 @@ media:
 
 # WebStorm shortcuts for lightning productivity
 
-WorkFlowy is the most powerful web development IDE there is. If you want to match power with speed get your hands on WebStorm's powerful and intuitive keyboard shortcuts.
+WorkFlowy is the most powerful web development IDE there is. If you want to match power with speed get your hands on WebStorm's extensive and intuitive keyboard shortcuts.
 
 <NavToc />
 
 ## Navigation
+
+<NavToc section="navigation" level="3" />
 
 ### Project
 
 Files
 
 - `Cmd` + `E` - Recent files
+- `Cmd` + `Shift` + `E` - Recent locations
 - `Cmd` + `Shift` + `O` - Open file
 - `Cmd` + `Shift` + `N` - Create scratch file
-
-Locations
-
-- `Cmd` + `Shift` + `E` - Recent locations
 
 Panels
 
@@ -51,6 +50,8 @@ Cursor
 - `Cmd` + `]` - Go to next edit point
 
 ## Editing
+
+<NavToc section="editing" level="3" />
 
 ### Selection
 
@@ -94,6 +95,7 @@ Multi-clipboard
 
 Formatting
 
+- `Ctrl` + `W` - Toggle soft-wraps
 - `Cmd` + `Alt` + `L` - Reformat code
 - `Cmd` + `Shift` + `U` - Toggle case
 
@@ -115,6 +117,18 @@ Modify lines
 - `Cmd` + `D` - Duplicate selection / line
 - `Cmd` + `Backspace` - Delete line
 
+### Markdown
+
+**Yes, Markdown!**
+
+I won't list the shortcuts here (most are obvious, the rest configurable) but the editing ones are:
+
+- Increase / Decrease header level
+- Italic, Bold, Code, Strikethrough
+- Link, Image
+
+Review all Markdown functionality via `Cmd` + `Shift` + `A`, then type **"Markdown"**...
+
 ### Tips
 
 - Rename an opening / closing HTML / JSX / XML tag to rename its corresponding pair
@@ -127,6 +141,8 @@ Modify lines
   - _You can get real creative!_
   
 ## Assistance
+
+<NavToc section="assistance" level="3" />
 
 ### Search
 
@@ -184,9 +200,10 @@ HTML
 - `Cmd` + `Alt` + `T` > `T` - Surround with tag _(then type tag name to fill in)_
 - `<expr>` + `Tab` - Generate tags using Emmet
   - Use `Enter` to jump between placeholders
-  
 
 ## Application
+
+<NavToc section="application" level="3" />
 
 ### Panels
 

@@ -1,13 +1,14 @@
 ---
-description: In-house application to browse and curate financial newsletters
+description: In-house tooling to generate client bulletins and insight
 date: 2020-10-01
 tags:
   - webapp
   - frontend
   - backend
+  - elasticsearch
+  - node
   - nuxt
   - vue
-  - node
   - api
   - ui
 media:
@@ -27,7 +28,7 @@ media:
     - ./select/selected.png
 ---
 
-# Finsbury
+# Finsbury PR
 
 ## Overview
 

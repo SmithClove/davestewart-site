@@ -52,9 +52,7 @@ Here's what works for me:
 
 ## Tips
 
-A couple of the items below you will find by trawling the Finder menus, but most you will not. I discovered most through trial and error, or from watching seasoned Mac users over the years.
-
-You may know some, but I'm guessing there's at least a few you won't!
+A couple of the items below you will find by trawling the Finder menus, but most you will not. I discovered most through trial and error, or from watching seasoned Mac users over the years. You may know some, but I'm guessing there's at least a few you won't!
 
 <NavToc level="3" from="navigation" to="dialogs" />
 
