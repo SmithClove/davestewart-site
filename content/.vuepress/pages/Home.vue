@@ -11,7 +11,7 @@
 
 .home {
 
-  .pageContent,
+  .homeRecent,
   .pageContent {
 
     > ul,

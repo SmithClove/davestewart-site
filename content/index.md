@@ -27,22 +27,20 @@ I'm a colourful mix of technical and creative with a passion for [products](/pro
 
 <MediaGallery media="gallery" scale />
 
-If you're here for my _work_-work, these days it's [web apps](/work/) and was previously [web sites](/archive/work/) and [animation](/archive/work/animation/).
+If you're here for my _work_-work, these days it's [web apps](/work/) after previously [web sites](/archive/work/) and [animation](/archive/work/animation/).
+
+Also, I've recently restarted [writing](/blog/) which I absolutely love; expect clear, researched and actionable posts.
 
 ---
-
-If you need help to click, here's my last six months' posts:
 
 <keep-alive>
   <HomeRecent />
 </keep-alive>
 
-And I've restarted [writing](/blog/) which I absolutely love; expect clear, researched and actionable posts!
+You can also [search](/search/) the site or trawl the [sitemap](/sitemap/).
 
-If you still haven't clicked, check out the [sitemap](/sitemap/) or [search](/search/) the site.
+And please do get in [contact](/contact/) if you want to chat about anything at all.
 
-And if you want to talk, don't hesitate to get in [contact](/contact/).
-
-Cheers!
+Bye for now!
 
 <SiteIcon fill="#ea4848" style="width: 37px; height: 37px;"/>
