@@ -1,56 +1,40 @@
 <template>
-  <div class="layout__home home">
-    <!--
-    <PageHero />
-    -->
-
+  <div class="layout__home layout__page home">
     <img class="home__splash" :src="require('../assets/home-splash-small.svg')">
-
     <h1>I'm Dave</h1>
-    <p class="description">An experienced web developer + indie maker</p>
-
-    <Content class="pageContent" :props="{ tree }" id="content" />
-    <!--
-    <keep-alive>
-      <PageList :pages="tree"/>
-    </keep-alive>
-    -->
+    <Content id="content" class="pageContent" />
   </div>
 </template>
 
-<script>
-import { getValue } from '../utils/object.js'
-import { makeTree } from '../store/services/tree.js'
+<style lang="scss">
+@import "../styles/variables";
 
-export default {
-  computed: {
-    tree () {
-      return makeTree(this.$site.pages)
-    },
+.home {
 
-    thumbnails () {
-      return this.$site.pages
-        .filter(page => getValue(page, 'frontmatter.media.thumbnail'))
-    },
+  .pageContent,
+  .pageContent {
 
-    branches () {
-      const found = []
-      return this.$store.sorted
-        .reduce((output, input) => {
-          const path = input.parentPath
-          if (!found.includes(path)) {
-            output.push(input)
-            found.push(path)
-          }
-          return output
-        }, [])
+    > ul,
+    > p {
+      font-size: 1.7rem;
+      line-height: 1.2em !important;
+      font-family: $titleFont !important;
+      font-weight: 500;
+
+      @include sm {
+        font-size: 1.4rem;
+      }
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    li {
+      font-size: .8em !important;
     }
   }
-}
-</script>
 
-<style lang="scss">
-.home {
   &__splash {
     width: 100%;
     aspect-ratio: 840/400;

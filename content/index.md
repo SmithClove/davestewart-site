@@ -5,10 +5,9 @@ description: Online portfolio of Dave Stewart; Open Source, commercial + persona
 layout: home
 media:
   gallery:
-    - ./home-splash.svg
+    - ./products/control-space/images/cs-logo.svg
     - ./products/todo-emojis/images/todo-emojis-logo.png
     - ./products/got-paper/images/ph-splash.png
-    - ./products/control-space/images/cs-splash.png
     - ./products/workflowy-multiflow/images/multiflow-featured.svg
     - ./projects/open-source/alias-hq/images/alias-featured.png
     - ./projects/open-source/vue-class-store/images/vue-class-store.png
@@ -18,27 +17,31 @@ media:
     - ./work/clearbank/images/clearbank-logo-light.png
     - ./work/fairsquare/images/fairsquare-logo.png
     - ./work/finsbury/images/finsbury-logo-dark.png
+    - ./blog/work/project-estimation/images/estimation-featured.png
+
 ---
 
-I work mainly in [fintech](/work/) building Vue JS applications, following years of commercial [agency](/archive/work/) work.
+A UK web app developer, currently building [Control Space](/products/control-space).
 
-I'm most well known for my [open](/projects/open-source/) [source](/archive/projects/tools/) [libraries](/archive/projects/open-source/) and I keep myself fresh with [personal projects](/search/?text=%2Fpersonal&sort=path&view=image).
+I'm a colourful mix of technical and creative with a passion for [products](/products/), side [projects](/projects/) and [invention](/archive/projects/).
 
-Right now I'm full time on [consumer products](/products/).
+<MediaGallery media="gallery" scale />
 
-## Site map
+If you're here for my _work_-work, these days it's [web apps](/work/) and was previously [web sites](/archive/work/) and [animation](/archive/work/animation/).
 
-Jump quickly to:
+---
 
-<PageList :pages="$parent.$parent.tree"/>
+If you need help to click, here's my last six months' posts:
 
+<keep-alive>
+  <HomeRecent />
+</keep-alive>
 
-## Also
+And I've restarted [writing](/blog/) which I absolutely love; expect clear, researched and actionable posts!
 
-Feel free to:
+If you still haven't clicked, check out the [sitemap](/sitemap/) or [search](/search/) the site.
 
-- [Search](/search/) the site
-- [Contact](/bio/profiles.md) me
+And if you want to talk, don't hesitate to get in [contact](/contact/).
 
 Cheers!
 

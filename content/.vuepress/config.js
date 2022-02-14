@@ -2,6 +2,7 @@ const hq = require('alias-hq')
 const { getValue } = require('./utils/object.js')
 const { description } = require('../../package')
 const { link, meta, script, isDev } = require('./utils/config.js')
+const { setType, setDate, setStatus, setParentPath, setGetters, setPermalink } = require('./store/classes/Page.js')
 
 /**
  * @see https://v1.vuepress.vuejs.org/config/#title
@@ -42,10 +43,12 @@ module.exports = {
   },
 
   extendPageData (page) {
-    if (page.regularPath.startsWith('/blog/') && page.frontmatter.layout !== 'folder' && !page.frontmatter.permalink) {
-      const slug = page.regularPath.replace(/\/$/, '').split('/').pop()
-      page.path = `/blog/${slug}/`
-    }
+    setType(page)
+    setDate(page)
+    setStatus(page)
+    setGetters(page)
+    setParentPath(page)
+    setPermalink(page)
   },
 
   additionalPages: [
@@ -54,6 +57,15 @@ module.exports = {
       title: 'Search',
       frontmatter: {
         layout: 'search'
+      }
+    },
+    {
+      path: '/sitemap/',
+      title: 'Site map',
+      frontmatter: {
+        layout: 'folder',
+        regularPath: '/',
+        format: 'text'
       }
     }
   ],

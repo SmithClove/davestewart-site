@@ -99,6 +99,20 @@ function setParentPath (page) {
       : slicePath(regularPath, 1)
 }
 
+function setChildren (page) {
+
+}
+
+/**
+ * Proxy frontmatter properties to getters
+ *
+ * @param page
+ */
+function setGetters (page) {
+  Object.defineProperty(page, 'desc', { get () { return this.frontmatter.description } })
+  Object.defineProperty(page, 'order', { get () { return this.frontmatter.order } })
+}
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Page class
 // ---------------------------------------------------------------------------------------------------------------------
@@ -136,15 +150,8 @@ class Page {
       setStatus(this)
       // setPermalink(this)
       setParentPath(this)
+      setGetters(this)
     }
-  }
-
-  get desc () {
-    return this.frontmatter.description
-  }
-
-  get order () {
-    return this.frontmatter.order
   }
 
   toJSON () {
@@ -153,5 +160,12 @@ class Page {
 }
 
 module.exports = {
-  Page
+  Page,
+  setType,
+  setDate,
+  setStatus,
+  setPermalink,
+  setParentPath,
+  setChildren,
+  setGetters,
 }
