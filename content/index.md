@@ -33,13 +33,11 @@ Also, I've recently restarted [writing](/blog/) which I absolutely love; expect 
 
 ---
 
-<keep-alive>
-  <HomeRecent />
-</keep-alive>
+<HomeThumbs />
 
 You can also [search](/search/) the site or trawl the [sitemap](/sitemap/).
 
-And please do get in [contact](/contact/) if you want to chat about anything at all.
+And do get in [contact](/contact/) if you fancy a chat.
 
 Bye for now!
 

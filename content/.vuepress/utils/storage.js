@@ -1,6 +1,6 @@
 // provide proxy for server
 const noop = () => ({})
-const s = globalThis.localStorage || { setItem: noop, getItem: noop }
+const s = globalThis.localStorage || { setItem: noop, getItem: noop, removeItem: noop }
 
 // actual storage
 export const storage = {
@@ -13,5 +13,9 @@ export const storage = {
     return value !== null
       ? JSON.parse(value)
       : defaults
+  },
+
+  remove (key) {
+    s.removeItem(key)
   }
 }

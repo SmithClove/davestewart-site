@@ -7,55 +7,74 @@
 
 <script>
 import { isPublished } from '../../../store/config/status.js'
-import { sortBy } from '../../../utils/array.js'
 import { isWithinDays } from '../../../utils/time.js'
+import { sortBy } from '../../../utils/array.js'
+import { storage } from '../../../utils/storage.js'
 
 export default {
   data () {
     return {
-      days: 0,
-      random: 0,
-      total: 6,
       pages: [],
+      options: {
+        days: null,
+        random: null,
+      }
+    }
+  },
+
+  watch: {
+    options: {
+      deep: true,
+      handler (value) {
+        storage.set('recent', value)
+      }
     }
   },
 
   created () {
-    this.setRecent()
+    const data = storage.get('recent')
+    if (data) {
+      Object.assign(this.options, data)
+      this.update()
+    }
+    else {
+      this.setRecent()
+    }
   },
 
   methods: {
     setRecent () {
-      this.days = 365 / 2
-      this.random = false
+      this.options.days = 365 / 2
+      this.options.random = false
       this.update()
     },
 
     setRandom () {
-      this.days = 365 * 5
-      this.random = true
+      this.options.days = 365 * 5
+      this.options.random = true
       this.update()
     },
 
     update () {
+      // options
+      const { days, random } = this.options
+
+      // filter pages
       let pages = this.$site.pages
         .filter(page => page.type === 'post')
         .filter(isPublished)
         .sort(sortBy('date', 'desc'))
 
-      if (this.days) {
-        pages = pages.filter(page => isWithinDays(page.date, this.days))
+      if (days) {
+        pages = pages.filter(page => isWithinDays(page.date, days))
       }
 
-      if (this.random) {
+      if (random) {
         pages = pages.sort(() => Math.random() - .5)
       }
 
-      if (this.total) {
-        pages = pages.slice(0, this.total)
-      }
-
-      this.pages = pages
+      // set pages
+      this.pages = pages.slice(0, 6)
     }
   }
 }

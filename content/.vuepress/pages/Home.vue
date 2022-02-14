@@ -1,5 +1,5 @@
 <template>
-  <div class="layout__home layout__page home">
+  <div class="layout__home home">
     <img class="home__splash" :src="require('../assets/home-splash-small.svg')">
     <h1>I'm Dave</h1>
     <Content id="content" class="pageContent" />
