@@ -21,15 +21,15 @@ media:
 
 ---
 
-A London-based web app developer, currently building [Control Space](/products/control-space).
+A London-based web developer currently building [Control Space](/products/control-space).
 
-I pride myself on tight mix of technical + creative with a passion for [products](/products/), [innovation](/projects/) and [experimentation](/archive/projects/).
+I pride myself on a tight mix of technical and creative with a passion for [product](/products/), [innovation](/projects/) and [experimentation](/archive/projects/).
 
 <MediaGallery media="gallery" scale keep-alive />
 
 My commercial work is primarily enterprise [web apps](/work/) after years of agency [sites](/archive/work/) and before that titles [animation](/archive/work/animation/).
 
-I've recently resumed [writing](/blog/) which I absolutely love; expect clear, researched and actionable thinking.
+I've recently resumed [writing](/blog/) so you can look forward to clear, researched and actionable thinking.
 
 ---
 
@@ -37,8 +37,6 @@ I've recently resumed [writing](/blog/) which I absolutely love; expect clear, r
 
 If you prefer, you can [search](/search/) the site or trawl the [sitemap](/sitemap/).
 
-Lastly, check my [bio](/bio/) and say **Hello** back!
-
-TTFN,
+Enjoy!
 
 <SiteIcon fill="#ea4848" style="width: 37px; height: 37px;"/>

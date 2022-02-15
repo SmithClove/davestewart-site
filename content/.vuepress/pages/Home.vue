@@ -1,7 +1,7 @@
 <template>
   <div class="layout__home home">
     <img class="home__splash" :src="require('../assets/home-splash-small.svg')">
-    <h1>I'm Dave</h1>
+    <h1>I'm <router-link to="/bio/">Dave</router-link>,</h1>
     <Content id="content" class="pageContent"/>
   </div>
 </template>
