@@ -1,7 +1,7 @@
 <template>
   <nav class="siteSearch">
     <router-link v-if="!isOnSearchPage" to="/search/">Search</router-link>
-    <a v-else href="#" class="dimmed" @click="close">Back</a>
+    <a v-else href="#" class="dimmed" @click.prevent="close">Back</a>
     <GlobalEvents @keyup="onKeyUp" />
   </nav>
 </template>
