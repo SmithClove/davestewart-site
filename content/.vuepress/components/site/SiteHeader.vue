@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <header v-if="delta <= 0" class="siteHeader">
+    <header v-if="scroll < 50 ? true : delta <= 0" class="siteHeader">
       <div class="siteHeader__background">
         <div class="layout__inner">
           <div class="siteHeader__left">
