@@ -44,13 +44,13 @@ At the end of the week or month, you look back and realise you never got to the 
 
 <img src="./images/jar-3.png" style="width: 200px; margin-right: 20px; float: left" />
 
-Rather than letting work swallow-up your days, each morning, commit to **time-boxing** only a few small and medium non-work tasks **first** Begin with 10 - 20 minutes of trivial to-dos; the kind which take only a few minutes.
+Rather than letting work swallow-up your days, each morning, commit to time-boxing a few small and medium non-work tasks **first**. Begin with 10 - 20 minutes of trivial to-dos; the kind which take only minutes, but would otherwise build up and drag you down.
 
-Spend the next hour on medium tasks you can complete in one go, or over a few days. Once these are done, not only will you get a huge boost of satisfaction.
+Spend the next hour on medium tasks you can complete within the hour or over a few days; this is your chance to chip away on a variety of personal and professional goals.
 
-After 11 am or so, you are free to disappear down the rabbit hole of chunky work tasks for the rest of the day!
+After 11 am or so, you are free to disappear down the rabbit hole of chunky work tasks that will swallow your time and attention for the rest of the day!
 
-Finally, the gaps; those are the breaks _you need to take_ so you don't burn out.
+Finally, the gaps; those are the breaks **you need to take** so you don't burn out.
 
 When you look back at your week you’ll have accomplished tasks in all areas of your life, and be happier and more organised for it :)
 
