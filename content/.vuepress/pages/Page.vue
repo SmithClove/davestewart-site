@@ -7,7 +7,7 @@
     <Content class="pageContent" />
 
     <!-- comments -->
-    <PageFeedback v-if="$page.frontmatter.date" websiteId="6366" title="So..." />
+    <PageFeedback v-if="$page.frontmatter.date || $page.status === 'preview'" websiteId="6366" title="So..." />
   </div>
 </template>
 

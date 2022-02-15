@@ -9,7 +9,7 @@
         <li>could I have made any points better, or quicker?</li>
         <li>what would you change?</li>
       </ul>
-      <p>Let me know via <a href="https://twitter.com/messages/compose?recipient_id=16294165">Twitter</a>.</p>
+      <p>Let me know in the comments.</p>
       <p>Thanks!</p>
       <p><SiteIcon class="accent"/></p>
     </blockquote>
