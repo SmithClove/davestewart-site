@@ -12,11 +12,11 @@ order: 2
 
 I'm one of those annoying people who just ***loves*** their job.
 
-I'm constantly thinking of ways to build things, to connect things, how this could be better, or easier, or smoother, or cooler. Shower thoughts become notes, sketches, experiments, repos, releases... 
+I'm constantly thinking of ways to build things, to connect things, how this could be better, or easier, or smoother, or cooler. Shower thoughts become notes, sketches, experiments, repos, releases, and... 
 
 <Quote text="Woohoo!!" name="Me, cracking the latest big / small idea" size="2" hero />
 
-You get the idea.
+You see where I'm coming from.
 
 I've had an interesting journey through tech; my background is animation and I learnt to code in 3dsmax, After Effects and Flash – in what used to be a very creative TV and advertising agency landscape.
 
