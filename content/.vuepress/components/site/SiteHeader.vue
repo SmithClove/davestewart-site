@@ -3,6 +3,7 @@
     <header v-if="scroll < 50 ? true : delta <= 0" class="siteHeader">
       <div class="siteHeader__background">
         <div class="layout__inner">
+          <NavHamburger/>
           <div class="siteHeader__left">
             <NavBreadcrumbs/>
           </div>
@@ -62,6 +63,10 @@ export default {
 
   &__left {
     flex-grow: 1;
+  }
+
+  &__middle {
+    justify-content: center;
   }
 
   &__right {
