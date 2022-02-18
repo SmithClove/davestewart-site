@@ -12,10 +12,14 @@
     </span>
 
     <div v-if="visible" class="navHamburger__dropdown">
-      <p v-for="link in links" :key="link.path" class="navHamburger__item" :class="isDivider(link.path) ? 'divider' : ''">
-        <router-link class="navHamburger__link" :to="link.path" :title="link.desc">{{ link.title }}</router-link>
+      <router-link v-for="link in links"
+                   :key="link.path"
+                   :to="link.path"
+                   class="navHamburger__item"
+      >
+        <span class="navHamburger__text">{{ link.title }}</span>
         <span v-if="link.desc" class="navHamburger__desc">{{ link.desc }}</span>
-      </p>
+      </router-link>
     </div>
   </nav>
 </template>
@@ -68,12 +72,8 @@ export default {
   },
 
   methods: {
-    isDivider (path) {
-      return ['/blog/', '/sitemap/'].includes(path)
-    },
-
     onMouseDown (event) {
-      if (event.target.tagName.toLowerCase() !== 'a') {
+      if (!this.$el.contains(event.target)) {
         this.visible = false
       }
     }
@@ -101,7 +101,7 @@ export default {
     top: -10px;
     left: -10px;
     background: white;
-    padding: .5rem .25rem;
+    padding: .5rem;
     outline: 1px solid $grey-lightest;
     border-radius: 2px;
     @include shadow-thumb;
@@ -109,19 +109,23 @@ export default {
   }
 
   &__item {
+    display: block;
     white-space: nowrap;
-    padding: .25rem;
-    //font-size: 1.2em;
-    margin-bottom: .5rem;
+    padding: .5rem !important;
+    margin: 0 0 .5rem;
+    border-radius: 3px;
 
-    &.divider {
-      //border-top: 1px solid $grey-lightest;
-      //margin-top: .25rem;
-      //padding-top: .5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background: mix($grey-lightest, white, 50%);
+      text-decoration: none;
     }
   }
 
-  &__link {
+  &__text {
     display: block;
     font: $titleFont;
     font-weight: 700;
@@ -129,11 +133,10 @@ export default {
 
   &__desc {
     font-size: .75em;
-    color: $grey-light;
-    padding-left: 6px;
+    color: $grey;
   }
 
-  a.router-link-exact-active {
+  a.router-link-exact-active * {
     color: $grey-light;
     cursor: default;
     pointer-events: none;
