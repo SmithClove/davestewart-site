@@ -98,14 +98,28 @@ export default {
 
   &__dropdown {
     position: absolute;
-    top: -10px;
-    left: -10px;
     background: white;
     padding: .5rem;
     outline: 1px solid $grey-lightest;
     border-radius: 2px;
-    @include shadow-thumb;
     z-index: 100;
+
+    @include shadow-lg;
+
+    @include sm {
+      box-sizing: border-box;
+      width: calc(100vw - 32px);
+      top: 0px;
+      left: 0;
+      font-size: 1.3em;
+    }
+
+    @include md-up {
+      top: -10px;
+      left: -10px;
+      width: auto;
+      height: auto;
+    }
   }
 
   &__item {

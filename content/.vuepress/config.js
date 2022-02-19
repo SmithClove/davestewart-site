@@ -65,7 +65,8 @@ module.exports = {
       frontmatter: {
         layout: 'folder',
         regularPath: '/',
-        format: 'text'
+        format: 'text',
+        description: 'Full list of everything on the site'
       }
     }
   ],
