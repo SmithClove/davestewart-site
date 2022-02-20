@@ -2,9 +2,6 @@ const Status = {
   // has a date, is published, and within 30 days of being published
   NEW: 'new',
 
-  // has a date, is published
-  // PUBLISHED: 'published',
-
   // has a date, but not yet published, so hidden on production
   SCHEDULED: 'scheduled',
 
@@ -18,9 +15,16 @@ const Status = {
   HIDDEN: 'hidden',
 }
 
+function isPublished (page) {
+  return ![Status.DRAFT, Status.HIDDEN, Status.SCHEDULED].includes(page.status)
+}
+
+function  isPublic (page) {
+  return page.frontmatter.date || page.status === 'preview'
+}
+
 module.exports = {
   Status,
-  isPublished (page) {
-    return ![Status.DRAFT, Status.HIDDEN, Status.SCHEDULED].includes(page.status)
-  }
+  isPublished,
+  isPublic,
 }

@@ -8,9 +8,21 @@
     <Content class="pageContent" />
 
     <!-- comments -->
-    <PageFeedback v-if="$page.frontmatter.date || $page.status === 'preview'" websiteId="6366" title="So..." />
+    <PageFeedback v-if="isPublic" websiteId="6366" title="So..." />
   </div>
 </template>
+
+<script>
+import { isPublic } from '../store/config/status.js'
+
+export default {
+  computed: {
+    isPublic () {
+      return isPublic(this.$page)
+    },
+  }
+}
+</script>
 
 <style lang="scss">
 .pageContent.is-scheduled {
