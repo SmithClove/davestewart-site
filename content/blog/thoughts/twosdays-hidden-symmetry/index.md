@@ -7,11 +7,11 @@ media:
   opengraph: ./images/twosday-opengraph.png
 ---
 
-# Twosday 2022's hidden analogue symmetry
+# Twosday's hidden analogue symmetry
 
 ## Intro
 
-Yesterday, 20th Feb 2020 was supposedly [Twosday](https://www.google.com/search?q=twos+day), both a [palindromic](https://en.wikipedia.org/wiki/Palindrome) and [ambigramic](https://en.wikipedia.org/wiki/Ambigram) date – at least on a calculator – and was celebrated by number nerds everywhere (myself included!).
+Yesterday, 20th Feb 2020 was supposedly [Twosday](https://www.google.com/search?q=twos+day), both a [palindromic](https://en.wikipedia.org/wiki/Palindrome) and [ambigramic](https://en.wikipedia.org/wiki/Ambigram) date – at least on a calculator – and was [celebrated](https://www.google.com/search?q=22%2F2%2F2022) by number nerds everywhere (myself included!).
 
 However, those of us [who get really geeky over times](/archive/projects/personal/futureclock/) were hanging out for the double-whammy of 22:22 on 22/02/2022!
 
@@ -26,30 +26,30 @@ However, those of us [who get really geeky over times](/archive/projects/persona
   </blockquote>
 </Twitter>
 
-22:22 has been my favourite time for a number of years now, chiefly because of the digital symmetry, but also because of its _analogue_ symmetry. At around 20 past 10 **the hands of the clock seem like they are in direct alignment with each other** at around 180°:
+22:22 has been my favourite time for a number of years now, because in addition to the digital symmetry, there is seemingly an _analogue_ symmetry – the hands of the clock ***look like they are in direct alignment***:
 
-![](./images/clock.png)
+<img src="./images/clock.png" style="width: 400px; display: block; margin: 2rem auto">
 
 So the question is: does 22:22 – ***and therefore Twosday*** – have an analogue symmetry hidden inside its digital one!?
 
 ## Theory
 
-### Abstract
+### Conjecture
 
 If you consider the hands of the clock:
 
-- at 10 o'clock the hour hand is ***precisely ⅓ before the 12***
-- at 20 past the minute hand is ***precisely ⅓ before the 6***
+- at 10 o'clock, the hour hand is ***⅓ before the 12***
+- at 20 past, the minute hand is ***⅓ before the 6***
 
-But at 22:22 the proportions _cannot_ be thirds because both hands will have travelled a bit further (22/60), so:
+But at 22:22 the proportions _cannot_ be thirds because both hands will have travelled a bit further (by 22/60) so:
 
-- the minute hand is ***22/60 away from 12***
-- the hour hand is ***22/60 between 10 and 11***
+- the minute hand will be ***22/60 away from 12***
+- the hour hand will be ***22/60 between 10 and 11***
 
 
-So the question is: with these additional small offsets, do the hands still line up to 180°?
+So the question is: with these additional small offsets, do the hands line up to 180°?
 
-### Principle
+### Proof
 
 The way to think about the problem is to imagine the minute hand driving the hour hand.
 
@@ -58,18 +58,18 @@ For every minute that passes:
 - the minute hand moves by 1/60 of 360°
 - the hour hand moves by 1/60 of (360° / 12) or 30°
 
-So at 22:22:
+Therefore at 22:22:
 
-- the minute hand is 22/60 x 360 degrees
-- the hour hand is (10/12 x 360 degrees) + (22/60 x 30 degrees)
+- the minute hand will be at 22/60 x 360 degrees
+- the hour hand will be at (10/12 x 360 degrees) + (22/60 x 30 degrees)
 
-If you subtract one from the other you get the difference in degrees between them, and _hopefully_ 180°.
+If you subtract one from the other you get the difference in degrees between them... which we _hope_ is 180°.
 
 ## Code
 
 ### Attempt 1: solving for 22:22
 
-I like to solve things in code, so here it is:
+I like to solve things in code, so in JavaScript:
 
 ```js
 var f = 22/60
@@ -101,28 +101,28 @@ And the result is: `176.98333333333335`.
 
 This feels very strange, that such a small adjustment would not only seemingly have such a large impact, but would move the value further away from the magical `180`.
 
-At this point I'm thinking my simple code experiments need some kind of geometric proof, so perhaps there's a Code Pen of a clock online I can tweak and start measuring angles.
+At this point I'm thinking my simple code experiments need some kind of geometric proof, so I can see the angles and start tweaking visually.
 
 ### Attempt 3: solving for 180°
 
 Luckily, I found some [clock code online](https://dev.to/code_mystery/simple-analog-clock-using-html-css-javascript-2c6a) that I could quickly edit and create something more interactive.
 
-Tweaking the time value it was suprisingly easy to work out what time would give 180°, and that time was `22:21:45` as you can see in the interactive example below: 
+Tweaking the time value, it was surprisingly easy to work out what time would give 180°, and that time was `22:21:45` as you can see in the interactive example below: 
 
 <CodePen hash="qBVKxKq" title="Analogue Ambigram" height="600"/>
 
 But here's the thing...
 
-If we allow ourselves to clamp the time to ***just the minutes*** (which was our original aim) we get ***22:22*** and ***180°*** !
+If we _round off_ the time to ***just the minutes*** (which was our original aim) we get ***22:22*** and ***180°*** !
 
 ## Conclusion
 
-So, rather amazingly, ***22:22*** on ***22/02/2022*** has _multiple_ embedded ambigrams and palindromes:
+If you're happy to accept the rounding then ***22:22*** on ***22/02/2022*** has _multiple_ embedded ambigrams and palindromes:
 
-- the digital date
-- the digital time
-- the analogue time
+- the digital date: ***20/02/2022***
+- the digital time: ***22:22***
+- the analogue time: ***180°***
 
-I'd tried to solve this problem before with just Excel and left it at Attempt 2, but thanks to Twosday gave it another shot, and now we have some additional datetime magic to enjoy.
+Is the 180° _strictly_ pure? No, but by that token, is the date? The leading zero in the month component could have been omitted, but we wouldn't be having the fun we are now. It's all a fudge really, you just have to enjoy it for what it is.
 
 Happy Twosday!

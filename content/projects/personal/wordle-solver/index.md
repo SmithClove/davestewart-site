@@ -1,6 +1,7 @@
 ---
 description:  I wrote a pure JavaScript Wordle Solver using Bayesian inference and Levenshtein distancing... or... did I?
 date: 2022-02-10
+hidden: true
 tags:
   - javascript
   - game
