@@ -8,17 +8,17 @@
     <Content class="pageContent" />
 
     <!-- comments -->
-    <PageFeedback v-if="isPublic" websiteId="6366" title="So..." />
+    <PageFeedback v-if="isVisible" websiteId="6366" title="So..." />
   </div>
 </template>
 
 <script>
-import { isPublic } from '../store/config/status.js'
+import { isVisible } from '../store/config/status.js'
 
 export default {
   computed: {
-    isPublic () {
-      return isPublic(this.$page)
+    isVisible () {
+      return isVisible(this.$page)
     },
   }
 }

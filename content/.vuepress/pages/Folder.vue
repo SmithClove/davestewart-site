@@ -27,6 +27,8 @@
 <script>
 import { makeTree, makeHeaders } from '../store/services/tree.js'
 import { sortBy } from '../utils/array.js'
+import { isVisible, Status } from '../store/config/status.js'
+import { isProd } from '../utils/config.js'
 
 export default {
   computed: {
@@ -54,7 +56,9 @@ export default {
 
     filtered () {
       const regularPath = this.regularPath
-      return this.$site.pages.filter(page => page.regularPath.startsWith(regularPath))
+      return this.$site.pages
+        .filter(page => page.regularPath.startsWith(regularPath))
+        .filter(item => isProd ? isVisible(item) : true)
     },
 
     pages () {

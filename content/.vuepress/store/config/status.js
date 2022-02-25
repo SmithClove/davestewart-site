@@ -19,12 +19,12 @@ function isPublished (page) {
   return ![Status.DRAFT, Status.HIDDEN, Status.SCHEDULED].includes(page.status)
 }
 
-function  isPublic (page) {
-  return page.frontmatter.date || page.status === 'preview'
+function isVisible (page) {
+  return isPublished(page) && page.status !== Status.PREVIEW // page.frontmatter.date
 }
 
 module.exports = {
   Status,
   isPublished,
-  isPublic,
+  isVisible,
 }

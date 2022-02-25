@@ -5,7 +5,7 @@
        :data-pages="pages.length"
        :data-folders="folders.length"
   >
-    <div v-if="title" class="pageTree__header">
+    <div v-if="title && items.length" class="pageTree__header">
       <Heading :level="depth + 1" class="pageTree__title">
         <a :name="id"></a>
         <a :name="slug"></a>
@@ -37,6 +37,8 @@ import Vue from 'vue'
 import { getValue } from '../../../utils/object.js'
 import { slugify } from '../../../utils/string.js'
 import PageItem from './PageItem.vue'
+import { isVisible, Status } from '../../../store/config/status.js'
+import { isProd } from '../../../utils/config.js'
 
 const Heading = Vue.component('Heading', {
   functional: true,
@@ -89,16 +91,14 @@ export default {
       return slugify(this.path.replace(this.$page.path, ''))
     },
 
-    xdesc () {
-      return this.page.desc || getValue(this.page, 'frontmatter.description')
-    },
-
     folders () {
       return this.items.filter(item => item.type === 'folder')
     },
 
     pages () {
-      return this.items.filter(item => item.type !== 'folder')
+      return this.items
+        .filter(item => item.type !== 'folder')
+        .filter(item => isProd ? isVisible(item) : true)
     },
   },
 }
