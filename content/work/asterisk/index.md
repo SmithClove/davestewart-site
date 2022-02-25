@@ -13,7 +13,8 @@ tags:
 media:
   opengraph: ./images/asterisk-logo.png
   thumbnail: ./images/asterisk-logo-trans.svg
-  gallery:
+  featured: ./images/asterisk-logo-trans.svg
+  images:
     - ./images/asterisk-01.jpg
     - ./images/asterisk-02.jpg
     - ./images/asterisk-03.jpg

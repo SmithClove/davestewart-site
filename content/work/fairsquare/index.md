@@ -15,7 +15,8 @@ tags:
 media:
   opengraph: ./images/fairsquare-logo.png
   thumbnail: ./images/fairsquare-logo.svg
-  gallery:
+  featured: ./images/fairsquare-logo.svg
+  images:
     - ./images/fairsquare-01.jpg
     - ./images/fairsquare-02.jpg
     - ./images/fairsquare-03.jpg
