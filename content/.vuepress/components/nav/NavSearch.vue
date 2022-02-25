@@ -56,3 +56,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.siteSearch {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  a {
+    padding: .5rem .75rem;
+  }
+}
+</style>

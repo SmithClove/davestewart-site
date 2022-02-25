@@ -1,5 +1,5 @@
 <template>
-  <nav class="breadcrumbs">
+  <nav class="navBreadcrumbs">
     <span v-for="(link, index) in links"
           :key="link.path"
           class="breadcrumb__item"
@@ -24,7 +24,7 @@ export default {
       if (this.notFound) {
         return [
           { path: '/', title: 'Home' },
-          { title: '404' }
+          { title: '404' },
         ]
       }
 
@@ -52,24 +52,30 @@ export default {
 
     notFound () {
       return this.$page.path === ''
-    }
+    },
   },
 }
 </script>
 
 <style lang="scss">
-.breadcrumbs {
+@import '../../styles/variables';
+
+.navBreadcrumbs {
   width: 100%;
+  height: 100%;
   display: flex;
-  margin: 0 0 0 -6px;
+  align-items: center;
   flex-wrap: wrap;
+  padding: .5rem;
+  box-sizing: border-box;
 }
 
 .breadcrumb {
+
   &__item {
     display: inline-block;
     white-space: nowrap;
-    margin: 0 0 0.5rem 0;
+    margin: .25rem 0;
     cursor: default;
 
     // arrow
@@ -88,6 +94,16 @@ export default {
 
   &__text {
     opacity: .3;
+  }
+}
+
+// hide page title on mobile
+@include sm {
+  .layout__page {
+    .breadcrumb__item:nth-last-child(10n+2):after,
+    .breadcrumb__item:last-child {
+      display: none;
+    }
   }
 }
 </style>

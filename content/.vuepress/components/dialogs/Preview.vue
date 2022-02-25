@@ -269,15 +269,19 @@ export default {
 @import "../../styles/variables";
 
 .preview {
-  z-index: 90;
   position: fixed;
   overflow-y: visible;
   @include fit;
+
+  &.active {
+    z-index: 500;
+  }
 
   &__background {
     @include fit;
     position: absolute;
     background: rgba(white, 1); // .95
+    pointer-events: fill;
   }
 
   &__container {

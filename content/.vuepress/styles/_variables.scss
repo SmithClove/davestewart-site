@@ -18,7 +18,7 @@ $grey-lighter: #DCDFE4;
 $grey-lightest: #EAECEF;
 
 // layout
-$widthPage: 720px;
+//$widthPage: 720px;
 $widthPage: 840px;
 $widthHome: 940px;
 
@@ -84,6 +84,10 @@ $quoteFont: Sanchez, Garamond, Times, serif;
 // ---------------------------------------------------------------------------------------------------------------------
 
 @import "layout/mixins";
+
+@mixin full {
+  @media screen and (min-width: #calc($widthPage + 20px)) { @content }
+}
 
 @mixin introText {
   font-size: 1.7rem;

@@ -3,8 +3,8 @@
     <header v-if="scroll < 50 ? true : delta <= 0" class="siteHeader">
       <div class="siteHeader__background">
         <div class="layout__inner">
-          <NavHamburger/>
           <div class="siteHeader__left">
+            <NavHamburger/>
             <NavBreadcrumbs/>
           </div>
           <div class="siteHeader__right">
@@ -44,6 +44,7 @@ export default {
 
 .siteHeader {
   font-family: $titleFont;
+  user-select: none;
 
   // used to give all items reasonable outline padding
   a, .breadcrumb__text {
@@ -52,7 +53,17 @@ export default {
 
   .layout__inner {
     // pull in padding because breadcrumbs already contain bottom margin
-    padding-bottom: .5rem;
+    padding: 0;
+  }
+
+  @include full {
+    &__left {
+      margin-left: -.5rem;
+    }
+
+    &__right {
+      margin-right: -.5rem;
+    }
   }
 
   &__left,
