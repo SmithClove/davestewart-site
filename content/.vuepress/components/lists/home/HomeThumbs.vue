@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { isPublished } from '../../../store/config/status.js'
+import { isVisible } from '../../../store/config/status.js'
 import { isWithinDays } from '../../../utils/time.js'
 import { sortBy } from '../../../utils/array.js'
 import { storage } from '../../../utils/storage.js'
@@ -66,8 +66,8 @@ export default {
       // filter pages
       let pages = this.$site.pages
         .filter(page => page.type === 'post')
-        .filter(isPublished)
         .sort(sortBy('date', 'desc'))
+        .filter(isVisible)
 
       if (days) {
         pages = pages.filter(page => isWithinDays(page.date, days))
