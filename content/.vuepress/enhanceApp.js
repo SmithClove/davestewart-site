@@ -52,7 +52,7 @@ export default ({ Vue, options, router, siteData, isServer }) => {
     const hidden = status === Status.HIDDEN
     const hiddenInProd = (status === Status.DRAFT || status === Status.SCHEDULED) && isProd
     if (hidden || hiddenInProd) {
-      console.log(`Removing: [${status}] ${page.title}`)
+      // console.log(`Removing: [${status}] ${page.title}`)
       // modify array directly as siteData.pages is read-only
       const index = siteData.pages.findIndex(p => p === page)
       siteData.pages.splice(index, 1)
