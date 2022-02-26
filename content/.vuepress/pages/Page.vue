@@ -2,13 +2,13 @@
   <div class="page" :data-path="$page.path.substr(1, $page.path.length -2)">
     <PageHero />
     <h1>{{ $page.title }}</h1>
-    <p class="description">{{ $page.desc }}</p>
-    <PageInfo/>
+    <p class="description">{{ description }}</p>
+    <PageInfo v-if="showFeedback"/>
     <PreviewInfo />
     <Content class="pageContent" />
 
     <!-- comments -->
-    <PageFeedback v-if="isVisible" websiteId="6366" title="So..." />
+    <PageFeedback v-if="showFeedback" websiteId="6366" title="So..." />
   </div>
 </template>
 
@@ -17,9 +17,13 @@ import { isVisible } from '../store/config/status.js'
 
 export default {
   computed: {
-    isVisible () {
-      return isVisible(this.$page)
+    showFeedback () {
+      return isVisible(this.$page) && !this.$page.path.startsWith('/bio/')
     },
+
+    description () {
+      return this.$fm('description')
+    }
   }
 }
 </script>
