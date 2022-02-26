@@ -39,4 +39,4 @@ You can also [search](/search/) the site or trawl the [sitemap](/sitemap/).
 
 Enjoy!
 
-<SiteIcon fill="#ea4848" style="width: 37px; height: 37px;"/>
+<SiteIcon size="35" fill="#ea4848" />

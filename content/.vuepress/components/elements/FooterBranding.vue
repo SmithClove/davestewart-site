@@ -34,14 +34,14 @@ export default {
   &__icon {
     height: 32px;
     width: auto;
-    fill: $grey-light;
+    fill: $grey;
   }
 
   &__text {
     height: 32px;
     margin-left: .5rem;
     line-height: 1;
-    color: $grey-light;
+    color: $grey;
 
     :first-child {
       display: block;

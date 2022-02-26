@@ -35,7 +35,7 @@ export default {
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: $grey-lighter;
+    background-color: $grey-light;
 
     &:hover, &:focus {
       background-color: unset;
