@@ -56,7 +56,8 @@ module.exports = {
       path: '/search/',
       title: 'Search',
       frontmatter: {
-        layout: 'search'
+        layout: 'search',
+        description: 'Search and preview projects',
       }
     },
     {

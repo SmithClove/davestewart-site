@@ -1,8 +1,8 @@
 <template>
-  <nav class="navHamburger">
+  <nav class="navSite">
 
     <!-- button -->
-    <div class="navHamburger__button" @click="visible = !visible">
+    <div class="navSite__button" @click="visible = !visible">
       <svg width="15px" height="14px" viewBox="0 0 15 14">
         <rect id="bar-1" fill="currentColor" x="2" y="3" width="11" height="2"></rect>
         <rect id="bar-2" fill="currentColor" x="2" y="7" width="11" height="2"></rect>
@@ -11,18 +11,19 @@
     </div>
 
     <!-- background -->
-    <div v-if="visible" class="navHamburger__background"></div>
+    <div v-if="visible" class="navSite__background"></div>
 
     <!-- dropdown -->
-    <div ref="dropdown" v-if="visible" class="navHamburger__dropdown">
-      <div v-for="section in sections" :key="section.name" class="navHamburger__section">
+    <div ref="dropdown" v-if="visible" class="navSite__dropdown">
+      <div v-for="section in sections" :key="section.name" class="navSite__section">
         <router-link v-for="link in section.links"
                      :key="link.path"
                      :to="link.path"
-                     class="navHamburger__item"
+                     class="navSite__item"
+                     @click.native="onClick"
         >
-          <span class="navHamburger__text">{{ link.title }}</span>
-          <span v-if="link.desc" class="navHamburger__desc">{{ link.desc }}</span>
+          <span class="navSite__text">{{ link.title }}</span>
+          <span v-if="link.desc" class="navSite__desc">{{ link.desc }}</span>
         </router-link>
       </div>
     </div>
@@ -42,10 +43,10 @@ export default {
   watch: {
     visible (value) {
       if (value) {
-        document.addEventListener('mouseup', this.onMouseDown)
+        document.addEventListener('mouseup', this.onClickOut)
       }
       else {
-        document.removeEventListener('mouseup', this.onMouseDown)
+        document.removeEventListener('mouseup', this.onClickOut)
       }
     },
 
@@ -97,7 +98,11 @@ export default {
   },
 
   methods: {
-    onMouseDown (event) {
+    onClick () {
+      this.visible = false
+    },
+
+    onClickOut (event) {
       if (this.$refs.dropdown) {
         if (!this.$refs.dropdown.contains(event.target)) {
           this.visible = false
@@ -111,7 +116,7 @@ export default {
 <style lang="scss">
 @import "../../styles/variables";
 
-.navHamburger {
+.navSite {
   position: relative;
   height: 100%;
   display: flex;
@@ -216,8 +221,6 @@ export default {
 
   a.router-link-exact-active * {
     color: $grey-light;
-    cursor: default;
-    pointer-events: none;
   }
 }
 

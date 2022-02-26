@@ -4,7 +4,7 @@
       <div class="siteHeader__background">
         <div class="layout__inner">
           <div class="siteHeader__left">
-            <NavHamburger/>
+            <NavSite/>
             <NavBreadcrumbs/>
           </div>
           <div class="siteHeader__right">
