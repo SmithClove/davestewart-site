@@ -6,130 +6,132 @@
         @keyup.esc="onEscape"
     />
 
-    <!-- header -->
-    <h1 class="search__title">
-      <span>Search</span>
-      <span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span>
-    </h1>
+    <client-only>
+      <h1 class="search__title">
+        <span>Search</span>
+        <span v-if="searchTitle">: <span class="accent">{{ searchTitle }}</span></span>
+      </h1>
 
-    <!-- description -->
-    <p class="description" style="display: flex">
-      <span>{{ pageDescription }}</span>
-    </p>
+      <!-- description -->
+      <p class="description" style="display: flex">
+        <span>{{ pageDescription }}</span>
+      </p>
 
-    <!-- parameters -->
-    <div class="search__parameters">
+      <!-- parameters -->
+      <div class="search__parameters">
 
-      <!-- clear -->
-      <button class="search__clear"
-         :class="{ active: canReset }"
-         @click.prevent="reset">
-        <span>&times;</span>
-      </button>
+        <!-- clear -->
+        <button class="search__clear"
+                :class="{ active: canReset }"
+                @click.prevent="reset">
+          <span>&times;</span>
+        </button>
 
-      <div class="searchControls">
-        <UiControls class="only-sm">
-          <!-- search input -->
-          <div class="searchControls__text">
-            <UiInput v-model="query.text"
-                     placeholder="Type to filter...."
-            />
-          </div>
-        </UiControls>
+        <div class="searchControls">
+          <UiControls class="only-sm">
+            <!-- search input -->
+            <div class="searchControls__text">
+              <UiInput v-model="query.text"
+                       placeholder="Type to filter...."
+              />
+            </div>
+          </UiControls>
 
-        <!-- controls -->
-        <UiControls>
+          <!-- controls -->
+          <UiControls>
 
-          <!-- search input -->
-          <div class="searchControls__text only-md-up">
-            <UiInput v-model="query.text"
-                     placeholder="Type to filter...."
-            />
-          </div>
+            <!-- search input -->
+            <div class="searchControls__text only-md-up">
+              <UiInput v-model="query.text"
+                       placeholder="Type to filter...."
+              />
+            </div>
 
-          <!-- tags -->
-          <div class="searchControls__tags">
-            <UiRadio name="filter"
-                     label="Tags"
-                     :count="query.tags.length ? query.tags.length : ''"
-                     :countState="options.showTags ? 0 : 1"
-                     :options="options.filter"
-                     v-model="query.filter"
-            />
-          </div>
+            <!-- tags -->
+            <div class="searchControls__tags">
+              <UiRadio name="filter"
+                       label="Tags"
+                       :count="query.tags.length ? query.tags.length : ''"
+                       :countState="options.showTags ? 0 : 1"
+                       :options="options.filter"
+                       v-model="query.filter"
+              />
+            </div>
 
-          <!-- sorting -->
-          <div class="searchControls__sort">
-            <UiRadio
+            <!-- sorting -->
+            <div class="searchControls__sort">
+              <UiRadio
                 name="sort"
                 :options="options.sort"
                 v-model="query.sort"
-            />
-          </div>
+              />
+            </div>
 
-          <!-- format -->
-          <div class="searchControls__format">
-            <UiRadio
+            <!-- format -->
+            <div class="searchControls__format">
+              <UiRadio
                 name="format"
                 :options="options.format"
                 v-model="query.format"
-            />
+              />
+            </div>
+
+          </UiControls>
+        </div>
+
+
+        <!-- tags -->
+        <SlideUpDown ref="tagsContainer"
+                     :active="options.showTags"
+                     :duration="400"
+
+        >
+          <TagMatrix class="search__tags"
+                     :mode="query.filter"
+                     :selected="query.tags"
+                     :pages="filtered"
+                     @toggle="toggleTag"
+                     @click="setTag"/>
+        </SlideUpDown>
+      </div>
+
+      <div class="layout__folder">
+
+        <div v-if="itemsAsList.length" class="search__results">
+
+          <!-- by date -->
+          <div v-if="query.sort === 'date'" class="search__date">
+            <div v-for="group in itemsByYear" class="pageTree" :data-mode="query.format">
+              <div class="pageTree__header">
+                <a :name="group.title"></a>
+                <h2 class="pageTree__title">{{ group.title }}</h2>
+              </div>
+              <div class="pageTree__pages">
+                <ThumbnailWall v-if="query.format === 'image'" :pages="group.items"/>
+                <PageList v-else :pages="group.items"/>
+              </div>
+            </div>
           </div>
 
-        </UiControls>
-      </div>
-
-
-      <!-- tags -->
-      <SlideUpDown ref="tagsContainer"
-                   :active="options.showTags"
-                   :duration="400"
-
-      >
-        <TagMatrix class="search__tags"
-                   :mode="query.filter"
-                   :selected="query.tags"
-                   :pages="filtered"
-                   @toggle="toggleTag"
-                   @click="setTag"/>
-      </SlideUpDown>
-    </div>
-
-    <div class="layout__folder">
-
-      <div v-if="itemsAsList.length" class="search__results">
-
-        <!-- by date -->
-        <div v-if="query.sort === 'date'" class="search__date">
-          <div v-for="group in itemsByYear" class="pageTree" :data-mode="query.format">
-            <div class="pageTree__header">
-              <a :name="group.title"></a>
-              <h2 class="pageTree__title">{{ group.title }}</h2>
-            </div>
-            <div class="pageTree__pages">
-              <ThumbnailWall v-if="query.format === 'image'" :pages="group.items"/>
-              <PageList v-else :pages="group.items"/>
-            </div>
+          <!-- by folder -->
+          <div v-else-if="query.sort === 'path'" class="search__tree">
+            <PageTree :format="query.format" :items="itemsAsTree"/>
           </div>
+
+          <!-- thumbnails -->
+          <div v-else-if="query.sort === 'thumbs'" class="search__list">
+            <ThumbnailWall :pages="itemsAsList"/>
+          </div>
+
         </div>
 
-        <!-- by folder -->
-        <div v-else-if="query.sort === 'path'" class="search__tree">
-          <PageTree :format="query.format" :items="itemsAsTree"/>
-        </div>
-
-        <!-- thumbnails -->
-        <div v-else-if="query.sort === 'thumbs'" class="search__list">
-          <ThumbnailWall :pages="itemsAsList"/>
+        <div v-else class="search__noResults">
+          <p>No results for those search parameters!</p>
         </div>
 
       </div>
-
-      <div v-else class="search__noResults">
-        <p>No results for those search parameters!</p>
-      </div>
-
-    </div>
+    </client-only>
+    <!-- header -->
   </div>
 </template>
 
