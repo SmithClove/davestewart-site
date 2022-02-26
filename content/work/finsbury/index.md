@@ -15,6 +15,7 @@ media:
   opengraph: ./images/finsbury-logo-dark.png
   thumbnail: ./images/finsbury-logo-dark.svg
   gallery:
+    - ./images/finsbury-logo.svg
     - ./screens/home.png
     - ./screens/search-empty.png
     - ./screens/search-simple.png

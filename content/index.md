@@ -35,7 +35,7 @@ I've recently resumed [writing](/blog/) so you can look forward to clear, resear
 
 <HomeThumbs />
 
-Alternatively, [search](/search/) the site or trawl the [sitemap](/sitemap/).
+You can also [search](/search/) the site or trawl the [sitemap](/sitemap/).
 
 Enjoy!
 

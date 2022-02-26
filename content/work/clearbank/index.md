@@ -12,7 +12,7 @@ tags:
 media:
   opengraph: ./images/clearbank-logo-light.png
   thumbnail: ./images/clearbank-logo-light.svg
-  featured: ./images/clearbank-logo-dark.svg
+  featured: ./images/clearbank-logo-white.svg
 ---
 
 # Clear Bank

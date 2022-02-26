@@ -15,6 +15,7 @@ media:
   opengraph: ./images/sentiance-logo-red.png
   thumbnail: ./images/sentiance-logo-red.svg
   gallery:
+    - ./images/sentiance-logo-white.svg
     - ./screens/1 - overview.png
     - ./screens/2 - insight.png
     - ./screens/3 - user journey.png
