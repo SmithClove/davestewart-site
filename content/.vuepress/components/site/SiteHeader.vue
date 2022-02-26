@@ -58,11 +58,11 @@ export default {
 
   @include full {
     &__left {
-      margin-left: -.5rem;
+      margin-left: -.75rem;
     }
 
     &__right {
-      margin-right: -.5rem;
+      margin-right: -.75rem;
     }
   }
 
@@ -74,10 +74,6 @@ export default {
 
   &__left {
     flex-grow: 1;
-  }
-
-  &__middle {
-    justify-content: center;
   }
 
   &__right {

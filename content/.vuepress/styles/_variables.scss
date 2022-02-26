@@ -86,7 +86,7 @@ $quoteFont: Sanchez, Garamond, Times, serif;
 @import "layout/mixins";
 
 @mixin full {
-  @media screen and (min-width: #calc($widthPage + 20px)) { @content }
+  @media screen and (min-width: calc(#{$widthPage} + 20px)) { @content }
 }
 
 @mixin introText {
