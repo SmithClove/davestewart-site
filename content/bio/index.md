@@ -52,7 +52,7 @@ You can find me / my work / my comments / my likes on
 [Mixcloud](http://mixcloud.com/davestewart/),
 [SoundCloud](https://soundcloud.com/davestewart/likes) and [Vimeo](http://vimeo.com/davestewartuk).
 
-If you fancy a two-way conversation, catch me on
+If you fancy a chat, catch me on
 [Twitter](http://twitter.com/dave_stewart).
 
 Bye for now!
