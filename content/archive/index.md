@@ -1,6 +1,6 @@
 ---
 title: Archive
-description: The best non-current stuff
+description: The best older work
 layout: folder
 order: 5
 toc: 2,3
