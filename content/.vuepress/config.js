@@ -35,7 +35,7 @@ module.exports = {
       'data-api': '/stats/api/event',
       async: 1,
       defer: 1,
-    })
+    }),
   ],
 
   shouldPrefetch (file, type) {
@@ -57,8 +57,8 @@ module.exports = {
       title: 'Search',
       frontmatter: {
         layout: 'search',
-        description: 'Search and preview projects',
-      }
+        description: 'Search portfolio',
+      },
     },
     {
       path: '/sitemap/',
@@ -67,9 +67,9 @@ module.exports = {
         layout: 'folder',
         regularPath: '/',
         format: 'text',
-        description: 'Full list of everything on the site'
-      }
-    }
+        description: 'Full list of everything on the site',
+      },
+    },
   ],
 
   configureWebpack: {
@@ -96,7 +96,7 @@ module.exports = {
     require('./plugins/vuepress/media.js').plugin,
     [require('./plugins/vuepress/metatags.js'), {
       site: {
-        name   : 'Dave Stewart',
+        name: 'Dave Stewart',
         twitter: 'dave_stewart',
       },
       canonical_base: 'https://davestewart.co.uk',
@@ -107,13 +107,13 @@ module.exports = {
           return path
             ? page.regularPath + path.replace(/\.\//, '')
             : '/assets/img/site-preview.png'
-        }
-      ]
+        },
+      ],
     }],
     ['@renovamen/vuepress-plugin-reading-time', {
       wordsPerMinuteEN: 200,
-      includes: ['/blog/*']
-    }]
+      includes: ['/blog/*'],
+    }],
   ],
 
   markdown: {

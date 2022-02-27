@@ -4,6 +4,9 @@
       <FooterBranding />
       <FooterIcons/>
     </div>
+    <div class="layout__inner">
+      <NavSections />
+    </div>
   </footer>
 </template>
 
@@ -12,12 +15,24 @@ export default {}
 </script>
 
 <style lang="scss">
+@import "../../styles/variables";
+
 .siteFooter {
   .layout__inner {
     display: flex;
     justify-content: space-between;
-    padding-top: 1.5rem;
     align-items: start;
+
+    &:first-child {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    &:last-child {
+      border-top: 1px dashed $grey-lightest;
+      padding-top: 1rem;
+      padding-bottom: 4rem;
+    }
   }
 }
 </style>

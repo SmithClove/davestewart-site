@@ -93,7 +93,7 @@ export default {
   }
 
   &__text {
-    opacity: .3;
+    color: $grey-light;
   }
 }
 
