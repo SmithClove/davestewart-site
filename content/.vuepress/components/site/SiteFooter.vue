@@ -1,7 +1,7 @@
 <template>
   <footer class="siteFooter">
     <div class="layout__inner">
-      <FooterBranding />
+      <SiteBranding />
       <FooterIcons/>
     </div>
     <div class="layout__inner">
@@ -24,13 +24,13 @@ export default {}
     align-items: start;
 
     &:first-child {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
 
     &:last-child {
       border-top: 1px dashed $grey-lightest;
-      padding-top: 1rem;
+      padding-top: .75rem;
       padding-bottom: 4rem;
     }
   }

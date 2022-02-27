@@ -1,7 +1,7 @@
 <template>
-  <router-link class="footerBranding" to="/bio/" @click.prevent="onClick">
-    <SiteIcon class="footerBranding__icon"/>
-    <div class="footerBranding__text">
+  <router-link class="siteBranding" to="/bio/" @click.prevent="onClick">
+    <SiteIcon class="siteBranding__icon"/>
+    <div class="siteBranding__text">
       <span>Dave Stewart</span>
       <span>Web Developer + Indie Maker</span>
     </div>
@@ -24,12 +24,13 @@ export default {
 <style lang="scss">
 @import "../../styles/variables";
 
-.footerBranding {
+.siteBranding {
   display: flex;
   color: unset;
-  text-decoration: none !important;
-  padding: 5px;
   margin: -5px;
+  padding: .5rem;
+  font-size: 1rem !important;
+  text-decoration: none !important;
 
   &__icon {
     height: 32px;
@@ -42,22 +43,30 @@ export default {
     margin-left: .5rem;
     line-height: 1;
     color: $grey;
+    position: relative;
+
+    span {
+      position: relative;
+      display: block;
+      white-space: nowrap;
+    }
 
     :first-child {
-      display: block;
+      top: -.1em;
       font-family: $titleFont;
       font-weight: 600;
-      font-size: 1.4em;
+      font-size: 1.35em;
       opacity: .8;
     }
 
     :last-child {
-      display: block;
-      font-size: .75em;
+      bottom: -.15em;
+      font-size: .65em;
       opacity: .6;
     }
   }
 
+  .navSite &,
   &:hover {
     svg {
       fill: $accentColor;

@@ -15,6 +15,9 @@
 
     <!-- dropdown -->
     <div ref="dropdown" v-if="visible" class="navSite__dropdown">
+      <div class="navSite__branding">
+        <SiteBranding @click.native="hide" />
+      </div>
       <NavSections headers @click="hide"/>
     </div>
   </nav>
@@ -112,6 +115,25 @@ export default {
     }
   }
 
+  &__branding {
+    padding-bottom: 1rem;
+    margin: .25rem 1rem 1.25rem;
+    border-bottom: 1px dashed $grey-lightest;
+
+    .siteBranding {
+      padding: .75rem !important;
+
+      &:hover {
+        background: transparentize($grey-lightest, .6);
+        border-radius: 4px;
+      }
+    }
+
+    @media screen and (max-width: 430px), screen and (max-height: 470px) {
+      display: none;
+    }
+  }
+
   // ---------------------------------------------------------------------------------------------------------------------
   // sections
   // ---------------------------------------------------------------------------------------------------------------------
@@ -133,6 +155,10 @@ export default {
         &:last-child {
           border: none;
         }
+      }
+
+      &__item {
+        padding-right: 1rem !important;
       }
     }
 
