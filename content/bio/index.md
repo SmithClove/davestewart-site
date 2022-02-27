@@ -10,13 +10,15 @@ order: 2
 <img class="only-md-up" style="width: 100%; aspect-ratio:2/1; background: #333" src="./images/dave-wide.jpg">
 <img class="only-sm" style="width: 100%; aspect-ratio:1/1; background: #333" src="./images/dave-square.jpg">
 
-I'm one of those annoying people who ***love*** their job.
+I'm one of those annoying people who just ***loves*** what they do.
 
 I'm constantly thinking of ways to build things, to connect things, how it could be better, or easier, or smoother, or cooler. Shower thoughts become notes, sketches, experiments, repos, releases, then... 
 
-<Quote text="Woohoo!!" name="Me, cracking the latest big / small idea" size="2" hero />
+<Quote text="Woohoo!!" name="Me, cracking the latest big / small idea" size="3" hero />
 
-You see where I'm coming from?
+And that's what I aim to bring to the projects and products I work on.
+
+## Background
 
 I've had an interesting journey through tech; my background is animation and I learnt to code in 3dsmax, After Effects and Flash – in what used to be a very creative TV and advertising agency landscape.
 
@@ -26,11 +28,15 @@ There's been a mix of front end, back end and languages along the way, but right
 
 I've worked freelance, in teams, in small, medium and enterprise-sized companies, on short, medium and multi-year projects as what you might call a senior / lead dev.
 
-Right now I'm focusing on the Indie Hacker dream; releasing my own software and hopefully growing it into a sustainable business.
+## Right now
+
+I'm focusing on the Indie Hacker dream; releasing my own software and hopefully growing it into a sustainable business:
 
 [![control space](../products/control-space/images/cs-logo-inline.svg)](../products/control-space/)
 
-Moving from developer to consumer / business tools is an interesting one; I've still a lot to learn, and it's too early to make any predictions, but [Control Space](https://controlspace.app) has recently gone into public Beta  🥳. 
+Moving from developer to consumer / business tools is an interesting one; I've only recently started on this road so it's too early to make any predictions, but [Control Space](https://controlspace.app) has recently gone into public Beta  🥳. 
+
+## Contact
 
 You can find me / my work / my comments / my likes on
 [GitHub](http://github.com/davestewart/) /
@@ -49,3 +55,6 @@ You can find me / my work / my comments / my likes on
 If you fancy a two-way conversation, catch me on
 [Twitter](http://twitter.com/dave_stewart).
 
+Bye for now!
+
+<SiteIcon size="35" fill="#ea4848" />

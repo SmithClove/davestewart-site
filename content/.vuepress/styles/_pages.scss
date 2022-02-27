@@ -2,37 +2,28 @@
 
 .page[data-path="bio"] .pageContent {
 
-  @include introText;
-
-  p {
-    line-height: 1.4em;
+  // larger intro paragraph
+  p:first-of-type {
+    @include introText;
+    font-weight: 700;
+    margin: .5em 0;
   }
 
+  // hide external link marker
   a span {
     display: none;
   }
 
+  // full width image
   p a img {
     width: 100%;
     max-width: unset;
   }
 
-  .quote__text {
-    white-space: nowrap;
-    @include sm {
-      font-size: 2.4em;
-    }
-  }
-
   @include md-up {
-    p:first-child {
-      margin-top: 1rem;
-    }
-
     img {
       display: inline-block;
       margin: 0 auto 1rem;
-      //width: 380px;
     }
   }
 }
