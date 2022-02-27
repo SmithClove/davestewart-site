@@ -34,7 +34,7 @@ export default {
       const scroll = document.documentElement.scrollTop
       this.delta = scroll - this.scroll
       this.scroll = scroll
-    }
+    },
   }
 }
 </script>

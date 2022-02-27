@@ -11,20 +11,23 @@
     </div>
 
     <!-- background -->
-    <div v-if="visible" class="navSite__background"></div>
+    <div v-if="visible" class="navSite__background" @mousedown="hide"></div>
 
     <!-- dropdown -->
     <div ref="dropdown" v-if="visible" class="navSite__dropdown">
-      <div v-for="section in sections" :key="section.name" class="navSite__section">
-        <router-link v-for="link in section.links"
-                     :key="link.path"
-                     :to="link.path"
-                     class="navSite__item"
-                     @click.native="onClick"
-        >
-          <span class="navSite__text">{{ link.title }}</span>
-          <span v-if="link.desc" class="navSite__desc">{{ link.desc }}</span>
-        </router-link>
+      <div class="navSite__sections">
+        <div v-for="section in sections" :key="section.name" class="navSite__section">
+          <div class="navSite__header">{{ section.name }}</div>
+          <router-link v-for="link in section.links"
+                       :key="link.path"
+                       :to="link.path"
+                       class="navSite__item"
+                       @click.native="hide"
+          >
+            <span class="navSite__text">{{ link.title }}</span>
+            <span v-if="link.desc" class="navSite__desc">{{ link.desc }}</span>
+          </router-link>
+        </div>
       </div>
     </div>
   </nav>
@@ -41,15 +44,6 @@ export default {
   },
 
   watch: {
-    visible (value) {
-      if (value) {
-        document.addEventListener('mouseup', this.onClickOut)
-      }
-      else {
-        document.removeEventListener('mouseup', this.onClickOut)
-      }
-    },
-
     '$route.path' () {
       this.visible = false
     }
@@ -83,31 +77,23 @@ export default {
           '/bio/',
           '/blog/',
         ]),
-        section('Work', [
+        section('Portfolio', [
           '/products/',
           '/projects/',
           '/work/',
           '/archive/',
         ]),
         section('Site', [
-          '/sitemap/',
           '/search/',
+          '/sitemap/',
         ]),
       ]
     },
   },
 
   methods: {
-    onClick () {
+    hide () {
       this.visible = false
-    },
-
-    onClickOut (event) {
-      if (this.$refs.dropdown) {
-        if (!this.$refs.dropdown.contains(event.target)) {
-          this.visible = false
-        }
-      }
     }
   }
 }
@@ -117,7 +103,6 @@ export default {
 @import "../../styles/variables";
 
 .navSite {
-  position: relative;
   height: 100%;
   display: flex;
   align-items: center;
@@ -140,6 +125,10 @@ export default {
     }
   }
 
+  // ---------------------------------------------------------------------------------------------------------------------
+  // dropdown
+  // ---------------------------------------------------------------------------------------------------------------------
+
   &__background {
     @include fit;
     position: fixed;
@@ -147,55 +136,99 @@ export default {
   }
 
   &__dropdown {
-    position: absolute;
+    box-sizing: border-box;
+    position: fixed;
     background: white;
-    padding: .5rem;
     outline: 1px solid $grey-lightest;
     border-radius: 2px;
     z-index: 100;
-    font-size: 1.15em;
 
     @include shadow-lg;
 
     @include sm {
+      padding: .5rem;
+      width: calc(100% - 20px);
       font-size: 1.3em;
-      box-sizing: border-box;
-      width: calc(100vw - 20px);
       top: 10px;
       left: 10px;
     }
 
     @include md-up {
-      top: 5px;
-      left: 5px;
-      width: auto;
+      position: absolute;
+      max-width: calc(100% - 20px);
+      padding: 1rem .25rem;
+      top: 40px;
+      left: 10px;
       height: auto;
+      font-size: 1.15em;
+    }
+
+    @include full {
+      left: -10px;
     }
   }
 
-  &__section {
-    border-bottom: 1px solid $grey-lightest;
-    padding: .5rem 0;
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
-      border: none;
+  @include md-up {
+    &__sections {
+      display: flex;
     }
   }
+
+  // ---------------------------------------------------------------------------------------------------------------------
+  // sections
+  // ---------------------------------------------------------------------------------------------------------------------
+
+  @include sm {
+    &__section {
+      border-bottom: 1px solid $grey-lightest;
+      padding: .5rem 0;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+        border: none;
+      }
+    }
+  }
+
+  @include md-up {
+    &__section {
+      border-right: 1px dashed $grey-lightest;
+      padding: 0 .5rem;
+      width: max-content;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  &__header {
+    padding: .5rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    font-size: .9em;
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  // ---------------------------------------------------------------------------------------------------------------------
+  // items
+  // ---------------------------------------------------------------------------------------------------------------------
 
   &__item {
     display: block;
-    white-space: nowrap;
     padding: .5rem !important;
     margin: 0 0 .5rem;
     border-radius: 3px;
 
-    @include md-up {
-      padding-right: 2rem !important;
+    @media screen and (max-height: 600px) {
+      margin: 0;
     }
 
     &:last-child {
@@ -219,8 +252,13 @@ export default {
     color: $grey;
   }
 
-  a.router-link-exact-active * {
+  a.router-link-exact-active[href="/"] *,
+  a.router-link-active:not([href="/"]) * {
     color: $grey-light;
+  }
+
+  a span {
+    margin: 0;
   }
 }
 
