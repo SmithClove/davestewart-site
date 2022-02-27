@@ -26,7 +26,7 @@ After Flash died a death, and Web 2.0 matured, ActionScript became JavaScript, M
 
 There's been a mix of front end, back end and languages along the way, but right now Node, TypeScript & Vue is my stack, with a preference for frontend, static sites, tooling and extensions. 
 
-I've worked freelance, in teams, in small, medium and enterprise-sized companies, on short, medium and multi-year projects as what you might call a senior / lead dev.
+I've worked freelance, in teams, in small, medium and enterprise-sized companies, on short, medium and multi-year projects as what you might call a senior / lead web application developer.
 
 ## Right now
 
