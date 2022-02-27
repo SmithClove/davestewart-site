@@ -15,7 +15,7 @@
 
     <!-- dropdown -->
     <div ref="dropdown" v-if="visible" class="navSite__dropdown">
-      <NavSections headers/>
+      <NavSections headers @click="hide"/>
     </div>
   </nav>
 </template>
