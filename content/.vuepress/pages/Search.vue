@@ -381,7 +381,9 @@ export default {
 
     // focus search
     if (!isMobile() && !this.canReset) {
-      this.focus()
+      this.$nextTick(() => {
+        this.focus()
+      })
     }
 
     // scroll
