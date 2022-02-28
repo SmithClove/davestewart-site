@@ -21,7 +21,7 @@ export default {}
   .layout__inner {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
 
     &:first-child {
       padding-top: 1rem;
