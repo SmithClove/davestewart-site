@@ -20,11 +20,11 @@ And that's what I aim to bring to the projects and products I work on.
 
 ## Background
 
-I've had an interesting journey through tech; my background is animation and I learnt to code in 3dsmax, After Effects and Flash – in what used to be a very creative TV and advertising agency landscape.
+I've had an interesting journey through tech; my background is animation and I cut my coding teeth in 3dsmax, After Effects and Flash – in what used to be a very creative TV and advertising agency landscape.
 
-After Flash died a death, and Web 2.0 matured, ActionScript became JavaScript, MaxScripts became NPM packages, and micro-sites became Vue applications.
+As I transitioned into pure web development, ActionScript became JavaScript, MaxScripts became NPM packages, and micro-sites became web applications.
 
-There's been a mix of front end, back end and languages along the way, but right now Node, TypeScript & Vue is my stack, with a preference for frontend, static sites, tooling and extensions. 
+There's been a mix of front end and back end along the way, but right now Node, TypeScript & Vue is my stack, with a preference for Jamstack / hybrid sites, tooling and extensions. 
 
 I've worked freelance, in teams, in small, medium and enterprise-sized companies, on short, medium and multi-year projects as what you might call a senior / lead web application developer.
 
