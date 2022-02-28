@@ -16,15 +16,15 @@ I'm constantly thinking of ways to build things, to connect things, how it could
 
 <Quote text="Woohoo!!" name="Me, cracking the latest big / small idea" size="3" hero />
 
-And that's what I aim to bring to the projects and products I work on.
+And that's what I aim to bring to the [projects](/projects/) and [products](/products/) I work on.
 
 ## Background
 
-I've had an interesting journey through tech; my background is animation and I cut my coding teeth in 3dsmax, After Effects and Flash – in what used to be a very creative TV and advertising agency landscape.
+I've had an interesting journey through tech; my background is [animation](/archive/work/animation/) and I cut my coding teeth in [3dsmax](/archive/projects/open-source/3dsmax/), [After Effects](/search/?tags=after-effects) and [Flash](/archive/work/flash/) – in what used to be a very creative TV and advertising agency landscape.
 
-As I transitioned into pure web development, ActionScript became JavaScript, MaxScripts became NPM packages, and micro-sites became web applications.
+As I transitioned into pure web development, [ActionScript](/search/?tags=as3) became [JavaScript](/search/?tags=javascript), [MaxScripts](/archive/projects/open-source/3dsmax/) became [NPM packages](/projects/), and [micro-sites](/search/?text=micro) became [web applications](/work/).
 
-There's been a mix of front end and back end along the way, but right now Node, TypeScript & Vue is my stack, with a preference for Jamstack / hybrid sites, tooling and extensions. 
+There's been a mix of [front end](/search/?tags=frontend) and [back end](/search/?tags=backend) along the way, but right now [Node](/search/?tags=node), [TypeScript](/search/?tags=typescript) & [Vue](/search/?tags=vue) is my stack, with a preference for [Jamstack](/search/?tags=jamstack) / hybrid sites, [tooling](/search/?tags=tools) and [extensions](/search/?tags=chrome-extension). 
 
 I've worked freelance, in teams, in small, medium and enterprise-sized companies, on short, medium and multi-year projects as what you might call a senior / lead web application developer.
 
