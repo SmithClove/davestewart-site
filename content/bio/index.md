@@ -14,7 +14,7 @@ I'm one of those annoying people who just ***loves*** what they do.
 
 I'm constantly thinking of ways to build things, to connect things, how it could be better, or easier, or smoother, or cooler. Shower thoughts become notes, sketches, experiments, repos, releases, then... 
 
-<Quote text="Woohoo!!" name="Me, cracking the latest big / small idea" size="3" hero />
+<Quote text="Woohoo ! !" name="Me, cracking the latest big / small idea" size="3" hero />
 
 And that's what I aim to bring to the [projects](/projects/) and [products](/products/) I work on.
 
