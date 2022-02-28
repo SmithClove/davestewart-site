@@ -24,13 +24,13 @@ export default {}
     align-items: center;
 
     &:first-child {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
     }
 
     &:last-child {
       border-top: 1px dashed $grey-lightest;
-      padding-top: .75rem;
+      padding-top: 1rem;
       padding-bottom: 4rem;
     }
   }
