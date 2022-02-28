@@ -27,20 +27,28 @@ export default {
 
   computed: {
     sections () {
-      // helper
+      // helpers
+      const link = (title, desc, path) => {
+        return { title, desc, path }
+      }
+
       const section = (name, paths) => {
         return {
           name,
           links: paths
-            .map(path => this.$site.pages.find(page => page?.path === path))
-            .map(page => {
-              const desc = page.path === '/'
-                ? 'Back to the Home page'
-                : getValue(page, 'frontmatter.description')
-              return {
-                path: page.path,
-                title: getValue(page, 'frontmatter.breadcrumb') || getValue(page, 'frontmatter.shortTitle') || page.title,
-                desc,
+            .map(path => {
+              if (typeof path === 'string') {
+                const page = this.$site.pages.find(page => page?.path === path)
+                if (page) {
+                  const title = getValue(page, 'frontmatter.breadcrumb') || getValue(page, 'frontmatter.shortTitle') || page.title
+                  const desc = page.path === '/'
+                    ? 'Back to the Home page'
+                    : getValue(page, 'frontmatter.description')
+                  return link(title, desc, page.path)
+                }
+              }
+              else {
+                return path
               }
             })
         }
@@ -62,6 +70,7 @@ export default {
         section('Ideation', [
           '/blog/',
           '/bio/',
+          link('Site', 'Info and site source code', '/projects/personal/dave-stewart')
         ]),
       ]
     },
