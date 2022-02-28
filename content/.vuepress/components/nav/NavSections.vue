@@ -48,10 +48,10 @@ export default {
 
       // return links
       return [
-        section('Ideation', [
+        section('Navigation', [
           '/',
-          '/bio/',
-          '/blog/',
+          '/search/',
+          '/sitemap/',
         ]),
         section('Creation', [
           '/products/',
@@ -59,9 +59,9 @@ export default {
           '/work/',
           '/archive/',
         ]),
-        section('Navigation', [
-          '/search/',
-          '/sitemap/',
+        section('Ideation', [
+          '/blog/',
+          '/bio/',
         ]),
       ]
     },
