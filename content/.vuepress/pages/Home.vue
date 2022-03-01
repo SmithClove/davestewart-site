@@ -3,7 +3,7 @@
     <router-link to="/bio/" style="display: block">
       <img class="home__splash" :src="require('../assets/home-splash-small.svg')">
     </router-link>
-    <h1>I'm <router-link to="/bio/">Dave</router-link>,</h1>
+    <h1>I'm Dave,</h1>
     <Content id="content" class="pageContent"/>
   </div>
 </template>
@@ -12,6 +12,11 @@
 @import "../styles/variables";
 
 .home {
+
+  h1 {
+    font-weight: normal;
+    margin-top: -.5rem;
+  }
 
   hr {
     border: none;
