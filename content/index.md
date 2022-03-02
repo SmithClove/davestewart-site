@@ -33,7 +33,7 @@ I've recently resumed [writing](/blog/) so you can look forward to clear, resear
 
 <HomeThumbs />
 
-You can also [search](/search/) the site or trawl the [sitemap](/sitemap/).
+Feel free to [search](/search/) the site or find out more [here](/bio/).
 
 Enjoy!
 

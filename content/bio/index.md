@@ -10,7 +10,7 @@ order: 2
 <img class="only-md-up" style="width: 100%; aspect-ratio:2/1; background: #333" src="./images/dave-wide.jpg">
 <img class="only-sm" style="width: 100%; aspect-ratio:1/1; background: #333" src="./images/dave-square.jpg">
 
-I'm one of those annoying people who just ***loves*** what they do.
+I'm one of those annoying people who ***loves*** what they do.
 
 I'm constantly thinking of ways to build things, to connect things, how it could be better, or easier, or smoother, or cooler. Shower thoughts become notes, sketches, experiments, repos, releases, then... 
 

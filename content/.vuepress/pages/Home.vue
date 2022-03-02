@@ -104,64 +104,55 @@ export default {
 
     &.bounce,
     &:hover {
-      #dot-1 {
-        animation: bounce 1.2s ease .6s 1 normal forwards;
+      #dot-1, #dot-2, #dot-3 {
+        //animation: squash-3 1.4s ease;
+        animation: bounce-3 1.1s;
       }
-      #dot-2 {
-        animation: bounce 1.2s ease .68s 1 normal forwards;
-      }
-      #dot-3 {
-        animation: bounce 1.2s ease .76s 1 normal forwards;
-      }
+
+      #dot-1 { animation-delay: .6s; }
+      #dot-2 { animation-delay: .7s; }
+      #dot-3 { animation-delay: .77s; }
     }
   }
 }
 
-@mixin bottom () {
-  animation-timing-function: ease-out;
-  transform: translateY(0);
+$rise: cubic-bezier(0.5, 0.0, 1.0, 0.7);
+$fall: cubic-bezier(0.0, 0.3, 0.5, 1.0);
+
+@mixin top ($p, $s: 1, $t: $rise) {
+  transform: translateY($p) scaleY($s);
+  animation-timing-function: $t;
 }
 
-@mixin top ($value) {
-  animation-timing-function: ease-in;
-  transform: translateY($value);
+@mixin bottom ($s: 1, $t: $fall) {
+  transform: translateY(0) scaleY($s);
+  animation-timing-function: $t;
 }
 
-// haven't quite got this right yet...
-@keyframes squash {
-  0% {
-    transform: translateY(0) scaleY(1);
-    transform-origin: 12px 122px;
-    animation-timing-function: ease-in;
-  }
+@keyframes bounce-2 {
+  0% { @include bottom; }
 
-  12% {
-    transform: translateY(0) scaleY(.7);
-    transform-origin: 12px 122px;
-    animation-timing-function: ease-in-out;
-  }
+  30% { @include top(-40px); }
+  60% { @include bottom; }
 
-  27% {
-    @include top(-40px);
-    transform-origin: 0 100px;
-    transform: translateY(-40px) scaleY(1.2);
-  }
-  40% { @include bottom; }
-
-  53% { @include top(-20px); }
-  65% { @include bottom; }
-
-  76% { @include top(-10px); }
-  86% { @include bottom; }
-
-  88% { @include top(-4px); }
-  95% { @include bottom; }
-
-  98% { @include top(-2px); }
+  80% { @include top(-10px); }
   100% { @include bottom; }
 }
 
-@keyframes bounce {
+@keyframes bounce-3 {
+  0% { @include bottom; }
+
+  25% { @include top(-40px); }
+  50% { @include bottom; }
+
+  62% { @include top(-10px); }
+  75% { @include bottom; }
+
+  88% { @include top(-3px); }
+  100% { @include bottom; }
+}
+
+@keyframes bounce-5 {
   0% { @include bottom; }
 
   19% { @include top(-40px); }
@@ -177,6 +168,33 @@ export default {
   91% { @include bottom; }
 
   95% { @include top(-2px); }
+  100% { @include bottom; }
+}
+
+@keyframes squash-3 {
+  0% {
+    transform: translateY(0) scaleY(1);
+    transform-origin: 12px 120px;
+    animation-timing-function: ease-in;
+  }
+
+  10% {
+    transform-origin: 12px 120px;
+    @include bottom(.68);
+  }
+
+  20% {
+    transform-origin: 12px 120px;
+    @include bottom(.6, $fall);
+  }
+
+  40% { @include top(-50px, 1.1); }
+  62% { @include bottom; }
+
+  74% { @include top(-18px); }
+  86% { @include bottom; }
+
+  92% { @include top(-3px); }
   100% { @include bottom; }
 }
 </style>
