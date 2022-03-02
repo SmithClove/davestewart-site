@@ -1,7 +1,7 @@
 <template>
   <div class="layout__home home">
     <router-link to="/bio/" style="display: block">
-      <svg class="home__splash" width="100%" viewBox="0 0 840 400" xmlns="http://www.w3.org/2000/svg">
+      <svg ref="splash" class="home__splash" @animationend="onAnimationEnd" width="100%" viewBox="0 0 840 400" xmlns="http://www.w3.org/2000/svg">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="Greeting">
             <rect id="Background" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="840" height="400"></rect>
@@ -33,6 +33,28 @@
     <Content id="content" class="pageContent"/>
   </div>
 </template>
+
+<script>
+export default {
+  mounted () {
+    const animCount = parseInt(document.body.getAttribute('data-animCount') || 0)
+    if (animCount < 3) {
+      document.body.setAttribute('data-animCount', String(animCount + 1))
+      setTimeout(() => {
+        this.$refs.splash.classList.add('bounce')
+      }, 300)
+    }
+  },
+
+  methods: {
+    onAnimationEnd (event) {
+      if (event.target.id === 'dot-3') {
+        this.$refs.splash.classList.remove('bounce')
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import "../styles/variables";
@@ -74,15 +96,16 @@
     user-select: none;
     pointer-events: all;
 
+    &.bounce,
     &:hover {
       #dot-1 {
-        animation: bounce 1.2s ease 0s 1 normal forwards;
+        animation: bounce 1.2s ease .6s 1 normal forwards;
       }
       #dot-2 {
-        animation: bounce 1.2s ease .08s 1 normal forwards;
+        animation: bounce 1.2s ease .68s 1 normal forwards;
       }
       #dot-3 {
-        animation: bounce 1.2s ease .16s 1 normal forwards;
+        animation: bounce 1.2s ease .76s 1 normal forwards;
       }
     }
   }
@@ -96,6 +119,40 @@
 @mixin top ($value) {
   animation-timing-function: ease-in;
   transform: translateY($value);
+}
+
+// haven't quite got this right yet...
+@keyframes squash {
+  0% {
+    transform: translateY(0) scaleY(1);
+    transform-origin: 12px 122px;
+    animation-timing-function: ease-in;
+  }
+
+  12% {
+    transform: translateY(0) scaleY(.7);
+    transform-origin: 12px 122px;
+    animation-timing-function: ease-in-out;
+  }
+
+  27% {
+    @include top(-40px);
+    transform-origin: 0 100px;
+    transform: translateY(-40px) scaleY(1.2);
+  }
+  40% { @include bottom; }
+
+  53% { @include top(-20px); }
+  65% { @include bottom; }
+
+  76% { @include top(-10px); }
+  86% { @include bottom; }
+
+  88% { @include top(-4px); }
+  95% { @include bottom; }
+
+  98% { @include top(-2px); }
+  100% { @include bottom; }
 }
 
 @keyframes bounce {
