@@ -32,7 +32,7 @@ I've worked freelance, in teams, in small, medium and enterprise-sized companies
 
 I'm focusing on the Indie Hacker dream; releasing my own software and hopefully growing it into a sustainable business:
 
-[![control space](../products/control-space/images/cs-logo-inline.svg)](../products/control-space/)
+<MediaVideo src="https://youtube.com/embed/HaDJuB5ODnY" width="560" height="315" />
 
 Moving from developer to consumer / business tools is an interesting one; I've only recently started on this road so it's too early to make any predictions, but [Control Space](https://controlspace.app) has recently gone into public Beta  🥳. 
 
