@@ -10,7 +10,7 @@
     </div>
 
     <div class="layout__inner siteFooter__link">
-      <span>Are you looking for a new <a href="https://controlspace.app">tab manager</a> ?</span>
+      <span>Are you looking for a new <a href="https://controlspace.app" target="_blank">tab manager</a> ?</span>
     </div>
   </footer>
 </template>

@@ -19,7 +19,7 @@
         <SiteBranding @click.native="hide" />
       </div>
       <NavSections headers @click="hide"/>
-      <p class="navSite__promo">Are you looking for a new <a href="https://controlspace.app">tab manager</a>?</p>
+      <p class="navSite__promo">Are you looking for a new <a href="https://controlspace.app" target="_blank">tab manager</a>?</p>
     </div>
   </nav>
 </template>

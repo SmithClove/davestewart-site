@@ -3,12 +3,12 @@
     <PageHero />
     <h1>{{ $page.title }}</h1>
     <p class="description">{{ description }}</p>
-    <PageInfo v-if="showFeedback"/>
+    <PageInfo v-if="isPost"/>
     <PreviewInfo />
     <Content class="pageContent" />
 
     <!-- comments -->
-    <PageFeedback v-if="showFeedback" websiteId="6366" title="So..." />
+    <PageFeedback v-if="isPost" websiteId="6366" title="So..." />
   </div>
 </template>
 
@@ -17,8 +17,8 @@ import { isVisible } from '../store/config/status.js'
 
 export default {
   computed: {
-    showFeedback () {
-      return isVisible(this.$page) && !this.$page.path.startsWith('/bio/')
+    isPost () {
+      return !this.$page.path.startsWith('/bio/')
     },
 
     description () {
