@@ -3,7 +3,7 @@
     <p>
       Here's a <a href="#recent" :class="{ active: !options.random }" @click.prevent="setRecent">recent</a>
       / <a href="#random" :class="{ active: options.random }" @click.prevent="setRandom">random</a>
-      sample of what I do:</p>
+      sample of what I've been working on :</p>
     <ThumbnailWall :pages="pages"/>
   </div>
 </template>
@@ -84,9 +84,22 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../../styles/variables";
+
 .homeThumbs {
+
+  .thumbnailWall {
+    margin: 3rem 0;
+  }
+
+  a {
+    color: $grey-lighter;
+    text-decoration: underline;
+  }
+
   a.active {
-    text-decoration: underline !important;
+    color: $accentColor;
+    text-decoration: none;
 
     &:after {
       //content: "*";
