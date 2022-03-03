@@ -46,7 +46,8 @@
 
     <!-- caption -->
     <div v-if="hasCaption" class="mediaGallery__caption">
-      {{ captionText }}
+      <router-link v-if="captionLink" :to="captionLink">{{ captionText }}</router-link>
+      <span v-else>{{ captionText }}</span>
     </div>
 
   </div>
@@ -62,7 +63,10 @@ export default {
   extends: media('gallery'),
 
   props: {
-    captions: [Number, Boolean],
+    captions: {
+      type: [Number, Boolean],
+      default: undefined,
+    },
     keepAlive: Boolean,
   },
 
@@ -83,6 +87,10 @@ export default {
 
     captionText () {
       return this.source[this.index].caption
+    },
+
+    captionLink () {
+      return this.source[this.index].href
     },
 
     slideContainerStyle () {

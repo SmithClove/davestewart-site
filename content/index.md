@@ -5,19 +5,45 @@ description: Online portfolio of Dave Stewart; Open Source, commercial + persona
 layout: home
 media:
   gallery:
-    - ./products/control-space/images/cs-logo.svg
-    - ./products/todo-emojis/images/todo-emojis-logo.png
-    - ./products/got-paper/images/ph-splash.png
-    - ./products/workflowy-multiflow/images/multiflow-featured.svg
-    - ./projects/open-source/alias-hq/images/alias-featured.png
-    - ./projects/open-source/vue-class-store/images/vue-class-store.png
-    - ./projects/open-source/vuex-pathify/images/vuex-pathify.png
-    - ./projects/personal/likely-logic/images/likely-logic.png
-    - ./projects/personal/branding/images/featured-hi-res.svg
-    - ./work/clearbank/images/clearbank-logo-light.png
-    - ./work/fairsquare/images/fairsquare-logo.png
-    - ./work/finsbury/images/finsbury-logo-dark.png
-    - ./blog/work/project-estimation/images/estimation-featured.png
+    - text: Control Space
+      href: /products/control-space/
+      src: /products/control-space/images/cs-logo.svg
+    - text: Todo Emojis
+      href: /products/todo-emojis/
+      src: /products/todo-emojis/images/todo-emojis-logo.png
+    - text: Got Paper
+      href: /products/got-paper/
+      src: /products/got-paper/images/ph-splash.png
+    - text: WorkFlowy MultiFlow
+      href: /products/workflowy-multiflow/
+      src: /products/workflowy-multiflow/images/multiflow-featured.svg
+    - text: Alias HQ
+      href: /projects/open-source/alias-hq/
+      src: /projects/open-source/alias-hq/images/alias-featured.png
+    - text: Vue Class Store
+      href: /projects/open-source/vue-class-store/
+      src: /projects/open-source/vue-class-store/images/vue-class-store.png
+    - text: Vuex Pathify
+      href: /projects/open-source/vuex-pathify/
+      src: /projects/open-source/vuex-pathify/images/vuex-pathify.png
+    - text: Likely Logic
+      href: /projects/personal/likely-logic/
+      src: /projects/personal/likely-logic/images/likely-logic.png
+    - text: Personal Branding Experiment
+      href: /projects/personal/branding/
+      src: /projects/personal/branding/images/featured-hi-res.svg
+    - text: Clear Bank
+      href: /work/clearbank/
+      src: /work/clearbank/images/clearbank-logo-light.png
+    - text: Fair Square
+      href: /work/fairsquare/
+      src: /work/fairsquare/images/fairsquare-logo.png
+    - text: Finsbury
+      href: /work/finsbury/
+      src: /work/finsbury/images/finsbury-logo-dark.png
+    - text: The Work is Never Just "The Work"
+      href: /blog/the-work-is-never-just-the-work
+      src: /blog/work/project-estimation/images/estimation-featured.png
 
 ---
 
@@ -25,7 +51,7 @@ A London-based web developer currently building [Control Space](/products/contro
 
 I pride myself on a tight mix of technical and creative with a passion for [product](/products/), [innovation](/projects/) and [experimentation](/archive/projects/) :
 
-<MediaGallery media="gallery" scale keep-alive />
+<MediaGallery media="gallery" captions scale keep-alive />
 
 My commercial work is primarily enterprise [web apps](/work/) after years of agency [sites](/archive/work/) and before that titles [animation](/archive/work/animation/).
 

@@ -1,6 +1,6 @@
 <template>
   <div v-if="component" class="pageHero">
-    <component :is="component" scale />
+    <component :is="component" scale :captions="false" />
   </div>
 </template>
 

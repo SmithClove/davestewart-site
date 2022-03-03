@@ -5,6 +5,7 @@ const getSize = require('image-size')
 const YAML = require('yaml')
 
 const { isRemote, isLocal, isImage } = require('../utils.js')
+const { isPlainObject } = require('../../utils/assert.js')
 
 class Media {
   constructor (path, size = {}, caption = '', missing = false) {
@@ -60,19 +61,33 @@ class Media {
 }
 
 function processFrontmatter (sourceDir, $page) {
-  traverse($page.frontmatter.media).forEach(function (value) {
-    // process only strings
-    if (typeof value === 'string' && isLocal(value) && isImage(value)) {
+  // helpers
+  const isImageSrc = value => typeof value === 'string' && isLocal(value) && isImage(value)
+  const isImageObj = value => isPlainObject(value) && value.src && isImageSrc(value.src)
+  const createMedia = value => Media.create(sourceDir, $page.regularPath, value)
+
+  // convert image objects or image strings to media objects
+  const process = function (value) {
+    // if entry is an image object
+    if (isImageObj(value)) {
+      const media = createMedia(value.src)
+      Object.assign(media, { caption: value.text, href: value.href })
+      this.update(media)
+    }
+
+    // if entry is a src string
+    else if (isImageSrc(value)) {
       // don't reprocess converted nodes
       if (this.parent && this.parent.node instanceof Media) {
         return
       }
 
       // media
-      const media = Media.create(sourceDir, $page.regularPath, value)
+      const media = createMedia(value)
       this.update(media)
     }
-  })
+  }
+  traverse($page.frontmatter.media).forEach(process)
 }
 
 function plugin (options, ctx) {
