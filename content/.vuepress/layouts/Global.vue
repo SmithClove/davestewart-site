@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes">
+  <div :class="classes" :data-path="path">
     <!-- header -->
     <SiteHeader/>
 

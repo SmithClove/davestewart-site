@@ -116,6 +116,19 @@ export default {
   }
 }
 
+// gallery font size
+div[data-path="/"] {
+  .mediaGallery__caption {
+    font-family: $titleFont;
+    font-size: 1.5rem;
+    white-space: nowrap;
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+  }
+}
+
 $rise: cubic-bezier(0.5, 0.0, 1.0, 0.7);
 $fall: cubic-bezier(0.0, 0.3, 0.5, 1.0);
 
