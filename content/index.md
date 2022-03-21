@@ -38,9 +38,9 @@ media:
     - text: Fair Square
       href: /work/fairsquare/
       src: /work/fairsquare/images/fairsquare-logo.png
-    - text: Finsbury
-      href: /work/finsbury/
-      src: /work/finsbury/images/finsbury-logo-dark.png
+    - text: Finsbury Glover Herring 
+      href: /work/fgh/
+      src: /work/fgh/images/fgh-dark.png
     - text: The Work is Never Just "The Work"
       href: /blog/the-work-is-never-just-the-work
       src: /blog/work/project-estimation/images/estimation-featured.png
