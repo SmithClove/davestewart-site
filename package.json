@@ -22,7 +22,7 @@
     "sass-loader": "^10.2.0",
     "traverse": "^0.6.6",
     "vue-router": "^3.5.3",
-    "vuepress": "^1.8.2",
+    "vuepress": "^1.9.5",
     "vuepress-plugin-autometa": "^0.1.13",
     "vuepress-plugin-typescript": "^0.3.1"
   },
@@ -39,14 +39,5 @@
     "vue-masonry-css": "^1.0.3",
     "vue-slide-up-down": "^2.0.1",
     "yaml": "^1.10.2"
-  },
-  "overrides": {
-    "vuepress@1.8.2": {
-      "@vuepress/core@1.8.2": {
-        "webpack@4.46.0": {
-          "watchpack": "1.6.1"
-        }
-      }
-    }
   }
 }
