@@ -28,14 +28,6 @@ module.exports = {
 
     // site
     link('shortcut icon', '/favicon.svg'),
-
-    // analytics
-    script('/stats/js', {
-      'data-domain': 'davestewart.co.uk',
-      'data-api': '/stats/api/event',
-      async: 1,
-      defer: 1,
-    }),
   ],
 
   shouldPrefetch (file, type) {

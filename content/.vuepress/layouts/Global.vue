@@ -31,6 +31,7 @@
 
 <script>
 import { capitalize } from '../utils/string.js'
+import { createElement } from '../utils/dom.js'
 import SiteHeader from '../components/site/SiteHeader.vue'
 import SiteFooter from '../components/site/SiteFooter.vue'
 import NotFound from '../pages/404.vue'
@@ -82,6 +83,17 @@ export default {
     window.addEventListener('orientationchange', this.onResize)
     this.$nextTick(() => this.updateHeader())
     this.updateHeader()
+
+    // stats
+    if (window.location.host === 'davestewart.co.uk') {
+      document.body.appendChild(createElement('script', {
+        'src': '/stats/js',
+        'data-domain': 'davestewart.co.uk',
+        'data-api': '/stats/api/event',
+        'async': 1,
+        'defer': 1,
+      }))
+    }
   },
 
   methods: {

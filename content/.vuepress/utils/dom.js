@@ -23,3 +23,11 @@ export function px (value) {
     ? value + 'px'
     : value
 }
+
+export function createElement (tagName, attrs = {}) {
+  const el = document.createElement(tagName)
+  Object.keys(attrs).forEach(key => {
+    el.setAttribute(key, attrs[key])
+  })
+  return el
+}
