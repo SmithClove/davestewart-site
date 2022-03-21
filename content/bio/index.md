@@ -58,7 +58,3 @@ If you fancy a chat, catch me on
 Bye for now!
 
 <SiteIcon size="35" fill="#ea4848" />
-
-<script>
-document.body.setAttribute('data-animCount', '3')
-</script>

@@ -66,4 +66,13 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // mixins
   Vue.prototype.$fm = $fm
   Vue.prototype.$store = makeStore(siteData)
+
+  // router
+  if (!isServer) {
+    router.afterEach((to) => {
+      if (to.path.startsWith('/bio/')) {
+        document.body.setAttribute('data-animCount', '3')
+      }
+    })
+  }
 }
