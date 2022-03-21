@@ -44,7 +44,7 @@ Having to jump between various tools and complex UIs is time-consuming and ineff
 
 ### Architecture
 
-Whilst the project aims changed over the various phases, the application itself is a [Nuxt JS](https://nuxtjs.org/) build with a custom [Express JS](https://expressjs.com/) back end, hosted on Microsoft Azure.
+The application itself is a [Nuxt JS](https://nuxtjs.org/) build with a custom [Express JS](https://expressjs.com/) back end, hosted on Microsoft Azure.
 
 The back end manages and marshals calls to [Factiva API](https://www.factiva.com/CP_Developer/ProductHelp/FDK/FDK33/) and [Elastic Search](https://www.elastic.co/elasticsearch/), collating, transforming and returning data in frontend-friendly JSON formats:
 
@@ -63,7 +63,7 @@ The back end manages and marshals calls to [Factiva API](https://www.factiva.com
     +- ...
 ```
 
-The front consists of 3 complex main modules. Building on modular techniques from [Asterisk](/work/asterisk/) and [Control Space](/products/control-space), I developed a new Nuxt plugin called [Nuxt Areas](https://github.com/davestewart/nuxt-areas) which rather than stripe dependencies across the application, co-locates code in self-contained "areas":
+The front end consists of 3 complex main modules. Building on modular techniques from [Asterisk](/work/asterisk/) and [Control Space](/products/control-space), I developed a new Nuxt plugin called [Nuxt Areas](https://github.com/davestewart/nuxt-areas) which rather than stripe dependencies across the application, co-locates code in self-contained "areas":
 
 ```
 +- client
@@ -103,7 +103,9 @@ FGH use a 3rd party service called Roxhill in order to contact journalists for t
 
 However, two main problems existed; 1) Roxhill does not have an API 2) Factiva and Roxhill do not share common formats. To answer this, I built a Chrome extension to bridge communications between the application and Roxhill, and initial strategies to compare journalists by source and desk.
 
-Associates could click a button in the application to search for a journalist by targeting an open Roxhill Media tab, then send journalist information back to Lexicon (by way of a right click menu) to be stored in Lexicon's own database. The two-way communication also allowed any journalist to be searched, viewed, or updated from the application or Roxhill.
+Associates could click a button in either the News Search results or Journalists module to search for a journalist. The extension would then target an open Roxhill Media tab and execute Roxhill's standard search. The user could then send the found journalist information back to Lexicon to show or update a form, and update Lexicon's own database.
+
+The two-way communication also allowed any journalist to be searched, viewed, or updated at any time from either the application or Roxhill.
 
 #### Media Mentions
 
