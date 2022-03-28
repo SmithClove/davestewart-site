@@ -15,11 +15,17 @@ tags:
 media:
   opengraph: ./images/fairsquare-logo.png
   thumbnail: ./images/fairsquare-logo.svg
-  featured: ./images/fairsquare-logo.svg
-  images:
-    - ./images/fairsquare-01.jpg
-    - ./images/fairsquare-02.jpg
-    - ./images/fairsquare-03.jpg
+  gallery:
+    - ./screens/logo.png
+    - ./screens/home.png
+    - ./screens/cars.png
+    - ./screens/car-loan.png
+    - ./screens/account-create.png
+    - ./screens/account-logged-in.png
+    - ./screens/car-deposit.png
+    - ./screens/quotes.png
+    - ./screens/offers.png
+    - ./screens/summary.png
   ux:
     - ./high-level/purchase-funnel.png
     - ./high-level/credit-check.png
