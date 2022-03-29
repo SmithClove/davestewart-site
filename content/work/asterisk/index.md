@@ -21,22 +21,18 @@ media:
     - ./screens/borrower-negotiations-board-04.png
     - ./screens/borrower-locate-list.png
     - ./screens/borrower-locate-list-done.png
-    - ./screens/borrower-negotiation-create.png
-    - ./screens/borrower-negotiation-review-01.png
-    - ./screens/borrower-negotiation-review-02.png
-    - ./screens/borrower-negotiation-review-03.png
-    - ./screens/borrower-negotiation-review-04.png
-    - ./screens/borrower-negotiation-review-04-previous.png
-    - ./screens/borrower-loans.png
-    - ./screens/borrower-loans-filtered.png
-    - ./screens/borrower-loans-filtered-selected.png
-    - ./screens/borrower-loans-view-single.png
-    - ./screens/lender-notifications-02.png
-    - ./screens/lender-profile.png
-  images:
-    - ./images/asterisk-01.jpg
-    - ./images/asterisk-02.jpg
-    - ./images/asterisk-03.jpg
+    - ./screens/01-02 - borrower update.png
+    - ./screens/01-03 - borrower update.png
+    - ./screens/01-04 - borrower sent.png
+    - ./screens/02-02 - lender update.png
+    - ./screens/03-01 - borrower receive.png
+    - ./screens/04-03 - borrower result.png
+    - ./screens/05-01 - loans.png
+    - ./screens/05-02 - selection.png
+    - ./screens/05-03 - loan.png
+    - ./screens/06-01 - lender report.png
+    - ./screens/06-02 - lender-profile.png
+    - ./screens/06-03 - lender-notifications-02.png
 ---
 
 # Asterisk
