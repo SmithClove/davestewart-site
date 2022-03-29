@@ -14,6 +14,25 @@ media:
   opengraph: ./images/asterisk-logo.png
   thumbnail: ./images/asterisk-logo-trans.svg
   featured: ./images/asterisk-logo-trans.svg
+  gallery:
+    - ./screens/logo.png
+    - ./screens/borrower-negotiations-board-01.png
+    - ./screens/borrower-negotiations-board-03.png
+    - ./screens/borrower-negotiations-board-04.png
+    - ./screens/borrower-locate-list.png
+    - ./screens/borrower-locate-list-done.png
+    - ./screens/borrower-negotiation-create.png
+    - ./screens/borrower-negotiation-review-01.png
+    - ./screens/borrower-negotiation-review-02.png
+    - ./screens/borrower-negotiation-review-03.png
+    - ./screens/borrower-negotiation-review-04.png
+    - ./screens/borrower-negotiation-review-04-previous.png
+    - ./screens/borrower-loans.png
+    - ./screens/borrower-loans-filtered.png
+    - ./screens/borrower-loans-filtered-selected.png
+    - ./screens/borrower-loans-view-single.png
+    - ./screens/lender-notifications-02.png
+    - ./screens/lender-profile.png
   images:
     - ./images/asterisk-01.jpg
     - ./images/asterisk-02.jpg
