@@ -76,7 +76,7 @@ Multi-caret operations (video [here](https://www.youtube.com/watch?v=PIqBf7Ekjgk
 - `Home` / `End` - Jump to home / end on all lines
 - `Esc` / `Click` - Clear selection
 
-Modifications once selected
+Modifications once selected ([Smart Keys](https://www.jetbrains.com/help/idea/settings-smart-keys.html))
 
 - Type `< ( { [  " '` - Wrap with the corresponding pair, i.e. hit `[` to get `[selection]`
 

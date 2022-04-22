@@ -273,7 +273,14 @@ a:hover {
 }
 
 a span {
+  display: inline-block;
+  transform: translateY(-1px);
   margin-left: 2px;
+}
+
+// hide external link indicators by switch
+.no-external a span {
+  display: none;
 }
 
 // hide external link indicators for images
