@@ -70,8 +70,14 @@ export default ({ Vue, options, router, siteData, isServer }) => {
   // router
   if (!isServer) {
     router.afterEach((to) => {
+      // update bio animation count
       if (to.path.startsWith('/bio/')) {
         document.body.setAttribute('data-animCount', '3')
+      }
+
+      // redirect from URL bar search
+      else if (to.path === '/' && to.query.s) {
+        router.push(`/search/?text=${to.query.s}`)
       }
     })
   }
