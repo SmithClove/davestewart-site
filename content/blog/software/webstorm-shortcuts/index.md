@@ -1,6 +1,6 @@
 ---
 description: Essential WebStorm keyboard shortcuts to make you the most productive developer in the office
-date: 2022-02-07
+date: 2022-04-21 # was 2022-02-07
 media:
   thumbnail: webstorm.png
   featured: webstorm.png
@@ -9,6 +9,8 @@ media:
 # WebStorm shortcuts for lightning productivity
 
 WorkFlowy is the most powerful web development IDE there is. If you want to match power with speed get your hands on WebStorm's extensive and intuitive keyboard shortcuts.
+
+See my other article on WebStorm's [features](/blog/webstorm-features) for detailed information on many and _more_ of the features listed below.
 
 <NavToc />
 
@@ -121,13 +123,27 @@ Modify lines
 
 **Yes, Markdown!**
 
-I won't list the shortcuts here (most are obvious, the rest configurable) but the editing ones are:
+Note that some Markdown shortcuts are a little unintuitive, so I recommend you review and [change them](#setup).
 
-- Increase / Decrease header level
-- Italic, Bold, Code, Strikethrough
-- Link, Image
+Formatting
 
-Review all Markdown functionality via `Cmd` + `Shift` + `A`, then type **"Markdown"**...
+- `Cmd` + `I` - Italic
+- `Cmd` + `B` - Bold
+
+Insert (also `Ctrl` + `Enter`)
+
+- `Cmd` + `Shift` + `L` - Link (change this from `Cmd` + `U`)
+- `Cmd` + `Shift` + `C` - Code
+- `Cmd` + `Shift` + `I` - Image
+- `Cmd` + `Shift` + `T` - Table
+
+You can access additional Markdown functionality via:
+
+- the Right Click Menu
+- the Actions palette via `Cmd` + `Shift` + `A`:
+  - type **"Markdown"** to see actions
+  - type the formatting e.g. **"Align Right"**
+
 
 ### Tips
 
@@ -225,10 +241,28 @@ Click any list (Project hierarchy, Code Structure, Find Results, etc) then:
 - Use fuzzy matching, i.e. `pn` to find `[P]age[N]ode`
 - Use `/` to disambiguate folders, like `s/c/app`
 
-Shortcuts
+## Setup
 
-- Every shortcut can be changed!
-- Change shortcuts for plugins via **"Keymap > Plugins > [Plugin Name]"**
+There are two main ways to change or add your own shortcuts.
+
+Using preferences
+
+- go **"Preferences > Keymap"**, then either
+
+  1. Use the tree to find the Action manually
+  2. Use the search input to filter by name
+  3. Use the "Find Actions by Shortcut" tool find the action by typing the shortcut
+
+- For plugins:
+
+  1. locate the plugin via **"Keymap > Plugins > [Plugin Name]"**
+
+Using the Actions palette
+
+1. `Cmd` + `Shift` + `A` to show the Actions palette
+2. Type the name of the action you want to find
+3. Select the action then hit `Alt` + `Enter` to show the "Keyboard Shortcut" dialog
+4. Press the keyboard shortcut you want to use
 
 ## Touchbar
 

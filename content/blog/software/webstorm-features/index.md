@@ -11,33 +11,44 @@ media:
 
 ## Intro
 
+### Overview
+
 In April 2022 I did a Webinar with JetBrains titled [WebStorm's Power User Manual](https://blog.jetbrains.com/webstorm/2022/04/webstorms-power-user-manual/).
 
-Along with [Margaux Flores](https://twitter.com/mrgxflrs) in a fairly free-wheeling discussion we shared some of our favourite WebStorm features that many users may not know about.
+Along with [Margaux Flores](https://twitter.com/mrgxflrs) we shared some of our favourite WebStorm features in a fairly freewheeling discussion.
 
 This article accompanied the webinar and is what I was using to make sure I'd covered as much as I could in the time, as well as giving attendees a prompt to ask questions or request demos.
 
-And because WebStorm is already so well documented – rather compiling my own screenshots and prose – for each feature, I've just:
-
-- written a simple description for each feature
-- linked to the docs on JetBrain's own site
-- added any shortcut keys
-
-See my other article on WebStorm's [keyboard shortcuts](/blog/webstorm-shortcuts/) to get the complete lowdown on using WebStorm to transform your experience of writing, running, debugging and refactoring your code and applications. For JetBrains' own one-page intro to WebStorm, see their excellent [Getting Started](https://www.jetbrains.com/help/webstorm/getting-started-with-webstorm.html) article.
+For JetBrains' own one-page intro to WebStorm, see their excellent [Getting Started](https://www.jetbrains.com/help/webstorm/getting-started-with-webstorm.html) article.
 
 Thanks again to [JetBrains](https://twitter.com/jetbrains), [Paul Everitt](https://twitter.com/paulweveritt) and [Aleksandra Aganezova](https://blog.jetbrains.com/author/aleksandra-aganezova-jetbrains-com/).
 
-### Quick Links 
+### Content 
+
+Because WebStorm is already so well documented, so I've listed _only_ the features rather than adding screenshots, etc.
+
+For each feature there's:
+
+- the feature name / purpose
+- a link to the docs
+- a short description / tips
+- any shortcut key
+
+If you want to get the most out of WebStorm, I recommend trying each of these features for yourself. If you have any questions or comments, I'd be glad to answer them below.
+
+See my article on WebStorm's [keyboard shortcuts](/blog/webstorm-shortcuts/) to get _way_ more done without taking your hands off the keyboard.
+
+### Quick links
 
 <NavToc exclude="intro" />
 
 ## UI
 
-Panels
+General
 
 - [Get to know](https://www.jetbrains.com/help/webstorm/guided-tour-around-the-user-interface.html) the user interface so you don't feel overwhelmed
 - [Arrange tool windows](https://www.jetbrains.com/help/idea/manipulating-the-tool-windows.html) in one of 8 dock locations that makes sense to you
-- [Pin or unpin](https://www.jetbrains.com/help/idea/viewing-modes.html) tool windows so they stay prominent, get out of your way, or float elsewhere
+- [Pin or unpin](https://www.jetbrains.com/help/idea/viewing-modes.html) tool windows so they stay prominent (**Dock Pinned**) or get out of your way (**Dock Unpinned**)
 
 Tabs
 
@@ -68,13 +79,13 @@ Folders
 
 Files
 
-- [Search for files](https://www.jetbrains.com/help/webstorm/searching-everywhere.html#ws_search_files) (`Shift` + `Cmd` + `O`) and type to filter and press `Enter` to open
+- [Search for files](https://www.jetbrains.com/help/webstorm/searching-everywhere.html#ws_search_files) (`Cmd` + `Shift` + `O`) and type to filter and press `Enter` to open
 - [Open recent files](https://www.jetbrains.com/help/webstorm/navigating-through-the-source-code.html#recent_files) (`Cmd` + `E`) and type to filter then press `Enter` to open
 - [Locate current file](https://www.jetbrains.com/help/webstorm/navigating-through-the-source-code.html#scroll_to_from_source)  in the Project view by clicking the cross-hairs icon in the Project view toolbar
 
 Scratch files
 
-- [Scratch Files](https://www.jetbrains.com/help/webstorm/scratches.html) (`Shift` + `Cmd` + `N`) let you work on temporary notes, code, styles, or any other file type!
+- [Scratch Files](https://www.jetbrains.com/help/webstorm/scratches.html) (`Cmd` + `Shift` + `N`) let you work on temporary notes, code, styles, or any other file type!
 - [Run or debug](https://www.jetbrains.com/help/webstorm/scratches.html#ws_scratches_run_debug) the scratch file by `Right Click` then choose "Run Scratch" or "Debug"
 - Use the [Quokka](#plugins) plugin (free and paid versions available) for additional code insight
 
@@ -94,7 +105,7 @@ Selection
 Manipulation
 
 - [Manipulate lines and selections](https://www.jetbrains.com/help/webstorm/working-with-source-code.html) (move, duplicate, delete, etc) with intuitive keyboard shortcuts
-- [Move blocks](https://www.jetbrains.com/help/webstorm/working-with-source-code.html#move-statements) up and down (`Shift` + `Cmd` + `Up` / `Down`) with intelligent positioning and reformatting
+- [Move blocks](https://www.jetbrains.com/help/webstorm/working-with-source-code.html#move-statements) up and down (`Cmd` + `Shift` + `Up` / `Down`) with intelligent positioning and reformatting
 
 Find and replace
 
@@ -107,7 +118,7 @@ Find and replace
 Code style
 
 - [Configure code style](https://www.jetbrains.com/help/webstorm/configuring-code-style.html) for any language or markup, globally, per-project, or per-folder (with unbelievable options!)
-- [Reformat](https://www.jetbrains.com/help/webstorm/reformat-and-rearrange-code.html) code on the fly (`Alt` + `Cmd` + `L`) according to your configured code style
+- [Reformat](https://www.jetbrains.com/help/webstorm/reformat-and-rearrange-code.html) code on the fly (`Cmd` + `Alt` + `L`) according to your configured code style
 
 Intentions
 
@@ -166,7 +177,7 @@ Language injection
 
 Commands
 
-- [Search actions](https://www.jetbrains.com/help/webstorm/searching-everywhere.html#ws_search_actions) (`Shift` + `Cmd` + `A`) when you can't quite remember the name of the thing you need to do
+- [Search actions](https://www.jetbrains.com/help/webstorm/searching-everywhere.html#ws_search_actions) (`Cmd` + `Shift` + `A`) when you can't quite remember the name of the thing you need to do
 - [Search everywhere](https://www.jetbrains.com/help/webstorm/searching-everywhere.html#ws_search_abbreviations) (`Shift` + `Shift`) to find files, actions, panels, preferences, etc
 
 Change lists
@@ -181,30 +192,33 @@ Version control
 - [Compare files](https://www.jetbrains.com/help/webstorm/comparing-files-and-folders.html) and [resolve conflicts](https://www.jetbrains.com/help/webstorm/resolving-conflicts.html#vcs-resolve-conflicts) with the best in the business file comparison tool
 - View [version history](https://www.jetbrains.com/help/webstorm/viewing-changes-information.html#changes_history) as well as [local history](https://www.jetbrains.com/help/webstorm/local-history.html) for both files and selections
 
-Running code
+NPM support
 
-- [Run and debug NPM scripts](https://www.jetbrains.com/help/webstorm/installing-and-removing-external-software-using-node-package-manager.html#ws_npm_run_debug_scripts_from_npm_tool_window) from a panel and jump directly to packages from the JSON
+- [Run and debug NPM scripts](https://www.jetbrains.com/help/webstorm/installing-and-removing-external-software-using-node-package-manager.html#ws_npm_run_debug_scripts_from_npm_tool_window) from the dedicated NPM panel
+- and jump directly to packages from the JSON
 
 Debugging code
 
-- Add breakpoints to your code, right in the margin
-- Debug NPM scripts right from `package.json` or the NPM script panel
-- Use the Debugger to add breakpoints to stop, inspect and change your code
-- Step through the code
-- Show values by hovering over the variables
-- Edit values in the console
+- [Debug NPM scripts](https://www.jetbrains.com/help/webstorm/installing-and-removing-external-software-using-node-package-manager.html#ws_npm_debug_single_script) right from `package.json` or the NPM script panel
+- [Debug Node applications](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html) including [Express servers](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html#debugLocal)
+- Use the [Debugger](https://blog.jetbrains.com/webstorm/2018/01/how-to-debug-with-webstorm/) to stop, inspect and change your code:
+  - Add [breakpoints](https://www.jetbrains.com/help/webstorm/using-breakpoints.html#exception-breakpoints) right in the margin
+  - [View values inline](https://www.jetbrains.com/help/webstorm/examining-suspended-program.html#inline-view) or [inspect variables](https://www.jetbrains.com/help/webstorm/examining-suspended-program.html) whilst the program is paused
+  - [Set variable values](https://www.jetbrains.com/help/webstorm/examining-suspended-program.html#setting-variable-values) in the panel or use the [built-in console](https://www.jetbrains.com/help/webstorm/interactive-debugger-console.html)
+  - [Step through](https://www.jetbrains.com/help/webstorm/stepping-through-the-program.html) the code to see what is actually happening
  
 Test support
 
-- Run and rerun tests from a convenient panel, or the test code itself  
- 
+- [Run individual tests](https://www.jetbrains.com/help/webstorm/performing-tests.html) from the margin of the code itself  
+- [Explore test results](https://www.jetbrains.com/help/webstorm/viewing-and-exploring-test-results.html) tests from a convenient panel
+- View [code coverage](https://www.jetbrains.com/help/webstorm/code-coverage.html) results in both a panel and [the editor](https://www.jetbrains.com/help/webstorm/code-coverage.html#ws_coverage_results_editor)
+
 Web development tools
 
-- [Database](https://www.jetbrains.com/help/webstorm/relational-databases.html) ([DataGrip](https://www.jetbrains.com/help/datagrip/meet-the-product.html) plugin)
-- [CSV Editor](https://www.jetbrains.com/help/webstorm/table-editor.html)
-- [Regular Expressions](https://www.jetbrains.com/help/webstorm/tutorial-finding-and-replacing-text-using-regular-expressions.html)
-- [HTTP Client](https://www.jetbrains.com/help/webstorm/http-client-in-product-code-editor.html)
 - [Markdown editor](https://www.jetbrains.com/help/webstorm/markdown.html)
+- [Database](https://www.jetbrains.com/help/webstorm/relational-databases.html) (via the [DataGrip](https://www.jetbrains.com/help/datagrip/meet-the-product.html) plugin)
+- [CSV Editor](https://www.jetbrains.com/help/webstorm/table-editor.html)
+- [HTTP Client](https://www.jetbrains.com/help/webstorm/http-client-in-product-code-editor.html)
 
 
 ## Plugins
