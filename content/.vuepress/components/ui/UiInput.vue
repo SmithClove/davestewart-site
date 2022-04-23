@@ -3,7 +3,7 @@
     <input class="uiInput__text"
            type="text"
            autocomplete="off"
-           placeholder="Type to filter..."
+           :placeholder="placeholder"
            v-model="input"
     >
     <span v-if="input"
@@ -22,6 +22,7 @@ export default {
 
     placeholder: {
       type: String,
+      default: ''
     },
   },
 

@@ -32,7 +32,7 @@
             <!-- search input -->
             <div class="searchControls__text">
               <UiInput v-model="query.text"
-                       placeholder="Type to filter...."
+                       placeholder="Type to filter..."
               />
             </div>
           </UiControls>
@@ -43,7 +43,7 @@
             <!-- search input -->
             <div class="searchControls__text only-md-up">
               <UiInput v-model="query.text"
-                       placeholder="Type to filter...."
+                       placeholder="Type to filter..."
               />
             </div>
 

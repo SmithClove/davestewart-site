@@ -7,8 +7,8 @@
   >
     <div v-if="title && items.length" class="pageTree__header">
       <Heading :level="depth + 1" class="pageTree__title">
-        <a :name="id"></a>
-        <a :name="slug"></a>
+        <a :id="id"></a>
+        <a :id="slug"></a>
         <router-link :to="path">{{ title }}</router-link>
       </Heading>
       <span v-if="desc" class="pageTree__desc">{{ desc }}</span>

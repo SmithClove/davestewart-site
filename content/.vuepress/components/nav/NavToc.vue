@@ -19,6 +19,7 @@ function split (value) {
 
 export default {
   props: {
+    // optional page headers to render (defaults to the containing page)
     headers: {
       type: Array,
       default: () => [],
@@ -42,17 +43,19 @@ export default {
       default: '',
     },
 
-    //
+    // render links of a named section only (by slug)
     section: {
       type: String,
       default: '',
     },
 
+    // begin rendering from a specific header (by slug)
     from: {
       type: String,
       default: '',
     },
 
+    // end rendering at a specific header (by slug)
     to: {
       type: String,
       default: '',
@@ -63,11 +66,6 @@ export default {
       type: String,
       validator: value => ['list', 'tree', 'auto'].includes(value),
       default: 'auto',
-    },
-
-    // takes a string or array of strings of slugs to exclude
-    flatten: {
-      type: Boolean,
     },
   },
 
