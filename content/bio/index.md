@@ -2,7 +2,7 @@
 title: Bio
 description: A little about me and my approach
 layout: page
-order: 2
+order: 1
 ---
 
 # Bio

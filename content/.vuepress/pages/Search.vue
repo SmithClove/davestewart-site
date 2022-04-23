@@ -197,6 +197,7 @@ const paths = {
     '/products/',
     '/projects/',
     '/work/',
+    '/blog/',
   ]
 }
 
@@ -243,7 +244,7 @@ export default {
       // properties
       let items = this.$store.pages
 
-      // skip bio and blog
+      // filter folders
       items = items.filter(item => {
         const regularPath = item.regularPath
         return regularPath === '/' || paths.searchable.some(path => regularPath.startsWith(path))
@@ -297,14 +298,14 @@ export default {
         }
       }
 
-      // variables
-      const pages = makeTree(this.prepared)
-      const root = { pages: clone(pages) }
-
       // filtering callbacks
       const { text, tags } = this.query
       const filterText = makeTextFilter(text)
       const filterTags = makeTagsFilter(tags)
+
+      // variables
+      const pages = makeTree(this.prepared)
+      const root = { pages: clone(pages) }
 
       // filter tree
       walk(root, function (page, parent, index) {
@@ -349,7 +350,7 @@ export default {
 
     pageDescription () {
       return this.isFiltered
-          ? 'All work and project items'
+          ? 'Everything on the site'
           : plural(this.itemsAsList.length, 'item')
     },
   },
