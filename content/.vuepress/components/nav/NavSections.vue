@@ -1,6 +1,10 @@
 <template>
   <nav class="navSections">
-    <div v-for="section in sections" :key="section.name" class="navSections__section">
+    <div v-for="section in sections"
+         :key="section.name"
+         class="navSections__section"
+         :data-name="section.name.toLowerCase()"
+    >
       <div v-if="headers" class="navSections__header">{{ section.name }}</div>
       <router-link v-for="link in section.links"
                    :key="link.path"
@@ -58,19 +62,19 @@ export default {
       return [
         section('Navigation', [
           '/',
-          '/search/',
           '/sitemap/',
+          '/search/',
         ]),
         section('Creation', [
           '/products/',
           '/projects/',
           '/work/',
           '/archive/',
+          link('Site', 'Info and site source code', '/projects/personal/dave-stewart/'),
         ]),
         section('Ideation', [
           '/blog/',
           '/bio/',
-          link('Site', 'Info and site source code', '/projects/personal/dave-stewart')
         ]),
       ]
     },

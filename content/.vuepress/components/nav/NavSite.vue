@@ -178,6 +178,20 @@ export default {
       }
     }
 
+    // hide some links in menu
+    //.navSections__section[data-name="navigation"],
+    a[href="/"],
+    a[href="/search/"],
+    a[href="/projects/personal/dave-stewart/"] {
+      display: none;
+    }
+
+    @include md-up {
+      a[href="/bio/"] {
+        display: none;
+      }
+    }
+
   }
 }
 
