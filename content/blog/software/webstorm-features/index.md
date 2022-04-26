@@ -3,6 +3,7 @@ description: Big and small-ticket WebStorm features to impress your colleagues a
 date: 2022-04-22
 media:
   thumbnail: ./webstorm.png
+  opengraph: ./webstorm.png
   video:
     src: https://www.youtube.com/embed/JlyMK-3peeo
 ---
