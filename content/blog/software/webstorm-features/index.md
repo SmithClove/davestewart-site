@@ -1,14 +1,14 @@
 ---
-description: Big and small-ticket WebStorm features to impress your colleagues and frighten your friends
+description: The WebStorm features and tools I use everyday to write better code and build bigger apps 
 date: 2022-04-22
 media:
-  thumbnail: ./webstorm.png
-  opengraph: ./webstorm.png
+  thumbnail: ./webstorm-splash.png
+  opengraph: ./webstorm-splash.png
   video:
     src: https://www.youtube.com/embed/JlyMK-3peeo
 ---
 
-# An intro to WebStorm's most powerful features 
+# WebStorm Power User Manual 
 
 ## Intro
 
