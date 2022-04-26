@@ -2,7 +2,7 @@
 title: Blog
 description: Insights, opinions, musings...
 layout: folder
-mode: list
+mode: list # tree
 _toc: 2
 order: 6
 autometa:
