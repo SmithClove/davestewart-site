@@ -10,6 +10,8 @@ media:
 
 WorkFlowy is the most powerful web development IDE there is. If you want to match power with speed get your hands on WebStorm's extensive and intuitive keyboard shortcuts.
 
+Below, I've listed 75+ essential shortcuts across multiple application areas. Where I've added or changed a shortcut I've added "customised" in brackets afterwards.
+
 See my other article on WebStorm's [features](/blog/webstorm-features) for detailed information on many and _more_ of the features listed below.
 
 <NavToc />
@@ -29,22 +31,23 @@ Files
 
 Panels
 
-- `...` - Select file in Project View _(tip: map this to something ASAP!)_
-- `Alt` + `F1` - Go to current file in... _(project, explorer, changes, browser, etc)_
-- `Ctrl` + `Tab` - Quick-switch editor panes
+- `Cmd` + `1` - Toggle Project panel
+- `Cmd` + `Shift` + `1` - Select file in Project _(customised)_
+- `Alt` + `F1` - Go to current file in... project, explorer, changes, browser, etc
+- `Ctrl` + `Tab` - Show thw Switcher popup
 
 Projects
 
 - `Cmd` + `Shift` + `P` - Recent projects
-- `Cmd` + `Shift` + `W` - Close project _(this is one I added!)_
+- `Cmd` + `Shift` + `W` - Close project _(customised)_
 
 ### Editor
 
 Code / Markup
 
-- _Works in JavaScript, HTML, CSS, anywhere, and across domains!_
-- `Cmd` + `Click` symbol name - Go to declaration
-- `Cmd` + `Click` declaration - See all usages
+
+- `Cmd` + `B` / `Cmd` + `Click` - go to declaration / find usages (depending on context)
+- _Works in all [language](https://www.jetbrains.com/help/webstorm/application-development-guidelines.html) types, even across boundaries!_
 
 Cursor
 
@@ -91,13 +94,13 @@ Multi-caret / range
 
 Multi-clipboard
 
-- `Cmd` + `Shift` + `V` - Paste recent (shows popup)
+- `Cmd` + `Shift` + `V` - Paste recent (popup)
 
 ### Modification
 
 Formatting
 
-- `Ctrl` + `W` - Toggle soft-wraps
+- `Ctrl` + `W` - Toggle soft-wraps _(customised)_
 - `Cmd` + `Alt` + `L` - Reformat code
 - `Cmd` + `Shift` + `U` - Toggle case
 
@@ -132,7 +135,7 @@ Formatting
 
 Insert (also `Ctrl` + `Enter`)
 
-- `Cmd` + `Shift` + `L` - Link (change this from `Cmd` + `U`)
+- `Cmd` + `Shift` + `L` - Link _(customised from `Cmd` + `U`)_
 - `Cmd` + `Shift` + `C` - Code
 - `Cmd` + `Shift` + `I` - Image
 - `Cmd` + `Shift` + `T` - Table
@@ -153,7 +156,7 @@ You can access additional Markdown functionality via:
   - Look to select patterns, i.e. `: '` or `= [` or `class=`
   - Then `Ctrl` + `G` to select same occurrences
   - Then `Arrows`, `Home`, `End`, expand selection to move around
-  - Then start typing, copy and paste, Toggle case, to modify text
+  - Then start typing, toggle case, copy and paste, etc
   - _You can get real creative!_
   
 ## Assistance
@@ -203,17 +206,15 @@ Live templates
 - `Cmd` + `J` - Show available templates, then `Tab` to insert
 - Or simply type template key (i.e. `forin`) + `Tab` - Add template with placeholders
   - Use `Tab` to jump between placeholders
-- _See all, enable / disable, or add your own via `Cmd` + `,` + type `live`_
 
 Postfix completion
 
 - Type `<expr>.log` + `Tab` - convert expression to `console.log(<expr>)` 
 - Type `<expr>.if` + `Tab` - convert expression to `if (<expr>) { ... }`
-- _See all, enable / disable, or add your own via `Cmd` + `,` + type `postfix`_
 
 HTML
 
-- `Cmd` + `Alt` + `T` > `T` - Surround with tag _(then type tag name to fill in)_
+- `Cmd` + `Alt` + `T` > `T` - Surround with tag (then type tag name to fill in)
 - `<expr>` + `Tab` - Generate tags using Emmet
   - Use `Enter` to jump between placeholders
 
@@ -225,8 +226,8 @@ HTML
 
 Search
 
-- `Cmd` + `Shift` + `A` - Find action _(any application command; tip: use this any time you can't remember something!)_
-- `Shift` + `Shift` - Find anything _(files, classes, assets, shortcuts, preferences, etc)_
+- `Cmd` + `Shift` + `A` - Find action (any application command; tip: use this any time you can't remember something!)
+- `Shift` + `Shift` - Find anything (files, classes, assets, shortcuts, preferences, etc)
 
 Preferences
 

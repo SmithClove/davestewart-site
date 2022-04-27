@@ -65,11 +65,11 @@ Lists
 
 Projects
 
-- [Manage Projects](https://www.jetbrains.com/help/webstorm/opening-reopening-and-closing-projects.html#removing_project_from_recents) (`Cmd` + `Shift` + `P`) using the popup to quickly view, filter and open projects
+- [Manage Projects](https://www.jetbrains.com/help/webstorm/opening-reopening-and-closing-projects.html#removing_project_from_recents) (add `Cmd` + `Shift` + `P`) using the popup to quickly view, filter and open projects
 
 Scopes
 
-- [Configure scopes](https://www.jetbrains.com/help/webstorm/settings-scopes.html) to limit operations to files and folders matching wildcard paths
+- [Configure scopes](https://www.jetbrains.com/help/webstorm/configuring-scopes-and-file-colors.html) to limit operations to [files and folders](https://www.jetbrains.com/help/webstorm/scope-language-syntax-reference.html) using a special scope path syntax
 - [Filter Project by Scope](https://www.jetbrains.com/help/webstorm/project-tool-window.html#views) (including [open and changed files](https://www.jetbrains.com/help/webstorm/configuring-scopes-and-file-colors.html#predefined-scopes-list)) using the dropdown in the Project view toolbar
 - [Search within Scope](https://www.jetbrains.com/help/webstorm/finding-and-replacing-text-in-project.html#limit_search) using the Scope option in the [Find in Files](https://www.jetbrains.com/help/webstorm/finding-and-replacing-text-in-project.html) dialog
 
