@@ -172,8 +172,8 @@ em strong {
   video,
   p > video,
   p > img {
-    margin: 1rem auto;
     display: block;
+    margin: 2rem auto;
 
     @include sm {
       margin: .5rem auto;

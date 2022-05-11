@@ -15,6 +15,10 @@ About a month ago I managed to stop biting my nails. Overnight!
 
 Since then, there's been no biting, and the temptation to bite has gone. I had a little scrape of a nail on my teeth the other day, then instead reached for a nail file, smoothed off the rough bit and thought no more about it.
 
+And here's how they look today:
+
+![nails](./nails-photo.jpg)
+
 I've bitten my nails my whole life and have never been able to stop, so how did I do it?
 
 ## The process that worked for me
@@ -39,15 +43,16 @@ Here's how I managed it:
 
 But the thing that really opened the door was **going for a manicure**.
 
-Whereas before – like some kind of twisted, keratin based-Tinder – there would always be at least one raggedy nail to lavish my attention on, one trip to the nail bar and suddenly all my nails were perfectly smooth and pretty and I didn't want to put them _near_ my mouth, let alone ruin them.
+Whereas before – like some kind of keratin based-Tinder – there would always be at least one raggedy nail to lavish my attention on, one trip to the nail bar and suddenly all my nails were perfectly smooth and pretty and I didn't want to put them _near_ my mouth, let alone ruin them.
 
-<Quote text="The long-term pleasure of good nails is infinitely greater than the momentary satisfaction of biting" />
-
-It was this period of wonder that provided the buffer I needed to abstain from daily biting, like an amazing head start to win the race against myself.
+It was this period of learning to really _appreciate_ my hands that provided the buffer I needed to abstain from daily biting, like an amazing head start to win the race against myself.
 
 ## Where I am now
 
 Without doubt, conquering this habit after all this time – and putting the processes in place to keep it conquered – feels like a major life achievement.
+
+<Quote text="The long-term pleasure of having good nails is infinitely greater than the momentary satisfaction of biting them" hero size="1.6" />
+
 
 If I was to list the benefits, they'd be:
 
@@ -69,9 +74,7 @@ If I was to list the benefits, they'd be:
 - ***Seeing biting as a silly, self-harming act of sabotage***<br>
   This permanent shift in mindset has been surprisingly-obtainable now my habit isn't running me
 
-The other surprising thing is that the long-term pleasure of having nails that are strong, useful and look good is infinitely greater than the momentary satisfaction of tearing into them and being left with a mess.
-
-The only downside to having stopped is that longer nails are not great for coding; having them clatter on the keys makes it harder to type and is annoying, so now I'm up-and-running, staying on track with a good nail care routine is key.
+The only downside to having stopped is that longer nails are not great for coding; having them clatter on the keys makes it harder to type and is annoying, so now I'm up-and-running, staying on track with a good [nail care routine](#nail-care-routine) is key.
 
 ## Nail care routine
 
@@ -81,7 +84,7 @@ When I have tried to cut or clip my nails in the past they have always ended up 
 
 #### Use the right tools
 
-- [Toenail clippers](https://www.boots.com/boots-toenail-clippers-10278875) – the bigger one designed for toenails are actually better to cut fingernails with
+- [Nail clippers](https://www.boots.com/boots-toenail-clippers-10278875) – right now I actually find toenail clippers easier to achieve a level front edge with
 - [Emery boards](https://www.boots.com/sitesearch?searchTerm=emery%20board) – these are available for a few quid at chemists or on Amazon
 - [Moisturiser](https://www.boots.com/boots-expert-hand-and-nail-cream-50ml-10174011) - you can buy hand cream, but regular skin cream will do
 
@@ -90,7 +93,7 @@ When I have tried to cut or clip my nails in the past they have always ended up 
 
 - Push the clippers flat against the end of each finger tip, with the cutting surfaces above and below the nail 
 - In a gentle, clean squeeze, cut straight across the end of the nail to the desired length
-- For a rounder shape, symmetrically clip each corner at angle of around 30-45°
+- Clip the corners at an angle of around 30-45°, making sure to judge the cuts by their overall symmetry
 
 #### To smooth the nail
 
