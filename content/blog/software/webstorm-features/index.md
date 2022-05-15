@@ -50,6 +50,7 @@ General
 - [Get to know](https://www.jetbrains.com/help/webstorm/guided-tour-around-the-user-interface.html) the user interface so you don't feel overwhelmed
 - [Arrange tool windows](https://www.jetbrains.com/help/idea/manipulating-the-tool-windows.html) in one of 8 dock locations that makes sense to you
 - [Pin or unpin](https://www.jetbrains.com/help/idea/viewing-modes.html) tool windows so they stay prominent (**Dock Pinned**) or get out of your way (**Dock Unpinned**)
+- [Save and restore](https://www.jetbrains.com/help/idea/manipulating-the-tool-windows.html#restore) your ideal arrangement so you don't need to set up each individual project
 
 Tabs
 
