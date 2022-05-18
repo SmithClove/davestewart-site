@@ -21,14 +21,15 @@ media:
 
 ## Overview
 
-ToDo Emojis are checkbox-style emojis you can use to create to-do lists:
+Todo Emojis are checkbox-style emojis you can use to create to-do lists:
 
 ![emojis](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/emojis.png)
 
-I created them for use in the [Weekend Club](https://twitter.com/weekendclubldn) [Slack](https://slack.com) channel; an [Indie Hackers](https://indiehackers.com) network based in London:
+I created them for use in the [Ramen Club](https://www.ramenclub.so/uk) Slack channel; an [Indie Hackers](https://indiehackers.com) network based in London:
 
 ![example](https://raw.githubusercontent.com/davestewart/todo-emojis/master/docs/example.png)
 
+They're useful to help keep folks accountable in communities, start-ups, stand-ups, catch-ups – in fact any kind of "-ups" !
 
 ### Using the emojis
 
@@ -76,3 +77,4 @@ ToDo Emojis is available on Product Hunt:
 - [Product Hunt](http://producthunt.com/posts/todo-emojis)
 - [Indie Hackers](http://indiehackers.com/product/todo-emojis)
 - [GitHub](https://github.com/davestewart/todo-emojis)
+
