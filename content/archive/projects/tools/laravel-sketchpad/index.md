@@ -29,6 +29,13 @@ It also live-reloads, so updating the PHP instantly updates the UI!
 
 This allows you to quickly build powerful multiple small tools which leverage backend functionality, but with a fully-functioning, automatically generated UI, to quickly test ideas or create useful tools – in a fraction of the time of building a proper application.
 
+## Videos
+
+The following videos dig into how to setup and use Sketchpad:
+
+- [Installation and setup](https://youtu.be/lR5f26jhTEo)
+- [Tooling development](https://youtu.be/bKSAONBKuEA)
+
 ## Links
 
 The [full demo](http://sketchpad.davestewart.io/sketchpad) is currently offline, but you can check out the repos:
