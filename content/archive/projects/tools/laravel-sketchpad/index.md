@@ -29,12 +29,12 @@ It also live-reloads, so updating the PHP instantly updates the UI!
 
 This allows you to quickly build powerful multiple small tools which leverage backend functionality, but with a fully-functioning, automatically generated UI, to quickly test ideas or create useful tools – in a fraction of the time of building a proper application.
 
-## Implementation
-
-
 ## Links
 
-- [sketchpad.davestewart.io/sketchpad](http://sketchpad.davestewart.io/sketchpad)
-- [GitHub](https://github.com/davestewart/laravel-sketchpad)
-- [YouTube](https://youtube.com/watch?v=dQ-OL8d5uak)
+The [full demo](http://sketchpad.davestewart.io/sketchpad) is currently offline, but you can check out the repos:
 
+- [Sketchpad](https://github.com/davestewart/laravel-sketchpad)
+- [Reload](https://github.com/davestewart/laravel-sketchpad-reload)
+- [Simple demo](https://github.com/davestewart/laravel-sketchpad-demo)
+
+_I can't promise that they will work in the latest version of Laravel!_
