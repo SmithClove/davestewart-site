@@ -27,7 +27,7 @@ Let's face it: grunting tennis players are _incredibly_ annoying, and it seems t
 
 The app allows the user to "Angry Birds-ize" any external website, such as BBC Tennis, and "play along" to live tennis games using their keyboard, which trigger the comedic sounds from the Angry Birds games.
 
-Playing [Angry Tennis Birds](http://angrytennisbirds.com/) makes any tennis match a fully interactive experience, with separate effects for shots (backswing and foreswing), victories, and crowd noises!
+Playing [Angry Tennis Birds](https://atb.davestewart.io/) makes any tennis match a fully interactive experience, with separate effects for shots (back-swing and fore-swing), victories, and crowd noises!
 
 ## Implementation
 
@@ -35,7 +35,7 @@ The HTML5 Google Chrome release of Angry Birds effectively open-sourced the game
 
 The app is run on external sites using a JavaScript injection via a JavaScript bookmarklet, dragged from an original source on the Angry Tennis Birds website.
 
-The application itself is JavaScript, with a tiny visual front-end, and a Flash audio player.
+The application itself is JavaScript, with a tiny visual front-end, and – as of 2022 – HTML 5 audio.
 
 ## Press
 
@@ -45,13 +45,25 @@ Interestingly, after releasing Angry Tennis Birds at the start of the 2011 Wimbl
 
 I emailed the paper subsequent times... but as soon as the topic came up, communication stopped. Read into that what you will!
 
-## 2020 update
+## Updates
 
-Interestingly, an [Angry Birds Tennis](https://www.pocketgamer.com/angry-birds-tennis/angry-birds-tennis-launches-into-early-access-for-ios-for-a-limited-time-only/) game launched on iOS in February 2020, but the title was [cancelled](https://www.pocketgamer.com/angry-birds-tennis/angry-birds-tennis-is-no-more-after-rovio-cancels-the-game-following-an-unsucces/) in October of the same year. Hardly surprising with the amount of exposure and how long it's been in the public consciousness, but it looks like the Angry Birds franchise has probably [had it's day](https://www.pocketgamer.com/angry-birds-2/opinion-the-rise-and-fall-of-angry-birds/).
+### 2020
+
+Interestingly, an [Angry Birds Tennis](https://www.pocketgamer.com/angry-birds-tennis/angry-birds-tennis-launches-into-early-access-for-ios-for-a-limited-time-only/) game launched on iOS in February 2020, but the title was [cancelled](https://www.pocketgamer.com/angry-birds-tennis/angry-birds-tennis-is-no-more-after-rovio-cancels-the-game-following-an-unsucces/) in October of the same year. Hardly surprising with the amount of exposure and how long it's been in the public consciousness, but it looks like the Angry Birds franchise has probably [had its day](https://www.pocketgamer.com/angry-birds-2/opinion-the-rise-and-fall-of-angry-birds/).
+
+### 2022
+
+The "birds" angle probably hasn't aged too well, but Angry Tennis Birds was always fun to play, so I've updated the code to run in modern browsers.
 
 ## Links
 
-- [Angry Tennis Birds](http://angrytennisbirds.com/)
+Play tennis:
+
+- [Angry Tennis Birds](https://atb.davestewart.io/)
+- [BBC Tennis](https://www.bbc.co.uk/sport/live-guide/tennis)
+
+Media:
+
 - [The Sun: Angry Birds - Grunting girls noisier than creatures on app](http://thesun.co.uk/sol/homepage/news/3671271/Grunting-girls-make-racket-at-Wimbledon.html)
 - [Angry Birds Tennis](https://www.pocketgamer.com/angry-birds-tennis/angry-birds-tennis-launches-into-early-access-for-ios-for-a-limited-time-only/)
 
