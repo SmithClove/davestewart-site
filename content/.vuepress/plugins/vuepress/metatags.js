@@ -392,50 +392,50 @@ PLUGIN.default_metas.image = ($page, default_values) => {
 PLUGIN.default_metas.twitter = ($page, default_values) => {
   const out = [
     {
-      name: 'twitter:title',
+      property: 'twitter:title',
       content: default_values.title,
     },
     {
-      name: 'twitter:description',
+      property: 'twitter:description',
       content: default_values.description,
     },
   ]
 
   if (default_values.image) {
     out.push({
-      name: 'twitter:card',
+      property: 'twitter:card',
       content: 'summary_large_image',
     })
 
     out.push({
-      name: 'twitter:image',
+      property: 'twitter:image',
       content: default_values.image,
     })
   }
   else {
     out.push({
-      name: 'twitter:card',
+      property: 'twitter:card',
       content: 'summary',
     })
   }
 
   if (default_values.canonical_url) {
     out.push({
-      name: 'twitter:url',
+      property: 'twitter:url',
       content: default_values.canonical_url,
     })
   }
 
   if (default_values.author.twitter) {
     out.push({
-      name: 'twitter:creator',
+      property: 'twitter:creator',
       content: `@${default_values.author.twitter.replace('@', '')}`, // @username
     })
   }
 
   if (default_values.site.twitter) {
     out.push({
-      name: 'twitter:site',
+      property: 'twitter:site',
       content: `@${default_values.site.twitter.replace('@', '')}`, // @site_account
     })
   }
