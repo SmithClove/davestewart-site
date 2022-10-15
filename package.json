@@ -17,9 +17,9 @@
   "license": "MIT",
   "devDependencies": {
     "alias-hq": "^5.4.0",
-    "node-sass": "^5.0.0",
     "raw-loader": "^4.0.2",
-    "sass-loader": "^10.2.0",
+    "node-sass": "^7.x",
+    "sass-loader": "^10.3.1",
     "traverse": "^0.6.6",
     "vue-router": "^3.5.3",
     "vuepress": "^1.9.7",

@@ -1,6 +1,6 @@
 const Fs = require('fs')
 const Path = require('path')
-const simpleSvgPlaceholder = require('@cloudfour/simple-svg-placeholder');
+const simpleSvgPlaceholder = require('@cloudfour/simple-svg-placeholder').default
 const { isImage, isRemote } = require('../plugins/utils.js')
 const { isPlainObject } = require('./assert.js')
 const theme = require('../styles/theme.js')
