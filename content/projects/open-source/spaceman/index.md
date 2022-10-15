@@ -9,7 +9,7 @@ tags:
 github: davestewart/spaceman
 media:
   thumbnail: ./images/spaceman-thumb.png
-  featured: ./images/spaceman-light.png
+  featured: ./images/spaceman-featured.png
   gallery:
     - ./images/spaceman-light.png
     - ./images/spaceman-dark.png
