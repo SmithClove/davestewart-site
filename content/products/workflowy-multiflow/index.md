@@ -134,17 +134,43 @@ MultiFlow: page ready!
 
 If you don't see these logs, it means Multiflow didn't run. I'm not sure why this is, but I've tricked Chrome out of this state by by first visiting [beta.workflowy.com](https://beta.workflowy.com) then [workflowy.com](https://beta.workflowy.com).
 
-### Limitations
+### Extension Interoperability
 
-There are a few limitations which I may look to fix:
+As of Version 1.6, WorkFlowy [enables other extensions](https://github.com/davestewart/workflowy-multiflow#extension-interoperability) to query and even hook into MultiFlow state changes.
 
-- **working with [WFx](https://www.youtube.com/watch?v=udiIXMW6IVE&list=PLgi2Y4JImXPhCPhtAILbNRzci-X4w1MKT) keyboard shortcuts**: think I can make it work; may cause issues with history though
-- **working with other plugins**: I can't make any guarantees, but I am looking into a way to forward commands from the main window to the active frame
-- **make it work on Firefix, Brave, etc**
+Extension developers will need to _opt in_ to this functionality using the [interop code](https://github.com/davestewart/workflowy-multiflow/blob/main/src/interop/multiflow.js) provided.
+
+#### WFx users
+
+For [WFx](https://chrome.google.com/webstore/detail/wfx-for-workflowy/jbehgpdjkcconnaagjhddddfdajbpfhi) users, whilst you wait for [RawBytz](https://twitter.com/rawbytz) to update his extensions, you can wrap your WFx scripts with the following code to make them compatible _now_:  
+
+```js
+// multiflow helper
+function getWindow () {
+  const body = document.body
+  const mode = body.getAttribute('data-mode')
+  if (mode === 'multiflow') {
+    const frames = document.querySelectorAll('#multiflow iframe')
+    const index = body.getAttribute('data-focused')
+    return frames[Number(index) || 0].contentWindow
+  }
+  return window
+}
+
+with (getWindow()) {
+  // paste your script here
+}
+```
+
+### Browser compatibility
+
+Right now MultiFlow only works on Chromium browsers, that is Chrome, Brave, Edge, etc.
+
+Could I make it work on Firefox? Probably, but I don't have the time right now, sorry!
 
 ### Planned features
 
-There are some nice-to-haves which I hope to find the time to work on:
+There are some nice-to-haves which I may (or may not) find the time to work on:
 
 - **resizing frames**: there is a [Vue package](https://antoniandre.github.io/splitpanes/) which should make this possible
 - **save single panel sessions**: so you just use one list to access favourites
