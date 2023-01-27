@@ -18,7 +18,31 @@ media:
 
 WorkFlowy MultiFlow adds a multi-column view to WorkFlowy.
 
-This lets you to maintain an overview and manage relationships between several trees at once.
+This lets you maintain an overview and manage relationships between several trees at once.
+
+Here's a video of the 1.0 version of WorkFlowy to give you an idea of how to use it:
+
+<MediaVideo src="https://youtube.com/embed/Iy1DuGjUhR4" width="560" height="315" />
+
+
+## Contents
+
+Learn how to use MultiFlow:
+
+- [Installation](#installation)
+- [Working with columns](#working-with-columns)
+- [Moving data around](#moving-data-around)
+- [Options panel](#options-panel)
+- [Sessions](#sessions)
+
+Get support:
+
+- [Troubleshooting](#troubleshooting)
+- [Extension Interoperability](#extension-interoperability)
+- [Browser compatibility](#browser-compatibility)
+- [Planned features](#planned-features)
+- [Support](#support)
+- [Links](#links)
 
 ## Installation
 
@@ -102,16 +126,6 @@ You can also save and load sessions, by clicking the "Save Session" button in th
 Once you have more than one session, load, update, or save new ones, as well as reorder with drag and drop.
 
 Note that sessions are saved with the extension. Uninstalling the session will delete any saved sessions.
-
-## Video
-
-Here's a video of the 1.0 version of WorkFlowy, which should give you some idea of how to use it.
-
-<MediaVideo
-  src="https://youtube.com/embed/Iy1DuGjUhR4"
-  width="560"
-  height="315"
-/>
 
 ## Appendix
 
