@@ -6,6 +6,7 @@ tags:
   - frontend
   - backend
   - elasticsearch
+  - chrome-extension
   - node
   - nuxt
   - vue

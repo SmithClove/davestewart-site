@@ -4,6 +4,9 @@ date: 2005-01-01
 tags:
   - plugin
   - framework
+  - javascript
+  - creative
+  - vba
   - ui
 media:
   opengraph: ./applications.png

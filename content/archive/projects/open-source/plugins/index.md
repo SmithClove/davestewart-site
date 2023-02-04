@@ -4,6 +4,8 @@ date: 2009-01-01
 tags:
   - plugin
   - framework
+  - javascript
+  - php
   - ui
 media:
   opengraph: ./plugins.png
