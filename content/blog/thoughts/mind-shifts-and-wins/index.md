@@ -224,9 +224,9 @@ I could delve far more deeply into this subject, but here's three tangible wins 
 
 You can't always account for others, but you can be responsible for yourself.
 
-- ***Removing emotion from written content***
+- ***Removing emotion from email***
 
-  Being the detail oriented type, if communication turned sour I would double-down on detail. Unfortunately detail would lead to logic, logic to blame, and blame to emotion, and that would rarely work in my favour.
+  Being the detail oriented type, if email turned sour I would double-down on detail. Unfortunately detail would lead to logic, logic to blame, and blame to emotion, and that would rarely work in my favour.
 
   A friend in HR advised me to "stick to the facts" which can only be done by removing the emotion. The trick is to detach yourself from the outcome, and emails become much simpler (and shorter!). If it can't be done in a short email, then perhaps consider a phone call where it can be more intuitive to get to the point.
 
