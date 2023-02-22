@@ -1,22 +1,24 @@
 ---
-description: Things I changed my mind on and how it improved my life
+description: A 10-ish year retrospective of self-reflection and improvement
 date: 2023-02-22
 media:
-  featured: ./self-reflection.jpg
-  thumbnail: ./self-reflection.jpg
+  featured: ./reflection.jpg
+  thumbnail: ./reflection-thumb.jpg
 ---
 
-# Mindsets, mind shifts and results 
+# On mindsets, mind shifts and wins
 
 ## Overview
 
 #### Why this post
 
-This post is a retrospective of various self-improvements from the last 10+ years, and how they've improved my quality of life. It's **long** and primarily a personal exercise, but I've written it in such a way that it may provide value to others.
+This post is a retrospective of various self-improvement wins from the last 10+ years, and how they've impacted my life.
+
+It's **long** and primarily a personal exercise, but I've written it in such a way that it may provide value to others.
 
 #### How to read this post
 
-Scan down the ***topic headings*** and stop if it resonates with you.
+Scan down the ***red topic headings*** and read if it resonates with you!
 
 Alternatively, skip to a **section**:
 
@@ -220,11 +222,11 @@ I could delve far more deeply into this subject, but here's three tangible wins 
 
 ### Talking to others
 
-I guess as you get older you realise it's less about yourself.
+You can't always account for others, but you can be responsible for yourself.
 
 - ***Removing emotion from written content***
 
-  Being the detail oriented type, when communication turned sour I would double-down on detail. Unfortunately detail would lead to logic, logic to blame, and blame to emotion, and that would rarely work in my favour.
+  Being the detail oriented type, if communication turned sour I would double-down on detail. Unfortunately detail would lead to logic, logic to blame, and blame to emotion, and that would rarely work in my favour.
 
   A friend in HR advised me to "stick to the facts" which can only be done by removing the emotion. The trick is to detach yourself from the outcome, and emails become much simpler (and shorter!). If it can't be done in a short email, then perhaps consider a phone call where it can be more intuitive to get to the point.
 
