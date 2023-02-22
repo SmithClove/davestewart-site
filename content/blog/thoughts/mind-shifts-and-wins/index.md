@@ -1,9 +1,9 @@
 ---
-description: A 10-ish year retrospective of self-reflection and improvement
+description: A 10-year (ish) retrospective of self-reflection and improvement
 date: 2023-02-22
 media:
-  featured: ./reflection.jpg
-  thumbnail: ./reflection-thumb.jpg
+  featured: ./lightbulb.png
+  thumbnail: ./lightbulb.png
 ---
 
 # On mindsets, mind shifts and wins
@@ -389,4 +389,4 @@ It's funny to consider the person described above is in these *exact* ways *diff
 
 I would love to read any [comments](#hyvor-talk-view) or answer any questions!
 
-<SiteIcon fill="#EA4848" />
+###### <SiteIcon fill="#EA4848" />
