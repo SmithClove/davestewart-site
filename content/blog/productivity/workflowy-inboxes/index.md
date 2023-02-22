@@ -12,9 +12,9 @@ media:
 
 WorkFlowy is a fantastic tool to organise everything from todos, to your personal affairs, to your work projects.
 
-But anyone who's worked with WorkFlowy long enough will know it can be difficult to stay organised when you're constantly jotting down thoughts, but don't have time to find a home for them.
+But anyone who's worked with WorkFlowy long enough will know it can be difficult to stay organised when you're constantly jotting down thoughts – but don't yet have a home for them.
 
-I've developed a solution I call "[Inboxes](#solution)" to make it easy to save thoughts in the right place, without clogging up your main list or constantly navigating to others.
+I've developed a solution I call "[Inboxes](#solution)" to make it easy to give thoughts a home, without clogging up your main list or constantly navigating to others.
 
 ## Problem
 
@@ -22,9 +22,9 @@ Let's take a typical WorkFlowy document – if there is such a thing:
 
 <img class="responsive" src="./images/01-home.png" />
 
-If you're like me, you have multiple projects, but a "main" list you have open most the time; mine is **Todos**.
+If you're like me, you have multiple projects, but a "main" list you spend most of your time in (mine is **Todos**).
 
-Throughout the day your brain is generating countless ideas, so you either navigate to and from the projects in question to jot them down (**taking** time) or more likely dump it at the bottom of your main list (**saving** time):
+During the day you're coming up with countless new and brilliant ideas, so you either navigate to the right place (**taking** time) or more likely dump them at the bottom of your main list (**saving** time):
 
 <img class="responsive" src="./images/02-first-idea.png" />
 
@@ -32,9 +32,9 @@ Of course, it's not long before your neat and tidy main list becomes a chaotic a
 
 <img class="responsive" src="./images/03-more-ideas.png" />
 
-Not only is your main list now cluttered with fragmented ramblings, but your brilliant ideas are all jumbled up – and you'll have to find additional time to sift through and organise them. Argh!
+Not only is your main list now fragmented with ramblings, but these brilliant ideas are all jumbled up – and at *some point* you'll have to find time to review and migrate. Argh!
 
-But what if you could avoid this?
+But what if you could break out of this cycle?
 
 ## Solution
 
@@ -42,7 +42,7 @@ My system of [structure](#structure), [mirrors](#mirrors) and [links](#links) is
 
 ### Structure
 
-At the **root** of all projects I create a new node called "Inbox":
+At the **root** of **each** project I create a new node called "Inbox":
 
 <img class="responsive" src="./images/04-inbox.png" />
 
@@ -56,13 +56,13 @@ But as projects could live anywhere in WorkFlowy, how do we solve the problem of
 
 ### Mirrors
 
-Using WorkFlowy's [mirrors](https://workflowy.com/feature/mirrors/) we can effectively teleport Inboxes to a single, **centralised** location, such as your main list:
+Using WorkFlowy's [mirrors](https://workflowy.com/feature/mirrors/) we can teleport all Inboxes to a single, **centralised** location, such as your main list:
 
 <img class="responsive" src="./images/06-inbox-mirrors.png" />
 
-(At this point, you'll want to add a _name_ each Inbox, so you can tell what project it belongs to).
+*At this point, you'll need to add a name to each Inbox, so you can tell what project it belongs to.*
 
-Now, when we want to log a random (but specific) thought, we can open the relevant Inbox and add it directly:
+Now, when we want to log a random (but specific) thought, we can toggle the relevant Inbox and add it directly:
 
 <img class="responsive" src="./images/07-mirror-ideas.png" />
 
@@ -72,7 +72,7 @@ However, there's one last problem to solve; what if we want to jump to the proje
 
 ### Links
 
-The final piece in the puzzle is to connect the Project by [linking](https://blog.workflowy.com/tag/links/) the Inbox **name**:
+The final piece in the puzzle is to connect the main Project by [linking](https://blog.workflowy.com/tag/links/) the Inbox **name**:
 
 <img class="responsive" src="./images/08-mirror-links.png" />
 
@@ -88,7 +88,7 @@ From here you can:
 
 ## Wrapping up
 
-Creating Inboxes is actually quite straightforward – even if it feels back to front – but the housekeeping benefits are real.
+Creating Inboxes is actually quite straightforward – even if it feels back-to-front – but the housekeeping benefits are real.
 
 ### Steps
 
