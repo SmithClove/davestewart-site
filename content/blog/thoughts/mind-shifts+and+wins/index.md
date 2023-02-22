@@ -316,19 +316,15 @@ Getting better at something just because I like it
 
 - ***Burgers***
 
-  In 2015 I had a burger that changed my life.
+  In 2015 I had a burger in a Parisian restaurant that was like nothing I had ever eaten; the juiciest medium-rare patty, the most perfect, imaginative toppings, an outstanding brioche bun, and it came together effortlessly.
 
-  It was in Parisian restaurant and it was like nothing I had ever eaten; the juiciest medium-rare patty, the most perfect and imaginative toppings, the perfect brioche bun, yet the whole thing felt utterly effortless.
-
-  About 3 years later the same thing happened in Spain. I put this all down to pure fluke, but a couple of years later, I thought "hang on, why don't I make this at home?". And so I did. It took me six months of trying, but I got there.
-
-  Mwah / *nom, nom, nom*!
+  About 3 years later the same thing happened in Spain, and I thought "maybe I could recreate this?". Six months of experimenting with buns, beef, timings, toppings and sauces, and I *finally* managed to nail it. Nom, nom, nom!
 
 - ***Cocktails***
 
   The last few years I've really got into cocktails; my favourites are [Negroni](https://www.liquor.com/recipes/negroni/) and [Old Fashioned](https://www.liquor.com/recipes/bourbon-old-fashioned/).
 
-  But here's the rub; cocktails are not actually *that* hard to make, you just need the right spirits, glasses and ice, plus a few choice ingredients. And with that, I got into cocktails! Granted my repertoire is small, but if you ever visit Chez Dave I promise to make you a delicious Mezcal Negroni garnished with a twist of fresh grapefruit 😘👌.
+  But here's the thing; cocktails are not actually *that* hard to make! You just need the right spirits, glasses and ice, plus a few choice ingredients. My hallway now boats a cute little cocktail cabinet, with an assortment of pretty bottles and tools, and the freezer has the right selection of ice, so the bar is potentially *always* open.
 
 
 ## Future
