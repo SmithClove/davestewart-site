@@ -26,7 +26,7 @@ Alternatively, skip to a **section**:
 - [Environment](#environment) (7 items)
 - [Organisation](#organisation) (6 items)
 - [People](#people) (6 items)
-- [Knowledge](#knowledge) (5 items)
+- [Skills](#skills) (6 items)
 - [Future](#future) (10 items)
 
 ## Personal
@@ -39,7 +39,7 @@ No real introduction needed here, save to say the small things impact the big th
 
   For most of my adult life I had no idea that I suffered from social anxiety, especially as I'm sociable, outgoing and fairly confident. But the tells were there; I'd get dizzy spells, couldn't think of anything worthwhile to say, feel the need to just-*get*-**out**, or occasionally lose my temper and I wouldn't know why.
 
-  Social anxiety is now recognised as a [diagnosed](https://www.verywellmind.com/social-anxiety-disorder-symptoms-and-diagnosis-4157219) mental health condition, and when I heard about it in the media, suddenly those past situations and feelings made complete sense.
+  Social anxiety is a [diagnosed](https://www.verywellmind.com/social-anxiety-disorder-symptoms-and-diagnosis-4157219) mental health condition, and when I heard about it in the media, suddenly those past situations and feelings made complete sense.
 
   These days, I'm properly equipped to recognise the tells and take preventative measures to avoid the worst of it. 
 
@@ -269,7 +269,7 @@ Making it count for those who matter the most.
   But after three years of casually dating my (eternally patient) girlfriend, I finally agreed to her requests to open my heart and now we're officially official, moved in together, and planning a future. I certainly didn't see that coming 😆
 
 
-## Knowledge
+## Skills
 
 ### Real life
 
@@ -278,9 +278,9 @@ Learning something outside my regular "tech" domain is simply enjoyable in itsel
 
 - ***Accountancy***
 
-  It has always frustrated and amazed me that as a self-employed programmer, I don't understand accountancy.
+  It has always frustrated me that as a supposedly detail-oriented programmer, accountancy is anathema to me.
 
-  I am currently in the middle of my journey to learn everything I need to know to become proficient in bookkeeping, accounts and taxation, and I can understand now why it is such an alien language to non-accountants.
+  However, I finally decided to grasp that nettle, and am reading several books on bookkeeping, accounts and taxation, and I now understand why it seems so alien to non-accountants (hint: different language and logic!).
 
 - ***Business***
 
@@ -288,14 +288,25 @@ Learning something outside my regular "tech" domain is simply enjoyable in itsel
 
   In 2020, I enrolled in LBS's online [Entrepreneurial Edge](https://www.london.edu/executive-education/online-courses/the-entrepreneurial-edge) course. Those three months got me up to speed with core marketing and business and concepts, from positioning to proposition, from market to industry, from unit economics to business models, right through to cashflow analysis and funding. 
   
+- ***Logic and bias***
+
+  I began studying [fallacies](https://en.wikipedia.org/wiki/List_of_fallacies) and [biases](https://thedecisionlab.com/biases-index) because I had tripped over some of my own flaws in reasoning.
+  
+  Simply-put, humans are prone to [flawed logic and mental shortcuts](https://betterhumans.pub/cognitive-bias-cheat-sheet-55a472476b18), with such little awareness of it that it feels normal. It happens every day and an understanding of at least the [common](https://thebestschools.org/magazine/15-logical-fallacies-know/) ones is useful in daily life, media consumption, personal relationships, and to aid critical thinking so that you're neither perpetrator or victim.
+
+### Home life
+
+Getting better at something just because I like it.
+
+
 - ***Fashion***
-  
+
   When I hit into my late thirties I realised that not only was my wardrobe not making me happy, but I didn't know what to do about it. It seemed like fashionable people knew what to wear, but it wasn't something for guys like me.
-  
+
   But the solution (like any new skill) was to simply to immerse myself and learn the basics!
-  
+
   Here are my top tips to improve your style:
-  
+
   1. Commit to setting aside some time to develop your sartorial knowledge
   2. Use [Google](https://www.google.com/search?q=fashion+basics+for+men), [Pintrest](https://www.pinterest.co.uk/ideas/mens-fashion/924581335376/) and [blogs](https://www.google.com/search?q=mens+fashion+blogs) to familiarise yourself with available [looks](https://www.google.com/search?q=men%27s+looks&tbm=isch)
   3. Learn the [basics](https://www.kinowear.com/products/kinowear-bible/) of [style](https://www.nicknotas.com/blog/the-newbies-guide-to-looking-attractive-fashion/), [colour](https://www.nicknotas.com/blog/fashion-color-guide), fit, etc to understand how looks are put together
@@ -306,12 +317,8 @@ Learning something outside my regular "tech" domain is simply enjoyable in itsel
   8. Be happy to up your budget for long-lasting and quality items (remember this is an investment in you)
   9. Dress to suit your age, body type, social life, career and budget
   10. Remember it's an ongoing experiment, so be happy to iterate and make mistakes
-  
+
   One last thing to note; you'll read a lot of advice around wearing suits, sports jackets, etc. If that's not you, *ignore it*; dressing well is about feeling comfortable in yourself, not pretending to be something you're not.
-
-### Home life
-
-Getting better at something just because I like it
 
 
 - ***Burgers***
