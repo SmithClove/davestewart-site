@@ -22,7 +22,7 @@ Scan down the ***red topic headings*** and read if it resonates with you!
 
 Alternatively, skip to a **section**:
 
-- [Personal](#personal) (7 items)
+- [Personal](#personal) (8 items)
 - [Environment](#environment) (7 items)
 - [Organisation](#organisation) (6 items)
 - [People](#people) (6 items)
@@ -48,6 +48,14 @@ No real introduction needed here, save to say the small things impact the big th
   I've bitten my nails my whole life and always hated the fact I couldn't stop and I couldn't help myself.
 
   But a couple of years ago I managed to stop overnight, and aside from a few slip-ups I now have perfect nails that I don't feel the need to bite. It was such a momentous change and huge victory for me, that I wrote about it [here](/blog/nail-biting/).
+
+- ***Getting therapy***
+
+  I should have taken it when my Mum died (but I was too young) and I should have taken it in prior relationships (but I was shortsighted). When I eventually looked into it, Perfectionist Me wanted the _right_ therapist but Workaholic Me was too busy anyway. The breakthrough finally came by simply arranging a call with my [girlfriend's therapist](https://www.emmajcounselling.co.uk/).
+
+  Therapy _really_ wasn't what I thought it would be; rather than talking about my mother, it was much more about my framing of the world, and how it created a narrow criteria both for me to be happy _and_ for loved ones to operate in.
+
+  Getting help to adjust your world view so that you may lead a freer and happier life is really a wonderful gift!
 
 - ***Leaving my phone alone***
 
@@ -130,8 +138,6 @@ If you work from home, know that your home environment has a direct effect on yo
   
   The irony is, you generally know *before* you're going to run out, so running out is a totally avoidable problem. These days I either always  have two of something, or update the shopping list when it's close to running out (never after!). 
   
-  
-
 
 ### Things
 
@@ -149,15 +155,15 @@ Possessions are not a big thing for me (if there was a fire I'd just grab my lap
 
   I'd say it's fair that I organise a significant amount of my time around music.
 
-  Using [YouTube](https://music.youtube.com/), [MixCloud](https://www.mixcloud.com/), [SoundCloud](https://soundcloud.com/) but mainly [Spotify](http://spotify.com) across [in-ear](https://www.techradar.com/news/audio/the-best-wireless-earbuds-available-today-1327335) and [over-ear](https://www.techradar.com/news/audio/portable-audio/best-over-ear-headphones-1280342) noise cancelling headphones, via my Android, MacBook, Google Home ("Hey Google, play my [Beautiful Film Scores](https://open.spotify.com/playlist/0OP64kNWJ4wJ2y2TVsqBw5?si=85369fe28a704a07) playlist") and soon [Sonos](https://www.sonos.com/en-gb/home) systems. Spotify's recommendations on-point; once it knows what you like [Discover Weekly](https://newsroom.spotify.com/2019-05-02/five-ways-to-make-your-discover-weekly-playlists-even-more-personalized/) will consistently put great music in front of you. The key is liking tracks and curating playlists you love (organise them on [Spotify Desktop](https://www.spotify.com/us/download/other/)) and identify live music using [Shazam](https://www.shazam.com) on your phone (I have a shortcut on my home screen).
+  Using [YouTube](https://music.youtube.com/), [MixCloud](https://www.mixcloud.com/), [SoundCloud](https://soundcloud.com/) but mainly [Spotify](http://spotify.com) across [in-ear](https://www.techradar.com/news/audio/the-best-wireless-earbuds-available-today-1327335) and [over-ear](https://www.techradar.com/news/audio/portable-audio/best-over-ear-headphones-1280342) noise-cancelling headphones, via my Android, MacBook, Google Home ("Hey Google, play my [Beautiful Film Scores](https://open.spotify.com/playlist/0OP64kNWJ4wJ2y2TVsqBw5?si=85369fe28a704a07) playlist") and soon [Sonos](https://www.sonos.com/en-gb/home) systems. Spotify's recommendations on-point; once it knows what you like [Discover Weekly](https://newsroom.spotify.com/2019-05-02/five-ways-to-make-your-discover-weekly-playlists-even-more-personalized/) will consistently put great music in front of you. The key is liking tracks and curating playlists you love (organise them on [Spotify Desktop](https://www.spotify.com/us/download/other/)) and identify live music using [Shazam](https://www.shazam.com) on your phone (I have a shortcut on my home screen).
 
-  I love the chatter of my own thoughts, but I'd say I'm a lifetime Spotify member. 
+  I love being alone with my thoughts, but I'm most likely a lifetime Spotify member. 
 
 - ***Going all-in on Google Home***
 
   I have [Google Home](https://home.google.com/welcome/) in most rooms now, and I can ask her (it) anything at any time.
   
-  She (it) answers questions (time, temperature, directions, jokes, morning alarms, the latest news, questions), manages cooking timers (ask for a "20 minute chicken timer"!), plays music, videos, etc, etc. Being on the Google ecosystem, you can pick up a partially-watched YouTube video whilst you cook, or transfer Spotify to the lounge speakers when you eat.
+  She (it) answers questions (time, temperature, directions, morning alarms, the news, questions), manages cooking timers (ask for a "20-minute chicken timer"!), Spotify, videos, etc, etc. Being on the Google ecosystem, you can pick up a partially-watched YouTube video whilst you cook, or transfer music to the lounge speaker when you eat.
   
   The voice UI can occasionally be frustrating (you can always cast from your phone) but overall it's a big yes from me.
 
