@@ -212,7 +212,8 @@ I could delve far more deeply into this subject, but here's three tangible wins 
   It consists of:
 
   - Using separate email accounts for personal and subscriptions; so important emails always get my attention
-  - Using [FastMail](https://fastmail.com/) as my email provider; the UI is miles better than Outlook and Gmail, and I never get any spam 
+  - Using [FastMail](https://fastmail.com/) as my email provider; the UI is miles better than Outlook and Gmail, and I never get any spam
+  - A rule to move email from myself to a "Personal Notes" folder, so I can easily save content from my phone
   - Practicing [Inbox zero](https://asana.com/resources/inbox-zero); life is so much easier with a process to prevent email overload
   - [Archiving](https://clean.email/archive-emails) old emails; yes it's an actual thing, and is built into most email clients
 
