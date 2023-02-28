@@ -2,9 +2,9 @@
 description: Architect a Vue JS app secured with Microsoft Authentication Library
 date: 2023-02-28
 media:
-  opengraph: ./msal-opengraph.png
+  opengraph: ./msal-featured.png
   featured: ./msal-featured.png
-  thumbnail: ./msal-featured.png
+  thumbnail: ./msal-thumbnail.png
 ---
 
 # A guide to MSAL authentication in Vue
@@ -16,8 +16,8 @@ The [Microsoft Authentication Library](https://learn.microsoft.com/en-us/azure/a
 In this post I'll:
 
 - cover a long list of [MSAL gotchas](#msal-gotchas)
-- share a no-fluff, modular [Vue demo](https://github.com/davestewart/msal-vue-demo) you can use as a jumping-off point
-- walk through the [steps I took](#vue-with-msal-demo) to get it working
+- share a no-fluff, modular [MSAL / Vue Demo](https://github.com/davestewart/msal-vue-demo)
+- walk through the [steps I took](#msal-vue-demo) to get it working
 
 ## MSAL gotchas
 
@@ -159,7 +159,7 @@ But there is work to:
 - handle errors
 
 
-## Vue with MSAL demo
+## MSAL / Vue Demo
 
 > You can find the code for the demo at [github.com/davestewart/msal-vue-demo](https://github.com/davestewart/msal-vue-demo).
 
