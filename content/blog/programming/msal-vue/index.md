@@ -205,11 +205,11 @@ Note that MSAL requires very little configuration to get going, really just the 
 
 ### Services
 
-I like to separate state from logic, and keep the footprint of any dependencies as small as possible.
+I like to separate state from logic, and keep the footprint of dependencies within the app as small as possible.
 
 [Services](https://github.com/davestewart/msal-vue-demo/tree/main/src/services) are the right place to do this:
 
-- The [Auth](https://github.com/davestewart/msal-vue-demo/blob/main/src/services/auth.ts) service contains all interaction with MSAL and is called _only_ from auth [store](https://github.com/davestewart/msal-vue-demo/blob/main/src/stores/auth.ts#L14) and [Api](https://github.com/davestewart/msal-vue-demo/blob/main/src/services/api.ts#L21) service
+- The [Auth](https://github.com/davestewart/msal-vue-demo/blob/main/src/services/auth.ts) service encapsulates all MSAL interaction and is called _only_ from auth [store](https://github.com/davestewart/msal-vue-demo/blob/main/src/stores/auth.ts#L14) and [Api](https://github.com/davestewart/msal-vue-demo/blob/main/src/services/api.ts#L21) service
 - The [Api](https://github.com/davestewart/msal-vue-demo/blob/main/src/services/api.ts) service has a minimal fetch implementation that can be called from [anywhere](https://github.com/davestewart/msal-vue-demo/blob/main/src/stores/user.ts#L7)
 
 Note that the Auth service's only public members are:
@@ -221,20 +221,20 @@ Note that the Auth service's only public members are:
 
 (See the individual methods for comments and info).
 
-Also note the simplicity of the service; it uses the popup interaction only, so need for branching, alternate logic, config and additional error handling.
+Also note the simplicity of the service; it uses the popup interaction only, so no need for branching, alternate logic, config and additional error handling.
 
 ### Stores
 
-With [services](#services) doing all the hard work to fetch data, [stores](https://github.com/davestewart/msal-vue-demo/tree/main/src/stores) are the right place to store that data, so it's not muddying the logic of services, and is available globally in the application:
+With [services](#services) doing all the hard work to fetch data, [stores](https://github.com/davestewart/msal-vue-demo/tree/main/src/stores) are the right place to store it; this way services stay clean, and data is easily accessible from the rest of the application:
 
-- the [auth](https://github.com/davestewart/msal-vue-demo/blob/main/src/stores/auth.ts) store wraps [Auth](https://github.com/davestewart/msal-vue-demo/blob/main/src/services/auth.ts) service calls, but stores reactive auth state and errors for display
-- the [user](https://github.com/davestewart/msal-vue-demo/blob/main/src/stores/user.ts) store manages API calls and stores our user data separately from auth
+- the [auth](https://github.com/davestewart/msal-vue-demo/blob/main/src/stores/auth.ts) store wraps [Auth](https://github.com/davestewart/msal-vue-demo/blob/main/src/services/auth.ts) service calls, and exports reactive state, errors and methods
+- the [user](https://github.com/davestewart/msal-vue-demo/blob/main/src/stores/user.ts) store manages API calls and stores user data separately from auth
 
-The auth **store** should be preferred to the **service** by the router and components as it exports a **reactive** object and any change in status to the authentication state will trigger updates in views and components.
+Regarding state, **stores** should be preferred to **services** as they are **reactive**; any change in state triggers updates in views and components.
 
 ### Router
 
-Surprisingly, the [Router](https://github.com/davestewart/msal-vue-demo/blob/main/src/router/index.ts) is where most of the magic happens:
+The [Router](https://github.com/davestewart/msal-vue-demo/blob/main/src/router/index.ts) is where most of the magic happens:
 
 - guarded and unguarded routes are declared
 - a single global route guard handles authentication
@@ -261,7 +261,7 @@ Whilst the premise of MSAL is simple, the challenge of implementing it is sadly 
 
 I hope this repo will go some way to making it clear how logic and state can be separated, and how it's simpler to see what is going on once that's the case.
 
-Whilst it may also be possible to successfully implement **redirect flow** a clearer and more simplified codebase, I'll leave that as a challenge to the reader (or may come back to this in future and attempt to implement in another branch).
+Whilst it may also be possible to successfully implement **redirect flow** in a clearer and more simplified codebase, I'll leave that as a challenge to the reader (or may come back to this in future and attempt to implement in another branch).
 
 **If you found this post helpful, or you have anything to add which may help others, do please leave a comment.**
 
