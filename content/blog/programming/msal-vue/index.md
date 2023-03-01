@@ -118,11 +118,11 @@ Finally, redirect flow **must** return you to a pre-registered URL, which means 
 
 ### Single page applications
 
-MSAL has some quirks regarding routing in SPAs (because it changes the location `hash`) which requires some additional workarounds.
+MSAL has some quirks regarding routing in SPAs which requires some additional workarounds.
 
-Firstly, MSAL will need to [hook into your router](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/navigation.md) which it does via a somewhat cumbersome class extension. It can handle internal (SPA routes) and external (navigating to MS Identity platform) and both are specific to chosen [interaction](#redirect-or-popup-interaction) type.
+Firstly, when MSAL handles an authentication redirect, it clears the location `hash`. This route modification **will** re-trigger global Vue Router route guards, which can be problematic if a global route guard is _already_ handling the login.
 
-Secondly (as outlined above) when MSAL handles an authentication using **redirect flow**, it clears the location `hash`. This route modification **will** re-trigger global Vue Router route guards, which can be problematic if a global route guard is _already_ handling the login.
+Secondly, when using popup interaction, MSAL will need to [hook into your router](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/navigation.md) which it does via a somewhat cumbersome class extension. It can handle internal (SPA routes) and external (navigating to MS Identity platform) and both are specific to chosen [interaction](#redirect-or-popup-interaction) type.
 
 ### Initialising the library
 
