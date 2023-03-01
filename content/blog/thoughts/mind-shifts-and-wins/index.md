@@ -2,8 +2,9 @@
 description: A 10-year (ish) retrospective of self-reflection and improvement
 date: 2023-02-22
 media:
-  featured: ./lightbulb.png
-  thumbnail: ./lightbulb.png
+  opengraph: ./mindset.png
+  featured: ./mindset.svg
+  thumbnail: ./mindset.png
 ---
 
 # On mindsets, mind shifts and wins
@@ -404,3 +405,5 @@ It's funny to consider the person described above is in these *exact* ways *diff
 I would love to read any [comments](#hyvor-talk-view) or answer any questions!
 
 ###### <SiteIcon fill="#EA4848" />
+
+<small>Image thanks to [Vecteezy](https://www.vecteezy.com/vector-art/6652489-complex-easy-simple-way-from-start-to-idea-chaos-simplifying-problem-solving-and-business-solutions-idea-searching-concept-vector-illustration)</small>
