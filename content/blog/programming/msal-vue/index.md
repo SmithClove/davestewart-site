@@ -63,7 +63,7 @@ Most of them seem unnecessarily verbose, with concerns such as IE compatibility 
 
 There is a single [Vue 3 sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/vue3-sample-app) in the browser samples folder, but it does too many things and the MSAL code is so deeply entwined with the Vue code, that it's hard to understand how the two libraries really work together.
 
-If you attempt to extract code to your own application, it seems to blow up in your face for no good reason, and going back to the ambiguous docs and bloated samples makes you question your sanity as a developer.
+If you attempt to extract code to your own application, it seems to [blow up in your face](https://stackoverflow.com/questions/66405214/browserautherror-interaction-in-progress-interaction-is-currently-in-progress) for no good reason, and going back to the ambiguous docs and bloated samples makes you [question your sanity as a developer](https://stackoverflow.com/questions/66405214/browserautherror-interaction-in-progress-interaction-is-currently-in-progress#comment128695641_66405987).
 
 ### MS Graph and accounts
 
@@ -110,11 +110,11 @@ Additionally, redirect flow has [specific problems](#problems-specific-to-redire
 
 Even though redirect flow is fully supported, there are things you need to know.
 
-Firstly, there are sometimes seemingly unrecoverable MSAL errors; these can require session data and sometimes cookies to be cleared in order to continue.
+Firstly, there are sometimes seemingly [unrecoverable MSAL errors](https://stackoverflow.com/questions/68726691/browserautherror-interaction-in-progress-unable-to-fix-regardles-of-solution); these can require session data and sometimes cookies to be cleared in order to continue.
 
 Secondly, MSAL clears the location `hash` which **will** trigger any global Vue Router route guards; this can interrupt any currently-executing guard logic before it has finished.    
 
-Finally, redirect flow **must** return you to a pre-registered URL, which means additional work to if you wanted to go somewhere else. The solution is to [pass and receive custom state](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-js-pass-custom-state-authentication-request) such as the page path, then handle that in the redirect handler.
+Finally, redirect flow **must** return you to a pre-registered URL, which means additional work to if you wanted to go somewhere else. One solution is to [pass and receive custom state](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-js-pass-custom-state-authentication-request) such as the page path, then handle that in the redirect handler.
 
 ### Single page applications
 
