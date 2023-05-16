@@ -1,7 +1,6 @@
 ---
 description: Everything I learned in 3 months of sticking to a keto and fasting regime
 date: 2023-05-11
-preview: true
 media:
   opengraph: ./laksa.jpg
   featured: ./laksa.jpg
@@ -55,10 +54,14 @@ Worries
 Overview
 
 - TL;DR: you replace [majority carbs with majority fats](https://www.dietdoctor.com/low-carb/keto) (body will burn them) and protein (fills you up)
-- Body switches from burning carbs to ketones; a bit like a Prius switching from fuel you put in to running down its internal battery 
+- Body switches from burning sugar to ketones; a bit like a Prius running out of petrol (sugar) and switching to battery (fat)
+- After your body produces enough ketones, your body moves into a state called "ketosis"
+
+How to do it
+
 - Aim for < 20g carbs per day (strict, but entirely achievable) or < 50g carbs (lazy, don't really see the point)
 - You will also see the term "[macros](https://www.lumen.me/blog/nutrition/what-are-macros-the-building-blocks-of-your-diet)" a lot; this refers to the mix (usually in %) of protein, fats and carbs
-- Diet Doctor has a great [intro video](https://www.youtube.com/watch?v=zrRDnLJdjmQ)
+- Diet Doctor has a great [keto diet](https://www.youtube.com/watch?v=zrRDnLJdjmQ) video and Michael Mosely has a great [ketosis](https://www.youtube.com/watch?v=9JhnZok5qxI) video
 
 What you can and can't eat
 
@@ -133,6 +136,7 @@ Meal planning
 
 - First month only until we got used to it
 - Planned the week's snacks and meals then printed it out and put it on the fridge
+- See the spreadsheet in the [Resources](#resources) section at the end; copy and paste from first sheet to Week 1, Week 2, etc 
 
 Understanding food labels
 
@@ -391,23 +395,29 @@ Going forwards
 
 ##  Resources
 
-Here are some of the resources we used whilst on the journey:
+Here are some of the resources we found and created whilst on the journey:
 
-Planning
+Planning spreadsheets
 
-- spreadsheets
+- [Keto Macros](https://docs.google.com/spreadsheets/d/1kvc2O-ZCFH0wunu2e0rdqUUtW7ScdY8h61TeuFJOXSw/edit?usp=sharing) – calories, protein, fats and carbs for 9 different food groups
+- [Keto Meal Planner](https://docs.google.com/spreadsheets/d/1hH-CHa1j9d4UGPrSYQbLXd-HhHjADGz6Skr1yTl89zE/edit?usp=sharing) – 150+ categorised meal and recipe + shopping links, with carbs, times and notes (WIP)
 
-Books
+Books and websites
 
-- links
+- [The Complete Ketogenic Diet for Beginners](https://www.amazon.co.uk/Complete-Ketogenic-Diet-Beginners-Essential/dp/1623158087) – Information, two-week plan and recipes from breakfast to dinner (also in spreadsheet above)
+- [Fast 800 Keto](https://www.amazon.co.uk/Fast-800-Keto-Bestseller-long-term/dp/1780725027) – Dr Michael Mosely's book with lots of great recipes and advice
 
-Recipes
+Videos
 
-- websites
+- [A keto diet for beginners](https://www.youtube.com/watch?v=zrRDnLJdjmQ) – Diet Doctor
+- [Ketosis and the Keto diet](https://www.youtube.com/watch?v=9JhnZok5qxI) – Dr Michael Mosley
 
-Food
+Recipe boxes
 
-- ...
+- [Green Chef – Keto Recipe Box](https://www.greenchef.co.uk/pages/top-keto-delivery) – The box we used to make sure we ate well
+- [Diet Doctor – Keto Diet for Beginners](https://www.dietdoctor.com/low-carb/keto) – Diet Doctor Keto microsite; check the links at the top of the page
 
+Misc:
 
-
+- [Volume to weight](https://www.calculateme.com/recipe/recipe-volume-to-weight-conversion)
+- [Carb counter](https://www.carb-counter.net/main.aspx?form=search)
