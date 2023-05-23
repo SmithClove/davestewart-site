@@ -274,3 +274,7 @@ Whilst I'm here, a couple of awesome OAuth 2 resources for reference:
 - [Understanding OAuth 2 with PKCE in Single-Page Applications (2020)](https://www.valentinog.com/blog/oauth2)
 - [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified)
 
+Additionally, I've been recommended this library if you decide to give up on MSAL altogether (I don't blame you) which you can use with the Microsoft Identity Platform:
+
+- https://github.com/authts/oidc-client-ts
+
