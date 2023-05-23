@@ -276,5 +276,4 @@ Whilst I'm here, a couple of awesome OAuth 2 resources for reference:
 
 Additionally, I've been recommended this library if you decide to give up on MSAL altogether (I don't blame you) which you can use with the Microsoft Identity Platform:
 
-- https://github.com/authts/oidc-client-ts
-
+- [oidc-client-ts](https://github.com/authts/oidc-client-ts)
