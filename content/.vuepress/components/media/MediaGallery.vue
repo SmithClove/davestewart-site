@@ -24,7 +24,7 @@
       <!-- prev -->
       <span class="mediaGallery__navButton mediaGallery__navPrev"
             @click.prevent.stop="prev"
-      >Prev</span>
+      >{{ prevText }}</span>
 
       <!-- dots -->
       <div class="mediaGallery__pagination">
@@ -41,7 +41,7 @@
       <!-- next -->
       <span class="mediaGallery__navButton mediaGallery__navNext"
             @click.prevent.stop="next"
-      >Next</span>
+      >{{nextText }}</span>
     </div>
 
     <!-- caption -->
@@ -63,11 +63,23 @@ export default {
   extends: media('gallery'),
 
   props: {
+    keepAlive: Boolean,
+    wrap: {
+      type: [Number, Boolean],
+      default: true,
+    },
     captions: {
       type: [Number, Boolean],
       default: undefined,
     },
-    keepAlive: Boolean,
+    prevText: {
+      type: String,
+      default: 'Prev',
+    },
+    nextText: {
+      type: String,
+      default: 'Next',
+    }
   },
 
   data () {
@@ -142,11 +154,11 @@ export default {
     },
 
     next () {
-      this.index = offset(this.index, 1, this.source, true)
+      this.index = offset(this.index, 1, this.source, this.wrap)
     },
 
     prev () {
-      this.index = offset(this.index, -1, this.source, true)
+      this.index = offset(this.index, -1, this.source, this.wrap)
     },
 
     view () {
