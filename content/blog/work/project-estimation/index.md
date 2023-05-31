@@ -1,10 +1,17 @@
 ---
 description: A deep dive on why projects always overrun and a framework to improve future estimation
-preview: true
 permalink: /blog/the-work-is-never-just-the-work
 media:
   featured: ./images/estimation-featured.png
   thumbnail: ./images/estimation-thumbnail.png
+  comparison:
+    - images/compare-01.png
+    - images/compare-02.png
+    - images/compare-03.png
+    - images/compare-04.png
+    - images/compare-05.png
+    - images/compare-06.png
+    - images/compare-07.png
 ---
 
 # The work is never just “the work”
@@ -23,11 +30,13 @@ With the latest phase finally delivered, I wanted to conduct a detailed postmort
 
 In the rest of the article I'll deep dive my own shortcomings around estimation, as well as present a framework to plan and visualise estimates, hopefully helping both of us clear those lurking feelings of confusion and guilt.
 
+<NavToc exclude="intro,background,thanks" type="list" prompt="Table of contents" />
+
 ## Why is estimating hard?
 
 Estimating is hard because you can't predict the future.
 
-Some of the things I've heard or have tried:
+Some of the strategies I've heard or have tried:
 
 - ***Add on 30% for project management.***
   <br>I don't get this at all; firstly, there's no way I do that amount of project management, and secondly, it doesn't cover or tackle the real causes of a bad estimate.
@@ -35,24 +44,40 @@ Some of the things I've heard or have tried:
 - ***Double or triple your estimate***
   <br>This is actually one of mine, and based on at least a couple of projects I've quoted for, is approaching something accurate – though again – no real insight as to _why_ the original estimate was not fit for purpose.
 
-- ***Double it, then double it again***
-  <br>Sounds crazy at first but the initial estimate is the **work**, the first double is the **details and changes**, and the second double is **problems and bugs**. This begins to stack up in my mind, as long as everything _does_ take twice as long; if not do we _triple_? (thanks to [@panphora](https://twitter.com/panphora) for this one)
+- ***Double it, then double it again (4x-it)***
+  <br>Sounds crazy at first but the initial estimate is the **work**, the first double is the **details and changes**, and the second double is **problems and bugs**. This kind-of makes sense to me, assuming everything _does_ take twice as long; otherwise, do we _triple_ i.e. 9x-it? (thanks to [@panphora](https://twitter.com/panphora) for this one)
 
-Note that in the above points I was careful to avoid using the word "overrun".
+Note that in the above points I was careful to avoid using the word "overrun". 
 
-Overrun implies that the estimate was **sound** and it was the _execution_ that was not.
-
-However, we know this is generally not the case; you don't take on work just to do more, so the **real** problem is being unable to predict what you will need to do, or how long it will take you to do it.
+Overrun implies that the estimate was **sound** and it was the _execution_ that was not. However, we know this is generally **not** the case; you don't take on work just to do **more**, so the **real** problem is being unable to predict what you will need to do, and how long it will take you to do it.
 
 ## Breaking it down
 
-Writing the project postmortem I wanted to be honest about my failings, so I looked at various areas:
+To uncover my estimation blind spots, I set out to dissect the previous months' effort with clear and unbiased honesty.
 
-- the physical tasks I had to do, no matter if planned or not
-- how long it took to do things, whether it was more than estimated, and the reasons why that was so
-- the times when skill or knowledge couldn't save the day, perhaps it was more about people or process or time
+I aimed to:
 
-It wasn't long before I noticed a couple of common threads:
+- review the work completed and contrast it to original estimates
+- root out failings in areas such as planning, skills, communication, etc
+- dig into the mental and technical incongruity between plan and eventuality
+- ponder previous projects and compare previous failings
+- identify generic patterns I could apply to future situations
+
+I reviewed the project's notes, files and code, mentally reliving the process of working on each, documenting what I remembered. Whilst recalling the overall thrust of each unit of work, I attempted to keep my observations generic – so specifics around a particular technology for example – wouldn't muddy the underlying causes for any overrun.
+
+Building on my notes, I shared the observations on [Twitter](https://twitter.com/dave_stewart/status/1471451034593771523) and encouraged others to comment:
+
+[![gist screenshot](./images/gist-screenshot.png)](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443)
+
+Do click and have a read though; there's lots of interesting recollections and observations. I'm sure you'll be nodding along and thinking "yeah, that's got me before too!".
+
+## Reviewing the findings
+
+The first major takeaway was that the actual process of **writing the postmortem** was extremely valuable.
+
+I had been aware during the project that there seemed to be a lot of "extra work", but putting it down on paper highlighted the multitude of "invisible" tasks and challenges which every web development project has.
+
+There were two common threads:
 
 - much of the work was the "work to do the work" rather than the "actual" work
 - most of the work was under- or un-estimated because it wasn't the "actual" work
@@ -61,8 +86,8 @@ It wasn't long before I noticed a couple of common threads:
 
 I couldn't believe I had been so blind to this, up until now:
 
-- maybe I had considered this unplanned work as just something you have to do
-- maybe I thought my attention-to-detail style was somehow my cross to bear
+- perhaps I considered this unplanned work as just something you have to do?
+- perhaps I thought my attention-to-detail style was somehow my cross to bear?
 
 Reflecting on this, I think most likely it's a mix of misplaced professional pride and a level of cognitive dissonance around how quickly I think professional work _should_ be completed, rather than how long it takes to actually complete; I was effectively _ignoring_ the additional time because "it didn't feel correct".
 
@@ -82,41 +107,36 @@ Moving forwards, I wanted to:
 - use them as building blocks to break down any future work, maybe even adding timings 
 - shine a light on the overall structure and nature of projects, and their estimation 
 
-Building on my notes so far, I shared the observations on [Twitter](https://twitter.com/dave_stewart/status/1471451034593771523) and began to think about a structure which represented a typical small-to-medium project's lifecycle:
+The distinction of the work "before / between / around" the work felt like the beginnings of said framework, and I eventually settled on:
 
-[![gist screenshot](./images/gist-screenshot.png)](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443)
+| Analogy                                                                      | Real world                                                                 |
+|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| <span class="swatch" style="background: #CCCCCC"/> The work around the work  | ***Admin***<br>Meetings, reviews, project management, etc                  |
+| <span class="swatch" style="background: #EF8F8F"/> The work to get the work  | ***Acquisition***<br>Research, experimentation, scoping, quoting, pitching |
+| <span class="swatch" style="background: #FCB17F"/> The work before the work  | ***Preparation***<br>Configuration, setup, services, infrastructure        |
+| <span class="swatch" style="background: #FBDA7F"/> The work                  | ***Execution***<br>The actual build, product, design, etc                  |
+| <span class="swatch" style="background: #C4EF93"/> The work between the work | ***Iteration***<br>Iteration, debugging, refactoring, maintenance, tooling |
+| <span class="swatch" style="background: #A1EBDA"/> The work beyond the work  | ***Changes***<br>Changes, omissions, nice-to-haves, scope creep            |
+| <span class="swatch" style="background: #98E2FF"/> The work outside the work | ***Problems***<br>Surprises, contingency, disasters, mission creep         |
+| <span class="swatch" style="background: #7FBAE7"/> The work after the work   | ***Support***<br>Hosting, deployment, security, support, updates, fixes    |
 
-Running with the analogy of the "work to do the work" I ended up with the following structure:
-
-
-| Phase                     | Tasks                                                        |
-| ------------------------- | ------------------------------------------------------------ |
-| [The work around the work](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443#the-work-around-the-work) | Meetings, reviews, project management, etc |
-| [The work to get the work](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443#the-work-to-get-the-work) | Research, experimentation, scoping, quoting, pitching                         |
-| [The work before the work](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443#the-work-before-the-work) | Configuration, setup, services, infrastructure           |
-| [The work](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443#the-work) | The actual build, product, design, etc                               |
-| [The work between the work](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443#the-work-between-the-work) | Iteration, debugging, refactoring, maintenance, tooling |
-| [The work beyond the work](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443#the-work-beyond-the-work) | Changes, omissions, nice-to-haves, scope creep               |
-| [The work outside the work](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443#the-work-outside-the-work) | Surprises, contingency, disasters, mission creep             |
-| [The work after the work](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443#the-work-after-the-work) | Hosting, deployment, security, support, updates, fixes
-|
-
-The links above jump directly to the document, which you can read – and if you like – comment on.
-
-Consider it a "work in progress" which I will use, adapt and improve going forward.
+Whilst the above analogies roughly align with real world project phases, reframing the effort in such an abstract manner felt helpful in decoupling the true nature of the work from my idealised optimism.
 
 ## Visualisation
 
-Assuming the chronology is sound, the phases could be represented **graphically**.
+During this investigation, I had begun to wonder if I could represent the findings **graphically**.
 
 The following graphic is **not** an accurate representation of the work, or to scale regarding the work there was to do, but is an initial attempt to view "the work" compared to the **overall** scope of an entire project lifecycle:
 
+![infographic showing how a development project's phases can be broken down and estimated](./images/estimation-crop.png)
 
-![inforgraphic showing how a development project's phases can be broken down and estimated](./images/estimation-crop.png)
 
-It's interesting to see how an original estimate of just "the work" seems insignificant when viewed in context with setup, changes and potential problems.
 
-Of course the next project (or your project) may have very different proportions to this, but it's a starting point. For example the project which triggered this self-reflection, the "work outside the work" ended up being probably _double_ the actual work, which was a bitter pill to swallow, and highlighted something I would dearly like to get better at.
+It's interesting to note:
+
+- the relatively small proportion of "the work" to the overall effort, aka [planning fallacy](https://en.wikipedia.org/wiki/Planning_fallacy)
+- the amount and proportion of work "between" the work, aka [project complexity](*https://en.wikipedia.org/wiki/Project_complexity*)
+- the amount of work "outside" the project, aka [unknown unknowns](https://en.wikipedia.org/wiki/There_are_known_knowns)
 
 ## Analysis
 
@@ -126,37 +146,55 @@ Breaking this (again, inaccurate) diagram down by area (again, units do not repr
   <img alt="project breakdown by numbers" src="./images/estimation-breakdown.png">
 </div>
 
-Reviewing both the numbers and the graphic, one could postulate:
+Comparing both the numbers and relationships, one could postulate that:
 
-- "planned work" could be maybe a fifth of the total project effort
+- the "planned work" may be as little as a fifth (20%) of the total project effort
 - there is much work "between" the work; the kind of invisible stuff which _will_ happen
-- this "extra work" could be _at least_ as much work as the planned work
-- changes should be accounted for, though there will always be things you did not account for!
-- each phase of the project will impact time and cost
+- the "extra work" could be as much work (or more) as the planned work (22%)
+- the "extra work" increases proportionally to the complexity of the work (compare yellow to turquoise and blue)
+- changes (22%) must be accounted for, though there will always be things you did not account for (min 12%)
+- all these seemingly small changes have a large *overall* impact on time and cost
 
+## Scenario modeling
+
+Whilst these visualisations are useful to expose the previously-hidden work, they don't represent the "disaster" project I mentioned in the intro. In that project, the "work outside the work" ended up being nearly _double_ the originally-planned work, in addition to all the "work between the work" and I was curious to explore how this might look.
+
+Below is a more simplified visualisation which you can **click through** to get a feel of the ever-expanding work:
+
+<MediaGallery media="comparison" prev-text="Earlier" next-text="Later" :wrap="false" />
+
+As you click, imagine it's one or some of *your* previous projects, and see if it triggers any painful recollections. Perhaps the proportions are different, perhaps the tasks are different, but it's interesting to visualise optimism vs reality.
 
 ## Reflection
 
-Again, whilst this currently is not a true representation, it does raise questions regarding the framework going forwards:
+Well, it's been fun to explore the dark side of estimation with a combination of anecdotal evidence and graphics.
+
+I've had various thoughts about taking the ideas forwards; here are just a few:
 
 - could work be represented proportionally; that is, more complex tasks as bigger squares?
+- could some kind of checklist help create charts which *actually* could help with estimation?
 - could there be a formula for the "work between the work"?
-- could some kind of checklist provide charts which actually could help with estimation?
 - could multiple charts represent cumulative effort by UX, Design and Development?
 - how would the shape of charts vary between project, discipline or person?
 
-Whilst I can't answer those questions now, I may attempt to in a future article... or maybe side-project!
+There are also myriad considerations and constraints regarding the _mechanics_ of project management such as project size, duration, phase and maturity, or team size, experience, optimism or biases.
 
-There are also many constraints and considerations regarding the _mechanics_ of project management such as project size, team size, project duration and delivery style, but this article isn't the place for that discussion.
+Whilst I would love to spend more time on this, for now it will have to remain a thought experiment!
 
 
 ## Takeaway
 
-The thing to take away is that a naive estimation of "the work" may only be a fraction of the overall project effort.
+The key takeaway is that even a detailed estimate of "the work" may only be a fraction of "the project".
 
-Additionally, using some kind of structure (like my document above) breaking down and modelling "the work before / between / around the work" will give you get a much better idea of the tasks you will _actually_ be doing.
+Without properly documenting tasks and times, it of course is impossible to quantify – but given the anecdotal evidence "double it and double it again" doesn't seem so farfetched. Yes, there are estimation frameworks, and yes one can work agile, but the aim of this exercise was to get to grips with the distortion field around accurately estimating projects when our brains gloss over the details.
 
-I have some additional thoughts on how a framework like this _could_ be used as a basis for a kind of logging and accountability, but again, I will save that for another article.
+A few final points to think about going forward:
+
+- Postmortem or audit past projects to anchor yourself to reality
+- Become familiar with, and work to improve, your own estimation biases and weak spots
+- Remember every type of project has the potential for disaster
+- If you end up in trouble, consider raising flags vs doubling down
+- Don't take on fixed-price projects!
 
 ### Downloads
 
