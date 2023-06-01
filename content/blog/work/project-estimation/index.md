@@ -132,6 +132,10 @@ The following graphic is **not** an accurate representation of the work, or to s
 
 
 
+When I designed the graphic, I didn't really have in my head how much effort each square represented, but in hindsight for a small or medium project, it could be a day. Each line could be a week, with the smaller grey dots as weekly meetings, and the smaller green dots evenings and weekends.
+
+But again, this isn't scientific, more a "finger in the air" visualisation.
+
 It's interesting to note:
 
 - the relatively small proportion of "the work" to the overall effort, aka [planning fallacy](https://en.wikipedia.org/wiki/Planning_fallacy)
@@ -155,19 +159,23 @@ Comparing both the numbers and relationships, one could postulate that:
 - changes (22%) must be accounted for, though there will always be things you did not account for (min 12%)
 - all these seemingly small changes have a large *overall* impact on time and cost
 
-## Scenario modeling
+## Scenarios
 
-Whilst these visualisations are useful to expose the previously-hidden work, they don't represent the "disaster" project I mentioned in the intro. In that project, the "work outside the work" ended up being nearly _double_ the originally-planned work, in addition to all the "work between the work" and I was curious to explore how this might look.
+Of course, every project is different; in fact, the difficult project I spoke about at the start had three distinct phases, each of which threw up different estimation challenges and realities.
 
-Below is a more simplified visualisation which you can **click through** to get a feel of the ever-expanding work:
+Phase 1 required building a prototype around a partner's legacy technology. Phase 2 threw up issues around migrating the prototype to a more mature architecture whilst delivering a raft of new features. In Phase 3 we realised the database (supplied by the company's now-departed data scientist) wouldn't be appropriate going forward and the "work outside the work" ended up being nearly _double_ the originally-planned work.
+
+Below is a simplified imagination of all three phases which you can **click through** to get a feel:
 
 <MediaGallery media="comparison" prev-text="Earlier" next-text="Later" :wrap="false" />
 
-As you click, imagine it's one or some of *your* previous projects, and see if it triggers any painful recollections. Perhaps the proportions are different, perhaps the tasks are different, but it's interesting to visualise optimism vs reality.
+As you click, imagine it's one or some of *your* previous projects, and see if it triggers any painful recollections. Perhaps the proportions are different, perhaps the tasks are different, but maybe it's a similar picture of idealism vs reality worth bearing in mind next time you think a project will be just "the work".
 
 ## Reflection
 
-Well, it's been fun to explore the dark side of estimation with a combination of anecdotal evidence and graphics.
+### On the framework
+
+Well, it's been fun to explore the dark side of estimation with a combination of anecdotal evidence and visualisation.
 
 I've had various thoughts about taking the ideas forwards; here are just a few:
 
@@ -181,20 +189,29 @@ There are also myriad considerations and constraints regarding the _mechanics_ o
 
 Whilst I would love to spend more time on this, for now it will have to remain a thought experiment!
 
+### On estimation
+
+As I've mentioned various times throughout this article, I may have taken some numerical and artistic license.
+
+However the aim of this exercise was to get to grips with the distortion field around accurately estimating projects when our brains are wired to ignore the detail – and there is *so much* detail.
+
+Yes, there are estimation frameworks such as T-shirt sizes, and yes one can work agile, but the problem still remains to be solved – as humans and developers, how can we take responsibility for more accurately gauging **all** "the work" to be done?
+
 
 ## Takeaway
 
 The key takeaway is that even a detailed estimate of "the work" may only be a fraction of "the project".
 
-Without properly documenting tasks and times, it of course is impossible to quantify – but given the anecdotal evidence "double it and double it again" doesn't seem so farfetched. Yes, there are estimation frameworks, and yes one can work agile, but the aim of this exercise was to get to grips with the distortion field around accurately estimating projects when our brains gloss over the details.
+Without building up a record of tasks and times, it is impossible to accurately quantify how long work takes over the longer term, but given the breakdowns above "double it and double it again" doesn't seem so farfetched; at the very least it makes a good first marker to sanity-check your next estimation, be it a sprint or a project.
 
-A few final points to think about going forward:
+However, a few things to think about going forward:
 
 - Postmortem or audit past projects to anchor yourself to reality
-- Become familiar with, and work to improve, your own estimation biases and weak spots
-- Remember every type of project has the potential for disaster
+- Consider timing and logging future work to equip yourself for the future
+- Get familiar with, and work to improve, your own estimation biases and weak spots
+- Remember every type of project has the potential for all those pesky "work" types
 - If you end up in trouble, consider raising flags vs doubling down
-- Don't take on fixed-price projects!
+- Beware fixed-price projects!
 
 ### Downloads
 
@@ -205,6 +222,6 @@ A few final points to think about going forward:
 
 I hope you found this article useful and / or enjoyable.
 
-If so, consider following me on [Twitter](https://twitter.com/dave_stewart).
+If so, I'd love to exchange thoughts / ideas in the comments, or perhaps on [Twitter](https://twitter.com/dave_stewart).
 
-Bye for now!
+Other than that, bye for now!
