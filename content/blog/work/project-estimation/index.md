@@ -1,6 +1,7 @@
 ---
 description: A deep dive on why projects always overrun and a framework to improve future estimation
 permalink: /blog/the-work-is-never-just-the-work
+date: 2022-02-01
 media:
   featured: ./images/estimation-featured.png
   thumbnail: ./images/estimation-thumbnail.png
@@ -65,7 +66,7 @@ I aimed to:
 
 I reviewed the project's notes, files and code, mentally reliving the process of working on each, documenting what I remembered. Whilst recalling the overall thrust of each unit of work, I attempted to keep my observations generic – so specifics around a particular technology for example – wouldn't muddy the underlying causes for any overrun.
 
-Building on my notes, I shared the observations on [Twitter](https://twitter.com/dave_stewart/status/1471451034593771523) and encouraged others to comment:
+Building on my notes, I shared the observations on [Twitter](https://twitter.com/dave_stewart/status/1471112458341335041) and encouraged others to comment:
 
 [![gist screenshot](./images/gist-screenshot.png)](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443)
 
@@ -128,9 +129,13 @@ During this investigation, I had begun to wonder if I could represent the findin
 
 The following graphic is **not** an accurate representation of the work, or to scale regarding the work there was to do, but is an initial attempt to view "the work" compared to the **overall** scope of an entire project lifecycle:
 
-![infographic showing how a development project's phases can be broken down and estimated](./images/estimation-crop.png)
-
-
+<div style="overflow: hidden">
+  <img
+    src="./images/estimation.png"
+    alt="infographic showing how a development project's phases can be broken down and estimated" 
+    style="margin-top: -16%; margin-bottom: -11%"
+  >
+</div>
 
 When I designed the graphic, I didn't really have in my head how much effort each square represented, but in hindsight for a small or medium project, it could be a day. Each line could be a week, with the smaller grey dots as weekly meetings, and the smaller green dots evenings and weekends.
 
@@ -159,13 +164,19 @@ Comparing both the numbers and relationships, one could postulate that:
 - changes (22%) must be accounted for, though there will always be things you did not account for (min 12%)
 - all these seemingly small changes have a large *overall* impact on time and cost
 
-## Scenarios
+## Modelling
 
-Of course, every project is different; in fact, the difficult project I spoke about at the start had three distinct phases, each of which threw up different estimation challenges and realities.
+Of course, every project is different; there's nothing to say that the proportions and numbers above relate to any other team or project.
 
-Phase 1 required building a prototype around a partner's legacy technology. Phase 2 threw up issues around migrating the prototype to a more mature architecture whilst delivering a raft of new features. In Phase 3 we realised the database (supplied by the company's now-departed data scientist) wouldn't be appropriate going forward and the "work outside the work" ended up being nearly _double_ the originally-planned work.
+The difficult project I spoke about at the start had three distinct phases, each of which threw up different estimation challenges and realities:
 
-Below is a simplified imagination of all three phases which you can **click through** to get a feel:
+- Phase 1 required building a prototype around a partner's legacy technology
+- Phase 2 threw up issues around maturing the architecture whilst delivering new functionality and removing old
+- Phase 3 revealed major unsuitability around the (inherited) database stack that ballooned the "work outside the work" to nearly _double_ the originally-planned work
+
+How would this project look if modelled?
+
+You can click through the visualisation below to get a (very!) rough feel:
 
 <MediaGallery media="comparison" prev-text="Earlier" next-text="Later" :wrap="false" />
 
@@ -191,32 +202,27 @@ Whilst I would love to spend more time on this, for now it will have to remain a
 
 ### On estimation
 
-As I've mentioned various times throughout this article, I may have taken some numerical and artistic license.
+As I've mentioned various times throughout this article, I've certainly taken some artistic and numerical license.
 
-However the aim of this exercise was to get to grips with the distortion field around accurately estimating projects when our brains are wired to ignore the detail – and there is *so much* detail.
+However, the aim of this exercise was to get to grips with the distortion field around accurately estimating projects when our brains are wired to ignore the detail – and there is *so much* detail.
 
-Yes, there are estimation frameworks such as T-shirt sizes, and yes one can work agile, but the problem still remains to be solved – as humans and developers, how can we take responsibility for more accurately gauging **all** "the work" to be done?
+Yes, there are estimation frameworks such as T-shirt Sizes, Planning Poker and we are all used to Agile, but the problem remains to be solved – as humans and developers, how can we take responsibility for more accurately gauging the work "between", "beyond" and "outside" "the work"?
 
 
 ## Takeaway
 
-The key takeaway is that even a detailed estimate of "the work" may only be a fraction of "the project".
+The key takeaway is that even a detailed estimate of "the work" can miss significant "invisible" work.
 
-Without building up a record of tasks and times, it is impossible to accurately quantify how long work takes over the longer term, but given the breakdowns above "double it and double it again" doesn't seem so farfetched; at the very least it makes a good first marker to sanity-check your next estimation, be it a sprint or a project.
+Without a proper audit it is impossible to properly quantify how long work takes over the longer term, but given the breakdowns above "double it and double it again" doesn't seem so farfetched; at the very least it makes a good first marker to sanity-check your next estimation, be it a sprint or a project.
 
-However, a few things to think about going forward:
+Some strategies and thoughts going forward:
 
-- Postmortem or audit past projects to anchor yourself to reality
+- Run postmortems on past projects to anchor yourself to reality
 - Consider timing and logging future work to equip yourself for the future
 - Get familiar with, and work to improve, your own estimation biases and weak spots
-- Remember every type of project has the potential for all those pesky "work" types
-- If you end up in trouble, consider raising flags vs doubling down
+- Remember every project *will* have *most* of these invisible "work" types
+- If you end up in trouble, prefer "raising a hand" to "doubling down"
 - Beware fixed-price projects!
-
-### Downloads
-
-- Downloadable version of the [infographic](./images/estimation.png)
-- Link to the [estimation document](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443)
 
 ## Thanks
 
