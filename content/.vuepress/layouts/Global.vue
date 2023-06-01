@@ -10,6 +10,11 @@
       </div>
     </main>
 
+    <!-- control space promo -->
+    <ClientOnly>
+      <CsPromo/>
+    </ClientOnly>
+
     <!-- scroll to top -->
     <ClientOnly>
       <NavScrollTop/>
@@ -35,11 +40,13 @@ import { createElement } from '../utils/dom.js'
 import SiteHeader from '../components/site/SiteHeader.vue'
 import SiteFooter from '../components/site/SiteFooter.vue'
 import NotFound from '../pages/404.vue'
+import CsPromo from '../components/dialogs/CsPromo.vue'
 
 export default {
   components: {
     SiteHeader,
     SiteFooter,
+    CsPromo,
   },
 
   computed: {
