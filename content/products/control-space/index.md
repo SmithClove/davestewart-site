@@ -75,6 +75,6 @@ Control Space is currently invite only, but you can sign-up [here](https://contr
 
 ## Links
 
-- [Home page](https://controlspace.app)
+- [Control Space](https://controlspace.app)
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/control-space/cnhhkgejafpmpbfodmebbmbhgkemleca)
 - [Indie Hackers](http://indiehackers.com/product/control-space)
