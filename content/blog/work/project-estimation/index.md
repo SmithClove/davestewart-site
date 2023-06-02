@@ -141,6 +141,8 @@ When I designed the graphic, I didn't really have in my head how much effort eac
 
 But again, this isn't scientific, more a "finger in the air" visualisation.
 
+Also, as someone [noted](https://news.ycombinator.com/item?id=36150105#36162646) on Hacker News, it's worth remembering that a day is rarely 8 full-hours of work! How does that impact your overall estimate?
+
 It's interesting to note:
 
 - the relatively small proportion of "the work" to the overall effort, aka [planning fallacy](https://en.wikipedia.org/wiki/Planning_fallacy)
@@ -223,6 +225,8 @@ Some strategies and thoughts going forward:
 - Remember every project *will* have *most* of these invisible "work" types
 - If you end up in trouble, prefer "raising a hand" to "doubling down"
 - Beware fixed-price projects!
+
+You may also want to check the [Hacker News thread](https://news.ycombinator.com/item?id=36150105#36159318) which picked up this article; there are some fantastic comments!
 
 ## Thanks
 
