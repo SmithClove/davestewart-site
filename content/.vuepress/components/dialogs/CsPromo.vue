@@ -10,14 +10,14 @@
       </div>
       <div class="card-footer text-right">
         <button class="btn btn-primary" @click="show">Show me!</button>
-        <button class="btn" @click="close(false)">{{ closeText }}</button>
+        <button class="btn" @click="close">Close</button>
       </div>
     </div>
 
     <div v-show="expanded" class="card promo">
-      <div class="card-image">
+      <a href="https://controlspace.app" target="_blank" class="card-image">
         <img src="https://controlspace.app/images/social/splash-twitter.png" class="img-responsive">
-      </div>
+      </a>
       <div class="card-header">
         <div class="card-title h2">Control Space</div>
       </div>
@@ -26,8 +26,8 @@
         <p>It's smooth, fast and powerful with beautiful information surfacing, brilliant organisational tools and lightning-fast keyboard navigation; if you're a tab hoarder like me you'll wonder how you lived without it!</p>
       </div>
       <div class="card-footer text-right">
-        <a class="btn btn-primary" href="https://controlspace.app" target="_blank" @click="close(true)">Go to Control Space</a>
-        <button class="btn" @click="hide">No thanks</button>
+        <a class="btn btn-primary" href="https://controlspace.app" target="_blank" @click="close">Go to Control Space</a>
+        <button class="btn" @click="close">Close</button>
       </div>
     </div>
 
@@ -41,38 +41,25 @@ const TIMEOUT = 7 * 24 * 60 * 60 * 1000 // one week
 export default {
   data () {
     const timeNow = Date.now()
-    const timeClosed = Number(localStorage.getItem(key) || 0)
+    const timeClosed = Number(localStorage.getItem(key)) || 0
     return {
-      clickCount: 0,
       visible: (timeNow - timeClosed) > TIMEOUT,
       expanded: false,
-    }
-  },
-
-  computed: {
-    closeText () {
-      return this.clickCount === 0
-        ? 'Whatever'
-        : 'Really?'
     }
   },
 
   methods: {
     show () {
       this.expanded = true
-      this.clickCount = 0
     },
 
     hide () {
       this.expanded = false
     },
 
-    close (immediate) {
-      if (immediate || this.clickCount === 1) {
-        localStorage.setItem(key, Date.now().toString())
-        this.visible = false
-      }
-      this.clickCount ++
+    close () {
+      localStorage.setItem(key, Date.now().toString())
+      this.visible = false
     }
   }
 }
