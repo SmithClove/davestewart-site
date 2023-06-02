@@ -146,7 +146,7 @@ Also, as someone [noted](https://news.ycombinator.com/item?id=36150105#36162646)
 It's interesting to note:
 
 - the relatively small proportion of "the work" to the overall effort, aka [planning fallacy](https://en.wikipedia.org/wiki/Planning_fallacy)
-- the amount and proportion of work "between" the work, aka [project complexity](*https://en.wikipedia.org/wiki/Project_complexity*)
+- the amount and proportion of work "between" the work, aka [project complexity](https://en.wikipedia.org/wiki/Project_complexity)
 - the amount of work "outside" the project, aka [unknown unknowns](https://en.wikipedia.org/wiki/There_are_known_knowns)
 
 ## Analysis
