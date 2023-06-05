@@ -189,9 +189,9 @@ Perhaps not-so-strangely, getting older has been the catalyst for being far more
 
 - ***Being on time***
 
-  Years ago, I would be late for almost everything. Ironically it was a function of not wanting to *waste* time; why set off early to have to wait around, when you could be using that time wisely? (Well, that and never leaving enough time).
+  Years ago, I would be late for almost everything. Ironically it was a function of not wanting to *waste* time; why set off early to have to wait around, when you could be filling that time productively?
   
-  Ultimately the stress and shame of always being the one to make excuses caught up with me, and I realised that a) working backwards to calculate travel *and* preparation time, and b) finding useful things to do as you travel meant you could respect both parties' time *and* remain productive without any of the stress and bullshit.
+  Ultimately the stress and shame of almost always being late without any reasonable excuse caught up with me, and I realised that a) working backwards to calculate travel **and** preparation time, and b) finding useful things to do as you travel meant you could respect both parties' time *and* remain productive without any of the stress and bullshit.
   
   
 
@@ -242,7 +242,7 @@ You can't always account for others, but you can be responsible for yourself.
 
   I used to be one for bringing things up again and again if I felt they they weren't being understood. The thing is, they probably were; it's just that human beings don't like admitting mistakes and certainly don't like being reminded.
 
-  Often there's no need to labour the point or go in all guns blazing, it's possible to briefly mention something; they're probably well-aware, you just need to give them a little time. Most of the time I mange this; sometimes, not.
+  Often there's no need to labour the point or go in all guns blazing, it's possible to briefly mention something; they're probably well-aware, you just need to give them a little time. Most of the time I manage this; sometimes, not.
 
 - ***Being straight and taking ownership***
 
