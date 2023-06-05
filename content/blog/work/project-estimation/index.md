@@ -226,7 +226,7 @@ Some strategies and thoughts going forward:
 - If you end up in trouble, prefer "raising a hand" to "doubling down"
 - Beware fixed-price projects!
 
-You may also want to check the [Hacker News thread](https://news.ycombinator.com/item?id=36150105#36159318) which picked up this article; there are some fantastic comments!
+You may also want to check the [Hacker News thread](https://news.ycombinator.com/item?id=36150105) which picked up this article; there are some fantastic comments!
 
 Finally, you're welcome to use [any of the assets](https://github.com/davestewart/davestewart-site/tree/main/content/blog/work/project-estimation) for your own purposes, though a citation would be appreciated.
 
