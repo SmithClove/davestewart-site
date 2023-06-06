@@ -115,7 +115,7 @@ The distinction of the work "before / between / around" the work felt like the b
 | <span class="swatch" style="background: #CCCCCC"/> The work around the work  | ***Admin***<br>Meetings, reviews, project management, etc                  |
 | <span class="swatch" style="background: #EF8F8F"/> The work to get the work  | ***Acquisition***<br>Research, experimentation, scoping, quoting, pitching |
 | <span class="swatch" style="background: #FCB17F"/> The work before the work  | ***Preparation***<br>Configuration, setup, services, infrastructure        |
-| <span class="swatch" style="background: #FBDA7F"/> The work                  | ***Execution***<br>The actual build, product, design, etc                  |
+| <span class="swatch" style="background: #FBDA7F"/> The work                  | ***Execution***<br>The actual build, product, design, docs, tests, etc     |
 | <span class="swatch" style="background: #C4EF93"/> The work between the work | ***Iteration***<br>Iteration, debugging, refactoring, maintenance, tooling |
 | <span class="swatch" style="background: #A1EBDA"/> The work beyond the work  | ***Changes***<br>Changes, omissions, nice-to-haves, scope creep            |
 | <span class="swatch" style="background: #98E2FF"/> The work outside the work | ***Problems***<br>Surprises, contingency, disasters, mission creep         |
