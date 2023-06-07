@@ -402,8 +402,4 @@ If you got here then well done! It was a lot to read, unless you scanned (recomm
 
 It's funny to consider the person described above is in these *exact* ways *different* to the person I used to be. I got there by realising that *anything* is learnable; the key was mindfulness, honesty, and application, and the journey doesn't end here.
 
-I would love to read any [comments](#hyvor-talk-view) or answer any questions!
-
-###### <SiteIcon fill="#EA4848" />
-
-<small>Image thanks to [Vecteezy](https://www.vecteezy.com/vector-art/6652489-complex-easy-simple-way-from-start-to-idea-chaos-simplifying-problem-solving-and-business-solutions-idea-searching-concept-vector-illustration)</small>
+(Image thanks to [Vecteezy](https://www.vecteezy.com/vector-art/6652489-complex-easy-simple-way-from-start-to-idea-chaos-simplifying-problem-solving-and-business-solutions-idea-searching-concept-vector-illustration))

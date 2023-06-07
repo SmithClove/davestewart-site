@@ -229,11 +229,3 @@ Some strategies and thoughts going forward:
 You may also want to check the [Hacker News thread](https://news.ycombinator.com/item?id=36150105) which picked up this article; there are some fantastic comments!
 
 Finally, you're welcome to use [any of the assets](https://github.com/davestewart/davestewart-site/tree/main/content/blog/work/project-estimation) for your own purposes, though a citation would be appreciated.
-
-## Thanks
-
-I hope you found this article useful and / or enjoyable.
-
-If so, I'd love to exchange thoughts / ideas in the comments, or perhaps on [Twitter](https://twitter.com/dave_stewart).
-
-Other than that, bye for now!
