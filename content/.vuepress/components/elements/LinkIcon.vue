@@ -36,6 +36,7 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-color: $grey-light;
+    transform: none;
 
     &:hover, &:focus {
       background-color: unset;

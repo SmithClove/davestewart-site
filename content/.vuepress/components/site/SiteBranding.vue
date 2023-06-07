@@ -36,6 +36,13 @@ export default {
     height: 32px;
     width: auto;
     fill: $grey;
+    opacity: .8;
+  }
+
+  &:hover {
+    .siteBranding__icon {
+      opacity: 1;
+    }
   }
 
   &__text {
