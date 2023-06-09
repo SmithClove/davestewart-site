@@ -185,8 +185,9 @@ PLUGIN.is_url = (maybe_url) => {
  * @return {string}
  */
 PLUGIN.get_canonical_url = ($page, options) => {
-  if (options.canonical_base && $page.path) {
-    return resolveURL(options.canonical_base, $page.path)
+  const path = $page.frontmatter.permalink || $page.path
+  if (options.canonical_base && path) {
+    return resolveURL(options.canonical_base, path)
   }
 }
 // PLUGIN.get_canonical_url()
