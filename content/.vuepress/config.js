@@ -106,6 +106,24 @@ module.exports = {
       wordsPerMinuteEN: 200,
       includes: ['/blog/*'],
     }],
+    /*
+    ['feed', {
+      canonical_base: 'https://davestewart.co.uk',
+      posts_directories: ['/blog/'],
+      is_feed_page: page => {
+        return page.path?.startsWith('/blog') && page.frontmatter.date
+      },
+      count: 50,
+      selector: '.pageContent',
+    }],
+    */
+
+    ['rss-feed', {
+      hostname: 'https://davestewart.co.uk',
+      filter: (page) => page.path?.startsWith('/blog') && page.frontmatter.date,
+      selector: '.pageContent',
+      count: 20,
+    }],
   ],
 
   markdown: {
