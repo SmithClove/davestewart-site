@@ -9,8 +9,8 @@
         <p>I might be working on your new favourite thing...</p>
       </div>
       <div class="card-footer text-right">
-        <button class="btn btn-primary" @click="show">Show me!</button>
-        <button class="btn" @click="close">Close</button>
+        <button class="btn btn-primary plausible-event-name=CS+Open+Popup" @click="show">Show me!</button>
+        <button class="btn plausible-event-name=CS+Close" @click="close">Close</button>
       </div>
     </div>
 
@@ -26,8 +26,8 @@
         <p>It's smooth, fast and powerful with beautiful information surfacing, brilliant organisational tools and lightning-fast keyboard navigation; if you're a tab hoarder like me you'll wonder how you lived without it!</p>
       </div>
       <div class="card-footer text-right">
-        <a class="btn btn-primary" href="https://controlspace.app" target="_blank" @click="close">Go to Control Space</a>
-        <button class="btn" @click="close">Close</button>
+        <a class="btn btn-primary plausible-event-name=CS+Visit+Website" href="https://controlspace.app" target="_blank" @click="close">Go to Control Space</a>
+        <button class="btn plausible-event-name=CS+Close+Popup" @click="close">Close</button>
       </div>
     </div>
 
