@@ -22,6 +22,8 @@ In this post I'll:
 ## MSAL gotchas
 
 > ***Note:*** this post is aimed at frontend developers aiming to implement MSAL in Vue, and assumes you (or a backend team member) have **already** configured your [tenant](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant), [scopes](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-expose-web-apis#add-a-scope), [redirects](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow#redirect-uris-for-single-page-apps-spas), etc.
+>
+> If you need some help getting that set up, check out [this article](https://medium.com/@pavelray/connect-your-react-app-with-azure-ad-using-3ddd39223d27) which covers how to configure your application in the Azure dashboard.
 
 ### GitHub repo
 
