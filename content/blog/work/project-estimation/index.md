@@ -1,5 +1,5 @@
 ---
-description: A deep dive on why projects always overrun and a framework to improve future estimation
+description: A deep dive on why projects always take longer and a framework to improve future estimation
 permalink: /blog/the-work-is-never-just-the-work
 date: 2022-02-01
 media:
@@ -25,7 +25,7 @@ If that sounds like you, read on!
 
 ## Background
 
-Last year I took on what seemed like a short, easy-to-deliver project, which over the course of a year turned into the kind of "night of the living dead" slog and because of a variety of factors has _never_ been easy to estimate.
+Last year I took on what seemed like a short, easy-to-deliver project, which over the course of a year turned into a kind of "night of the living dead" slog, and because of a variety of factors, had _never_ been easy to estimate.
 
 With the latest phase finally delivered, I wanted to conduct a detailed postmortem to understand why my perception of the _actual_ work was so off, and in the process reevaluate everything I know about assumptions and estimation.
 
