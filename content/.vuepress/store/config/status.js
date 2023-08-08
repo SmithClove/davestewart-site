@@ -20,7 +20,7 @@ function isPublished (page) {
 }
 
 function isVisible (page) {
-  return isPublished(page) && page.status !== Status.PREVIEW // page.frontmatter.date
+  return isPublished(page) // && page.status !== Status.PREVIEW // page.frontmatter.date
 }
 
 module.exports = {
