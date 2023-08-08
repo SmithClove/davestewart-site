@@ -183,7 +183,7 @@ This should hopefully result in clearer product releases where a single feature-
 > 
 > ### Control Space – Sprint 16
 > 
-> Polished Setup, Help and Workspace UX / UI and squished multiple niggling bugs ready for public release
+> Polished setup, help and first-use experience ready for public release
 
 
 ## Updating versions
