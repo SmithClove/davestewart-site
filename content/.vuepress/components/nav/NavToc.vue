@@ -214,7 +214,7 @@ export default {
 
     a {
       color: $textColor;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     small {
