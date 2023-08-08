@@ -12,7 +12,7 @@ media:
 
 ## Abstract
 
-I've been developing Chrome extensions for the last few years, and whilst most don't need a lengthy development phase, the if you want to develop `alpha` or `beta` versions the limitations of Chrome's [manifest version](https://developer.chrome.com/docs/extensions/mv3/manifest/version/) (in comparison to [Semver](https://nodesource.com/blog/semver-a-primer/)'s more flexible schema) can trip you up.
+I've been developing Chrome extensions for the last few years, and whilst most don't need a lengthy development phase, if you want to develop `alpha` or `beta` versions, the limitations of Chrome's [manifest version](https://developer.chrome.com/docs/extensions/mv3/manifest/version/) (in comparison to [Semver](https://nodesource.com/blog/semver-a-primer/)'s more flexible schema) can trip you up.
 
 This post recaps my journey through poorly-executed versioning, awkward naming, tagging and releases, to final robust versioning strategy whilst developing [Control Space](https://controlspace.app).
 
@@ -67,20 +67,20 @@ As such, if your aim is a neat-and-tidy `1.0` release (more on this [later](#ste
 
 ### The problems of thinking in Semver
 
-If we're thinking in terms of Semver, the lack of prerelease labels has drawbacks:
+If you're thinking in terms of Semver, the lack of prerelease labels has drawbacks:
 
 - you can't identify “beta” versions i.e. `1.0.0-beta-05`
 - you can't move from `alpha` to `beta` or `rc` as the format doesn't support it
 - you may have to abuse to `minor`, `patch` or `build` units to achieve your goals
 
 Additionally:
- 
+
 - version strings for new features may always be out of date:
   - let's say you've released with manifest version `1.0.0`
   - you start working and committing code for the `2.0.0` version
   - as there's no way to specify `2.0.0-beta` the manifest states `1.0.0` although the code is technically `2.0`-ish
 - Git tags are ambiguous:
-  - when I was thinking in terms of a protracted "beta" phase, I used a mix of Chrome `x.y.z.0` manifest versions and Semver `vX.Y.Z.beta-N` Git tags, so up until some theoretical `1.0` the two _never_ aligned
+  - when I was thinking in terms of a protracted "beta" phase, I used a mix of Chrome `x.y.z.0` manifest versions and Semver `vX.Y.Z.beta-N` Git tags, so up until some theoretical `1.0` release, the two would _never_ align
 - it’s confusing for everyone:
   - tagging releases, generating release notes and creating zips was an ongoing headache as there was no clear system on how the incompatible formats were supposed to marry-up
 
@@ -88,9 +88,9 @@ Additionally:
 
 ### Context
 
-To give some context to the rest of the article, let's quickly review where versioning plays a part.
+To give some context to the rest of the article, let's review the various versioning touchpoints.
 
-There are these terms and values to keep track of:
+There are terms and values to keep track of:
 
 - manifest `version`, e.g. `1.0.0.n`
 - potential manifest `version_name`, e.g. `Control Space 1.0`
@@ -115,15 +115,15 @@ As you can see, it's critical to settle on a **straightforward and robust** syst
 
 ### Stepping outside the semver box
 
-I spent a good few days [researching](#resources), strategizing and testing ways to move to a new versioning paradigm and build pipeline, and ultimately realised that I had boxed myself in using Semver in a Chrome Versioned world.
+I spent a good few days [researching](#resources), strategizing and testing ways to move to a new versioning paradigm and build pipeline, and ultimately realised that I had boxed myself in thinking in Semver terms in a Chrome Versioned world.
 
-The epiphany was realising that focusing on `major` and `beta` monikers (aka "breaking changes" and "pre-release"s) was **missing the point** as I was building _a product not a library_ – and fixating on how to satisfy these library-oriented constraints was the cause of **all** related versioning issues:
+The epiphany was realising that focusing on `major` and `beta` monikers (aka "breaking changes" and "pre-releases") was **missing the point** as I was building _a product not a library_; fixating on how to satisfy these library-oriented constraints was the cause of **all** related versioning woes:
 
-- there isn’t really a concept of a “breaking” change in products (at least not this one):
+- there isn’t really a concept of a “breaking change" in most products:
   - using a `major` version bump as a signal to “review before moving forwards” means nothing to users
-  - factoring-out the use of `major` checkpoints misses an opportunity to communicate information
+  - factoring-out the use of `major` checkpoints misses an opportunity to communicate additional information
 
-- the idea of "alpha" and “beta” doesn’t make sense; any builds are either:
+- the idea of "alpha" and “beta” doesn’t make sense; builds are either:
   - private, i.e. a zip file with testers
   - public, i.e. the extension on the web store
 
@@ -131,9 +131,7 @@ The epiphany was realising that focusing on `major` and `beta` monikers (aka "br
   - for end users it's the `major` version that matters, i.e. "do I have the newest features?"
   - for beta testers it’s the `build`, i.e. "is there something for me to review?"
 
-The other big issue was that being in (air-quotes) "beta" for so long, there was no incentive to publicly release until I felt the product was (more air-quotes) "one-dot-oh" ready.
-
-What I should have done was concentrate on regular stable releases, and communicated properly what each release was about.
+The other big issue was that being in (air-quotes) "beta" for so long, there was no incentive to publicly release until I felt the product was (air-quotes) "one-dot-oh" ready. What I should have done was concentrate on regular stable releases, and communicated properly what each release was about.
 
 ## Bringing it all together
 
@@ -146,10 +144,10 @@ Given the above, I concluded:
 - `major` versions would be better-used to represent "product goals", rather than "breaking changes"
 - without `major` version constraints, `minor` versions (i.e. features) have more meaning within the release
 - features will be released only when it makes sense, so an initial release could be `x.5.2` (vs an aligned `x.0.0`)
-- there is no requirement to consider `beta` private and `n.0.0` public; it's either with testers or released
-- the `build` unit identifies which release is most recent, no matter what the other units
+- there is no requirement to consider `beta` private and `n.0.0` public; it's either with testers or users
+- the `build` unit identifies which release is the most recent, no matter what the other units
 
-So for a real product like [Control Space](https://controlspace.app/) that could look like the following:
+So for a real product like [Control Space](https://controlspace.app/) how does that look?
 
 | Unit    | What for          | Example                                             |
 |:--------|:------------------|:----------------------------------------------------|
@@ -158,16 +156,16 @@ So for a real product like [Control Space](https://controlspace.app/) that could
 | `patch` | Fix (on `main`)   | "Fix Settings panel CSS bug"                        |
 | `build` | PRs / test builds | "Send build to testers to try out new context menu" |
 
-Additionally, this meant versions would now climb much more quickly:
+I decided I wanted to move to this new versioning scheme *immediately*:
 
-- what had been `1.0.16.0` (`1.0 Beta 16`) would be jump to `16.0.0`
+- what had been `1.0.16.0` (`1.0 Beta 16`) would jump to `16.0.0`
 - individual features would now have proper `minor` homes in `16.1`, `16.2`, etc
 - fixes could now be properly recognised with `patch` releases, i.e. `15.0.1`
 - the ever-incrementing `build` identifier would remove ambiguity from Web Store submissions
 
 ### Branching strategy
 
-The reality of moving away from a Beta-oriented (i.e. private, no consequences) workflow to more regular public releases and product sprint cycles meant that I have decided to switch from [trunk-based](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development) development to [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+The reality of moving away from a Beta-oriented (i.e. private) workflow to more regular public releases and product sprint cycles has made me decide to switch from [trunk-based](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development) development to [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 
 Though it might be seen as unfashionable in the era of CI, I think this should allow me to patch the currently-released major version more easily; `main` is the released version, `develop` is the current sprint.
 
@@ -175,7 +173,7 @@ As there is only me on the project, I don't foresee this posing any problems.
 
 ### Release strategy
 
-Being in a never-ending Beta means that often, projects don't end; it's just a constant feeding of issues through the pipe, piling yet more tickets into GitHub Projects that never quite end.
+Being in a never-ending Beta means that often, projects don't end; it's just a constant feeding of issues through the pipe, piling yet more tickets into a hungry GitHub Projects "Todo" column.
 
 Moving forwards, I think it should be much easier to plan sprints and identify what goes in and what gets left.
 
@@ -194,9 +192,9 @@ This should hopefully result in clearer product releases where a single feature-
 
 As part of trying to tally a version with a sprint, I am experimenting with updating the `major` version at the _start of the sprint_ rather than **the release of the feature**.
 
-Taking the “Improve window management” project example above, I might update the manifest from `15.1.0` to `16.0.0` as soon as I create the branch. This means that work on all features will _at least_ show the correct `major` version, rather than being linked to `15.1.0` as they might be otherwise.
+Taking the “Improve window management” project example above, I might update the manifest from `15.1.0` to `16.0.0` as soon as I create the branch. This means that features should _at least_ show the correct `major` version (aligning to the current sprint) rather than being linked to `15.1.0` as they might be otherwise.
 
-Additionally, as there's no longer a requirement to align with an even `x.0.0` version, features will be released _as it makes sense to release them_, so the first public release may be something like `16.3.0`, with additional `minor` releases (features) following as they are completed.
+Additionally, as there's no longer a requirement to plot intercept courses to `x.0.0` versions, features will be released _as it makes sense to release them_, so the first public release for a sprint branch may be something like `16.3.0`, with additional `minor` releases / features following as they are completed.
 
 ### Updating the build version
 
@@ -206,9 +204,9 @@ For clarity up until now I have omitted the `build` version, but in this new par
 16.0.0.123 (number of closed issues)
 ```
 
-I've created a script to bump any of the version numbers, which I can run manually as I commit and push features, as well as hook into a GitHub Action which bumps the `build` each time a PR is merged.
+I've created a script to bump version units, which I can run manually as I commit and push features, as well as hook it up to a GitHub Action which bumps the `build` each time a PR is merged.
 
-Additionally, I could run multiple local builds for testers, so the final versions for the `16.x` builds might look like:
+Additionally, I could run multiple *local* builds for testers, so the final versions for the `16.x` builds might look like:
 
 ```
 16.0.0.123
@@ -227,12 +225,12 @@ Fixing bugs should be fairly straightforward by branching off `main`.
 
 The main thing to check is that build numbers between branches are reconciled:
 
-- when committing the fix in `main`, update `build` to use the latest in `feature`
+- when committing the fix in `main`, ensure`build` matches the latest in `feature`
 - when merging the fix to `feature`, ensure the latest `build` is used
 
 Though, if you forget it doesn't matter as the overall version strings should always be different.
 
-The versioning for a theoretical CSS in the live `15.x` branch bug might go like this:
+Note that the versioning for a theoretical CSS fix in the live `15.x` branch bug might go like this:
 
 | Branch    | Version      | Work                                              | Change                      | 
 |-----------|--------------|---------------------------------------------------|-----------------------------| 
@@ -246,17 +244,17 @@ The versioning for a theoretical CSS in the live `15.x` branch bug might go like
 
 The final releases would be:
 
-- `15.0.0.123` would be live
-- `15.0.1.125` would replace it with a fix
-- `16.2.1.127` would release the `16.x` branch along with the fix
+- `15.0.0.123` on `main`
+- `15.0.1.125` which adds the CSS fix
+- `16.2.1.127` which adds the the `16.x` branch along with the fix
 
-The incrementing build should ensure identical versions are never uploaded to the Chrome Web Store!
+And the incrementing `build` should ensure identical versions are never uploaded to the Chrome Web Store!
 
 ### Changelogs vs release notes
 
-In recent years I have switched from changelogs to release notes.
+In recent years I've' switched from [changelogs](https://keepachangelog.com/) to [release notes](https://www.launchnotes.com/blog/release-notes-examples).
 
-Changelogs are good for developers but no good for customers or marketing in my opinion as they are too technical and granular. A user doesn't care that you "refactored some component" they care that you "added support for context menus".
+Changelogs are good for developers but no good for customers or marketing as they are too technical and granular. A user doesn't care that you "refactored some component" they care that you "added support for context menus".
 
 And creating release notes at the end of a sprint from `changelog.md` is hard, as you've forgotten the context a month or so later. I prefer to just update the release notes for the sprint as I commit the feature:
 
@@ -269,11 +267,13 @@ And creating release notes at the end of a sprint from `changelog.md` is hard, a
 > 
 > - ...
 
+If and when the notes make it into your public-facing site, they are much easier to work from in this format.
+
 Also, for developers, GitHub already provides a neat log of [changes](https://github.com/octocat/linguist/compare/v2.2.0...octocat:v2.3.3) between releases by [comparing commits](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
 
 ## A few last thoughts
 
-### What do other extensions do?
+### How do other extensions handle versioning?
 
 Looking at my Extensions page, I was interested to see which extensions had larger `major` build numbers.
 
@@ -299,11 +299,11 @@ Creating a new profile, I installed around 20 of the most popular extensions, an
 | [Google Docs](https://chrome.google.com/webstore/detail/ghbmnnjooekpmoecnnnilnnbdlolhkhi)          | 10m+  | 88 KB  | Closure  | 1     | 65    | 0     |       |
 | [Zoom](https://chrome.google.com/webstore/detail/kgjfgplpablkjnlkjmjdecgdpfankdle)                 | 7m    | 240 KB | Bundler  | 1     | 8     | 20    |       |
 
-I'm not sure how conclusive this is – aside from revealing that perhaps more extension developers might consider revising their versioning scheme!
+I'm not sure how conclusive this is – but perhaps it reveals that more extension developers might reconsider their versioning scheme!
 
 ### Resources
 
-Links to the various articles and questions which helped me reach a conclusion on my own versioning strategy:
+Lastly, here are some links to the resources which helped me reach a conclusion on my own versioning strategy:
 
 - [What exactly is the build number in MAJOR.MINOR.BUILDNUMBER.REVISION](https://softwareengineering.stackexchange.com/questions/24987/what-exactly-is-the-build-number-in-major-minor-buildnumber-revision)
 - [When do you change your major/minor/patch version number?](https://softwareengineering.stackexchange.com/questions/166215/when-do-you-change-your-major-minor-patch-version-number)
