@@ -51,7 +51,7 @@ Optionally, the `gallery` node can hold more information:
 
 ## Status
 
-Page Status is determined by `hidden`, `preview` and `date` frontmatter properties:
+Page Status is determined by the boolean `hidden`, `preview` and `date` frontmatter properties:
 
 | Value       | Description                                                      |
 |-------------|------------------------------------------------------------------|
