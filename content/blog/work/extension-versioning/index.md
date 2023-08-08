@@ -252,7 +252,7 @@ And the incrementing `build` should ensure identical versions are never uploaded
 
 ### Changelogs vs release notes
 
-In recent years I've' switched from [changelogs](https://keepachangelog.com/) to [release notes](https://www.launchnotes.com/blog/release-notes-examples).
+In recent years I've switched from [changelogs](https://keepachangelog.com/) to [release notes](https://www.launchnotes.com/blog/release-notes-examples).
 
 Changelogs are good for developers but no good for customers or marketing as they are too technical and granular. A user doesn't care that you "refactored some component" they care that you "added support for context menus".
 
@@ -278,8 +278,8 @@ Just to recap:
 - Think `sprint.feature.fix.build` vs `major.minor.fix.build`
 - The `major` version identifies the *start* (rather than the end) of the work
 - Versions count *from* (rather than to) the next `major` version
-- Work is *private* until *publicly* released
-- Release the first `minor` version that fulfils the promise of a coherent release
+- Work is *beta by definition* (for any version) until released
+- Release the first `minor` version that communicates the idea of the sprint
 - Release additional `minor` and `patch` releases as required
 - Use `build` versions to disambiguate changes whilst testing
 
