@@ -139,7 +139,7 @@ The other big issue was that being in (air-quotes) "beta" for so long, there was
 
 Given the above, I concluded:
 
-- counting up to `1.0` (i.e. `alpha`, `beta`) serves no practical purpose
+- counting down to `1.0` (i.e. `alpha`, `beta`) serves no practical purpose
 - there is no such thing as a `beta-nn`, there are just "sprints" and releases 
 - `major` versions would be better-used to represent "product goals", rather than "breaking changes"
 - without `major` version constraints, `minor` versions (i.e. features) have more meaning within the release
@@ -270,6 +270,18 @@ And creating release notes at the end of a sprint from `changelog.md` is hard, a
 If and when the notes make it into your public-facing site, they are much easier to work from in this format.
 
 Also, for developers, GitHub already provides a neat log of [changes](https://github.com/octocat/linguist/compare/v2.2.0...octocat:v2.3.3) between releases by [comparing commits](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
+
+### Summary
+
+Just to recap:
+
+- Think `sprint.feature.fix.build` vs `major.minor.fix.build`
+- The `major` version identifies the *start* (rather than the end) of the work
+- Versions count *from* (rather than to) the next `major` version
+- Work is *private* until *publicly* released
+- Release the first `minor` version that fulfils the promise of a coherent release
+- Release additional `minor` and `patch` releases as required
+- Use `build` versions to disambiguate changes whilst testing
 
 ## A few last thoughts
 
