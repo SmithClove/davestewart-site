@@ -1,6 +1,6 @@
 ---
 preview: true
-shortTitle: Versioning and releasing for large Chrome extensions
+shortTitle: Versioning and releasing large Chrome extensions
 description: How to plan and implement a robust versioning scheme without Semver
 media:
   opengraph: ./versioning-featured.png
