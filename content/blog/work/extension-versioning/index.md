@@ -321,6 +321,6 @@ Lastly, here are some links to the resources which helped me reach a conclusion 
 - [When do you change your major/minor/patch version number?](https://softwareengineering.stackexchange.com/questions/166215/when-do-you-change-your-major-minor-patch-version-number)
 - [How/When should I update the version number?](https://stackoverflow.com/questions/57941183/how-when-should-i-update-the-version-number)
 - [When should I increment version number?](https://softwareengineering.stackexchange.com/questions/215163/when-should-i-increment-version-number)
-- [When to increment build number?](https://softwareengineering.stackexchange.com/questions/421299/when-to-increment-build-number#:~:text=You%20increment%20the%20build%20number,change%20of%20your%20source%20code.)
+- [When to increment build number?](https://softwareengineering.stackexchange.com/questions/421299/when-to-increment-build-number)
 - [How often should you ship your product releases](https://nikhilmehta.me/product-release/)
 - [Semantic Versioning with CI/CD and semantic-release](https://semaphoreci.com/blog/semantic-versioning-cicd)
