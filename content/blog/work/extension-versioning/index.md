@@ -1,24 +1,24 @@
 ---
 preview: true
-shortTitle: Versioning and releasing large Chrome extensions
-description: How to plan and implement a robust versioning scheme without Semver
+#shortTitle: Versioning and releasing Chrome extensions
+description: An approach to plan and implement a robust versioning scheme and release schedule – without Semver
 media:
-  opengraph: ./versioning-featured.png
+  opengraph: ./versioning-opengraph.png
   featured: ./versioning-featured.png
   thumbnail: ./versioning-thumb.png
 ---
 
-# Versioning and release strategy for large Chrome extensions
+# Versioning and releasing larger Chrome extensions
 
 ## Abstract
 
 I've been developing Chrome extensions for the last few years, and whilst most don't need a lengthy development phase, if you want to develop `alpha` or `beta` versions, the limitations of Chrome's [manifest version](https://developer.chrome.com/docs/extensions/mv3/manifest/version/) (in comparison to [Semver](https://nodesource.com/blog/semver-a-primer/)'s more flexible schema) can trip you up.
 
-This post recaps my journey through poorly-executed versioning, awkward naming, tagging and releases, to final robust versioning strategy whilst developing [Control Space](https://controlspace.app).
+This article is somewhat of a retrospective of my journey through poorly-executed versioning, awkward naming, tagging and releases, to final robust versioning strategy whilst developing [Control Space](https://controlspace.app).
 
 <NavToc type="tree" 
         level="2,3"
-        prompt="The article is longer than I wanted, so feel free to jump to"
+        prompt="It turned out a little longer than I wanted, so feel free to jump to"
         exclude="abstract,control-space-sprint-16"
 />  
 
@@ -26,7 +26,7 @@ This post recaps my journey through poorly-executed versioning, awkward naming, 
 
 ### Intro
 
-The [version string](https://developer.chrome.com/docs/extensions/mv3/manifest/version/) in Chrome extensions may contain 1 to 4 integers:
+The [version string](https://developer.chrome.com/docs/extensions/mv3/manifest/version/) in Chrome extensions may contain 1 to 4 integers. Most commonly this might be:
 
 ```
 major
@@ -50,7 +50,7 @@ _For those unfamiliar with the `build` unit, it is intended to be a number that 
 
 ### Prerelease numbering
 
-Numbering pre-releases in Chrome can be problematic if you plan badly, or misjudge your launch timeline.
+Numbering pre-releases in Chrome can leave you high and dry if you plan badly, or misjudge your launch timeline.
 
 If you make the mistake of setting `1.0` too early and have published on the Chrome Web Store, you can't replace it with a revised, lower version because the Web Store won't accept it.
 
@@ -71,7 +71,7 @@ If you're thinking in terms of Semver, the lack of prerelease labels has drawbac
 
 - you can't identify “beta” versions i.e. `1.0.0-beta-05`
 - you can't move from `alpha` to `beta` or `rc` as the format doesn't support it
-- you may have to abuse to `minor`, `patch` or `build` units to achieve your goals
+- you may have to abuse `minor`, `patch` or `build` units to achieve your goals
 
 Additionally:
 
@@ -80,17 +80,17 @@ Additionally:
   - you start working and committing code for the `2.0.0` version
   - as there's no way to specify `2.0.0-beta` the manifest states `1.0.0` although the code is technically `2.0`-ish
 - Git tags are ambiguous:
-  - when I was thinking in terms of a protracted "beta" phase, I used a mix of Chrome `x.y.z.0` manifest versions and Semver `vX.Y.Z.beta-N` Git tags, so up until some theoretical `1.0` release, the two would _never_ align
+  - when I was thinking in terms of a protracted "beta" phase, I used a mix of Chrome `x.y.z.0` manifest versions and Semver `vX.Y.Z.beta-N` Git tags, so up until some theoretical `1.1.0` release, the two would _never_ align
 - it’s confusing for everyone:
   - tagging releases, generating release notes and creating zips was an ongoing headache as there was no clear system on how the incompatible formats were supposed to marry-up
 
-## Versioning
+## Versioning for product releases
 
-### Context
+### Where versioning matters
 
-To give some context to the rest of the article, let's review the various versioning touchpoints.
+To give some context to the rest of the article, let's review the all versioning touchpoints.
 
-There are terms and values to keep track of:
+There are various terms and values to keep track of:
 
 - manifest `version`, e.g. `1.0.0.n`
 - potential manifest `version_name`, e.g. `Control Space 1.0`
@@ -112,12 +112,11 @@ Which may be used in the following places:
 
 As you can see, it's critical to settle on a **straightforward and robust** system that needs no additional interpretation.
 
-
-### Stepping outside the semver box
+### Stepping outside the Semver box
 
 I spent a good few days [researching](#resources), strategizing and testing ways to move to a new versioning paradigm and build pipeline, and ultimately realised that I had boxed myself in thinking in Semver terms in a Chrome Versioned world.
 
-The epiphany was realising that focusing on `major` and `beta` monikers (aka "breaking changes" and "pre-releases") was **missing the point** as I was building _a product not a library_; fixating on how to satisfy these library-oriented constraints was the cause of **all** related versioning woes:
+The epiphany was realising that focusing on `major` and `beta` monikers (aka "breaking changes" and "pre-releases") was **missing the point** as I was building _a product not a library_; fixating on how to satisfy these library-oriented constraints was the cause of my product-versioning woes:
 
 - there isn’t really a concept of a “breaking change" in most products:
   - using a `major` version bump as a signal to “review before moving forwards” means nothing to users
@@ -140,21 +139,22 @@ The other big issue was that being in (air-quotes) "beta" for so long, there was
 Given the above, I concluded:
 
 - counting down to `1.0` (i.e. `alpha`, `beta`) serves no practical purpose
-- there is no such thing as a `beta-nn`, there are just "sprints" and releases 
+- there is no such thing as a `beta-nn`, there are just "sprints" and releases
 - `major` versions would be better-used to represent "product goals", rather than "breaking changes"
 - without `major` version constraints, `minor` versions (i.e. features) have more meaning within the release
 - features will be released only when it makes sense, so an initial release could be `x.5.2` (vs an aligned `x.0.0`)
-- there is no requirement to consider `beta` private and `n.0.0` public; it's either with testers or users
+- there is no requirement to consider `beta` private and `n.0.0` public; it's either with testers or it's published
 - the `build` unit identifies which release is the most recent, no matter what the other units
+- using a manifest `version_name` offers no real value – and **worse** – hides the _real_ `version` string
 
-So for a real product like [Control Space](https://controlspace.app/) how does that look?
+So for a project like [Control Space](https://controlspace.app/) how does that translate?
 
-| Unit    | What for          | Example                                             |
-|:--------|:------------------|:----------------------------------------------------|
-| `major` | Sprint            | "Improve window management"                         |
-| `minor` | Feature           | "Add context menu to window header"                 |
-| `patch` | Fix (on `main`)   | "Fix Settings panel CSS bug"                        |
-| `build` | PRs / test builds | "Send build to testers to try out new context menu" |
+| Unit    | Purpose           | Example                                           |
+|:--------|:------------------|:--------------------------------------------------|
+| `major` | Sprint            | Improve window management                         |
+| `minor` | Feature           | Add context menu to window header                 |
+| `patch` | Fix (on `main`)   | Fix Settings panel CSS bug                        |
+| `build` | PRs / test builds | Send build to testers to try out new context menu |
 
 I decided I wanted to move to this new versioning scheme *immediately*:
 
@@ -167,9 +167,9 @@ I decided I wanted to move to this new versioning scheme *immediately*:
 
 The reality of moving away from a Beta-oriented (i.e. private) workflow to more regular public releases and product sprint cycles has made me decide to switch from [trunk-based](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development) development to [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 
-Though it might be seen as unfashionable in the era of CI, I think this should allow me to patch the currently-released major version more easily; `main` is the released version, `develop` is the current sprint.
+Though it might be seen as unfashionable in the era of CI, I think this should allow me to patch the currently-released major version more easily; `main` is the released version (`15.x`) whilst `develop` is the current sprint (`16.x`).
 
-As there is only me on the project, I don't foresee this posing any problems.
+I'm no Git expert but as there is only me on the project, I don't foresee this posing any problems.
 
 ### Release strategy
 
@@ -217,7 +217,7 @@ Additionally, I could run multiple *local* builds for testers, so the final vers
 16.3.0.128
 ```
 
-Even though only the final `16.3.128` version might be merged.
+Even though only the final `16.3.0.n` version might be merged.
 
 ### Fixing bugs and updating the patch version
 
@@ -262,28 +262,30 @@ And creating release notes at the end of a sprint from `changelog.md` is hard, a
 > 
 > - added support for context menus
 > - made shortcut keys combos clearer
->
-> Tabs
-> 
 > - ...
 
-If and when the notes make it into your public-facing site, they are much easier to work from in this format.
+If and when the notes make it into your public-facing site, they are much easier to develop in this format. Many products, such as [Chrome](https://blog.chromium.org/) and [Chrome Dev Tools](https://developer.chrome.com/blog/new-in-devtools-115/) use their blog to provide additional context. 
 
 Also, for developers, GitHub already provides a neat log of [changes](https://github.com/octocat/linguist/compare/v2.2.0...octocat:v2.3.3) between releases by [comparing commits](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
 
+
 ### Summary
 
-Just to recap:
+To summarise:
 
-- Think `sprint.feature.fix.build` vs `major.minor.fix.build`
-- The `major` version identifies the *start* (rather than the end) of the work
-- Versions count *from* (rather than to) the next `major` version
-- Work is *beta by definition* (for any version) until released
-- Release the first `minor` version that communicates the idea of the sprint
-- Release additional `minor` and `patch` releases as required
-- Use `build` versions to disambiguate changes whilst testing
+- Think `sprint.feature.fix.build` vs `major.minor.patch.build`
+- `major` versions signify the *start* (rather than the end) of a block of product features
+- `minor` versions count *from* the current `major` version
+- `minor` versions are released as and when they make sense
+- Work is *beta by definition* until published
+- Use `build` versions to identify changes in code more granular than the feature level 
+- Create `patch` releases as needed
 
-## A few last thoughts
+Note that this approach may not suit you and your project (and you should do what suits you) but is something I shall be moving forwards with, for now.
+
+I'll be sure to update this post if anything changes or I notice any shortcomings!
+
+## Addendum
 
 ### How do other extensions handle versioning?
 
@@ -311,11 +313,44 @@ Creating a new profile, I installed around 20 of the most popular extensions, an
 | [Google Docs](https://chrome.google.com/webstore/detail/ghbmnnjooekpmoecnnnilnnbdlolhkhi)          | 10m+  | 88 KB  | Closure  | 1     | 65    | 0     |       |
 | [Zoom](https://chrome.google.com/webstore/detail/kgjfgplpablkjnlkjmjdecgdpfankdle)                 | 7m    | 240 KB | Bundler  | 1     | 8     | 20    |       |
 
-I'm not sure how conclusive this is – but perhaps it reveals that more extension developers might reconsider their versioning scheme!
+I'm not sure how conclusive this is, but perhaps:
+
+- some developers might reconsider their versioning scheme
+- some projects use `major.build.minor` (Google Keep)
+
+### How do other developers handle versioning?
+
+I posted this article on the [Chromium Extensions](https://groups.google.com/a/chromium.org/g/chromium-extensions/c/L5_7le0hoWs) channel and got some great input:
+
+- [Oliver Dunk](https://groups.google.com/a/chromium.org/g/chromium-extensions/c/L5_7le0hoWs/m/GX_ntgOzAwAJ) (Extensions DevRel at Google) notes leading zeros in versions are stripped; something to be aware of
+
+- [Erek Speed](https://groups.google.com/a/chromium.org/g/chromium-extensions/c/L5_7le0hoWs/m/mIlvxgi1AwAJ) implements `major.minor.patch` using [Semantic Release](https://github.com/semantic-release/semantic-release) to automate tagging and [releases](https://github.com/melink14/rikaikun/releases)
+
+- [Gaurang Tandon](https://groups.google.com/a/chromium.org/g/chromium-extensions/c/L5_7le0hoWs/m/j1qliKPBAwAJ) suggests another modified versioning scheme: `minor` for public releases, `patch` for beta releases and `build` for internal releases
+
+### How does Chrome handle versioning?
+
+Chrome is built upon the Chromium project, which has a [very specific](https://chromium.googlesource.com/chromium/src/+/master/docs/process/release_cycle.md.) release and channel lifecycle.
+
+Their versioning scheme works like this:
+
+```
+major.minor.build.patch
+```
+
+The [web page](https://www.chromium.org/developers/version-numbers/) explains it like this:
+
+> MAJOR and MINOR track updates to the Google Chrome stable channel. In this sense, they reflect a scheduling or marketing decision rather than anything about the code itself. These numbers are generally only significant for tracking milestones. In the event that we get a significant release vehicle for Chromium code other than Google Chrome, we can revisit the versioning scheme.
+>
+> The BUILD and PATCH numbers together are the canonical representation of what code is in a given release. The BUILD number is always increasing as the source code trunk advances, so build 180 is always newer code than build 177. The PATCH number is always increasing for a given BUILD. Developers and testers generally refer to an instance of the product (Chromium or Google Chrome) as BUILD.PATCH. It is the shortest unambiguous name for a build.
+>
+> For example, the 154 branch was originally released as 0.3.154.9, but now stands at 1.0.154.65. It's the same basic code with a lot of bug fixes applied. The fact that it went from a Beta release to several 1.0 stable releases just reflects the decision to call some version (1.0.154.36) 'out of Beta'.
+
+Note that (as of this article) the public [stable version Chrome](https://chromereleases.googleblog.com/2023/08/stable-channel-update-for-desktop.html) is 115 and the latest [Chromium branch](https://chromium.googlesource.com/chromium/src/) is 117.
 
 ### Resources
 
-Lastly, here are some links to the resources which helped me reach a conclusion on my own versioning strategy:
+Finally, links to the resources which helped me reach a conclusion on my own versioning strategy:
 
 - [What exactly is the build number in MAJOR.MINOR.BUILDNUMBER.REVISION](https://softwareengineering.stackexchange.com/questions/24987/what-exactly-is-the-build-number-in-major-minor-buildnumber-revision)
 - [When do you change your major/minor/patch version number?](https://softwareengineering.stackexchange.com/questions/166215/when-do-you-change-your-major-minor-patch-version-number)
