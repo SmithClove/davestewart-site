@@ -146,7 +146,10 @@ export default {
     html () {
       // helpers
       const makeLink = (item, tip) => {
-        let html = `<a href="#${item.slug}">${item.title.replace(/^\W|\W$/g, '')}</a>`
+        const title = this.hasHierarchy
+          ? item.title
+          : item.title.replace(/^\W|\W$/g, '')
+        let html = `<a href="#${item.slug}">${title}</a>`
         if (tip) {
           html += `<br><small>${tip}</small>`
         }
@@ -163,7 +166,7 @@ export default {
         this.depth = levels[levels.length - 1] - 1
 
         // list
-        if (levels.length > 1 || this.type === 'list') {
+        if (this.hasHierarchy) {
           let prev = items[0]
           let html = '<ul>'
           for (const item of items) {
@@ -187,6 +190,10 @@ export default {
         }
       }
     },
+
+    hasHierarchy () {
+      return this.options.levels.length > 1 || this.type === 'list'
+    }
   },
 
   mounted () {
