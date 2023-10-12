@@ -18,7 +18,11 @@ import { isVisible } from '../store/config/status.js'
 export default {
   computed: {
     isPost () {
-      return !this.$page.path.startsWith('/bio/')
+      const ignore = [
+        '/bio/',
+        '/nuxt-mentor/',
+      ]
+      return !ignore.some(path => this.$page.path.startsWith(path))
     },
 
     description () {
