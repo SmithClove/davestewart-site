@@ -1,7 +1,7 @@
 ---
-preview: true
 #shortTitle: Versioning and releasing Chrome extensions
 description: An approach to plan and implement a robust versioning scheme and release schedule – without Semver
+date: 2023-08-09
 media:
   opengraph: ./versioning-opengraph.png
   featured: ./versioning-featured.png
