@@ -21,7 +21,7 @@ export default {
 
   computed: {
     src () {
-      return `https://img.shields.io/github/stars/${this.repo}?color=%23ea4848&label=Stars%3A&logo=github`
+      return `https://img.shields.io/github/stars/${this.repo}?style=flat&color=%23ea4848&label=Stars%3A&logo=github`
     },
 
     href () {
