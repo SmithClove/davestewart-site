@@ -1,6 +1,6 @@
 ---
 description: Web and mobile app to track, manage and discuss NFT collections
-date: 2022-04-01
+date: 2022-03-01
 tags:
   - webapp
   - frontend
@@ -26,7 +26,7 @@ I joined Metalink to work on their reasonably mature Vue app (built primarily by
 
 The work was split between refactoring, prototyping, feature development including close to real-time charting of portfolio data, error correction, cross-platform (Vue 3 and React Native) caching and rendering techniques, a little React Native / Recoil development, as well as supporting and mentoring our small frontend team.   
 
-![mobile app](images/app.webp)
+![mobile app](./images/app.jpg)
 
 ## Outcome
 
