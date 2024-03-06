@@ -6,6 +6,7 @@ tags:
 - chrome-extension
 - tools
 - email
+github: davestewart/better-fastmail
 media:
   thumbnail: ./images/better-fastmail.png
   opengraph: ./images/better-fastmail.png

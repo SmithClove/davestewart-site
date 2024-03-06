@@ -153,7 +153,7 @@ Got Paper is available on Product Hunt:
 
 ## Links
 
-- [Got Paper](https://got-paper.com)
+- [Got Paper](https://got-paper.vercel.app)
 - [Git Hub](https://github.com/davestewart/got-paper)
 - [Product Hunt](http://producthunt.com/posts/got-paper)
 - [Indie Hackers](http://indiehackers.com/product/got-paper)

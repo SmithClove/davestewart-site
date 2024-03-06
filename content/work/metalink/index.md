@@ -1,6 +1,6 @@
 ---
 description: Web and mobile app to track, manage and discuss NFT collections
-xdate: 2022-04-01
+date: 2022-04-01
 tags:
   - webapp
   - frontend
@@ -16,76 +16,26 @@ media:
 
 ## Overview
 
-Metalink is a [Web3](https://ethereum.org/en/web3/) startup operating in the [NFT](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) space.
+Metalink was a [Web3](https://ethereum.org/en/web3/) startup operating in the [NFT](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) space.
 
-Their main product is a web app that enables NFT owners to keep their finger on the NFT pulse with floor price tracking, portfolio valuation, in app chat, announcements and more.
+Their main product was a web app that enables NFT owners to keep their finger on the NFT pulse with floor price tracking, portfolio valuation, in app chat, announcements and more.
 
-I joined Metalink to work on their reasonably mature Vue app (built primarily by React developers using Ant Fu's [Vitesse](https://github.com/antfu/vitesse) framework) with a remit to bring my deep Vue and architectural knowledge which so the product could scale going forwards. 
+## Work
 
-## Implementation
+I joined Metalink to work on their reasonably mature Vue app (built primarily by React developers using Ant Fu's [Vitesse](https://github.com/antfu/vitesse) framework) with a remit to bring my deep Vue and architectural knowledge to scale the product could scale going forwards.
 
-### Architecture
+The work was split between refactoring, prototyping, feature development including close to real-time charting of portfolio data, error correction, cross-platform (Vue 3 and React Native) caching and rendering techniques, a little React Native / Recoil development, as well as supporting and mentoring our small frontend team.   
 
+![mobile app](images/app.webp)
 
-Things I did
+## Outcome
 
-Built on Ant Fu's 
+It was an interesting almost-year with MetaLink, getting to know NFTs, the Web 3 and Blockchain world, learn a little about smart contracts, NFT speculation, HODL, and the "we're all gonna make it" spirit.
 
-
-Tech
-
-- refactor folder structure
-- remove bad stuff
-
-Team
-
-- document all findings
-- put in place 
-
-The application itself is a [Nuxt JS](https://nuxtjs.org/) build with a custom [Express JS](https://expressjs.com/) back end, hosted on Microsoft Azure.
-
-The back end manages and marshals calls to [Factiva API](https://www.factiva.com/CP_Developer/ProductHelp/FDK/FDK33/) and [Elastic Search](https://www.elastic.co/elasticsearch/), collating, transforming and returning data in frontend-friendly JSON formats:
-
-```
-+- api
-|   +- modules
-|   |   +- contacts
-|   |   +- mentions
-|   |   +- news
-|   |   +- ...
-|   +- services
-|   |   +- factiva
-|   |   +- elastic
-|   +- ...
-+- client
-    +- ...
-```
-
-The front end consists of 3 complex main modules. Building on modular techniques from [Asterisk](/work/asterisk/) and [Control Space](/products/control-space), I developed a new Nuxt plugin called [Nuxt Areas](https://github.com/davestewart/nuxt-areas) which rather than stripe dependencies across the application, co-locates code in self-contained "areas":
-
-```
-+- client
-    +- areas
-        +- app
-        +- journalists
-        +- mentions
-        +- news
-            +- components
-            |   +- ...
-            +- pages
-            |   +- ...
-            +- store
-            +- ...
-```
-
-
-### Modules
-
-#### News Search
-
+Ultimately, it seems that AI ate NFTs' lunch, and the attention shifted elsewhere, but it was a great experience working with a varied, remote team with vision, funding and lofty goals.  
 
 ## Links
 
-- [Metalink](https://metalink.com)
+- [Metalink](https://finance.yahoo.com/news/vc-backed-nft-social-platform-140000455.html)
 - [Twitter](https://twitter.com/metalinklabs)
 - [App Store](https://apps.apple.com/us/app/metalink/id1614757016)
