@@ -52,6 +52,8 @@ Note that in the above points I was careful to avoid using the word "overrun".
 
 Overrun implies that the estimate was **sound** and it was the _execution_ that was not. However, we know this is generally **not** the case; you don't take on work just to do **more**, so the **real** problem is being unable to predict what you will need to do, and how long it will take you to do it.
 
+_Also, check [this comment](https://news.ycombinator.com/item?id=36160200) on the Hacker News post for this article; it absolutely nails the question "Why is estimating hard?"._
+
 ## Breaking it down
 
 To uncover my estimation blind spots, I set out to dissect the previous months' effort with clear and unbiased honesty.
@@ -70,7 +72,9 @@ Building on my notes, I shared the observations on [Twitter](https://twitter.com
 
 [![gist screenshot](./images/gist-screenshot.png)](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443)
 
-Do click and have a read though; there's lots of interesting recollections and observations. I'm sure you'll be nodding along and thinking "yeah, that's got me before too!".
+Click the image above and [have a read](https://gist.github.com/davestewart/643ffc55aa7c173618d2707b776a1443) as it uncovers the vast amount of nitty-gritty that we humans too easily forget.
+
+I'm sure you'll be nodding along thinking "wow, that's got me before too!".
 
 ## Reviewing the findings
 
