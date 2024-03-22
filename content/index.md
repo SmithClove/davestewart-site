@@ -44,7 +44,6 @@ media:
     - text: The Work is Never Just "The Work"
       href: /blog/the-work-is-never-just-the-work
       src: /blog/work/project-estimation/images/estimation-featured.png
-
 ---
 
 A London-based web developer currently building [Control Space](/products/control-space).
@@ -55,11 +54,11 @@ I pride myself on a tight mix of technical and creative with a passion for [prod
 
 My commercial work is primarily enterprise [web apps](/work/) after years of agency [sites](/archive/work/) and before that titles [animation](/archive/work/animation/).
 
-I've recently resumed [writing](/blog/) so you can look forward to clear, researched and actionable thinking.
-
 <HomeThumbs />
 
-Feel free to [search](/search/) the site or find out more [here](/bio/).
+And I've recently resumed [writing](/blog/) so you can look forward to clear, researched and actionable thinking.
+
+You can also [search](/search/) the site or check my [bio](/bio/).
 
 Enjoy!
 

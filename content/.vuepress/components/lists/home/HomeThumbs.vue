@@ -1,9 +1,8 @@
 <template>
   <div class="homeThumbs">
     <p>
-      Here's a <a href="#recent" :class="{ active: !options.random }" @click.prevent="setRecent">recent</a>
-      / <a href="#random" :class="{ active: options.random }" @click.prevent="setRandom">random</a>
-      sample of what I've been working on :</p>
+      Here's a <a href="#random" :class="{ active: options.random }" @click.prevent="setRandom">random</a>
+      selection of what I've been working on :</p>
     <ThumbnailWall :pages="pages"/>
   </div>
 </template>
@@ -20,7 +19,7 @@ export default {
       pages: [],
       options: {
         days: null,
-        random: null,
+        random: true,
       }
     }
   },
@@ -47,7 +46,7 @@ export default {
 
   methods: {
     setRecent () {
-      this.options.days = 365 / 2
+      this.options.days = 365
       this.options.random = false
       this.update()
     },
@@ -64,7 +63,7 @@ export default {
 
       // filter pages
       let pages = this.$site.pages
-        .filter(page => page.type === 'post')
+        .filter(page => page.type === 'post' && page.status !== 'preview')
         .sort(sortBy('date', 'desc'))
         .filter(isVisible)
 
