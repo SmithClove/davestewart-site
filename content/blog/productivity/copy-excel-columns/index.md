@@ -2,9 +2,9 @@
 description: An Excel Macro to partially copy named columns between sheets
 date: 2024-03-25
 media:
-  featured: ./excel-copy-featured.png
-  thumbnail: ./excel-copy-featured.png
-  opengraph: ./excel-copy-featured.png
+  featured: ./featured.png
+  thumbnail: ./featured.png
+  opengraph: ./featured.png
   excel:
     - ./images/excel-bank.png
     - ./images/excel-breakdown-01.png
@@ -31,7 +31,7 @@ To do this I have to:
 
 - identify source and target columns
 - identify previous and current dates
-- insert correct number of rows (to target `SUM()`s aren't overwritten)
+- insert correct number of rows (so target `SUM()`s aren't overwritten)
 - select and copy partial source column data, in target column order (possibly via a temporary sheet)
 - review / redo if I made any mistakes
 - repeat for each account
