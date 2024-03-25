@@ -23,7 +23,7 @@ As part of my bookkeeping process I download CSVs and copy selected columns to a
 
 <MediaGallery media="excel" />
 
-Unfortunately, the most time-consuming and error-prone part of this process is selecting and copying the CSV data:
+The most time-consuming and error-prone part of this process is selecting and copying the CSV data:
 
 ![](./images/copy-example.png)
 
@@ -31,7 +31,7 @@ To do this I have to:
 
 - identify source and target columns
 - identify previous and current dates
-- insert correct number of rows to (ensure target `SUM()`s aren't broken)
+- insert correct number of rows (to target `SUM()`s aren't overwritten)
 - select and copy partial source column data, in target column order (possibly via a temporary sheet)
 - review / redo if I made any mistakes
 - repeat for each account
@@ -60,12 +60,6 @@ A few nice UX touches; the macro:
 - pastes values only, so target formatting is respected 
 - shows a selection preview during confirmation
 - selects the final pasted data
-
-The end result should mean when I need to do my accounts, I can just:
-
-- paste in the new CSV rows
-- run the macro to copy values
-- move values to the correct category columns
 
 ## Installation
 
@@ -97,10 +91,17 @@ The raw VBA code (should you want it) is available here:
 
 The code is very-well commented, so take a look if you want to know what's going on under the hood.
 
-## Summary
-
 Excel VBA is a little tricky, but I've hopefully iterated on it enough times to identify the footguns, and now there's a certain level of resilience that it should work in most scenarios.
 
-Feel free to leave a comment if you spot any bugs or need help to understand it. 
-
 FWIW [I used Chat GPT](https://chat.openai.com/share/8f534429-f345-434e-8262-073f6b83465b) to help me work out a lot of it!
+
+## Summary
+
+The end result should mean when I need to do my accounts, I can just:
+
+- paste in the new CSV rows
+- run the macro to copy values
+- get on with categorising values
+
+Feel free to leave a comment if you spot any bugs, or need help to understand the code. 
+
