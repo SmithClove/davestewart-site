@@ -2,11 +2,13 @@
 description: An Excel Macro to partially copy named columns between sheets
 date: 2024-03-25
 media:
-  featured: ./excel-copy.png
-  thumbnail: ./excel-copy-thumb.png
+  featured: ./excel-copy-featured.png
+  thumbnail: ./excel-copy-featured.png
+  opengraph: ./excel-copy-featured.png
   excel:
     - ./images/excel-bank.png
-    - ./images/excel-breakdown.png
+    - ./images/excel-breakdown-01.png
+    - ./images/excel-breakdown-02.png
 tags:
   - vba
   - tools
@@ -17,21 +19,21 @@ tags:
 
 ## Intro
 
-As part of my home and business accounting I download CSVs from my bank.
-
-I add the raw data to an Excel workbook, then partially-copy specific columns from `bank` to `breakdown`:
+As part of my bookkeeping process I download CSVs and copy selected columns to a more simplified sheet, before moving the individual values into categorised columns to help with budging and accounting requirements:
 
 <MediaGallery media="excel" />
 
-This allows me to categorise and sum individual cost centers, for budgeting,  accounting and tax requirements. 
+Unfortunately, the most time-consuming and error-prone part of this process is selecting and copying the CSV data:
 
-Unfortunately, the column-copying step is both time-consuming and error-prone:
+![](./images/copy-example.png)
 
-- identify last-updated date
-- identify target columns
-- insert new rows to (ensure breakdown `SUM()`s aren't broken)
-- copy partial column data in order (possibly via a temporary sheet)
-- review to ensure no mistakes
+To do this I have to:
+
+- identify source and target columns
+- identify previous and current dates
+- insert correct number of rows to (ensure target `SUM()`s aren't broken)
+- select and copy partial source column data, in target column order (possibly via a temporary sheet)
+- review / redo if I made any mistakes
 - repeat for each account
 - repeat for each accounting period
 
@@ -46,20 +48,24 @@ Below is the macro in action, on an example expenses sheet:
 Running the macro will:
 
 - read header cells from the `target` sheet
-- check for the bottom line `Date` in `target` (or copy from the current `source` row)
-- grab the corresponding partial `source` data
+- compare the bottom line `Date` in `target` (or start from the selected `source` row)
+- grab the corresponding partial `source` columns
 - confirm the number of entries and sheets
 - copy the values to the `target` sheet
 
 A few nice UX touches; the macro:
 
-- copies column data using the heading order from the `target` sheet
+- uses `target` sheet headings to determine required data
 - inserts full rows before pasting, so any column `SUM`s are shifted down
 - pastes values only, so target formatting is respected 
 - shows a selection preview during confirmation
 - selects the final pasted data
 
-Excel VBA is a little tricky, but the code provides a decent amount of resilience so that it should work in most scenarios.
+The end result should mean when I need to do my accounts, I can just:
+
+- paste in the new CSV rows
+- run the macro to copy values
+- move values to the correct category columns
 
 ## Installation
 
@@ -90,3 +96,11 @@ The raw VBA code (should you want it) is available here:
 - [excel - copy columns.vba](https://gist.github.com/davestewart/8301538c48a09162e868665ec67d6f3a)
 
 The code is very-well commented, so take a look if you want to know what's going on under the hood.
+
+## Summary
+
+Excel VBA is a little tricky, but I've hopefully iterated on it enough times to identify the footguns, and now there's a certain level of resilience that it should work in most scenarios.
+
+Feel free to leave a comment if you spot any bugs or need help to understand it. 
+
+FWIW [I used Chat GPT](https://chat.openai.com/share/8f534429-f345-434e-8262-073f6b83465b) to help me work out a lot of it!
