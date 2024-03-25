@@ -48,20 +48,23 @@ Below is the macro in action, on an example expenses sheet:
 Running the macro will:
 
 - read header cells from the `target` sheet
-- compare the bottom line `Date` in `target` (or start from the selected `source` row)
-- grab the corresponding partial `source` columns
+- read the bottom line `Date` in the `target` sheet
+- grab the corresponding partial `source` columns, from the next full day
 - confirm the number of entries and sheets
 - copy the values to the `target` sheet
 
 A few nice UX touches; the macro:
 
 - uses `target` sheet headings to determine required data
+- will start from the active `source` row, if no `Date` column or matched date
 - inserts full rows before pasting, so any column `SUM`s are shifted down
 - pastes values only, so target formatting is respected 
 - shows a selection preview during confirmation
 - selects the final pasted data
 
 ## Installation
+
+### Download
 
 The example macro-enabled workbook above can be found here:
 
@@ -70,6 +73,8 @@ The example macro-enabled workbook above can be found here:
 To download and use locally, choose:
 
 - `File` &gt; `Save As` &gt; `Download a Copy`
+
+### Running the macro
 
 To run the macro in the downloaded workbook, choose:
 
@@ -85,13 +90,15 @@ To make the macro globally available, you will need to copy it into a module in 
 
 - [Personal Macro Workbook in Excel - make macros available in all workbooks](https://www.ablebits.com/office-addins-blog/excel-personal-macro-workbook/)
 
-The raw VBA code (should you want it) is available here:
+### The VBA code
+
+A copy of the code (should you not want to install) is available here:
 
 - [excel - copy columns.vba](https://gist.github.com/davestewart/8301538c48a09162e868665ec67d6f3a)
 
-The code is very-well commented, so take a look if you want to know what's going on under the hood.
+It's very-well commented, so take a look if you want to know what's going on under the hood.
 
-Excel VBA is a little tricky, but I've hopefully iterated on it enough times to identify the footguns, and now there's a certain level of resilience that it should work in most scenarios.
+Excel VBA is a little tricky, but I've hopefully iterated on it enough times to identify the footguns, and there's hopefully a certain level of resilience that it should now work in most scenarios. Feel free to leave a comment if you spot any bugs, or need help to understand the code.
 
 FWIW [I used Chat GPT](https://chat.openai.com/share/8f534429-f345-434e-8262-073f6b83465b) to help me work out a lot of it!
 
@@ -101,7 +108,6 @@ The end result should mean when I need to do my accounts, I can just:
 
 - paste in the new CSV rows
 - run the macro to copy values
-- get on with categorising values
+- just get on with categorising
 
-Feel free to leave a comment if you spot any bugs, or need help to understand the code. 
-
+I'm publishing online for both reference and backup; hopefully it will be useful to others too.
