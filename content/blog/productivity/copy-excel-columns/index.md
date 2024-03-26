@@ -31,7 +31,8 @@ To do this I have to:
 
 - identify source and target columns
 - identify previous and current dates
-- insert correct number of rows (so target `SUM()`s aren't overwritten)
+- review and reconcile incomplete date ranges
+- insert correct number of target rows (so any target `SUM()`s are pushed down)
 - select and copy partial source column data, in target column order (possibly via a temporary sheet)
 - review / redo if I made any mistakes
 - repeat for each account
@@ -61,6 +62,8 @@ A few nice UX touches; the macro:
 - pastes values only, so target formatting is respected 
 - shows a selection preview during confirmation
 - selects the final pasted data
+
+Note that if there is a mismatch between the number of starting date entries between the source and target sheets, the macro will warn – and if continuing – will create duplicates in the target sheet which can be manually edited.
 
 ## Installation
 
