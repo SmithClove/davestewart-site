@@ -27,16 +27,29 @@ media:
 
 If you're like me and you work on remote teams, you know it can be really difficult not just to know when folks are supposed to be online, but the **context** in which they are online; is it a reasonable hour, are they missing an evening with their family, maybe they're up outrageously early to align with a stand-up?
 
-***Timezone Planner for Remote Teams*** let you to visualise and plan your remote team's availability, figure out their time of day, days on and off, and be more practical and conscientious in planning meetings.
+***Timezone Planner for Remote Teams*** lets you visualise your remote team's availability, figure out their time of day, days on and off, and be more practical and conscientious in planning meetings.
 
-It comes in the form of a highly-interactive [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous _and_ customisable:
+It comes in the form of a [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous and even customisable:
 
 ![demo](./images/demo.png)
 
-It supports:
+It can sit in an open browser tab, and you can check-in as you need. It renders based on your timezone and updates throughout the day so it's simple to grok everyone's relative time.
+
+In the example above:
+
+- my timezone is highlighted in grey (London)
+- my current day and time are shown in red (it's Wednesday at 15:00)
+- I can see that:
+  - the Back End guys are finishing their day in Ukraine
+  - the CEO will have been up a couple of hours in NYC 
+  - the Designer is just getting started in Chicago
+  - I'm working until 10 tonight to align on US time
+  - I'll even get a few hours with our early-rising Aussie developer!
+
+The spreadsheet supports:
 
 - multiple team members
-- editable location and availability, per team member
+- location, and available hours & days per team member
 - highlighting for current day, time, and available times
 - automatic timezone calculation, including Daylight Saving Time
 - sorting and filtering
@@ -44,14 +57,14 @@ It supports:
 
 You can check out a static demo (all interactivity, formulas, scripts and updates removed) to see how it feels here:
 
-- [docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM](https://docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM/edit?usp=sharing)
+- [Timezone Planner (Static Demo)](https://docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM/edit?usp=sharing)
 
 
 ## Purchase
 
 It's available as a one-time purchase from Gumroad:
 
-<a style="margin: 1rem; color: white" class="gumroad-button" href="https://davestewart.gumroad.com/l/timezone-planner">One-Time Purchase on</a>
+<a style="margin: 1rem; color: white" class="gumroad-button" href="https://davestewart.gumroad.com/l/timezone-planner">Purchase on</a>
 
 It's then yours to own forever, and you're free to edit, customise and share with your team.
 
