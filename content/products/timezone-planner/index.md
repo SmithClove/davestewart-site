@@ -27,37 +27,61 @@ media:
 
 If you're like me and you work on remote teams, you know it can be really difficult not just to know when folks are supposed to be online, but the **context** in which they are online; is it a reasonable hour, are they missing an evening with their family, maybe they're up outrageously early to align with a stand-up?
 
-***Timezone Planner for Remote Teams*** let you to visualise and plan your remote team's availability, figure out their time of day, days on and off, and be more practical and conscientious in planning meetings.
+### Product
 
-It comes in the form of a highly-interactive [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous _and_ customisable:
+[Timezone Planner for Remote Teams](https://davestewart.gumroad.com/l/timezone-planner) lets you visualise your remote team's availability, figure out their time of day, days on and off, and be more practical and conscientious in planning meetings.
+
+It comes in the form of a [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous and even customisable:
 
 ![demo](./images/demo.png)
 
-It supports:
+It can sit in an open browser tab, and you can check-in as you need. It renders based on your timezone and updates throughout the day so it's simple to grok everyone's relative time.
+
+### Benefits
+
+In the example above:
+
+- my timezone is highlighted in grey (London)
+- my current day and time are shown in red (it's Wednesday at 15:00)
+- I can see that:
+  - the Back End guys are finishing their day in Ukraine
+  - the CEO will have been up a couple of hours in NYC 
+  - the Designer is just getting started in Chicago
+  - I'm working until 10 tonight to align on US time
+  - I'll even get a few hours with our early-rising Aussie developer!
+
+### Features
+
+The spreadsheet supports:
 
 - multiple team members
-- editable location and availability, per team member
+- location, and available hours & days per team member
 - highlighting for current day, time, and available times
 - automatic timezone calculation, including Daylight Saving Time
 - sorting and filtering
 - anything else you can do with a spreadsheet!
 
-You can check out a static demo (all interactivity, formulas, scripts and updates removed) to see how it feels here:
-
-- [docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM](https://docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM/edit?usp=sharing)
-
-
 ## Purchase
 
-It's available as a one-time purchase from Gumroad:
+### Full product
 
-<a style="margin: 1rem; color: white" class="gumroad-button" href="https://davestewart.gumroad.com/l/timezone-planner">One-Time Purchase on</a>
+The complete Google Sheet is available as a one-time purchase from Gumroad:
 
-It's then yours to own forever, and you're free to edit, customise and share with your team.
+<a style="margin: 1rem; color: white" class="gumroad-button" href="https://davestewart.gumroad.com/l/timezone-planner">Purchase on</a>
 
-> ***Note:*** because of the copyable nature of the product, there are some license restrictions; essentially it's _per-company / division / team_. If you move to a new company / division / team, you're kindly asked to [repurchase](https://davestewart.gumroad.com/l/timezone-planner).
->
-> Thank you 🙏 
+It's then yours to own, for the life of the team; you're free to edit, customise and share with said team members.
+
+> However, because of the copyable nature of the product, ***there are some license restrictions***; essentially it's _per-company / division / team_. If you move to a new company / division / team, you're kindly asked to [repurchase](https://davestewart.gumroad.com/l/timezone-planner).
+
+Thank you 🙏 
+
+### Static demo
+
+To check out a static demo (all interactivity, formulas, scripts and updates removed) click below:
+
+- [Timezone Planner (Static Demo)](https://docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM/edit?usp=sharing)
+
+_And I'll update this page with a video shortly._
 
 ## Setup		
 
