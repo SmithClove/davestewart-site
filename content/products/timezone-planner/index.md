@@ -6,8 +6,8 @@ tags:
 - productivity
 - tools
 media:
+  opengraph: ./images/featured.png
   thumbnail: ./images/thumbnail.png
-  opengraph: ./images/thumbnail.png
   xvideo:
     src: https://youtube.com/embed/HaDJuB5ODnY
     width: 560
