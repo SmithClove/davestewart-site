@@ -13,12 +13,12 @@ media:
     width: 560
     height: 315
   gallery:
-    - ./images/timezones.png
-    - ./images/filtering.png
-    - ./images/grouping.png
-    - ./images/london.png
-    - ./images/settings.png
-    - ./images/sydney.png
+    - ./gallery/timezones.png
+    - ./gallery/filtering.png
+    - ./gallery/grouping.png
+    - ./gallery/london.png
+    - ./gallery/settings.png
+    - ./gallery/sydney.png
 ---
 
 # Timezone Planner for Remote Teams
@@ -29,16 +29,23 @@ If you're like me and you work on remote teams, you know it can be really diffic
 
 ***Timezone Planner for Remote Teams*** let you to visualise and plan your remote team's availability, figure out their time of day, days on and off, and be more practical and conscientious in planning meetings.
 
-It comes in the form of a [Google Sheet](https://www.google.co.uk/sheets/about/) which makes it both ubiquitous _and_ customisable.
+It comes in the form of a highly-interactive [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous _and_ customisable:
+
+![demo](./images/demo.png)
 
 It supports:
 
 - multiple team members
-- editable available hours and days, per team member
-- highlighting for current day, time, and team member availability
+- editable location and availability, per team member
+- highlighting for current day, time, and available times
 - automatic timezone calculation, including Daylight Saving Time
 - sorting and filtering
-- anything else you can do with a spreadsheet
+- anything else you can do with a spreadsheet!
+
+You can check out a static demo (all interactivity, formulas, scripts and updates removed) to see how it feels here:
+
+- [docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM](https://docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM/edit?usp=sharing)
+
 
 ## Purchase
 
@@ -62,7 +69,7 @@ Thank you 🙏
 
 ## Setup		
 
-The sheet comes with some sample members, just to get you started.
+The sheet comes with some sample members, just to get you started:
 
 You can delete _all but the first row_, which you'll use as a template for new members.
 
