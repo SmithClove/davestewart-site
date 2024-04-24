@@ -55,17 +55,9 @@ It's available as a one-time purchase from Gumroad:
 
 It's then yours to own forever, and you're free to edit, customise and share with your team.
 
-- ***Note, however, that the purchase is licensed per-company / division***
-
-This means if any of the following applies, you (or they) are asked politely to [repurchase](https://davestewart.gumroad.com/l/timezone-planner):
-
-- you want to share the spreadsheet with someone outside the company or division
-- you start work for a new company or a new division
-- any team members join a new company or division
-
-The price tag is very fair for the amount of value it provides and the time it saves!
-
-Thank you 🙏
+> ***Note:*** because of the copyable nature of the product, there are some license restrictions; essentially it's _per-company / division / team_. If you move to a new company / division / team, you're kindly asked to [repurchase](https://davestewart.gumroad.com/l/timezone-planner).
+>
+> Thank you 🙏 
 
 ## Setup		
 
