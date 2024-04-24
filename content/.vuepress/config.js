@@ -28,6 +28,9 @@ module.exports = {
 
     // site
     link('shortcut icon', '/favicon.svg'),
+
+    // scripts
+    script('https://gumroad.com/js/gumroad.js')
   ],
 
   shouldPrefetch (file, type) {
