@@ -13,12 +13,9 @@ media:
     width: 560
     height: 315
   gallery:
-    - ./gallery/timezones.png
-    - ./gallery/filtering.png
-    - ./gallery/grouping.png
-    - ./gallery/london.png
-    - ./gallery/settings.png
-    - ./gallery/sydney.png
+    - ./images/demo.png
+    - ./images/settings.png
+    - ./images/help.png
 ---
 
 # Timezone Planner for Remote Teams
@@ -61,27 +58,51 @@ The spreadsheet supports:
 - sorting and filtering
 - anything else you can do with a spreadsheet!
 
-## Purchase
-
-### Full product
-
-The complete Google Sheet is available as a one-time purchase from Gumroad:
-
-<a style="margin: 1rem; color: white" class="gumroad-button" href="https://davestewart.gumroad.com/l/timezone-planner">Purchase on</a>
-
-It's then yours to own, for the life of the team; you're free to edit, customise and share with said team members.
-
-> However, because of the copyable nature of the product, ***there are some license restrictions***; essentially it's _per-company / division / team_. If you move to a new company / division / team, you're kindly asked to [repurchase](https://davestewart.gumroad.com/l/timezone-planner).
-
-Thank you 🙏 
-
-### Static demo
+### Demo
 
 To check out a static demo (all interactivity, formulas, scripts and updates removed) click below:
 
 - [Timezone Planner (Static Demo)](https://docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM/edit?usp=sharing)
 
 _And I'll update this page with a video shortly._
+
+## Purchase
+
+### Product
+
+The complete Google Sheet is available as a one-time purchase from Gumroad:
+
+<a class="gumroad-button" href="https://davestewart.gumroad.com/l/timezone-planner">Purchase on</a>
+
+It's then yours to use, edit, customise and share with the members on the sheet.
+
+### License
+
+Because of the copyable nature of the product, it operates under a "limited-transfer" policy:
+
+> Essentially, purchase grants you the right to use the Google Sheet for the team it was purchased for, share the sheet or a copy of the sheet with your team, for as long as you manage that team.
+
+As an example, it's fine to:
+
+- add and remove team members as the team or company grows
+- pass a copy of the spreadsheet to your team members for them to edit and plan
+- leave the company and transfer the sheet to your successor 
+
+Here are some examples when you would need to [repurchase](https://davestewart.gumroad.com/l/timezone-planner):
+
+- the team grows to a point where you split teams and need more sheets
+- you move company / division and want to track a new team (even if you have made modifications to the sheet)
+
+Here are some examples where a third-party would need to [purchase](https://davestewart.gumroad.com/l/timezone-planner):
+
+- a team member moves to a new company, and wants to track team members there
+- you share the sheet with a colleague or friend in a different company or division
+- any situation where it would be fair to say it's being used for a completely new team
+
+This is not meant to be a restrictive series of covenants for the sake of it, rather it's meant to provide some guidelines so as a creator it remains worthwhile for me to continue creating, updating and marketing the planner.
+
+Thank you 🙏
+
 
 ## Setup		
 
