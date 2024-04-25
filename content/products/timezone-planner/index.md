@@ -8,14 +8,14 @@ tags:
 media:
   opengraph: ./images/featured.png
   thumbnail: ./images/thumbnail.png
+  gallery:
+    - ./screenshots/team.png
+    - ./screenshots/settings.png
+    - ./screenshots/help.png
   xvideo:
     src: https://youtube.com/embed/HaDJuB5ODnY
     width: 560
     height: 315
-  gallery:
-    - ./images/demo.png
-    - ./images/settings.png
-    - ./images/help.png
 ---
 
 # Timezone Planner for Remote Teams
@@ -30,9 +30,9 @@ If you're like me and you work on remote teams, you know it can be really diffic
 
 It comes in the form of a [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous and even customisable:
 
-![demo](./images/demo.png)
+![demo](./screenshots/team.png)
 
-It can sit in an open browser tab, and you can check-in as you need. It renders based on your timezone and updates throughout the day so it's simple to grok everyone's relative time.
+It can sit in an open browser tab, and you can check-in as you need. It renders based on your timezone and updates throughout the day so it's simple to grok where everyone is in their day (or night!).
 
 ### Benefits
 
@@ -199,7 +199,7 @@ Here are some ideas:
 - Add the current **Location** to the Team sheet
   - select the cell which says "Team"
   - click in the Formula Bar
-  - paste `="Team (" &Settings!E6&")"`
+  - paste `="Team (" & INDIRECT("L") & ")"`
 
 ## Problems		
 
