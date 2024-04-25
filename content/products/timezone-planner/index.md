@@ -210,12 +210,10 @@ Occasionally, the Matrix may get stuck on the Loading status. If this happens:
 - **Copy**, **Delete**, then **Paste** the cells over the same selection
 - this should re-trigger the function to work again
 
-If you fill too many rows using the **fill handle**, conditional formatting may break for later rows. If this happens:
+If use the **fill handle** to create many new rows, conditional formatting may break for later rows – because the **Start** and **End** hours can be converted to days in the future. If this happens:
 
-- review the **Start** and **End** times and ensure they are **hours** and not **days** in the future, i.e. `09:00:00` and not `31/12/1899 09:00:00`
-- rather than using the **fill handle**:
-  - select the entire row you want to copy
-  - , select the row you want to duplicate, and some rows beneath, then use `Cmd`+`D` to "fill down"
+- undo the fill, or delete the new rows
+- hold `Opt` or `Alt` as you fill (which creates an exact copy of the data)
 
 ## Support
 
