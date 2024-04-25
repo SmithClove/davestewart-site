@@ -134,16 +134,16 @@ For team members in different time zones to be able to view from their timezone,
 
 > ***Note:*** the copy will **no longer be linked** to the Master sheet. Unfortunately, this is a limitation of Google Sheets.
 
-### Sheet settings
+### Time settings
 
-To view the sheet in the context of a different timezone: 
+To change the timezones matrix starting hour:
+
+- in the **Settings** tab, edit the **Matrix / Start Time** value
+
+To change the sheet's timezone: 
 
 - make a copy of the sheet via **File > Make a copy**
-- in the **Settings** sheet, edit the **User / Location** value
-
-To change the **Team** matrix global start time:
-
-- in the **Settings** sheet, edit the **Matrix / Start Time** value
+- in the **Settings** tab, edit the **User / Location** value
 
 ## Usage		
 
@@ -221,6 +221,9 @@ If you fill too many rows using the **fill handle**, conditional formatting may 
 
 As this is a one-time purchase, there's no support as such, but I may release updates from time to time.
 
-If you want to be the first to hear, sign-up below:
+I will notify users via the Gumroad mailing list below:
 
 - [davestewart.gumroad.com/subscribe](https://davestewart.gumroad.com/subscribe)
+
+If you need any custom sheet development, get in touch via the links below.
+
