@@ -22,17 +22,23 @@ media:
 
 ## Intro		
 
-If you're like me and you work on remote teams, you know it can be really difficult not just to know when folks are supposed to be online, but the **context** in which they are online; is it a reasonable hour, are they missing an evening with their family, maybe they're up outrageously early to align with a stand-up?
+If you're like me and you work on remote teams, you know juggling timezone differences is _hard_.
+
+Not just understanding when folks are supposed to be online, but in what **context**; is it a reasonable hour, are they missing an evening with their family, maybe they're up outrageously early or late to align with a stand-up – or maybe they should be working but you suspect they're not?
+
+And keeping yourself accountable can be difficult too; it can be easy to fudge starting or finishing on time, or miss connecting with someone because you didn't understand the overlap.
+
+Just checking the time and doing some mental arithmetic is not always sufficient.
 
 ### Product
 
-[Timezone Planner for Remote Teams](https://davestewart.gumroad.com/l/timezone-planner) lets you visualise your remote team's availability, figure out their time of day, days on and off, and be more practical and conscientious in planning meetings.
+[Timezone Planner for Remote Teams](https://davestewart.gumroad.com/l/timezone-planner) lets you visualise your remote team's availability, their time of day, working hours, to be more practical and conscientious in planning your work, meetings and deadlines.
 
-It comes in the form of a [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous and even customisable:
+It comes in the form of a [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous and even _customisable_ if you want additional control:
 
 ![demo](./screenshots/team.png)
 
-It can sit in an open browser tab, and you can check-in as you need. It renders based on your timezone and updates throughout the day so it's simple to grok where everyone is in their day (or night!).
+You can leave it open in a browser tab, and check-in as needed. It renders from your timezone and updates throughout the day so, it's simple to grok everyone's working hours, when you need to take that call or complete your work.
 
 ### Benefits
 
@@ -64,7 +70,7 @@ To check out a static demo (all interactivity, formulas, scripts and updates rem
 
 - [Timezone Planner (Static Demo)](https://docs.google.com/spreadsheets/d/119PagDykmI2KGymQCsWcd04XdyMUHkQ3tUZmTKUGFqM/edit?usp=sharing)
 
-_And I'll update this page with a video shortly._
+Hover over the comment annotations for additional context.
 
 ## Purchase
 
@@ -74,35 +80,24 @@ The complete Google Sheet is available as a one-time purchase from Gumroad:
 
 <a class="gumroad-button" href="https://davestewart.gumroad.com/l/timezone-planner">Purchase on</a>
 
-It's then yours to use, edit, customise and share with the members on the sheet.
+### Usage and License
 
-### License
+You're free to use the sheet – forever – as you see fit:
 
-Because of the copyable nature of the product, it operates under a "limited-transfer" policy:
+- add as many team members as you like
+- edit, customise, copy and reuse the spreadsheet
+- track multiple teams, friends, or family, in multiple spreadsheets
+- share the sheet as a viewer – but don't distribute copies
 
-> Essentially, purchase grants you the right to use the Google Sheet for the team it was purchased for, share the sheet or a copy of the sheet with your team, for as long as you manage that team.
+The last clause is because the license is **non-transferable**; you can't give a copy of the sheet away (even a modified version) to other team members, friends, or contacts to start tracking their own teams or contacts; they would need to [purchase](https://davestewart.gumroad.com/l/timezone-planner) their own copy – _then_ you could share **your** copy of the sheet with them.
 
-As an example, it's fine to:
+> For those that want tighter integration with their team... hang tight; I'm considering a [web app](http://timezone-planner.app) version of the planner which would provide the same functionality but without the timezone and sharing limitations.
+> 
+> Subscribe to my [Gumroad list](https://davestewart.gumroad.com/subscribe) to be kept informed.
 
-- add and remove team members as the team or company grows
-- pass a copy of the spreadsheet to your team members for them to edit and plan
-- leave the company and transfer the sheet to your successor 
-
-Here are some examples when you would need to [repurchase](https://davestewart.gumroad.com/l/timezone-planner):
-
-- the team grows to a point where you split teams and need more sheets
-- you move company / division and want to track a new team (even if you have made modifications to the sheet)
-
-Here are some examples where a third-party would need to [purchase](https://davestewart.gumroad.com/l/timezone-planner):
-
-- a team member moves to a new company, and wants to track team members there
-- you share the sheet with a colleague or friend in a different company or division
-- any situation where it would be fair to say it's being used for a completely new team
-
-This is not meant to be a restrictive series of covenants for the sake of it, rather it's meant to provide some guidelines so as a creator it remains worthwhile for me to continue creating, updating and marketing the planner.
+_Note: These terms aren't meant to be restrictive for the sake of it, but rather to support creators like myself in building, marketing and maintaining useful tools._
 
 Thank you 🙏
-
 
 ## Setup		
 
@@ -217,7 +212,7 @@ If use the **fill handle** to create many new rows, conditional formatting may b
 
 ## Support
 
-As this is a one-time purchase, there's no support as such, but I may release updates from time to time.
+As this is a one-time purchase, there's no support as such, but I may release updates or new features from time to time.
 
 I will notify users via the Gumroad mailing list below:
 
