@@ -11,14 +11,13 @@ media:
   gallery:
     - ./screenshots/team.png
     - ./screenshots/settings.png
-    - ./screenshots/help.png
   xvideo:
     src: https://youtube.com/embed/HaDJuB5ODnY
     width: 560
     height: 315
 ---
 
-# Timezone Planner for Remote Teams
+# Timezone Planner
 
 ## Intro		
 
@@ -32,7 +31,7 @@ Just checking the time and doing some mental arithmetic is not always sufficient
 
 ### Product
 
-[Timezone Planner for Remote Teams](https://davestewart.gumroad.com/l/timezone-planner) lets you visualise your remote team's availability, their time of day, working hours, to be more practical and conscientious in planning your work, meetings and deadlines.
+[Timezone Planner](https://davestewart.gumroad.com/l/timezone-planner) lets you visualise your remote team's availability, their time of day, working hours, to be more practical and conscientious in planning your work, meetings and deadlines.
 
 It comes in the form of a [Google Sheet](https://www.google.co.uk/sheets/about/), so it's ubiquitous and even _customisable_ if you want additional control:
 
@@ -80,22 +79,21 @@ The complete Google Sheet is available as a one-time purchase from Gumroad:
 
 <a class="gumroad-button" href="https://davestewart.gumroad.com/l/timezone-planner">Purchase on</a>
 
-### Usage and License
+### Fair-use policy
 
 You're free to use the sheet – forever – as you see fit:
 
 - add as many team members as you like
 - edit, customise, copy and reuse the spreadsheet
 - track multiple teams, friends, or family, in multiple spreadsheets
-- share the sheet as a viewer – but don't distribute copies
 
-The last clause is because the license is **non-transferable**; you can't give a copy of the sheet away (even a modified version) to other team members, friends, or contacts to start tracking their own teams or contacts; they would need to [purchase](https://davestewart.gumroad.com/l/timezone-planner) their own copy – _then_ you could share **your** copy of the sheet with them.
+***But, please don't share copies!***
 
-> For those that want tighter integration with their team... hang tight; I'm considering a [web app](http://timezone-planner.app) version of the planner which would provide the same functionality but without the timezone and sharing limitations.
-> 
-> Subscribe to my [Gumroad list](https://davestewart.gumroad.com/subscribe) to be kept informed.
+Rather, point them here or the [Gumroad](https://davestewart.gumroad.com/l/timezone-planner) page to purchase their own copy.
 
-_Note: These terms aren't meant to be restrictive for the sake of it, but rather to support creators like myself in building, marketing and maintaining useful tools._
+It's only 20 bucks, and it supports indie makers like me 🤓
+
+> If you're interested in team purchase options, [drop me a DM on Twitter](https://twitter.com/dave_stewart)
 
 Thank you 🙏
 
@@ -118,27 +116,15 @@ Then:
 - edit the **Name**, **Role**, and **Location** _(the timezone / `TZ` column is calculated automatically)_
 - edit the available **Hours** (as time) and **Days** _(Mac users can add bullets with `Opt`+`8`, but you can use any character)_
 
-### Share with your team
-
-For team members in the same timezone, you can simply share the sheet.
-
-For team members in different time zones to be able to view from their timezone, they'll need to:
-
-- **make a copy** of the sheet
-- update their **Location** in the [Settings](#sheet-settings) tab
-
-> ***Note:*** the copy will **no longer be linked** to the Master sheet. Unfortunately, this is a limitation of Google Sheets.
-
-### Time settings
-
-To change the timezones matrix starting hour:
-
-- in the **Settings** tab, edit the **Matrix / Start Time** value
+### Localise the sheet
 
 To change the sheet's timezone: 
 
-- make a copy of the sheet via **File > Make a copy**
-- in the **Settings** tab, edit the **User / Location** value
+- in the **Settings** tab, edit the **Time / Location** value
+
+To change the timezones matrix starting hour:
+
+- in the **Settings** tab, edit the **Time / Start Time** value
 
 ## Usage		
 
@@ -158,7 +144,9 @@ Here are a few tips for working with team times:
 - Align working hours with other team members:
   - Change **Start** and **End** times as required
 
-> ***Remember***: if you made a **copy** of your sheet, this will only update for your sheet.
+<!--
+***Remember***: if you made a **copy** of your sheet, this will only update for your sheet.
+-->
 
 ### Customisations
 
@@ -196,6 +184,20 @@ Here are some ideas:
   - click in the Formula Bar
   - paste `="Team (" & INDIRECT("L") & ")"`
 
+
+### Fair-use sharing
+
+If you decide to share your carefully-curated schedule with another team member, you can just copy and paste.
+
+Here's the steps:
+
+- copy values from the first set of blocks
+- you paste into an email, Slack or even another spreadsheet
+- they paste the values into their spreadsheet
+- they ensure their sheet is localised in [settings](#localise-the-sheet)
+
+However – ***please*** see the note above about [sharing](#fair-use-policy) and fair use!
+
 ## Problems		
 
 Occasionally, the Matrix may get stuck on the Loading status. If this happens:
@@ -214,7 +216,9 @@ If use the **fill handle** to create many new rows, conditional formatting may b
 
 As this is a one-time purchase, there's no support as such, but I may release updates or new features from time to time.
 
-I will notify users via the Gumroad mailing list below:
+I am also considering a web-app version which would provide a similar spreadsheet-like experience – but with additional collaborative and team features.
+
+To be the first to hear about either, subscribe to my Gumroad list:
 
 - [davestewart.gumroad.com/subscribe](https://davestewart.gumroad.com/subscribe)
 
