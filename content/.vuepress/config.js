@@ -106,7 +106,7 @@ module.exports = {
       ],
     }],
     ['@renovamen/vuepress-plugin-reading-time', {
-      wordsPerMinuteEN: 200,
+      wordsPerMinuteEN: 350,
       includes: ['/blog/*'],
     }],
     /*
