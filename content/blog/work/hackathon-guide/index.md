@@ -203,7 +203,7 @@ It might be noisy, or cold, or you might feel a little overwhelmed with so many 
 
 Additionally, you should make sure you're considerate to others who may need to focus! Turn off your audio alerts, be conscious of those around you, don't type like you're paying tribute to [Fred Astaire](https://www.youtube.com/watch?v=IQFamAFNALE&ab_channel=MsMojo) (I've been there, it's not cool) and be mindful that folks may be feeling the time pressure, or lacking sleep on the second day.
 
-Additionally, make sure the software you plan to use works on the laptop you're going to use, and ideally do a dry-run perhaps at a coffee shop before the event. If you need access to code consider cloning the repositories you need locally, so if there is an Internet outage you're not freaking out because you didn't prepare.
+Additionally, make sure the software you plan to use works on the laptop you're going to use, and ideally do a dry-run perhaps at a coffee shop before the event. If you need access to code consider cloning any repositories or previous projects you need locally, so if there is an Internet outage you definitely have the code you need to hand.
 
 ### Planning
 
@@ -213,26 +213,38 @@ You are not building something to go into production for a client or actual user
 
 If you exceed that and manage to build something genuinely production-ready, then brilliant, but do not get distracted with how cool it would be with this feature, or if it used that technology (unless your core idea is actually that feature written in that technology).
 
-The more you over-plan, the more potential rabbit holes you have to fall into; do not start speccing the perfect API, do not get lost in UML diagrams, do not start writing documentation. The aim of any planning session at the event should be to get the team on the same page ASAP so you can get something built for the end of event demo (see also, [yak shaving](https://www.techtarget.com/whatis/definition/yak-shaving)).
+The more you over-plan, the more potential rabbit holes you have to fall into; do not start speccing the perfect API, do not get lost in UML diagrams, do not start writing documentation. The aim of in-event planning should be to get the team aligned ASAP so you can build the right thing for the demo (see also, [yak shaving](https://www.techtarget.com/whatis/definition/yak-shaving)).
 
 ### Execution
 
 If you haven't yet got the message of how critical a commodity **time** is at a hackathon, you must have skipped ahead 😁.
 
-The execution stage of the hackathon is where it pays off to be the most brutal. You're going to have to write code you're not proud of. You'll have to copy and paste from Stack Overflow. You'll need to butcher code you wrote on a project last year. You may very well feel dirty for some of the things you do, but moving quickly now will move you closer to the goal of getting it done.
+The execution stage of the hackathon is where it pays to be the most brutal. You're going to have to write code you're not proud of. You'll have to copy and paste from Stack Overflow. You'll need to butcher code you wrote on a project last year. You may very well feel dirty for some of the things you do, but moving quickly now will move you closer to the goal of getting it done.
 
 Here's a list in no particular order of things you should consider:
 
 - do **not** use a new technology; stick to what you know and can write quickly and efficiently
 - refactor an existing project you know well; project setup takes way, *way* longer than you remember
-- Don't get bogged down with configuration, best-practices, the perfect linting setup or such like
+- don't get bogged down with configuration, best-practices, the perfect linting setup or such like
+- practice with core libraries or frameworks in a new project beforehand so you're not reading docs on the day
 - copy and paste a component library or set of utils you wrote in other projects to get up and running quickly
-- use code someone else wrote, for example a demo or starter project (but be mindful of any over-complexity)
+- leverage third-party code, for example a library demo or starter project (but be mindful of any over-complexity)
 - use Chat GPT to write code for you, especially if you are stuck for more than 5 minutes
 
-Your aim is to spend as little time as possible working through needless decisions or rebuilding what has been done before, and use any shortcuts or prior art to help communicate the core idea so you can ace the demo. If you think the project has legs for the future – fine – but hold your nose for now and keep *iterating*; you can refactor after the hackathon if that's the way things go.
+Your aim is to spend as little time as possible building the foundations or working through needless decisions. You should use any shortcuts or prior art to help deliver on the core idea for the final demo. If you think the project has legs for the future – fine – but hold your nose for now and keep *iterating*; you can refactor after the hackathon if that's the way things go.
 
-Of course, there is always a balance to be struck, but the takeaway is [everything takes longer than you expect](https://davestewart.co.uk/blog/the-work-is-never-just-the-work/) – and the one thing you don't have in a hackathon is **time** – you need to think mindfully and laterally to not to waste it. 
+Of course, there is always a balance to be struck, but the takeaway is always takes longer than you expect – and the one thing you don't have in a hackathon is **time** – you need to think laterally and stay mindful as not to waste it.
+
+FWIW I've written about humans vs time before; you may find the following helpful:
+
+- [The work is never just “the work”](https://davestewart.co.uk/blog/the-work-is-never-just-the-work)<br>
+  A deep dive on why projects always take longer and a framework to improve future estimation
+- [Diary of a rapid application build](https://davestewart.co.uk/projects/open-source/app-diary)<br>Development diary and reflection on building a Trello clone in 8 hours
+- [Got Paper?](https://davestewart.co.uk/products/got-paper)<br>
+  A cheeky app to calculate your toilet paper requirements
+
+The [diary section](https://davestewart.github.io/app-diary/#/diary/index) of the rapid application build project is especially relevant for any hackathon; check the **TL;DR**s!
+
 
 ### Demo
 
