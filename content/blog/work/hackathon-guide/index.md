@@ -31,7 +31,7 @@ I've written this article in two main parts – which you may skim or skip as yo
   - [General](#general-advice)
   - [Afterwards](#afterwards)
 
-I hope this article inspires you to go, or if you've already been, contribute in the comments your own tips and tricks, or perhaps share this article to inspire others to go and catch the bug!
+I hope this article inspires you to go, or if you've already been, share your tips and tricks in the comments, or perhaps share this article to inspire others to go and catch the bug!
 
 ## Rationale
 
