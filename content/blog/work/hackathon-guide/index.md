@@ -1,7 +1,6 @@
 ---
 shortTitle: Hackathon Guide
 description: An intro to hackathons and how to get the most out of them
-preview: true
 media:
   featured: ./images/featured.jpg
   thumbnail: ./images/thumbnail.jpg
@@ -42,11 +41,11 @@ A hackathon is generally a physical event, spread over one or two days, where gr
 
 Usually events have an overarching theme or problem space for attendees to unite behind, and sometimes a company or organisation will host or sponsor the hackathon to generate interest or momentum in a particular area or for a product or service.
 
-Sometimes folks will form teams in advance, and sometimes folks will form teams on the day with people they've never met before, and usually *at least* half of the attendees will be programmers or technicians who are capable of realising the final project.
+Sometimes folks will form teams in advance, or they may form teams on the day with people they've never met before, and usually *at least* half of the attendees will be technical and capable of realising the final project.
 
-Sometimes folks will come with a set idea of what they want to build, and sometimes teams will decide between them on the day what they might build. Sometimes hackathons partner with non-technical people who will pitch ideas and supply the experience and domain knowledge to generate and drive the individual projects over the course of the event.
+Folks may arrive with a set idea of what they want to build, or teams might decide on the day what to build. Some hackathons bring together non-technical people who will pitch ideas and bring the domain knowledge to generate and drive the individual projects.
 
-There are also a wide variety of motivating factors that encourage folks to attend. Perhaps they have an existing interest in the problem space, want to sharpen up their skills, meet new people or try something new. Maybe they're non-technical but have an idea and want to see if it has legs, or find co-founders for a future endeavour. Or maybe they've just caught the hackathon bug and just love the experience!
+There are also a wide variety of motivating factors that encourage folks to attend. Perhaps they have an existing interest in the problem space, or want to sharpen up their skills. Maybe they're bringing an idea to see if it has legs, or find co-founders for a future endeavour. Or maybe they've caught the hackathon bug and and just love the experience!
 
 ### How does a hackathon run and what can you expect?
 
@@ -159,7 +158,7 @@ The idea has to be interesting, or else no one will care when you present.
 
 People have to be motivated to work on it, or else you won't be able to recruit and leverage the skills of a larger team.
 
-Your idea – or a subset of your idea – has to be achievable in the given time and with the given team, or else you will spend too much time planning, not enough time executing, and will have nothing to present at the end.
+Your idea – or a subset of your idea – has to be achievable in the given time and with the given team, or else you will spend too much time theorising, not enough time executing, and will have nothing to present at the end.
 
 Depending on how much time you have at the event you're *really* looking to build a proof-of-concept, conduct a feasibility exercise, or perhaps launch a plugin for a framework or ecosystem. Or perhaps your hack is not a product but a service, or a marketing campaign, and you want to leverage vitality and network effects, and the hackathon is the first step in bringing together the right people and placing a small bet on a seed that will be planted at the event but grow roots after.
 
@@ -171,7 +170,7 @@ Your team can absolutely **make or break** your hackathon, and there are various
 
 Team size is one of the most crucial choices to make:
 
-- a two person team may work great together, but you'll lack the firepower of a larger team, and may not get enough work done in the time to create something useful
+- a two person team may work great together, but you'll lack the firepower of a larger team, and may not get enough work done in the time to compete with larger teams (but, don't let that stop you!)
 - a four to six person team is probably the sweet spot; any more and people may not have something to do or it becomes too difficult to meaningfully split and coordinate the work
 
 Here's some examples of team splits:
