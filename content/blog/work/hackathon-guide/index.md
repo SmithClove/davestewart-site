@@ -2,6 +2,9 @@
 shortTitle: Hackathon Guide
 description: An intro to hackathons and how to get the most out of them
 preview: true
+media:
+  featured: ./images/featured.jpg
+  thumbnail: ./images/thumbnail.jpg
 ---
 
 # Guide to nailing your next hackathon
