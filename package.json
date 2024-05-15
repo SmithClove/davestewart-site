@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vuepress dev content --temp .temp",
     "debug": "vuepress dev content --debug",
-    "build": "vuepress build content --dest output && mkdir output/cdn && cp -R output/assets/img output/cdn/img",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress build content --dest output && mkdir output/cdn && cp -R output/assets/img output/cdn/img",
     "serve": "npx serve output"
   },
   "license": "MIT",
@@ -30,6 +30,7 @@
   "dependencies": {
     "@cloudfour/simple-svg-placeholder": "^1.0.2",
     "@renovamen/vuepress-plugin-reading-time": "^0.2.1",
+    "cross-env": "^7.0.3",
     "date-fns": "^2.27.0",
     "fast-sort": "^2.2.0",
     "iframe-resizer": "^4.3.2",

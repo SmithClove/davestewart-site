@@ -1,6 +1,7 @@
 ---
 shortTitle: Hackathon Guide
 description: An intro to hackathons and how to get the most out of them
+date: 2024-05-10
 media:
   featured: ./images/featured.jpg
   thumbnail: ./images/thumbnail.jpg
@@ -158,7 +159,7 @@ The idea has to be interesting, or else no one will care when you present.
 
 People have to be motivated to work on it, or else you won't be able to recruit and leverage the skills of a larger team.
 
-Your idea – or a subset of your idea – has to be achievable in the given time and with the given team, or else you will spend too much time theorising, not enough time executing, and will have nothing to present at the end.
+Your idea – or a subset of your idea – has to be achievable in the given time and with the given team, or else you will spend too much time theorising, not enough time executing, and will have nothing to present at the end.
 
 Depending on how much time you have at the event you're *really* looking to build a proof-of-concept, conduct a feasibility exercise, or perhaps launch a plugin for a framework or ecosystem. Or perhaps your hack is not a product but a service, or a marketing campaign, and you want to leverage vitality and network effects, and the hackathon is the first step in bringing together the right people and placing a small bet on a seed that will be planted at the event but grow roots after.
 
@@ -235,7 +236,7 @@ Here's a list in no particular order of things you should consider:
 
 Your aim is to spend as little time as possible building the foundations or working through needless decisions. You should use any shortcuts or prior art to help deliver on the core idea for the final demo. If you think the project has legs for the future – fine – but hold your nose for now and keep *iterating*; you can refactor after the hackathon if that's the way things go.
 
-Of course, there is always a balance to be struck, but the takeaway is always takes longer than you expect – and the one thing you don't have in a hackathon is **time** – you need to think laterally and stay mindful as not to waste it.
+Of course, there is always a balance to be struck, but the takeaway is always takes longer than you expect – and the one thing you don't have in a hackathon is **time** – you need to think laterally and stay mindful as not to waste it.
 
 FWIW I've written about humans vs time before; you may find the following helpful:
 
