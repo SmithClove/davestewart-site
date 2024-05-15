@@ -2,7 +2,7 @@
 description: Build sites that scale by structuring code by domain, not concern
 date: 2024-05-14
 media:
-  opengraph: ./images/opengraph.png
+  opengraph: ./images/featured.png
   featured: ./images/featured.png
   thumbnail: ./images/thumb.png
 ---
@@ -11,27 +11,32 @@ media:
 
 ## Intro
 
-Nuxt 3 introduces a new paradigm called "Layers" that the docs [describe](https://nuxt.com/docs/getting-started/layers) as "a powerful system that allows you to extend the default files, configs, and much more". Whilst this explanation may be _technically_ accurate, the emphasis on "extending" overlooks a more everyday use case, that of "structuring" your application by *domain (vs concern)*.
+Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as [a powerful system that allows you to extend the default files, configs, and much more](https://nuxt.com/docs/getting-started/layers). Whilst this explanation is _technically_ accurate, the emphasis on "extending defaults" overlooks another perhaps more impactful use case – that of _reorganising_ your application **by domain**.
 
 To get you up-to-speed on the concepts, I'll begin with some theory:
 
 - [Site structuring](#site-structuring)<br>
-  A comparison of structuring by concern vs by domain
+  A comparison of organising by concern vs by domain
 - [Nuxt layers intro](#nuxt-layers-intro)<br>
   A brief intro to Nuxt layers and how they work
 
 Then, I'll share actionable steps to migrate an existing Nuxt application: 
 
-- [Demo](#demo)<br>
-  A demo repo with tagged commits following a layers migration
 - [Nuxt concerns](#nuxt-concerns)<br>
   How individual Nuxt concerns work or need to be reconfigured when moved to layers
 - [Site migration](#migrating-an-existing-site)<br>
   Advice and steps to successfully migrate your own Nuxt 3 site to layers
+- [Demo](#demo)<br>
+  A demo repo with tagged commits following a layers migration
+
+You might also want to skim the official Layers docs before continuing:
+
+- [Get Started » Layers](https://nuxt.com/docs/getting-started/layers)
+- [Guide » Authoring Nuxt Layers](https://nuxt.com/docs/guide/going-further/layers)
 
 ## Site structuring
 
-Let's take a look at two main ways to structure sites and apps; by [concern](#by-concern) and by [domain](#by-domain).
+Let's take a look at two main ways to organise sites and apps; by [concern](#by-concern) and by [domain](#by-domain).
 
 > Note that the choice of words "domain" and "concern" could easily be "feature" and "responsibility".
 >
@@ -54,7 +59,7 @@ Most Vue and Nuxt projects are born of simple starter templates, which group fil
     +- ...
 ```
 
-This structure is simple to understand and somewhat invisible when your site or application is small.
+This folder structure is simple to understand and somewhat invisible when your site or application is small.
 
 However, as sites grow in size, this grouping obfuscates more *natural* relationships (i.e. everything related to `blog`) which makes it hard to understand what your site or application actually *does*.
 
@@ -112,7 +117,7 @@ Then the main `nuxt.config.ts` tells Nuxt where your layers are.
 
 ### Example
 
-For example, a small personal site might be structured as follows:
+For example, a small personal site might be organised as follows:
 
 ```
 +- src
@@ -151,34 +156,6 @@ export default defineNuxtConfig({
 
 Note that c12 can also extend from [packages and repos](https://nuxt.com/docs/getting-started/layers#usage) – but for the sake of this article, I'm only covering folders.
 
-## Demo
-
-So that's the theory covered, *let's see some code!*
-
-In order to provide the actionable advice I mentioned, I wanted to share a real-world migration – so I've taken Sebastian Chopin's [Alpine](https://github.com/nuxt-themes/alpine/) theme demo – which gives me some content to work with – and progressively migrated it from a _concern_-based to a _domain_-based setup.
-
-The [milestones](https://github.com/davestewart/nuxt-layers-demo/commits/main/) in the migration are:
-
-- `0.1.0` – **[Alpine starter repo](https://github.com/davestewart/nuxt-layers-demo/tree/16f9e7a0a9555d889d236d2f36f8a7f040105d4a)**<br>
-  Local content extending external theme
-- `0.5.0` – **[Combined theme and content](https://github.com/davestewart/nuxt-layers-demo/tree/8eb099e84d89204466e9ac7c8b3eb74eabc100af)**<br>
-  Local content and theme, with a traditional flat folder structure (by concern)
-- `1.0.0` – **[Refactor to flat layers](https://github.com/davestewart/nuxt-layers-demo/tree/a9345e527f340c71a5de286a19e19b90edc2d25c)**<br>
-  Repackage to core, site and articles layers (by domain)
-- `1.1.0` – **[Refactor layers to subfolder](https://github.com/davestewart/nuxt-layers-demo/tree/e022ec2f995128a4287ffa5bbedccbf40ec77594)**<br>
-  Move site and articles to sub-folder (by domain, but neater)
-- `1.2.0` – **Refactor using Nuxt Layers Utils** (TBC)<br>
-  Migrate path configuration to root (by domain, but simpler)
-
-You can clone or browse the repo from here:
-
-- [github.com/davestewart/nuxt-layers-demo](https://github.com/davestewart/nuxt-layers-demo)
-
-And be sure to skim the official Layers docs before continuing:
-
-- [Get Started » Layers](https://nuxt.com/docs/getting-started/layers)
-- [Guide » Authoring Nuxt Layers](https://nuxt.com/docs/guide/going-further/layers)
-
 ## Nuxt concerns
 
 Now that you understand how a layer-based site is structured, let's review any specifics for Nuxt's concerns to work correctly under this new paradigm:
@@ -192,7 +169,9 @@ Now that you understand how a layer-based site is structured, let's review any s
 - [Config](#config)
 - [Imports and exports](#imports-and-exports)
 
-> Note that this section is effectively a **sanity check** for layer-related configuration, and sets you up for the final [migration](#migrating-an-existing-site) section which talks you through the nitty-gritty of a full site refactor to layers.
+> Note that this section is effectively a **sanity check** for layer-related configuration, and:
+> - sets you up for the final [migration](#migrating-an-existing-site) section which takes you through full layers refactor
+> - provides lots of tips and tricks for configuration in general
 
 ### Framework folders
 
@@ -237,17 +216,41 @@ I looked into whether it would be possible using the [`pages:extend`](https://nu
 
 ### Components
 
-Nuxt's components auto-importing and auto-registering rules are IMHO [unnecessarily complex and opaque](https://nuxt.com/docs/guide/directory-structure/components#component-names) – and given that Nuxt Layers are a reasonably simple mechanism to organise things – I wanted to address that. 
+> ***Warning!*** Side-rant coming up 😖
 
-> It actually took a lot of research to get this part of the article correct, and I learned a lot I didn't know about Nuxt's auto-import and renaming mechanisms – which I am **not** a fan of – but I _will_ explain.
+Nuxt's components [auto-importing and auto-registering rules](https://nuxt.com/docs/guide/directory-structure/components#component-names) are IMHO [unnecessarily complex and opaque](https://stackblitz.com/edit/nuxt3-component-config) – and considering this article is about helping you organise your Nuxt app at scale – I wanted to comment on what I see as a major anti-pattern, too much magic, and something to avoid.
 
-Effectively, if you are relying on Nuxt's default `auto-import` functionality (i.e., no `components` config):
+The nub of it is; if you are relying on Nuxt's default `auto-import` functionality for components, know that:
 
 - component folders **are** recursively scanned
-- **however** nested components are **prefixed** with the path's segments
-- so if you were expecting **only** the component name, you will need to **manually** configure each layer
+- **but** nested components are **prefixed** with the path's segments
 
-Let's take a look at the options:
+As such, the **default** "auto-importing" is also "auto-renaming" (in order to avoid collisions in the global namespace):
+
+| Folder             | Component        | AutoImport       |
+|--------------------|------------------|------------------|
+| `components`       | `Input.vue`      | `Input.vue`      |
+| `components`       | `FormsInput.vue` | `FormsInput.vue` |
+| `components/forms` | `Input.vue`      | `FormsInput.vue` |
+| `components/forms` | `FormsInput.vue` | `FormsInput.vue` |
+
+My problems with this are:
+
+- this is not intuitive for newcomers to Nuxt
+- you can't move components without the auto-import itself being renamed
+- thus, moving components to subfolders will inexplainably break your app
+- you have to manually find and replace component names in your markup
+- you can potentially have _multiple_ components pointing at the same auto-import 
+- you don't know what components are used, where, or how many times
+- there are no explicit imports for your IDE to track and update
+- you lose the ability to navigate to a component via its import
+- most IDEs add components import statements anyway
+- ESLint rules can remove unused import statements anyway
+- it might save in small projects but steals time in larger ones
+
+And the larger your application gets, you want **less** magic and **more** assurance.
+
+So with that in mind, your options for component auto-importing are:
 
 ```ts
 // src/nuxt.config.ts
@@ -265,7 +268,7 @@ export default defineNuxtConfig({
 })
 ```
 
-Note that `components` supports layer-relative paths:
+Note that `components` config supports folder names (useful in layers):
 
 ```ts
 // src/layers/site/nuxt.config.ts
@@ -276,16 +279,24 @@ export default defineNuxtConfig({
 })
 ```
 
-Finally, note that using the `components` config option in root or layer config will **replace** the default `components` path:
+You can also [disable component auto-import](https://nuxt.com/docs/guide/concepts/auto-imports#auto-imported-components) entirely, including any default `components` folder:
 
 ```ts
-// nuxt.config.ts
+// root or layer nuxt.config.ts
 export default defineNuxtConfig({
-  components: [] // this disables the default `components` folder
+  components: []
 })
 ```
 
-See the [path configuration](#path-configuration) section for detailed information about how Nuxt handles paths.
+You can also [disable _any_ auto-importing](https://nuxt.com/docs/guide/concepts/auto-imports#disabling-auto-imports) but then you lose the benefit of importing the boring stuff:
+
+```ts
+export default defineNuxtConfig({
+  imports: {
+    autoImport: false
+  }
+})
+```
 
 ### Auto-imports
 
@@ -312,6 +323,10 @@ export default defineNuxtConfig({
   }
 })
 ```
+
+Note also that `imports.dirs` [supports globs](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned), whereas `components` does not.
+
+See the [path configuration](#path-configuration) section for detailed information about how Nuxt handles paths.
 
 ### Nuxt Content
 
@@ -447,7 +462,7 @@ For complex configuration that may differ only _slightly_ across layers (such as
 export function defineLayerConfig (path: string, options?: LayerOptions) {
   const output: ReturnType<typeof defineNuxtConfig> = {}
   if (options.hooks) { ... }
-  if (options.foo) { ... }
+  if (options.thing) { ... }
   return output
 }
 ```
@@ -460,8 +475,8 @@ import { defineLayerConfig } from '../base/utils/layers'
 
 export default defineNuxtConfig ({
   ...defineLayerConfig(__dirname, {
-    hooks: { ... },
-    foo: [ ... ] 
+    hooks: [ 'foo', 'bar'],
+    thing: true 
   })
 })
 ```
@@ -668,7 +683,9 @@ Here's a sample of the differences between some of [25+ path-related](https://gi
 
 There is also the question of _where_ to configure your paths; in the **root** and/or **layer** configuration?
 
-My experience has led me to the conclusion that ***it's just simpler to configure all path-related config in the root***:
+I think for **smaller** sites, it's fine to configure paths in the layer config.
+
+But for **larger** sites, I've come to the conclusion that ***it's just simpler to configure all path-related config in the root***:
 
 - it's easier to compare and copy/paste paths between options
 - you're not searching through multiple folders and layer config files
@@ -729,9 +746,7 @@ You should treat it like any other major refactor and aim to go slow; migrate fe
 
 Set aside a few hours for a small site, and a day or more for a larger, in-production one.
 
-Review the demo for a real-world example:
-
-- [Nuxt Layers Demo](https://github.com/davestewart/nuxt-layers-demo/commits/main/)
+> You can review the [demo](#demo) at the end for a real-world example:
 
 #### Steps
 
@@ -865,6 +880,29 @@ export default defineNuxtConfig({
   ]
 })
 ```
+
+## Demo
+
+So that's a lot of theory; *let's see some code!*
+
+I've taken Sebastian Chopin's [Alpine](https://github.com/nuxt-themes/alpine/) theme demo and migrated it from a _concern_-based to a _domain_-based setup.
+
+The tagged [milestones](https://github.com/davestewart/nuxt-layers-demo/commits/main/) in this migration are:
+
+- `0.1.0` – **[Alpine starter repo](https://github.com/davestewart/nuxt-layers-demo/tree/16f9e7a0a9555d889d236d2f36f8a7f040105d4a)**<br>
+  Local content extending external theme
+- `0.5.0` – **[Combined theme and content](https://github.com/davestewart/nuxt-layers-demo/tree/8eb099e84d89204466e9ac7c8b3eb74eabc100af)**<br>
+  Local content and theme, with a traditional flat folder structure (by concern)
+- `1.0.0` – **[Refactor to flat layers](https://github.com/davestewart/nuxt-layers-demo/tree/a9345e527f340c71a5de286a19e19b90edc2d25c)**<br>
+  Repackage to core, site and articles layers (by domain)
+- `1.1.0` – **[Refactor layers to subfolder](https://github.com/davestewart/nuxt-layers-demo/tree/e022ec2f995128a4287ffa5bbedccbf40ec77594)**<br>
+  Move site and articles to sub-folder (by domain, but neater)
+- `1.2.0` – **Refactor using Nuxt Layers Utils** (TBC)<br>
+  Migrate path configuration to root (by domain, but simpler)
+
+You can clone or browse the repo from here:
+
+- [github.com/davestewart/nuxt-layers-demo](https://github.com/davestewart/nuxt-layers-demo)
 
 ## Last words
 

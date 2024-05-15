@@ -1,5 +1,4 @@
 ---
-shortTitle: Hackathon Guide
 description: An intro to hackathons and how to get the most out of them
 date: 2024-05-10
 media:
