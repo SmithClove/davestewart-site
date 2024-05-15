@@ -256,11 +256,11 @@ export default defineNuxtConfig({
     // use defaults: use path prefix
     '~/core/components',
           
-    // override defaults: no path prefix, register all globally (for Nuxt Content)
-    { path: '~/layers/blog/components', pathPrefix: false, global: true },
-          
     // override defaults: no path prefix
     { path: '~/layers/site/components', pathPrefix: false },
+
+    // override defaults: no path prefix, register all globally (for Nuxt Content)
+    { path: '~/layers/blog/components', pathPrefix: false, global: true },
   ]
 })
 ```
@@ -721,11 +721,19 @@ See the [Tips](#tips) section for a full example.
 
 ### Migration steps
 
+#### Overview
+
 Migrating an existing site isn't difficult, but it can be a little risky and frustrating. 
 
 You should treat it like any other major refactor and aim to go slow; migrate feature-by-feature, folder-by-folder, or file-by-file – as your build **will** break – and there will be times when you don't know why.
 
 Set aside a few hours for a small site, and a day or more for a larger, in-production one.
+
+Review the demo for a real-world example:
+
+- [Nuxt Layers Demo](https://github.com/davestewart/nuxt-layers-demo/commits/main/)
+
+#### Steps
 
 Before you start:
 
@@ -772,6 +780,8 @@ Then, tackle a single domain / layer at a time:
     - local imports may become `../<concern>`
   - `config`:
     - config `import` statements **cannot** use path aliases; you may need to use `../layer/concern`
+
+#### Points to think about
 
 As you make changes:
 
