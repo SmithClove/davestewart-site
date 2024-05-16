@@ -1,5 +1,5 @@
 ---
-description: Build sites that scale by structuring code by domain, not concern
+description: Build sites that scale by organising code by domain, not concern
 date: 2024-05-14
 media:
   opengraph: ./images/featured.png
@@ -15,7 +15,7 @@ Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as [a po
 
 To get you up-to-speed on the concepts, I'll begin with some theory:
 
-- [Site structuring](#site-structuring)<br>
+- [Site organisation](#site-organisation)<br>
   A comparison of organising by concern vs by domain
 - [Nuxt layers intro](#nuxt-layers-intro)<br>
   A brief intro to Nuxt layers and how they work
@@ -34,7 +34,7 @@ You might also want to skim the official Layers docs before continuing:
 - [Get Started » Layers](https://nuxt.com/docs/getting-started/layers)
 - [Guide » Authoring Nuxt Layers](https://nuxt.com/docs/guide/going-further/layers)
 
-## Site structuring
+## Site organisation
 
 Let's take a look at two main ways to organise sites and apps; by [concern](#by-concern) and by [domain](#by-domain).
 
@@ -104,9 +104,9 @@ The conceptual shift from concern to domain may feel familiar to you [if you mov
 
 ##  Nuxt layers intro
 
-So it turns out that Nuxt Layers – along with their extension superpowers can also structure a Nuxt app by _domain_.
+So it turns out that Nuxt Layers – along with their extension superpowers – can be used to reorganise a site by domain.
 
-Nuxt Layers can be viewed as "mini" applications which are combined to create the "main" application.
+Nuxt Layers can be viewed as "mini" applications which are combined to create the "full" application.
 
 Each layer:
 
@@ -406,7 +406,7 @@ Remember to add [your token](https://docs.github.com/en/authentication/keeping-y
 GH_TOKEN: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-#### Component folders
+#### Content components
 
 Bonus component tip: you don't have to use the suggested [global components content folder](https://content.nuxt.com/get-started/from-v1#global-components) to make components accessible from within Markdown documents, you could also:
 
@@ -439,7 +439,7 @@ There are a few things to think about when considering config:
 - where to locate each file
 - what each file should contain
 - how to correctly resolve paths
-- how to keep code clean
+- keeping code clean (see [global concerns](#global-concerns) and [tips](#tips))
 
 #### Layer configs
 
@@ -461,68 +461,20 @@ This can be great for isolating domain specific functionality, and at the same t
 
 Your final config will be intelligently-merged (via [unjs/defu](https://github.com/unjs/defu)).
 
-#### Base config
-
-You might also consider moving infrequently-accessed folders and settings to a [base](#folder-structure) layer: 
-
-```ts
-// src/base/nuxt.config.ts
-export default defineNuxtConfig({
-  runtimeConfig: { ... },
-  modules: [ ... ],
-  plugins: [ ... ],
-  nitro: { ... },
-  ...
-})
-```
-
-This de-clutters root-level folders and config, making it simpler to understand the rest of your app. 
-
-Note that if you move core folders you will need to reconfigure some core [dir settings](#path-configuration). 
-
 #### Path resolution
 
-Path resolution with layers can be tricky, because of differing targets and formats across multiple folders and settings:
+Note that path resolution in layers can be tricky, because of context, targets and formats:
 
 ```ts
 export default {
   foo: resolve('../some-folder'),
   bar: 'some-layer/some-folder',
   baz: '~/other-layer',
+  qux: './other-layer',
 }
 ```
 
-As there's a lot to cover, I'll save the detail for the [migration](#migrating-an-existing-site) section.
-
-#### Keeping code clean
-
-For complex configuration that may differ only _slightly_ across layers (such as [hooks](https://nuxt.com/docs/api/nuxt-config#hooks)) you might consider helpers:
-
-```ts
-// src/base/utils/layers.ts
-export function defineLayerConfig (path: string, options?: LayerOptions) {
-  const output: ReturnType<typeof defineNuxtConfig> = {}
-  if (options.hooks) { ... }
-  if (options.thing) { ... }
-  return output
-}
-```
-
-Call from layers like so:
-
-```ts
-// src/blog/nuxt.config.ts
-import { defineLayerConfig } from '../base/utils/layers'
-
-export default defineNuxtConfig ({
-  ...defineLayerConfig(__dirname, {
-    hooks: [ 'foo', 'bar'],
-    thing: true 
-  })
-})
-```
-
-> Note that you **cannot use path aliases** such as `~` in config `import` statements – because Nuxt will not yet have compiled them into its own`.nuxt/tsconfig.json` file.
+See the [path configuration](#path-configuration) section in the [migration](#migrating-an-existing-site) section for a full breakdown of the options.
 
 ### Imports and exports
 
@@ -640,20 +592,20 @@ You can move some or all concerns to layers:
 </table>
 </div>
 
-I prefer the hybrid or flat structure, but there's nothing stopping you starting simple and changing your mind later.
+I prefer the flat or hybrid structure, as it significantly de-clutters the project outline.
 
 ### Global concerns
 
-As mentioned [earlier](#base-config) it's nice to be able to silo those domain-*less* folders and config options.
+#### Folders
 
-For concerns which take more of a foundational role, I group under `base` or `core`:
+You might also consider moving infrequently-accessed concerns to a `base` or `core` layer:
 
 ```
 +- src
     +- core
-    |   +- assets
     |   +- middleware
     |   +- modules
+    |   +- plugins
     |   +- utils
     +- ... 
 ```
@@ -664,6 +616,8 @@ If a concern spans multiple domains, or isn't specific enough to get its own dom
 +- src
     +- ... 
     +- site
+        +- assets
+        |   +- ...
         +- components
         |   +- Footer.vue
         |   +- Header.vue
@@ -675,7 +629,22 @@ If a concern spans multiple domains, or isn't specific enough to get its own dom
         +- ...
 ```
 
-Note that if you move any default folders, you will need to tell Nuxt:
+#### Config
+
+Moving infrequently-accessed config to layers makes it easier to get and stay organised (see [tips](#tips) for more suggestions!):
+
+```ts
+// src/core/nuxt.config.ts
+export default defineNuxtConfig({
+  runtimeConfig: { ... },
+  modules: [ ... ],
+  plugins: [ ... ],
+  nitro: { ... },
+  ...
+})
+```
+
+Note that if you move core folders you will need to reconfigure some core [dir](#path-configuration) settings.
 
 ```ts
 // src/nuxt.config.ts
@@ -787,7 +756,7 @@ You should treat it like any other major refactor and aim to go slow; migrate fe
 
 Set aside a few hours for a small site, and a day or more for a larger, in-production one.
 
-> You can review the [demo](#demo) at the end for a real-world example:
+> You can review the [demo](#demo) at the end for a real-world example
 
 #### Steps
 
@@ -814,27 +783,27 @@ Then, tackle a single domain / layer at a time:
   - add the `nuxt.config.ts`
   - update the root `extends` array
 - move concerns so that you're only likely to break one thing at a time:
-  - `config`:
+  - [Config](#config):
     - moving settings and modules should be straightforward
-    - some configuration (i.e. [Nuxt Content](#nuxt-content)) may need reconfiguring
-  - `pages`:
+    - some configuration (i.e. [`dir`](#global-concerns), [`content`](#nuxt-content)) may need reconfiguring
+  - [Pages](#pages):
     - remember routes are not prefixed with the layer name
-    - check imports as you move 
-  - `components`:
+    - check file imports as you move 
+  - [Components](#components):
     - if imported, review paths
-    - if auto-imported, should just work
-    - if not, you may need to add to configure `components` (the config option) paths
-  - `content`
-    - decide whether content will be global or local
+    - if auto-imported, should just work (unless components themselves moved to sub-folders!)
+    - if not, you may need to add specific components folder paths to the `components` config
+  - [Content](#nuxt-content)
+    - decide whether [Nuxt Content]() will be global or local
     - remember Nuxt Content components need to live in `components/content`
 - the things to check as you move are:
-  - `paths`:
+  - [Paths](#config):
     - remember `Path.resolve()`'s context whilst consuming `config` is your project's root folder
     - layer-level paths may still need to be `./<layer>/<concern>` vs `./<concern>`
-  - `imports`:
+  - [Imports](#imports-and-exports):
     - global imports may flip from `~/<concern>/<domain>` to `~/<layer>/<concern>`
     - local imports may become `../<concern>`
-  - `config`:
+  - [Config imports](#consider-layer-helpers):
     - config `import` statements **cannot** use path aliases; you may need to use `../layer/concern`
 
 #### Points to think about
@@ -907,6 +876,36 @@ export default defu(
 )
 ```
 
+#### Consider layer helpers
+
+For complex configuration that may differ only _slightly_ across layers (such as [hooks](https://nuxt.com/docs/api/nuxt-config#hooks)) you might consider helpers:
+
+```ts
+// src/base/utils/layers.ts
+export function defineLayerConfig (path: string, options?: LayerOptions) {
+  const output: ReturnType<typeof defineNuxtConfig> = {}
+  if (options.hooks) { ... }
+  if (options.thing) { ... }
+  return output
+}
+```
+
+Call from layers like so:
+
+```ts
+// src/blog/nuxt.config.ts
+import { defineLayerConfig } from '../base/utils/layers'
+
+export default defineNuxtConfig ({
+  ...defineLayerConfig(__dirname, {
+    hooks: [ 'foo', 'bar'],
+    thing: true 
+  })
+})
+```
+
+> Note that you **cannot use path aliases** such as `~` in config `import` statements – because Nuxt will not yet have compiled them into its own`.nuxt/tsconfig.json` file.
+
 #### Isolate layers
 
 Use comments or conditionals to toggle layers:
@@ -955,7 +954,9 @@ You can clone or browse the repo from here:
 
 Hopefully this section gives you some solid ideas on how to modularise your site or app – and if I've skipped over anything – ideas on how to approach it. Layers are generally quite logical and predicable, with a minor tradeoff of a little more configuration.
 
-And lastly, kudos to the UnJS and Nuxt team for the work they've done here.
+FWIW I have a bit of a love/hate relationship with Nuxt, so if you think some of this is wrong or inaccurate, do please drop a comment and I can update the article accordingly.
+
+And lastly, kudos to the UnJS and Nuxt team for the work they've done 🙏.
 
 <!--
 ## Resources
