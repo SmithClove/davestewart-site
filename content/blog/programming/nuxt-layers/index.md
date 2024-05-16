@@ -11,7 +11,7 @@ media:
 
 ## Intro
 
-Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as [a powerful system that allows you to extend the default files, configs, and much more](https://nuxt.com/docs/getting-started/layers). Whilst this explanation is _technically_ accurate, the emphasis on "extending defaults" overlooks another perhaps more impactful use case – that of _reorganising_ your application **by domain**.
+Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as [a powerful system that allows you to extend the default files, configs, and much more](https://nuxt.com/docs/getting-started/layers). Whilst this explanation is _technically_ accurate, the emphasis on "extending defaults" overlooks another perhaps more impactful use case – that of reorganising your application using layers.
 
 To get you up-to-speed on the concepts, I'll begin with some theory:
 
@@ -332,7 +332,9 @@ See the [path configuration](#path-configuration) section for detailed informati
 
 Nuxt Content plays nicely with Nuxt Layers.
 
-This means you can silo domain-specific content along with its related `pages`, `components`, etc, rather than treat all content as a global concern – which might suit if your site has multiple content-driven sections such as Blog, Guide, etc.:
+#### Local sources
+
+You can have more than one content source, meaning you can silo domain-specific content along with its related `pages`, `components`, etc. – which might suit if your site has multiple content-driven sections such as Blog, Guide, etc.:
 
 ```
 +- src
@@ -358,16 +360,55 @@ export default defineNuxtConfig({
   content: {
     sources: {
       blog: {
+        prefix: '/blog',
+        base: './blog/content', // referenced from root
         driver: 'fs',
-        base: `./blog/content`, // referenced from root
-        prefix: `/blog`,
       }
     }
   }
 })
 ```
 
-And a bonus components tip: you don't have to use the suggested [global components content folder](https://content.nuxt.com/get-started/from-v1#global-components) to make components accessible from within Markdown documents, you can also:
+#### Remote sources
+
+If you want to include content from a [remote source](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) such as GitHub, consider the following:
+
+```ts
+// src/blog/nuxt.config.ts
+export default defineNuxtConfig({
+  content: {
+    sources: {
+      blog: {
+        prefix: `/blog`,
+        dir: 'content',
+        repo: '<owner>/<repo>',
+        branch: 'main',
+        driver: 'github',
+      }
+    }
+  }
+})
+```
+
+For a private repositories, add [Giget](https://github.com/unjs/giget) credentials (thanks to [@Atinux](https://twitter.com/Atinux) and [@_pi0_](https://twitter.com/_pi0_) for the [tip](https://twitter.com/Atinux/status/1765059244305383656)):
+
+```ts
+export default defineNuxtConfig({
+  extends: [
+    ['gh:<owner>/<repo>', { giget: { auth: process.env.GH_TOKEN }}]
+  ]
+})
+```
+
+Remember to add [your token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to your project's `.env` file or CI settings like so:
+
+```dotenv
+GH_TOKEN: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+#### Component folders
+
+Bonus component tip: you don't have to use the suggested [global components content folder](https://content.nuxt.com/get-started/from-v1#global-components) to make components accessible from within Markdown documents, you could also:
 
 - configure _any_ component folder as global using the [components](#components) config `global` flag
 - mark specific components as global by renaming them with the `.global.vue` suffix
@@ -880,6 +921,12 @@ export default defineNuxtConfig({
   ]
 })
 ```
+
+#### Nuxt 2 users
+
+You can use Nuxt Areas to get layers-like functionality in Nuxt 2: 
+
+- [github.com/davestewart/nuxt-areas](https://github.com/davestewart/nuxt-areas)
 
 ## Demo
 
