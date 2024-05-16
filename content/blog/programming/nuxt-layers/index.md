@@ -11,7 +11,7 @@ media:
 
 ## Intro
 
-Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as [a powerful system that allows you to extend the default files, configs, and much more](https://nuxt.com/docs/getting-started/layers). Whilst this explanation is _technically_ accurate, the emphasis on "extending defaults" overlooks another perhaps more impactful use case – that of logically reorganising your application.
+Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as "[a powerful system that allows you to extend the default files, configs, and much more](https://nuxt.com/docs/getting-started/layers)". Whilst this explanation is _technically_ accurate, the emphasis on "extending defaults" overlooks another perhaps more impactful use case – that of logically reorganising your application.
 
 To get you up-to-speed on the concepts, I'll begin with some theory:
 
@@ -108,18 +108,18 @@ Developer experience:
 - you can more easily turn complete features on / off
 - domains can be broken out further if they get too large
 
-The conceptual shift from concern to domain may feel familiar to you [if you moved](https://vuejs.org/guide/extras/composition-api-faq.html#more-flexible-code-organization) from Vue's Options API to the Composition API; rather than concerns being striped across a sprawling `options` structure, they can be declared and grouped together as domains.
+The conceptual shift from concern to domain may feel familiar to you [if you moved](https://vuejs.org/guide/extras/composition-api-faq.html#more-flexible-code-organization) from Vue's Options API to the Composition API; rather than concerns being striped across a sprawling `options` structure, they can be more naturally grouped as composables.
 
 ##  Nuxt layers intro
 
-So it turns out that Nuxt Layers – along with their extension superpowers – can be used to reorganise a site by domain.
+So it turns out that Nuxt Layers are perfect to restructure and reorganise a site by domain.
 
-Nuxt Layers can be viewed as "mini" applications which are stitched together to create the "full" application.
+Layers can be viewed as "mini" applications which are stitched together to create the "full" application.
 
-Each layer:
+Each folder:
 
-- may contain `pages`, `components`, `server` folders, etc
-- indicates it's a layer using a `nuxt.config.ts` file
+- may contain `pages`, `components`, `server` sub-folders, etc
+- identifies it's a layer using a `nuxt.config.ts` file
 
 A small personal site might be organised as follows:
 
@@ -162,7 +162,7 @@ Note that c12 can also extend from [packages and repos](https://nuxt.com/docs/ge
 
 ## Nuxt concerns
 
-Now that you understand how a layer-based site is structured, let's review any specifics for Nuxt's concerns to work correctly under this new paradigm:
+Now that you understand how a layer-based site is structured, let's review some specifics for Nuxt's concerns to work correctly under this new paradigm:
 
 - [Framework folders](#framework-folders)
 - [Pages and routes](#pages-and-routes)
@@ -196,6 +196,10 @@ Core framework folders [within layers](https://nuxt.com/docs/guide/going-further
 
 This means you can break out concerns across layers **as you see fit** – and Nuxt will take care of the rest.
 
+One thing to note is that Nuxt does not do anything special to handle overlapping paths; if you have overlapping files such as `<layer>/pages/index.vue` or `<layer>/layouts/default.vue`, later ones will invisibly overwrite earlier ones.
+
+> I'm also going investigate further the behaviour of overlapping _core_ folders like `public` and `server` as I've had different results in different projects (probably human error!) so check back soon as I'll document my findings.
+
 ### Pages and routes
 
 Layers can happily contain their own pages and define navigable routes.
@@ -224,13 +228,12 @@ I looked into whether it would be possible using the [`pages:extend`](https://nu
 
 Nuxt's components [auto-importing and auto-registering rules](https://nuxt.com/docs/guide/directory-structure/components#component-names) are IMHO [unnecessarily complex and opaque](https://stackblitz.com/edit/nuxt3-component-config) – and considering this article is about helping you organise your Nuxt app at scale – I wanted to comment on what I see as a major anti-pattern, too much magic, and something to avoid.
 
-The nub of it is; if you are relying on Nuxt's default `auto-import` functionality for components, know that:
+The thing is, Nuxt's default auto-import settings do scan `components` folders recursively, however:
 
-- component folders **are** recursively scanned
-- and top-level components are named as-is
-- **but** nested components are **prefixed** with the path's segments
+- **top-level** components import using their given names
+- but **nested** components are _prefixed_ with the path's segments
 
-As such, the **default** "auto-importing" is also "auto-renaming" (in order to avoid collisions in the global namespace):
+As such, out-of-the-box component "auto-importing" is **also** component "_auto-renaming_":
 
 | Folder             | Component        | AutoImport       |
 |--------------------|------------------|------------------|
@@ -241,21 +244,27 @@ As such, the **default** "auto-importing" is also "auto-renaming" (in order to a
 
 My problems with this are:
 
-- this is counter-intuitive for any (let alone Vue) developers coming to Nuxt
-- you can't move components without the auto-import itself being renamed
+- if you miss this (or misunderstand this) things break real quick
+- it's completely unintuitive for any (let alone Vue) developers new to Nuxt
+- it's just a workaround to avoid collisions in the global namespace
+- it's inconsistent between root and child folders
+- you can't organise components without the imported component being renamed
 - thus, moving components to subfolders will inexplicably break your app
-- you have to manually find and replace component names in your markup
-- you can potentially have _multiple_ components pointing at the same auto-import 
+- then you have to manually find and replace component names in your markup
+- you can potentially have _multiple_ components overwriting the _same_ auto-import 
 - you don't know what components are used, where, or how many times
 - there are no explicit imports for your IDE to track and update
 - you lose the ability to navigate to a component via its import
-- most IDEs add components import statements anyway
-- ESLint rules can remove unused import statements anyway
-- it might save in small projects but steals time in larger ones
+- both VSCode and WebStorm add import statements _anyway_
+- ESLint can remove unused import statements if you forget
+- it's apparently a [misuse of `d.ts` files](https://www.youtube.com/watch?v=zu-EgnbmcLY) anyway
+- it's on by default
 
-And the larger your application gets, you want **less** magic and **more** assurance.
+Given the above, it's arguable that it _saves_ you any time – but can absolutely **cost** you time! And the larger your application gets, the **less magic** you want and the **more safety** you need.
 
-So with that in mind, your options for component auto-importing are:
+> _I will concede that there are differences in how the two main IDEs support both component navigation and refactoring, and there is no best-fit between the two, as yet. I'm a WebStorm user, so my views are biased due to its superior refactoring abilities._
+
+But with that said and done, your options for component auto-importing are:
 
 ```ts
 // src/nuxt.config.ts
@@ -309,7 +318,7 @@ I wanted to cover so-called [auto-imports](https://nuxt.com/docs/guide/directory
 
 In Nuxt, the `composables` and `utils` folders are imported automatically, at least at the [top-level](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned).
 
-However, there is nothing _special_ about the naming (as in, there is [no enforcement](https://vuejs.org/guide/reusability/composables) of the files within) and you could (should!) add more-specifically named folders, whether or not you want them auto-imported. Don't just throw arbitrary code into these folders; if it's a `/service` or additional `/config` give it a home to make the intended use _clear_. 
+However, there is nothing _special_ about the naming (as in, there is [no enforcement](https://vuejs.org/guide/reusability/composables) of the files within) and you could (should!) add more-specifically named folders, whether-or-not you want them auto-imported. Don't just throw arbitrary code into these folders; if it's a `/service` or additional `/config` give it a home to make the intended use _clear_. 
 
 To add additional folders, add them to the `imports.dirs` config, and decide how you want them scanned:
 
@@ -318,14 +327,14 @@ To add additional folders, add them to the `imports.dirs` config, and decide how
 export default defineNuxtConfig({
   imports: {
     dirs: [
-      // scan files in folder
-      'core/stores',
+      // add core services
+      'core/services',
 
-      // scan files one level deep with a specific name and file extension
-      'core/composables/*/index.{ts,js,mjs,mts}',
+      // add specific files in core composables in subfolders
+      'core/composables/**/*.{ts,js,mjs,mts}',
 
-      // scan all files in all sub-folders
-      'core/services/**'
+      // autoload all stores in all layers
+      '**/stores'
     ]
   }
 })
@@ -674,13 +683,13 @@ The correct path configurations (**target** and **format**) are _critical_ to Nu
 
 Nuxt's path config options can be driven by a variety of path formats:
 
-| Type           | Code                                | Notes                                    |
-|----------------|-------------------------------------|------------------------------------------|
-| Absolute       | `Path.resolve('layers/some-layer')` | You can also use `import.meta.url`       |
-| Root-relative  | `layers/some-layer`                 |                                          |
-| Layer-relative | `some-folder`                       | Called from `some-layer/nuxt.config.ts`  |
-| Alias          | `~/layers/some-layer`               | Expands internally to absolute path      |
-| Glob           | `some-layer/**/*.vue`               | Expands to an array of paths             |
+| Type           | Code                                | Notes                                   |
+|----------------|-------------------------------------|-----------------------------------------|
+| Absolute       | `Path.resolve('layers/some-layer')` | You can also use `import.meta.url`      |
+| Root-relative  | `layers/some-layer`                 |                                         |
+| Layer-relative | `some-folder`                       | Relative to `some-layer/nuxt.config.ts` |
+| Alias          | `~/layers/some-layer`               | Expands internally to absolute path     |
+| Glob           | `some-layer/**/*.vue`               | Expands to an array of paths            |
 
 Additionally, some config options are **recursive**, providing glob-like functionality.
 
@@ -705,9 +714,10 @@ I think for **smaller** sites, it's fine to configure paths in the layer config.
 
 But for **larger** sites, I've come to the conclusion that ***it's just simpler to configure all path-related config in the root***:
 
-- it's easier to compare and copy/paste paths between options
 - you're not searching through multiple folders and layer config files
+- it's easier to compare and copy/paste paths between options
 - path resolution is consistent between layers of differing depths
+- you limit any repetition or duplication to a single file
 
 As such, your core `nuxt.config.ts` file might look something like this:
 
@@ -789,6 +799,7 @@ Then, tackle a single domain / layer at a time:
 - create the new layer:
   - add a top-level folder
   - add the `nuxt.config.ts`
+  - update the root `alias` hash (so that moves are rewritten using aliases)
   - update the root `extends` array
 - move concerns so that you're only likely to break one thing at a time:
   - [Config](#config):
@@ -939,11 +950,13 @@ You can use Nuxt Areas to get layers-like functionality in Nuxt 2:
 
 ## Demo
 
-So that's a lot of theory; *let's see some code!*
+So that's a lot of theory; how about some code?
 
-I've taken Sebastian Chopin's [Alpine](https://github.com/nuxt-themes/alpine/) theme demo and migrated it from a _concern_-based to a _domain_-based setup.
+Well, I've taken Sébastian Chopin's [Alpine](https://github.com/nuxt-themes/alpine/) demo and migrated it from a _concern_-based to a _domain_-based setup.
 
-The tagged [milestones](https://github.com/davestewart/nuxt-layers-demo/commits/main/) in this migration are:
+The idea is to demonstrate a **real-world** migration using the **actual** advice given above.
+
+The tagged [milestones](https://github.com/davestewart/nuxt-layers-demo/commits/main/) in this migration are / will be:
 
 - `0.1.0` – **[Alpine starter repo](https://github.com/davestewart/nuxt-layers-demo/tree/16f9e7a0a9555d889d236d2f36f8a7f040105d4a)**<br>
   Local content extending external theme
@@ -953,8 +966,10 @@ The tagged [milestones](https://github.com/davestewart/nuxt-layers-demo/commits/
   Repackage to core, site and articles layers (by domain)
 - `1.1.0` – **[Refactor layers to subfolder](https://github.com/davestewart/nuxt-layers-demo/tree/e022ec2f995128a4287ffa5bbedccbf40ec77594)**<br>
   Move site and articles to sub-folder (by domain, but neater)
-- `1.2.0` – **Refactor using Nuxt Layers Utils** (TBC)<br>
+- `1.2.0` – **Refactor using Nuxt Layers Utils** (WIP)<br>
   Migrate path configuration to root (by domain, but simpler)
+- `1.3.0` – **Advanced layer functionality** (WIP)<br>
+  Push layers to see how far we can go!
 
 You can clone or browse the repo from here:
 

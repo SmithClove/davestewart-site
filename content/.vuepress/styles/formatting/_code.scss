@@ -45,6 +45,10 @@ code {
   color: #5c6e74;
 }
 
+blockquote code {
+  background: darken($codeBg, 5%) !important;
+}
+
 code {
   padding: 2px 6px 4px 6px;
   color: $accentColor;
