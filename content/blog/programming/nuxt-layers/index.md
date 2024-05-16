@@ -227,6 +227,7 @@ Nuxt's components [auto-importing and auto-registering rules](https://nuxt.com/d
 The nub of it is; if you are relying on Nuxt's default `auto-import` functionality for components, know that:
 
 - component folders **are** recursively scanned
+- and top-level components are named as-is
 - **but** nested components are **prefixed** with the path's segments
 
 As such, the **default** "auto-importing" is also "auto-renaming" (in order to avoid collisions in the global namespace):
