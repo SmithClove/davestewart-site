@@ -11,7 +11,7 @@ media:
 
 ## Intro
 
-Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as [a powerful system that allows you to extend the default files, configs, and much more](https://nuxt.com/docs/getting-started/layers). Whilst this explanation is _technically_ accurate, the emphasis on "extending defaults" overlooks another perhaps more impactful use case – that of reorganising your application using layers.
+Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as [a powerful system that allows you to extend the default files, configs, and much more](https://nuxt.com/docs/getting-started/layers). Whilst this explanation is _technically_ accurate, the emphasis on "extending defaults" overlooks another perhaps more impactful use case – that of logically reorganising your application.
 
 To get you up-to-speed on the concepts, I'll begin with some theory:
 
@@ -50,12 +50,15 @@ Most Vue and Nuxt projects are born of simple starter templates, which group fil
 +- src
     +- components
     |   +- blog
+    |   |   +- ...
     |   +- home
+    |       +- ...
     +- content
     |   +- blog
+    |       +- ...
     +- pages
     |   +- blog.vue
-    |   +- home.vue
+    |   +- index.vue
     +- ...
 ```
 
@@ -71,11 +74,16 @@ At a certain size of site (and actually, not that big!) it becomes more intuitiv
 +- src
     +- blog
     |   +- components
+    |   |   +- ...
     |   +- content
+    |   |   +- ...
     |   +- pages
+    |       +- blog.vue
     +- home
     |   +- components
+    |   |   +- ...
     |   +- pages
+    |       +- index.vue
     +- ...
 ```
 
@@ -106,18 +114,14 @@ The conceptual shift from concern to domain may feel familiar to you [if you mov
 
 So it turns out that Nuxt Layers – along with their extension superpowers – can be used to reorganise a site by domain.
 
-Nuxt Layers can be viewed as "mini" applications which are combined to create the "full" application.
+Nuxt Layers can be viewed as "mini" applications which are stitched together to create the "full" application.
 
 Each layer:
 
 - may contain `pages`, `components`, `server` folders, etc
 - indicates it's a layer using a `nuxt.config.ts` file
 
-Then the main `nuxt.config.ts` tells Nuxt where your layers are.
-
-### Example
-
-For example, a small personal site might be organised as follows:
+A small personal site might be organised as follows:
 
 ```
 +- src
@@ -142,7 +146,7 @@ For example, a small personal site might be organised as follows:
 
 The top-level layers silo related `pages`, `components`, `plugins`, even `config`.
 
-The root-level `nuxt.config.ts` collates these layers via [unjs/c12](https://github.com/unjs/c12?tab=readme-ov-file#extending-configuration)'s `extends` keyword:
+Finally, the root-level `nuxt.config.ts` combines these layers via [unjs/c12](https://github.com/unjs/c12?tab=readme-ov-file#extending-configuration)'s `extends` keyword:
 
 ```ts
 export default defineNuxtConfig({
@@ -180,17 +184,17 @@ Core framework folders [within layers](https://nuxt.com/docs/guide/going-further
 ```
 +- src 
     +- some-layer
-        +- components             <-- autoloaded
-        +- composables            <-- autoloaded
-        +- layouts                <-- adds layouts
-        +- pages                  <-- creates routes
-        +- plugins                <-- autoloaded
-        +- public                 <-- copied to output
-        +- server                 <-- adds middleware, api routes, etc
-        +- utils                  <-- autoloaded
+        +- components        <-- autoloaded (but renamed by default 🙁)
+        +- composables       <-- autoloaded
+        +- layouts           <-- adds layouts
+        +- pages             <-- creates routes
+        +- plugins           <-- autoloaded
+        +- public            <-- copied to output
+        +- server            <-- adds middleware, api routes, etc
+        +- utils             <-- autoloaded
 ```
 
-This means you can break out concerns across layers **as you see fit** – and Nuxt will stitch them into the final app.
+This means you can break out concerns across layers **as you see fit** – and Nuxt will take care of the rest.
 
 ### Pages and routes
 
@@ -236,9 +240,9 @@ As such, the **default** "auto-importing" is also "auto-renaming" (in order to a
 
 My problems with this are:
 
-- this is not intuitive for newcomers to Nuxt
+- this is counter-intuitive for any (let alone Vue) developers coming to Nuxt
 - you can't move components without the auto-import itself being renamed
-- thus, moving components to subfolders will inexplainably break your app
+- thus, moving components to subfolders will inexplicably break your app
 - you have to manually find and replace component names in your markup
 - you can potentially have _multiple_ components pointing at the same auto-import 
 - you don't know what components are used, where, or how many times
@@ -300,11 +304,13 @@ export default defineNuxtConfig({
 
 ### Auto-imports
 
-Note that `composables` and `utils` folders are imported automatically, but I wanted to cover so-called "auto-imports" specifically to disambiguate their functionality from [components](#components).
+I wanted to cover so-called [auto-imports](https://nuxt.com/docs/guide/directory-structure/composables) functionality, specifically to disambiguate from [components](#components).
 
-Long story short, only the **top-level** folders are [scanned](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned).
+In Nuxt, the `composables` and `utils` folders are imported automatically, at least at the [top-level](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned).
 
-If you want to scan nested folders, you need to add them to the `imports.dirs` config:
+However, there is nothing _special_ about the naming (as in, there is [no enforcement](https://vuejs.org/guide/reusability/composables) of the files within) and you could (should!) add more-specifically named folders, whether or not you want them auto-imported. Don't just throw arbitrary code into these folders; if it's a `/service` or additional `/config` give it a home to make the intended use _clear_. 
+
+To add additional folders, add them to the `imports.dirs` config, and decide how you want them scanned:
 
 ```ts
 // src/nuxt.config.ts
@@ -312,19 +318,19 @@ export default defineNuxtConfig({
   imports: {
     dirs: [
       // scan files in folder
-      'core/composables',
+      'core/stores',
 
       // scan files one level deep with a specific name and file extension
       'core/composables/*/index.{ts,js,mjs,mts}',
 
-      // scan all files in all folders
+      // scan all files in all sub-folders
       'core/services/**'
     ]
   }
 })
 ```
 
-Note also that `imports.dirs` [supports globs](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned), whereas `components` does not.
+One other thing to note, `imports.dirs` [supports globs](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned), whereas `components` does not.
 
 See the [path configuration](#path-configuration) section for detailed information about how Nuxt handles paths.
 
@@ -371,7 +377,7 @@ export default defineNuxtConfig({
 
 #### Remote sources
 
-If you want to include content from a [remote source](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) such as GitHub, consider the following:
+If you want to include content from a [remote source](https://content.nuxt.com/get-started/configuration#sources) such as GitHub, [unjs/unstorage](https://unstorage.unjs.io/drivers/github) makes it possible:
 
 ```ts
 // src/blog/nuxt.config.ts
@@ -390,7 +396,7 @@ export default defineNuxtConfig({
 })
 ```
 
-For a private repositories, add [Giget](https://github.com/unjs/giget) credentials (thanks to [@Atinux](https://twitter.com/Atinux) and [@_pi0_](https://twitter.com/_pi0_) for the [tip](https://twitter.com/Atinux/status/1765059244305383656)):
+For a private repositories, add your credentials (thanks to [@Atinux](https://twitter.com/Atinux) and [@_pi0_](https://twitter.com/_pi0_) for the [tip](https://twitter.com/Atinux/status/1765059244305383656)):
 
 ```ts
 export default defineNuxtConfig({
@@ -403,7 +409,8 @@ export default defineNuxtConfig({
 Remember to add [your token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to your project's `.env` file or CI settings like so:
 
 ```dotenv
-GH_TOKEN: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# .env
+GH_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 #### Content components
@@ -876,6 +883,8 @@ export default defu(
 )
 ```
 
+For a complete example, check the demo's [core config](https://github.com/davestewart/nuxt-layers-demo/blob/e022ec2f995128a4287ffa5bbedccbf40ec77594/core/nuxt.config.ts).
+
 #### Consider layer helpers
 
 For complex configuration that may differ only _slightly_ across layers (such as [hooks](https://nuxt.com/docs/api/nuxt-config#hooks)) you might consider helpers:
@@ -952,7 +961,7 @@ You can clone or browse the repo from here:
 
 ## Last words
 
-Hopefully this section gives you some solid ideas on how to modularise your site or app – and if I've skipped over anything – ideas on how to approach it. Layers are generally quite logical and predicable, with a minor tradeoff of a little more configuration.
+Hopefully this article gives you some solid ideas on how to modularise your site or app – and if I've skipped over anything – ideas on how to approach it. Layers are generally quite logical and predicable, with a minor tradeoff of a little more configuration.
 
 FWIW I have a bit of a love/hate relationship with Nuxt, so if you think some of this is wrong or inaccurate, do please drop a comment and I can update the article accordingly.
 
