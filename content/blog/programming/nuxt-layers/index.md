@@ -13,6 +13,8 @@ media:
 
 Nuxt 3 introduces a new paradigm called "Layers" that the docs describe as "[a powerful system that allows you to extend the default files, configs, and much more](https://nuxt.com/docs/getting-started/layers)". Whilst this explanation is _technically_ accurate, the emphasis on "extending defaults" overlooks another perhaps more impactful use case – that of logically reorganising your application.
 
+### Overview
+
 To get you up-to-speed on the concepts, I'll begin with some theory:
 
 - [Site organisation](#site-organisation)<br>
@@ -33,6 +35,12 @@ You might also want to skim the official Layers docs before continuing:
 
 - [Get Started » Layers](https://nuxt.com/docs/getting-started/layers)
 - [Guide » Authoring Nuxt Layers](https://nuxt.com/docs/guide/going-further/layers)
+
+### Contents
+
+It's a long article (!) so here's the full table of contents if you want to skip:
+
+[[toc]]
 
 ## Site organisation
 
@@ -179,26 +187,76 @@ Now that you understand how a layer-based site is structured, let's review some 
 
 ### Framework folders
 
-Core framework folders [within layers](https://nuxt.com/docs/guide/going-further/layers) generally work as expected:
+#### Layer folders
 
+Core framework folders [within layers](https://nuxt.com/docs/guide/going-further/layers) are auto scanned build the full app.
+
+Additionally, many of these entities can be further modified using [config](https://nuxt.com/docs/api/nuxt-config):
+
+| Folder                                                                            | Config                                                           |     | Notes                                         |
+|-----------------------------------------------------------------------------------|------------------------------------------------------------------|-----|-----------------------------------------------|
+| [`./components`](https://nuxt.com/docs/guide/directory-structure/components)      | [`components`](https://nuxt.com/docs/api/nuxt-config#components) |     | Auto-imported (nested, renamed by default 🙁) |
+| [`./composables`](https://nuxt.com/docs/guide/directory-structure/composables)    | [`imports`](https://nuxt.com/docs/api/nuxt-config#imports)       |     | Auto-imported (top-level only)                |
+| [`./layouts`](https://nuxt.com/docs/guide/directory-structure/layouts)            |                                                                  |     | Auto-imported (nested)                        |
+| [`./pages`](https://nuxt.com/docs/guide/directory-structure/pages)                | [`pages`](https://nuxt.com/docs/api/nuxt-config#pages)           |     | Generates routes                              |
+| [`./plugins`](https://nuxt.com/docs/guide/directory-structure/plugins)            | [`plugins`](https://nuxt.com/docs/api/nuxt-config#plugins-1)     |     | Auto-registered (top-level only)              |
+| [`./public`](https://nuxt.com/docs/guide/directory-structure/public)              | [`dir.public`](https://nuxt.com/docs/api/nuxt-config#dir)        |     | Copied to `./output`                          |
+| [`./server`](https://nuxt.com/docs/guide/directory-structure/server)              | [`serverDir`](https://nuxt.com/docs/api/nuxt-config#serverdir)   |     | Adds middleware, api routes, etc              |
+| [`./utils`](https://nuxt.com/docs/guide/directory-structure/utils)                | [`imports`](https://nuxt.com/docs/api/nuxt-config#imports)       |     | Auto-imported (top-level only)                |
+| [`./nuxt.config.ts`](https://nuxt.com/docs/guide/directory-structure/nuxt-config) |                                                                  |     | Config merged with root `nuxt.config.ts`      |
+| [`./app.config.ts`](https://nuxt.com/docs/guide/directory-structure/app-config)   |                                                                  |     | Config merged with root `app.config.ts`       |
+
+This means you can generally break out concerns across layers as you see fit – and Nuxt will take care of the loading, registering, and the splicing together of the files.
+
+However, note that same-named files from different layers **will** overwrite each other, i.e. if you have two `<layer>/pages/index.vue` files, then the second layer will overwrite the first.
+
+> ***Note***: I'm going to further investigate the behaviour of overlapping _core_ folders like `public` and `server` as I've had different results in different projects (probably human error!) so check back soon as I'll document my findings.
+
+#### Core folders
+
+Nuxt's default / global folder locations can also be moved to layers:
+
+- [`/assets`](https://nuxt.com/docs/guide/directory-structure/assets)        
+- [`/layouts`](https://nuxt.com/docs/guide/directory-structure/layouts)      
+- [`/middleware`](https://nuxt.com/docs/guide/directory-structure/middleware)
+- [`/modules`](https://nuxt.com/docs/guide/directory-structure/modules)      
+- [`/pages`](https://nuxt.com/docs/guide/directory-structure/pages)          
+- [`/plugins`](https://nuxt.com/docs/guide/directory-structure/plugins)      
+- [`/public`](https://nuxt.com/docs/guide/directory-structure/public)
+
+However, you will need to, update Nuxt's [`dir`](https://nuxt.com/docs/api/nuxt-config#dir) config settings:
+
+```ts
+// src/nuxt.config.ts
+export default defineNuxtConfig({
+  dir: {
+    // core
+    assets: 'core/assets',
+    modules: 'core/modules',
+    middleware: 'core/middleware',
+    plugins: 'core/plugins',
+    
+    // site
+    layouts: 'layers/site/layouts',
+    pages: 'layers/site/pages',
+    public: 'layers/site/public',
+  },
+})
 ```
-+- src 
-    +- some-layer
-        +- components        <-- autoloaded (but renamed by default 🙁)
-        +- composables       <-- autoloaded
-        +- layouts           <-- adds layouts
-        +- pages             <-- creates routes
-        +- plugins           <-- autoloaded
-        +- public            <-- copied to output
-        +- server            <-- adds middleware, api routes, etc
-        +- utils             <-- autoloaded
-```
 
-This means you can break out concerns across layers **as you see fit** – and Nuxt will take care of the rest.
+See [Global Concerns](#global-concerns) section for rationale on tidying up your project's root.
 
-One thing to note is that Nuxt does not do anything special to handle overlapping paths; if you have overlapping files such as `<layer>/pages/index.vue` or `<layer>/layouts/default.vue`, later ones will invisibly overwrite earlier ones.
+#### Programmatic options
 
-> I'm also going investigate further the behaviour of overlapping _core_ folders like `public` and `server` as I've had different results in different projects (probably human error!) so check back soon as I'll document my findings.
+Beyond layer folders and config, you have options to add or modify concerns programmatically.
+
+See:
+
+- [Authoring Nuxt Layers](https://nuxt.com/docs/guide/going-further/layers) for full layers information including support in modules
+- [Module Author Guide](https://nuxt.com/docs/guide/going-further/modules#injecting-vue-components-with-addcomponent) for examples of adding and modifying resources through code
+- [Nuxt Kit](https://nuxt.com/docs/api/kit/modules) which provides a set of utilities to help you create and use modules
+- [Lifecycle Hooks](https://nuxt.com/docs/api/advanced/hooks) which allow you to hook into teh application build and runtime process
+
 
 ### Pages and routes
 
@@ -224,7 +282,7 @@ I looked into whether it would be possible using the [`pages:extend`](https://nu
 
 ### Components
 
-> ***Warning!*** Side-rant coming up 😖
+> ***Warning!*** Side-rant ahead! 😖
 
 Nuxt's components [auto-importing and auto-registering rules](https://nuxt.com/docs/guide/directory-structure/components#component-names) are IMHO [unnecessarily complex and opaque](https://stackblitz.com/edit/nuxt3-component-config) – and considering this article is about helping you organise your Nuxt app at scale – I wanted to comment on what I see as a major anti-pattern, too much magic, and something to avoid.
 
@@ -318,7 +376,7 @@ I wanted to cover so-called [auto-imports](https://nuxt.com/docs/guide/directory
 
 In Nuxt, the `composables` and `utils` folders are imported automatically, at least at the [top-level](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned).
 
-However, there is nothing _special_ about the naming (as in, there is [no enforcement](https://vuejs.org/guide/reusability/composables) of the files within) and you could (should!) add more-specifically named folders, whether-or-not you want them auto-imported. Don't just throw arbitrary code into these folders; if it's a `/service` or additional `/config` give it a home to make the intended use _clear_. 
+However, there is nothing _special_ about the naming (as in, there is [no enforcement](https://vuejs.org/guide/reusability/composables) of the files within) and you could (should!) add more-specifically named folders, whether-or-not you want them auto-imported. Don't just throw arbitrary code into these folders; if it's `/services`, `/stores` or additional `/config` give it a home to make the intended use _clear_. 
 
 To add additional folders, add them to the `imports.dirs` config, and decide how you want them scanned:
 
@@ -340,7 +398,10 @@ export default defineNuxtConfig({
 })
 ```
 
-One other thing to note, `imports.dirs` [supports globs](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned), whereas `components` does not.
+A couple of other things to note about `imports` config:
+
+- it can be an `array` of `strings` (just the paths) or an `object` (additional options; use `dirs` for paths)
+- the paths format [supports globs](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned) whereas `components` does not
 
 See the [path configuration](#path-configuration) section for detailed information about how Nuxt handles paths.
 
@@ -434,6 +495,8 @@ Bonus component tip: you don't have to use the suggested [global components cont
 
 At the time of writing, Nuxt's [Tailwind module](https://github.com/nuxt-modules/tailwindcss) does not pick up layers (though it's a [simple](https://nuxt.com/docs/guide/going-further/layers#multi-layer-support-for-nuxt-modules) PR).
 
+> Note: [@atinux](https://twitter.com/atinux) tells me this is not the case; I'll investigate and update this section in due course
+
 But you can easily tell Tailwind where your CSS classes can be found:
 
 ```js
@@ -451,7 +514,7 @@ export default {
 
 ### Config
 
-There are a few things to think about when considering config:
+There are a few things to think about regarding config:
 
 - where to locate each file
 - what each file should contain
@@ -615,7 +678,7 @@ I prefer the flat or hybrid structure, as it significantly de-clutters the proje
 
 #### Folders
 
-You might also consider moving infrequently-accessed concerns to a `base` or `core` layer:
+As outlined above, you might consider moving infrequently-accessed concerns to a `base` or `core` layer:
 
 ```
 +- src
@@ -661,19 +724,7 @@ export default defineNuxtConfig({
 })
 ```
 
-Note that if you move core folders you will need to reconfigure some core [dir](#path-configuration) settings.
-
-```ts
-// src/nuxt.config.ts
-export default defineNuxtConfig({
-  dir: {
-    assets: 'core/assets',
-    modules: 'core/modules',
-    middleware: 'core/middleware',
-    public: 'layers/site/public',
-  },
-})
-```
+Note that if you move default folders you will need to reconfigure Nuxt's [dir](#core-folders) config.
 
 ### Path configuration
 
@@ -691,20 +742,20 @@ Nuxt's path config options can be driven by a variety of path formats:
 | Alias          | `~/layers/some-layer`               | Expands internally to absolute path     |
 | Glob           | `some-layer/**/*.vue`               | Expands to an array of paths            |
 
-Additionally, some config options are **recursive**, providing glob-like functionality.
+Additionally, some config options scan **nested** folders, providing glob-like functionality.
 
 Here's a sample of the differences between some of [25+ path-related](https://github.com/davestewart/nuxt-layers-utils#nuxt-config) config options (along with their quirks):
 
-| Name                                                             | Abs | Root-rel | Layer-rel | Alias | Rec | Glob | Notes                                                             |
-|------------------------------------------------------------------|:---:|:--------:|:---------:|:-----:|:---:|:----:|-------------------------------------------------------------------|
-| [`extends`](https://nuxt.com/docs/api/nuxt-config#extends)       |  ●  |    ●     |     ●     |       |     |      | Layers can be nested (mainly useful for modules)                  |
-| [`dir.*`](https://nuxt.com/docs/api/nuxt-config#dir)             |  ●  |    ●     |           |       |     |      |                                                                   |
-| [`dir.public`](https://nuxt.com/docs/api/nuxt-config#public)     |  ●  |    ●     |           |       |     |      | First public folder found wins                                    |
-| [`imports.dirs`](https://nuxt.com/docs/api/nuxt-config#dirs)     |  ●  |    ●     |     ●     |       |  ●  |  ●   |                                                                   |
-| [`components`](https://nuxt.com/docs/api/nuxt-config#components) |  ●  |    ●     |     ●     |   ●   |  ●  |      | Components are [prefixed by default](#components) (based on path) |
-| [`modules`](https://nuxt.com/docs/api/nuxt-config#modules)       |  ●  |          |           |       |     |      |                                                                   |
-| [`plugins`](https://nuxt.com/docs/api/nuxt-config#plugins-1)     |  ●  |    ●     |           |   ●   |     |      |                                                                   |
-| [`ignore`](https://nuxt.com/docs/api/nuxt-config#ignore)         |     |          |           |       |     |  ●   |                                                                   |
+| Name                                                             | Abs | Root-rel | Layer-rel | Alias | Nest | Glob | Notes                                                             |
+|------------------------------------------------------------------|:---:|:--------:|:---------:|:-----:|:----:|:----:|-------------------------------------------------------------------|
+| [`extends`](https://nuxt.com/docs/api/nuxt-config#extends)       |  ●  |    ●     |     ●     |       |      |      | Layers can be nested (mainly useful for modules)                  |
+| [`dir.*`](https://nuxt.com/docs/api/nuxt-config#dir)             |  ●  |    ●     |           |       |      |      |                                                                   |
+| [`dir.public`](https://nuxt.com/docs/api/nuxt-config#public)     |  ●  |    ●     |           |       |      |      | First public folder found wins                                    |
+| [`imports.dirs`](https://nuxt.com/docs/api/nuxt-config#dirs)     |  ●  |    ●     |     ●     |       |  ●   |  ●   |                                                                   |
+| [`components`](https://nuxt.com/docs/api/nuxt-config#components) |  ●  |    ●     |     ●     |   ●   |  ●   |      | Components are [prefixed by default](#components) (based on path) |
+| [`modules`](https://nuxt.com/docs/api/nuxt-config#modules)       |  ●  |          |           |       |      |      |                                                                   |
+| [`plugins`](https://nuxt.com/docs/api/nuxt-config#plugins-1)     |  ●  |    ●     |           |   ●   |      |      |                                                                   |
+| [`ignore`](https://nuxt.com/docs/api/nuxt-config#ignore)         |     |          |           |       |      |  ●   |                                                                   |
 
 #### Advice on configuring paths
 
@@ -974,6 +1025,27 @@ The tagged [milestones](https://github.com/davestewart/nuxt-layers-demo/commits/
 You can clone or browse the repo from here:
 
 - [github.com/davestewart/nuxt-layers-demo](https://github.com/davestewart/nuxt-layers-demo)
+
+## Resources
+
+In the interest of completeness, here are some links to other resources worth looking at:
+
+- [Nuxt Layers Unwrapped](https://krutiepatel.com/blog/nuxt-layers-unwrapped)<br>
+  [Krutie Patel](https://x.com/KrutiePatel)'s article supporting her talk at Nuxt Nation 2023
+- [Nuxt Monorepo for Large-Scale Vue Web Application](https://serko.dev/post/nuxt-3-monorepo#nuxt-layers)<br>
+  In-depth article by [SerKo](https://x.com/serkodev) on using a monorepo and layers to build Nuxt apps
+- [Nuxt 3 monorepo example -- Basic example](https://dev.to/leamsigc/nuxt-3-monorepo-example-basic-example-1d61)<br>
+  Simpler example of how to get started with a Nuxt 3 layers monorepo
+- [Authoring Nuxt Layers](https://nuxt.com/docs/guide/going-further/layers)<br>
+  Nuxt's own documentation regarding authoring layers
+- [Google search](https://www.google.com/search?q=nuxt+layers)<br>
+  Google's results for "nuxt layers"
+
+Also, various posts referring to this post, some of which have useful comments or discussion:
+
+- [Reddit r/Nuxt](https://www.reddit.com/r/Nuxt/comments/1ctd4mb/article_modular_site_architecture_with_nuxt_layers/)
+- [Reddit r/VueJS](https://www.reddit.com/r/vuejs/comments/1ctgsu8/modular_site_architecture_with_nuxt_layers/)
+- [Twitter](https://x.com/dave_stewart/status/1791098742373781943)
 
 ## Last words
 
