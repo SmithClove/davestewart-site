@@ -81,12 +81,16 @@ As such, Nuxt's out-of-the-box component "auto-importing" is also component _aut
 | `components/forms/options` | `Dropdown.vue`     | `FormsOptionsDropdown.vue`     |
 | `components/forms/options` | `DropdownItem.vue` | `FormsOptionsDropdownItem.vue` |
 
+You can see how this works (or, doesn't!) on a sample repo below:
+
+- [stackblitz.com/edit/nuxt3-component-config](#https://stackblitz.com/edit/nuxt3-component-config)
+
 Unfortunately, the docs mainly skip over this fundamental choice:
 
 - component prefixing is not mentioned in the [Key Concepts / Auto-imports](https://nuxt.com/docs/guide/concepts/auto-imports#auto-imported-components) part of the guide
 - on the Components page, manual renaming is suggested only "[for clarity](https://nuxt.com/docs/guide/directory-structure/components#component-names)"
 - the docs search for "auto-import" does not reference the main [Components](https://nuxt.com/docs/guide/directory-structure/components) page
-- the behaviour is different and not directly mentioned in the [Nuxt 3 Migration / Auto Imports](https://nuxt.com/docs/migration/auto-imports) guide
+- the behaviour is different to, and not mentioned directly in, the [Nuxt 3 Migration / Auto Imports](https://nuxt.com/docs/migration/auto-imports) guide
 
 The upshot is:
 
@@ -122,7 +126,7 @@ export default defineNuxtConfig({
 })
 ```
 
-The next section digs into the why's and the wherefores of these options.
+The next section digs into the why's and the wherefores of these choices.
 
 ## Project size considerations
 
@@ -143,7 +147,7 @@ The motivation for each may depend on:
 - how well the team knows the codebase
 - how comfortable the developers are with magic
 - your style of development
-- your IDE preferences
+- your IDE choice
 
 ### Small to medium projects
 
@@ -172,7 +176,7 @@ In a small or medium projects, it's reasonably simple to keep track of component
 However, note:
 
 - the mix of top-level contexts, i.e. core (`dropdown`), global (`site`) and domain (`account`, `article`) concerns
-- the mix of _physical_ prefixes and _auto_-prefixes `site/Footer`, `Dropdown` (which some IDEs may be unable to reference) 
+- the mix of _physical_ prefixes and _auto_-prefixes `site/Footer`, `Dropdown` (which some IDEs may fail to reference) 
 - that top-level imports are **not** renamed, but nested components **are**
 
 If your project is small and everything is reasonably accessible in the Project Explorer, maybe that's fine.

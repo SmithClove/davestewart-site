@@ -285,11 +285,9 @@ I looked into whether it would be possible using the [`pages:extend`](https://nu
 
 ### Components
 
-> ***Warning!*** Side-rant ahead! 😖
+Nuxt's components [auto-importing and auto-registering rules](https://nuxt.com/docs/guide/directory-structure/components#component-names) are IMHO unnecessarily complex and opaque – and considering this article is about helping you organise your Nuxt app at scale – I wanted to comment on what I see as a major anti-pattern, too much magic, and something to avoid.
 
-Nuxt's components [auto-importing and auto-registering rules](https://nuxt.com/docs/guide/directory-structure/components#component-names) are IMHO [unnecessarily complex and opaque](https://stackblitz.com/edit/nuxt3-component-config) – and considering this article is about helping you organise your Nuxt app at scale – I wanted to comment on what I see as a major anti-pattern, too much magic, and something to avoid.
-
-The thing is, Nuxt's default auto-import settings do scan `components` folders recursively, however:
+The thing is, Nuxt's default auto-import settings do actually scan `components` folders recursively, however:
 
 - **top-level** components import using their given names
 - but **nested** components are _prefixed_ with the path's segments
@@ -303,29 +301,11 @@ As such, out-of-the-box component "auto-importing" is **also** component "_auto-
 | `components/forms` | `Input.vue`      | `FormsInput.vue` |
 | `components/forms` | `FormsInput.vue` | `FormsInput.vue` |
 
-My problems with this are:
+I do not think these are good defaults – but in order not to derail _this_ article – I've broken it down here:
 
-- if you miss this (or misunderstand this) things break real quick
-- it's completely unintuitive for any (let alone Vue) developers new to Nuxt
-- it's just a workaround to avoid collisions in the global namespace
-- it's inconsistent between root and child folders
-- you can't organise components without the imported component being renamed
-- thus, moving components to subfolders will inexplicably break your app
-- then you have to manually find and replace component names in your markup
-- you can potentially have _multiple_ components overwriting the _same_ auto-import 
-- you don't know what components are used, where, or how many times
-- there are no explicit imports for your IDE to track and update
-- you lose the ability to navigate to a component via its import
-- both VSCode and WebStorm add import statements _anyway_
-- ESLint can remove unused import statements if you forget
-- it's apparently a [misuse of `d.ts` files](https://www.youtube.com/watch?v=zu-EgnbmcLY) anyway
-- it's on by default
+- [davestewart.co.uk/blog/nuxt-auto-import](https://davestewart.co.uk/blog/nuxt-auto-import/)
 
-Given the above, it's arguable that it _saves_ you any time – but can absolutely **cost** you time! And the larger your application gets, the **less magic** you want and the **more safety** you need.
-
-> _I will concede that there are differences in how the two main IDEs support both component navigation and refactoring, and there is no best-fit between the two, as yet. I'm a WebStorm user, so my views are biased due to its superior refactoring abilities._
-
-But with that said and done, your options for component auto-importing are:
+In the meantime, your options to rein-in component auto-imports are:
 
 ```ts
 // src/nuxt.config.ts
@@ -343,7 +323,7 @@ export default defineNuxtConfig({
 })
 ```
 
-Note that `components` config supports folder names (useful in layers):
+Note that `components` config can reconfigure existing folders (useful in layers):
 
 ```ts
 // src/layers/site/nuxt.config.ts
