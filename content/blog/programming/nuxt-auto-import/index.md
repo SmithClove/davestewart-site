@@ -3,23 +3,22 @@ description: Understanding when to use and when to avoid the auto-import magic
 preview: true
 date: 2024-05-21
 media:
-  thumbnail: ./images/thumbnail.png
   featured: ./images/featured.png
+  thumbnail: ./images/thumbnail.png
+  opengraph: ./images/opengraph.png
 ---
 
 # Getting a grip on Nuxt's auto-import functionality
 
 ## Intro
 
-One of Nuxt 3's stand-out features is its [auto-import](https://nuxt.com/docs/guide/concepts/auto-imports)
-functionality which promises to reduce developer friction by removing the burden of managing imports, and even having to worry
-about the source of any particular dependency!
+One of Nuxt 3's stand-out features is its [auto-import](https://nuxt.com/docs/guide/concepts/auto-imports) functionality which promises to reduce developer friction by removing the burden of managing imports, and even having to worry about the source of any particular dependency!
 
-But is auto-importing suitable for every project, and is out-of-sight, out-of-mind always the best policy?
+But perhaps you – like me – find the auto-import experience to be poor, with any supposed time saved eclipsed by new problems such as poor IDE integration, difficulty locating files, or understanding your application structure.
 
-In this article I'm going to present the case that whilst auto-imports are appealing in smaller projects, the larger the project, the more their value is outweighed by the lack of visibility on _where_ a piece of code came from, and its relationship to other project entities. 
+I wanted to get to the bottom of this paradox so after my original complaint in my [Nuxt Layers article](https://davestewart.co.uk/blog/nuxt-layers/), I decided to spend some time getting to know auto-import; when it was useful, when less so, and what workarounds there might be.
 
-I've tried to keep the article as short as I can, but there's actually quite a lot to cover. 
+I've tried to keep the article as short as I can, but there's quite a lot to cover!
 
 <NavToc level="2"
         type="list"
@@ -28,7 +27,7 @@ I've tried to keep the article as short as I can, but there's actually quite a l
 
 ## Auto-import recap
 
-So let's reacquaint ourselves with how auto-import works, or if you were fuzzy on the specifics, shine a light there too.
+So let's reacquaint ourselves with how auto-import works, or if you were fuzzy on the specifics, shine a light on them.
 
 ### Background
 
@@ -54,11 +53,12 @@ Whilst "auto-import" is a catch-all term which covers both **components** and **
 
 Did you spot the potential **footgun**?
 
-It's that Nuxt 3, by _default_, auto-prefixes nested components.
+It's that Nuxt 3 – by _default_ – will auto-prefix nested components.
 
-It's important to understand the ramifications of this design choice, as it **directly** affects the nature of your project, including:
+It's important to understand the ramifications of this, as it **directly** affects the nature of your project, including:
 
 - component organisation
+- component usage
 - IDE integration
 - refactoring
 
@@ -78,12 +78,13 @@ As such, Nuxt's out-of-the-box component "auto-importing" is also component _aut
 | `components`               | `Input.vue`        | `Input.vue`                    |
 | `components/forms`         | `Input.vue`        | `FormsInput.vue`               |
 | `components/forms`         | `FormsInput.vue`   | `FormsInput.vue`               |
+| `components/forms`         | `Dropdown.vue`     | `FormsDropdown.vue`            |
 | `components/forms/options` | `Dropdown.vue`     | `FormsOptionsDropdown.vue`     |
 | `components/forms/options` | `DropdownItem.vue` | `FormsOptionsDropdownItem.vue` |
 
-You can see how this works (or, doesn't!) on a sample repo below:
+You can see how this works (or, doesn't!) in a sample repo below:
 
-- [stackblitz.com/edit/nuxt3-component-config](#https://stackblitz.com/edit/nuxt3-component-config)
+- [stackblitz.com/edit/nuxt3-component-config](https://stackblitz.com/edit/nuxt3-component-config)
 
 Unfortunately, the docs mainly skip over this fundamental choice:
 
@@ -288,7 +289,7 @@ Things to note about the above:
 - we use aliases (such as `#tokendesigner`) to target layers
 
 
-What's interesting regarding the deep nesting above, is that a the component mentioned could take one of 11 naming combinations – and still get auto-imported – but IDE tooling would likely only locate 4 of these files:
+What's interesting regarding the deep nesting above, is that any of the following are valid auto-import locations if path-prefixing is turned on – but IDE tooling may only would likely only locate 4 of these files:
 
 ```
 components                -->  TdAdjustTabPriceAndMarketCapPerformance
@@ -394,14 +395,14 @@ Find usages from Project Explorer:
 
 Implicit import refactoring:
 
-- WIP
+- TBC
 
 Explicit import refactoring:
 
-- **WebStorm** – updates any combination of `.vue` / `.ts` renames or moves
-- **VSCode** doesn't update  `.vue` / `.vue` renames or moves
+- **WebStorm** – updates any combination of `.vue` or `.ts` renames or moves
+- **VSCode** doesn't update  `.vue` to `.vue` renames or moves
 
-However, for VSCode if `.vue` files are first exported from an `index.ts` file, it will update `.vue` imports if the `index.ts` file or containing folder is renamed or moved:
+To work around VSCode's limitations, you can re-export `.vue` components from an `index.ts` file, and it will update `.vue` imports if the `index.ts` file or containing folders are renamed or moved:
 
 ```ts
 // components/somewhere/index.ts
@@ -445,6 +446,16 @@ Nuxt's auto-import **defaults** bring with them some subtle tradeoffs – which 
 
 And the larger your application gets, the **less** magic you want and the **more** safety you need, so it's important to understand the pros and cons, so you can make the right choices for your project and team.
 
-### That's it
+### Recommendations
 
-So, maybe you're happy with auto-imports and don't see the need to change. Or maybe auto-imports never quite worked for you, but at least you now understand them better. Or maybe it's somewhere between – which is ironically where you might end up if your project gets large enough, and you push the boundaries of auto-importing.
+For small or medium projects, auto-imports are fine. But you should consider what might happen if your project grows.
+
+I generally prefer to turn off path-prefixing, as then you're free to decide on your own prefixing strategy, and it makes it easier to refactor entire subtrees of code should you decide to.
+
+For larger projects I feel that [global concerns](https://davestewart.co.uk/blog/nuxt-layers/#global-concerns) (such as UI components, or site furniture) and some 3rd-party code absolutely benefit from being auto-imported, but it's clearer if domain-level concerns are imported explicitly. You can use `index` files for this to reduce the lines of code that would be added to individual files.
+
+Not only are the relationships between the files clearer, but IDE and tooling support is guaranteed, and it's significantly easier to get to grips with a new project (or old project you haven't looked at in a while!).
+
+### Last words
+
+Maybe you're happy with auto-imports and don't feel the need to change. Or maybe auto-imports never quite worked for you, but at least you now understand them better. Or maybe it's somewhere between – which is ironically where you might end up if your project gets large enough, and you push the boundaries of auto-importing.
