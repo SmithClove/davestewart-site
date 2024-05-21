@@ -179,7 +179,9 @@ export default {
             html += `<li>${makeLink(item, tips[item.slug])}</li>`
             prev = item
           }
-          return `<p>${prompt}:</p>${html}`
+          return prompt
+            ? `<p>${prompt}:</p>${html}`
+            : html
         }
 
         // paragraph

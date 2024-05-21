@@ -26,7 +26,7 @@ Then, I'll share actionable steps to migrate an existing Nuxt application:
 
 - [Nuxt concerns](#nuxt-concerns)<br>
   How individual Nuxt concerns work or need to be reconfigured when moved to layers
-- [Site migration](#migrating-an-existing-site)<br>
+- [Site migration](#site-migration)<br>
   Advice and steps to successfully migrate your own Nuxt 3 site to layers
 - [Demo](#demo)<br>
   A demo repo with tagged commits following a layers migration
@@ -40,7 +40,10 @@ You might also want to skim the official Layers docs before continuing:
 
 It's a long article (!) so here's the full table of contents if you want to skip:
 
-[[toc]]
+<NavToc type="list"
+        exclude="intro"
+        prompt=""
+/>
 
 ## Site organisation
 
@@ -182,7 +185,7 @@ Now that you understand how a layer-based site is structured, let's review some 
 - [Imports and exports](#imports-and-exports)
 
 > Note that this section is effectively a **sanity check** for layer-related configuration, and:
-> - sets you up for the final [migration](#migrating-an-existing-site) section which takes you through full layers refactor
+> - sets you up for the [site migration](#site-migration) section which takes you through full layers refactor
 > - provides lots of tips and tricks for configuration in general
 
 ### Framework folders
@@ -554,7 +557,7 @@ export default {
 }
 ```
 
-See the [path configuration](#path-configuration) section in the [migration](#migrating-an-existing-site) section for a full breakdown of the options.
+See the [path configuration](#path-configuration) section in the [site migration](#site-migration) section for a full breakdown of the options.
 
 ### Imports and exports
 
@@ -596,7 +599,7 @@ And regarding [auto-imports](https://nuxt.com/docs/guide/concepts/auto-imports) 
 You may need to configure additional imports using [`config.imports.dirs`](https://nuxt.com/docs/api/nuxt-config#dirs).
 
 
-## Migrating an existing site
+## Site migration
 
 So you now understand the concepts, you have an idea of the updates to make, but you need a plan to do it.
 
