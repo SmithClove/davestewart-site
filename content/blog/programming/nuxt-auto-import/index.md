@@ -49,6 +49,7 @@ Whilst "auto-import" is a catch-all term which covers both **components** and **
 | Configuration option     | [`components`](https://nuxt.com/docs/api/nuxt-config#components)                                                                    | [`imports`](https://nuxt.com/docs/api/nuxt-config#imports)                       |
 | Heavy-lifting done by    | [Framework code](https://github.com/nuxt/nuxt/blob/390a0ff281527880e3a610d527a0a453018b9b2b/packages/nuxt/src/components/module.ts) | [unjs/unimport](https://github.com/unjs/unimport)                                |
 | Folder scanning defaults | Nested                                                                                                                              | Top-level                                                                        |
+| Path format              | Abs path, rel path, aliases                                                                                                         | Abs path, rel path, aliases, globs                                               |
 | Notes                    | Auto-prefixes nested folders                                                                                                        |                                                                                  |
 
 Did you spot the potential **footgun**?
@@ -100,7 +101,9 @@ The upshot is:
 
 ### Customisation
 
-However, given the above you'll be glad to know you **can** reconfigure the defaults, even _per-folder_ if you wish:
+#### Components
+
+You can of course reconfigure the defaults under the `components` config key:
 
 ```ts
 // src/nuxt.config.ts
@@ -118,7 +121,7 @@ export default defineNuxtConfig({
 })
 ```
 
-You can also completely disable component auto-importing per project, and per layer:
+You can even completely disable component auto-importing per project, and per layer:
 
 ```ts
 // src/nuxt.config.ts or src/layer/nuxt.config.ts 
@@ -127,7 +130,27 @@ export default defineNuxtConfig({
 })
 ```
 
-The next section digs into the why's and the wherefores of these choices.
+#### Imports
+
+For completeness, note that auto-imports for code is configured using the `imports` key:
+
+```ts
+// src/nuxt.config.ts
+export default defineNuxtConfig({
+  imports: {
+    ...
+  }
+})
+```
+
+#### Notes
+
+Note that – although poorly documented – both [`components`](https://nuxt.com/docs/api/nuxt-config#components) and [`imports`](https://nuxt.com/docs/api/nuxt-config#imports) can take either:
+
+- an `object` – for additional top-level options; use the sub-key `dirs` for paths
+- an `array` – for shorthand config, for paths only
+
+Additionally, `imports` support [globs](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned), but `components` does not.
 
 ## Project size considerations
 
