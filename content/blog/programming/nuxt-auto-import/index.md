@@ -33,7 +33,7 @@ So let's reacquaint ourselves with how auto-import works, or if you were fuzzy o
 
 Nuxt leverages [unjs/unimport](https://github.com/unjs/unimport) (which in turn leverages [unjs/unplugin](https://unplugin.unjs.io/guide/)) to supply the auto-import magic.
 
-It's a build process which scans configured folders, hoists discovered dependencies into the global scope, injects relevant import statements into the build, and connects your IDE via TypeScript [declarations](https://itnext.io/mastering-declaration-files-the-key-to-typescripts-type-magic-fe4483a86645).
+It's a build process which scans configured folders, hoists discovered dependencies into the global scope, injects relevant import statements into the build, and connects your IDE via TypeScript [declarations](https://itnext.io/mastering-declaration-files-the-key-to-typescripts-type-magic-fe4483a86645) (check your `.nuxt/components.d.ts` and `.nuxt/imports.d.ts`).
 
 For a little more detail, [here's how Chat GPT describes it](https://chatgpt.com/share/c35d9e16-f542-47c5-89e3-0775c88c4281).
 
@@ -64,9 +64,9 @@ It's important to understand the ramifications of this, as it **directly** affec
 - refactoring
 
 
-## Component auto-import config
+## Components specifics
 
-### Defaults
+### Default behaviour
 
 To begin with, lets dig into the mechanics of component auto-imports.
 
@@ -145,7 +145,7 @@ export default defineNuxtConfig({
 
 #### Notes
 
-Note that – although poorly documented – both [`components`](https://nuxt.com/docs/api/nuxt-config#components) and [`imports`](https://nuxt.com/docs/api/nuxt-config#imports) can take either:
+And some implementation details: although poorly documented, both [`components`](https://nuxt.com/docs/api/nuxt-config#components) and [`imports`](https://nuxt.com/docs/api/nuxt-config#imports) can take either:
 
 - an `object` – for additional top-level options; use the sub-key `dirs` for paths
 - an `array` – for shorthand config, for paths only
@@ -309,7 +309,7 @@ Things to note about the above:
 
 - a `core` layer contains all global concerns
 - we rely on prefixes (such as `Td`) to keep naming sane
-- we use aliases (such as `#tokendesigner`) to target layers
+- we use aliases (such as `#td`) to target layers
 
 
 What's interesting regarding the deep nesting above, is that any of the following are valid auto-import locations if path-prefixing is turned on – but IDE tooling may only would likely only locate 4 of these files:
@@ -351,7 +351,7 @@ If that was the case, domain-level imports / usage may look like this:
 import {
   PriceAndMarketCapPerformance,
   ...
-} from '#tokendesigner/components/adjust'
+} from '#td/components/adjust'
 </script>
 
 <template>
@@ -398,7 +398,8 @@ Also:
 Navigate to source from usage in `.vue` file:
 
 - `Cmd-Click` component tag
-  - **WebStorm** – navigates to `.nuxt/components.ts`, then you need to manually click the import
+  - **WebStorm** – navigates to `.nuxt/components.ts`, then you need to manually click the `<Component>.vue` filename
+    - strangely, PHPStorm navigates direct to the component!
   - **VSCode** – navigates to the component, via `.nuxt/components.ts`
 - `Right-Click`
   - **WebStorm** – Go To > Declaration or Usages
@@ -469,16 +470,22 @@ Nuxt's auto-import **defaults** bring with them some subtle tradeoffs – which 
 
 And the larger your application gets, the **less** magic you want and the **more** safety you need, so it's important to understand the pros and cons, so you can make the right choices for your project and team.
 
-### Recommendations
+### Thoughts
 
 For small or medium projects, auto-imports are fine. But you should consider what might happen if your project grows.
 
 I generally prefer to turn off path-prefixing, as then you're free to decide on your own prefixing strategy, and it makes it easier to refactor entire subtrees of code should you decide to.
 
-For larger projects I feel that [global concerns](https://davestewart.co.uk/blog/nuxt-layers/#global-concerns) (such as UI components, or site furniture) and some 3rd-party code absolutely benefit from being auto-imported, but it's clearer if domain-level concerns are imported explicitly. You can use `index` files for this to reduce the lines of code that would be added to individual files.
+For larger projects I feel that [global concerns](https://davestewart.co.uk/blog/nuxt-layers/#global-concerns) (such as UI components, or site furniture) and some 3rd-party code absolutely benefit from being auto-imported, but it's clearer if domain-level concerns are imported explicitly.
 
-Not only are the relationships between the files clearer, but IDE and tooling support is guaranteed, and it's significantly easier to get to grips with a new project (or old project you haven't looked at in a while!).
+Not only are the relationships between the domain entities clearer, but IDE and tooling support is guaranteed (you can use `index` files to simplify imports and improve VSCode refactoring), and it's significantly easier to get to grips with a new project – or an old project you haven't looked at in a while!
+
+And finally, some additional opinions from [Redditors](https://www.reddit.com/r/Nuxt/search/?q=auto-import):
+
+- [Getting a grip on Nuxt's auto-import functionality](https://www.reddit.com/r/Nuxt/comments/1cx77h8/getting_a_grip_on_nuxts_autoimport_functionality/)
+- [What do you think about auto-imports?](https://www.reddit.com/r/Nuxt/comments/1938ufa/what_do_you_think_about_auto_imports/)
 
 ### Last words
 
 Maybe you're happy with auto-imports and don't feel the need to change. Or maybe auto-imports never quite worked for you, but at least you now understand them better. Or maybe it's somewhere between – which is ironically where you might end up if your project gets large enough, and you push the boundaries of auto-importing.
+

@@ -429,6 +429,8 @@ export default defineNuxtConfig({
 })
 ```
 
+Note that you _may_ need to declare multiple content sources **in one place** if a later-added layer intends to use the `/` prefix, as I think the default Nuxt Content config _initially_ sets the source to the root `content` folder and `/` prefix. 
+
 #### Remote sources
 
 If you want to include content from a [remote source](https://content.nuxt.com/get-started/configuration#sources) such as GitHub, [unjs/unstorage](https://unstorage.unjs.io/drivers/github) makes it possible:
@@ -576,7 +578,7 @@ import { queryUser } from '~/dashboard'
 
 And regarding [auto-imports](https://nuxt.com/docs/guide/concepts/auto-imports) – remember they only import  `components`, `composables` and `utils` folders.
 
-You may need to configure additional imports using [`config.imports.dirs`](https://nuxt.com/docs/api/nuxt-config#dirs).
+You may need to configure additional imports using [`config.imports`](https://nuxt.com/docs/api/nuxt-config#imports) or [`config.components`](https://nuxt.com/docs/api/nuxt-config#components).
 
 
 ## Site migration
@@ -848,7 +850,9 @@ Then, tackle a single domain / layer at a time:
     - if not, you may need to add specific components folder paths to the `components` config
   - [Content](#nuxt-content)
     - decide whether [Nuxt Content]() will be global or local
-    - remember Nuxt Content components need to live in `components/content`
+    - remember Nuxt Content components need to be global, so
+      - add them to `components/content`, or
+      - register them separately [using the `global` flag](#content-components)
 - the things to check as you move are:
   - [Paths](#config):
     - remember `Path.resolve()`'s context whilst consuming `config` is your project's root folder
@@ -863,7 +867,7 @@ Then, tackle a single domain / layer at a time:
 
 As you make changes:
 
-- restart the server _often_
+- restart the dev server _often_
 - manually check related pages, components, modules, plugins, etc
 - commit your changes after each successful update or set of updates
 
