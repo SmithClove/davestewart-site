@@ -285,27 +285,27 @@ I looked into whether it would be possible using the [`pages:extend`](https://nu
 
 ### Components
 
-Nuxt's components [auto-importing and auto-registering rules](https://nuxt.com/docs/guide/directory-structure/components#component-names) are IMHO unnecessarily complex and opaque – and considering this article is about helping you organise your Nuxt app at scale – I wanted to comment on what I see as a major anti-pattern, too much magic, and something to avoid.
+Nuxt's components [auto-importing and auto-registering rules](https://nuxt.com/docs/guide/directory-structure/components#component-names) are IMHO unnecessarily complex and opaque – and considering this article is about helping you organise your Nuxt app at scale – I wanted to comment.
 
-The thing is, Nuxt's default auto-import settings do actually scan `components` folders recursively, however:
+The thing is, whilst Nuxt's default auto-import settings do scan `components` folders recursively:
 
 - **top-level** components import using their given names
-- but **nested** components are _prefixed_ with the path's segments
+- **nested** components are _prefixed_ with the path's segments
 
 As such, out-of-the-box component "auto-importing" is **also** component "_auto-renaming_":
 
-| Folder             | Component        | AutoImport       |
-|--------------------|------------------|------------------|
-| `components`       | `Input.vue`      | `Input.vue`      |
-| `components`       | `FormsInput.vue` | `FormsInput.vue` |
-| `components/forms` | `Input.vue`      | `FormsInput.vue` |
-| `components/forms` | `FormsInput.vue` | `FormsInput.vue` |
+| Folder                     | Component        | AutoImport                 |
+|----------------------------|------------------|----------------------------|
+| `components`               | `Input.vue`      | `Input.vue`                |
+| `components/forms`         | `Input.vue`      | `FormsInput.vue`           |
+| `components/forms`         | `FormsInput.vue` | `FormsInput.vue`           |
+| `components/forms/options` | `Dropdown.vue`   | `FormsOptionsDropdown.vue` |
 
-I do not think these are good defaults – but in order not to derail _this_ article – I've broken it down here:
+This directly impacts component organisation, usage, IDE integration and refactoring, which I've broken down here:
 
 - [davestewart.co.uk/blog/nuxt-auto-import](https://davestewart.co.uk/blog/nuxt-auto-import/)
 
-In the meantime, your options to rein-in component auto-imports are:
+Meanwhile, your options to customise Nuxt's defaults are:
 
 ```ts
 // src/nuxt.config.ts
