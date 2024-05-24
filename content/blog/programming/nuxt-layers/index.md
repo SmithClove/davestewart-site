@@ -211,7 +211,7 @@ Additionally, many of these entities can be further modified using [config](http
 
 This means you can generally break out concerns across layers as you see fit – and Nuxt will take care of the loading, registering, and the splicing together of the files.
 
-However, note that same-named files from different layers **will** overwrite each other, i.e. if you have two `<layer>/pages/index.vue` files, then the second layer will overwrite the first.
+However, note that _some_ same-named files from different layers **will** overwrite each other, i.e. if you have two `<layer>/pages/index.vue` files, then the second layer will overwrite the first.
 
 > ***Note***: I'm going to further investigate the behaviour of overlapping _core_ folders like `public` and `server` as I've had different results in different projects (probably human error!) so check back soon as I'll document my findings.
 
@@ -294,12 +294,12 @@ The thing is, whilst Nuxt's default auto-import settings do scan `components` fo
 
 As such, out-of-the-box component "auto-importing" is **also** component "_auto-renaming_":
 
-| Folder                     | Component        | AutoImport                 |
-|----------------------------|------------------|----------------------------|
-| `components`               | `Input.vue`      | `Input.vue`                |
-| `components/forms`         | `Input.vue`      | `FormsInput.vue`           |
-| `components/forms`         | `FormsInput.vue` | `FormsInput.vue`           |
-| `components/forms/options` | `Dropdown.vue`   | `FormsOptionsDropdown.vue` |
+| Folder                    | Component name      | Auto-import name              |
+|---------------------------|---------------------|-------------------------------|
+| `components`              | `Dropdown.vue`      | `Dropdown.vue`                |
+| `components/form`         | `Dropdown.vue`      | `FormDropdown.vue`            |
+| `components/form/options` | `Dropdown.vue`      | `FormOptionsDropdown.vue`     |
+| `components/form/options` | `DropdownItem.vue`  | `FormOptionsDropdownItem.vue` |
 
 This directly impacts component organisation, usage, IDE integration and refactoring, which I've broken down here:
 
@@ -343,16 +343,6 @@ export default defineNuxtConfig({
 })
 ```
 
-You can also [disable _any_ auto-importing](https://nuxt.com/docs/guide/concepts/auto-imports#disabling-auto-imports) but then you lose the benefit of importing the boring stuff:
-
-```ts
-export default defineNuxtConfig({
-  imports: {
-    autoImport: false
-  }
-})
-```
-
 ### Auto-imports
 
 I wanted to cover so-called [auto-imports](https://nuxt.com/docs/guide/directory-structure/composables) functionality, specifically to disambiguate from [components](#components).
@@ -377,6 +367,16 @@ export default defineNuxtConfig({
       // autoload all stores in all layers
       '**/stores'
     ]
+  }
+})
+```
+
+You can also [disable _any_ auto-importing](https://nuxt.com/docs/guide/concepts/auto-imports#disabling-auto-imports) but then you lose the benefit of importing the boring stuff:
+
+```ts
+export default defineNuxtConfig({
+  imports: {
+    autoImport: false
   }
 })
 ```
@@ -575,6 +575,8 @@ export * from './utils/bar'
 // src/profile/components/User.ts
 import { queryUser } from '~/dashboard'
 ```
+
+However, note that Vite's documentation [advises against](https://vitejs.dev/guide/performance#avoid-barrel-files) this. There seem to be good reasons (based on the way Vite transforms inputs) but you would need to read the full linked issue thread to understand the reasons. _YMMV._
 
 And regarding [auto-imports](https://nuxt.com/docs/guide/concepts/auto-imports) – remember they only import  `components`, `composables` and `utils` folders.
 
@@ -1018,11 +1020,13 @@ You can clone or browse the repo from here:
 In the interest of completeness, here are some links to other resources worth looking at:
 
 - [Nuxt Layers Unwrapped](https://krutiepatel.com/blog/nuxt-layers-unwrapped)<br>
-  [Krutie Patel](https://x.com/KrutiePatel)'s article supporting her talk at Nuxt Nation 2023
+  Broad introduction to layers from [Krutie Patel](https://x.com/KrutiePatel)'s talk at Nuxt Nation 2023
 - [Nuxt Monorepo for Large-Scale Vue Web Application](https://serko.dev/post/nuxt-3-monorepo#nuxt-layers)<br>
   In-depth article by [SerKo](https://x.com/serkodev) on using a monorepo and layers to build Nuxt apps
 - [Nuxt 3 monorepo example -- Basic example](https://dev.to/leamsigc/nuxt-3-monorepo-example-basic-example-1d61)<br>
   Simpler example of how to get started with a Nuxt 3 layers monorepo
+- [How to structure Vue projects](https://dev.to/alexanderop/how-to-structure-vue-projects-20i4)<br>
+  Great article on different ways to structure projects, with an intro to [Feature-Sliced Design](https://feature-sliced.design/)
 - [Authoring Nuxt Layers](https://nuxt.com/docs/guide/going-further/layers)<br>
   Nuxt's own documentation regarding authoring layers
 - [Google search](https://www.google.com/search?q=nuxt+layers)<br>

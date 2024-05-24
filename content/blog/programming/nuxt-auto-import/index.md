@@ -14,18 +14,18 @@ media:
 
 One of Nuxt 3's stand-out features is its [auto-import](https://nuxt.com/docs/guide/concepts/auto-imports) functionality which promises to reduce developer friction by removing the burden of managing imports, and even having to worry about the source of any particular dependency!
 
-But perhaps you – like me – find the auto-import experience to be poor, with any supposed time saved eclipsed by new problems such as poor IDE integration, difficulty locating files, or understanding your application structure.
+But perhaps you – like me – find the auto-import experience doesn't quite deliver, with supposed time savings eclipsed by new problems such as poor IDE integration, difficulty locating files, or understanding your application structure.
 
 I wanted to get to the bottom of this paradox so after my original complaint in my [Nuxt Layers article](https://davestewart.co.uk/blog/nuxt-layers/), I decided to spend some time getting to know auto-import; when it was useful, when less so, and what workarounds there might be.
 
 I've tried to keep the article as short as I can, but there's quite a lot to cover!
 
-<NavToc level="2"
+<NavToc level="2,3"
         type="list"
         exclude="intro"
         prompt="Feel free to jump to" />
 
-## Auto-import recap
+## Overview
 
 So let's reacquaint ourselves with how auto-import works, or if you were fuzzy on the specifics, shine a light on them.
 
@@ -56,36 +56,27 @@ Did you spot the potential **footgun**?
 
 It's that Nuxt 3 – by _default_ – will auto-prefix nested components.
 
-It's important to understand the ramifications of this, as it **directly** affects the nature of your project, including:
+It's important to understand the ramifications of this, as it **directly** affects the nature of your codebase, including:
 
 - component organisation
 - component usage
 - IDE integration
 - refactoring
 
+### Component specifics
 
-## Components specifics
-
-### Default behaviour
-
-To begin with, lets dig into the mechanics of component auto-imports.
+So how does auto-prefixing play a part with auto-importing components?
 
 Given that auto-imports are **global** by definition, and your project could have potentially many 100s of components, Nuxt looks to sidestep global namespace collisions by _prefixing_ **component** auto-imports with their folder path.
 
 As such, Nuxt's out-of-the-box component "auto-importing" is also component _auto-renaming_:
 
-| Folder                     | Component name     | Auto-import name               |
-|----------------------------|--------------------|--------------------------------|
-| `components`               | `Input.vue`        | `Input.vue`                    |
-| `components/forms`         | `Input.vue`        | `FormsInput.vue`               |
-| `components/forms`         | `FormsInput.vue`   | `FormsInput.vue`               |
-| `components/forms`         | `Dropdown.vue`     | `FormsDropdown.vue`            |
-| `components/forms/options` | `Dropdown.vue`     | `FormsOptionsDropdown.vue`     |
-| `components/forms/options` | `DropdownItem.vue` | `FormsOptionsDropdownItem.vue` |
-
-You can see how this works (or, doesn't!) in a sample repo below:
-
-- [stackblitz.com/edit/nuxt3-component-config](https://stackblitz.com/edit/nuxt3-component-config)
+| Folder                    | Component name      | Auto-import name              |
+|---------------------------|---------------------|-------------------------------|
+| `components`              | `Dropdown.vue`      | `Dropdown.vue`                |
+| `components/form`         | `Dropdown.vue`      | `FormDropdown.vue`            |
+| `components/form/options` | `Dropdown.vue`      | `FormOptionsDropdown.vue`     |
+| `components/form/options` | `DropdownItem.vue`  | `FormOptionsDropdownItem.vue` |
 
 Unfortunately, the docs mainly skip over this fundamental choice:
 
@@ -99,11 +90,45 @@ The upshot is:
 - if you didn't know about the new defaults, you may already have found auto-imports mysteriously "broken"
 - even if you did, you may not be aware of the indirect ramifications path-prefixing may impose upon you
 
-### Customisation
 
-#### Components
+## Configuration
 
-You can of course reconfigure the defaults under the `components` config key:
+### Overview
+
+Of course, like most things in Nuxt, the defaults can be reconfigured.
+
+On first glance it seems that `components` and `imports` are configured quite similarly:
+
+```ts
+export default defineNuxtConfig({
+  [option]: {
+    ...
+    dirs: [
+      'path/to/dir',
+    ]
+  },
+})
+```
+
+However, it's good to know there are some subtle variations between them:
+
+- `components` has a top-level `object` configuration as well as an `array` shorthand
+- `components.dirs` can be more specifically-configured using `objects`
+- `imports.dirs` supports only paths or [globs](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned)
+
+The [config documentation](https://nuxt.com/docs/api/nuxt-config) is somewhat scattered and incomplete, so it doesn't hurt to check the _actual_ source code:
+
+| Type         | Root                                                                                                                                                                                                                                                                               | Options                                                                                                                  |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `components` | [schema/src/config/adhoc.ts](https://github.com/nuxt/nuxt/blob/00ba04cb29f328ee5865364c043bf06e50bb4a1b/packages/schema/src/config/adhoc.ts#L12-L22)<br>[schema/src/types/components.ts](https://github.com/nuxt/nuxt/blob/main/packages/schema/src/types/components.ts#L110-L133) | [schema/src/types/components.ts](https://github.com/nuxt/nuxt/blob/main/packages/schema/src/types/components.ts#L33-L84) | 
+| `imports`    | [schema/src/config/adhoc.ts](https://github.com/nuxt/nuxt/blob/00ba04cb29f328ee5865364c043bf06e50bb4a1b/packages/schema/src/config/adhoc.ts#L29-L44)                                                                                                                               | [schema/src/types/imports.ts](https://github.com/nuxt/nuxt/blob/main/packages/schema/src/types/imports.ts)               |
+
+Note, that whilst only _some_ of the config options are documented (and I can't tell you the reason for this) reading through the doc comments in these files provides additional insight into the decisions the framework makes to create your application from the raw source code you write.
+
+### Components
+
+If you decide to configure (or, reconfigure) `component` auto-prefixing, your primary [options](https://nuxt.com/docs/guide/directory-structure/components#custom-directories) are:
+
 
 ```ts
 // src/nuxt.config.ts
@@ -121,6 +146,8 @@ export default defineNuxtConfig({
 })
 ```
 
+_Note that I'm using the array shorthand above, because I'm not supplying any [root options](https://github.com/nuxt/nuxt/blob/main/packages/schema/src/types/components.ts#L110-L133)._
+
 You can even completely disable component auto-importing per project, and per layer:
 
 ```ts
@@ -130,27 +157,41 @@ export default defineNuxtConfig({
 })
 ```
 
-#### Imports
+### Imports
 
-For completeness, note that auto-imports for code is configured using the `imports` key:
+For `imports` – for which the defaults are generally fine – the [options](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned) are much simpler:
 
 ```ts
 // src/nuxt.config.ts
 export default defineNuxtConfig({
   imports: {
-    ...
+    // optionally disable
+    autoImport: false,
+    
+    // load all composables at all depths
+    dirs: [
+      '~/**/composables/**',
+    ]
   }
 })
 ```
 
-#### Notes
 
-And some implementation details: although poorly documented, both [`components`](https://nuxt.com/docs/api/nuxt-config#components) and [`imports`](https://nuxt.com/docs/api/nuxt-config#imports) can take either:
+### Demo
 
-- an `object` – for additional top-level options; use the sub-key `dirs` for paths
-- an `array` – for shorthand config, for paths only
+If you want to see the impact of the above, check this sample repo:
 
-Additionally, `imports` support [globs](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned), but `components` does not.
+- [stackblitz.com/edit/nuxt3-component-config](https://stackblitz.com/edit/nuxt3-component-config?file=nuxt.config.ts)
+
+Navigate to the `nuxt.config.ts` file where you can quickly re-configure the `components` option:
+
+```ts
+export default defineNuxtConfig({
+  components: config.arr.default // <-- change to something like config.obj.noPrefix
+})
+```
+
+You'll be able to compare the `array`, `object` and `pathPrefix` settings, and see how they combine to import – or in some cases _not_ import – the components you might expect.
 
 ## Project size considerations
 
