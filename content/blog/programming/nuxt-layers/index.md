@@ -743,6 +743,7 @@ Here's a sample of the differences between some of [25+ path-related](https://gi
 | [`modules`](https://nuxt.com/docs/api/nuxt-config#modules)       |  ●  |          |           |       |      |      |                                                                   |
 | [`plugins`](https://nuxt.com/docs/api/nuxt-config#plugins-1)     |  ●  |    ●     |           |   ●   |      |      |                                                                   |
 | [`ignore`](https://nuxt.com/docs/api/nuxt-config#ignore)         |     |          |           |       |      |  ●   |                                                                   |
+| [`css`](https://nuxt.com/docs/api/nuxt-config#css)               |  ●  |          |           |   ●   |      |  ●   | Seems to only support `~` (no `alias` aliases)                    |
 
 #### Advice on configuring paths
 
