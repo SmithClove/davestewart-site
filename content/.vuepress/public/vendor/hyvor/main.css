@@ -26,6 +26,12 @@ body,
   margin-bottom:0;
 }
 
+@media screen and (min-width: 768px) {
+  .reactions {
+    gap: 30px;
+  }
+}
+
 .reactions-title {
   margin-bottom:25px;
 }
@@ -36,6 +42,7 @@ body,
 
 .reaction {
   margin-bottom:30px;
+  align-items: start;
 }
 
 .reaction img {
@@ -43,43 +50,20 @@ body,
   height:45px;
 }
 
-.reaction:after {
-  position:absolute;
-  transform:translateY(40px);
+.reaction .reaction-text {
   color:#BBB;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-left: 7px;
 }
 
-.reaction:hover {
-  transform:none !important;
-}
-
-.reaction:hover:after {
+.reaction:hover .reaction-text {
   color:#333;
 }
 
-.reaction:nth-child(5n+1):after {
-  content:"zzz...";
-}
-
-.reaction:nth-child(5n+2):after {
-  content:"meh";
-}
-
-.reaction:nth-child(5n+3):after {
-  content:"nice";
-}
-
-.reaction:nth-child(5n+4):after {
-  content:"cool!";
-}
-
-.reaction:nth-child(5n+5):after {
-  content:"wow!!";
-}
-
 /* ---------------------------------------------------------------------------------------------------------------------
- * COMMENTS
- LAYOUT */
+ * COMMENTS LAYOUT
+ */
 
 .comments-box {
   margin-top: 0;
@@ -104,8 +88,8 @@ body,
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------
- * DISPLAY
- FONTS */
+ * DISPLAY FONTS
+ */
 
 .sort-name,
 .cvrt-name,
