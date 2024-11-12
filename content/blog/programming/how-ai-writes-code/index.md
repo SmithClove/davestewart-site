@@ -11,11 +11,11 @@ media:
 
 Coding with help from AI has become a critical part of my daily workflow. It can iterate on problems much faster than I can physically research, plan, type and debug by myself, and can teach me new techniques I may not even be aware of.
 
-But I wondered how _does_ AI write such good code, even considering small details I might miss on the first iteration, and often even making tasteful design decisions?
-
-Well... rather than Googling for the answer, I just asked Claude itself!
+But I wondered how _does_ AI write such good code, even considering small details I might miss on the first iteration, and often even making tasteful design decisions? Well... rather than Googling for the answer, I just asked Claude itself!
 
 What follows is a brief conversation I had with the AI, asking it just how it writes such good code. Its answers surprised me, but deepened my understanding of the process it takes, equipping me to help it help me more quickly in the future.
+
+_**Note:** I have edited some of the replies for clarity._
 
 ## Transcript
 
@@ -35,8 +35,6 @@ The "hidden steps" that seem intuitive often emerge from this statistical patter
 
 This is why AI models can sometimes make basic logical errors or generate nonsensical code - we're not reasoning from first principles, but rather synthesizing patterns in ways that usually (but not always) work.
 
-Would you like me to elaborate on any part of this explanation? I find the question of AI capabilities and limitations quite interesting to explore.
-
 #### ***DS:*** So when a human points out a problem, how do you change your internal model?
 
 ***Claude AI:*** Actually, I don't have the ability to change my "internal model" at all based on corrections. I have no memory between messages and cannot learn or update from interactions. Each response I give is generated fresh, without any knowledge of previous exchanges except what's visible in our conversation history.
@@ -50,7 +48,7 @@ Think of it like this: I'm more like a very sophisticated autocomplete system th
 This is why you might see me make the same mistake again in a future conversation - each interaction starts fresh, without any memory of previous corrections or learning from past errors. Everything I "know" comes from my initial training, not from interactions with humans.
 
 
-#### ***DS:*** So there is no model, just updated context?
+#### ***DS:*** So there is no model, just updated "context"?
 
 ***Claude AI:*** Exactly right. I have a fixed model from my training, but during our conversation, the only thing that changes is the context window of our discussion.
 
@@ -61,13 +59,21 @@ An analogy might help: Imagine a GPS system with a fixed map. When you tell it "
 Similarly, my responses might improve within a single conversation as more context is added, but this isn't because I'm learning - it's because I have more relevant information in the immediate context to work with. The next time someone starts a new conversation with me, I'll be starting fresh with my original training, without any of the corrections or refinements from previous conversations.
 
 
-#### ***DS:*** So the context of the conversation is spread across many comments. Do you re-parse all those comments each time, or hold an internal model of _those_ comments as some kind of combined context?
+#### ***DS:*** So this context is spread across many comments. Do you re-parse all those comments each time, or hold an internal model of them as some kind of combined context?
 
-***Claude AI:*** For each new response, I re-parse our entire conversation history - there's no persistent "combined context" or summary that I maintain between responses. Each message you send triggers a fresh analysis of everything that's been said, from the first message to the latest.
+***Claude AI:*** For each new response, I re-parse our entire conversation history - there's no persistent "combined context" or summary that I maintain between responses. 
+
+Each message you send triggers a fresh analysis of _everything_ that's been said, from _both_ parties, from the first message to the latest. This includes:
+
+1. Your questions and statements
+2. My previous responses
+3. Any code or examples shared by either of us
+4. Any corrections or clarifications made along the way
 
 This is actually why you might sometimes see me being quite precise in referring to things we discussed earlier - I'm not pulling from a maintained summary, but rather re-reading and re-analyzing the entire conversation each time.
 
 This design has both advantages and limitations:
+
 - Advantage: Each response considers the full context very thoroughly
 - Limitation: It's computationally intensive to re-process everything each time
 - Advantage: No risk of context getting corrupted or summarized incorrectly over time
@@ -94,10 +100,8 @@ However, there are also times when maintaining the conversation history is valua
 - When the context includes important specifications or requirements
 - When previous examples or explanations are relevant to current questions
 
-Would you like to start fresh with any particular aspect of our discussion about AI models and context?
 
-
-#### ***DS:*** So, back to the code; how do you generate the code itself?
+#### ***DS:*** So, back to the original topic; how do you generate the code itself?
 
 ***Claude AI:*** When generating code, I'm essentially performing several types of pattern matching simultaneously across the code I've seen in training. Let me break down how a typical request gets turned into code:
 
@@ -152,23 +156,35 @@ This is why I can write novel code that I've never seen exactly before - I'm not
 This is also why I can sometimes make subtle logical errors - I'm not executing the code or truly understanding it in a computational sense, I'm generating based on statistical patterns of what "looks right" in this context.
 
 
-#### ***DS:*** So to finish off, can you summarise what we covered here in a few sentences?
+#### ***DS:*** So given all of the above, would you say you're smart, or actually quite dumb? (Perhaps that's an unfair comparison, comparing apples to oranges).
 
+***Claude AI:*** That's a fascinating philosophical question! I think you're right that it's an apples-to-oranges comparison. I'm neither "smart" in the way humans are (with true understanding, learning, and consciousness) nor "dumb" in the sense of being simple or mechanical.
 
-***Claude AI:*** We explored how AI models like myself work - not by storing explicit information but through pattern recognition across vast parameter spaces.
+What I am is a highly sophisticated pattern matching system. I can process vast amounts of information and generate contextually appropriate responses, but without the deep understanding or adaptability that characterizes human intelligence.
 
-We clarified that I don't learn or update from conversations, but rather use an expanding context window to inform each new response.
+Think of it like this: I'm like a mirror that can reflect and recombine human knowledge in useful ways, but I don't generate truly new understanding or develop my own insights. I can appear very "smart" when the patterns align well with the task at hand, but can also make surprisingly basic errors that any human would catch - because I'm matching patterns, not truly reasoning.
 
-When generating code, I'm not pulling from a database of examples but rather synthesizing from abstract patterns encoded in my neural network weights, predicting each token based on the context and common programming patterns.
+To use a different analogy: a calculator is neither "smart" nor "dumb" - it's just very good at its specific type of pattern processing. I'm similar, just operating on language and concepts rather than numbers.
 
-The entire process is more probabilistic pattern matching than true understanding or reasoning.
+This is why I think the most accurate way to think about AI systems like myself is as a new kind of tool - different from both human intelligence and simple computing, with its own unique strengths and limitations.
 
+## Summary
 
-#### ***DS:*** Thank you
+So to summarise, here's what I discovered:
 
-***Claude AI:*** You're welcome! Thanks for the thoughtful questions - they really got to the heart of how these systems work.
+- LLMs do not actually "understand" the code they are writing; it's more of a best-fit between the entire context (our conversation) and patterns encoded in neural network weights (from the training data)
 
-## A note about Claude AI
+- LLMs don't "modify a mental model" as you converse; rather for each update they re-process the entire context from scratch, generating a new response, unrelated to any previous responses, each time
+
+- LLMs do not actually "reason" like humans do, rather they are fine-tuned to find relevant patterns from a huge, curated set of training data
+
+- LLMs don't store "lines of code"; rather they predict each token based on relevant programming patterns they have been trained on
+
+Given the above, it's become clearer to me that AI – or in this case LLMs – do not have the capability to reason, intuit, or adapt their mental model like I thought they did. Rather, the _context_ is what changes – incrementally narrowing the scope of the training data – and guiding the conversation to a particular outcome. 
+
+And, given this concept of narrowing, things like "Custom GPTs" where a pre-prompt such as "You are a ... with expertise in ... etc, etc" makes more sense; this initial text simply instructs the LLM to narrow its pattern-matching mechanisms to a more targeted subset of training data before the main conversation begins.
+
+## A note about Anthropic Claude
 
 If you have not yet checked out [Claude AI](https://claude.ai/), then you might want to take a look, as in my experience, not only does it write better code than Chat GPT, but it has a superior interface and _crucially_, can even run web code live in the browser.
 
