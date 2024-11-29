@@ -1,37 +1,38 @@
 <template>
-  <div v-if="visible" class="promo-container" :class="{ expanded }">
+  <transition name="fade">
+    <div v-if="visible" class="promo-container" :class="{ expanded }">
 
-    <div v-show="!expanded" class="card promo teaser">
-      <div class="card-header">
-        <div class="card-title h4">Got more than 20 tabs open?</div>
+      <div v-show="!expanded" class="card promo teaser">
+        <div class="card-header">
+          <div class="card-title h4">Got more than 20 tabs open?</div>
+        </div>
+        <div class="card-body">
+          <p>I might be working on your new favourite thing...</p>
+        </div>
+        <div class="card-footer text-right">
+          <button class="btn btn-primary plausible-event-name=CS+Open+Popup" @click="show">Show me!</button>
+          <button class="btn plausible-event-name=CS+Close" @click="close">Close</button>
+        </div>
       </div>
-      <div class="card-body">
-        <p>I might be working on your new favourite thing...</p>
-      </div>
-      <div class="card-footer text-right">
-        <button class="btn btn-primary plausible-event-name=CS+Open+Popup" @click="show">Show me!</button>
-        <button class="btn plausible-event-name=CS+Close" @click="close">Close</button>
+
+      <div v-show="expanded" class="card promo">
+        <a href="https://controlspace.app" target="_blank" class="card-image">
+          <img src="https://controlspace.app/images/social/splash-twitter.png" class="img-responsive">
+        </a>
+        <div class="card-header">
+          <div class="card-title h2">Control Space</div>
+        </div>
+        <div class="card-body">
+          <p><strong>Browse, organise, search and switch tabs with one handy shortcut</strong></p>
+          <p>It's smooth, fast and powerful with beautiful information surfacing, brilliant organisational tools and lightning-fast keyboard navigation; if you're a tab hoarder like me you'll wonder how you lived without it!</p>
+        </div>
+        <div class="card-footer text-right">
+          <a class="btn btn-primary plausible-event-name=CS+Visit+Website" href="https://controlspace.app" target="_blank" @click="close">Go to Control Space</a>
+          <button class="btn plausible-event-name=CS+Close+Popup" @click="close">Close</button>
+        </div>
       </div>
     </div>
-
-    <div v-show="expanded" class="card promo">
-      <a href="https://controlspace.app" target="_blank" class="card-image">
-        <img src="https://controlspace.app/images/social/splash-twitter.png" class="img-responsive">
-      </a>
-      <div class="card-header">
-        <div class="card-title h2">Control Space</div>
-      </div>
-      <div class="card-body">
-        <p><strong>Browse, organise, search and switch tabs with one handy shortcut</strong></p>
-        <p>It's smooth, fast and powerful with beautiful information surfacing, brilliant organisational tools and lightning-fast keyboard navigation; if you're a tab hoarder like me you'll wonder how you lived without it!</p>
-      </div>
-      <div class="card-footer text-right">
-        <a class="btn btn-primary plausible-event-name=CS+Visit+Website" href="https://controlspace.app" target="_blank" @click="close">Go to Control Space</a>
-        <button class="btn plausible-event-name=CS+Close+Popup" @click="close">Close</button>
-      </div>
-    </div>
-
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -40,10 +41,8 @@ const TIMEOUT = 7 * 24 * 60 * 60 * 1000 // one week
 
 export default {
   data () {
-    const timeNow = Date.now()
-    const timeClosed = Number(localStorage.getItem(key)) || 0
     return {
-      visible: (timeNow - timeClosed) > TIMEOUT,
+      visible: false,
       expanded: false,
     }
   },
@@ -61,6 +60,14 @@ export default {
       localStorage.setItem(key, Date.now().toString())
       this.visible = false
     }
+  },
+
+  mounted () {
+    const timeNow = Date.now()
+    const timeClosed = Number(localStorage.getItem(key)) || 0
+    setTimeout(() => {
+      this.visible = (timeNow - timeClosed) > TIMEOUT
+    }, 10 * 1000)
   }
 }
 </script>
