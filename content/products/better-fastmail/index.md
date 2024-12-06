@@ -80,9 +80,12 @@ Main menu
 
 ## Installation
 
-Visit the [Better FastMail](https://chrome.google.com/webstore/detail/better-fastmail/djjbcjbeiifedilgkohllahmnjlmcnmh) page on the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) then click the "Add to Chrome" button.
-
-_You will need to reload any loaded FastMail webmail client pages after installation._
+<WebStore
+    id="djjbcjbeiifedilgkohllahmnjlmcnmh"
+    name="Better FastMail"
+    rel="FastMail"
+    review
+    />
 
 ## Links
 

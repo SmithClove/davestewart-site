@@ -44,9 +44,10 @@ Get support:
 
 ### Installation
 
-Visit
-the [Chrome Web Store](https://chrome.google.com/webstore/detail/workflowy-multiflow/khjdmjcmpolknpccmaaipmidphjokhdf?hl=en-GB)
-and click the "Add to Chrome" button.
+<WebStore
+    id="khjdmjcmpolknpccmaaipmidphjokhdf"
+    name="WorkFlowy MultiFlow"
+    />
 
 When the icon pops up in the toolbar, you'll want to *pin* it:
 

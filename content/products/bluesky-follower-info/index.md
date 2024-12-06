@@ -50,9 +50,12 @@ Additionally:
 
 ## Installation
 
-Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/bluesky-follower-info/fokpfcfpgdlmnbjajbdeofkemfblbnbh) page then click the "Add to Chrome" button.
-
-_You will need to reload any loaded Bluesky pages after installation._
+<WebStore
+  id="fokpfcfpgdlmnbjajbdeofkemfblbnbh"
+  name="BlueSky Follower Info"
+  rel="BlueSky"
+  review
+/>
 
 ## Links
 
