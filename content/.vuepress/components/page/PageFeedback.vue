@@ -6,10 +6,14 @@
     </template>
 
     <template v-else>
-      <p>I hope you found this post interesting or inspiring.</p>
+      <p>I hope you found this post interesting or perhaps useful.</p>
     </template>
 
-    <p>If you want to engage further, follow me on <a href="https://twitter.com/dave_stewart" target="_blank">Twitter</a> or drop a <a href="#hyvor-talk-view">comment</a> or <a href="#hyvor-talk-view">reaction</a> below.</p>
+    <p>If you want to engage further, follow me on
+      <a href="https://twitter.com/dave_stewart" target="_blank">Twitter</a>,
+      <a href="https://bsky.app/profile/davestewart.uk" target="_blank">Bluesky</a>,
+      or drop a <a href="#hyvor-talk-view">comment</a> or <a href="#hyvor-talk-view">reaction</a> below.
+    </p>
     <p>Either way, thanks for reading!</p>
 
     <SiteIcon size="32" fill="#EA4848" />
