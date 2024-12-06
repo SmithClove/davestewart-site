@@ -39,7 +39,7 @@ export default {
 
   &__button {
     text-align: center;
-    margin: 3rem 0 4rem;
+    margin: 3rem 3rem 4rem;
 
     a {
       display: inline-block;
