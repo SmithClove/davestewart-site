@@ -15,6 +15,7 @@ media:
     - ./promo/compare.png
     - ./promo/icons.png
     - ./promo/highlight.png
+    - ./promo/options.png
 ---
 
 # Bluesky Follower Info
