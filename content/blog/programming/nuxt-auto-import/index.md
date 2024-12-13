@@ -1,6 +1,5 @@
 ---
 description: Understanding when to use and when to avoid the auto-import magic
-preview: true
 date: 2024-05-21
 media:
   featured: ./images/featured.png
@@ -409,6 +408,8 @@ It's a very small amount of extra code, but:
 - VSCode can be coerced into supporting `.vue` file refactoring 
 
 ## IDE integration
+
+> ⚠️ This article was first published in May 2024, so this section may be out-of date (note to self to review!)
 
 ### Preparation
 
