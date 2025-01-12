@@ -22,12 +22,12 @@
       </svg>
       -->
     </a>
-    <GlobalEvents @keyup="onKeyUp" />
+    <GlobalEvents @keydown="onKeyDown" />
   </nav>
 </template>
 
 <script>
-import { isChar, isEscape, isInput } from '../../utils/events.js'
+import { isModifier, isInput } from '../../utils/events.js'
 
 export default {
   computed: {
@@ -51,7 +51,7 @@ export default {
       history.back()
     },
 
-    onKeyUp (event) {
+    onKeyDown (event) {
       // skip if on search page or input
       if ((this.isOnSearchPage || isInput(event))) {
         return
@@ -63,14 +63,9 @@ export default {
       }
 
       // open search if keyboard combo hit
-      if (event.key === '/' || isEscape(event)) {
+      if (isModifier(event) && event.key === 'k') {
         event.preventDefault()
         return this.search()
-      }
-
-      // any other typing
-      else if (isChar(event)) {
-        this.search(event.key)
       }
     }
   }
