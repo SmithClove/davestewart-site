@@ -5,9 +5,18 @@
 
     <!-- main -->
     <main class="siteMain">
+      <!-- content -->
       <div class="layout__inner">
-        <component :is="component" :key="path"/>
+        <component :is="component" :key="path" style="padding-bottom: 110px"/>
       </div>
+
+      <!-- prev / next -->
+      <NavSiblings/>
+
+      <!-- scroll to top -->
+      <ClientOnly>
+        <NavScrollTop/>
+      </ClientOnly>
     </main>
 
     <!-- control space promo -->
@@ -15,16 +24,8 @@
       <CsPromo/>
     </ClientOnly>
 
-    <!-- scroll to top -->
-    <ClientOnly>
-      <NavScrollTop/>
-    </ClientOnly>
-
     <!-- lower area -->
     <div class="layout__bottom">
-      <!-- prev / next -->
-      <NavSiblings/>
-
       <!-- footer -->
       <SiteFooter/>
     </div>

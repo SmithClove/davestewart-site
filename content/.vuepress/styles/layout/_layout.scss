@@ -32,8 +32,8 @@ body {
 
 // calculate main content height
 .siteMain {
-  padding-bottom: 100px;
   min-height: calc(100vh - 45px - 80px - 100px);
+  position: relative;
 }
 
 // horizontal layout - header
