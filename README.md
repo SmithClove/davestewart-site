@@ -8,23 +8,25 @@ The following frontmatter key/values can be used.
 
 ### Post
 
-General properties:
+####  General properties
+
+These values provide data about the page itself: 
 
 | Key           | Description                                                               |
 |---------------|---------------------------------------------------------------------------|
 | `title`       | The post title                                                            |
 | `shortTitle`  | A short post title to show on index pages                                 |
 | `description` | The post description                                                      |
+| `breadcrumb`  | Text to use for the navigation breadcrumb (at the top of the page)        |
 | `date`        | The publish date in the form `yyyy-mm-dd` (set in the future to schedule) |
-| `breadcrumb`  | Text to use for the navigation breadcrumb                                 |
 | `tags`        | A list of tags to show and appear in Search                               |
 | `github`      | Github repo in the form `user/repo`                                       |
 | `visibility`  | Where and how to show the post (see table below)                          |
 | `<any>`       | Any other data to be referenced in the page                               |
 
-### Post visibility
+#### Post visibility (values)
 
-How and where a post should show
+How and where a post should show:
 
 | Value              | URL | List | Description                        |
 |--------------------|:---:|:----:|------------------------------------|
@@ -32,7 +34,9 @@ How and where a post should show
 | `unlisted`         |  x  |      | Not listed but accessible by link  |
 | `hidden`           |     |      | Only accessible in development     |
 
-### Post media
+#### Post media (keys)
+
+Post media can be described using the following keys:
 
 | Key               | Description                                      |
 |-------------------|--------------------------------------------------|
@@ -43,6 +47,8 @@ How and where a post should show
 | `media.gallery`   | List of gallery file paths (replaces `featured`) |
 | `media.<any>`     | Any other data to be referenced in the page      |
 
+#### Post media gallery (keys)
+
 Optionally, the `gallery` node can hold more information:
 
 | Key                  | Description                |
@@ -52,7 +58,9 @@ Optionally, the `gallery` node can hold more information:
 | `media.gallery.text` | Optional caption text      |
 | `media.gallery.href` | Optional link to image     |
 
-### Index
+### Folder indices
+
+Folders may contain their own `index` files, with the following keys:
 
 | Key           | Description                                                                |
 |---------------|----------------------------------------------------------------------------|
@@ -62,13 +70,13 @@ Optionally, the `gallery` node can hold more information:
 
 ## Status
 
-Page `status` is determined by `visibility` and `date` frontmatter properties:
+Final page `status` is determined by `visibility` and `date` frontmatter properties, and will determine whether a post is included in the site's `$posts` array, shown in lists, or available via the URL.
 
-| Value       | Props        | Page | List | Description                                                       |
-|-------------|--------------|:----:|:----:|-------------------------------------------------------------------|
-| `new`       | `date`       |  x   |  x   | Has a `date`, is published, and within 30 days of being published |
-| `published` | `date`       |  x   |  x   | Hidden on production, visible in development                      |
-| `scheduled` | `date`       |      |      | Has a `date`, but not yet published, so hidden on production      |
-| `draft`     | `date`       |  -   |  -   | Hidden on production, visible in development                      |
-| `unlisted`  | `visibility` |  x   |  -   | Page is public, but not listed on site in production              |
-| `hidden`    | `visibility` |      |      | Hidden everywhere                                                 |
+| Value       | Props        | Page | List | Description                                                 |
+|-------------|--------------|:----:|:----:|-------------------------------------------------------------|
+| `new`       | `date`       |  x   |  x   | Has a `date` within 90 days                                 |
+| `published` | `date`       |  x   |  x   | Has a `date` before now                                     |
+| `unlisted`  | `visibility` |  x   |  -   | Page is public, but not listed on site on production        |
+| `draft`     | `date`       |  -   |  -   | Hidden on production, visible in development                |
+| `scheduled` | `date`       |      |      | Has a `date`, is not yet published, so hidden on production |
+| `hidden`    | `visibility` |      |      | Hidden everywhere on production                             |
