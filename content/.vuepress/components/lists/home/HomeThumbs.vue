@@ -1,14 +1,17 @@
 <template>
   <div class="homeThumbs">
     <p>
-      Here's a <a href="#random" :class="{ active: options.random }" @click.prevent="setRandom">random</a>
-      selection <span class="dimmed">(click to change)</span> :</p>
+      Click to see a
+      <a href="#recent" :class="{ active: !options.random }" @click.prevent="setRecent">recent</a>
+      or
+      <a href="#random" :class="{ active: options.random }" @click.prevent="setRandom">random</a>
+      selection of work :</p>
     <ThumbnailWall :pages="pages"/>
   </div>
 </template>
 
 <script>
-import { isVisible } from '../../../store/config/status.js'
+import { isVisible, Status } from '../../../store/config/status.js'
 import { isWithinDays } from '../../../utils/time.js'
 import { sortBy } from '../../../utils/array.js'
 import { storage } from '../../../utils/storage.js'
@@ -18,8 +21,8 @@ export default {
     return {
       pages: [],
       options: {
-        days: null,
-        random: true,
+        days: 60,
+        random: false,
       }
     }
   },
@@ -66,6 +69,7 @@ export default {
         .filter(page => page.type === 'post' && page.status !== 'preview')
         .sort(sortBy('date', 'desc'))
         .filter(isVisible)
+        .filter(page => page.status !== Status.DRAFT)
 
       if (days) {
         pages = pages.filter(page => isWithinDays(page.date, days))
@@ -93,16 +97,21 @@ export default {
 
   a {
     color: $grey-lighter;
-    text-decoration: underline;
+    //text-decoration: underline;
   }
 
   a.active {
     color: $accentColor;
-    text-decoration: none;
+    //text-decoration: none;
 
     &:after {
       //content: "*";
     }
+  }
+
+  a:not(.active):not(:hover) {
+    text-decoration: underline;
+    text-decoration-style: dotted;
   }
 }
 </style>

@@ -141,6 +141,7 @@ import { getNavigation, isChar, isInput, navigateLinks, stopEvent } from '../uti
 import { isClient, isDesktop, isMobile } from '../utils/env.js'
 import { groupBy, sortBy } from '../utils/array.js'
 import { getElements} from '../utils/dom.js';
+import { isVisible } from '../store/config/status'
 import { makeTree } from '../store/services/tree.js'
 import { storage } from '../utils/storage.js'
 import { plural } from '../utils/string.js'
@@ -242,7 +243,7 @@ export default {
   computed: {
     prepared () {
       // properties
-      let items = this.$store.pages
+      let items = this.$store.pages.filter(isVisible)
 
       // filter folders
       items = items.filter(item => {

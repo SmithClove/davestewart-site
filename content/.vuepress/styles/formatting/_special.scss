@@ -56,14 +56,18 @@ a.gumroad-button {
   background: $grey-light;
 }
 
+[data-status="unlisted"]:after {
+  background: #f5b922;
+}
+
 [data-status="preview"]:after {
   background: #abd725;
 }
 
-[data-status="scheduled"]:after {
-  background: #25a8d7;
-}
-
 [data-status="new"]:after {
   background: #f52424;
+}
+
+[data-status="scheduled"]:after {
+  background: #25a8d7;
 }

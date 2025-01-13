@@ -1,7 +1,7 @@
 ---
 shortTitle: Nuxt Mentor
 description: I'm looking for a Nuxt expert to help me level-up my Nuxt skills
-preview: true
+visibility: unlisted
 media:
   featured: ./featured.png
   opengraph: ./opengraph.png

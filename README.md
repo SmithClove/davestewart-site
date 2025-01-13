@@ -8,6 +8,8 @@ The following frontmatter key/values can be used.
 
 ### Post
 
+General properties:
+
 | Key           | Description                                                               |
 |---------------|---------------------------------------------------------------------------|
 | `title`       | The post title                                                            |
@@ -17,9 +19,18 @@ The following frontmatter key/values can be used.
 | `breadcrumb`  | Text to use for the navigation breadcrumb                                 |
 | `tags`        | A list of tags to show and appear in Search                               |
 | `github`      | Github repo in the form `user/repo`                                       |
-| `preview`     | Set to `true` to skip from thumbnail lists, but accessible by URL         |
-| `hidden`      | Set to `true` to show in development but not production                   |
+| `visibility`  | Where and how to show the post (see table below)                          |
 | `<any>`       | Any other data to be referenced in the page                               |
+
+### Post visibility
+
+How and where a post should show
+
+| Value              | URL | List | Description                        |
+|--------------------|:---:|:----:|------------------------------------|
+| `public` (default) |  x  |  x   | Shows to all people                |
+| `unlisted`         |  x  |      | Not listed but accessible by link  |
+| `hidden`           |     |      | Only accessible in development     |
 
 ### Post media
 
@@ -51,12 +62,13 @@ Optionally, the `gallery` node can hold more information:
 
 ## Status
 
-Page Status is determined by the boolean `hidden`, `preview` and `date` frontmatter properties:
+Page `status` is determined by `visibility` and `date` frontmatter properties:
 
-| Value       | Description                                                      |
-|-------------|------------------------------------------------------------------|
-| `new`       | Has a date, is published, and within 30 days of being published  |
-| `scheduled` | Has a date, but not yet published, so hidden on production       |
-| `preview`   | No date, but visible on production                               |
-| `draft`     | Hidden on production, visible in development                     |
-| `hidden`    | Hidden everywhere                                                |
+| Value       | Props        | Page | List | Description                                                       |
+|-------------|--------------|:----:|:----:|-------------------------------------------------------------------|
+| `new`       | `date`       |  x   |  x   | Has a `date`, is published, and within 30 days of being published |
+| `published` | `date`       |  x   |  x   | Hidden on production, visible in development                      |
+| `scheduled` | `date`       |      |      | Has a `date`, but not yet published, so hidden on production      |
+| `draft`     | `date`       |  -   |  -   | Hidden on production, visible in development                      |
+| `unlisted`  | `visibility` |  x   |  -   | Page is public, but not listed on site in production              |
+| `hidden`    | `visibility` |      |      | Hidden everywhere                                                 |

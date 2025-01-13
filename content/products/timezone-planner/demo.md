@@ -1,7 +1,7 @@
 ---
 description: Timezone Planner Demo Video
 date: 2024-04-24
-hidden: true
+visibility: hidden
 ---
 
 # Timezone Planner Demo

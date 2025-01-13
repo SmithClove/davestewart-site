@@ -44,16 +44,19 @@ function setDate (page) {
  * @param {Page}  page
  */
 function setStatus (page) {
-  const { layout, date, hidden, preview } = page.frontmatter
+  const { layout, date, visibility } = page.frontmatter // hidden, preview
   // default status
   page.status = ''
 
   // add status to posts (pages without layout)
   if (!layout) {
-    if (hidden) {
+    if (visibility === Status.HIDDEN) {
       page.status = Status.HIDDEN
     }
-    else if (preview) {
+    else if (visibility === Status.UNLISTED) {
+      page.status = Status.UNLISTED
+    }
+    else if (visibility === Status.PREVIEW) {
       page.status = Status.PREVIEW
       page.date = today.replace('T00', 'T01')
     }
